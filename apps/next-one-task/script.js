@@ -9,6 +9,7 @@ let state = {
 
 const taskForm = document.getElementById("task-form");
 const taskInput = document.getElementById("task-input");
+const deadlineInput = document.getElementById("deadline-input");
 const currentTaskContent = document.getElementById("current-task-content");
 const doneButton = document.getElementById("done-button");
 const remainingList = document.getElementById("remaining-list");
@@ -21,11 +22,30 @@ function loadState() {
 
   try {
     const parsed = JSON.parse(saved);
-    state.pending = Array.isArray(parsed.pending) ? parsed.pending : [];
-    state.completed = Array.isArray(parsed.completed) ? parsed.completed : [];
+    state.pending = normalizeTaskList(parsed.pending);
+    state.completed = normalizeTaskList(parsed.completed);
   } catch {
     state = { pending: [], completed: [] };
   }
+}
+
+function normalizeTaskList(value) {
+  if (!Array.isArray(value)) return [];
+
+  return value
+    .map((item) => {
+      if (typeof item === "string") {
+        return { title: item, deadline: "" };
+      }
+
+      if (!item || typeof item !== "object") return null;
+
+      return {
+        title: typeof item.title === "string" ? item.title : "",
+        deadline: typeof item.deadline === "string" ? item.deadline : "",
+      };
+    })
+    .filter((item) => item && item.title.trim());
 }
 
 // 保存
@@ -49,7 +69,11 @@ function renderCurrentTask() {
     return;
   }
 
-  currentTaskContent.innerHTML = `<p class="current-title">${escapeHtml(current)}</p>`;
+  const deadlineClass = isOverdue(current.deadline) ? "task-deadline overdue" : "task-deadline";
+  currentTaskContent.innerHTML = `
+    <p class="current-title">${escapeHtml(current.title)}</p>
+    ${formatDeadline(current.deadline, deadlineClass)}
+  `;
   doneButton.disabled = false;
 }
 
@@ -63,7 +87,20 @@ function renderRemainingTasks() {
 
   state.pending.slice(1).forEach((task) => {
     const li = document.createElement("li");
-    li.textContent = task;
+    li.className = "task-item";
+
+    const title = document.createElement("p");
+    title.className = "task-item-title";
+    title.textContent = task.title;
+    li.appendChild(title);
+
+    if (task.deadline) {
+      const deadline = document.createElement("p");
+      deadline.className = isOverdue(task.deadline) ? "task-deadline overdue" : "task-deadline";
+      deadline.textContent = `締切: ${toJaDate(task.deadline)}`;
+      li.appendChild(deadline);
+    }
+
     remainingList.appendChild(li);
   });
 }
@@ -78,10 +115,43 @@ function renderCompletedTasks() {
 
   state.completed.forEach((task) => {
     const li = document.createElement("li");
-    li.textContent = task;
-    li.className = "completed-item";
+    li.className = "completed-item task-item";
+
+    const title = document.createElement("p");
+    title.className = "task-item-title";
+    title.textContent = task.title;
+    li.appendChild(title);
+
+    if (task.deadline) {
+      const deadline = document.createElement("p");
+      deadline.className = "task-deadline";
+      deadline.textContent = `締切: ${toJaDate(task.deadline)}`;
+      li.appendChild(deadline);
+    }
+
     completedList.appendChild(li);
   });
+}
+
+function formatDeadline(deadline, className) {
+  if (!deadline) return "";
+  return `<p class="${className}">締切: ${escapeHtml(toJaDate(deadline))}</p>`;
+}
+
+function toJaDate(dateString) {
+  const [year, month, day] = dateString.split("-");
+  if (!year || !month || !day) return dateString;
+  return `${year}年${Number(month)}月${Number(day)}日`;
+}
+
+function isOverdue(deadline) {
+  if (!deadline) return false;
+
+  const today = new Date();
+  const todayOnly = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+  const dueDate = new Date(`${deadline}T00:00:00`);
+
+  return !Number.isNaN(dueDate.getTime()) && dueDate < todayOnly;
 }
 
 // XSS対策の簡易エスケープ
@@ -97,13 +167,17 @@ function escapeHtml(value) {
 // タスク追加
 taskForm.addEventListener("submit", (event) => {
   event.preventDefault();
-  const newTask = taskInput.value.trim();
-  if (!newTask) return;
+  const newTaskTitle = taskInput.value.trim();
+  if (!newTaskTitle) return;
 
-  state.pending.push(newTask);
+  state.pending.push({
+    title: newTaskTitle,
+    deadline: deadlineInput.value,
+  });
   saveState();
   render();
   taskInput.value = "";
+  deadlineInput.value = "";
   taskInput.focus();
 });
 
