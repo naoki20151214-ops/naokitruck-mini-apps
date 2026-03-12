@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>次の1タスク</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>次の1タスク</h1>
+
+    <section class="current-task">
+      <h2>今やること</h2>
+      <div id="currentTask">まだタスクがありません</div>
+      <button id="doneBtn">完了</button>
+    </section>
+
+    <section class="add-task">
+      <h2>タスク追加</h2>
+      <input type="text" id="taskInput" placeholder="タスクを入力" />
+      <button id="addBtn">追加</button>
+    </section>
+
+    <section>
+      <h2>残りタスク</h2>
+      <ul id="taskList"></ul>
+    </section>
+
+    <section>
+      <h2>完了済み</h2>
+      <ul id="doneList"></ul>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
