@@ -1,0 +1,193 @@
+:root {
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --text: #1a1d24;
+  --muted: #667085;
+  --line: #d0d5dd;
+  --primary: #2f6fed;
+  --primary-dark: #2257bc;
+  --success: #147a3d;
+  --danger: #b42318;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.app-header {
+  padding: 1rem;
+  background: var(--card);
+  border-bottom: 1px solid var(--line);
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.app-header p {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.container {
+  padding: 0.9rem;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.screen {
+  margin-bottom: 1rem;
+}
+
+.card,
+.task-row,
+.kpi-card {
+  background: var(--card);
+  border-radius: 12px;
+  border: 1px solid var(--line);
+}
+
+.card {
+  padding: 0.8rem;
+}
+
+.card-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.kpi-card {
+  padding: 0.8rem;
+}
+
+.kpi-card h3 {
+  margin: 0 0 0.4rem;
+}
+
+.kpi-meta {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin: 0.25rem 0;
+}
+
+.btn {
+  border: none;
+  border-radius: 10px;
+  padding: 0.65rem 0.9rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn.primary {
+  background: var(--primary);
+  color: #fff;
+}
+
+.btn.primary:hover {
+  background: var(--primary-dark);
+}
+
+.btn.secondary {
+  background: #eaecf0;
+  color: #344054;
+}
+
+.btn.small {
+  padding: 0.45rem 0.7rem;
+}
+
+.btn.full {
+  width: 100%;
+  margin-bottom: 0.7rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.65rem;
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+input,
+textarea {
+  margin-top: 0.3rem;
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.65rem;
+  font-size: 1rem;
+  font: inherit;
+}
+
+.form-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.form.hidden {
+  display: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.task-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem;
+  margin-bottom: 0.55rem;
+}
+
+.task-row .task-title {
+  margin: 0;
+  font-weight: 600;
+}
+
+.task-row .task-meta {
+  color: var(--muted);
+}
+
+.empty {
+  color: var(--muted);
+  text-align: center;
+  padding: 0.6rem 0;
+}
+
+.completed-time {
+  color: var(--success);
+  font-size: 0.85rem;
+}
+
+.memo {
+  background: #f8f9fc;
+  border-radius: 8px;
+  padding: 0.5rem;
+  color: #475467;
+  margin: 0.5rem 0;
+}
