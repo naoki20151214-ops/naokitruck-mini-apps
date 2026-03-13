@@ -12,5 +12,12 @@
     "description": "KPIごとの行動と完了履歴を記録するアプリ",
     "status": "開発中",
     "path": "./apps/kpi-log/"
+  },
+  {
+    "id": "transport-company-sample",
+    "name": "運送会社サイト（サンプル）",
+    "description": "運送会社向けのトップ・会社概要・車両案内・従業員紹介・社長挨拶・アクセスを含むサンプルサイト",
+    "status": "公開中",
+    "path": "./apps/transport-company-sample/"
   }
 ]
