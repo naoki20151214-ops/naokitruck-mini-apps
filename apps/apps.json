@@ -1,0 +1,16 @@
+[
+  {
+    "id": "next-one-task",
+    "name": "次の1タスク",
+    "description": "今やることを1つだけ表示する実行アプリ",
+    "status": "公開中",
+    "path": "./apps/next-one-task/"
+  },
+  {
+    "id": "kpi-log",
+    "name": "KPI実行ログ",
+    "description": "KPIごとの行動と完了履歴を記録するアプリ",
+    "status": "開発中",
+    "path": "./apps/kpi-log/"
+  }
+]

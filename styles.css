@@ -1,0 +1,102 @@
+:root {
+  color-scheme: light;
+  font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", sans-serif;
+  --bg: #f4f6fb;
+  --surface: #ffffff;
+  --text: #1f2937;
+  --subtle: #6b7280;
+  --primary: #2563eb;
+  --primary-hover: #1e4fcc;
+  --border: #d1d5db;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.page-header {
+  padding: 2rem 1rem 1rem;
+  text-align: center;
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: clamp(1.5rem, 5vw, 2rem);
+}
+
+.page-header p {
+  margin: 0.75rem auto 0;
+  color: var(--subtle);
+  max-width: 40rem;
+}
+
+main {
+  width: min(960px, 100% - 2rem);
+  margin: 0 auto 2rem;
+}
+
+.apps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.app-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.app-name {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.app-description,
+.app-status {
+  margin: 0;
+  line-height: 1.5;
+  color: var(--subtle);
+}
+
+.app-status {
+  font-size: 0.92rem;
+}
+
+.open-button {
+  margin-top: auto;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  background: var(--primary);
+  color: #fff;
+  padding: 0.65rem 0.8rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+}
+
+.open-button:hover,
+.open-button:focus-visible {
+  background: var(--primary-hover);
+}
+
+.message {
+  text-align: center;
+  margin: 1rem 0;
+  color: var(--subtle);
+}
+
+.message.error {
+  color: #b91c1c;
+}
