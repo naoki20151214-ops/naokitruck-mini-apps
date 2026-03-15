@@ -1,5 +1,15 @@
 {
-  "url": "https://store.kadokawa.co.jp/shop/g/g4582698061298/",
-  "status": "在庫あり",
-  "checkedAt": "2026-03-15T11:44:17.447Z"
+  "checkedAt": "2026-03-15T12:36:00.729Z",
+  "items": [
+    {
+      "name": "KADOKAWAストア",
+      "url": "https://store.kadokawa.co.jp/shop/g/g4582698061298/",
+      "status": "在庫あり"
+    },
+    {
+      "name": "MINTモール",
+      "url": "https://www.mint-mall.net/products/detail.php?product_id=868026",
+      "status": "判定不可"
+    }
+  ]
 }
