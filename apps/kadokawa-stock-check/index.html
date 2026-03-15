@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KADOKAWA 在庫チェック</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="container">
+    <h1>KADOKAWA 在庫チェック</h1>
+    <p class="lead">対象商品: <a href="https://store.kadokawa.co.jp/shop/g/g4582698061298/" target="_blank" rel="noopener noreferrer">4582698061298</a></p>
+
+    <section class="card" aria-live="polite">
+      <p class="label">現在の判定</p>
+      <p id="status" class="status">読み込み中...</p>
+      <p id="updated-at" class="meta"></p>
+      <p id="source" class="meta"></p>
+    </section>
+
+    <button id="refresh" type="button">最新データを再読み込み</button>
+    <p class="notice">※ GitHub Pagesでは直接スクレイピングせず、GitHub Actionsで更新したJSONを表示しています。</p>
+  </main>
+
+  <script src="./script.js" defer></script>
+</body>
+</html>
