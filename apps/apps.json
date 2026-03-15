@@ -19,5 +19,12 @@
     "description": "運送会社向けのトップ・会社概要・車両案内・従業員紹介・社長挨拶・アクセスを含むサンプルサイト",
     "status": "公開中",
     "path": "./apps/transport-company-sample/"
+  },
+  {
+    "id": "kadokawa-stock-check",
+    "name": "KADOKAWA 在庫チェック",
+    "description": "KADOKAWAストアの対象商品の在庫状態を表示するアプリ",
+    "status": "公開中",
+    "path": "./apps/kadokawa-stock-check/"
   }
 ]
