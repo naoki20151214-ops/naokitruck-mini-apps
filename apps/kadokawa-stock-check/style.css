@@ -70,6 +70,7 @@ h1 {
 
 .status--ok { color: #1f7a1f; }
 .status--ng { color: #b12a2a; }
+.status--warn { color: #b26b00; }
 .status--unknown { color: #6b7280; }
 
 .meta {

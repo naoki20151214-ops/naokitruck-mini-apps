@@ -4,7 +4,8 @@ const refreshButton = document.querySelector('#refresh');
 
 function statusClass(status) {
   if (status === '在庫あり') return 'status--ok';
-  if (status === '在庫なし') return 'status--ng';
+  if (status === '在庫なし' || status === '取得失敗') return 'status--ng';
+  if (status === '要確認') return 'status--warn';
   return 'status--unknown';
 }
 
@@ -29,6 +30,7 @@ function normalizeItems(data) {
       url: data.url,
       status: data.status,
       error: data.error,
+      reason: data.reason,
     },
   ];
 }
@@ -55,11 +57,23 @@ function renderItems(items) {
     }
 
     const statusEl = document.createElement('p');
-    const status = item.status ?? '判定不可';
+    const status = item.status ?? '要確認';
     statusEl.className = `status ${statusClass(status)}`;
     statusEl.textContent = status;
 
     rowEl.append(storeEl, statusEl);
+
+    if (item.reason) {
+      const reasonEl = document.createElement('p');
+      reasonEl.className = 'meta';
+      reasonEl.textContent = `補足: ${item.reason}`;
+      rowEl.append(reasonEl);
+    } else if (status === '要確認') {
+      const reasonEl = document.createElement('p');
+      reasonEl.className = 'meta';
+      reasonEl.textContent = '補足: 自動判定できなかったため、商品ページでご確認ください';
+      rowEl.append(reasonEl);
+    }
 
     if (item.error) {
       const errorEl = document.createElement('p');
