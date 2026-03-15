@@ -29,8 +29,11 @@ function parseKadokawaStatus(html) {
 function parseMintMallStatus(html) {
   const text = normalizeHtmlText(html);
 
+  // MINTモールは「カートに追加」ボタンが表示されていれば購入可能とみなす。
+  // 商品説明や他商品の情報に「売り切れ」が混在するケースがあるため、
+  // 在庫あり判定を先に行う。
+  if (/カートに追加|カートに入れる|購入する|在庫あり|Add to cart/i.test(text)) return '在庫あり';
   if (/売り切れ|在庫切れ|SOLD\s?OUT|品切れ/i.test(text)) return '在庫なし';
-  if (/カートに入れる|購入する|在庫あり|Add to cart/i.test(text)) return '在庫あり';
   return '判定不可';
 }
 
