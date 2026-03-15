@@ -1,6 +1,5 @@
-const statusEl = document.querySelector('#status');
+const statusListEl = document.querySelector('#status-list');
 const updatedAtEl = document.querySelector('#updated-at');
-const sourceEl = document.querySelector('#source');
 const refreshButton = document.querySelector('#refresh');
 
 function statusClass(status) {
@@ -19,27 +18,77 @@ function formatDate(isoString) {
   }).format(date);
 }
 
+function normalizeItems(data) {
+  if (Array.isArray(data.items)) {
+    return data.items;
+  }
+
+  return [
+    {
+      name: 'KADOKAWAストア',
+      url: data.url,
+      status: data.status,
+      error: data.error,
+    },
+  ];
+}
+
+function renderItems(items) {
+  statusListEl.innerHTML = '';
+
+  for (const item of items) {
+    const rowEl = document.createElement('article');
+    rowEl.className = 'status-item';
+
+    const storeEl = document.createElement('p');
+    storeEl.className = 'store';
+
+    if (item.url) {
+      const link = document.createElement('a');
+      link.href = item.url;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.textContent = item.name ?? item.url;
+      storeEl.append(link);
+    } else {
+      storeEl.textContent = item.name ?? '取得元不明';
+    }
+
+    const statusEl = document.createElement('p');
+    const status = item.status ?? '判定不可';
+    statusEl.className = `status ${statusClass(status)}`;
+    statusEl.textContent = status;
+
+    rowEl.append(storeEl, statusEl);
+
+    if (item.error) {
+      const errorEl = document.createElement('p');
+      errorEl.className = 'meta';
+      errorEl.textContent = `エラー: ${item.error}`;
+      rowEl.append(errorEl);
+    }
+
+    statusListEl.append(rowEl);
+  }
+}
+
 async function loadStock() {
-  statusEl.textContent = '読み込み中...';
-  statusEl.className = 'status status--unknown';
+  statusListEl.innerHTML = '<p class="meta">読み込み中...</p>';
+  updatedAtEl.textContent = '';
 
   try {
     const res = await fetch('../../data/kadokawa-stock.json', { cache: 'no-store' });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
     const data = await res.json();
-    const status = data.status ?? '判定不可';
+    const items = normalizeItems(data);
 
-    statusEl.textContent = status;
-    statusEl.className = `status ${statusClass(status)}`;
+    renderItems(items);
     updatedAtEl.textContent = `最終更新: ${formatDate(data.checkedAt)}`;
-    sourceEl.textContent = `取得元: ${data.url ?? '不明'}`;
   } catch (error) {
     console.error('在庫データの読み込みに失敗:', error);
-    statusEl.textContent = 'データ読み込み失敗';
-    statusEl.className = 'status status--ng';
+    statusListEl.innerHTML = '<p class="status status--ng">データ読み込み失敗</p>';
     updatedAtEl.textContent = '最終更新: 取得できませんでした';
-    sourceEl.textContent = '';
   }
 }
 
