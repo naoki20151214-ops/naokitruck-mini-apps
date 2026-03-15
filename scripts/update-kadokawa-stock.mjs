@@ -21,9 +21,9 @@ function normalizeHtmlText(html) {
 function parseKadokawaStatus(html) {
   const text = normalizeHtmlText(html);
 
-  if (/在庫なし|売り切れ|SOLD\s?OUT/i.test(text)) return '在庫なし';
   if (/在庫あり|カートに入れる|購入する|注文する/i.test(text)) return '在庫あり';
-  return '判定不可';
+  if (/在庫なし|売り切れ|SOLD\s?OUT/i.test(text)) return '在庫なし';
+  return '要確認';
 }
 
 function parseMintMallStatus(html) {
@@ -34,7 +34,7 @@ function parseMintMallStatus(html) {
   // 在庫あり判定を先に行う。
   if (/カートに追加|カートに入れる|購入する|在庫あり|Add to cart/i.test(text)) return '在庫あり';
   if (/売り切れ|在庫切れ|SOLD\s?OUT|品切れ/i.test(text)) return '在庫なし';
-  return '判定不可';
+  return '要確認';
 }
 
 async function fetchStatus(target) {
@@ -70,7 +70,7 @@ async function main() {
       return {
         name: target.name,
         url: target.url,
-        status: '判定不可',
+        status: '要確認',
         error,
       };
     }

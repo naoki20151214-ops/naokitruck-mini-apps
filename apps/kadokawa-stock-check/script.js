@@ -5,6 +5,7 @@ const refreshButton = document.querySelector('#refresh');
 function statusClass(status) {
   if (status === '在庫あり') return 'status--ok';
   if (status === '在庫なし') return 'status--ng';
+  if (status === '要確認') return 'status--warn';
   return 'status--unknown';
 }
 
@@ -55,11 +56,18 @@ function renderItems(items) {
     }
 
     const statusEl = document.createElement('p');
-    const status = item.status ?? '判定不可';
+    const status = item.status ?? '要確認';
     statusEl.className = `status ${statusClass(status)}`;
     statusEl.textContent = status;
 
     rowEl.append(storeEl, statusEl);
+
+    if (status === '要確認') {
+      const warningEl = document.createElement('p');
+      warningEl.className = 'meta warning';
+      warningEl.textContent = '自動判定ができなかったため、商品ページで在庫表示を確認してください。';
+      rowEl.append(warningEl);
+    }
 
     if (item.error) {
       const errorEl = document.createElement('p');
