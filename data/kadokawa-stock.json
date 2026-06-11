@@ -1,11 +1,10 @@
 {
-  "checkedAt": "2026-06-11T13:01:05.751Z",
+  "checkedAt": "2026-06-11T17:06:06.145Z",
   "items": [
     {
       "name": "KADOKAWAストア",
       "url": "https://store.kadokawa.co.jp/shop/g/g4582698061298/",
-      "status": "要確認",
-      "error": "HTTP 503"
+      "status": "在庫あり"
     },
     {
       "name": "MINTモール",
