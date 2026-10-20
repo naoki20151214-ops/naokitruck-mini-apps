@@ -1,0 +1,478 @@
+:root {
+  --bg: #f3f6fb;
+  --surface: #ffffff;
+  --primary: #0f3d73;
+  --primary-soft: #1e5ea8;
+  --accent: #f59e0b;
+  --text: #1f2937;
+  --muted: #5b6472;
+  --border: #d9e2ef;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+}
+
+.sample-note {
+  margin: 0;
+  padding: 0.4rem 1rem;
+  background: #fef3c7;
+  color: #78350f;
+  font-size: 0.82rem;
+  text-align: center;
+}
+
+.site-header {
+  background: linear-gradient(120deg, #0b2f58, #1e5ea8);
+  color: #fff;
+}
+
+.topbar {
+  width: min(1120px, 100% - 2rem);
+  margin: 0 auto;
+  padding: 1.25rem 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: 0.04em;
+}
+
+.logo small {
+  display: block;
+  opacity: 0.8;
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+.main-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.main-nav a {
+  text-decoration: none;
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  transition: 0.2s;
+}
+
+.main-nav a:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.main-nav .nav-apply {
+  background: var(--accent);
+  color: var(--text);
+  font-weight: 700;
+}
+
+.hero {
+  width: min(1120px, 100% - 2rem);
+  margin: 0 auto;
+  padding: 2.5rem 0 3rem;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  line-height: 1.35;
+}
+
+.hero p {
+  margin: 1rem 0 0;
+  max-width: 44rem;
+  opacity: 0.92;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  padding: 0.3rem 0.8rem;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+}
+
+main {
+  width: min(1120px, 100% - 2rem);
+  margin: 1.5rem auto 3rem;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.8rem;
+}
+
+.stat {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.stat strong {
+  display: block;
+  color: var(--primary);
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+.stat strong span {
+  font-size: 1rem;
+  margin-left: 0.1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.1rem;
+  box-shadow: 0 6px 18px rgba(17, 24, 39, 0.05);
+}
+
+.card h3 {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.card p {
+  margin: 0.6rem 0 0;
+  color: var(--muted);
+}
+
+.section {
+  margin-top: 2.2rem;
+}
+
+.section h2 {
+  margin: 0 0 0.9rem;
+  font-size: 1.35rem;
+  padding-left: 0.7rem;
+  border-left: 5px solid var(--accent);
+}
+
+.lead {
+  margin: -0.3rem 0 0.9rem;
+  color: var(--muted);
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--primary-soft);
+  border-radius: 6px;
+  padding: 0.1rem 0.55rem;
+  margin-bottom: 0.5rem;
+}
+
+.tag-new {
+  background: #16a34a;
+}
+
+.job .pay {
+  color: var(--primary);
+  font-weight: 800;
+  font-size: 1.2rem;
+}
+
+.table {
+  width: 100%;
+  margin-top: 1rem;
+  border-collapse: collapse;
+  background: var(--surface);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.table th,
+.table td {
+  border-bottom: 1px solid var(--border);
+  padding: 0.8rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.table th {
+  width: 22%;
+  min-width: 5.5rem;
+  background: #f8fafc;
+}
+
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+
+.timeline li {
+  display: flex;
+  gap: 1rem;
+  padding: 0.85rem 1.1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.timeline li:last-child {
+  border-bottom: 0;
+}
+
+.timeline time {
+  flex: 0 0 3.2rem;
+  font-weight: 800;
+  color: var(--primary-soft);
+}
+
+.timeline strong {
+  display: block;
+}
+
+.timeline div {
+  color: var(--muted);
+}
+
+.timeline div strong {
+  color: var(--text);
+}
+
+.voice-head {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.voice-head small {
+  display: block;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.avatar {
+  flex: 0 0 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #dbeafe;
+  color: var(--primary);
+  font-weight: 800;
+}
+
+.faq details {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.85rem 1.1rem;
+  margin-bottom: 0.6rem;
+}
+
+.faq summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.faq details p {
+  margin: 0.6rem 0 0;
+  color: var(--muted);
+}
+
+.apply-form {
+  display: grid;
+  gap: 1rem;
+  max-width: 36rem;
+}
+
+.apply-form label {
+  display: grid;
+  gap: 0.35rem;
+  font-weight: 700;
+}
+
+.apply-form input[type="text"],
+.apply-form input[type="tel"],
+.apply-form select {
+  font: inherit;
+  padding: 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #fff;
+}
+
+.apply-form fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.apply-form legend {
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.apply-form .choice {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 400;
+  padding: 0.25rem 0;
+}
+
+.req {
+  margin-left: 0.4rem;
+  font-size: 0.72rem;
+  color: #fff;
+  background: #dc2626;
+  border-radius: 4px;
+  padding: 0.05rem 0.35rem;
+  vertical-align: middle;
+}
+
+.form-result {
+  margin: 0;
+  padding: 0.8rem;
+  border-radius: 10px;
+  background: #dcfce7;
+  color: #14532d;
+}
+
+.cta {
+  background: #102b4f;
+  color: #fff;
+  border-radius: 14px;
+  padding: 1.35rem;
+  margin-top: 2.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  background: var(--accent);
+  color: var(--text);
+  font-weight: 700;
+  padding: 0.65rem 1.2rem;
+  border-radius: 999px;
+  border: 0;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.btn-submit {
+  font-size: 1.05rem;
+  padding: 0.85rem;
+}
+
+.site-footer {
+  text-align: center;
+  color: var(--muted);
+  padding: 1.4rem 1rem 2rem;
+  font-size: 0.92rem;
+}
+
+.apply-bar {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .topbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .main-nav {
+    width: 100%;
+  }
+
+  .main-nav a {
+    font-size: 0.82rem;
+  }
+
+  /* スマホでは画面下に「電話・応募」ボタンを常に表示する */
+  .apply-bar {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: 0 -4px 14px rgba(17, 24, 39, 0.15);
+  }
+
+  .apply-bar a {
+    text-align: center;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 0.95rem 0.5rem;
+  }
+
+  .bar-tel {
+    background: var(--primary);
+    color: #fff;
+  }
+
+  .bar-apply {
+    background: var(--accent);
+    color: var(--text);
+  }
+
+  .site-footer {
+    padding-bottom: 5rem;
+  }
+}

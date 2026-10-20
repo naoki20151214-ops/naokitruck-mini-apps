@@ -21,6 +21,13 @@
     "path": "./apps/transport-company-sample/"
   },
   {
+    "id": "driver-recruit-sample",
+    "name": "ドライバー採用サイト（サンプル）",
+    "description": "運送会社向けのドライバー採用サイト。給与・待遇・1日の流れ・先輩の声・よくある質問・応募フォームを1ページにまとめたサンプル",
+    "status": "公開中",
+    "path": "./apps/driver-recruit-sample/"
+  },
+  {
     "id": "kadokawa-stock-check",
     "name": "KADOKAWA 在庫チェック",
     "description": "KADOKAWAストアの対象商品の在庫状態を表示するアプリ",
