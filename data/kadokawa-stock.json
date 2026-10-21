@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-20T23:18:05.549Z",
+  "checkedAt": "2026-10-21T01:53:08.087Z",
   "items": [
     {
       "name": "KADOKAWAストア",
@@ -9,8 +9,7 @@
     {
       "name": "MINTモール",
       "url": "https://www.mint-mall.net/products/detail.php?product_id=868026",
-      "status": "要確認",
-      "error": "HTTP 503"
+      "status": "在庫あり"
     }
   ]
 }
