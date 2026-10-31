@@ -1,0 +1,93 @@
+<article class="semicon-template-v2 sc-lesson" data-slug="semiconductor-wafer-contamination-types" data-target="new_post" data-course="洗浄コース3級-2">
+<!--KEEP:0-->
+<div class="sc-head"><span class="sc-head-ico"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="56" height="56"><rect width="120" height="120" rx="26" fill="#12634f"/><g transform="translate(10 10)" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M50 14C50 14 26 44 26 60a24 24 0 0048 0C74 44 50 14 50 14z"/><path d="M40 62a10 10 0 0010 10" stroke="#e8a317"/><path d="M78 20l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="#e8a317" stroke="none"/></g></svg></span><span class="sc-head-txt"><span class="sc-head-sub">SEMICON CAMPUS Free Courses</span><b>Cleaning Course</b><span class="sc-head-lv">Level 3 Intro · Lesson 2</span></span></div>
+<div class="semicon-hook">
+<p>Last time, we saw that cleaning makes up about one fifth of all process steps. So what exactly is the "contamination" we want to remove?</p>
+<p>In fact, contamination is broadly divided into <strong>4 types</strong>. That is because each type causes harm in a different way and is removed in a different way.</p>
+</div>
+<div class="sc-legend"><mark class="sc-exam">Yellow highlights</mark> = key points that appear on this course's tests</div>
+<h2>What you will learn in this article</h2>
+<ul>
+<li><strong>The 4 types of contamination</strong> (particles, organics, metals, and native oxide)</li>
+<li><strong>What kind of harm each one does</strong></li>
+<li><strong>How each one is removed</strong> (details in the next lessons)</li>
+</ul>
+<figure><svg viewBox="0 0 640 250" role="img" aria-label="The 4 types of contamination">
+<rect x="0" y="0" width="150" height="250" rx="12" fill="#e8f0fc" stroke="#1f5fbf" stroke-width="2"/>
+<text x="75" y="34" font-size="17" font-weight="700" fill="#1f5fbf" text-anchor="middle">① Particles</text>
+<circle cx="45" cy="95" r="10" fill="#1f5fbf"/><circle cx="85" cy="75" r="6" fill="#1f5fbf"/><circle cx="105" cy="115" r="8" fill="#1f5fbf"/><circle cx="60" cy="140" r="5" fill="#1f5fbf"/>
+<text x="75" y="190" font-size="13" fill="#1b2430" text-anchor="middle">Debris and dust</text><text x="75" y="210" font-size="13" fill="#1b2430" text-anchor="middle">→ Shorts, open circuits</text>
+<rect x="163" y="0" width="150" height="250" rx="12" fill="#fff4e0" stroke="#e8a317" stroke-width="2"/>
+<text x="238" y="34" font-size="17" font-weight="700" fill="#b87800" text-anchor="middle">② Organics</text>
+<path d="M190 100c20-30 40 30 60 0s30-20 40 0" fill="none" stroke="#b87800" stroke-width="6" stroke-linecap="round"/><path d="M190 135c20-30 40 30 60 0s30-20 40 0" fill="none" stroke="#b87800" stroke-width="6" stroke-linecap="round"/>
+<text x="238" y="190" font-size="13" fill="#1b2430" text-anchor="middle">Oil, resist residue</text><text x="238" y="210" font-size="13" fill="#1b2430" text-anchor="middle">→ Films won't stick</text>
+<rect x="326" y="0" width="150" height="250" rx="12" fill="#fde9ec" stroke="#d6455d" stroke-width="2"/>
+<text x="401" y="34" font-size="17" font-weight="700" fill="#d6455d" text-anchor="middle">③ Metals</text>
+<path d="M370 70l15 15-15 15-15-15z M410 100l15 15-15 15-15-15z M385 125l12 12-12 12-12-12z" fill="#d6455d"/>
+<text x="401" y="190" font-size="13" fill="#1b2430" text-anchor="middle">Iron, copper, sodium, etc.</text><text x="401" y="210" font-size="13" fill="#1b2430" text-anchor="middle">→ Electrical traits drift</text>
+<rect x="489" y="0" width="150" height="250" rx="12" fill="#e9f6ee" stroke="#2e9e5b" stroke-width="2"/>
+<text x="564" y="34" font-size="17" font-weight="700" fill="#2e9e5b" text-anchor="middle">④ Native oxide</text>
+<rect x="510" y="110" width="108" height="14" fill="#9fd8b5"/><rect x="510" y="124" width="108" height="40" fill="#cfd8e3"/>
+<text x="564" y="102" font-size="12" fill="#1b2430" text-anchor="middle">Thin oxide film</text>
+<text x="564" y="190" font-size="13" fill="#1b2430" text-anchor="middle">Forms in contact with air</text><text x="564" y="210" font-size="13" fill="#1b2430" text-anchor="middle">→ Poor contact</text>
+</svg><figcaption>Figure 1: The 4 types of wafer contamination (schematic)</figcaption></figure>
+<h2 data-fact-ids="W05">① Particles</h2>
+<p>These are dust in the air and tiny fragments that come from equipment. As we saw last time, they can connect or block the thin lines of a circuit and cause <strong>shorts or open circuits</strong>. Lecture materials from KTH Royal Institute of Technology in Sweden say that "the size of a particle that causes a fatal defect is one half of the minimum line width." The Northeastern University article from last time said "about one quarter." <mark class="sc-exam">Depending on the source, the guideline for the size of a particle that causes a defect is about one quarter to one half of the line width</mark>.</p>
+<div class="sc-box sc-ev"><b class="t">Evidence</b><p>KTH (Royal Institute of Technology, Sweden) lecture "Wafer Clean and Wet Processing" (Mikael Östling, 2012). The sources differ: KTH's materials say one half of the minimum line width, while Northeastern University's article says about one quarter.</p></div>
+<div class="sc-box sc-num"><b class="t">Let's think in numbers</b><p>In a table in KTH's materials, the minimum line width shrinks from 65 nanometers (2007) to 45 nanometers (2010) to 32 nanometers (2013).</p><p>Using the one-half guideline, 65 ÷ 2 = <strong>32.5 nanometers</strong> and 32 ÷ 2 = <strong>16 nanometers</strong>. The thinner the lines get, the smaller the particles you have to worry about.</p></div>
+<details class="semicon-quiz"><summary>Quick quiz: Why do particles cause "shorts or open circuits"?</summary><p>Answer: Because they connect the gaps between the thin lines of a circuit or block the lines.</p></details>
+<h2 data-fact-ids="W06">② Organics</h2>
+<p>These include oil contamination, organic vapors in the air, substances given off by storage containers, and residue of photoresist (the material used to form circuit shapes with light). KTH's materials list <mark class="sc-exam">organic vapors in the air, storage containers, and photoresist residue</mark> as the main sources of organic contamination.</p>
+<div class="sc-box sc-why"><b class="t">Why are organics a problem?</b><p>If an organic film remains, the next film will not stick to it well. Also, in later high-temperature steps, the contamination may get driven into the wafer. KTH's materials also warn that "high-temperature steps push contamination into the silicon and thin films."</p></div>
+<p>The basic way to remove them is to <mark class="sc-exam">use strong oxidizing power to turn organics into carbon dioxide and water</mark>. Examples include a mixture of sulfuric acid and hydrogen peroxide (piranha solution) and methods that use ozone.</p>
+<details class="semicon-quiz"><summary>Quick quiz: What might happen if you move on to a high-temperature step with organics still on the wafer?</summary><p>Answer: The contamination may get into the wafer or the thin films.</p></details>
+<h2 data-fact-ids="W07">③ Metals</h2>
+<p>These include iron, copper, nickel, chromium, and alkali metals (such as sodium). KTH's materials explain that metal contamination comes from chemicals and from steps such as ion implantation and dry etching. As an example of the order of magnitude of metal contamination, they give the figure of <mark class="sc-exam">about 10 to the 10th power (100 times 100 million) atoms per square centimeter</mark>.</p>
+<div class="sc-box sc-num"><b class="t">Let's think in numbers</b><p>The area of a 300-millimeter-diameter wafer, with a radius of 15 centimeters, is 3.14 × 15 × 15 ≈ <strong>707 square centimeters</strong>.</p><p>At 10 to the 10th power per square centimeter, the whole wafer has 10 to the 10th power × 707 ≈ <strong>7 × 10 to the 12th power</strong> (about 7 trillion) atoms. Even an amount you cannot see is a very large number.</p></div>
+<div class="sc-box sc-why"><b class="t">Why is even a tiny amount of metal a problem?</b><p>Metal atoms change how electricity flows in silicon. This causes transistor characteristics to drift away from the design. The basic way to remove them is to <mark class="sc-exam">dissolve metals with an acidic solution and keep them from sticking again</mark>.</p></div>
+<details class="semicon-quiz"><summary>Quick quiz: Mainly from which steps and chemicals does metal contamination come?</summary><p>Answer: From chemicals and from steps such as ion implantation and dry etching.</p></details>
+<h2 data-fact-ids="W08">④ Native oxide</h2>
+<p>When silicon touches air or water, a very thin oxide film quickly forms on its surface. This is called <strong>native oxide</strong>. KTH's materials list the following 4 items as <mark class="sc-exam">problems caused by native oxide</mark>.</p>
+<ul>
+<li>Electrical contact resistance increases</li>
+<li>Deposition that grows films selectively (CVD and epitaxy) becomes difficult</li>
+<li>It becomes a source of metal contamination</li>
+<li>Compounds of metal and silicon (silicides) become harder to form</li>
+</ul>
+<div class="sc-box sc-num"><b class="t">Let's think in numbers</b><p>Native oxide is removed with hydrofluoric acid (HF) diluted with water. <mark class="sc-exam">The dilution given in KTH's materials is HF : water = 1:50</mark>.</p><p>The total is 1 + 50 = 51, so the share of HF is 1 ÷ 51 ≈ <strong>about 2%</strong>. It is mostly water, a very dilute solution.</p></div>
+<div class="sc-box sc-why"><b class="t">Why is it still a problem after you remove it?</b><p>Because native oxide <strong>forms again right away when it touches air or water</strong>. So after removing it, it is important to move on to the next step as quickly as possible.</p></div>
+<details class="semicon-quiz"><summary>Quick quiz: What is diluted to make the solution used to remove native oxide?</summary><p>Answer: Hydrofluoric acid (HF), diluted with water.</p></details>
+<div class="sc-box sc-key"><b class="t">Key points of this lesson</b><p>There are 4 types of contamination: particles, organics, metals, and native oxide. Each causes harm differently and is removed differently. That is why cleaning uses different solutions and methods for each type.</p></div>
+<table style="width:100%;border-collapse:collapse;font-size:.9em;margin:1em 0">
+<tr style="background:#e8f0fc"><th style="border:1px solid #d5dbe2;padding:6px">Contamination</th><th style="border:1px solid #d5dbe2;padding:6px">Main harm</th><th style="border:1px solid #d5dbe2;padding:6px">How it is removed (overview)</th></tr>
+<tr><td style="border:1px solid #d5dbe2;padding:6px">Particles</td><td style="border:1px solid #d5dbe2;padding:6px">Shorts, open circuits</td><td style="border:1px solid #d5dbe2;padding:6px">Alkaline solutions, ultrasonics, etc.</td></tr>
+<tr><td style="border:1px solid #d5dbe2;padding:6px">Organics</td><td style="border:1px solid #d5dbe2;padding:6px">Films won't stick; contamination driven in</td><td style="border:1px solid #d5dbe2;padding:6px">Strong oxidation (sulfuric acid + hydrogen peroxide, ozone, etc.)</td></tr>
+<tr><td style="border:1px solid #d5dbe2;padding:6px">Metals</td><td style="border:1px solid #d5dbe2;padding:6px">Electrical characteristics drift</td><td style="border:1px solid #d5dbe2;padding:6px">Acidic solution (hydrochloric acid + hydrogen peroxide)</td></tr>
+<tr><td style="border:1px solid #d5dbe2;padding:6px">Native oxide</td><td style="border:1px solid #d5dbe2;padding:6px">Poor contact; source of metals</td><td style="border:1px solid #d5dbe2;padding:6px">Dilute HF</td></tr>
+</table>
+<p>In the next article, we take a closer look at RCA cleaning, the combination of solutions used to remove these.</p>
+<h2>Word review</h2>
+<ul>
+<li><strong>Particle:</strong> A very tiny speck of debris on a wafer.</li>
+<li><strong>Photoresist:</strong> A light-sensitive material used when forming circuit shapes with light.</li>
+<li><strong>Native oxide:</strong> A very thin oxide film that forms on the surface when it touches air or water.</li>
+<li><strong>Hydrofluoric acid (HF):</strong> A chemical used in diluted form to remove native oxide.</li>
+</ul>
+<h2>Common misconceptions</h2>
+<h3>Q. Does contamination just mean debris?</h3>
+<p>No. Besides particles, invisible organics, metals, and thin oxide films are also treated as contamination.</p>
+<h3>Q. Once it's clean, will it stay that way?</h3>
+<p>No. Some things, like native oxide, form again when exposed to air.</p>
+<h2>Official sources we referred to</h2>
+<ul class="semicon-sources sc-sources">
+<li data-source-id="S03"><a href="https://www.kth.se/social/upload/4f1d17ccf27654791f000000/Lecture%203.pdf">KTH Royal Institute of Technology, IH2655, "Lecture 3: Wafer Clean and Wet Processing" (Mikael Östling, Spring 2012)</a></li>
+<li data-source-id="S01"><a href="https://cmc.sites.northeastern.edu/an-introduction-to-semiconductor-manufacturing-and-contamination-issues-control">Northeastern University, "An Introduction to Semiconductor Manufacturing and Contamination Issues Control" (noted as updated in 2013)</a></li>
+</ul>
+</article>
+
+
+<div id="sc-read" style="max-width:720px;margin:28px auto 0"></div>
+<!--KEEP:1-->
+<!--KEEP:2-->
+
+<aside class="course-nav-wash3"><h2>Other lessons in the Cleaning Level 3 course</h2><p><a href="/wash-3/">Back to the Cleaning Level 3 course list</a></p><ul><li><a href="/semiconductor-why-wafer-cleaning/">Why is semiconductor cleaning needed so many times? The role of the cleaning process</a></li><li><a href="/rca-clean-sc1-sc2/">The basics of semiconductor cleaning, "RCA cleaning": what SC-1 and SC-2 contain and why the order matters</a></li><li><a href="/wet-cleaning-problems-dry-cleaning/">Challenges in semiconductor cleaning: the risk of over-cleaning and dry cleaning</a></li><li><a href="/wafer-cleanliness-measurement/">How semiconductor cleaning is evaluated: measuring particles, metals, and organics</a></li><li><a href="/cleanroom-class-contamination-sources/">How to read cleanroom class standards (ISO 14644-1 and US Federal Standard), plus FFUs and ULPA filters [Cleaning Level 3, Lesson 1 Extra]</a></li><li><a href="/native-oxide-hf-last-hydrogen-termination/">How fast does native oxide come back? The surface after HF and "hydrogen termination" [Cleaning Level 3, Lesson 2 Extra]</a></li><li><a href="/rca-clean-history-sc1-particle-removal/">How SC-1 cleaning (APM) works: removing particles with zeta potential, ammonia, and hydrogen peroxide [Cleaning Level 3, Lesson 3 Extra]</a></li><li><a href="/batch-vs-single-wafer-cleaning-one-bath/">Batch vs. single-wafer cleaning: the evolution from multiple baths to one bath [Cleaning Level 3, Lesson 4 Extra]</a></li><li><a href="/txrf-total-reflection-xray-fluorescence-basics/">How TXRF works: measuring metals on the wafer surface with total reflection [Cleaning Level 3, Lesson 5 Extra]</a></li><li><a href="/ultrapure-water-rinse-drying-watermark/">Semiconductor wafer drying (Marangoni drying and IPA drying) and preventing watermarks: ultrapure water rinsing and drying</a></li><li><a href="/wafer-cleaning-chemical-safety-hydrofluoric-acid/">Safety of chemicals used in cleaning: hydrofluoric acid is dangerous even when it doesn't hurt</a></li></ul><p>Want to learn about cleaning equipment makers? See also <a href="/what-is-screen-semiconductor-cleaning-equipment/">What makes SCREEN special? A beginner's guide to semiconductor cleaning equipment and related processes and jobs</a>.</p></aside>

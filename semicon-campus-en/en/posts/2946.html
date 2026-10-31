@@ -1,0 +1,101 @@
+<article class="semicon-template-v2 sc-lesson">
+<!--KEEP:0-->
+<div class="sc-head"><span class="sc-head-ico"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="56" height="56"><rect width="120" height="120" rx="26" fill="#12634f"/><g transform="translate(10 10)" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M50 14C50 14 26 44 26 60a24 24 0 0048 0C74 44 50 14 50 14z"/><path d="M40 62a10 10 0 0010 10" stroke="#e8a317"/><path d="M78 20l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="#e8a317" stroke="none"/></g></svg></span><span class="sc-head-txt"><span class="sc-head-sub">SEMICON CAMPUS Free Courses</span><b>Cleaning Course</b><span class="sc-head-lv">Level 3 Intro · Lesson 5 Extra</span></span></div>
+<div class="semicon-hook">
+<p>In Lesson 5, we looked at <strong>TXRF</strong> as a way to measure metal contamination. We described it as "shining X-rays on the wafer and checking the light that comes out to find the type and amount of metal." But why can it find only the tiny amount of contamination on the wafer surface?</p>
+<p>In this extra lesson, we look at how TXRF works and, with numbers, <strong>how small an amount it can find</strong>.</p>
+</div>
+<div class="sc-legend"><mark class="sc-exam">Yellow highlights</mark> = key points that appear on this course's tests</div>
+<h2>What you will learn in this article</h2>
+<ul>
+<li>What <strong>X-ray fluorescence</strong> is</li>
+<li>Why the X-rays hit at a <strong>very shallow angle</strong> (total reflection)</li>
+<li>The <strong>detection limit</strong> of TXRF (how small an amount it can find)</li>
+<li>What TXRF is good and bad at (light elements)</li>
+</ul>
+<h2>① What does a TXRF tool do?</h2>
+<p>In Lesson 5, we looked at <strong>TXRF</strong> as a way to measure metal contamination. The full name is <strong>total reflection X-ray fluorescence analysis</strong>. The name is long, so let's go through how it works step by step.</p>
+<p>When you shine X-rays on a material, the elements in it give off <mark class="sc-exam">light that is specific to each element (fluorescent X-rays)</mark>. The type of light tells you "which element," and its strength tells you "how much." This is the basic idea of X-ray fluorescence analysis.</p>
+<details class="semicon-quiz">
+<summary>Quick quiz: What can fluorescent X-rays tell you?</summary>
+<p>Answer: The type of element (from the type of light) and the amount (from the strength of the light).</p>
+</details>
+<h2>② Looking only at the surface with "total reflection"</h2>
+<p>Contamination on a wafer sits only on the surface, in tiny amounts. But if you shine X-rays in the normal way, they go <strong>deep</strong> into the wafer, and a strong signal also comes from the silicon inside. Then the weak signal from the small amount of surface contamination gets drowned out.</p>
+<p>So TXRF shines the X-rays on the wafer surface at a <mark class="sc-exam">very shallow angle</mark>. Below a certain angle (the critical angle), almost all of the X-rays are reflected and do not enter the wafer. This is <strong>total reflection</strong>. Because the X-rays do not go in, little signal comes from inside the wafer, and <strong>only the surface contamination</strong> shows up clearly.</p>
+<div class="sc-box sc-ev"><b class="t">Evidence</b></p>
+<p>An introduction page from SSRL (Stanford Synchrotron Radiation Lightsource) in the US shows an example of measuring tiny amounts of impurities on a silicon wafer, with the X-rays coming in at <mark class="sc-exam">0.085 degrees</mark>, a shallow angle that causes total reflection.</p>
+</div>
+<figure><svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" role="img" style="width:100%;height:auto;max-width:640px;display:block;margin:0 auto" font-family="sans-serif"><rect x="60" y="200" width="520" height="30" fill="#d9d9d9" stroke="#777" stroke-width="2"/><text x="320" y="221" text-anchor="middle" font-size="14" fill="#333">Wafer (silicon)</text><g fill="#c0392b"><circle cx="300" cy="195" r="5"/><circle cx="330" cy="195" r="5"/><circle cx="355" cy="195" r="5"/></g><text x="330" y="250" text-anchor="middle" font-size="13" fill="#c0392b">Metal on the surface (contamination)</text><g stroke="#1a5fb4" stroke-width="4" fill="none"><path d="M70 160 L300 198"/><path d="M300 198 l-12 -2 m12 2 l-9 8"/></g><text x="70" y="148" font-size="14" fill="#1a5fb4">X-rays (at a very shallow angle)</text><g stroke="#888" stroke-width="3" stroke-dasharray="6 5" fill="none"><path d="M355 198 L580 160"/></g><text x="580" y="150" text-anchor="end" font-size="13" fill="#888">Mostly reflected; does not enter the wafer</text><g stroke="#c0392b" stroke-width="3" fill="none"><path d="M330 188 L330 70"/><path d="M330 70 l-6 10 m6 -10 l6 10"/></g><rect x="290" y="30" width="80" height="38" rx="5" fill="#fff" stroke="#c0392b" stroke-width="2"/><text x="330" y="54" text-anchor="middle" font-size="14" fill="#c0392b">Detector</text><text x="344" y="130" font-size="13" fill="#c0392b">Light from the metal (fluorescent X-rays)</text></svg><figcaption>Figure 1: Diagram of how TXRF works (drawn by our editors to explain the idea; angles and sizes are not to scale)</figcaption></figure>
+<div class="sc-box sc-num"><b class="t">Let's think in numbers</b></p>
+<p>0.085 degrees is about 1/12 of a degree (1 ÷ 0.085 ≈ 11.8). Even 1 degree is so shallow that it looks almost parallel to the ground. TXRF shines X-rays at about 1/12 of that, a very shallow angle.</p>
+</div>
+<details class="semicon-quiz">
+<summary>Quick quiz: Why does TXRF shine X-rays at a very shallow angle?</summary>
+<p>Answer: So the X-rays do not enter the wafer (total reflection), and only the signal from the surface contamination shows up clearly.</p>
+</details>
+<h2>③ How small an amount of contamination can it find?</h2>
+<p>In Lesson 5, we wrote that the detection limit of TXRF is <strong>10^9 to 10^10 atoms</strong> per square centimeter. The numbers vary by source. Here are some examples.</p>
+<ul>
+<li>In a table in one review (a Rigaku journal), standard TXRF is <mark class="sc-exam">10^9 atoms</mark> and VPD-ICP-MS is <mark class="sc-exam">10^7 atoms</mark> (both per square centimeter)</li>
+<li>A page introducing a 1989 paper says a standard tool can go down to <mark class="sc-exam">10^11 atoms</mark></li>
+<li>In the SSRL example using synchrotron radiation (very strong X-rays), nickel can be found down to <mark class="sc-exam">8×10^7 atoms</mark> (1,000-second measurement)</li>
+</ul>
+<div class="sc-box sc-num"><b class="t">Let's think in numbers</b></p>
+<p>Comparing TXRF (10^9 atoms) and VPD-ICP-MS (10^7 atoms): 10^9 ÷ 10^7 = 10^2 = <strong>100 times</strong>. By this math, VPD-ICP-MS can find amounts 100 times smaller.</p>
+<p>In Lesson 5, we saw that there are about 7×10^14 silicon atoms per square centimeter. If there are 10^9 metal atoms, then 7×10^14 ÷ 10^9 = 7×10^5. That means <strong>1 metal atom for about 700,000 silicon atoms</strong>.</p>
+</div>
+<p>The international standard ISO 14706:2014 sets out how to measure contamination on silicon wafer surfaces with TXRF. According to the standard, it covers elements with <mark class="sc-exam">atomic numbers 16 (sulfur) to 92 (uranium)</mark>, over a range of <strong>10^10 to 10^14 atoms</strong> per square centimeter. With a pretreatment called <strong>VPD (vapor phase decomposition)</strong>, even smaller amounts can be measured. (VPD generally means collecting the contamination on the wafer surface into a small droplet to concentrate it before measuring.)</p>
+<div class="sc-box sc-why"><b class="t">Why is TXRF bad at light elements?</b></p>
+<p>As the standard covers only sulfur (atomic number 16) and heavier, elements lighter than sulfur (atomic number 16) cannot be measured well with TXRF. So, as we saw in Lesson 5, light elements are measured with a different method (SIMS).</p>
+</div>
+<div class="sc-box sc-why" style="border-left:4px solid #1a5fb4"><b class="t">See the real thing (external site, in English)</b></p>
+<p>You can see how TXRF measurements are done, along with figures, on the introduction page from SSRL (Stanford Synchrotron Radiation Lightsource).</p>
+<p><a rel="nofollow noopener" href="https://www-ssrl.slac.stanford.edu/research/highlights_archive/txrf.html" target="_blank">SSRL: "Looking at Trace Impurities on Silicon Wafers Using Synchrotron Radiation"</a></p>
+</div>
+<details class="semicon-quiz">
+<summary>Quick quiz: What kind of elements can TXRF not measure well?</summary>
+<p>Answer: Light elements (the standard starts at sulfur, atomic number 16). Light elements are measured with methods such as SIMS.</p>
+</details>
+<div class="sc-box sc-key"><b class="t">Key points of this extra lesson</b></p>
+<p>TXRF shines X-rays at a very shallow angle so they are totally reflected, and checks only the metals on the wafer surface. The fluorescent X-rays from each element tell you the type and amount. A rough guide for the detection limit is around 10^9 atoms per square centimeter (it varies by source). TXRF is bad at light elements, which are measured with other methods.</p>
+</div>
+<p>This is the end of "Level 3 Intro" in this course. Through five lessons and their extra lessons, we have covered the purpose of cleaning, contamination, RCA cleaning, challenges, and measurement methods. Try the review test to check your understanding.</p>
+<h2>Word review</h2>
+<p><strong>Fluorescent X-rays</strong>: When X-rays hit a material, each element gives off its own specific light (X-rays). The word means this effect, or the light itself.</p>
+<p><strong>Total reflection</strong>: When light or X-rays hit at a very shallow angle, almost all of it is reflected and does not go in.</p>
+<p><strong>Critical angle</strong>: The boundary angle at which total reflection starts.</p>
+<p><strong>Detection limit</strong>: The smallest amount a measurement can find.</p>
+<p><strong>VPD (vapor phase decomposition)</strong>: A pretreatment that collects and concentrates the contamination on the wafer surface before measuring.</p>
+<h2>Common misconceptions</h2>
+<h3>Q. Does TXRF destroy the wafer to measure it?</h3>
+<p>No. As we saw in Lesson 5, it can measure without damaging the wafer.</p>
+<h3>Q. Is the detection limit of TXRF one fixed number?</h3>
+<p>No. The number varies with the source, the tool, the element measured, the type of X-rays (synchrotron radiation or not), and whether pretreatment is used. In this article, we listed each source's numbers as they are.</p>
+<h2>Sources</h2>
+<ul class="semicon-sources sc-sources">
+<li><a rel="nofollow noopener" href="https://www-ssrl.slac.stanford.edu/research/highlights_archive/txrf.html" target="_blank">SSRL/SLAC: "Looking at Trace Impurities on Silicon Wafers Using Synchrotron Radiation" (example of a 0.085-degree incident angle and a detection limit of 8×10^7 atoms)</a></li>
+<li><a rel="nofollow noopener" href="https://resources.rigaku.com/hubfs/2024%20Rigaku%20Global%20Site/Resource%20Hub/Knowledge%20Library/Rigaku%20Journals/Volume%2029(1)%20-%20Winter%202013/RJ29-1_9-14.pdf?hsLang=en" target="_blank">Rigaku Journal Vol. 29 No. 1 (2013) (table comparing detection limits of TXRF and VPD-ICP-MS)</a></li>
+<li><a rel="nofollow noopener" href="https://link.springer.com/article/10.1007/BF00572381" target="_blank">Springer: "Penka and Hub, 1989" (detection limit of a standard tool)</a></li>
+<li><a rel="nofollow noopener" href="https://iteh.eu/catalog/standards/iso/0b017882-3bd5-4fea-9a04-e5b91585bd73/iso-14706-2014" target="_blank">ISO 14706:2014 (method for measuring contamination on silicon wafer surfaces by TXRF; covered elements and measurement range)</a></li>
+</ul>
+</article>
+<p><!--KEEP:1--></p>
+<aside class="course-nav-wash3">
+<h2>Other lessons in the Cleaning Level 3 course</h2>
+<p><a href="/wash-3/">Back to the Cleaning Level 3 course list</a></p>
+<ul>
+<li><a href="/semiconductor-why-wafer-cleaning/">Why is semiconductor cleaning needed so many times? The role of the cleaning process</a></li>
+<li><a href="/semiconductor-wafer-contamination-types/">4 types of contamination removed in semiconductor cleaning: particles, organics, metals, and native oxide</a></li>
+<li><a href="/rca-clean-sc1-sc2/">The basics of semiconductor cleaning, "RCA cleaning": what SC-1 and SC-2 contain and why the order matters</a></li>
+<li><a href="/wet-cleaning-problems-dry-cleaning/">Challenges in semiconductor cleaning: the risk of over-cleaning and dry cleaning</a></li>
+<li><a href="/wafer-cleanliness-measurement/">How semiconductor cleaning is evaluated: measuring particles, metals, and organics</a></li>
+<li><a href="/cleanroom-class-contamination-sources/">How to read cleanroom class standards (ISO 14644-1 and US Federal Standard), plus FFUs and ULPA filters [Cleaning Level 3, Lesson 1 Extra]</a></li>
+<li><a href="/native-oxide-hf-last-hydrogen-termination/">How fast does native oxide come back? The surface after HF and "hydrogen termination" [Cleaning Level 3, Lesson 2 Extra]</a></li>
+<li><a href="/rca-clean-history-sc1-particle-removal/">How SC-1 cleaning (APM) works: removing particles with zeta potential, ammonia, and hydrogen peroxide [Cleaning Level 3, Lesson 3 Extra]</a></li>
+<li><a href="/batch-vs-single-wafer-cleaning-one-bath/">Batch vs. single-wafer cleaning: the evolution from multiple baths to one bath [Cleaning Level 3, Lesson 4 Extra]</a></li>
+<li><a href="/ultrapure-water-rinse-drying-watermark/">Semiconductor wafer drying (Marangoni drying and IPA drying) and preventing watermarks: ultrapure water rinsing and drying</a></li>
+<li><a href="/wafer-cleaning-chemical-safety-hydrofluoric-acid/">Safety of chemicals used in cleaning: hydrofluoric acid (HF) is dangerous even when it does not hurt</a></li>
+</ul>
+<p>Want to learn about cleaning equipment makers? See also <a href="/what-is-screen-semiconductor-cleaning-equipment/">What makes SCREEN special? A beginner's guide to semiconductor cleaning equipment and related processes and jobs</a>.</p>
+</aside>
