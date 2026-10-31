@@ -1,0 +1,258 @@
+
+<!--KEEP:0-->
+
+
+<!--KEEP:1-->
+
+<!--KEEP:2-->
+
+<article class="semicon-article" id="top">
+<div class="semicon-level">
+  <div class="semicon-level-badge">Intermediate</div>
+  <div>
+    <strong>Article level</strong><br>
+    For readers who are starting to understand yield, defect inspection, SPC, film thickness measurement, and overlay metrology. Instead of formulas, this article explains how a fab uses data to find out "why the good-chip rate went down."
+  </div>
+</div>
+
+<p class="semicon-lead">Yield analysis is the job of narrowing down possible causes of defects when the good-chip rate drops in a semiconductor fab. It does this by overlaying defect maps, measurements, process history, equipment data, and more. The goal is not just to see "how many defects there were," but to track "where, since when, and under what conditions they increased," and then feed that back into process improvement.</p>
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/yield-analysis-featured.png" alt="Diagram showing that yield analysis traces defect causes using defect maps and process data">
+  <figcaption>Yield analysis narrows down possible causes by overlaying defect maps and process data. It doesn't end with inspection. The results go back into process improvement.</figcaption>
+</figure>
+
+<div class="semicon-map">
+  <strong>What you will learn in this article</strong>
+  <ul>
+    <li>What yield analysis work involves</li>
+    <li>How to read defect maps, process data, and equipment history</li>
+    <li>How it differs from yield improvement, failure analysis, and SPC</li>
+    <li>What "yield analysis" and "process data analysis" mean in job postings</li>
+    <li>How to connect manufacturing, quality, inspection, and data analysis experience to semiconductor jobs</li>
+  </ul>
+</div>
+
+
+<h2>What is yield analysis?</h2>
+
+<p>Yield is the percentage of chips made that are good enough to use. When yield drops, you get fewer sellable chips even with the same wafers, equipment, and materials. In other words, yield is a number tied directly to a fab's profits.</p>
+
+<p>However, when yield drops, just saying "defects went up" doesn't help the fab improve anything. What matters is finding out why they went up.</p>
+
+<p>In yield analysis, you compare where defects appear, when they occur, which tools the wafers passed through, changes in measurements, material lots, operating conditions, and more. Instead of naming a culprit right away, you overlay multiple pieces of evidence and gradually cut down the list of suspicious causes.</p>
+
+<div class="semicon-mobile-summary">If you're reading on a phone, this part is enough to start. Yield analysis is "the job of finding out why the good-chip rate dropped by overlaying data." It is where inspection, quality, process, and data analysis meet.</div>
+
+<h2>A defect map shows how defects are spread out</h2>
+
+<p>One common view in yield analysis is the defect map, or wafer map. It shows, like a map, where on the wafer defects are concentrated.</p>
+
+<p>Even with the same defect rate, the causes you suspect change depending on whether defects are scattered randomly, concentrated at the edge, clustered in the center, or appear in streaks.</p>
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/yield-analysis-wafer-patterns.png" alt="Diagram comparing defect map patterns: concentrated at the edge, concentrated in the center, and appearing in streaks">
+  <figcaption>The location and shape of defects change which causes you suspect, such as chemicals, drying, wafer transfer, film thickness, temperature, equipment, or scratches.</figcaption>
+</figure>
+
+<div class="semicon-grid">
+  <div class="semicon-card"><b>More at the edge</b><span>Suspect drying at the wafer edge, chemicals wrapping around the edge, wafer transfer, or process conditions near the edge.</span></div>
+  <div class="semicon-card"><b>More in the center</b><span>You may look at uneven process conditions, such as film thickness, temperature, plasma distribution, or rotation conditions.</span></div>
+  <div class="semicon-card"><b>Appearing in streaks</b><span>Suspect causes with a direction, such as scratches during transfer, flow inside the tool, or the effect of a specific part.</span></div>
+</div>
+
+<h2>Yield analysis is about overlaying data</h2>
+
+<p>A defect map alone doesn't settle the cause. You can see a trend in location, but you need other data to know which process step caused it, which tool it increased on, and when it started.</p>
+
+<p>So yield analysis overlays multiple types of data. It connects defect inspection results, CD-SEM line widths, film thickness measurements, overlay metrology, SPC control charts, equipment logs, material lots, process history, and more.</p>
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/yield-analysis-data-flow.png" alt="Flow connecting defects, measurements, process history, and possible causes in yield analysis">
+  <figcaption>Don't jump to conclusions from one type of data. Overlay defects, measurements, process history, and equipment history to narrow down possible causes.</figcaption>
+</figure>
+
+<p>For example, say defects increased in one lot. The defect map shows more at the edge. The film thickness data shows the film is slightly thinner only at the edge. The equipment history shows that this lot went through a specific deposition tool. When these line up, you can form a hypothesis that the deposition conditions or the tool's condition may be the problem.</p>
+
+<h3>Two major approaches to yield analysis</h3>
+
+<p>In real semiconductor fabs, engineers use even more detailed data to track causes. Two things beginners should know first are <strong>bitmap correlation</strong> and <strong>FDC</strong>.</p>
+
+<div class="semicon-grid two">
+  <div class="semicon-card"><b>Bitmap correlation</b><span>Overlays the locations that failed electrical testing with physical positions on the wafer. The idea is to compare memory failure patterns and test results with the coordinates from defect inspection.</span></div>
+  <div class="semicon-card"><b>FDC</b><span>Short for Fault Detection and Classification. It looks at sensor data from the tool, such as temperature, pressure, gas flow, and processing time, to find unusual equipment conditions.</span></div>
+</div>
+
+<p>For example, electrical testing shows that only certain chips failed. Defect inspection finds a pattern abnormality near them. And FDC shows that the tool's pressure was slightly off only when that lot was processed. When this information lines up, it's easier to treat the issue not as a coincidence but as a process or equipment abnormality.</p>
+
+<p>The important thing here is not memorizing difficult system names. In yield analysis, what matters is the mindset of connecting <strong>electrical results, physical defects, and equipment condition</strong>.</p>
+
+<div class="semicon-note">
+  <strong>In simple terms</strong><br>
+  Yield analysis is a bit like finding the culprit in a mystery. But it doesn't run on gut feeling. You overlay evidence such as defect locations, measurements, equipment history, and material lots to find "the most suspicious condition."
+</div>
+
+<h2>Sort possible causes into process, equipment, and materials</h2>
+
+<p>The key in yield analysis is not to jump to a conclusion about the cause. In a semiconductor fab, the same defect could have many causes: process, equipment, materials, environment, human work, and more.</p>
+
+<p>So first, you sort the possible causes. "Did it increase after lithography?" "Did it increase after cleaning?" "Is it higher only on Tool A?" "Is there a difference between material lots?" "Did it change after maintenance?" You compare data from angles like these.</p>
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/yield-analysis-root-cause.png" alt="Diagram sorting possible causes in yield analysis into process, equipment, materials, and environment">
+  <figcaption>Yield analysis connects hands-on fab experience with data analysis. It organizes possible causes into process, equipment, materials, and environment.</figcaption>
+</figure>
+
+<div class="semicon-table-wrap">
+  <table class="semicon-table">
+    <thead>
+      <tr><th>Angle</th><th>What to check</th><th>Related jobs</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Process</strong></td><td>After which process step defects increased</td><td>Process engineer, quality, yield improvement</td></tr>
+      <tr><td><strong>Equipment</strong></td><td>Differences by specific tool, chamber, or after maintenance</td><td>Equipment engineer, FSE, maintenance</td></tr>
+      <tr><td><strong>Materials</strong></td><td>Lot differences in chemicals, gases, wafers, resist, or slurry</td><td>Materials, quality assurance, process</td></tr>
+      <tr><td><strong>Data</strong></td><td>Trends in SPC, measurements, defect classification, and test results</td><td>Data analysis, yield analysis, quality data analysis</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>How it differs from yield improvement, failure analysis, and SPC</h2>
+
+<p>Yield analysis often appears alongside similar terms. Beginners easily get confused here, so let's sort them out roughly.</p>
+
+<div class="semicon-table-wrap">
+  <table class="semicon-table">
+    <thead>
+      <tr><th>Term</th><th>Main meaning</th><th>Relation to yield analysis</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Yield improvement</strong></td><td>All activities to raise the good-chip rate</td><td>Yield analysis comes before improvement and looks for possible causes</td></tr>
+      <tr><td><strong>Failure analysis</strong></td><td>Digging into the cause of individual defects through observation and analysis</td><td>Suspicious defects found in yield analysis may be passed on to failure analysis</td></tr>
+      <tr><td><strong>SPC</strong></td><td>Finding process abnormalities early from changes in measurements</td><td>Shows early signs of yield loss and when changes started</td></tr>
+      <tr><td><strong>Process data analysis</strong></td><td>Comparing tools, conditions, lots, and measurements</td><td>The core way of looking at data in yield analysis</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<p>In other words, yield analysis is "the job of narrowing down possible causes with data." You notice a change with SPC, see the location with defect inspection, dig deeper with failure analysis, and feed it back into process improvement. Yield analysis sits within this flow.</p>
+
+<section class="mp1-section" id="maintenance-phase1-learning"><h2>Connecting yield analysis, equipment logs, and FDC to real work and relearning</h2><p>To link equipment logs with defect data, the starting point is lining up when, on which tool, and in which lot a change occurred. Experience matching maintenance records against defect maps and measurements, and separating equipment causes from candidates that can't be confirmed yet, connects you to process improvement. You can compare two paths: learning the basics of quality control and statistics, or moving into a technical job where you can use your manufacturing, maintenance, or quality experience.</p></section>
+<h2>The market value of people who understand yield analysis</h2>
+
+<p>Yield analysis requires both knowledge of the manufacturing floor and the ability to read data. If you only look at data without understanding what the processes and tools mean, it's hard to narrow down causes. On the other hand, floor experience alone has limits when it comes to broadly comparing differences between lots and tools.</p>
+
+<p>That's why people with experience in manufacturing, inspection, quality, equipment maintenance, or data analysis can connect their experience to yield analysis more easily. Experience summarizing defect rates in Excel, tracking down the causes of quality problems, responding to equipment abnormalities, or adjusting conditions based on measurements all make good material to put into words for semiconductor jobs.</p>
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/yield-analysis-career-keywords.png" alt="Yield analysis keywords seen in job postings: yield analysis, process data analysis, SPC, defect map, quality improvement">
+  <figcaption>In job postings, this work appears under terms like yield analysis, process data analysis, SPC, defect map, and quality improvement.</figcaption>
+</figure>
+
+<div class="semicon-grid">
+  <div class="semicon-card"><b>Manufacturing experience</b><span>Makes it easier to understand defects, operating conditions, lots, and tool differences from a floor perspective.</span></div>
+  <div class="semicon-card"><b>Quality experience</b><span>Experience with defect rates, preventing recurrence, root cause investigation, and writing reports is useful.</span></div>
+  <div class="semicon-card"><b>Data experience</b><span>Experience with Excel, Python, statistics, charting, and checking outliers is useful.</span></div>
+</div>
+
+<h3>QC and quality improvement experience from other industries is a strong asset</h3>
+
+<p>Even if you have no semiconductor experience, quality control or quality assurance experience in automotive, electronic components, precision equipment, chemicals, food, pharmaceuticals, and similar industries fits well with yield analysis.</p>
+
+<p>The reason is that the basics of quality improvement are shared across industries. Look at defect rates, separate where defects occur, check lot differences, confirm changes in equipment or conditions, narrow down causes with "5 Whys" analysis, and connect it to preventing recurrence. This flow is the same in semiconductors.</p>
+
+<p>Of course, you need to learn semiconductor-specific process and tool names. But people with experience in QC stories, FMEA, control charts, design of experiments, process improvement, and troubleshooting can more easily translate job posting terms like "yield improvement," "quality data analysis," "process data analysis," and "failure analysis" into their own experience.</p>
+
+<div class="semicon-note">
+  <strong>Looking at it as a career path</strong><br>
+  We can't promise a higher annual salary, but the semiconductor industry has strong demand for people in equipment, quality, data, and mass-production improvement. If you have worked on quality improvement or defect root cause investigation in another manufacturing industry, it is worth checking whether you can describe your experience for semiconductor jobs.
+</div>
+
+<div class="semicon-cta">
+  <h3>What to sort out before looking at yield analysis jobs</h3>
+  <p>When you see terms like yield analysis, process data analysis, quality data analysis, mass-production ramp-up, or failure analysis in a job posting, sort out whether your experience fits best under "floor," "quality," "equipment," or "data." Especially if you have QC, quality assurance, quality control, or process improvement experience in another industry, checking how semiconductor employers will view it can change which jobs you apply to.</p>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn" href="https://semicon-campus.com/semiconductor-career-service-selection-guide/">See how to choose a career change service strong in semiconductor jobs</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/how-to-read-semiconductor-job-description/">See how to read job postings</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/semiconductor-career-map/">See the job map</a>
+  </div>
+</div>
+
+<h2>Summary: Yield analysis is data work that protects a fab's profits</h2>
+
+<p>Yield analysis is the job of tracking why the good-chip rate dropped, using defect maps, measurements, process history, equipment data, and more. It's not just counting defects. It looks at where, since when, and under what conditions they increased, and narrows down possible causes.</p>
+
+<p>Data from defect inspection, CD-SEM, film thickness measurement, overlay metrology, and SPC become the material for yield analysis. Measuring is not the end. What matters is feeding the results back into process, equipment, materials, and environment to make improvements.</p>
+
+<p>When you see terms like yield analysis, process data analysis, quality data analysis, SPC, failure analysis, or mass-production ramp-up in a job posting, think of it as work connected to what this article covers.</p>
+
+<div class="semicon-cta">
+  <h3>Coming up next</h3>
+  <p>Next, we move on to "What Is an Inspection and Metrology Engineer?", which turns knowledge of inspection, metrology, and yield analysis into a job. We'll sort out what kinds of job postings and careers measurement work leads to.</p>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn" href="https://semicon-campus.com/semiconductor-career-map/">See the job map first</a>
+  </div>
+</div>
+
+<div class="semicon-cta">
+  <h3>Learn semiconductors the easy way on YouTube too</h3>
+  <p>For video, we can break this into topics like "Defect maps reveal the cause," "Yield analysis is the detective work of a semiconductor fab," and "Why quality experience leads to semiconductor jobs."</p>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn" href="https://www.youtube.com/@semicon-campus">Visit the YouTube channel</a>
+  </div>
+</div>
+
+<h2>Read next</h2>
+<div class="semicon-links">
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/semiconductor-career-map/">Semiconductor Industry Job Map</a></strong>
+    <p>See which jobs yield analysis connects to: process, quality, inspection, or data analysis.</p>
+  </div>
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/how-to-read-semiconductor-job-description/">How to Read Semiconductor Job Postings</a></strong>
+    <p>Understand terms that appear in job postings, such as yield improvement, quality data analysis, and SPC.</p>
+  </div>
+</div>
+
+<h2>Related articles</h2>
+<div class="semicon-links">
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/what-is-semiconductor-yield/">What Is Yield?</a></strong>
+    <p>Learn how the good-chip rate relates to fab profits, the basis for yield analysis.</p>
+  </div>
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/what-is-semiconductor-defect-inspection/">What Is Defect Inspection?</a></strong>
+    <p>Understand how defect maps and inspection data connect to yield analysis.</p>
+  </div>
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/what-is-spc-semiconductor-process-control/">What Is SPC?</a></strong>
+    <p>Learn how to find process abnormalities from changes in measurements.</p>
+  </div>
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/what-is-semiconductor-failure-analysis/">What Is Failure Analysis?</a></strong>
+    <p>Learn how possible causes found in yield analysis are investigated further through observation and analysis.</p>
+  </div>
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/what-is-overlay-metrology/">What Is Overlay Metrology?</a></strong>
+    <p>Understand how lithography misalignment data affects yield.</p>
+  </div>
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/what-is-film-thickness-measurement/">What Is Film Thickness Measurement?</a></strong>
+    <p>Understand how film thickness data is used to separate process differences and defect causes.</p>
+  </div>
+</div>
+
+<section class="mp1-section" id="maintenance-phase1-career"><h2>Jobs that use knowledge of yield analysis, equipment logs, and FDC, and your next steps</h2><p>If you have experience checking equipment logs, analyzing quality data, or isolating causes, organize each item as a set: "target equipment, symptom, the checks you did, and the result." Compare the equipment you'd handle, night shifts and business travel, training system, and application requirements against job postings. This helps you separate the experience you can use from the knowledge you need to add.</p><aside class="semicon-cta mp1-card"><h3>Check the big picture of the work and how to choose job postings and learning</h3><p>In the Equipment Maintenance Hub, you can review inspection and troubleshooting work, how to organize your experience, and job postings, basic learning, and certification prep all in one place. If you want to compare the scope of equipment roles and customer support, also see the related job articles.</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/" class="semicon-btn mp1-button" data-maintenance-phase1-hub="277" data-cta="maintenance_hub" data-cta-type="maintenance_hub" data-cta-stage="career" data-cta-id="maintenance_413_hub277_end" data-cta-route="maintenance_413_hub277_end">Check job duties, job postings, and learning in the Equipment Maintenance Hub</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/" class="semicon-btn mp1-button" data-maintenance-phase1-hub="237" data-cta="equipment_hub" data-cta-type="equipment_hub" data-cta-stage="career" data-cta-id="maintenance_413_hub237_end" data-cta-route="maintenance_413_hub237_end">See the scope, job postings, and learning for equipment engineers</a></div></aside></section>
+
+<h2>References</h2>
+<ul>
+  <li><a href="https://www.kla.com/products/wafer-manufacturing/wafer-defect-inspection-review">KLA: Defect Inspection and Review</a></li>
+  <li><a href="https://www.kla.com/products/software-solutions/semiconductor">KLA: Semiconductor Software Solutions</a></li>
+  <li><a href="https://www.siemens.com/en-us/products/ic/tessent/yield-learning/">Siemens: Tessent Yield Learning</a></li>
+  <li><a href="https://www.synopsys.com/content/dam/synopsys/silicon/datasheets/yield-manager-ds.pdf">Synopsys: YieldManager Datasheet</a></li>
+</ul>
+
+<a class="semicon-backtop" href="#top" aria-label="Back to top">↑</a>
+</article>
+
+<aside class="related-spokes"><h2>You may also like</h2><ul><li><a href="/wafer-map-defect-pattern/">Where Did the Defects Appear? Finding Clues to the Cause from Wafer Maps</a></li><li><a href="/semiconductor-yield-improvement/">What Is Semiconductor Yield Improvement? Yield Learning, the Poisson Model, and Defect Density D0</a></li></ul></aside>

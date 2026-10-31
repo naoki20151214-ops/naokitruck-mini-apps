@@ -1,0 +1,212 @@
+<!--KEEP:0-->
+<div class="semicon-article" id="semicon-top">
+<div class="semicon-level">
+<div class="semicon-level-top"><span class="semicon-level-label">Learning level</span><strong class="semicon-stars" aria-label="Beginner (level 1 of 5)"><span class="on">★</span><span class="off">☆☆☆☆</span><span>Beginner</span></strong></div>
+</div>
+<div class="semicon-lead">
+<p>When you use a smartphone, it sometimes slows down, gets hot, or drains its battery fast. There are many causes, and one of them lies between the wires inside the semiconductor chip.</p>
+<p>Inside a chip, thin metal wires are packed closely side by side. Between the wires is a material that does not conduct electricity, called an "insulating film" (dielectric). In fact, the chip's speed and energy savings are supported by a trick: making this insulating film deliberately "airy." This article explains why, step by step.</p>
+</div>
+<div class="semicon-note">
+<p>There are many other reasons a smartphone slows down or gets hot. This article covers only the part related to the wiring inside the chip.</p>
+</div>
+<div class="semicon-map">
+<h3>What you will learn in this article</h3>
+<ol>
+<li><strong>Goal of this article:</strong> Understand why the insulating film between wires is made airy</li>
+<li><strong>First half:</strong> What goes wrong when wires get thinner and closer (wiring capacitance and dielectric constant)</li>
+<li><strong>Second half:</strong> How low-k materials evolved, their weaknesses and fixes, and air gaps</li>
+</ol>
+</div>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep113-blog-ep113-05-chipwire.jpg" alt="Close-up illustration of thin copper-colored wires densely lined up on the surface of a chip"><figcaption>Close-up illustration of chip wiring. This is not a real chip. EP113 article image (AI-generated). The generated image was resized and optimized as a JPEG.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the figure</b></p>
+<ul>
+<li>Thin wires line up inside the chip</li>
+<li>There is an insulating film between the wires</li>
+<li>The closer the wires, the more charge builds up</li>
+</ul>
+</div>
+<div class="semicon-chat-row naoki">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">Assistant</div>
+</div>
+<div class="semicon-bubble">
+<p>Professor, is the chip's wiring part of the reason a smartphone gets hot?</p>
+</div>
+</div>
+<div class="semicon-chat-row teacher">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">Professor</div>
+</div>
+<div class="semicon-bubble">
+<p>That's right. When charge builds up between the wires, signals slow down and extra power is used.</p>
+</div>
+</div>
+<div class="semicon-chat-row naoki">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">Assistant</div>
+</div>
+<div class="semicon-bubble">
+<p>How can we keep charge from building up?</p>
+</div>
+</div>
+<div class="semicon-chat-row teacher">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">Professor</div>
+</div>
+<div class="semicon-bubble">
+<p>We change the material between the wires to one that does not store charge easily. Let's go through it step by step.</p>
+</div>
+</div>
+<h2 class="wp-block-heading" data-fact-ids="C01">The real problem: slow signals traveling along wires (RC delay)</h2>
+<p>Inside a chip, transistors are connected to each other by thin metal wires. Transistors do the calculations, and the results are sent through the wires. Lecture notes from the University of California, Santa Barbara explain that a major factor in chip performance has become the time it takes for signals to travel along the wires. <strong class="semicon-key">Whether a chip can run fast depends heavily not only on the transistors but also on the wiring.</strong></p>
+<p>What's more, as chips get smaller and faster, the wires get thinner and closer together. An EE Times Japan article also says that the further miniaturization goes, the more important low-dielectric-constant materials between the wires become.</p>
+<details class="semicon-quiz">
+<summary>Quick quiz: Is chip speed determined only by the transistors?</summary>
+<p>Answer: No. It also depends heavily on how fast signals travel along the wires.</p>
+</details>
+<h2 class="wp-block-heading" data-fact-ids="C02">"Wiring capacitance": charge that builds up between wires</h2>
+<p>When wires get close to each other, a little charge builds up between them. A component that stores charge is called a "capacitor," and two nearby wires act like a small capacitor with an insulating film in between. The amount of stored charge is called "wiring capacitance." According to the lecture notes, a capacitor's capacitance gets larger when the facing area is larger, when the distance is shorter, and when the material between them stores charge more easily.</p>
+<p>When wiring capacitance increases, signals take longer to travel. Also, according to the EE Times Japan article, power consumption goes up. <strong class="semicon-key">High wiring capacitance means signals take longer to travel and extra power is used.</strong> That leads to problems like battery drain and heat.</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep113-blog-01-chain.png" alt="Concept diagram of the chain: as wires get thinner and closer, wiring capacitance increases, signals slow down, and extra power is used"><figcaption>Schematic of what happens when wiring capacitance increases. This is a simplified flow for explanation and not measured data.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the figure</b></p>
+<ul>
+<li>Wires get thinner and closer</li>
+<li>Wiring capacitance increases</li>
+<li>Signals slow down and extra power is used</li>
+</ul>
+</div>
+<details class="semicon-quiz">
+<summary>Quick quiz: When wires get closer, what increases?</summary>
+<p>Answer: The amount of charge stored between the wires, in other words, the wiring capacitance.</p>
+</details>
+<h2 class="wp-block-heading" data-fact-ids="C03">Insulating films and the "dielectric constant"</h2>
+<p>To reduce wiring capacitance, you could space the wires farther apart, but that is not possible if you want to make chips smaller. Instead, the "insulating film" between the wires is changed to a material that does not store charge easily. In the capacitor formula in the lecture notes, capacitance is proportional to the "dielectric constant" of the material in between. The dielectric constant is a number that shows how easily a material stores charge. The smaller it is, the less charge the material stores.</p>
+<p>Another approach is to change the wire metal from aluminum to copper. According to the lecture notes, the resistivity of aluminum is 2.65 and that of copper is 1.67 (in μΩ·cm), so resistance drops by less than half. That is why the notes say it is important to reduce both resistance and capacitance.</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep113-blog-02-ladder.png" alt="Concept diagram showing the dielectric constant dropping from glass to fluorine-doped glass, carbon-doped material, and porous material"><figcaption>Schematic of how the dielectric constant of insulating films has decreased. The numbers are rough values given in an IBM paper.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the figure</b></p>
+<ul>
+<li>Starting from glass, the number goes down step by step</li>
+<li>Fluorine, carbon, and pores are added one after another</li>
+<li>The smaller the number, the less charge is stored</li>
+</ul>
+</div>
+<details class="semicon-quiz">
+<summary>Quick quiz: Does a material with a low dielectric constant store charge easily or not?</summary>
+<p>Answer: It does not store charge easily. It can reduce wiring capacitance.</p>
+</details>
+<h2 class="wp-block-heading" data-fact-ids="C04">From glass to low-k materials</h2>
+<p>According to an IBM paper, the insulating film was originally silicon dioxide (a type of glass). It is an easy material to work with: resistant to heat and chemicals, hard, a good barrier to moisture, and easy to form clean films with. Its drawback was a fairly high dielectric constant.</p>
+<p>So "low-k materials" with lower dielectric constants came into use. First, glass mixed with fluorine, which lowered the dielectric constant to about 3.5, was used at the 130-nanometer generation. Next came carbon-doped material (called SiCOH), with a dielectric constant of about 2.7 to 3.0 without pores. Adding carbon lowers the material's density, which also lowers the dielectric constant.</p>
+<details class="semicon-quiz">
+<summary>Quick quiz: The first low-k approach was to mix what into glass?</summary>
+<p>Answer: Fluorine. The dielectric constant dropped to about 3.5.</p>
+</details>
+<h2 class="wp-block-heading" data-fact-ids="C05">Lowering the dielectric constant with airy "porous low-k"</h2>
+<p>To go even lower, tiny pores are made in the material, turning it "porous" and full of gaps. The IBM paper says that adding pores brings the dielectric constant to 2.2 or below. Porous materials are used at the 45-nanometer generation and beyond.</p>
+<p>EE Times Japan describes one way to make the pores. ULVAC's material is a solution of the film's base ingredients mixed with a surfactant. When it is baked, the surfactant acts as a template that leaves pores, producing a glass full of gaps. <strong class="semicon-key">The more pores there are, the less charge the material stores.</strong> The required dielectric constant gets lower with each generation. According to the EE Times Japan article, 2.2–2.4 is needed at the 32-nanometer generation, 2.0–2.2 at the 22-nanometer generation, and 2.0 or below beyond that.</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep113-blog-ep113-06-porous.jpg" alt="Illustration of a porous material: a close-up of a white, sponge-like material full of tiny holes"><figcaption>Illustration of a porous material. A sponge-like example, not a real insulating film. EP113 article image (AI-generated). The generated image was resized and optimized as a JPEG.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the figure</b></p>
+<ul>
+<li>Many tiny holes are open</li>
+<li>The holes reduce how much charge is stored</li>
+<li>In exchange, it tends to become fragile</li>
+</ul>
+</div>
+<details class="semicon-quiz">
+<summary>Quick quiz: Why do porous materials have a low dielectric constant?</summary>
+<p>Answer: Because the more tiny pores (gaps) there are, the less charge the material stores.</p>
+</details>
+<h2 class="wp-block-heading" data-fact-ids="C06">Fragility and moisture: weaknesses and fixes</h2>
+<p>However, a film full of gaps has weaknesses. According to the IBM paper, its elastic modulus (a measure of stiffness) is much lower than glass and it is fragile, so steps are needed to keep the film from peeling during copper polishing. Examples include placing dummy metal, reducing polishing pressure, and improving adhesion between films. Only the last one or two layers use glass, for strength.</p>
+<p>The other weakness is moisture. Moisture spreads quickly through porous films, so a cap film is formed on top of the copper, and a wall is built around the edge of the chip to keep moisture out. Poor heat dissipation is another weakness. According to EE Times Japan, there was also a problem where the plasma processing used to form the wiring raised the dielectric constant by about 0.5, so materials that resist this damage were developed.</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep113-blog-03-weak.png" alt="Concept diagram showing two weaknesses of films full of gaps, fragility and moisture, along with their fixes"><figcaption>Schematic listing the weaknesses of films full of gaps and their fixes. This figure is for explanation.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the figure</b></p>
+<ul>
+<li>Fragile: polish gently</li>
+<li>Weak against moisture: a cap and a wall around the edge</li>
+<li>Each weakness has a fix</li>
+</ul>
+</div>
+<details class="semicon-quiz">
+<summary>Quick quiz: What are the weaknesses of a film full of gaps?</summary>
+<p>Answer: It is fragile, and moisture spreads through it easily.</p>
+</details>
+<h2 class="wp-block-heading" data-fact-ids="C07">"Air gaps" that use real air</h2>
+<p>A more advanced method is the "air gap," which creates real gaps of air between wires. According to the IBM paper, if air gaps are limited to only the critical areas, the strength and heat dissipation of other areas can be kept. An example is shown in which the dielectric constant was lowered to 2.0 in a 65-nanometer processor. However, it adds process steps to create the gaps, and it costs more.</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep113-blog-04-airgap.png" alt="Concept diagram of an air gap, where real gaps of air are created between wires"><figcaption>Schematic of the air gap concept. This is not a real cross-section.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the figure</b></p>
+<ul>
+<li>Gaps of air between the wires</li>
+<li>Air does not store charge easily</li>
+<li>Process steps and costs go up</li>
+</ul>
+</div>
+<details class="semicon-quiz">
+<summary>Quick quiz: What does the air gap method create between wires?</summary>
+<p>Answer: Real gaps of air.</p>
+</details>
+<div class="semicon-cta">
+<h3>Learn about the jobs that handle this process</h3>
+<p>If you want to learn about the jobs that handle this process, please read this article too.</p>
+<div class="semicon-btnrow"><a class="semicon-btn" href="https://semicon-campus.com/semiconductor-career-map/">See semiconductor manufacturing jobs by process</a></div>
+</div>
+<p>For the big picture of manufacturing, see <a href="https://semicon-campus.com/semiconductor-manufacturing-overview/">An overview of the semiconductor manufacturing process</a>. Note that equipment adjustment and recovery are done following the official procedures of your fab or manufacturer, and under the judgment of authorized staff. This article introduces concepts and does not give instructions for operating equipment.</p>
+<h2 class="wp-block-heading">Key terms review</h2>
+<ul>
+<li><strong>Wiring capacitance:</strong> The amount of charge stored between nearby wires.</li>
+<li><strong>Insulating film:</strong> A material that does not conduct electricity, placed between wires.</li>
+<li><strong>Dielectric constant:</strong> A number that shows how easily a material stores charge. The smaller it is, the less charge the material stores.</li>
+<li><strong>Low-k material:</strong> An insulating film material with a low dielectric constant.</li>
+<li><strong>Porous:</strong> A state full of gaps, with many tiny holes.</li>
+<li><strong>Air gap:</strong> A real gap of air created between wires.</li>
+</ul>
+<h2 class="wp-block-heading">Common misconceptions</h2>
+<h3>Q. Is SiCOH the same as silicon carbide (SiC)?</h3>
+<p>No. SiCOH is an insulating film made by mixing carbon and other elements into glass (silicon dioxide). It is different from silicon carbide.</p>
+<h3>Q. Is a higher dielectric constant better?</h3>
+<p>For the insulating film between wires, lower is better. It stores less charge and can reduce wiring capacitance.</p>
+<h2 class="wp-block-heading">Summary</h2>
+<div class="semicon-lead">
+<p>As wires get thinner and closer, the wiring capacitance (charge stored between wires) increases, signals take longer to travel, and extra power is used.<br />To fix this, the insulating film has been changed to low-k materials with lower dielectric constants, and then made porous and full of gaps.<br />Fragility and moisture need countermeasures, and a more advanced method is the air gap, which uses real air.</p>
+</div>
+<div class="semicon-cta">
+<h3>We also explain semiconductors simply on YouTube</h3>
+<p>For those who want to review with diagrams, we also post short explanations of semiconductor manufacturing on YouTube.</p>
+<div class="semicon-btnrow"><a rel="noopener" class="semicon-btn secondary" href="https://www.youtube.com/@semicon-campus" target="_blank">Watch illustrated videos on YouTube</a></div>
+</div>
+<h2 class="wp-block-heading">Official sources we referred to</h2>
+<ul class="semicon-sources">
+<li data-source-id="S01"><a href="https://ewh.ieee.org/r5/denver/sscs/References/2009_09_Gambino.pdf">Jeff Gambino et al., "Copper Interconnect Technology for the 32 nm Node and Beyond" (IBM, IEEE CICC 2009)</a></li>
+<li data-source-id="S02"><a href="https://www.ece.ucsb.edu/courses/ECE122/122_F14Banerjee/Slides/Lecture%2011.pdf">Kaustav Banerjee, "ECE 122A VLSI Principles, Lecture 11" (University of California, Santa Barbara lecture notes)</a></li>
+<li data-source-id="S03"><a href="https://eetimes.itmedia.co.jp/ee/articles/0912/18/news102.html">EE Times Japan, Shinko Maekawa, "Interlayer Dielectric Material with a Low Dielectric Constant of 2.0 That Works in Existing Mass-Production Processes" (2009)</a></li>
+</ul>
+<section class="semicon-correction-form">
+<h2>Questions and corrections form</h2>
+<p>If you find an error or anything unclear in this article, please let us know using the form below. We will check it and fix the article.</p>
+<div class="semicon-form-shortcode">
+<div class="wpcf7 no-js" id="wpcf7-f2045-o4" lang="ja" dir="ltr" data-wpcf7-id="2045">
+<div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
+<form action="/?rest_route=%2Fwp%2Fv2%2Fposts&#038;per_page=100&#038;page=1&#038;context=view#wpcf7-f2045-o4" method="post" class="wpcf7-form init" aria-label="Contact form" novalidate="novalidate" data-status="init">
+<fieldset class="hidden-fields-container"><input type="hidden" name="_wpcf7" value="2045" /><input type="hidden" name="_wpcf7_version" value="6.1.6" /><input type="hidden" name="_wpcf7_locale" value="ja" /><input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f2045-o4" /><input type="hidden" name="_wpcf7_container_post" value="0" /><input type="hidden" name="_wpcf7_posted_data_hash" value="" />
+</fieldset>
+<p>You do not need to enter your name, phone number, or address. Please do not include fab names or confidential company information.
+</p>
+<p><label>Type of report (required) <span class="wpcf7-form-control-wrap" data-name="report-type"><select class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required" aria-required="true" aria-invalid="false" name="report-type"><option value="誤りと思われる点">Possible error</option><option value="分かりにくい箇所">Unclear section</option><option value="追加してほしい説明・質問">Request for more explanation / question</option></select></span></label><br />
+<label>Related heading or text (optional) <span class="wpcf7-form-control-wrap" data-name="report-section"><input size="40" maxlength="200" class="wpcf7-form-control wpcf7-text" aria-invalid="false" value="" type="text" name="report-section" /></span></label><br />
+<label>Details (required) <span class="wpcf7-form-control-wrap" data-name="report-message"><textarea cols="40" rows="10" maxlength="3000" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" aria-required="true" aria-invalid="false" name="report-message"></textarea></span></label><br />
+<label>Email address for a reply (only if you would like a reply; optional) <span class="wpcf7-form-control-wrap" data-name="report-email"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-email wpcf7-text wpcf7-validates-as-email" autocomplete="email" aria-invalid="false" value="" type="email" name="report-email" /></span></label>
+</p>
+<p>Your feedback will be used to review and improve our articles. Please see our <a href="https://semicon-campus.com/privacy-policy/">Privacy policy</a>.
+</p>
+<p><input class="wpcf7-form-control wpcf7-submit has-spinner" type="submit" value="Send feedback or correction" />
+</p><div class="wpcf7-response-output" aria-hidden="true"></div>
+</form>
+</div>
+</div>
+</section>
+</div>

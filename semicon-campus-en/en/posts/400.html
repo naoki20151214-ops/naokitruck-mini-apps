@@ -1,0 +1,250 @@
+
+<!--KEEP:0-->
+
+
+<!--KEEP:1-->
+
+<!--KEEP:2-->
+
+<article class="semicon-article" id="top">
+<div class="semicon-level">
+  <div class="semicon-level-badge">Beginner → Intermediate</div>
+  <div>
+    <strong>Level of this article</strong><br>
+    For readers who have read a little about lithography and film thickness measurement. Instead of formulas, we start from the idea of "measuring how far one layer is shifted from another."
+  </div>
+</div>
+
+<p class="semicon-lead">Overlay metrology is a technique in semiconductor manufacturing that measures whether the layer made earlier and the next layer made by lithography (exposure) line up in the correct position. Semiconductors are made by stacking many layers of circuitry on a single wafer, so even a tiny misalignment can keep wiring and contacts from connecting, which lowers yield.</p>
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/overlay-metrology-featured.png" alt="Diagram showing that overlay metrology measures the misalignment between the previous layer and the next layer">
+  <figcaption>Overlay metrology looks at how well layers line up with each other. Ideally, they line up perfectly. If they are shifted, the circuit may not connect.</figcaption>
+</figure>
+
+<div class="semicon-map">
+  <strong>What you will learn in this article</strong>
+  <ul>
+    <li>What overlay metrology measures</li>
+    <li>Why misalignment in lithography affects yield</li>
+    <li>How it differs from CD-SEM and film thickness measurement</li>
+    <li>What overlay, alignment, and litho metrology mean in job postings</li>
+    <li>How it connects to jobs in lithography, metrology, and yield improvement</li>
+  </ul>
+</div>
+
+
+<h2>What is overlay metrology?</h2>
+
+<p>In a word, overlay is <strong>how accurately the previous layer and the next layer line up</strong>.</p>
+
+<p>In semiconductor manufacturing, the circuit is not made on the wafer all at once. You deposit a film, coat it with resist, expose it, etch it, clean it, and then make the next layer. By repeating these steps many times, a three-dimensional circuit is built up.</p>
+
+<p>The problem is where the next layer is printed. If the next contact holes or wiring are not placed correctly on top of the wiring made earlier, the spots that should connect electrically end up shifted.</p>
+
+<div class="semicon-mobile-summary">If you are reading on your phone, just remember this first. Overlay metrology measures "misalignment between stacked layers." It looks at the positional relationship between layers, not line width or film thickness.</div>
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/overlay-metrology-concept.png" alt="Diagram showing that overlay is the accuracy with which semiconductor layers line up">
+  <figcaption>Semiconductors are made one layer at a time, so each new layer is placed in the correct position using the previous layer as a reference. Overlay metrology checks this alignment accuracy.</figcaption>
+</figure>
+
+<h2>Why is misalignment a problem?</h2>
+
+<p>A semiconductor circuit is not just a matter of drawing lines. Lines must connect to lines, wiring to contacts, and transistors to wiring, all at set positions.</p>
+
+<p>For example, say there is wiring in the previous layer, and the next layer opens a hole down to that wiring to connect to it. If this hole is shifted slightly sideways, it misses the center of the wiring. This can raise resistance, make the connection unstable, or in the worst case cause a defect where there is no electrical connection at all.</p>
+
+<p>The further scaling goes, the smaller the allowed misalignment becomes. A tiny shift that would not have mattered in the past can strongly affect yield in advanced processes. That is why overlay metrology is not just a check on the results of the lithography step. It is an important measurement for keeping a mass-production line stable.</p>
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/overlay-metrology-bad-patterns.png" alt="Examples of semiconductor wiring and connections shifted by horizontal, vertical, and rotational misalignment">
+  <figcaption>Misalignment includes horizontal shift, vertical shift, and rotational shift. All of them lead to shifted wiring and connections, and can lower yield.</figcaption>
+</figure>
+
+<h2>Overlay metrology matters after lithography</h2>
+
+<p>Overlay metrology is closely tied to lithography. Lithography is the step that uses light to print circuit patterns onto the wafer. During this step, the exposure tool reads reference marks on the previous layer and aligns the next pattern to the correct position.</p>
+
+<p>However, the actual position shifts slightly because of tiny wafer distortion, the condition of the tool, the resist and process conditions, temperature changes, and so on. So after exposure, overlay is measured to check "in which direction, and by how much, it is shifted."</p>
+
+<p>The key point is that measuring is not the end. Overlay metrology results are fed back to the exposure tool and process conditions. In other words, overlay metrology looks like inspection, but it is actually also the starting point for process improvement.</p>
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/overlay-metrology-flow.png" alt="Overlay metrology flow from previous layer, to exposure, measurement, correction, and stable mass production">
+  <figcaption>Expose, measure, find the shift, and feed it back into the next exposure conditions. This feedback helps keep the lithography process stable.</figcaption>
+</figure>
+
+<div class="semicon-note">
+  <strong>A simpler way to say it</strong><br>
+  If lithography is "the step of pressing a printing block in the right place," overlay metrology is "the job of checking that the picture you print next is not shifted from the one you printed before." In semiconductors, this shift matters at the nanometer scale.
+</div>
+
+<h2>How it differs from CD-SEM and film thickness measurement</h2>
+
+<p>When you read articles about inspection and metrology, many similar terms come up: CD-SEM, film thickness measurement, defect inspection, overlay metrology, and more. Beginners easily get confused here, so it helps to separate their roles.</p>
+
+<div class="semicon-table-wrap">
+  <table class="semicon-table">
+    <thead>
+      <tr><th>Measurement</th><th>What it looks at</th><th>In plain words</th><th>Related processes</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>CD-SEM</strong></td><td>Line width, hole size, pattern shape</td><td>Measures how wide lines and holes are</td><td>Lithography, etching</td></tr>
+      <tr><td><strong>Film thickness measurement</strong></td><td>Thin-film thickness, uniformity</td><td>Checks whether a film has the target thickness</td><td>Deposition, CMP, post-cleaning evaluation</td></tr>
+      <tr><td><strong>Defect inspection</strong></td><td>Particles, scratches, pattern abnormalities</td><td>Finds foreign matter and anything odd</td><td>All processes</td></tr>
+      <tr><td><strong>Overlay metrology</strong></td><td>Misalignment between layers</td><td>Checks how the previous and next layers line up</td><td>Lithography, metrology, yield improvement</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<p>Roughly speaking, CD-SEM looks at "width," film thickness measurement at "thickness," defect inspection at "abnormal spots," and overlay metrology at "position." All of them protect yield, but they look at different things.</p>
+
+<h3>DBO and SEM overlay are used at the leading edge</h3>
+
+<p>So far, to make it easy to picture, we have described overlay metrology as "looking at marks on the previous and next layers to measure misalignment." But in advanced semiconductors that use EUV lithography, patterns are extremely small, and in some cases simply measuring from an image is not enough.</p>
+
+<p>That is where more advanced measurements such as <strong>DBO</strong> and <strong>SEM overlay</strong> become important.</p>
+
+<div class="semicon-grid">
+  <div class="semicon-card"><b>DBO</b><span>Short for Diffraction-Based Overlay. Light is shone on a fine diffraction grating pattern, and misalignment is estimated from the reflection and diffraction information.</span></div>
+  <div class="semicon-card"><b>SEM overlay</b><span>An approach that uses an electron beam to check misalignment in finer patterns and in structures closer to the actual device.</span></div>
+  <div class="semicon-card"><b>Feeding back to the process</b><span>Measurement results are fed back into exposure conditions, alignment, and correction models, and used to stabilize the next lot or next wafer.</span></div>
+</div>
+
+<p>Beginners do not need to understand the math behind DBO from the start. It is enough to remember that "overlay metrology includes not only image-based methods, but also advanced methods that use light diffraction or electron beams." Knowing this much makes it easier to see how terms connect when you read articles or job postings from metrology and lithography equipment makers such as KLA and ASML.</p>
+
+<section class="mp1-section" id="maintenance-phase1-learning"><h2>Connecting overlay, misalignment, and metrology tools to real work and further learning</h2><p>In jobs that investigate misalignment, you link measured values with the history of the tool, temperature, and process, and sort out whether the tool side or the process side needs more checking. Maintaining metrology tools and setting measurement conditions are different areas of responsibility, so record the checks you did separately from the judgments made by others. There are two paths: building up basics in mechanics, controls, and measurement, and turning your experience into a conversation about technical roles.</p></section>
+<h2>The market value of people who understand overlay metrology</h2>
+
+<p>Overlay metrology is not just measurement work. You need to look at the measured values and connect them to exposure conditions, alignment, trends across the wafer, and process changes.</p>
+
+<p>That is why people who understand overlay are a good fit for jobs in lithography, inspection and metrology, process improvement, and yield improvement. Especially in advanced semiconductors, alignment accuracy directly affects product performance and yield, so people who can feed metrology data back into the process are valuable.</p>
+
+<div class="semicon-grid">
+  <div class="semicon-card"><b>Lithography</b><span>Looks at exposure conditions, alignment, and scanner settings.</span></div>
+  <div class="semicon-card"><b>Inspection / metrology</b><span>Handles overlay, CD, film thickness, and defect data.</span></div>
+  <div class="semicon-card"><b>Yield improvement</b><span>Uses misalignment trends to trace defect causes back to the process.</span></div>
+</div>
+
+<p>KLA, ASML, Onto Innovation, Applied Materials, and others offer equipment and solutions related to lithography, inspection and metrology, and patterning control. When researching companies, you will understand more if you look at "which processes this company supports" and "how it connects measurement results to process improvement."</p>
+
+<h3>Why it leads to jobs at global equipment makers and technical roles</h3>
+
+<p>Overlay metrology is closely tied to ASML's lithography tools, metrology and inspection tools from KLA and others, and yield improvement on mass-production lines. In other words, it is not just a term. It is knowledge that tends to be valued in technical roles at equipment makers, device makers, and foundries.</p>
+
+<p>Global equipment makers in particular have job openings that require both technical understanding and on-site skills, such as tool installation, customer support, process data analysis, and application support. Because these roles require English, travel, customer support, and equipment knowledge, pay can be in a higher range.</p>
+
+<p>However, it is risky to think "I understand overlay, so I'll get a high annual salary." In reality, how you are evaluated depends on which experiences you can combine, such as lithography experience, handling metrology data, equipment maintenance, quality control, process improvement, and working in English. That is why it matters to check not just the company name in a job posting, but also terms in the job description such as "alignment," "metrology," "overlay," "process control," and "customer support."</p>
+
+<div class="semicon-cta">
+  <h3>What to sort out before aiming for global or technical jobs</h3>
+  <p>If you are interested in equipment makers like KLA, ASML, or Applied Materials, first sort out which area your experience fits best: "equipment," "metrology," "quality," "data," or "customer support." Using a career service that is strong in semiconductor jobs makes it easier to check job titles and required experience that are hard to see from public postings alone.</p>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn" href="https://semicon-campus.com/semiconductor-career-service-selection-guide/">See how to choose a career service strong in semiconductor jobs</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/what-is-semiconductor-field-service-engineer/">See what an FSE is</a>
+  </div>
+</div>
+
+<h2>What terms appear in job postings?</h2>
+
+<p>Overlay metrology sometimes appears by name in job postings, but it is often described with other terms. In particular, lithography, alignment, metrology, measurement, yield improvement, and process improvement are closely related areas.</p>
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/overlay-metrology-career-keywords.png" alt="Overlay metrology keywords seen in job postings: overlay, alignment, litho metrology, CD, yield improvement">
+  <figcaption>In job postings, the work may be described not only as overlay, but also with terms such as alignment, litho metrology, and yield improvement.</figcaption>
+</figure>
+
+<p>If you are new to semiconductors, you do not need to aim to become an "overlay metrology expert" right away. First, it is important to look at the job posting to see which process the job is in, which tools and measurement data it handles, and whether you can be involved in improvement work too.</p>
+
+<p>If you have a science background, manufacturer experience, or experience in quality control, measurement, data analysis, or equipment maintenance, knowing how overlay metrology works will help you read semiconductor job postings more accurately. In interviews, it will also be easier to explain in your own words "how lithography and metrology affect yield."</p>
+
+<div class="semicon-cta">
+  <h3>Looking for lithography and metrology jobs in job postings</h3>
+  <p>If you are now interested in overlay metrology, the next step is to connect it to the terms used in job postings. Don't just learn the technology name. Also look at "which job types it appears in" and "how it relates to your experience." This makes it a stronger path to a career change.</p>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn" href="https://semicon-campus.com/%e5%8d%8a%e5%b0%8e%e4%bd%93%e6%b1%82%e4%ba%ba%e3%82%ad%e3%83%bc%e3%83%af%e3%83%bc%e3%83%89%e4%b8%80%e8%a6%a7%ef%bd%9c%e6%9c%aa%e7%b5%8c%e9%a8%93%e8%80%85%e3%81%8c%e6%b1%82%e4%ba%ba%e7%a5%a8%e3%81%a7/">See the list of job posting keywords</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/semiconductor-career-map/">See the job map</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/semiconductor-career-service-selection-guide/">See how to choose a career service</a>
+  </div>
+</div>
+
+<h2>Summary: overlay metrology protects layer alignment</h2>
+
+<p>Overlay metrology is a technique that measures whether the previous layer and the next layer line up in the correct position. Semiconductors are made by stacking many layers of circuitry, so even a tiny misalignment can cause defects in wiring and connections.</p>
+
+<p>CD-SEM looks at line width, film thickness measurement looks at thin-film thickness, and defect inspection finds abnormal spots. Overlay metrology, by contrast, looks at the positional relationship between layers. It is an important topic that links lithography, metrology, and yield improvement.</p>
+
+<p>When you see terms like overlay, alignment, litho metrology, metrology, or yield improvement in a job posting, think of it as a job connected to what this article covers.</p>
+
+<div class="semicon-cta">
+  <h3>Coming next</h3>
+  <p>We have published the next article, "What is yield analysis?" It explains how measurement results from overlay, film thickness, and defect inspection are used to find the causes of lower yield.</p>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn" href="https://semicon-campus.com/what-is-semiconductor-yield-analysis/">Read "What is yield analysis?"</a>
+  </div>
+</div>
+
+<div class="semicon-cta">
+  <h3>Learn semiconductors the easy way on YouTube, too</h3>
+  <p>Once you understand the flow of semiconductor manufacturing from the articles, you can review it with videos. For short videos, we will cover topics one at a time, such as "why misalignment lowers yield" and "the differences between CD-SEM, film thickness, and overlay."</p>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn" href="https://www.youtube.com/@semicon-campus">See our YouTube channel</a>
+  </div>
+</div>
+
+<h2>What to read next</h2>
+<div class="semicon-links">
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/what-is-semiconductor-yield/">What is yield? A beginner's guide to good-chip rate, defects, and improvement in semiconductor manufacturing</a></strong>
+    <p>Learn how results from overlay, film thickness, and defect inspection connect to yield and fab profits.</p>
+  </div>
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/%e5%8d%8a%e5%b0%8e%e4%bd%93%e6%b1%82%e4%ba%ba%e3%82%ad%e3%83%bc%e3%83%af%e3%83%bc%e3%83%89%e4%b8%80%e8%a6%a7%ef%bd%9c%e6%9c%aa%e7%b5%8c%e9%a8%93%e8%80%85%e3%81%8c%e6%b1%82%e4%ba%ba%e7%a5%a8%e3%81%a7/">Semiconductor job posting keywords</a></strong>
+    <p>Terms seen in job postings, such as overlay, metrology, and yield improvement, organized by job type.</p>
+  </div>
+</div>
+
+<h2>Related articles</h2>
+<div class="semicon-links">
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/what-is-lithography-semiconductor-process/">What is lithography?</a></strong>
+    <p>Learn first about the exposure process most closely tied to overlay metrology.</p>
+  </div>
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/what-is-cd-sem-sem-review/">What are CD-SEM and SEM review?</a></strong>
+    <p>Learn about metrology techniques that measure line width and pattern dimensions.</p>
+  </div>
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/what-is-film-thickness-measurement/">What is film thickness measurement?</a></strong>
+    <p>See more clearly how thin-film thickness measurement differs from overlay metrology.</p>
+  </div>
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/what-is-semiconductor-inspection-quality-control/">What is inspection and quality evaluation?</a></strong>
+    <p>Get the big picture of measurement and quality jobs in a semiconductor fab.</p>
+  </div>
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/what-is-semiconductor-defect-inspection/">What is defect inspection?</a></strong>
+    <p>Learn how foreign matter and pattern abnormalities on a wafer are found.</p>
+  </div>
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/what-is-spc-semiconductor-process-control/">What is SPC?</a></strong>
+    <p>Learn how measured values are used to find process problems early.</p>
+  </div>
+</div>
+
+<section class="mp1-section" id="maintenance-phase1-career"><h2>Jobs that use knowledge of overlay, misalignment, and metrology tools, and your next steps</h2><p>If you have experience in alignment, metrology evaluation, equipment maintenance, or technical support, organize it as sets of "target tool, issue, checks you did, and result." Compare the equipment you would handle, night shift and travel, training, and application requirements against the job posting, so you can separate the experience you can use from the knowledge you need to add.</p><aside class="semicon-cta mp1-card"><h3>Check the big picture of the work, and how to choose jobs and learning</h3><p>On the Equipment Maintenance Hub, you can review inspection and troubleshooting work, how to organize your experience, and jobs, basic learning, and certification prep all in one place. If you want to compare the scope of tool ownership and customer support, see the related job articles as well.</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/" class="semicon-btn mp1-button" data-maintenance-phase1-hub="277" data-cta="maintenance_hub" data-cta-type="maintenance_hub" data-cta-stage="career" data-cta-id="maintenance_400_hub277_end" data-cta-route="maintenance_400_hub277_end">See job duties, openings, and learning on the Equipment Maintenance Hub</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-field-service-engineer/" class="semicon-btn mp1-button" data-maintenance-phase1-hub="270" data-cta="fse_hub" data-cta-type="fse_hub" data-cta-stage="career" data-cta-id="maintenance_400_hub270_end" data-cta-route="maintenance_400_hub270_end">See FSE recovery and customer support work, openings, and learning</a></div></aside></section>
+
+<h2>References</h2>
+<ul>
+  <li><a href="https://www.kla.com/products/chip-manufacturing/metrology">KLA: Metrology products</a></li>
+  <li><a href="https://www.asml.com/products/metrology-and-inspection-systems">ASML: Metrology and inspection systems</a></li>
+  <li><a href="https://www.asml.com/products/metrology-and-inspection-systems/yieldstar-500">ASML: YieldStar 500</a></li>
+  <li><a href="https://www.asml.com/technology/lithography-principles/measuring-accuracy">ASML: Measuring accuracy</a></li>
+  <li><a href="https://www.kla.com/esl10-ebeam-inspection">KLA: eSL10 e-Beam Defect Inspection</a></li>
+  <li><a href="https://ontoinnovation.com/product-categories/metrology/">Onto Innovation: Metrology products</a></li>
+  <li><a href="https://www.appliedmaterials.com/us/en/semiconductor/products/analyze/patterning-control.html">Applied Materials: Patterning Control</a></li>
+</ul>
+
+<a class="semicon-backtop" href="#top" aria-label="Back to top">↑</a>
+</article>
