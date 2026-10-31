@@ -1,0 +1,219 @@
+<!--KEEP:0-->
+<div class="semicon-article" id="semicon-top">
+<div class="semicon-level">
+<div class="semicon-level-top"><span class="semicon-level-label">Learning level</span><strong class="semicon-stars" aria-label="Beginner (1 of 5)"><span class="on">★</span><span class="off">☆☆☆☆</span><span>Beginner</span></strong></div>
+</div>
+<div class="semicon-lead">
+<p>When you make ice in an ice tray, nobody carves the ice into shape. The mold (the hollows) comes first. You pour water into it, level off the overflow, and let it freeze.</p>
+<p>The copper lines inside a semiconductor are made in a similar way. Copper is hard to shape by cutting it away, so trenches are first dug into an insulating film, copper is filled into them, and the extra copper is polished off. This method is called the "damascene process," and the polishing step is called "CMP."</p>
+</div>
+<div class="semicon-note">
+<p>The ice tray example only fits the order of steps: "make the mold first, then fill it." Ice and copper are completely different in both materials and process.</p>
+</div>
+<div class="semicon-map">
+<h3>What you will learn in this article</h3>
+<ol>
+<li><strong>Goal of this article:</strong> Understand why copper wiring is made by "digging trenches and filling them"</li>
+<li><strong>First half:</strong> The role of wiring, why it changed from aluminum to copper, and why copper cannot be etched away</li>
+<li><strong>Second half:</strong> The damascene and CMP flow, dual damascene, and copper's strengths and weaknesses</li>
+</ol>
+</div>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep112-blog-01-compare.png" alt="Concept diagram showing the difference in methods: aluminum is deposited over the whole surface and etched, while copper fills trenches dug in advance"><figcaption>Schematic showing the difference between how aluminum and copper wiring are made. Copper is not etched; trenches are made first and then filled. This is an explanatory flow, not the process of any specific fab.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the figure</b></p>
+<ul>
+<li>Aluminum: deposit a film over the whole surface, then etch</li>
+<li>Copper: dig trenches first, then fill them</li>
+<li>Both end up as lines</li>
+</ul>
+</div>
+<div class="semicon-chat-row naoki">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">Assistant</div>
+</div>
+<div class="semicon-bubble">
+<p>Professor, is it true that copper wiring is made without etching?</p>
+</div>
+</div>
+<div class="semicon-chat-row teacher">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">Professor</div>
+</div>
+<div class="semicon-bubble">
+<p>It's true. Copper is hard to etch, so we dig trenches first and fill them with copper afterward.</p>
+</div>
+</div>
+<div class="semicon-chat-row naoki">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">Assistant</div>
+</div>
+<div class="semicon-bubble">
+<p>What happens after it's filled?</p>
+</div>
+</div>
+<div class="semicon-chat-row teacher">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">Professor</div>
+</div>
+<div class="semicon-bubble">
+<p>We polish off the overflow. Let's look at it step by step.</p>
+</div>
+</div>
+<h2 class="wp-block-heading" data-fact-ids="C01">Wiring is the "path for electricity" inside a chip</h2>
+<p>Inside a semiconductor chip, transistors are connected to each other by thin metal lines. These lines are called "wiring" (interconnects). Wiring is not made in a single layer but in many stacked layers. Starting from the bottom, the layers are called M1, M2, and so on. A 2009 paper by IBM engineers states that copper wiring came into wide use because it has lower resistance and higher reliability than aluminum. <strong class="semicon-key">Today, the main wiring material has changed from aluminum to copper.</strong> At first, copper was used only in high-performance logic circuits, but now it is used in a wide range of semiconductors, including memory (DRAM), high-frequency circuits, and image sensors.</p>
+<details class="semicon-quiz">
+<summary>Quick quiz: What does wiring do?</summary>
+<p>Answer: It is the path for electricity that connects transistors to each other.</p>
+</details>
+<h2 class="wp-block-heading" data-fact-ids="C02 C03">Copper is hard to shape by etching</h2>
+<p>Aluminum wiring is made by first forming a metal film over the whole surface, then etching away the unneeded parts while leaving only the parts protected by a mask. Lecture materials from Iowa State University also explain that aluminum is patterned this way.</p>
+<p>However, this method cannot be used with copper. The IBM paper states that copper chlorides and fluorides do not easily become gases, so copper cannot be processed well by the reactive ion etching used to remove material. Even if copper reacts during etching, it does not turn into a gas and leave the wafer. You could say that <strong class="semicon-key">copper is a metal that is not suited to etching</strong>. The lecture materials also point out that copper tends to spread into surrounding materials. That is why a wall to stop it from spreading is also needed around the copper.</p>
+<details class="semicon-quiz">
+<summary>Quick quiz: Why is copper hard to etch?</summary>
+<p>Answer: Even if copper reacts during etching, it does not easily become a gas, so it does not leave the wafer.</p>
+</details>
+<h2 class="wp-block-heading" data-fact-ids="C04 C05">The "damascene process" flips the idea around</h2>
+<p>That is where the damascene process comes in. The flow is as follows.</p>
+<ol>
+<li>Dig trenches in the shape of the wiring into the insulating film first.</li>
+<li>Line the inside of the trenches with a thin metal film called a barrier.</li>
+<li>Form a thin film (seed layer) that serves as the base for copper, then fill the trenches with copper by electroplating.</li>
+<li>Polish off the overflowing copper with CMP.</li>
+</ol>
+<p>The barrier is there to keep copper atoms from getting into the surrounding insulating film. In the IBM paper, tantalum-based metals (TaN/Ta) are used for this barrier. The barrier and copper seed layer are applied thinly by a method called sputtering. An EE Times Japan explainer says that with copper, it was difficult to make high-quality films at a practical thickness by sputtering or CVD. That is why copper is filled into trenches by electroplating. In the damascene process, the width of the gap in the mask becomes the width of the wiring. <strong class="semicon-key">Make the trench first, then fill it.</strong> This is the basic idea behind turning copper, which cannot be etched, into wiring.</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep112-blog-ep112-05-plating.jpg" alt="Illustration of a wafer being processed in electroplating equipment above a copper-colored liquid"><figcaption>Illustration of electroplating equipment. This is not real equipment or a real fab. EP112 article image (AI-generated). The generated image was resized and optimized as a JPEG.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the figure</b></p>
+<ul>
+<li>The step that fills trenches with copper</li>
+<li>Copper is added by electroplating</li>
+<li>The overflow is polished off later</li>
+</ul>
+</div>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep112-blog-02-flow.png" alt="Concept diagram of the damascene flow: dig trenches, apply a barrier, fill with copper, and polish with CMP"><figcaption>Schematic showing the damascene flow. It shows the four stages in order. This is an explanatory flow, not the structure of any specific tool.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the figure</b></p>
+<ul>
+<li>Dig trenches</li>
+<li>Apply a barrier and fill with copper</li>
+<li>Polish flat with CMP</li>
+</ul>
+</div>
+<details class="semicon-quiz">
+<summary>Quick quiz: In the damascene process, which comes first? (1) Digging trenches (2) Filling with copper</summary>
+<p>Answer: (1) Digging trenches. Copper is filled in after that.</p>
+</details>
+<h2 class="wp-block-heading" data-fact-ids="C06">CMP polishes off the extra copper</h2>
+<p>When trenches are filled by electroplating, copper overflowing from the trenches remains over the entire wafer surface. CMP (chemical mechanical polishing) removes it. According to the lecture materials, the polishing pad and wafer are rotated, and abrasive particles and chemicals work together to thin and flatten the surface. Depth and flatness are very important. Because the shape is finished by polishing, the IBM paper states that copper wiring has more restrictions on pattern density. When polishing is done, only the copper in the trenches remains, and the wiring is complete. According to an EE Times Japan explainer, CMP came into practical use in the early 1990s and achieved far better flatness than etch-back, which had been the mainstream method until then.</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep112-blog-ep112-06-cmp.jpg" alt="Illustration of CMP polishing equipment with a large rotating polishing pad and a wafer"><figcaption>Illustration of CMP polishing equipment. This is not real equipment or a real fab. The pad and wafer are rotated for polishing. EP112 article image (AI-generated). The generated image was resized and optimized as a JPEG.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the figure</b></p>
+<ul>
+<li>The pad and wafer rotate</li>
+<li>Chemicals and abrasive particles smooth the surface</li>
+<li>Only the copper lines remain</li>
+</ul>
+</div>
+<details class="semicon-quiz">
+<summary>Quick quiz: What does CMP do?</summary>
+<p>Answer: It uses chemicals and polishing force to remove the overflowing copper and flatten the surface.</p>
+</details>
+<h2 class="wp-block-heading" data-fact-ids="C07">Dual damascene: trenches and holes at the same time</h2>
+<p>The "holes (vias)" that connect one wiring layer to another also need to be filled with copper. Trenches and holes can be filled separately, but the method of digging both and then filling them with copper at once is called "dual damascene." The IBM paper also states that copper wiring is made with dual damascene. The steps are: open the holes first, then make the trenches, followed by the barrier and seed layer, plating, and CMP. According to the lecture materials, the finished structure is the same with either method.</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep112-blog-03-dual.png" alt="Concept diagram showing the difference between filling trenches and holes separately and dual damascene, which digs both and fills them at once"><figcaption>Schematic showing the idea of dual damascene. Trenches and holes are filled at once. This is an explanatory diagram, not an actual cross section.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the figure</b></p>
+<ul>
+<li>Dig both trenches and holes</li>
+<li>Fill with copper at once</li>
+<li>Steps can be combined</li>
+</ul>
+</div>
+<details class="semicon-quiz">
+<summary>Quick quiz: In dual damascene, what is filled at once?</summary>
+<p>Answer: Both the wiring trenches and the holes that connect the layers.</p>
+</details>
+<h2 class="wp-block-heading" data-fact-ids="C08">Cap it, and repeat for each layer</h2>
+<p>Copper is a metal that oxidizes easily. According to the IBM paper, after polishing, the copper is capped with a protective film called SiCN to protect it from oxidation. This series of steps is repeated for each wiring layer. After the last layer is made, a thick protective insulating film is added, and holes are opened to the terminals (bond pads) that connect to the outside. Also, because copper is shaped by polishing, dummy metal patterns need to be added so that line density does not vary across the chip. The paper further states that this cap film has a higher dielectric constant than the surrounding insulating film, so the overall dielectric constant becomes roughly 10% higher.</p>
+<details class="semicon-quiz">
+<summary>Quick quiz: Why is the copper surface covered with a protective film after polishing?</summary>
+<p>Answer: To keep the copper from oxidizing.</p>
+</details>
+<h2 class="wp-block-heading" data-fact-ids="C09">Copper's strengths, and its weakness as lines get thinner</h2>
+<p>Copper's strength is not just that it conducts electricity well. When current flows, metal atoms can gradually move, and the line can break. This is called electromigration. The IBM paper reports that copper's lifetime is more than 100 times that of aluminum. It also explains that if a line is short, a force acts in the direction opposite to the atoms' movement, so the line is less likely to break.</p>
+<p>On the other hand, copper also has weaknesses. As wiring gets thinner, even copper's resistance rises. The paper gives the reasons as scattering at the surface, scattering at the boundaries between crystal grains, and the growing share taken up by the barrier film. <strong class="semicon-key">The thinner the wiring, the larger the barrier's share, and the higher the resistance.</strong></p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep112-blog-04-shrink.png" alt="Concept diagram showing that as wiring gets thinner, copper's resistance rises due to collisions at the surface and grain boundaries and the growing share of the barrier"><figcaption>Schematic showing why resistance rises as wiring gets thinner. It lists three reasons side by side. This is an explanatory diagram, not measured data.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the figure</b></p>
+<ul>
+<li>Electrons collide at the surface</li>
+<li>They also collide at grain boundaries</li>
+<li>The barrier's share also grows</li>
+</ul>
+</div>
+<details class="semicon-quiz">
+<summary>Quick quiz: What happens to copper's resistance when wiring is made thinner?</summary>
+<p>Answer: It rises. Electrons collide at the surface and at grain boundaries, and the barrier's share also grows.</p>
+</details>
+<div class="semicon-cta">
+<h3>Learn about the jobs behind each process</h3>
+<p>If you want to learn about the jobs that handle this process, try reading this article, too.</p>
+<div class="semicon-btnrow"><a class="semicon-btn" href="https://semicon-campus.com/semiconductor-career-map/">See semiconductor manufacturing jobs by process</a></div>
+</div>
+<p>For the big picture of manufacturing, see <a href="https://semicon-campus.com/semiconductor-manufacturing-overview/">An overview of the semiconductor manufacturing process</a>. Equipment adjustment and recovery are done following the official procedures of your fab or manufacturer, under the judgment of authorized staff. This article introduces concepts and does not give instructions for operating equipment.</p>
+<h2 class="wp-block-heading">Word review</h2>
+<ul>
+<li><strong>Wiring:</strong> The metal lines inside a chip that connect transistors to each other.</li>
+<li><strong>Damascene process:</strong> A method of digging trenches first, filling them with copper, and polishing off the extra.</li>
+<li><strong>Barrier:</strong> A thin metal film that keeps copper atoms from getting into the insulating film.</li>
+<li><strong>CMP:</strong> A step that flattens the surface with chemicals and polishing.</li>
+<li><strong>Dual damascene:</strong> A method of filling trenches and holes at once.</li>
+<li><strong>Electromigration:</strong> A phenomenon where current moves metal atoms and breaks a line.</li>
+</ul>
+<h2 class="wp-block-heading">Common misunderstandings</h2>
+<h3>Q. Since copper can't be etched, can't it be used?</h3>
+<p>No, it can. Instead of etching, it is made into wiring with the damascene process, which digs trenches first and fills them.</p>
+<h3>Q. Does copper wiring keep the same resistance even when it is made thinner?</h3>
+<p>No, it changes. As wiring gets thinner, even copper's resistance rises.</p>
+<h3>Q. Why is a barrier needed?</h3>
+<p>To keep copper atoms from getting into the surrounding insulating film. Without a barrier, the copper would spread.</p>
+<h3>Q. Is CMP just a grinding step?</h3>
+<p>No. It combines polishing with abrasive particles and the action of chemicals. The pad and wafer are rotated to make the surface flat.</p>
+<h2 class="wp-block-heading">Summary</h2>
+<div class="semicon-lead">
+<p>Copper is hard to shape by etching, so it is made into wiring with the damascene process: dig trenches first, fill them with copper, and polish off the extra with CMP.<br />Filling trenches and holes at once is called dual damascene, and after polishing, the copper is capped with a protective film.<br />Copper is more reliable than aluminum, but its resistance rises as it gets thinner.</p>
+</div>
+<div class="semicon-cta">
+<h3>We also explain semiconductors simply on YouTube</h3>
+<p>For those who want to review with diagrams, we also post short videos on semiconductor manufacturing on YouTube.</p>
+<div class="semicon-btnrow"><a rel="noopener" class="semicon-btn secondary" href="https://www.youtube.com/@semicon-campus" target="_blank">Watch illustrated videos on YouTube</a></div>
+</div>
+<h2 class="wp-block-heading">Official sources used</h2>
+<ul class="semicon-sources">
+<li data-source-id="S01"><a href="https://ewh.ieee.org/r5/denver/sscs/References/2009_09_Gambino.pdf">Jeff Gambino et al., "Copper Interconnect Technology for the 32 nm Node and Beyond" (IBM, IEEE CICC 2009)</a></li>
+<li data-source-id="S02"><a href="https://class.ece.iastate.edu/ee330/lectures/EE%20330%20Lect%2011%20Fall%202023.pdf">Iowa State University EE 330 Lecture 11, "Copper Interconnects" (lecture materials)</a></li>
+<li data-source-id="S03"><a href="https://eetimes.itmedia.co.jp/ee/articles/2011/25/news025_2.html">EE Times Japan, Akira Fukuda, "Damascene technology determines the scaling limits of copper wiring"</a></li>
+</ul>
+<section class="semicon-correction-form">
+<h2>Questions and corrections form</h2>
+<p>If you find an error or anything unclear in this article, please let us know using the form below. We will check it and fix the article.</p>
+<div class="semicon-form-shortcode">
+<div class="wpcf7 no-js" id="wpcf7-f2045-o5" lang="ja" dir="ltr" data-wpcf7-id="2045">
+<div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
+<form action="/?rest_route=%2Fwp%2Fv2%2Fposts&#038;per_page=100&#038;page=1&#038;context=view#wpcf7-f2045-o5" method="post" class="wpcf7-form init" aria-label="Contact form" novalidate="novalidate" data-status="init">
+<fieldset class="hidden-fields-container"><input type="hidden" name="_wpcf7" value="2045" /><input type="hidden" name="_wpcf7_version" value="6.1.6" /><input type="hidden" name="_wpcf7_locale" value="ja" /><input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f2045-o5" /><input type="hidden" name="_wpcf7_container_post" value="0" /><input type="hidden" name="_wpcf7_posted_data_hash" value="" />
+</fieldset>
+<p>You do not need to enter your name, phone number, or address. Please do not include fab names or confidential company information.
+</p>
+<p><label>Type of report (required) <span class="wpcf7-form-control-wrap" data-name="report-type"><select class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required" aria-required="true" aria-invalid="false" name="report-type"><option value="誤りと思われる点">Possible error</option><option value="分かりにくい箇所">Unclear section</option><option value="追加してほしい説明・質問">Request for more explanation / question</option></select></span></label><br />
+<label>Related heading or text (optional) <span class="wpcf7-form-control-wrap" data-name="report-section"><input size="40" maxlength="200" class="wpcf7-form-control wpcf7-text" aria-invalid="false" value="" type="text" name="report-section" /></span></label><br />
+<label>Details (required) <span class="wpcf7-form-control-wrap" data-name="report-message"><textarea cols="40" rows="10" maxlength="3000" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" aria-required="true" aria-invalid="false" name="report-message"></textarea></span></label><br />
+<label>Email address for a reply (only if you would like a reply; optional) <span class="wpcf7-form-control-wrap" data-name="report-email"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-email wpcf7-text wpcf7-validates-as-email" autocomplete="email" aria-invalid="false" value="" type="email" name="report-email" /></span></label>
+</p>
+<p>Your feedback will be used to review and improve our articles. Please see our <a href="https://semicon-campus.com/privacy-policy/">Privacy policy</a>.
+</p>
+<p><input class="wpcf7-form-control wpcf7-submit has-spinner" type="submit" value="Send feedback or correction" />
+</p><div class="wpcf7-response-output" aria-hidden="true"></div>
+</form>
+</div>
+</div>
+</section>
+</div>

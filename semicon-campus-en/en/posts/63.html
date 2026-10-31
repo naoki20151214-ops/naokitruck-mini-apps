@@ -1,0 +1,224 @@
+
+<!--KEEP:0-->
+
+
+<!--KEEP:1-->
+
+
+<p class="wp-block-paragraph">Deposition is the process of building thin layers, such as insulating films, metal films, and protective films, on top of a wafer. This beginner's guide explains the differences between CVD, PVD, and ALD, and how deposition connects to lithography and etching.</p>
+
+
+
+<!--KEEP:2-->
+<div class="semicon-article">
+
+
+
+<p class="wp-block-paragraph">Last time, we looked at the big picture of the front-end process (FEOL), where circuits are built into the wafer. Starting now, we will break that front-end process down one step at a time.</p>
+
+
+
+<p class="wp-block-paragraph">The first step we look at is deposition. The name sounds plain, but once you understand it, semiconductor manufacturing suddenly looks three-dimensional. That is because deposition is the process that stacks functions on top of the wafer.</p>
+
+
+
+<div class="semicon-flow">
+  <strong>How deposition works, in pictures</strong>
+  <div class="semicon-flow-grid">
+    <div class="semicon-flow-step"><strong>Wafer</strong><span>A blank base</span></div>
+    <div class="semicon-flow-step"><strong>Thin film</strong><span>Stack functions</span></div>
+    <div class="semicon-flow-step"><strong>Pattern</strong><span>Decide where it's needed</span></div>
+    <div class="semicon-flow-step"><strong>Circuit structure</strong><span>Repeat keeping and removing</span></div>
+  </div>
+</div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>The front-end process talked about "making films." Is a film like plastic wrap? Are they sticking something onto the wafer?</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>That's a pretty good comparison. But semiconductor films are far thinner than plastic wrap. And their roles are split up in detail: some conduct electricity, some block it, some protect, and some get etched away later.</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>So it's not just coating the surface. It's more like stacking up the properties of the chip itself?</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>Exactly. Deposition is the process of stacking "functions" on top of the wafer.</p></div></div>
+
+
+
+
+<h2 class="wp-block-heading">What is deposition?</h2>
+
+
+
+<p class="wp-block-paragraph">Deposition is the process of creating a very thin layer of material on the surface of a wafer. In English, it is called deposition or thin film deposition.</p>
+
+
+
+<p class="wp-block-paragraph">You cannot make a semiconductor just by carving a silicon wafer. You stack many layers, such as insulating films, conductive films, protective films, and films meant to be etched later. Then you keep some parts and remove others to build the structures of transistors and wiring.</p>
+
+
+
+<div class="semicon-note"><strong>This is all you need to know for now.</strong><br>Deposition is "the process of making a thin layer with the needed properties on top of the wafer." Making a film alone does not create the shape of a circuit. It is combined with the next steps, lithography and etching, so the film stays only where it is needed.</div>
+
+
+
+<h2 class="wp-block-heading">Why do we need to make films?</h2>
+
+
+
+<p class="wp-block-paragraph">Deposition is needed because a semiconductor chip needs layers with many different roles. If the whole wafer stayed plain silicon, you could not separate the places where electricity flows from the places where it is blocked.</p>
+
+
+
+<div class="semicon-grid">
+  <div class="semicon-card"><b>Insulate</b><span>Separates areas where electricity must not flow. Oxide films and nitride films play a part here.</span></div>
+  <div class="semicon-card"><b>Conduct electricity</b><span>Metal films that connect to gate electrodes and wiring create paths for signals and power.</span></div>
+  <div class="semicon-card"><b>Protect and prepare</b><span>Protects the surface or creates an underlayer to be etched in the next step.</span></div>
+</div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>I see. When I heard "film," I pictured a protective sheet. But it actually becomes the path for electricity, or the wall itself.</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>Right. A semiconductor film is not just a cover. It is one of the parts that decide the chip's structure and performance.</p></div></div>
+
+
+
+<h2 class="wp-block-heading">Understand deposition together with the steps before and after it</h2>
+
+
+
+<p class="wp-block-paragraph">If you learn deposition on its own, the knowledge is a little hard to use. What matters is what happens before and after deposition.</p>
+
+
+
+<div class="semicon-flow">
+  <strong>The basic rhythm of the front-end process</strong>
+  <div class="semicon-flow-grid">
+    <div class="semicon-flow-step"><strong>Cleaning</strong><span>Reduce contamination</span></div>
+    <div class="semicon-flow-step"><strong>Deposition</strong><span>Make a thin film</span></div>
+    <div class="semicon-flow-step"><strong>Lithography</strong><span>Transfer the pattern</span></div>
+    <div class="semicon-flow-step"><strong>Etching</strong><span>Remove unneeded parts</span></div>
+  </div>
+</div>
+
+
+
+<p class="wp-block-paragraph">For example, making an insulating film on the wafer surface does not yet create the shape of a circuit. You coat photoresist on that film, transfer a pattern with lithography, and remove the unneeded parts with etching. Only then do you reach a state where "the film remains only where it is needed."</p>
+
+
+
+<h2 class="wp-block-heading">Types of films used in semiconductors</h2>
+
+
+
+<p class="wp-block-paragraph">Semiconductor manufacturing uses more than one kind of film. The materials and the methods change depending on the role.</p>
+
+
+
+<div class="semicon-grid">
+  <div class="semicon-card"><b>Oxide films</b><span>A typical example is silicon oxide. It is important for insulation, protection, and as an underlayer.</span></div>
+  <div class="semicon-card"><b>Nitride films</b><span>These films have many roles in the process, such as protective films, insulating films, and etch stop layers.</span></div>
+  <div class="semicon-card"><b>Metal films</b><span>Used to conduct electricity, for example in electrodes and wiring.</span></div>
+  <div class="semicon-card"><b>High-k films</b><span>High-dielectric-constant materials that became important with scaling. They appear in gate insulators and similar layers.</span></div>
+  <div class="semicon-card"><b>Low-k films</b><span>Low-dielectric-constant materials used to reduce the capacitance between wires.</span></div>
+  <div class="semicon-card"><b>Barrier films</b><span>Hidden guardians that, for example, keep metal from diffusing into places it should not go.</span></div>
+</div>
+
+
+
+<h2 class="wp-block-heading">The main categories of deposition methods</h2>
+
+
+
+<p class="wp-block-paragraph">There are many deposition methods, but beginners get a clearer view by first learning CVD, PVD, and ALD. Applied Materials' metal deposition page also explains that metals are deposited using technologies such as ALD, CVD, and PVD.</p>
+
+
+
+<div class="semicon-methods">
+  <div class="semicon-method"><h3>CVD</h3><p><strong>Grows a film from reacting gases</strong></p><div class="semicon-wafer"></div><p>Uses chemical reactions to form a film on the wafer surface. It is widely used for insulating films, conductive films, semiconductor films, and more.</p></div>
+  <div class="semicon-method pvd"><h3>PVD</h3><p><strong>Sends material flying onto the surface</strong></p><div class="semicon-wafer"></div><p>Forms a film by physically sending material onto the surface. It is important for metal films and similar layers.</p></div>
+  <div class="semicon-method ald"><h3>ALD</h3><p><strong>Stacks little by little, one atomic layer at a time</strong></p><div class="semicon-wafer"></div><p>A method that makes it easier to control very thin, uniform films. It is becoming more important with 3D structures and scaling.</p></div>
+</div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>CVD, PVD, ALD... When English abbreviations suddenly show up, it gets hard fast.</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>At first, the image matters more than the name. CVD "grows from reacting gases," PVD "sends material flying and sticks it on," and ALD "stacks carefully one layer at a time." Starting there is plenty.</p></div></div>
+
+
+
+<h2 class="wp-block-heading">How are CVD, PVD, and ALD used differently?</h2>
+
+
+
+<p class="wp-block-paragraph">The choice depends on the film material, thickness, uniformity, coverage over steps, process temperature, productivity, and more.</p>
+
+
+
+<p class="wp-block-paragraph">CVD uses reactive gases to form films, so it works well with many materials. Lam Research explains that CVD and ALD are used to form metal films, insulating layers, and more.</p>
+
+
+
+<p class="wp-block-paragraph">PVD is like physically sending metal material flying to form a film. It is important for metal films, but it can be hard to coat evenly deep inside narrow trenches or complex steps.</p>
+
+
+
+<p class="wp-block-paragraph">ALD builds films little by little at the atomic-layer level, so it shines with very thin films and complex 3D structures. Lam Research's explanation of ALD also describes it as a type of CVD used to form thin films.</p>
+
+
+
+<h2 class="wp-block-heading">Why deposition is difficult</h2>
+
+
+
+<p class="wp-block-paragraph">If you think of deposition as "just making a film," it sounds easy. In reality, it is a very difficult process. That is because the film must have the target thickness, the target composition, and the target quality across the entire wafer.</p>
+
+
+
+<div class="semicon-grid">
+  <div class="semicon-card"><b>Thickness uniformity</b><span>If the thickness differs between the center and the edge of the wafer, it affects performance and yield.</span></div>
+  <div class="semicon-card"><b>Step coverage</b><span>The film must coat the sidewalls and bottoms of trenches and holes cleanly.</span></div>
+  <div class="semicon-card"><b>Impurities and defects</b><span>Even tiny contamination or particles can cause leakage or broken wires.</span></div>
+  <div class="semicon-card"><b>Temperature limits</b><span>High temperatures can make quality easier to raise, but sometimes they would damage the structures underneath.</span></div>
+  <div class="semicon-card"><b>Mass production</b><span>A film you can make in a lab and a film you can make reliably in a fab are two different things.</span></div>
+  <div class="semicon-card"><b>Scaling and 3D</b><span>In structures like GAA and 3D NAND, controlling films gets even harder.</span></div>
+</div>
+
+
+<section class="mp1-section" id="maintenance-phase1-learning"><h2>Connect deposition tool and chamber condition to real work and further learning</h2><p>In maintenance that supports deposition, you link changes in film thickness and uniformity to temperature, gas supply, vacuum, and chamber condition. If you organize what you recorded before and after cleaning or parts replacement, and which measurement results you passed to the process team, you can explain your experience supporting tool repeatability. While filling in the basics of mechanics, electrical work, and quality, take a look at the scope of job postings that include inspecting, restoring, and starting up deposition tools.</p></section>
+
+<h2 class="wp-block-heading">Which companies and jobs does this connect to?</h2>
+
+
+
+<p class="wp-block-paragraph">Once you understand deposition, semiconductor equipment makers and materials makers become easier to see. For example, Applied Materials, Lam Research, and Tokyo Electron (TEL) are important companies in semiconductor manufacturing equipment, including deposition. Tokyo Electron's official site also lists products for semiconductor manufacturing processes such as deposition, lithography, etching, and cleaning.</p>
+
+
+
+<p class="wp-block-paragraph">In terms of jobs, it connects to roles such as process engineer, equipment engineer, materials engineer, quality control, yield improvement, and field service engineer (FSE).</p>
+
+
+
+<h2 class="wp-block-heading">Summary: Deposition stacks functions on the wafer</h2>
+
+
+
+<p class="wp-block-paragraph">Deposition is the process of making thin films with the needed properties on top of a wafer. By making insulating films, conductive films, protective films, and films to be etched later, it builds up the structure of semiconductor devices on the wafer.</p>
+
+
+
+<p class="wp-block-paragraph">The key point is that deposition alone does not complete a circuit. Cleaning prepares the surface, deposition makes the film, lithography transfers the pattern, and etching removes the unneeded parts. In this flow, deposition plays the role of "stacking functions."</p>
+
+
+
+<div class="semicon-links">
+  <div class="semicon-linkbox next"><h3>Read next</h3><p><strong>What is lithography?</strong><br>Next, we move on to the process that transfers circuit patterns onto the film we made. It is also a starting point for understanding EUV and ASML.</p></div>
+  <div class="semicon-linkbox"><h3>Related articles</h3><p><a href="https://semicon-campus.com/what-is-feol-semiconductor-process/">What is the front-end process?</a></p><p><a href="https://semicon-campus.com/what-is-silicon-wafer/">What is a wafer?</a></p><p><a href="https://semicon-campus.com/semiconductor-manufacturing-overview/">What does semiconductor manufacturing look like as a whole?</a></p></div>
+</div>
+
+
+<section class="mp1-section" id="maintenance-phase1-career"><h2>Jobs that use your knowledge of deposition tools and chamber condition, and your next steps</h2><p>If you have experience with chamber cleaning, equipment inspection, or checking process results, organize each case as a set: "target tool, symptom, what you checked, and the result." Compare the equipment you would handle, night shift and travel, training, and requirements against the job posting. This helps you separate the experience you can use from the knowledge you need to fill in.</p><aside class="semicon-cta mp1-card"><h3>Check the big picture of the work, and how to choose jobs and learning</h3><p>At the Equipment Maintenance Hub, you can review inspection and troubleshooting work, how to organize your experience, and job postings, basic learning, and certification prep all in one place. If you want to compare the scope of tool responsibility or customer support, see the related job articles too.</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/" class="semicon-btn mp1-button" data-maintenance-phase1-hub="277" data-cta="maintenance_hub" data-cta-type="maintenance_hub" data-cta-stage="career" data-cta-id="maintenance_63_hub277_end" data-cta-route="maintenance_63_hub277_end">See job duties, postings, and learning at the Equipment Maintenance Hub</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/" class="semicon-btn mp1-button" data-maintenance-phase1-hub="237" data-cta="equipment_hub" data-cta-type="equipment_hub" data-cta-stage="career" data-cta-id="maintenance_63_hub237_end" data-cta-route="maintenance_63_hub237_end">See an equipment engineer's scope, job postings, and learning</a></div></aside></section>
+
+
+<h2 class="wp-block-heading">Official sources we referred to</h2>
+
+
+
+<ul class="semicon-sources wp-block-list">
+  <li><a rel="noopener" href="https://www.appliedmaterials.com/us/en/semiconductor/products/create/metals-deposition.html" target="_blank">Applied Materials: Metals Deposition</a></li>
+  <li><a rel="noopener" href="https://www.lamresearch.com/products/our-processes/deposition/" target="_blank">Lam Research: Deposition</a></li>
+  <li><a rel="noopener" href="https://newsroom.lamresearch.com/Deposition-Essentials-Semi-101?blog=true" target="_blank">Lam Research: Deposition Essentials</a></li>
+  <li><a rel="noopener" href="https://newsroom.lamresearch.com/Tech-Brief-A-Look-at-Atomic-Layer-Deposition-ALD" target="_blank">Lam Research: A Look at Atomic Layer Deposition</a></li>
+  <li><a rel="noopener" href="https://www.tel.com/product/" target="_blank">Tokyo Electron: Products and Services</a></li>
+</ul>
+
+
+
+</div>

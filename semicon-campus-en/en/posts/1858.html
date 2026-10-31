@@ -1,0 +1,396 @@
+<article class="semicon-template-v2" data-episode="095" data-slug="equipment-alarm-initial-response">
+<aside class="semicon-difficulty" aria-label="Article difficulty">
+<p><strong>Difficulty: ★☆☆☆☆ Beginner</strong><br />For people learning about semiconductor equipment for the first time</p>
+</aside>
+<div class="semicon-locked-body">
+<p>When you work with machines in a factory, they sometimes stop suddenly.</p>
+<p>The same is true for the equipment that makes semiconductors.</p>
+<p>One day, a tool suddenly stopped.</p>
+<p>On the screen, you see messages like these.</p>
+<ul>
+<li>Cooling water pressure is low</li>
+<li>Temperature is high</li>
+<li>Process power has stopped</li>
+<li>Processing was aborted</li>
+</ul>
+<p>That is four alarms at once.</p>
+<p>So did four parts break at the same time?</p>
+<p>Not necessarily.</p>
+<p>This is a very important point for understanding equipment maintenance work.</p>
+<hr/>
+<h2>The place named in an alarm is not always the place that broke</h2>
+<p>The first thing to know is this:</p>
+<p><strong>An alarm is not a message that tells you the cause.</strong></p>
+<p>That is the key idea.</p>
+<p>What an alarm tells you is:</p>
+<blockquote>
+<p>"I found an abnormal condition here."</p>
+</blockquote>
+<p>That is all.</p>
+<p>Let's think about a car as an example.</p>
+<p>Say you are driving and the engine temperature gets high.</p>
+<p>That does not necessarily mean</p>
+<blockquote>
+<p>"The temperature gauge is broken!"</p>
+</blockquote>
+<p>Not at all.</p>
+<p>The coolant may be low.</p>
+<p>The cooling fan may not be running.</p>
+<p>The sensor that measures temperature could also be faulty.</p>
+<p>In other words,</p>
+<p><strong>the symptom on the screen and the real cause may be different things.</strong></p>
+<p>That is the point.</p>
+<p>The same goes for semiconductor equipment.</p>
+<hr/>
+<h2>First, look at "what happened first"</h2>
+<p>Let's put the four messages from before in the order they happened.</p>
+<ol>
+<li>Cooling water pressure dropped</li>
+<li>Tool temperature rose</li>
+<li>Process power stopped</li>
+<li>Processing was aborted</li>
+</ol>
+<p>Seen this way, the picture looks a little different, doesn't it?</p>
+<p>At first, it looked like four separate failures.</p>
+<p>But it may have been a single chain of events:</p>
+<blockquote>
+<p>Cooling water pressure dropped<br />
+↓<br />
+The tool could no longer be cooled enough<br />
+↓<br />
+The temperature rose<br />
+↓<br />
+The tool stopped processing to avoid danger</p>
+</blockquote>
+<p>That is a real possibility.</p>
+<p>Of course, at this stage you still cannot say for sure that this is the true cause.</p>
+<p>However,</p>
+<p><strong>you get much closer to the cause than by looking only at the "last alarm."</strong></p>
+<p>One abnormal event can trigger a series of other alarms, one after another.</p>
+<p>There is a technical term for this:</p>
+<p><strong>Alarm Cascade</strong></p>
+<p>That is what it is called.</p>
+<p>The name sounds difficult, but the meaning is simple.</p>
+<blockquote>
+<p><strong>Alarms appearing in a chain, starting from one abnormal event</strong></p>
+</blockquote>
+<p>That is all it means.</p>
+<hr/>
+<h2>So should you just look for the "first alarm"?</h2>
+<p>Here, too, you need to think one step further.</p>
+<p>For example, say the alarm</p>
+<p>"Cooling water pressure low"</p>
+<p>came first.</p>
+<p>So can you decide that</p>
+<blockquote>
+<p>the drop in cooling water pressure was the first abnormal event?</p>
+</blockquote>
+<p>Is that right?</p>
+<p>Actually, you still don't know.</p>
+<p>That is because the cooling water pressure may have been dropping little by little before the alarm went off.</p>
+<p>For example, it may have gone like this:</p>
+<p>Normal<br />
+↓<br />
+A slight drop<br />
+↓<br />
+A further drop<br />
+↓<br />
+It crosses the set limit<br />
+↓<br />
+An alarm goes off</p>
+<p>That could be the sequence.</p>
+<p>In other words, what the maintenance technician wants to find is</p>
+<p><strong>not the first alarm that went off.</strong></p>
+<p>What they really want to find is</p>
+<blockquote>
+<p><strong>when the tool first entered a "different from usual" state</strong></p>
+</blockquote>
+<p>That is the goal.</p>
+<p>This first change is sometimes called the</p>
+<p><strong>First Abnormal Event</strong></p>
+<p>in technical terms.</p>
+<p>In plain words, it means roughly</p>
+<p><strong>"the first thing that went wrong"</strong></p>
+<p>and nothing more.</p>
+<p>Rather than the technical term, it is easier to remember it as</p>
+<blockquote>
+<p>"When did things start to go wrong?"</p>
+</blockquote>
+<p>That works fine.</p>
+<hr/>
+<h2>How do you find out "when"?</h2>
+<p>This is where the records stored in the tool come in.</p>
+<p>Semiconductor equipment may record things like:</p>
+<ul>
+<li>What time an alarm went off</li>
+<li>What operations were done before that</li>
+<li>What the pressure was</li>
+<li>What the temperature was</li>
+</ul>
+<p>and more.</p>
+<p>While looking at those records, the maintenance technician lines them up like this:</p>
+<blockquote>
+<p>10:02　Cooling water pressure drops slightly<br />
+10:03　It drops further<br />
+10:04　Temperature rises<br />
+10:05　Processing stops</p>
+</blockquote>
+<p>Lined up this way,</p>
+<p>then</p>
+<p><strong>not "the moment the tool stopped" but "the moment the problem started"</strong></p>
+<p>comes into view.</p>
+<hr/>
+<h2>But are the numbers on the screen really correct?</h2>
+<p>There is one more problem here.</p>
+<p>Say the screen shows</p>
+<blockquote>
+<p>Cooling water pressure is low</p>
+</blockquote>
+<p>as a message.</p>
+<p>So has the water pressure really dropped?</p>
+<p>You can't tell that right away either.</p>
+<p>That is because the tool's screen is not looking directly inside the pipe.</p>
+<p>Put very simply, the flow is:</p>
+<p><strong>Water pressure<br />
+↓<br />
+A part that measures it<br />
+↓<br />
+An electrical signal<br />
+↓<br />
+The tool's computer<br />
+↓<br />
+Shown on the screen</strong></p>
+<p>in that order.</p>
+<p>A home thermometer works the same way.</p>
+<p>Is your body temperature really 39°C?</p>
+<p>Or is the thermometer broken and just showing 39°C?</p>
+<p>You can't tell from the display alone.</p>
+<p>With semiconductor equipment, too, you separate two questions:</p>
+<blockquote>
+<p><strong>Is something really wrong with the equipment itself?</strong></p>
+<p>Or</p>
+<p><strong>is something wrong with the part doing the measuring?</strong></p>
+</blockquote>
+<p>You think about these separately.</p>
+<hr/>
+<h2>This is where words like Sensor and PLC come in</h2>
+<p>If you understand everything so far, the technical terms are not that hard.</p>
+<p>A part that measures pressure or temperature is called a</p>
+<p><strong>Sensor</strong></p>
+<p>in English.</p>
+<p>The information the sensor measures is sent to the tool as a</p>
+<p><strong>Signal</strong></p>
+<p>through wiring.</p>
+<p>The entry point where that signal goes into the tool is called</p>
+<p><strong>I/O (input/output)</strong></p>
+<p>for short.</p>
+<p>Then, one type of controller looks at that information and decides</p>
+<blockquote>
+<p>whether things are normal<br />
+or abnormal<br />
+whether to run the tool<br />
+or stop it</p>
+</blockquote>
+<p>That controller is called a</p>
+<p><strong>PLC</strong></p>
+<p>(programmable logic controller).</p>
+<p>You don't need to memorize all of this at once.</p>
+<p>For now,</p>
+<blockquote>
+<p><strong>Actual condition<br />
+→ Measure it<br />
+→ Send the information<br />
+→ The tool makes a decision</strong></p>
+</blockquote>
+<p>understanding just this flow is enough.</p>
+<hr/>
+<h2>Look at the "change," not a single moment's number</h2>
+<p>Maintenance technicians don't look only at the numbers from the moment the tool stopped.</p>
+<p>For example, did the cooling water pressure</p>
+<p>stay at 5 the whole time and then suddenly drop to 2?</p>
+<p>5<br />
+↓<br />
+4.8<br />
+↓<br />
+4.5<br />
+↓<br />
+4.0<br />
+↓<br />
+3.0</p>
+<p>Or did it fall little by little like this?</p>
+<p>This difference is very important.</p>
+<p>So they look at</p>
+<p><strong>how the numbers changed over time</strong></p>
+<p>instead.</p>
+<p>For example, a graph with time on the horizontal axis and water pressure on the vertical axis.</p>
+<p>A record of changes over time like this is called</p>
+<p><strong>Trend Data</strong></p>
+<p>in technical terms.</p>
+<p>So you don't need to overthink it.</p>
+<blockquote>
+<p><strong>It is just a history of numbers.</strong></p>
+</blockquote>
+<p>That's all.</p>
+<p>Looking at it, you can sometimes see things like</p>
+<blockquote>
+<p>"The water pressure started dropping 10 minutes before the tool stopped."</p>
+</blockquote>
+<p>That kind of thing can become clear.</p>
+<p>Then,</p>
+<p>a failure you thought had "happened suddenly"</p>
+<p>may turn out</p>
+<p>to have been getting worse little by little for some time.</p>
+<hr/>
+<h2>Equipment maintenance is a bit like detective work</h2>
+<p>Let's sum up the flow so far.</p>
+<p>The tool stopped.</p>
+<p>The first fact you could confirm was:</p>
+<blockquote>
+<p>The cooling water pressure reading had dropped.</p>
+</blockquote>
+<p>That is all.</p>
+<p>You still cannot say that</p>
+<blockquote>
+<p>the cooling water system broke.</p>
+</blockquote>
+<p>Not yet.</p>
+<p>So you ask,</p>
+<blockquote>
+<p>Did the water pressure actually drop?</p>
+</blockquote>
+<p>That is one possible cause.</p>
+<p>At the same time,</p>
+<blockquote>
+<p>Is the sensor that measures pressure faulty?</p>
+</blockquote>
+<p>That is another possible cause.</p>
+<p>Then you check each one using a safe method.</p>
+<p>This way of thinking has names.</p>
+<p>What you have actually confirmed is a</p>
+<p><strong>Fact</strong></p>
+<p>in this way of thinking.</p>
+<p>A possible cause you have not yet confirmed is a</p>
+<p><strong>Hypothesis</strong></p>
+<p>for now.</p>
+<p>Checking whether that hypothesis is correct is called</p>
+<p><strong>Verification</strong></p>
+<p>in this process.</p>
+<p>And finally, when you can confirm</p>
+<blockquote>
+<p>"This was the real cause of this stoppage,"</p>
+</blockquote>
+<p>that is the</p>
+<p><strong>Root Cause</strong></p>
+<p>of the problem.</p>
+<p>But memorizing these English words is not what matters.</p>
+<p>What matters is this way of thinking:</p>
+<blockquote>
+<p><strong>Don't jump to conclusions based only on the symptoms you see.</strong></p>
+<p><strong>List the possible causes.</strong></p>
+<p><strong>Check them one by one.</strong></p>
+</blockquote>
+<p>That is the mindset.</p>
+
+<hr/>
+<h2>If it runs after a Reset, is the repair done?</h2>
+<p>There is one more important point.</p>
+<p>When the tool stopped,</p>
+<p>you pressed Reset and it started running again.</p>
+<p>At that point,</p>
+<blockquote>
+<p>"It's fixed!"</p>
+</blockquote>
+<p>is what you want to think.</p>
+<p>But is it really fixed?</p>
+<p>For example, say a breaker trips at home.</p>
+<p>You reset the breaker and the lights come back on.</p>
+<p>But if you never find out why the breaker tripped, it may trip again.</p>
+<p>Equipment is the same.</p>
+<p>Being able to restart the tool and</p>
+<p><strong>having the cause removed are two different things.</strong></p>
+<p>That is why, in equipment maintenance,</p>
+<blockquote>
+<p>why the tool stopped<br />
+and whether the same thing could happen again</p>
+</blockquote>
+<p>you check these things as well.</p>
+<hr/>
+<h2>So when a tool stops, what do you look at first?</h2>
+<p>Let's sum everything up as simply as possible.</p>
+<p>When a tool stops,</p>
+<p>first make sure it is safe.</p>
+<p>Then,</p>
+<p><strong>(1) Look at which alarms appeared</strong></p>
+<p>But don't decide where the failure is based on that alone.</p>
+<p>Next,</p>
+<p><strong>(2) Look at what happened first</strong></p>
+<p>Check the times of the alarms and events.</p>
+<p>Then,</p>
+<p><strong>(3) Look at whether the numbers were already changing before that</strong></p>
+<p>Check the history of pressure, temperature, and so on.</p>
+<p>Also,</p>
+<p><strong>(4) Separate whether the equipment itself is at fault or the measuring side is at fault</strong></p>
+<p>Think about it this way.</p>
+<p>Finally,</p>
+<p><strong>(5) Check the possible causes one by one</strong></p>
+<p>That is the flow.</p>
+<hr/>
+<h2>A maintenance technician's job is not "to clear alarms"</h2>
+<p>When people think of equipment maintenance work,</p>
+<p>they may picture "someone who replaces broken parts."</p>
+<p>That image is common.</p>
+<p>But in reality, the work that comes before that is very important.</p>
+<p>The tool stopped.</p>
+<p>An alarm appeared.</p>
+<p>The numbers changed.</p>
+<p>So,</p>
+<blockquote>
+<p><strong>why did that happen?</strong></p>
+</blockquote>
+<p>You work through this</p>
+<p>one step at a time while looking at the tool's records and condition.</p>
+<p>In other words, a <a href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/">maintenance technician</a> is</p>
+<p><strong>someone who tracks down the real cause from the symptoms on the screen</strong></p>
+<p>as part of the job.</p>
+<p>If you have worked in manufacturing</p>
+<p>and have "looked for the cause when a machine acted strangely by checking its sounds, temperature, and movement,"</p>
+<p>that way of thinking carries over to <a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/">semiconductor equipment</a> as well.</p>
+<hr/>
+<h2>Summary</h2>
+<p>The one thing I most want you to remember from this article is this.</p>
+<p><strong>An alarm is not the answer.</strong></p>
+<p>An alarm is an entry point.</p>
+<blockquote>
+<p>"Something is wrong here."</p>
+</blockquote>
+<p>That is what it tells you.</p>
+<p>From there,</p>
+<p><strong>When did it first change?<br />
+Is the equipment really at fault?<br />
+Is the measuring side working normally?<br />
+How did the other numbers change?</strong></p>
+<p>you check these one by one.</p>
+<p>Then,</p>
+<p><strong>Symptom → Possible causes → Checks → Real cause</strong></p>
+<p>That is how you move forward.</p>
+<p>This is the basic way of thinking used in equipment maintenance for semiconductor manufacturing equipment.</p>
+<p>Now that you have finished reading, words like</p>
+<p><strong>Alarm Cascade, Sensor, Trend Data, and Root Cause</strong></p>
+<p>should make a little more sense than they did at the start.</p>
+</div>
+<section class="semicon-sources" aria-label="Sources">
+<h2>Sources</h2>
+<ol>
+<li id="ref-s01"><strong>[S01]</strong> International Society of Automation (ISA), “Getting the most from your safety alarms.” <a href="https://www.isa.org/intech-home/2016/may-june/features/getting-the-most-from-your-safety-alarms">https://www.isa.org/intech-home/2016/may-june/features/getting-the-most-from-your-safety-alarms</a></li>
+<li id="ref-s02"><strong>[S02]</strong> OMRON, “Programmable Controllers — Introduction.” <a href="https://www.ia.omron.com/support/guide/26/introduction.html">https://www.ia.omron.com/support/guide/26/introduction.html</a></li>
+<li id="ref-s03"><strong>[S03]</strong> Schneider Electric, “Alarms UI — EcoStruxure Power Monitoring Expert.” <a href="https://product-help.se.com/docs/EcoStruxure/Power-Monitoring-Expert-2024/content/8_reference/webapps/alarmviews/ref_alarms_ui.htm">https://product-help.se.com/docs/EcoStruxure/Power-Monitoring-Expert-2024/content/8_reference/webapps/alarmviews/ref_alarms_ui.htm</a></li>
+<li id="ref-s04"><strong>[S04]</strong> Siemens, “Enabling and analyzing event history — Desigo PXC4/5/7 and DXR2 Commissioning.” <a href="https://sid.siemens.com/r/A6V13151547/31262763019__V6.1_en-US_31144805515">https://sid.siemens.com/r/A6V13151547/31262763019__V6.1_en-US_31144805515</a></li>
+<li id="ref-s05"><strong>[S05]</strong> OSHA, 29 CFR 1910.147, “The control of hazardous energy (lockout/tagout).” <a href="https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.147">https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.147</a></li>
+<li id="ref-s06"><strong>[S06]</strong> Brooks Instrument, “GF100/GF120xHT/GF101 Series Installation &amp; Operation Manual — Maintenance &amp; Troubleshooting.” <a href="https://sales.brooksinstrument.com/hubfs/Installation-Manual-GF100-GF120xHT-GF101-EN.pdf">https://sales.brooksinstrument.com/hubfs/Installation-Manual-GF100-GF120xHT-GF101-EN.pdf</a></li>
+<li id="ref-s07"><strong>[S07]</strong> Edwards Vacuum, “Dry Vacuum Pump — Instructions / Fault finding (A74401880).” <a href="https://www.lesker.com/newweb/vacuum_pumps/pdf/manuals/mxds-manual.pdf">https://www.lesker.com/newweb/vacuum_pumps/pdf/manuals/mxds-manual.pdf</a></li>
+<li id="ref-s08"><strong>[S08]</strong> Rockwell Automation, “Studio 5000 Logix Designer — Trends.” <a href="https://www.rockwellautomation.com/en-us/docs/studio-5000-logix-designer/38-01/contents-ditamap/studio-5000-logix-designer/trends.html">https://www.rockwellautomation.com/en-us/docs/studio-5000-logix-designer/38-01/contents-ditamap/studio-5000-logix-designer/trends.html</a></li>
+<li id="ref-s09"><strong>[S09]</strong> Rockwell Automation, “Troubleshooting: Trend chart is missing data points.” <a href="https://www.rockwellautomation.com/en-us/docs/factorytalk-view/16-00-00/se-help-ditamap/factorytalk-view-site-edition-help/trends/using-trend-objects/troubles-trend-miss-data-points.html">https://www.rockwellautomation.com/en-us/docs/factorytalk-view/16-00-00/se-help-ditamap/factorytalk-view-site-edition-help/trends/using-trend-objects/troubles-trend-miss-data-points.html</a></li>
+<li id="ref-s10"><strong>[S10]</strong> American Society for Quality (ASQ), “What is Root Cause Analysis (RCA)?” <a href="https://asq.org/quality-resources/root-cause-analysis">https://asq.org/quality-resources/root-cause-analysis</a></li>
+</ol>
+</section>
+</article>

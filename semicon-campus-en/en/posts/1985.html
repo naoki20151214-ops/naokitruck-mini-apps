@@ -1,0 +1,203 @@
+<p><!DOCTYPE html></p>
+<p><html lang="ja"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>The Tool Is Fixed. So Why Can't You Make Products Right Away? Recovery Checks and Process Qual</title></p>
+<!--KEEP:0-->
+<p></head><body></p>
+<article data-episode="099" data-slug="equipment-recovery-qualification" data-target="new_post">
+<p><strong>In semiconductor equipment maintenance, the truly hard part is not just "getting it running." It's confirming that it can make products at the same quality as before.</strong></p>
+<p>Picture a semiconductor manufacturing tool that has just been cleaned. The parts are reinstalled and it starts up again, with no obvious alarms. The vacuum reading is also approaching its usual value.</p>
+<p>If the maintenance technician reports "The tool is running," can the next product wafer go in?</p>
+<p><strong>The answer is: we don't know yet.</strong></p>
+<p>That's because restoring the tool's functions is different from getting the intended processing results. The work of checking that difference is the theme of this article: "recovery checks" and "process Qual (qualification)."</p>
+<p>What we cover here is a way of thinking common to semiconductor fabs. The specific test items, order, pass/fail criteria, and who approves putting product back in are set by the official procedures for each fab, tool, process, and type of maintenance.</p>
+<figure class="wp-block-image aligncenter size-large ep099-figure"><img decoding="async" alt="Concept illustration: the tool is running, but an engineer checks monitor wafer measurement results and waits before deciding to run product." height="720" loading="lazy" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep099-blog-01-hero.jpg" width="1280"/><figcaption>A newly generated concept illustration showing that the tool running and the decision to run product are separate. It does not depict any real fab, tool, or person.</figcaption></figure>
+<h2>Why isn't the usual recipe enough to feel safe?</h2>
+<p>A recipe for semiconductor manufacturing equipment specifies processing conditions such as temperature, pressure, gases, and time. In cooking terms, it's like a recipe that lists the oven temperature and baking time.</p>
+<p>But setting the same temperature doesn't always mean the inside of the oven is in the same condition.</p>
+<p>In semiconductor processing, this becomes an even stricter problem. Even when the set numbers are the same, the recipe doesn't guarantee the condition inside the chamber.</p>
+<p>Take an etching tool that uses plasma, for example. Material is removed from the wafer surface, and reaction byproducts and other substances also interact with the chamber's inner walls. If cleaning changes the wall condition, or the inside changes while the tool sits idle for a long time, <strong>the same recipe may start processing from a different point than before</strong>.</p>
+<p>The tool is working as instructed. But the processing environment is not exactly the same as before.</p>
+<p>That's why a report that "the machine is running" is not enough information to decide whether to run product.</p>
+<figure class="wp-block-image aligncenter size-large ep099-figure"><img decoding="async" alt="Concept diagram placing chamber inner walls that changed before and after cleaning next to a recipe panel with the same settings." height="960" loading="lazy" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep099-blog-02-chamber.jpg" width="1280"/><figcaption>A concept diagram showing that the condition of the chamber's inner walls can change before and after cleaning. It is not a comparison of values, particle counts, or measured data.</figcaption></figure>
+<h2>Sometimes only the first wafer doesn't process well</h2>
+<p>A good example of this difficulty is the <strong>first-wafer effect</strong>.</p>
+<p>A patent filed by AMD (Advanced Micro Devices) in 1999, "Automatic method to eliminate first-wafer effect" (US6291252B1), describes a problem where, after a plasma etching tool has been idle for a while, the processing result for the first product wafer misses the target. It explains that the background is that the state of residual gases and reaction byproducts in the chamber differs from during continuous operation.</p>
+<p>What the developers faced was not just a breakdown.</p>
+<p><strong>It was a problem of "It hasn't stopped, but it can't make the first product well."</strong></p>
+<p>So, do you have to run the first valuable product wafer as a test and throw it away if it doesn't work?</p>
+<p>The idea for avoiding that is <strong>conditioning</strong>. Using wafers that aren't product, for example, you prepare the inside of the tool so it's suitable for processing. Wafers used for that purpose are sometimes called "dummy wafers."</p>
+<p>However, <strong>it wasn't as simple as "just run a dummy wafer first and you're done."</strong></p>
+<p>AMD's patent explains that the traditional manual work had several pitfalls. People forgot to load the needed dummy wafers. Extra handling created risks of scratches and particle contamination. People forgot to switch back to the product recipe after conditioning. And on the other hand, running dummy wafers every time, even when not yet needed, cut into time that could be used for making product.</p>
+<p><strong>Work meant to protect the first product wafer could create other mistakes or lost time.</strong> That was the difficulty the developers tackled.</p>
+<p>So the patent proposed a system that automatically processes conditioning wafers only when needed, based on things like the tool's idle time. Rather than blindly increasing the number of runs, the idea was to create the needed condition only when needed.</p>
+<p>Of course, this is <strong>a technical proposal disclosed in a patent</strong>. It doesn't mean the same phenomenon occurs in every tool, or that fabs around the world have adopted that method.</p>
+<p>AMD's story was mainly about the challenge of "restarting after idling." So what about <strong>after chamber cleaning</strong>, which we covered in the previous article? Here, too, there are reasons why the tool simply running is not enough.</p>
+<h2>Being "clean" after cleaning doesn't always mean ready to process</h2>
+<p>It's important for the chamber to be clean. But the condition needed for processing is not always the same as "nothing on the surfaces."</p>
+<p>In some processes, a treatment is done after cleaning to prepare the surface condition inside the chamber. This is called <strong>seasoning</strong>.</p>
+<p>A patent whose applicants include a Korean Lam Research affiliate uses a tungsten plug process related to DRAM manufacturing as an example. It describes a method that tackles particle generation and cleaning intervals by adjusting the combination of seasoning gases.</p>
+<p>What this shows is that cleaning was not the only goal. <strong>How to return to a stable processing condition after cleaning</strong> was also a subject of technology development.</p>
+<p>However, some tools don't need seasoning, and some processes prepare the condition in different ways. In the field, approved tool and process procedures take priority, including the selection and handling of process gases.</p>
+<p>And there's an important distinction.</p>
+<ul>
+<li><strong>Conditioning with dummy wafers</strong> mainly aims to prepare the condition of the tool and chamber.</li>
+<li><strong>Checking with monitor wafers</strong> mainly aims to evaluate whether the specified processing and measurement results are achieved.</li>
+</ul>
+<p>Both may use wafers that aren't product, but <strong>"preparing the condition" and "confirming the results" are different jobs</strong>. Actual operation and how wafers are used differ by process.</p>
+<figure class="wp-block-image aligncenter size-large ep099-figure"><img decoding="async" alt="Illustration showing condition preparation with dummy wafers and result checks with monitor wafers, along with the concept of an automated transfer line using dedicated wafer carriers." height="960" loading="lazy" src="https://semicon-campus.com/wp-content/uploads/2026/10/03-wafer-roles-rev1.png" width="1280"/><figcaption>A concept illustration that separates condition preparation with dummy wafers from result checks with monitor wafers. Actual operation differs by process.</figcaption></figure>
+<h2>There are several "passes" before returning to volume production</h2>
+<p>It's easier to understand the decisions after cleaning or repair if you split them by role.</p>
+<figure class="wp-block-image aligncenter size-large ep099-figure"><img decoding="async" alt="Concept illustration of four stages, safety and function checks, any needed condition preparation, process Qual, and the decision to run product, with dedicated wafer carriers." height="960" loading="lazy" src="https://semicon-campus.com/wp-content/uploads/2026/10/04-release-stages-rev1.png" width="1280"/><figcaption>A concept illustration organizing the roles from recovery to the decision to run product. The specific order and pass/fail criteria depend on each fab's official procedures.</figcaption></figure>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>What do we want to confirm?</th>
+<th>What we still don't know even after passing</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>① Recovery check of safety and functions</td>
+<td>Whether the relevant safety mechanisms, transfer, pressure, temperature, and so on work in the specified state</td>
+<td>Whether product will be processed to the specified quality</td>
+</tr>
+<tr>
+<td>② Condition preparation as needed</td>
+<td>Whether the chamber, after cleaning or idling, has been brought to the condition the process requires</td>
+<td>Whether the processing results themselves are within spec</td>
+</tr>
+<tr>
+<td>③ Process Qual (process requalification)</td>
+<td>Whether results from monitor wafers and the like meet the specified process criteria</td>
+<td>Whether running product has been officially approved</td>
+</tr>
+<tr>
+<td>④ Approval and release for product</td>
+<td>Whether the results and records have been reviewed according to fab rules and product can be run</td>
+<td>It doesn't mean later monitoring during volume production is no longer needed</td>
+</tr>
+</tbody>
+</table>
+<p>This table organizes the concepts; it is not a nationwide standard work order or set of pass/fail criteria. The checks needed change depending on which parts were affected by the maintenance.</p>
+<p>For example, if parts related to vacuum were handled, it may be necessary to check the airtightness and the condition of the vacuum system. A leak test using helium is one such method. However, <strong>not every maintenance job gets the same leak test.</strong></p>
+<p>For the tool's safety mechanisms and the handling of hazards, the official safety procedures of the maker and the fab take priority. Do not use the explanations here as an operating manual.</p>
+<h3>If reading this makes you want to relearn the basics of equipment maintenance</h3>
+<blockquote>
+<p><strong>PR | Learn equipment maintenance systematically</strong></p>
+<p>Before following vacuum and temperature numbers, you may want to understand how mechanical and electrical parts work and what to inspect. For people like that, JTEX's correspondence course "Maintenance of Production Systems (Equipment)" is one learning option. It is not a course that teaches semiconductor process Qual itself, so check the content before choosing.</p>
+</blockquote>
+<h2>What numbers are monitor wafers checking?</h2>
+<p>Let's say an etching tool has been cleaned.</p>
+<p>If you take out a processed monitor wafer and it looks clean, does it pass? It's not that simple. Semiconductor processing results need to be evaluated down to changes you can't see with the naked eye.</p>
+<p>The values checked differ by process.</p>
+<figure class="wp-block-image aligncenter size-large ep099-figure"><img decoding="async" alt="Concept illustration of measurement examples showing wafer film thickness and uniformity, pattern CD and shape, and particles and defects." height="960" loading="lazy" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep099-blog-05-metrics.jpg" width="1280"/><figcaption>A concept illustration showing measurement examples for film thickness and uniformity, CD and shape, and particles and defects. It does not mean every item is measured in every process.</figcaption></figure>
+<table>
+<thead>
+<tr>
+<th>What is checked</th>
+<th>What it tells you</th>
+<th>Example related processes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Particles and defects</td>
+<td>Whether unwanted fine particles or foreign matter have increased</td>
+<td>Many wafer processes</td>
+</tr>
+<tr>
+<td>Film thickness</td>
+<td>Whether the deposited film is as thick as intended</td>
+<td>Deposition</td>
+</tr>
+<tr>
+<td>Within-wafer uniformity</td>
+<td>Whether results vary between the center and edge of the wafer</td>
+<td>Deposition, etching, and others</td>
+</tr>
+<tr>
+<td>Etch rate</td>
+<td>Whether material is being removed at the expected speed</td>
+<td>Etching</td>
+</tr>
+<tr>
+<td>CD (critical dimension) and shape</td>
+<td>Whether fine lines and holes have the intended dimensions and shape</td>
+<td>Etching, lithography, and others</td>
+</tr>
+</tbody>
+</table>
+<p><strong>This doesn't mean all of these are measured in every process.</strong> Which metrics to check, and with what measurement methods and pass/fail criteria, are decided to fit the target process.</p>
+<p>And each measured number raises at least two questions.</p>
+<p><strong>First: Is it within the specified range for the product and process?</strong></p>
+<p>For example, this question judges whether the film has the needed thickness.</p>
+<p><strong>Second: Has the pattern of results changed compared with usual?</strong></p>
+<p>SPC (statistical process control) helps you see this change. You plot data over time on a control chart and look for unusual variation or trends.</p>
+<p>A common mistake here is not realizing that <strong>SPC control limits and product specification limits are different things</strong>.</p>
+<p>For example, suppose the film keeps being made at a similar thickness, but thinner than the target. Even if enough data shows the process is statistically stable, it can't pass if the film thickness is outside the product spec. On the other hand, even if this value is within spec, a sudden change that's different from usual may require investigation.</p>
+<p>Not just "it was within range this time," but also "Is it being made as stably as before?" Thinking about both is what makes the decision to return to volume production hard.</p>
+<figure class="wp-block-image aligncenter size-large ep099-figure"><img decoding="async" alt="Schematic graph contrasting results that are stable but outside the spec range with results that are within spec but changing in trend." height="960" loading="lazy" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep099-blog-06-spc.jpg" width="1280"/><figcaption>A schematic showing that control limits and specification limits have different roles. It's a conceptual example with no numeric axis, not measured data. <strong>Dashed line = control limits, dotted line = spec range</strong></figcaption></figure>
+<h3>How to turn changes in numbers into something useful at work</h3>
+<blockquote>
+<p><strong>PR | Relearn Excel and data analysis</strong></p>
+<p>Besides "measuring," the ability to line up results and read trends that differ from usual is also important. Win School offers courses such as Excel business data analysis and Power BI. They are not specialized process Qual courses, but people who want to build basic skills in organizing data can compare their content.</p>
+</blockquote>
+<h2>When it doesn't pass, where should you look?</h2>
+<p>What's needed here is not replacing parts at random.</p>
+<p>First, gather <strong>what changed</strong>.</p>
+<ul>
+<li>When was this cleaning or parts replacement done, and on which part of which tool?</li>
+<li>What differences are there in vacuum, temperature, pressure, and other records before and after maintenance?</li>
+<li>Which metrics on the monitor wafer went outside the criteria?</li>
+<li>Is it a one-time problem, or a trend that continues over time?</li>
+</ul>
+<p>Don't conclude "that part is broken" just because one value changed. There are other possibilities, such as the measuring instrument or effects from earlier processes.</p>
+<p>You compare the maintenance history, tool data, and wafer measurement results, narrow down possible causes, and redo the needed checks according to the official response procedures. That kind of judgment is required.</p>
+<p>If you've done equipment maintenance at a general factory, doesn't this way of thinking look familiar?</p>
+<p>However, in semiconductors, many wafers may be processed before a tool problem is found. <strong>Deciding before running product is very valuable.</strong></p>
+<p><!-- SAT advertising slot omitted: no official code available. --></p>
+<h2>Who decides "it's OK to make product now"?</h2>
+<p>This process usually isn't completed by one person.</p>
+<p><strong>Equipment maintenance staff and equipment engineers</strong> are responsible for checking whether the serviced equipment works in the specified state and whether the tool data shows any problems.</p>
+<p><strong>Process engineering and production engineering</strong> look at the product processing conditions and monitor wafer measurement results to evaluate repeatability.</p>
+<p><strong>People involved in manufacturing and quality</strong> take part in the process of deciding whether product can be run, following the records, criteria, and approval procedures set within the fab.</p>
+<p>Which department gives final approval differs by fab. What matters is <strong>linking the information "the machine is fixed" to the decision "it's OK to make product" through data and procedures</strong>.</p>
+<p>That's why process Qual after maintenance takes time. Monitor wafers need to be prepared, transferred, processed, measured, and evaluated.</p>
+<p>Applied SmartFactory, which provides production systems for semiconductor fabs, introduces the idea of automating this kind of requalification after maintenance. The aim is to connect everything from wafer preparation to judgment and return tools to volume production properly and quickly. What's introduced here is the provider's own explanation, not a guarantee that every fab will see the same effect.</p>
+<h3>If you're wondering, "Can I use my manufacturing experience?"</h3>
+<blockquote>
+<p><strong>PR | Take your manufacturing experience to your next job</strong></p>
+<p>Inspection, troubleshooting, measurement, process improvement. How you present your experience as job duties is also important when changing jobs. Makers Job is a career change support service specializing in manufacturing. This doesn't mean there will always be semiconductor equipment maintenance jobs, so check your desired job type and job conditions individually.</p>
+</blockquote>
+<p><a href="https://www.youtube.com/watch?v=jMrf4-yEbYY">Watch the EP099 YouTube Short</a></p>
+<h2>Being able to keep making products with confidence matters more than restarting quickly</h2>
+<p>In a semiconductor fab, keeping a tool stopped also costs money. So, of course, you want to recover quickly.</p>
+<p>But if you run product without confirming processing quality, problems may be found in later inspection, and you may lose even more time and material. The challenge AMD tackled in its patent, "protecting the first product wafer," was one example of that dilemma.</p>
+<p>Maintenance and process Qual are not jobs where one is the star.</p>
+<p><strong>Because there is the skill to fix the machine, you can move on to the next check. And because you confirm the processing results and make an official decision, you can run product.</strong></p>
+<p>From the chamber cleaning in EP098 to the recovery checks in this article: the two are not separate tasks, but continuous work to protect quality.</p>
+<p>People who have done inspection, maintenance, quality control, or process improvement in manufacturing should have experience that connects to this way of thinking. Semiconductor-specific knowledge is needed, but the framework of the work, "fix," "measure," "record," and "decide," has a lot in common.</p>
+<p><strong>If you want to learn about the work first (Semicon Campus articles):</strong></p>
+<p><a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/">Learn what equipment engineers do</a></p>
+<h3>Related learning</h3>
+<p>If you want to understand alarms a bit better, <a href="https://semicon-campus.com/equipment-alarm-initial-response/">The tool stopped. What does an equipment maintenance technician look at first?</a> connects to this. If you want to know what changes in numbers can tell you, <a href="https://semicon-campus.com/equipment-trend-condition-monitoring/">Do the signs before a breakdown show up in the numbers?</a> is also helpful.</p>
+<p>If etching itself is new to you, start with <a href="https://semicon-campus.com/what-is-etching-semiconductor-process/">What is etching?</a> to make the chamber's job easier to understand.</p>
+<h3>Primary and technical sources we referred to</h3>
+<ul>
+<li>Patent with AMD as applicant, "Automatic method to eliminate first-wafer effect" (US6291252B1, published 2001): <a href="https://patents.google.com/patent/US6291252B1/en">https://patents.google.com/patent/US6291252B1/en</a></li>
+<li>Seasoning patent by applicants including a Korean Lam Research affiliate (KR100279907B1, published 2001): <a href="https://patents.google.com/patent/KR100279907B1/en">https://patents.google.com/patent/KR100279907B1/en</a></li>
+<li>Applied SmartFactory Solutions, "Automated tool recovery increases equipment efficiency" (post-maintenance Qual and monitor wafers): <a href="https://appliedsmartfactory.com/semiconductor-blog/manufacturing-execution/automated-tool/">https://appliedsmartfactory.com/semiconductor-blog/manufacturing-execution/automated-tool/</a></li>
+<li>Leybold, "Definition and measurement of vacuum leaks" (basics of vacuum leak measurement): <a href="https://www.leybold.com/content/leybold/en/knowledge/vacuum-fundamentals/leak-detection/definition-and-measurement-of-vacuum-leaks.html">https://www.leybold.com/content/leybold/en/knowledge/vacuum-fundamentals/leak-detection/definition-and-measurement-of-vacuum-leaks.html</a></li>
+<li>NIST/SEMATECH e-Handbook, "What are Control Charts?" (SPC control charts): <a href="https://itl.nist.gov/div898/handbook/pmc/section3/pmc31.htm">https://itl.nist.gov/div898/handbook/pmc/section3/pmc31.htm</a></li>
+<li>NIST/SEMATECH e-Handbook, "What are Variables Control Charts?" (difference between control limits and specification limits): <a href="https://www.itl.nist.gov/div898/handbook/pmc/section3/pmc32.htm">https://www.itl.nist.gov/div898/handbook/pmc/section3/pmc32.htm</a></li>
+<li>Applied Materials, "Integrated Metrology on High Productivity Producer CVD System" (examples of film thickness and uniformity measurement): <a href="https://ir.appliedmaterials.com/news-releases/news-release-details/applied-materials-introduces-integrated-metrology-high">https://ir.appliedmaterials.com/news-releases/news-release-details/applied-materials-introduces-integrated-metrology-high</a></li>
+<li>Lam Research, "Etch" (metrics related to etch quality): <a href="https://www.lamresearch.com/products/our-processes/etch/">https://www.lamresearch.com/products/our-processes/etch/</a></li>
+<li>SEMI, "Critical Revision to Safety Interlock Design Systems in SEMI S2" (equipment safety and interlocks): <a href="https://www.semi.org/en/standards-watch-2022-June/safety-interlock-design-systems-in-semi-s2">https://www.semi.org/en/standards-watch-2022-June/safety-interlock-design-systems-in-semi-s2</a></li>
+<li>Hitachi High-Tech, "Semiconductors" (examples of CD measurement and particle analysis): <a href="https://www.hitachi-hightech.com/global/en/products/microscopes/semiconductors.html">https://www.hitachi-hightech.com/global/en/products/microscopes/semiconductors.html</a></li>
+<li>SEMI E116, "Specification for Equipment Performance Tracking" (specification for tracking equipment status): <a href="https://store-us.semi.org/products/e11600-semi-e116-specification-for-equipment-performance-tracking">https://store-us.semi.org/products/e11600-semi-e116-specification-for-equipment-performance-tracking</a></li>
+<li>US8195431B2, "Method for evaluating efficacy of prevention maintenance for a tool" (patent on maintenance evaluation): <a href="https://patents.google.com/patent/US8195431B2/en">https://patents.google.com/patent/US8195431B2/en</a></li>
+<li>Samsung Semiconductor, "Etching a Circuit Pattern" (examples of process metrics such as etch rate and within-wafer uniformity): <a href="https://semiconductor.samsung.com/support/tools-resources/fabrication-process/eight-essential-semiconductor-fabrication-processes-part-5-etching-a-circuit-pattern/">https://semiconductor.samsung.com/support/tools-resources/fabrication-process/eight-essential-semiconductor-fabrication-processes-part-5-etching-a-circuit-pattern/</a></li>
+</ul>
+<p><em>Note: This is an educational article for understanding technology and job types. For safety checks, changes to processing conditions, maintenance, process Qual, and decisions to run product, follow your employer's official procedures, training, and authority.</em></p>
+</article>
+<p></body></html></p>

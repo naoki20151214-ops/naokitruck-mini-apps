@@ -1,0 +1,206 @@
+<!--KEEP:0-->
+<div class="semicon-article" id="semicon-top">
+<div class="semicon-level">
+<div class="semicon-level-top"><span class="semicon-level-label">Learning level</span><strong class="semicon-stars" aria-label="Beginner (1 of 5)"><span class="on">★</span><span class="off">☆☆☆☆</span><span>Beginner</span></strong></div>
+</div>
+<div class="semicon-lead">
+<p>Have you ever taken photos with a tiny speck of dust on your camera lens? The same black spot shows up in every photo you take.</p>
+<p>Something similar can happen in a semiconductor fab. If even one speck of dust lands on a "photomask," the master pattern for a circuit, the same defect can be copied onto the chips made from it. A thin, transparent film called a "pellicle" prevents this. In this article, we explain the roles of the photomask and the pellicle, step by step.</p>
+</div>
+<div class="semicon-note">
+<p>The lens dust example only fits in one way: "dirt on the master shows up in every copy." Cameras and semiconductor fabs work in completely different ways.</p>
+</div>
+<div class="semicon-map">
+<h3>What you will learn in this article</h3>
+<ol>
+<li><strong>Goal of this article:</strong> To understand why a photomask needs a pellicle</li>
+<li><strong>First half:</strong> What a photomask is, and why defects are a problem</li>
+<li><strong>Second half:</strong> The role of the pellicle, and new pellicles for EUV</li>
+</ol>
+</div>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep115-blog-ep115-05-mask.jpg" alt="An image of a technician in cleanroom clothing holding a photomask with circuit patterns using tweezers"><figcaption>An image of a technician holding a photomask. Not an actual fab or person. EP115 article image (AI-generated). The generated image was reduced in size and optimized as a JPEG.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the figure</b></p>
+<ul>
+<li>A master plate with circuit patterns drawn on it</li>
+<li>A light-blocking film on a transparent plate</li>
+<li>Circuits are copied from this master</li>
+</ul>
+</div>
+<div class="semicon-chat-row naoki">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">Assistant</div>
+</div>
+<div class="semicon-bubble">
+<p>Professor, is dust on a photomask really that big a problem?</p>
+</div>
+</div>
+<div class="semicon-chat-row teacher">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">Professor</div>
+</div>
+<div class="semicon-bubble">
+<p>It is. A defect on the mask gets copied onto every chip made from it.</p>
+</div>
+</div>
+<div class="semicon-chat-row naoki">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">Assistant</div>
+</div>
+<div class="semicon-bubble">
+<p>How can we prevent that?</p>
+</div>
+</div>
+<div class="semicon-chat-row teacher">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">Professor</div>
+</div>
+<div class="semicon-bubble">
+<p>We cover the mask with a thin, transparent film called a pellicle. Let's look at it step by step.</p>
+</div>
+</div>
+<h2 class="wp-block-heading" data-fact-ids="C01">One speck of dust can ruin a chip</h2>
+<p>A Semiconductor Engineering article (2016) explains that if dust or other particles land on a photomask, the lithography tool copies that defect onto the wafer. An Applied Materials engineer is quoted as saying that for logic chips, a single defect can make the whole chip unusable. <strong class="semicon-key">Dust on the master leads directly to chip defects.</strong></p>
+<details class="semicon-quiz">
+<summary>Check quiz: What goes wrong if dust lands on a photomask?</summary>
+<p>Answer: The defect can be copied onto the wafer, and chips can become unusable.</p>
+</details>
+<h2 class="wp-block-heading" data-fact-ids="C02">The circuit master: the "photomask"</h2>
+<p>A photomask is the master plate on which a semiconductor circuit pattern is drawn. TU Wien's explanation of masks describes it as a transparent plate called a "blank," with a pattern drawn in a light-blocking film. The plate is made of glass such as quartz. Quartz stays transparent even to short-wavelength light and expands very little with heat. The light-blocking film is very thin chrome, about 100 nanometers thick, with an anti-reflective layer on the surface. High-quality photomasks must meet strict requirements, such as flatness, accurate pattern placement, minimum line width, line width control, and very few defects.</p>
+<details class="semicon-quiz">
+<summary>Check quiz: What is used for a photomask's light-blocking film?</summary>
+<p>Answer: Very thin chrome. It is about 100 nanometers thick.</p>
+</details>
+<h2 class="wp-block-heading" data-fact-ids="C03">Photomask defects are copied onto the wafer</h2>
+<p>A MONOist article reporting on an announcement by Mitsui Chemicals explains that the process of shining light on a semiconductor wafer to draw circuit patterns is the photolithography process. In that process, the photomask is the "template" for copying the same circuit onto many wafers. So if the mask has a defect, that defect is copied as well.</p>
+<p>TU Wien's explanation gives examples of mask defects: missing chrome, small pinholes in the chrome, and areas of chrome that were not resolved. Defects larger than about 0.1 micrometers are found by automated inspection and repaired with lasers or ion beams. It also cites an observation that defects were found on up to 75% of masks made with electron beams.</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep115-blog-01-flow.png" alt="Conceptual diagram of light passing through a photomask and the circuit pattern being copied onto the wafer"><figcaption>A schematic showing how light passing through a photomask copies the circuit pattern onto the wafer. It is an explanatory flow, not the structure of a specific tool.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the figure</b></p>
+<ul>
+<li>Light passes through the mask</li>
+<li>The circuit pattern is copied onto the wafer</li>
+<li>The mask is a template for copying the same circuit</li>
+</ul>
+</div>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep115-blog-02-dust.png" alt="Conceptual diagram showing that when dust lands on a photomask, the defect is copied onto every chip on the wafer"><figcaption>A schematic showing dust on a mask being copied as a defect on the wafer. It is an explanatory diagram, not an actual image.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the figure</b></p>
+<ul>
+<li>Dust lands on the mask</li>
+<li>The defect gets copied</li>
+<li>The same defect on every chip</li>
+</ul>
+</div>
+<details class="semicon-quiz">
+<summary>Check quiz: What role does a photomask play for the wafer?</summary>
+<p>Answer: It is a "template" for copying the same circuit many times.</p>
+</details>
+<h2 class="wp-block-heading" data-fact-ids="C04">The dust shield: the "pellicle"</h2>
+<p>A pellicle is a thin, transparent dust-shield film placed over a photomask. A Semiconductor Engineering article explains that in the manufacturing flow, lithography tools tend to produce particles and contamination, and a pellicle keeps them from falling onto the mask. At the same time, it must be transparent enough to let light pass from the tool to the mask. The article also explains that memory chips have spare circuits, so their situation differs from that of logic chips.</p>
+<p>According to the MONOist article, a pellicle is a dust cover whose film material is chosen for light resistance at each wavelength, with a film thickness designed to transmit light well. It keeps the photomask clean and improves semiconductor productivity. Mitsui Chemicals launched its pellicle in 1984. <strong class="semicon-key">A pellicle is a cover for the mask that lets light through but keeps dust out.</strong></p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep115-blog-ep115-06-pellicle.jpg" alt="An image of a thin, transparent pellicle film stretched on a metal frame and placed over a photomask"><figcaption>An image of a photomask covered with a pellicle. The shape differs from actual products. EP115 article image (AI-generated). The generated image was reduced in size and optimized as a JPEG.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the figure</b></p>
+<ul>
+<li>A transparent film placed over the mask</li>
+<li>Lets light through, keeps dust out</li>
+<li>Keeps the mask clean</li>
+</ul>
+</div>
+<details class="semicon-quiz">
+<summary>Check quiz: What is a pellicle for?</summary>
+<p>Answer: To keep dust and other particles from falling onto the photomask.</p>
+</details>
+<h2 class="wp-block-heading" data-fact-ids="C05">Standard masks and EUV masks</h2>
+<p>According to the Semiconductor Engineering article, pellicles have been used for decades on standard masks that let light through. They are made of thin resin. With cutting-edge "EUV" lithography, however, things change. The MONOist article describes EUV as extreme ultraviolet light with a wavelength of 13.5 nanometers. An EUV mask is not a plate that lets light through. It is a mirror made of 40 to 50 alternating layers of silicon and molybdenum.</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep115-blog-03-euv.png" alt="Conceptual diagram showing the difference between a standard mask that transmits light and an EUV mask that reflects light"><figcaption>A schematic showing the difference between a standard mask and an EUV mask. It is an explanatory diagram.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the figure</b></p>
+<ul>
+<li>A standard mask is a plate that lets light through</li>
+<li>An EUV mask is a mirror that reflects light</li>
+<li>A special structure of stacked layers</li>
+</ul>
+</div>
+<p>For EUV, there was once a view that pellicles would not be needed if the inside of the tool could be kept perfectly clean. But chipmakers changed their minds, saying they could not keep the inside of the tool 100% clean. An Applied Materials engineer says that having a pellicle also makes handling and storing masks much easier.</p>
+<p>An EUV pellicle must transmit light well while withstanding intense light, which makes it a difficult part to develop. The 2016 article listed the very high temperature the film reaches as a challenge. In 2021, Mitsui Chemicals began commercial production of EUV pellicles under license from ASML of the Netherlands.</p>
+<details class="semicon-quiz">
+<summary>Check quiz: Is an EUV mask a plate that lets light through, or a mirror?</summary>
+<p>Answer: A mirror. It is made of 40 to 50 layers of silicon and molybdenum.</p>
+</details>
+<h2 class="wp-block-heading" data-fact-ids="C06">Next-generation pellicles: carbon nanotubes</h2>
+<p>According to the MONOist article, next-generation EUV lithography tools require a high numerical aperture and high power of 600 watts or more, which calls for pellicles made of new materials that can withstand harsh exposure. EUV lithography is being adopted more widely to make ultra-fine semiconductors with circuit line widths of 7 nanometers or less. In 2024, Mitsui Chemicals announced that it would install production equipment for carbon nanotube (thin tubes made of carbon) films that transmit 92% or more of EUV light and withstand exposure power above 1 kilowatt. The equipment can produce 5,000 units per year and was scheduled for completion in December 2025. Current EUV pellicle films use silicon-based materials, and carbon nanotube products are a next-generation addition to the lineup.</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep115-blog-04-next.png" alt="Conceptual diagram showing the light transmission and light resistance requirements for next-generation carbon nanotube pellicles"><figcaption>A schematic showing the requirements for next-generation carbon nanotube pellicles. The numbers are targets from the Mitsui Chemicals announcement.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the figure</b></p>
+<ul>
+<li>Transmits 92% or more of light</li>
+<li>Withstands intense light</li>
+<li>Material: carbon nanotubes</li>
+</ul>
+</div>
+<details class="semicon-quiz">
+<summary>Check quiz: What new film material is used for next-generation EUV pellicles?</summary>
+<p>Answer: Carbon nanotubes.</p>
+</details>
+<div class="semicon-cta">
+<h3>Learn about the jobs that handle this process</h3>
+<p>If you want to learn about the jobs that handle this process, also read this article.</p>
+<div class="semicon-btnrow"><a class="semicon-btn" href="https://semicon-campus.com/semiconductor-career-map/">See semiconductor manufacturing jobs by process</a></div>
+</div>
+<p>For the big picture of manufacturing, see <a href="https://semicon-campus.com/semiconductor-manufacturing-overview/">An overview of the semiconductor manufacturing process</a>. Note that equipment adjustment and recovery are done following the official procedures of your fab or equipment maker, and under the judgment of authorized people. This article introduces ways of thinking. It does not give instructions for operating equipment.</p>
+<h2 class="wp-block-heading">Review of key terms</h2>
+<ul>
+<li><strong>Photomask:</strong> The master plate on which a semiconductor circuit pattern is drawn.</li>
+<li><strong>Blank:</strong> The transparent plate part of a photomask.</li>
+<li><strong>Pellicle:</strong> A thin, transparent dust-shield film placed over a photomask.</li>
+<li><strong>EUV:</strong> Extreme ultraviolet light with a wavelength of 13.5 nanometers.</li>
+<li><strong>Carbon nanotube:</strong> A thin, tube-shaped material made of carbon.</li>
+</ul>
+<h2 class="wp-block-heading">Common misunderstandings</h2>
+<h3>Q. Is the pellicle the light-blocking film on a photomask?</h3>
+<p>No. The light-blocking film is made of chrome or similar material and forms the circuit pattern. The pellicle is a transparent dust-shield film placed over the mask.</p>
+<h3>Q. Is an EUV mask also a plate that lets light through?</h3>
+<p>No. An EUV mask is a mirror that reflects light, made of stacked layers of silicon and molybdenum.</p>
+<h2 class="wp-block-heading">Summary</h2>
+<div class="semicon-lead">
+<p>A photomask is the master for a circuit. If it has dust or scratches, those defects are copied onto the wafer.<br />A pellicle is a thin, transparent dust-shield film placed over a photomask. It lets light through but keeps dust out.<br />For cutting-edge EUV, development is moving forward on carbon nanotube films that transmit light well and withstand intense light.</p>
+</div>
+<div class="semicon-note">
+<p>The diagrams in this article are also posted together on Instagram (semicon_campus). Save them to review later.</p>
+</div>
+<div class="semicon-cta">
+<h3>We also explain semiconductors simply on YouTube</h3>
+<p>For those who want to review with diagrams, we also post short explanations of semiconductor manufacturing on YouTube.</p>
+<div class="semicon-btnrow"><a rel="noopener" class="semicon-btn secondary" href="https://www.youtube.com/@semicon-campus" target="_blank">Watch illustrated videos on YouTube</a></div>
+</div>
+<h2 class="wp-block-heading">Official sources used</h2>
+<ul class="semicon-sources">
+<li data-source-id="S01"><a href="https://www.iue.tuwien.ac.at/phd/kirchauer/node23.html">TU Wien, H. Kirchauer, "2.4.1 Binary Masks" (Institute for Microelectronics)</a></li>
+<li data-source-id="S02"><a href="https://monoist.itmedia.co.jp/mn/articles/2405/31/news044.html">MONOist, "Mitsui Chemicals installs production equipment for next-generation EUV CNT pellicles at its Yamaguchi Prefecture plant" (2024)</a></li>
+<li data-source-id="S03"><a href="https://semiengineering.com/next-euv-challenge-pellicles/">Semiconductor Engineering, "Next EUV Challenge: Pellicles" (2016)</a></li>
+</ul>
+<section class="semicon-correction-form">
+<h2>Questions and corrections form</h2>
+<p>If you find an error or anything unclear in this article, please let us know using the form below. We will check it and fix the article.</p>
+<div class="semicon-form-shortcode">
+<div class="wpcf7 no-js" id="wpcf7-f2045-o2" lang="ja" dir="ltr" data-wpcf7-id="2045">
+<div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
+<form action="/?rest_route=%2Fwp%2Fv2%2Fposts&#038;per_page=100&#038;page=1&#038;context=view#wpcf7-f2045-o2" method="post" class="wpcf7-form init" aria-label="Contact form" novalidate="novalidate" data-status="init">
+<fieldset class="hidden-fields-container"><input type="hidden" name="_wpcf7" value="2045" /><input type="hidden" name="_wpcf7_version" value="6.1.6" /><input type="hidden" name="_wpcf7_locale" value="ja" /><input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f2045-o2" /><input type="hidden" name="_wpcf7_container_post" value="0" /><input type="hidden" name="_wpcf7_posted_data_hash" value="" />
+</fieldset>
+<p>You do not need to enter your name, phone number, or address. Please do not include fab names or confidential information.
+</p>
+<p><label>Type of report (required) <span class="wpcf7-form-control-wrap" data-name="report-type"><select class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required" aria-required="true" aria-invalid="false" name="report-type"><option value="誤りと思われる点">Possible error</option><option value="分かりにくい箇所">Unclear part</option><option value="追加してほしい説明・質問">Request for more explanation / question</option></select></span></label><br />
+<label>Related heading or text (optional) <span class="wpcf7-form-control-wrap" data-name="report-section"><input size="40" maxlength="200" class="wpcf7-form-control wpcf7-text" aria-invalid="false" value="" type="text" name="report-section" /></span></label><br />
+<label>Details (required) <span class="wpcf7-form-control-wrap" data-name="report-message"><textarea cols="40" rows="10" maxlength="3000" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" aria-required="true" aria-invalid="false" name="report-message"></textarea></span></label><br />
+<label>Email for reply (optional, only if you would like a reply) <span class="wpcf7-form-control-wrap" data-name="report-email"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-email wpcf7-text wpcf7-validates-as-email" autocomplete="email" aria-invalid="false" value="" type="email" name="report-email" /></span></label>
+</p>
+<p>Your feedback will be used to check and improve our articles. Please see our <a href="https://semicon-campus.com/privacy-policy/">handling of personal information</a>.
+</p>
+<p><input class="wpcf7-form-control wpcf7-submit has-spinner" type="submit" value="Send feedback or correction" />
+</p><div class="wpcf7-response-output" aria-hidden="true"></div>
+</form>
+</div>
+</div>
+</section>
+</div>

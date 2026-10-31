@@ -1,0 +1,123 @@
+
+<!--KEEP:0-->
+
+
+<!--KEEP:1-->
+
+
+<!--KEEP:2-->
+<div class="semicon-article" id="semicon-top">
+
+<div class="semicon-level"><span class="semicon-level-label">Learning level</span> <strong>Beginner</strong><p>This article is for people who learned about GPUs from short videos and want to grasp how they differ from CPUs and why they are used in AI.</p></div>
+
+<p class="semicon-lead">A <strong>GPU (Graphics Processing Unit)</strong> is a semiconductor that is good at processing large numbers of similar calculations at the same time. It was originally developed for the calculations needed to draw images on a screen. Today, that parallel processing power is also used for the massive calculations behind generative AI.</p>
+
+<div class="semicon-overview" aria-label="The big picture of GPUs"><div class="semicon-overview-box"><b>CPU</b><span>Good at decisions, ordering, and overall control</span></div><div class="semicon-overview-box"><b>GPU</b><span>Good at processing large numbers of similar calculations</span></div><div class="semicon-overview-box"><b>AI</b><span>Runs on a division of roles between the two</span></div></div>
+
+<p>If you want to start with how the CPU, memory, and storage relate, reading <a href="https://semicon-campus.com/cpu-memory-storage-difference/">the difference between CPU, memory, and storage</a> first will make this easier to understand.</p>
+
+<div class="semicon-map"><h3>What you will learn in this article</h3><div class="semicon-scope-grid"><div class="semicon-scope-block"><b>Three things to understand first</b><ol><li>What kind of semiconductor a GPU is</li><li>Why it spread from image processing to AI</li><li>How CPUs and GPUs work together</li></ol></div><div class="semicon-scope-block deep"><b>Read if you have time</b><ol><li>Work that GPUs are not good at</li><li>Links to HBM and jobs</li></ol></div></div></div>
+
+<div class="semicon-note"><p><strong>The one sentence to remember first</strong></p><p>GPUs are used in AI because they are good at processing large numbers of similar calculations at the same time.</p></div>
+
+
+<h2>What does a GPU do?</h2>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>Isn't a GPU the part that makes game graphics look nice?</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>Image processing is where it started. To create a screen image, you need to repeat similar calculations for a huge number of pixels.</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>So it is like a factory where many workers share the same kind of task.</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>Yes. But the factory is just a comparison to help you grasp the degree of parallelism. In reality, many processing units work together to calculate.</p></div></div>
+
+<figure class="semicon-figure"><img src="https://semicon-campus.com/wp-content/uploads/2026/07/gpu-parallel-processing-overview.png" alt="The difference between processing where order and decisions matter and the massive parallel processing GPUs are good at" width="1536" height="864" loading="lazy" decoding="async"><figcaption>CPUs and GPUs are not simply faster or slower than each other. They are designed for different strengths.</figcaption></figure>
+
+<p>CPUs can also run multiple tasks in parallel. What sets GPUs apart is that they are designed to run many more tasks at the same time and increase the total amount of work done.</p>
+<p class="semicon-one-line">Summary so far in one line: GPUs are good at processing large numbers of similar calculations in parallel.</p>
+
+<h2>Why did it spread from image processing to AI?</h2>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>The calculations for drawing a screen and the calculations for generative AI seem like totally different things.</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>The goals are different, but both repeat similar calculations on combinations of numbers many times. That makes it easy to use the GPU's parallel processing.</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>So the system for massive calculation that grew up with images was also used for AI.</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>That is a good way to understand it. But it does not mean all AI processing is the same calculation. The parts that are easy to parallelize are handed to the GPU.</p></div></div>
+
+<div class="semicon-grid"><div class="semicon-card"><b>Image processing</b><span>Calculates the color, brightness, and shape of many pixels.</span></div><div class="semicon-card"><b>AI calculations</b><span>Repeatedly calculates huge combinations of numbers.</span></div><div class="semicon-card"><b>Shared strength</b><span>Can process work that is easy to run in parallel all at once.</span></div></div>
+
+<p class="semicon-one-line">Summary so far in one line: the strength in parallel calculation that grew up with image processing also suited the massive calculations of AI.</p>
+
+<h2>How did GPUs go from gaming parts to the stars of AI?</h2>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>Were GPUs made for AI from the start?</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>No. 3D games needed similar calculations done all at once for many pixels. That demand is what grew the GPU's massive parallel computing.</p></div></div>
+
+<p><strong>What grew GPUs was not AI but the demands of 3D graphics.</strong> To draw 3D images smoothly, similar calculations must be repeated many times in a short time for the shapes of 3D objects and the many pixels that make up the screen. In meeting that need, GPUs developed toward running huge numbers of calculations in parallel.</p>
+
+<figure class="semicon-figure"><img src="https://semicon-campus.com/wp-content/uploads/2026/07/gpu-game-parallel-ai-history.png" alt="How the many calculations of 3D graphics grew the GPU's parallel processing, and how that ability was later used for AI matrix calculations" width="1672" height="941" loading="lazy" decoding="async"><figcaption>3D graphics and AI have different goals, but the GPU's strength in running many calculations in parallel was later put to use in AI computing.</figcaption></figure>
+
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>But could researchers just use a gaming part for AI calculations as is?</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>At first, GPUs were built for image processing and were hard to use for general calculations. Then, in the era of Jensen Huang and others leading NVIDIA, CUDA appeared and opened the door to using GPUs for general parallel computing.</p></div></div>
+
+<p><strong>CUDA opened up "the part that draws pictures" to research computing.</strong> Even if a GPU has computing power, it will not be widely used if researchers find it hard to handle. CUDA made it easier to apply the GPU's parallelism to scientific and research calculations.</p>
+
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>Did just opening the door show that GPUs were suited to AI?</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>What showed the value concretely was AlexNet in 2012. Alex Krizhevsky and his colleagues used two GeForce GTX 580 cards and demonstrated the effectiveness of GPUs in large-scale image recognition.</p></div></div>
+
+<p><strong>AlexNet proved that abilities grown for gaming could be used for AI too.</strong> By connecting the computing entry point NVIDIA provided with proof from researchers, GPUs spread into the computing foundation of AI.</p>
+<p class="semicon-one-line">GPUs were not born for AI. Games grew them, CUDA opened the door, and AlexNet proved they work for AI.</p>
+
+<h2>How do CPUs and GPUs work together?</h2>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>If it is a PC for AI, could it run with just the GPU and no CPU?</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>That will not work. The CPU runs the whole system and hands calculations suited to the GPU over to it. The GPU then works through the massive calculations it receives.</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>So it is a division of roles: the CPU directs, and the GPU handles the massive calculations.</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>On top of that, the memory that delivers data to the GPU and the software that uses both are also essential.</p></div></div>
+
+<figure class="semicon-figure"><img src="https://semicon-campus.com/wp-content/uploads/2026/07/cpu-gpu-hbm-role-map.png" alt="The roles supporting AI: overall control by the CPU, parallel computing by the GPU, and data supply by HBM" width="1536" height="864" loading="lazy" decoding="async"><figcaption>AI processing moves forward by linking the CPU's overall control, the GPU's parallel computing, and the data supply from memory.</figcaption></figure>
+
+<p>To keep a GPU working, the data needed for calculations must be delivered fast enough. HBM gets attention in AI GPUs because it delivers large amounts of data with wide bandwidth.</p>
+<p class="semicon-one-line">Summary so far in one line: CPUs and GPUs are not rivals. They are partners that share the work each is good at.</p>
+
+<div class="semicon-basic-complete">You now understand the basics of GPUs.</div>
+
+<div class="semicon-deep-break"><strong>Going one step deeper</strong><p>The rest is for people who want to know about the situations GPUs are weak at, memory, and links to jobs. If you only want the basics, <a href="#gpu-summary">feel free to skip to the summary</a>.</p></div>
+
+<h2>A GPU does not make everything faster</h2>
+<p>To make use of a GPU's strengths, it is important that the work can be easily split up in parallel, that the needed data can be supplied fast enough, and that the software is built for GPUs.</p>
+
+<div class="semicon-compare"><table><thead><tr><th>Type of work</th><th>Better suited to</th><th>Reason</th></tr></thead><tbody><tr><td>Many decisions and branches, where order matters</td><td>CPU</td><td>Its design for complex control and running each task quickly pays off</td></tr><tr><td>Large numbers of similar calculations that can be split up</td><td>GPU</td><td>Runs many tasks at the same time and easily increases the total amount of work</td></tr><tr><td>Real AI systems</td><td>CPU, GPU, and memory</td><td>Control, calculation, and data supply need to be combined</td></tr></tbody></table></div>
+
+<div class="semicon-note"><p><strong>Note:</strong> Actual speed is not decided by whether you have a GPU alone. It depends on the whole system, including the type of processing, memory, software, and power consumption.</p></div>
+
+<h2>Why are GPUs and HBM talked about together?</h2>
+<p>The more calculations a GPU runs at the same time, the more data it needs as input. That is why memory bandwidth matters: how much data can be moved in a given time.</p>
+<p>HBM is memory that stacks multiple DRAM dies and is mounted close to a GPU or similar chip to get wide bandwidth. The relationship between GPUs and HBM is illustrated in <a href="https://semicon-campus.com/what-is-hbm-high-bandwidth-memory/">What is HBM?</a></p>
+
+<h2>The jobs that support GPUs are not just design</h2>
+<div class="semicon-grid"><div class="semicon-card"><b>Chip design / software</b><span>Building compute circuits, control circuits, compilers, and libraries.</span></div><div class="semicon-card"><b>Manufacturing / inspection</b><span>Making fine GPU chips and checking for defects and performance.</span></div><div class="semicon-card"><b>Memory / advanced packaging</b><span>Connecting HBM and GPUs with short, high-density links while dealing with heat and yield.</span></div></div>
+<p>Even around a single product like a GPU, there are jobs in equipment, materials, manufacturing, inspection, assembly, quality, and software. If you want to see a map of the whole industry first, go back to the <a href="https://semicon-campus.com/semiconductor-beginner-roadmap/">semiconductor beginner roadmap</a> and move through processes and roles in order.</p>
+
+
+<section class="mp3-section" id="revenue-phase3-learning"><h2>From understanding GPUs to a practice setup and jobs</h2><p>After learning about GPUs, pick one image-processing task or small calculation you actually want to run, and check which GPUs, memory, and OS the software supports. One path is to compare PCs that meet the requirements; another is to learn generative AI to help organize public information. People with experience in manufacturing, inspection, or equipment can also sort out how they connect to the processes that make and evaluate GPUs. Think of buying a GPU separately from learning how to use generative AI or studying specialized design.</p><p>Notes to check before comparing: GPUs supported by your software, VRAM, CPU and main memory, OS, and power supply. Separate what you can try with your current setup from what needs upgrading before choosing candidates.</p></section>
+
+<h2 id="gpu-summary">Summary</h2>
+<div class="semicon-note"><p><strong>Three points to remember first</strong></p><ol><li>GPUs are good at processing large numbers of similar calculations at the same time</li><li>The parallel computing power that grew up with image processing also suited the massive calculations of AI</li><li>AI runs on a division of roles among the CPU, GPU, memory, and software</li></ol></div>
+
+<div class="semicon-links"><div class="semicon-linkbox next"><h3>Read next</h3><p><a href="https://semicon-campus.com/what-is-cuda-gpu-computing/">How CUDA expanded GPUs beyond image processing</a></p></div><div class="semicon-linkbox"><h3>Check the basics</h3><p><a href="https://semicon-campus.com/cpu-memory-storage-difference/">The difference between CPU, memory, and storage</a></p><p><a href="https://semicon-campus.com/semiconductor-beginner-roadmap/">Back to the beginner roadmap</a></p></div></div>
+
+<h2>Frequently asked questions about GPUs</h2>
+<h3>Were GPUs invented for AI?</h3>
+<p>No. GPUs developed through image processing such as 3D graphics. The massive parallel computing ability that grew there became easier to use for general calculations through CUDA and similar tools, and later spread to AI.</p>
+<h3>Are gaming GPUs and AI GPUs the same?</h3>
+<p>They share the basic idea of parallel processing, but they are not identical. AI products are enhanced for their use, with improvements in the operations AI uses heavily, memory bandwidth, connections between products, software, and more.</p>
+<h3>Does having a GPU make any kind of processing faster?</h3>
+<p>No. GPUs shine when similar calculations can be split into many tasks. For processing with many decisions and branches, or where data supply cannot keep up, adding a GPU does not always make it faster.</p>
+
+<div class="semicon-note"><p><strong>Next step</strong></p><p>If you want to learn how calculation data is delivered to the GPU, move on to <a href="https://semicon-campus.com/what-is-hbm-high-bandwidth-memory/">the illustrated article on HBM</a>. If you want to learn the topics you saw in videos in order, you can continue from the <a href="https://semicon-campus.com/semiconductor-beginner-roadmap/">semiconductor beginner roadmap</a>.</p></div>
+
+
+<section class="mp3-section" id="revenue-phase3-career"><h2>Connect what you learned in this article to your next job or study</h2><p>Organize your experience in manufacturing and inspection, equipment checks, or assembly evaluation by target, task, and the results you checked. Comparing scope of duties, required experience, work location, shifts and travel, and training makes the knowledge you need to add next more concrete.</p><aside class="semicon-cta mp3-card"><h3>See duties, jobs, and learning for related roles</h3><p>You can check which jobs use the technology from this article: inspection and recovery, equipment installation, customer support, or assembly and process improvement. Move on to how to choose jobs and learning in the role articles.</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/" class="semicon-btn mp3-button" data-revenue-phase3-hub="237" data-cta="equipment_hub" data-cta-type="equipment_hub" data-cta-stage="career" data-cta-id="phase3_508_hub237_end" data-cta-route="phase3_508_hub237_end">See an equipment engineer's scope, jobs, and learning</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/advanced-packaging-jobs-career/" class="semicon-btn mp3-button" data-revenue-phase3-hub="651" data-cta="packaging_hub" data-cta-type="packaging_hub" data-cta-stage="career" data-cta-id="phase3_508_hub651_end" data-cta-route="phase3_508_hub651_end">See how to choose advanced packaging jobs, postings, and learning</a></div></aside></section>
+
+
+<h2>References</h2>
+<ul><li><a rel="noopener" href="https://www.nvidia.com/en-us/about-nvidia/corporate-timeline/" target="_blank">NVIDIA: Corporate Timeline</a></li><li><a rel="noopener" href="https://www.nvidia.com/en-us/about-nvidia/board-of-directors/jensen-huang/" target="_blank">NVIDIA: Jensen Huang</a></li><li><a rel="noopener" href="https://papers.nips.cc/paper_files/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html" target="_blank">Krizhevsky, Sutskever, Hinton: ImageNet Classification with Deep Convolutional Neural Networks</a></li><li><a rel="noopener" href="https://docs.nvidia.com/cuda/cuda-programming-guide/01-introduction/introduction.html" target="_blank">NVIDIA: CUDA Programming Guide &#8211; Introduction</a></li><li><a rel="noopener" href="https://www.intel.com/content/www/us/en/products/docs/processors/cpu-vs-gpu.html" target="_blank">Intel: CPU vs. GPU: What&#8217;s the Difference?</a></li></ul>
+
+<a class="semicon-backtop" href="#semicon-top">↑ Back to top</a>
+</div>
+
+
+<aside class="related-spokes"><h2>You may also like</h2><ul><li><a href="/what-is-npu-on-device-ai/">What is an NPU? A plain-language guide to the dedicated processor behind AI on smartphones</a></li><li><a href="/cpu-gpu-difference-ai/">How are CPUs and GPUs different? A beginner's guide to why GPUs are used in AI</a></li></ul></aside>

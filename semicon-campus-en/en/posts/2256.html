@@ -1,0 +1,193 @@
+<!--KEEP:0-->
+<div class="semicon-article" id="semicon-top">
+<div class="semicon-level">
+<div class="semicon-level-top"><span class="semicon-level-label">Learning level</span><strong class="semicon-stars" aria-label="Beginner (1 of 5)"><span class="on">★</span><span class="off">☆☆☆☆</span><span>Beginner</span></strong></div>
+</div>
+<div class="semicon-lead">
+<p>On the same day, several people got an upset stomach. When asked, it turned out they had all eaten boxed lunches from the same shop. In that case, the shop is the suspect. <strong class="semicon-key">When searching for a cause, "what things have in common" is a big clue.</strong></p>
+<p>Semiconductor fabs think the same way. When defects are found on wafers (the round discs semiconductors are made on), engineers look for the tools and processes that the defective wafers all went through. The "distribution," meaning where on the wafer the defects are concentrated, is also important. In this way, they get closer to the "deepest cause" behind the problem, called the "root cause."</p>
+</div>
+<div class="semicon-note">
+<p>The boxed lunch example only applies in the sense of "looking for what things have in common." A boxed lunch and a semiconductor fab are, of course, different things.</p>
+</div>
+<div class="semicon-map">
+<h3>What you will learn in this article</h3>
+<ol>
+<li><strong>Goal of this article:</strong> Understand the four stages from finding a defect to removing its cause</li>
+<li><strong>Stages 1 and 2:</strong> Detect the abnormality and contain the affected lots</li>
+<li><strong>Stage 3:</strong> Narrow down the cause using what the tools that defective wafers passed through have in common and the shape of the defect distribution</li>
+<li><strong>Stage 4:</strong> Remove the root cause and confirm the same defect does not appear again. <strong class="semicon-key">Commonalities are clues; don't jump to conclusions</strong></li>
+</ol>
+</div>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep109-blog-ep109-04-wafermap-5.jpg" alt="An image of a defect distribution: a round wafer diagram on a monitor, with red dots representing defects gathered near the edge"><figcaption>An image of someone viewing the defect distribution on a wafer on a monitor. It is not a real tool or real measurement results. Image for article EP109 (AI-generated). The generated image was reduced and optimized as a JPEG.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the figure</b></p>
+<ul>
+<li>The round diagram shows the wafer seen from above</li>
+<li>The red dots are the defect locations</li>
+<li>How they are skewed is a clue to the cause</li>
+</ul>
+</div>
+<div class="semicon-chat-row naoki">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">Assistant</div>
+</div>
+<div class="semicon-bubble">
+<p>Professor, what is a root cause?</p>
+</div>
+</div>
+<div class="semicon-chat-row teacher">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">Professor</div>
+</div>
+<div class="semicon-bubble">
+<p>It is the deepest cause that triggered the problem. If you fix only the result you can see, the problem will happen again.</p>
+</div>
+</div>
+<div class="semicon-chat-row naoki">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">Assistant</div>
+</div>
+<div class="semicon-bubble">
+<p>How do you find the root?</p>
+</div>
+</div>
+<div class="semicon-chat-row teacher">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">Professor</div>
+</div>
+<div class="semicon-bubble">
+<p>You look for tools that the defective wafers have in common, and you study the defect distribution. Let's go through it step by step.</p>
+</div>
+</div>
+<h2 class="wp-block-heading" data-fact-ids="C01 C02">A root cause is the deepest cause</h2>
+<p>The American Society for Quality (ASQ) glossary describes a root cause as a factor that caused a nonconformance and should be permanently eliminated through process improvement. In other words, it is the topmost cause that started the chain of cause and effect.</p>
+<p>The methods and tools for finding this root cause are together called "root cause analysis (RCA)." However, just knowing the cause is not an achievement. <strong class="semicon-key">It only has meaning once you remove it.</strong></p>
+<p>Why focus so much on the root? Because if you fix only the surface cause, the same defect may come back in a different form. Like a game of whack-a-mole, fixing defects one by one as they pop up never ends.</p>
+<h2 class="wp-block-heading" data-fact-ids="C03 C10">Stages 1 and 2: Detect and contain</h2>
+<p>In semiconductor manufacturing, a departure from the expected results is called an "excursion." According to a patent description, most of them involve tools. What's more, wafers go through hundreds of processes, and it is normal for one process to have several tools. So finding which tool is the cause is harder than you might think.</p>
+<p>So what do you do first when you notice an abnormality? <strong class="semicon-key">The answer is to "contain" it.</strong> According to an explanation by inspection equipment maker KLA, the affected wafers are isolated (quarantined), all of them are inspected with high sensitivity, and a decision is made whether to ship, scrap, or downgrade them. The more often inspections are done, the sooner abnormalities are found, so fewer lots are affected and there are fewer candidate causes.</p>
+<p>To compare it with something familiar, it is like a supermarket that learns "products received on this day may have a problem" and first pulls that day's products from the shelves. Investigating the cause comes after that. If you contain the problem first, the damage does not spread while you investigate.</p>
+<h2 class="wp-block-heading" data-fact-ids="C04 C05">Stage 3: Narrow down the tools from what defective wafers have in common</h2>
+<p>Now the real search for the cause begins. A typical method is "commonality analysis," which looks for tools that the defective wafers all went through. This analysis is possible because the fab records everything about "which tool processed which wafer, and when." Wafers are carried in containers called "lots," about 25 at a time, so records are also kept by lot.</p>
+<p>There are two main points for telling things apart.</p>
+<ul>
+<li><strong class="semicon-key">Do all the defective lots come from a single tool?</strong> It is unlikely that several tools drift at the same time, so the more the lots line up on one tool, the more suspicious it becomes.</li>
+<li><strong class="semicon-key">Are the defects concentrated in a short period?</strong> This is because the effects of a drifting tool gather around that tool's process.</li>
+</ul>
+<p>Just checking these two points can greatly reduce the number of tools to investigate. If you can narrow hundreds of processes and tools down to a few tools, you can then carefully study those tools' records.</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep109-blog-01-common-4.png" alt="Conceptual diagram comparing the share of defective wafers that passed through tools A, B, and C, showing a strong concentration on tool A"><figcaption>A schematic comparing, by tool, the share of defective wafers that passed through each one. The percentages are examples for explanation, not measured data. Focus on the differences between tools.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the figure</b></p>
+<ul>
+<li>Compare, by tool, the share of defective wafers that passed through</li>
+<li>Defects are concentrated on tool A</li>
+<li>The tool with the concentration is suspicious (but don't jump to conclusions)</li>
+</ul>
+</div>
+<p>The figure shows the share of defective wafers that passed through each tool. Almost all the defective wafers went through tool A only. In this case, it would be natural to start investigating with tool A.</p>
+<p>However, it is not that simple. <strong class="semicon-key">There are cases where each tool looks fine on its own, but defects increase only with a combination of two tools, meaning only for wafers that went through both in a row.</strong> This example also appears in a patent. <strong class="semicon-key">That is why commonalities are treated as clues, not answers.</strong></p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep109-blog-02-combo-4.png" alt="Conceptual diagram of a combination where defects are few with tool A alone or tool B alone, but many when wafers go from A to B in a row"><figcaption>A schematic of a case where defects increase with a combination of two tools. The results are examples for explanation. Focus on the combination.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the figure</b></p>
+<ul>
+<li>With tool A alone or tool B alone, there are few defects</li>
+<li>Going from A to B in a row produces many defects</li>
+<li>Check combinations too</li>
+</ul>
+</div>
+<p>To look at combinations, the scope of investigation widens from one tool at a time to two tools at a time. It takes more effort, but it lets you reach hard-to-catch causes where "each tool is normal on its own, yet defects appear."</p>
+<h2 class="wp-block-heading" data-fact-ids="C06 C11">You can also trace the cause from the "shape" of defects</h2>
+<p>Engineers also pay attention to the shape in which defects gather on the wafer. According to a peer-reviewed paper, when an abnormality occurs, defective chips gather in specific shapes. That makes it possible to trace the cause from the shape. For example, if defects gather in the center, uneven polishing or abnormal liquid pressure is suspected; if they form a ring, a problem with temperature control during annealing is suspected.</p>
+<p>This is where the "wafer map" comes in. It refers to a wafer diagram on which chips that did not work in an electrical test (probe test) are marked. It is easier to notice skew by looking at a diagram than by following numbers in a table. The paper notes that if the shape is linear, like a scratch, an abnormality in a process that transports or cuts the wafer is suspected.</p>
+<p>Of course, the shape alone does not determine the cause. The same shape can have several possible causes. It is easier to use the shape as a clue for deciding the order in which to investigate.</p>
+<p>There is also a method of comparing the distribution of measurement data for each layer with the distribution of final defects. If you find a layer that looks similar, the process just before it becomes suspicious. If layer i does not look similar but the next layer, i+1, does, the problem most likely started between them.</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep109-blog-03-layers-5.png" alt="Conceptual diagram: layers 1 and 2 do not resemble the defect distribution, while layers 3 and 4 do, so the problem is narrowed down to between layers 2 and 3"><figcaption>A schematic of the idea of comparing each layer's data with the defect distribution to narrow down where the problem started. The number of layers and the results are examples for explanation.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the figure</b></p>
+<ul>
+<li>Compare each layer with the defect distribution</li>
+<li>The first layer that looks similar is a clue</li>
+<li>Between a layer that doesn't look similar and one that does is a candidate for where it started</li>
+</ul>
+</div>
+<h2 class="wp-block-heading" data-fact-ids="C07 C09">Stage 4: Fix and confirm</h2>
+<p>Once the cause is visible, you remove it. Detect the abnormality, match the collected data against the failure symptoms, decide on the most likely cause, and fix it. This flow is also shown in a patent. In a PDF Solutions case, combining tool records with electrical test results revealed that an indicator had drifted right after maintenance. The countermeasures were revising the maintenance procedure, adding a break-in run, and confirming that signals were stable before returning the tool to production. <strong class="semicon-key">It does not end with the fix; confirming the result is part of the same sequence.</strong></p>
+<p>As in this case, there is also a method that focuses on "what has changed recently." ASQ's explanation calls it "change analysis," which examines changes in people, equipment, information, and so on when performance changes significantly. Maintenance is a big change for a tool. So comparing records before and after maintenance can reveal when the drift started.</p>
+<p>There is another method called "barrier analysis." It examines why the controls meant to prevent or detect a problem did not work. If you dig down to "why couldn't we notice the abnormality," you gain more ways to prevent recurrence.</p>
+<h2 class="wp-block-heading" data-fact-ids="C02">Searching for causes is a team effort</h2>
+<p>According to ASQ, many of the tools can be used by one person, but results are generally better when several people work together. It is also recommended to include the people responsible for removing the root cause as core members.</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep109-blog-ep109-05-team-5.jpg" alt="A team of three engineers in cleanroom suits gathered around a laptop and a printed wafer diagram, discussing"><figcaption>An image of a team discussing causes. It is not a real fab or real people. Image for article EP109 (AI-generated). The generated image was reduced and optimized as a JPEG.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the figure</b></p>
+<ul>
+<li>A team, rather than one person</li>
+<li>Include the people responsible for removing the cause</li>
+<li>The job continues until the cause is removed</li>
+</ul>
+</div>
+<div class="semicon-cta">
+<h3>Learn about jobs that search for causes</h3>
+<p>If you are interested in jobs that search for causes, please read this article too.</p>
+<div class="semicon-btnrow"><a class="semicon-btn" href="https://semicon-campus.com/semiconductor-career-map/">See semiconductor manufacturing jobs by process</a></div>
+</div>
+<p>Ways to notice changes in numbers are introduced in <a href="https://semicon-campus.com/what-is-spc-semiconductor-process-control/">What is SPC (statistical process control)?</a> Equipment adjustment and recovery are done according to the official procedures of your fab and the equipment maker, under the judgment of authorized people. This article introduces a way of thinking and does not give instructions for operating equipment.</p>
+<h2 class="wp-block-heading">Key terms review</h2>
+<ul>
+<li><strong>Wafer:</strong> The round disc that semiconductors are made on.</li>
+<li><strong>Root cause:</strong> The deepest cause that triggered a problem.</li>
+<li><strong>Excursion:</strong> When process results depart from expectations.</li>
+<li><strong>Lot:</strong> A container that carries about 25 wafers together.</li>
+<li><strong>Isolation (quarantine):</strong> Keeping affected lots from moving forward.</li>
+<li><strong>Commonality analysis:</strong> A method of finding tools that defective wafers all went through.</li>
+<li><strong>Distribution:</strong> The spread of where things are and how many there are.</li>
+</ul>
+<h2 class="wp-block-heading">Common misconceptions</h2>
+<h3>Q. If you fix the place where the defect was found, is the problem solved?</h3>
+<p>No. The place where it was found may be just a result. If the root remains, the same defect will happen again.</p>
+<h3>Q. If you know which tool the defective wafers went through, is that tool the cause?</h3>
+<p>Don't jump to conclusions. Even if each tool is normal on its own, defects can increase with a combination of two tools.</p>
+<h2 class="wp-block-heading">Summary</h2>
+<div class="semicon-lead">
+<p>Searching for the cause of defects has four stages: detect, contain, narrow down, and fix and confirm.<br />When narrowing down, what the tools that defective wafers went through have in common and the shape of the defect distribution are big clues.<br />Commonalities are clues, not answers, so remove the root cause while confirming as you go.</p>
+</div>
+<div class="semicon-cta">
+<h3>We also explain semiconductors simply on YouTube</h3>
+<p>For people who want to review with diagrams, we also have short explanations of semiconductor manufacturing on YouTube.</p>
+<div class="semicon-btnrow"><a rel="noopener" class="semicon-btn secondary" href="https://www.youtube.com/@semicon-campus" target="_blank">Watch diagram videos on YouTube</a></div>
+</div>
+<h2 class="wp-block-heading">Official sources consulted</h2>
+<ul class="semicon-sources">
+<li data-source-id="S01"><a href="https://asq.org/quality-resources/root-cause-analysis">ASQ, "What is Root Cause Analysis (RCA)?"</a></li>
+<li data-source-id="S04"><a href="https://patents.google.com/patent/US11803127B2/en">ASML patent US 11,803,127 B2, "Method for determining root cause affecting yield in a semiconductor manufacturing process"</a></li>
+<li data-source-id="S05"><a href="https://patents.google.com/patent/US7363098B2/en">Patent US 7,363,098 B2, "Method to identify machines causing excursion in semiconductor manufacturing"</a></li>
+<li data-source-id="S06"><a href="https://patents.google.com/patent/US6580960B1/en">Patent US 6,580,960 B1, "System and method for finding an operation/tool combination that causes integrated failure in a semiconductor fabrication facility"</a></li>
+<li data-source-id="S07"><a href="https://www.pdf.com/analysis-ready-fdc-in-the-age-of-ai-and-big-data-semiconductor-manufacturing/">PDF Solutions, "Analysis‑Ready FDC in the Age of AI and Big‑Data Semiconductor Manufacturing"</a></li>
+<li data-source-id="S08"><a href="https://patents.google.com/patent/US11029359B2/en">PDF Solutions patent US 11,029,359 B2, "Failure detection and classification using sensor data and/or measurement data"</a></li>
+<li data-source-id="S09"><a href="https://sst.semiconductor-digest.com/2020/02/monitoring-for-excursions-in-automotive-fabs/">KLA, "Monitoring for excursions in automotive fabs" (Semiconductor Digest, 2020)</a></li>
+<li data-source-id="S10"><a href="https://www.mdpi.com/2075-1702/10/2/146">"Improved Wafer Map Inspection Using Attention Mechanism and Cosine Normalization" (Machines, 2022)</a></li>
+</ul>
+<section class="semicon-correction-form">
+<h2>Question and correction form</h2>
+<p>If you find errors or unclear points in this article, please let us know using the form below. We will check and correct the article.</p>
+<div class="semicon-form-shortcode">
+<div class="wpcf7 no-js" id="wpcf7-f2045-o9" lang="ja" dir="ltr" data-wpcf7-id="2045">
+<div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
+<form action="/?rest_route=%2Fwp%2Fv2%2Fposts&#038;per_page=100&#038;page=1&#038;context=view#wpcf7-f2045-o9" method="post" class="wpcf7-form init" aria-label="Contact form" novalidate="novalidate" data-status="init">
+<fieldset class="hidden-fields-container"><input type="hidden" name="_wpcf7" value="2045" /><input type="hidden" name="_wpcf7_version" value="6.1.6" /><input type="hidden" name="_wpcf7_locale" value="ja" /><input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f2045-o9" /><input type="hidden" name="_wpcf7_container_post" value="0" /><input type="hidden" name="_wpcf7_posted_data_hash" value="" />
+</fieldset>
+<p>You do not need to enter your name, phone number, or address. Please do not include fab names or confidential information.
+</p>
+<p><label>Type of report (required) <span class="wpcf7-form-control-wrap" data-name="report-type"><select class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required" aria-required="true" aria-invalid="false" name="report-type"><option value="誤りと思われる点">Possible error</option><option value="分かりにくい箇所">Hard-to-understand part</option><option value="追加してほしい説明・質問">Explanation to add / question</option></select></span></label><br />
+<label>Relevant heading or text (optional) <span class="wpcf7-form-control-wrap" data-name="report-section"><input size="40" maxlength="200" class="wpcf7-form-control wpcf7-text" aria-invalid="false" value="" type="text" name="report-section" /></span></label><br />
+<label>Details (required) <span class="wpcf7-form-control-wrap" data-name="report-message"><textarea cols="40" rows="10" maxlength="3000" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" aria-required="true" aria-invalid="false" name="report-message"></textarea></span></label><br />
+<label>Email address for replies (only if you would like a reply; optional) <span class="wpcf7-form-control-wrap" data-name="report-email"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-email wpcf7-text wpcf7-validates-as-email" autocomplete="email" aria-invalid="false" value="" type="email" name="report-email" /></span></label>
+</p>
+<p>Your feedback will be used to review and improve articles. Please see our <a href="https://semicon-campus.com/privacy-policy/">handling of personal information</a>.
+</p>
+<p><input class="wpcf7-form-control wpcf7-submit has-spinner" type="submit" value="Send feedback or correction" />
+</p><div class="wpcf7-response-output" aria-hidden="true"></div>
+</form>
+</div>
+</div>
+</section>
+</div>
