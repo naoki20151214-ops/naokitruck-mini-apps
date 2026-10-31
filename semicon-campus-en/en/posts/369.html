@@ -1,0 +1,395 @@
+
+<!--KEEP:0-->
+
+
+<!--KEEP:1-->
+
+
+<!--KEEP:2-->
+<!--KEEP:3-->
+
+<div class="semicon-article" id="semicon-top">
+
+
+
+<div class="semicon-level">
+  <div class="semicon-level-top"><span class="semicon-level-label">Learning level</span><strong>Beginner → Intermediate</strong></div>
+  <p>This article is for readers who are starting to understand the basics of defect inspection, CD-SEM, SPC, and yield. In particular, it is written as a bridge to help people with experience in quality control, analysis, evaluation, or equipment maintenance in manufacturing read semiconductor job postings.</p>
+  <p>This level label is a guide to the reading order. Once you understand this article, job postings for inspection, quality, process improvement, and equipment makers become much easier to read.</p>
+</div>
+
+
+
+<p class="semicon-lead wp-block-paragraph">Failure analysis is the job of investigating "why it happened" when a defect or abnormality is found in semiconductors, and narrowing down the possible causes. A dot was found in defect inspection, a line width shifted on CD-SEM, or SPC showed unusual behavior. Failure analysis does not stop there. It considers where the cause is likely to be: the process, equipment, materials, design, or working conditions. This article goes beyond a dictionary definition and explains how to connect quality control and analysis experience from other industries to semiconductor jobs.</p>
+
+
+
+<div class="semicon-map">
+  <strong class="semicon-map-title">What you will learn in this article</strong>
+  <ol>
+    <li>What failure analysis work involves</li>
+    <li>How it differs from defect inspection, SPC, and yield improvement</li>
+    <li>The basic failure analysis flow</li>
+    <li>The roles of SEM, FIB, EDS/EDX, and electrical analysis</li>
+    <li>What "failure analysis," "yield improvement," and "quality data analysis" mean in job postings</li>
+    <li>How to connect analysis and quality experience from other industries to semiconductor jobs</li>
+    <li>The career path of an application engineer at an equipment maker</li>
+  </ol>
+</div>
+
+
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/failure-analysis-featured.png" alt="The big picture of failure analysis: narrowing down possible causes from the symptom and sorting them into process, equipment, materials, and design">
+  <figcaption>Failure analysis does not end when a defect is found. You look at the symptom and sort the possible causes into process, equipment, materials, and so on.</figcaption>
+</figure>
+<div class="semicon-mobile-summary">
+  <b>Key points of the figure</b>
+  <ul>
+    <li>Failure analysis investigates "why it happened"</li>
+    <li>Sort possible causes into process, equipment, materials, design, and so on</li>
+    <li>Connect it to preventing recurrence and improving yield</li>
+  </ul>
+</div>
+
+
+
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>I used an SEM a little in university lab work. Is semiconductor failure analysis a completely different world?</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>It's not a different world. In fact, people with experience in SEM, analysis, quality control, or evaluation have an easier time getting started. But in semiconductors, it is important not just to look at images, but to think about which process the cause traces back to.</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>I see. So they look not only at whether you can use the equipment, but at whether you can narrow down causes.</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>Exactly. That's why failure analysis is a topic where analysis and quality experience from other industries translates easily into semiconductors.</p></div></div>
+
+
+
+
+<h2 class="wp-block-heading">What is failure analysis?</h2>
+
+
+
+<p class="wp-block-paragraph">Failure analysis means investigating the cause of a defect that occurred in a product or process. In semiconductors, the targets include defects, scratches, residue, open circuits, shorts, film thickness shifts, line width shifts, leakage current, and abnormal electrical characteristics.</p>
+
+
+
+<p class="wp-block-paragraph">The important point here is that failure analysis is not "just finding bad chips." Defect inspection finds where defects are on the wafer. SPC checks whether measured values are as usual. Yield improvement tracks causes across the whole picture to raise the rate of good products. Within that, failure analysis looks deeply at the abnormalities found and narrows down the possible causes.</p>
+
+
+
+<div class="semicon-note">
+  <p><strong>For beginners, failure analysis is "making a map for finding the cause."</strong></p>
+  <p>Instead of jumping to conclusions from one defect, you overlay location, shape, measured values, and process history to sort out where to start investigating.</p>
+</div>
+
+
+
+<div class="semicon-cta">
+  <h3>Who this article is especially for</h3>
+  <p>In failure analysis, people who translate even somewhat related experience for semiconductors tend to be stronger than people jumping straight into advanced analysis jobs with no experience at all.</p>
+  <div class="semicon-grid">
+    <div class="semicon-card"><b>Quality control / quality assurance</b><span>Experience handling defect causes, recurrence prevention, process abnormalities, and customer complaints carries over.</span></div>
+    <div class="semicon-card"><b>Analysis / evaluation</b><span>Experience with SEM, optical microscopes, elemental analysis, materials evaluation, and organizing experimental data is a strength.</span></div>
+    <div class="semicon-card"><b>Manufacturing / equipment maintenance</b><span>Experience with equipment troubles, condition changes, maintenance history, and on-site improvements is close to cause isolation.</span></div>
+  </div>
+</div>
+
+
+
+<h2 class="wp-block-heading">Failure analysis is not about finding, but about isolating</h2>
+
+
+
+<p class="wp-block-paragraph">In a semiconductor fab, a defect does not always have just one cause. Even when defects look the same, there are many possibilities, such as leftover chemicals, particles, insufficient etching, CMP scratches, scratches during transfer, worn equipment parts, or differences between material lots.</p>
+
+
+
+<p class="wp-block-paragraph">So in failure analysis, you do not suddenly decide "this is the cause." First, you look at which lots it increased in, where on the wafer it appears most, after which process it appeared, and whether it occurs only in lots that went through the same equipment. This is how you reduce the number of possible causes.</p>
+
+
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/failure-analysis-flow.png" alt="The basic failure analysis flow: confirm the symptom, narrow down the location, observe in detail, form a hypothesis about the cause, and feed back into improvement">
+  <figcaption>Failure analysis proceeds by confirming the symptom, narrowing down the location, and using observation and analysis to reduce the possible causes.</figcaption>
+</figure>
+<div class="semicon-mobile-summary">
+  <b>Key points of the figure</b>
+  <ul>
+    <li>Confirm the symptom</li>
+    <li>Narrow down the location by lot, wafer, and coordinates</li>
+    <li>Look closely with SEM and cross-section observation</li>
+    <li>Sort possible causes into process, equipment, and materials</li>
+    <li>Feed back into improvement and recurrence prevention</li>
+  </ul>
+</div>
+
+
+
+<div class="semicon-basic-complete">You now understand the basics of failure analysis.</div>
+<div class="semicon-deep-break"><strong>From here on is optional deeper reading</strong><p>Continue only if you want to learn about collecting evidence, analysis equipment, jobs, and careers.</p></div>
+<h2 class="wp-block-heading">Four kinds of evidence collected in failure analysis</h2>
+
+
+
+<p class="wp-block-paragraph">In failure analysis, it is important not to judge from a single result. A defect map alone shows location trends but does not settle the cause. An image alone shows the shape of a defect but not when it started increasing. That is why you combine several kinds of evidence.</p>
+
+
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/failure-analysis-evidence-map.png" alt="Four kinds of evidence collected in failure analysis: defect map, measured values, image observation, and process history">
+  <figcaption>Overlaying defect location, changes in measured values, images, and process history makes it easier to narrow down possible causes.</figcaption>
+</figure>
+<div class="semicon-mobile-summary">
+  <b>Key points of the figure</b>
+  <ul>
+    <li>Defect map: see where defects are concentrated</li>
+    <li>Measured values: see when they started to shift</li>
+    <li>Image observation: see shapes, scratches, and residue</li>
+    <li>Process history: see equipment, materials, and conditions</li>
+  </ul>
+</div>
+
+
+
+<div class="semicon-grid">
+  <div class="semicon-card"><b>Defect map</b><span>Check whether defects are concentrated at the center of the wafer, at the edge, or in a specific pattern.</span></div>
+  <div class="semicon-card"><b>Measured values</b><span>Check when line width, film thickness, defect count, or electrical characteristics changed.</span></div>
+  <div class="semicon-card"><b>Image observation</b><span>Use SEM and similar tools to see the shape of defects, scratches, residue, and foreign particles.</span></div>
+  <div class="semicon-card"><b>Process history</b><span>Check the equipment used, material lots, processing conditions, and maintenance history.</span></div>
+  <div class="semicon-card"><b>Comparison samples</b><span>Compare good and defective products, and abnormal and normal lots.</span></div>
+  <div class="semicon-card"><b>Reproduction check</b><span>Check whether the hypothesis is correct and whether the problem reproduces under the same conditions.</span></div>
+</div>
+
+
+
+<h2 class="wp-block-heading">Common tools used in failure analysis</h2>
+
+
+
+<p class="wp-block-paragraph">Failure analysis combines observation, cross-sections, elements, and electrical characteristics. NIST also explains that SEM is an important method used in semiconductor manufacturing for dimensional measurement and defect and failure analysis. Rather than memorizing equipment names, beginners will find it more useful for real work and job postings to understand "what each tool is used to check."</p>
+
+
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/failure-analysis-tools.png" alt="Common tools used in failure analysis: SEM, FIB, EDS/EDX, and electrical analysis">
+  <figcaption>SEM is used to look at surfaces and defects, FIB to cut into a target spot and view a cross-section, EDS/EDX to check elements, and electrical analysis to find shorts, open circuits, and leakage.</figcaption>
+</figure>
+<div class="semicon-mobile-summary">
+  <b>Key points of the figure</b>
+  <ul>
+    <li>SEM: view surfaces and defects at high magnification</li>
+    <li>FIB: cut into a target spot and view a cross-section</li>
+    <li>EDS/EDX: identify the elements in foreign particles</li>
+    <li>Electrical analysis: find shorts, open circuits, and leakage</li>
+  </ul>
+</div>
+
+
+
+<div class="semicon-compare">
+<table>
+  <thead>
+    <tr><th>Tool / method</th><th>What it looks at</th><th>How it appears in job postings</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>SEM observation</strong></td><td>Defects, surface shape, scratches, residue</td><td>SEM, electron microscope, defect review</td></tr>
+    <tr><td><strong>FIB cross-section</strong></td><td>Inside films, wiring, cross-sectional structure</td><td>FIB, cross-section observation, sample preparation</td></tr>
+    <tr><td><strong>EDS/EDX</strong></td><td>Elements in foreign particles and contamination</td><td>Elemental analysis, materials analysis, analytical equipment</td></tr>
+    <tr><td><strong>Electrical analysis</strong></td><td>Shorts, open circuits, leakage, abnormal characteristics</td><td>Electrical characterization, reliability evaluation, failure analysis</td></tr>
+    <tr><td><strong>Data analysis</strong></td><td>Lot trends, tool-to-tool differences, process differences</td><td>Quality data analysis, yield analysis, SPC</td></tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<h2 class="wp-block-heading">How SEM and FIB are combined on site</h2>
+
+
+
+<p class="wp-block-paragraph">You cannot get a real feel for failure analysis just by memorizing tool names. For example, even if electrical analysis or a defect map shows that "this area looks suspicious," to actually see that spot in cross-section you need to decide the observation position, use FIB to cut into the target spot, and make it visible with SEM or TEM.</p>
+
+
+
+<p class="wp-block-paragraph">If the position is off by even a little, the cross-section of the defect you wanted to see may not appear. If you cut too much of the sample, you can lose the evidence itself. That is why failure analysis needs more than "being able to operate the equipment." Knowing where to look to get closer to the cause, and in what order to collect evidence, is what matters.</p>
+
+
+
+<div class="semicon-note">
+  <p><strong>This is where people with analysis and quality experience from other industries tend to be valued.</strong></p>
+  <p>Even if you do not know every semiconductor equipment name, "experience observing a defect, forming a hypothesis, and confirming it with additional analysis" translates easily to semiconductor jobs.</p>
+</div>
+
+
+<section class="mp1-section" id="maintenance-phase1-learning"><h2>Connecting failure analysis and troubleshooting to real work and relearning</h2><p>Failure analysis and maintenance meet when you narrow down possible causes from the shape and location of defects, measured values, and equipment history. If you write separately about the evidence you collected, what you were able to confirm, and what you handed off to the process, equipment, or materials teams, you can communicate your troubleshooting experience. If you want to explain recurrence prevention in addition to image observation, you can also consider studying the basics of quality control and maintenance.</p></section>
+
+<h2 class="wp-block-heading">Why people who understand failure analysis are valued in the job market</h2>
+
+
+
+<p class="wp-block-paragraph">People who understand failure analysis are valued not just because they can use the equipment. It is because they can look at a defect symptom and think about which evidence to collect and which process to send the check back to.</p>
+
+
+
+<p class="wp-block-paragraph">In a semiconductor fab, even a small drop in yield can greatly affect mass production and delivery dates. Changing conditions without knowing the cause can create other defects. That is why people who can link defects, measured values, images, and process history to narrow down possible causes tend to be valued in job postings for quality evaluation, process engineers, yield improvement, failure analysis, and data analysis.</p>
+
+
+
+<p class="wp-block-paragraph">What is more, failure analysis skills are not limited to semiconductor makers. Analysis using SEM, FIB, and EDS/EDX also involves equipment makers, contract analysis companies, and evaluation service companies. People who understand the equipment itself, listen to customers' analysis challenges, and suggest the best observation conditions and analysis methods can also move into jobs such as application engineer, FAE, technical support, and technical sales.</p>
+
+
+
+<div class="semicon-cta">
+  <h3>In failure analysis, people who can "put the cause into words" are strong</h3>
+  <p>If you have experience in manufacturing, quality, equipment maintenance, inspection, or equipment operation, you will stand out for semiconductor jobs if you can talk not only about "finding defects" but also about "how you narrowed down the cause." When you see failure analysis, yield improvement, quality data analysis, SEM, or FIB in a job posting, think of it as an area where the technology and the work are close to your experience.</p>
+</div>
+
+
+
+<h2 class="wp-block-heading">Two career routes seen from failure analysis</h2>
+
+
+
+<p class="wp-block-paragraph">When turning failure analysis into a job, looking only at semiconductor makers narrows your view. Broadly, there is a route on the manufacturing side improving yield and quality, and a route on the equipment maker side supporting how analysis equipment is used.</p>
+
+
+
+<div class="semicon-compare">
+<table>
+  <thead>
+    <tr><th>Career route</th><th>What the work looks like</th><th>Experience that fits well</th><th>Words to look for in job postings</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Failure analysis and yield improvement at a semiconductor maker</strong></td><td>Track where defects are and which process they come from, and trace possible causes back to the process, equipment, and materials</td><td>Quality control, process improvement, inspection, data analysis, manufacturing engineering</td><td>Failure analysis, yield improvement, quality data analysis, process improvement</td></tr>
+    <tr><td><strong>Application engineer at an equipment maker</strong></td><td>Use SEM, FIB, and analytical equipment to help customers set up observation and analysis conditions</td><td>SEM/FIB experience, analysis and evaluation, materials evaluation, customer support, technical support</td><td>Applications, FAE, technical sales, SEM, FIB, analytical equipment</td></tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<p class="wp-block-paragraph">For example, Hitachi High-Tech lists application roles for semiconductor metrology and inspection equipment on its careers page. JEOL, Thermo Fisher Scientific, ZEISS, and others also use SEM and FIB-SEM in semiconductor analysis and failure analysis workflows. In other words, SEM and FIB knowledge is not only "knowledge for joining a semiconductor maker," but also "knowledge for moving to the equipment maker side."</p>
+
+
+
+<div class="semicon-cta">
+  <h3>If you have SEM or FIB experience, look at equipment maker jobs too</h3>
+  <p>If you have experience with SEM, FIB, elemental analysis, materials evaluation, or quality assurance in another industry, check not only failure analysis at semiconductor makers but also application engineer and technical support jobs at equipment makers. Job postings may use phrases like "solve customers' analysis challenges," "suggest observation conditions," or "explain evaluation data," not just equipment names.</p>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn" href="https://semicon-campus.com/semiconductor-career-service-selection-guide/">See how to choose a job-change service strong in semiconductor jobs</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/semiconductor-company-map-by-process/">See the company map by process</a>
+  </div>
+</div>
+
+
+
+<h2 class="wp-block-heading">What words appear in job postings?</h2>
+
+
+
+<p class="wp-block-paragraph">Failure analysis is a fairly strong keyword in job postings. It appears in postings for quality evaluation, quality control, process engineers, yield improvement, failure analysis, reliability evaluation, and data analysis. It is not easy to aim straight for an advanced analysis job with no experience at all. But if you have experience in quality, analysis, evaluation, or equipment maintenance in another industry, you may be able to rephrase that experience for semiconductors.</p>
+
+
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/failure-analysis-career-keywords.png" alt="Failure analysis keywords in job postings: failure analysis, yield improvement, SEM/FIB, quality data analysis, recurrence prevention">
+  <figcaption>Failure analysis may appear spread across postings for inspection, quality, process, and data analysis.</figcaption>
+</figure>
+<div class="semicon-mobile-summary">
+  <b>Key points of the figure</b>
+  <ul>
+    <li>Failure analysis: investigate why a defect occurred</li>
+    <li>Yield improvement: look for causes that lower the rate of good products</li>
+    <li>SEM / FIB: observe defects and cross-sections</li>
+    <li>Quality data analysis: look at lot trends and process differences</li>
+    <li>Recurrence prevention: trace the cause back to the process and improve it</li>
+  </ul>
+</div>
+
+
+
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>Are people who did quality control at an auto parts maker, or who used analysis equipment at university, close to semiconductor failure analysis?</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>There's a good chance they can get quite close. You'll need semiconductor knowledge later, but experience in "looking at defects and narrowing down causes" and "explaining analysis results" is a strong foundation.</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>On the other hand, how should someone with no experience at all approach it?</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>Rather than looking only at core failure analysis jobs from the start, a realistic route is to enter through inspection, quality evaluation, or equipment operation and learn how to read defects and measured values.</p></div></div>
+
+
+
+<div class="semicon-cta">
+  <h3>Once you understand failure analysis, the words in job postings look different</h3>
+  <p>When you find words like "failure analysis," "yield improvement," "SEM observation," "FIB cross-section," "quality data analysis," and "recurrence prevention" in job postings, those jobs connect to this article. For people new to semiconductors, looking for an entry point in inspection, quality evaluation, or equipment operation is realistic.</p>
+  <p>If you already have experience in manufacturing, quality, equipment maintenance, mechanical or electrical work, or data analysis, organizing your experiences of "finding an abnormality," "isolating the cause," "connecting it to recurrence prevention," and "explaining analysis results to others" changes how you look to semiconductor employers.</p>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn" href="https://semicon-campus.com/%e5%8d%8a%e5%b0%8e%e4%bd%93%e6%b1%82%e4%ba%ba%e3%82%ad%e3%83%bc%e3%83%af%e3%83%bc%e3%83%89%e4%b8%80%e8%a6%a7%ef%bd%9c%e6%9c%aa%e7%b5%8c%e9%a8%93%e8%80%85%e3%81%8c%e6%b1%82%e4%ba%ba%e7%a5%a8%e3%81%a7/">See the job keyword list</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/how-to-read-semiconductor-job-description/">See how to read job postings</a>
+  </div>
+</div>
+
+
+
+<h2 class="wp-block-heading">Summary</h2>
+
+
+
+<p class="wp-block-paragraph">Failure analysis is the job of investigating why a defect or abnormality occurred in semiconductors and narrowing down possible causes. It takes abnormalities found through defect inspection, CD-SEM, SPC, and yield improvement and traces them back to the process, equipment, materials, design, and so on.</p>
+
+
+
+<p class="wp-block-paragraph">For beginners, it is enough to remember that "failure analysis is making a map for finding the cause." Overlay defect maps, measured values, image observation, and process history, and reduce possible causes without jumping to conclusions. Once you understand this way of thinking, jobs in inspection, quality, process improvement, and data analysis become easier to see.</p>
+
+
+
+<div class="semicon-cta">
+  <h3>To turn failure analysis into a job, start by looking at the words in job postings</h3>
+  <p>Try searching job postings for "failure analysis," "yield improvement," "quality data analysis," "SEM," "FIB," "recurrence prevention," and "application engineer." If the job description includes words like defects, measured values, process history, cause analysis, improvement proposals, or customers' analysis challenges, the job connects to this article.</p>
+  <p>The words in a job posting alone will not tell you the actual level required. How to present quality control, analysis, evaluation, equipment maintenance, or SEM/FIB experience for semiconductor jobs depends on the role. If you are aiming to switch roles or raise your annual salary in the semiconductor industry, first check how to choose a job-change service strong in semiconductor jobs, and sort out how to present your experience.</p>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn" href="https://semicon-campus.com/semiconductor-career-service-selection-guide/">See how to choose a job-change service strong in semiconductor jobs</a>
+  </div>
+</div>
+
+<div class="semicon-cta secondary-cta">
+  <h3>Coming up next</h3>
+  <p>The next article is now published. It explains why film thickness is measured after deposition and CMP, and how variation in film thickness connects to yield and the words used in job postings.</p>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn" href="https://semicon-campus.com/what-is-film-thickness-measurement/">Read "What is film thickness measurement?"</a>
+  </div>
+</div>
+
+<div class="semicon-cta secondary-cta">
+  <h3>We also explain semiconductors simply on YouTube</h3>
+  <p>For those who want to review with diagrams, we also give short explanations of semiconductor manufacturing and process thinking on YouTube.</p>
+  <div class="semicon-btnrow">
+    <a rel="noopener" class="semicon-btn" href="https://www.youtube.com/@semicon-campus" target="_blank">Watch diagram videos on YouTube</a>
+  </div>
+</div>
+
+<div class="semicon-links">
+  <div class="semicon-linkbox next">
+    <h3>What to read next</h3>
+    <p><a href="https://semicon-campus.com/what-is-spc-semiconductor-process-control/">What Is SPC? A Simple Guide to Semiconductor Quality Control That Links Inspection and Metrology Data to Process Control</a></p>
+    <p><a href="https://semicon-campus.com/what-is-cd-sem-sem-review/">What Are CD-SEM and SEM Review? A Simple Guide to Semiconductor Inspection and Metrology That Measures Dimensions and Looks Closely at Defects</a></p>
+    <p><a href="https://semicon-campus.com/what-is-semiconductor-defect-inspection/">What Is Defect Inspection? A Simple Guide to the Semiconductor Inspection Process That Finds Tiny Defects on Wafers</a></p>
+  </div>
+  <div class="semicon-linkbox">
+    <h3>Related articles</h3>
+    <p><a href="https://semicon-campus.com/what-is-semiconductor-yield/">What is yield?</a></p>
+    <p><a href="https://semicon-campus.com/what-is-semiconductor-inspection-quality-control/">What is semiconductor inspection and quality evaluation?</a></p>
+    <p><a href="https://semicon-campus.com/what-is-semiconductor-process-engineer/">What is a process engineer?</a></p>
+    <p><a href="https://semicon-campus.com/%e5%8d%8a%e5%b0%8e%e4%bd%93%e6%b1%82%e4%ba%ba%e3%82%ad%e3%83%bc%e3%83%af%e3%83%bc%e3%83%89%e4%b8%80%e8%a6%a7%ef%bd%9c%e6%9c%aa%e7%b5%8c%e9%a8%93%e8%80%85%e3%81%8c%e6%b1%82%e4%ba%ba%e7%a5%a8%e3%81%a7/">Semiconductor job keyword list</a></p>
+  </div>
+</div>
+
+<section class="mp1-section" id="maintenance-phase1-career"><h2>Jobs that use failure analysis and troubleshooting knowledge, and your next steps</h2><p>If you have experience isolating defect causes, analysis and evaluation, or recurrence prevention, organize each case as a set: "target equipment, problem, checks you did, result." If you compare the equipment you handle, night shifts and business trips, training, and requirements with job postings, you can separate the experience you can use from the knowledge you need to add.</p><aside class="semicon-cta mp1-card"><h3>Check the big picture of the work and how to choose jobs and learning</h3><p>On the equipment maintenance hub, you can see in one place how to organize inspection and troubleshooting work and experience, along with job postings, basic learning, and exam prep for certifications. If you want to compare the scope of equipment roles and customer-facing roles, see the related job articles too.</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/" class="semicon-btn mp1-button" data-maintenance-phase1-hub="277" data-cta="maintenance_hub" data-cta-type="maintenance_hub" data-cta-stage="career" data-cta-id="maintenance_369_hub277_end" data-cta-route="maintenance_369_hub277_end">See job duties, job postings, and learning on the equipment maintenance hub</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-field-service-engineer/" class="semicon-btn mp1-button" data-maintenance-phase1-hub="270" data-cta="fse_hub" data-cta-type="fse_hub" data-cta-stage="career" data-cta-id="maintenance_369_hub270_end" data-cta-route="maintenance_369_hub270_end">See FSE recovery and customer support work, job postings, and learning</a></div></aside></section>
+
+<h2>References</h2>
+<ul class="semicon-sources">
+  <li><a rel="noopener" href="https://www.nist.gov/mml/mmsd/primary-focus-areas/semiconductors" target="_blank">NIST: Semiconductors</a></li>
+  <li><a rel="noopener" href="https://www.nist.gov/programs-projects/advanced-analytical-electron-tomography-materials-development-and-failure-analysis" target="_blank">NIST: Advanced Analytical Electron Tomography for Materials Development and Failure Analysis in Semiconductor Devices</a></li>
+  <li><a rel="noopener" href="https://careers.hitachi.com/search/experienced-hitachi-high-tech-corporation/jobs" target="_blank">Hitachi Careers: Hitachi High-Tech Corporation jobs</a></li>
+  <li><a rel="noopener" href="https://www.jeol.com/solutions/semiconductor/" target="_blank">JEOL: Semiconductor solutions</a></li>
+  <li><a rel="noopener" href="https://www.zeiss.com/microscopy/en/applications/semiconductors-electronics/failure-analysis-3d-characterization.html" target="_blank">ZEISS: Failure analysis and 3D device characterization</a></li>
+  <li><a rel="noopener" href="https://www.thermofisher.com/br/en/home/semiconductors/sem-imaging.html" target="_blank">Thermo Fisher Scientific: Semiconductor SEM imaging and analysis</a></li>
+</ul>
+<a class="semicon-backtop" href="#semicon-top">↑ Top</a>
+</div>
+
+
+<aside class="related-spokes"><h2>Recommended reading</h2><ul><li><a href="/semiconductor-root-cause-analysis/">Root Cause Analysis (RCA), 8D Reports, and Lot Narrowing Methods in Semiconductor Manufacturing</a></li></ul></aside>

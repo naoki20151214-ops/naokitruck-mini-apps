@@ -1,0 +1,180 @@
+
+<!--KEEP:0-->
+
+
+<!--KEEP:1-->
+
+
+<!--KEEP:2-->
+<!--KEEP:3-->
+<div class="semicon-article" id="semicon-top">
+
+<div class="semicon-level"><span class="semicon-level-label">Learning level</span> <strong>Beginner to intermediate</strong><p>This article is for readers who understand that DRAM is working memory and want to move on to AI chips and advanced packaging.</p></div>
+
+<p class="semicon-lead"><strong>HBM (High Bandwidth Memory)</strong> is working memory that delivers large amounts of data at once to the GPUs that perform AI calculations. No matter how fast a GPU can compute, it has to wait if the data it needs doesn't arrive. HBM's role is to widen the path that data travels on.</p>
+
+<aside class="semicon-career-advisor-top" aria-label="Guide to the 10-question semiconductor job navigator">
+  <p class="semicon-career-advisor-top-copy">Answer 10 questions to sort out which jobs related to GPUs, memory, and advanced packaging you should look into next.</p>
+  <p class="semicon-btn-wrap"><a class="semicon-btn" href="https://semicon-campus.com/semiconductor-career-advisor/?utm_source=website&amp;utm_medium=internal&amp;utm_campaign=career_advisor_pilot&amp;utm_content=hbm_compute_memory_career_advisor_top" data-cta="career_advisor" data-cta-stage="career" data-cta-type="career_tool" data-cta-route="hbm_compute_memory_career_advisor_top" data-cta-position="top" data-source-page-type="technical_article">Try the 10-question job navigator (beta)</a></p>
+</aside>
+
+<div class="semicon-overview" aria-label="The big picture of HBM"><div class="semicon-overview-box"><b>GPU</b><span>Runs huge numbers of calculations in parallel</span></div><div class="semicon-overview-arrow">⇄</div><div class="semicon-overview-box"><b>HBM</b><span>Supplies data over wide bandwidth</span></div></div>
+
+<p>If you want to review the basics first, read <a href="https://semicon-campus.com/cpu-memory-storage-difference/">The difference between CPU, memory, and storage</a>, then <a href="https://semicon-campus.com/dram-nand-difference/">The difference between DRAM and NAND</a>. That will make this article easier to follow.</p>
+
+<div class="semicon-map"><h3>What you'll learn in this article</h3><div class="semicon-scope-grid"><div class="semicon-scope-block"><b>4 things to understand first</b><ol><li>HBM's role in delivering data to the GPU</li><li>Why memory bandwidth matters for AI and GPUs</li><li>The balance between compute performance and memory bandwidth</li><li>"How much can be carried at once," explained with the number of road lanes</li></ol></div><div class="semicon-scope-block deep"><b>2 things to go one step deeper</b><ol><li>How stacked DRAM, TSVs, and advanced packaging work</li><li>Links to heat, yield, companies, and job types</li></ol></div></div></div>
+
+<div class="semicon-note"><p><strong>3 points to remember first</strong></p><ol><li>HBM is DRAM-type working memory, not storage</li><li>Its strength is "wide bandwidth" that hands large amounts of data to the GPU at once</li><li>It is built by combining stacked DRAM, TSVs, and advanced packaging</li></ol></div>
+
+
+<h2>What is HBM, in a nutshell?</h2>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>Is HBM just a faster version of regular DRAM?</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>It's a member of the DRAM family, but its goal is to increase the amount of data that can be sent to the GPU at once.</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>So instead of making one car faster, you widen the road to carry a lot at once.</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>That's a good starting point. But in real HBM, wide bandwidth comes from many signal lines and short wiring, not roads.</p></div></div>
+
+<figure class="semicon-figure"><img src="https://semicon-campus.com/wp-content/uploads/2026/07/hbm-gpu-data-bandwidth-role.png" alt="How HBM supplies data over wide bandwidth to many GPU compute units" width="1536" height="864" loading="lazy" decoding="async"><figcaption>To keep a GPU's compute units busy, you need not only compute performance but also the bandwidth to deliver data.</figcaption></figure>
+
+<div class="semicon-note"><p><strong>First conclusion:</strong> HBM is not storage like NAND. It is DRAM-type working memory that the GPU uses while computing.</p></div>
+<p class="semicon-one-line">Quick summary so far: HBM is DRAM-type memory that hands large amounts of data to the GPU.</p>
+
+<h2>Why does memory bandwidth matter for AI and GPUs?</h2>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>If the GPU's compute performance is high, isn't ordinary memory good enough?</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>Even with many compute units, waiting time grows if the data they work on doesn't arrive. AI handles huge amounts of data in parallel, so the supply path has to be wide too.</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>It's like a factory: adding more machines doesn't help if the aisle for carrying parts is narrow. Things stop.</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>Exactly. Compute performance and memory bandwidth aren't separate; you think about them as one system.</p></div></div>
+
+<p>When data can't reach the GPU's compute units fast enough and they have to wait, it's called a memory bottleneck. On the compute side, check <a href="https://semicon-campus.com/what-is-tensor-core-matrix-acceleration/">how Tensor Cores speed up matrix multiply-accumulate operations</a> to see why data supply becomes so important.</p>
+
+<div class="semicon-grid"><div class="semicon-card"><b>Compute performance</b><span>How many operations a GPU can perform in a given time.</span></div><div class="semicon-card"><b>Memory bandwidth</b><span>How much data can move between memory and the GPU in a given time.</span></div><div class="semicon-card"><b>Effective performance</b><span>The actual amount of work done, combining computation, data movement, software, and more.</span></div></div>
+<p class="semicon-one-line">Quick summary so far: It's not enough to add compute units. The data supply path has to be widened too.</p>
+
+<h2 id="compute-memory-balance">An AI GPU needs more than just fast computation</h2>
+
+<p>An AI GPU's performance isn't decided by the peak performance of its compute units alone. The actual processing time depends on a combination of things: how fast the data needed for computation moves from memory, how many times the same data can be reused, whether it fits in cache, and whether the software can use the compute units well.</p>
+
+<p>NVIDIA's Nsight Compute shows this relationship with a concept called the <strong>Roofline</strong> model. The horizontal axis roughly corresponds to <strong>arithmetic intensity</strong>: "how much computation is done per amount of data moved." Workloads that do a lot of computation with little data movement tend to approach the compute-side limit, while workloads that move data many times tend to hit the memory-bandwidth-side limit.</p>
+
+<figure class="semicon-figure"><img src="https://semicon-campus.com/wp-content/uploads/2026/07/gpu-compute-memory-roofline-balance.png" alt="Conceptual diagram showing the achieved performance of each workload under a sloped performance limit set by memory bandwidth and a horizontal limit set by GPU compute performance" width="1672" height="941" loading="lazy" decoding="async"><figcaption>Even on the same GPU, whether a workload hits the memory-bandwidth limit or the compute limit depends on its amount of data movement and computation.</figcaption></figure>
+
+<div class="semicon-grid"><div class="semicon-card"><b>Memory-bandwidth-bound</b><span>The compute units have spare capacity but data supply can't keep up, so increasing bandwidth tends to help.</span></div><div class="semicon-card"><b>Compute-bound</b><span>Data supply has headroom, and the compute units' throughput or the computation method tends to be the limit.</span></div><div class="semicon-card"><b>Other waiting time</b><span>Transfers with the CPU, GPU-to-GPU communication, branching, synchronization, software, and so on can also be the limit.</span></div></div>
+
+<p>The key point here is that <strong>a GPU is not always waiting on memory</strong>. For example, matrix calculations that can reuse loaded data many times inside the GPU may be limited by compute performance, depending on conditions. On the other hand, workloads that compute a little on some data and quickly swap in the next data are more affected by memory bandwidth.</p>
+
+<figure class="semicon-figure"><img src="https://semicon-campus.com/wp-content/uploads/2026/07/gpu-workload-bottleneck-comparison.png" alt="Diagram comparing, on the same GPU, a workload with heavy data movement where compute units wait, a workload where computation and data supply are balanced, and a workload that reuses data so compute units become the limit" width="1672" height="941" loading="lazy" decoding="async"><figcaption>The bottleneck isn't decided by the GPU model alone. It depends on how a workload moves data and how much it reuses data for computation.</figcaption></figure>
+
+<div class="semicon-note"><p><strong>HBM is important, but HBM alone doesn't decide performance.</strong></p><p>HBM's wide bandwidth helps memory-bandwidth-bound workloads. But other limits remain, such as compute performance, capacity, latency, cache, communication, and software. What you need is a balance between compute performance and data supply capacity that fits the use case.</p></div>
+
+<p class="semicon-one-line">Quick summary so far: The limit on speed changes with each workload, so look at compute performance and memory bandwidth together.</p>
+
+<h2>Bringing the "number of road lanes" analogy back to the real mechanism</h2>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>When you say "widen the road," what actually increases inside the memory?</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>Mainly, you add more signal lines that can exchange data at the same time, and you shorten the wiring to the GPU.</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>So the "road" in the analogy is really a wide interface and short wiring.</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>That's right. Bandwidth can be increased not only by making each signal faster, but also by widening how much is carried in parallel.</p></div></div>
+
+<div class="semicon-compare"><table><thead><tr><th>Comparison</th><th>Road analogy</th><th>What it really means</th></tr></thead><tbody><tr><td>Number and width of lanes</td><td>Lets many cars pass at once</td><td>Transfers data in parallel over a wide memory interface</td></tr><tr><td>Car speed</td><td>One car drives fast</td><td>Data rate per signal line</td></tr><tr><td>Distance to the destination</td><td>The road is short</td><td>Mounted close to the GPU, with short wiring</td></tr><tr><td>Traffic jam</td><td>Cars back up and the factory waits</td><td>Not enough memory bandwidth, so data supply to the compute units stalls</td></tr></tbody></table></div>
+
+<div class="semicon-note"><p><strong>Don't confuse the analogy with the real thing.</strong> Data isn't a physical object like a car; it is exchanged as electrical signals. The road analogy is just a way to grasp "how much can be carried at once."</p></div>
+
+<div class="semicon-grid two"><div class="semicon-card"><b>Typical PC memory (DDR-type DRAM)</b><span>Connects to the CPU and other chips through wiring on the board. Replaceable DIMMs belong to this group.</span></div><div class="semicon-card"><b>HBM</b><span>Placed close to the GPU or similar chip, it delivers large amounts of data over a wide data path.</span></div></div>
+<p class="semicon-one-line">Quick summary so far: In real hardware, the "road width" is the combination of signal lines used in parallel and transfer speed.</p>
+
+<div class="semicon-basic-complete">You now understand the basics of HBM.</div>
+
+<div class="semicon-deep-break"><strong>Going one step deeper</strong><p>The rest of this article is for readers who want to learn about the mechanism, manufacturing, and jobs. If you only want the basics, feel free to <a href="#hbm-summary">skip to the summary</a>.</p></div>
+
+<h2>HBM's stacked structure and TSVs</h2>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>Why are the DRAM dies stacked vertically instead of placed side by side?</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>To pack capacity and connections into a limited area, and to connect the layers with short TSVs.</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>So a TSV is like an elevator that runs vertically through stacked floors.</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>As a concept, that's close. In reality, it's a tiny electrode that passes through the silicon, and making and bonding it requires high precision.</p></div></div>
+
+<figure class="semicon-figure"><img src="https://semicon-campus.com/wp-content/uploads/2026/07/hbm-stack-tsv-gpu-package-cross-section.png" alt="HBM structure in which multiple DRAM dies are stacked with TSVs and connected to the GPU through a base die and advanced packaging" width="1536" height="864" loading="lazy" decoding="async"><figcaption>HBM creates its bandwidth not just with stacked DRAM, but with the whole package, including TSVs, the base die, and high-density wiring.</figcaption></figure>
+
+<p>As the diagram shows, HBM connects multiple DRAM dies vertically with TSVs and is mounted near the GPU through a base/logic die at the bottom and advanced packaging. The configuration varies by generation and product, but the basic idea is to combine stacked memory with short, dense wiring.</p>
+<p class="semicon-one-line">Quick summary so far: HBM depends not only on stacked DRAM, but also on vertical connections and the whole package.</p>
+
+<h2>Bandwidth, capacity, and latency are different metrics</h2>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>If the bandwidth is wide, does that mean capacity is large and waiting time is short too?</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>Those are separate. Bandwidth is how much can be carried at once, capacity is how much data can be held during computation, and latency is the waiting time from a request to a response.</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>So you need to look separately at a big warehouse, a wide loading dock, and how long it takes for a package to arrive.</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>Yes. Which metric becomes the bottleneck also depends on the use case.</p></div></div>
+
+<div class="semicon-compare"><table><thead><tr><th>Metric</th><th>What it measures</th><th>Beginner-friendly version</th><th>Caution</th></tr></thead><tbody><tr><td>Bandwidth</td><td>Amount of data that can be moved in a given time</td><td>How much the whole road can carry</td><td>The effective value also changes with the workload and system configuration</td></tr><tr><td>Capacity</td><td>Amount of data that can be held in memory</td><td>Size of the warehouse</td><td>Wide bandwidth doesn't guarantee enough capacity</td></tr><tr><td>Latency</td><td>Time from request to response</td><td>Time until an ordered package arrives</td><td>Not the same thing as bandwidth</td></tr></tbody></table></div>
+<p class="semicon-one-line">Quick summary so far: Bandwidth is how much can be carried, capacity is how much can be held, and latency is waiting time.</p>
+
+<!-- HBM_FIGURE_3_OPTIONAL: 3 metric cards for bandwidth, capacity, and latency -->
+
+<h2>Why HBM is hard: heat, yield, and cost</h2>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>If stacking DRAM improves performance, why not just stack a lot more?</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>The more layers you stack, the harder thinning, bonding, heat dissipation, and inspection become. A defect in one layer can affect the entire stack.</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>So it's not just about performance. Being able to make good units consistently matters too.</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>That's right. HBM is a memory technology, and at the same time a contest of advanced packaging and mass-production technology.</p></div></div>
+
+<div class="semicon-grid"><div class="semicon-card"><b>Heat</b><span>Heat comes from the stacked dies and the nearby GPU. Heat dissipation paths and power efficiency are important.</span></div><div class="semicon-card"><b>Yield</b><span>Defects must be kept down at every stage: thinning, TSVs, bonding, stacking, and final assembly.</span></div><div class="semicon-card"><b>Cost</b><span>It needs high-quality DRAM, complex stacking, inspection, and advanced packaging, so you can't judge it with a simple parts comparison.</span></div></div>
+
+<p>Even if the HBM itself is good, the whole package, including the GPU, interposer, substrate, and bonds, must meet performance and reliability requirements. You can learn how this relates to the good-unit rate in <a href="https://semicon-campus.com/what-is-semiconductor-yield/">What is yield?</a></p>
+<p class="semicon-one-line">Quick summary so far: The higher HBM's performance, the harder it is to manage heat dissipation, inspection, and yield.</p>
+
+<!-- HBM_FIGURE_4_OPTIONAL: The triangle of heat, yield, and cost -->
+
+<h2>How to look at companies involved in HBM</h2>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>Which companies should I watch to understand what's happening in the HBM industry?</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>Start with the memory makers SK hynix, Samsung, and Micron. But HBM isn't completed by one company alone. Packaging, equipment, materials, and inspection companies are involved too.</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>So just looking at memory company rankings would miss the big picture.</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>Yes. Market share and which generation is ahead change over time. It's easier to learn by looking at each company's role by process.</p></div></div>
+
+<div class="semicon-note"><p><strong>Company names are a starting point for understanding.</strong> SK hynix, Samsung, and Micron are important memory companies for understanding HBM, but this article does not make firm claims about rankings or market share. Product qualification, supply, generations, and customer mix change, so check each company's official materials when you need current information.</p></div>
+
+<div class="semicon-grid"><div class="semicon-card"><b>Memory makers</b><span>Handle DRAM design and manufacturing, stacking, quality assurance, and customer qualification.</span></div><div class="semicon-card"><b>Packaging and foundries</b><span>Provide the assembly platform that connects the GPU and HBM at high density.</span></div><div class="semicon-card"><b>Equipment, materials, and inspection</b><span>Support TSVs, thinning, bonding, deposition, cleaning, metrology, and defect inspection.</span></div></div>
+
+<p>To organize companies by process, go to the <a href="https://semicon-campus.com/semiconductor-company-map-by-process/">Semiconductor company map by process</a>.</p>
+<p class="semicon-one-line">Quick summary so far: HBM is a joint effort, not just by the three memory makers but also by assembly, equipment, materials, and inspection companies.</p>
+
+<h2>Connecting to manufacturing processes, equipment, materials, and jobs</h2>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>Are memory designers the only people who work on making HBM?</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>No. Many job types are connected: front-end process, TSVs, wafer thinning, bonding, package design, thermal design, inspection, quality, and equipment maintenance.</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>So HBM is a topic that lets you look across semiconductor processes and jobs.</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>Exactly. When you map technical terms back to processes, the roles of companies and job types become easier to see.</p></div></div>
+
+<div class="semicon-grid"><div class="semicon-card"><b>Process and equipment</b><span>Responsible for the conditions and equipment to reliably run DRAM front-end processing, TSVs, thinning, and bonding.</span></div><div class="semicon-card"><b>Packaging and thermal design</b><span>Design the wiring, power, bonding, and heat dissipation between the GPU and HBM across the whole package.</span></div><div class="semicon-card"><b>Inspection, quality, and analysis</b><span>Check defects before and after stacking, electrical characteristics, bonds, and final product reliability.</span></div></div>
+
+<p>You can see where each step fits in semiconductor manufacturing in <a href="https://semicon-campus.com/semiconductor-manufacturing-overview/">The big picture of semiconductor manufacturing</a>, and the types of jobs in the <a href="https://semicon-campus.com/semiconductor-career-map/">Semiconductor industry job map</a>.</p>
+<p class="semicon-one-line">Quick summary so far: Understanding HBM lets you see how jobs connect, from the front-end process to advanced packaging.</p>
+
+<aside class="semicon-career-advisor-bridge" aria-label="10-question semiconductor job navigator">
+  <strong class="semicon-career-advisor-title">Turn your interest in technology into jobs to research next</strong>
+  <p class="semicon-career-advisor-copy">The jobs that support HBM are wide-ranging: GPU architecture, memory design, advanced packaging, manufacturing equipment, inspection and quality, and more. With 10 anonymous questions, you can narrow down up to 3 job types to read about next. This is not an assessment of your hiring suitability.</p>
+  <p class="semicon-btn-wrap"><a class="semicon-btn" href="https://semicon-campus.com/semiconductor-career-advisor/?utm_source=website&amp;utm_medium=internal&amp;utm_campaign=career_advisor_pilot&amp;utm_content=hbm_compute_memory_career_advisor_bottom" data-cta="career_advisor" data-cta-stage="career" data-cta-type="career_tool" data-cta-route="hbm_compute_memory_career_advisor_bottom" data-cta-position="bottom" data-source-page-type="technical_article">Try the 10-question job navigator (beta)</a></p>
+</aside>
+
+
+<section class="mp3-section" id="revenue-phase3-learning"><h2>Comparing assembly and evaluation jobs, starting from HBM</h2><p>To connect your HBM knowledge to a job, sort out where your experience might be useful: TSVs, thinning, bonding, heat, or inspection. Writing down the scope of your past work in assembly, measurement, quality, or equipment maintenance gives you material for reading advanced packaging job postings. Combine learning that fills gaps in mechanical, electrical, and quality basics with career consultations for technical jobs. Keep this separate from the idea that you can add HBM by buying memory for a home PC.</p></section>
+
+<h2>Frequently asked questions</h2>
+<h3>Is HBM always faster than regular PC memory?</h3><p>HBM is designed to get very wide bandwidth, but you can't say it is "always faster for every workload." Effective performance depends on the workload, memory access patterns, capacity, latency, the GPU, and even the software.</p>
+<h3>Should I memorize HBM generation names and performance figures?</h3><p>You don't need to memorize them at first. As generations advance, the interface, stacking, data rate, capacity, base die, and other aspects change. First, learn these 4 points: "wide bandwidth," "stacked DRAM," "close to the GPU," and "advanced packaging." When you need specific numbers, check each company's latest datasheets.</p>
+<h3>Are memory bandwidth and memory capacity the same?</h3><p>No. Bandwidth is the amount of data that can be moved in a given time, and capacity is the amount of data that can be held. Wide bandwidth doesn't mean the needed model or data will fit in capacity, and large capacity doesn't mean data can be moved fast enough.</p>
+<h3>Is a GPU always waiting on memory?</h3><p>No. Some workloads are limited by memory bandwidth, while others are limited by compute units, communication, synchronization, software, and so on. Even on the same GPU, it changes with the ratio of computation to data movement and how data is reused.</p>
+<h3>Will adding more HBM always make AI faster?</h3><p>Not always. The effect of more bandwidth or capacity depends on the workload. You need balance across the whole system, including compute performance, cache, GPU-to-GPU communication, model implementation, and power and cooling.</p>
+
+<h2 id="hbm-summary">Summary</h2>
+<div class="semicon-note"><p><strong>3 points to remember first</strong></p><ol><li>HBM is DRAM-type memory that hands large amounts of data to the GPU</li><li>Its strength is memory bandwidth, "how much can be carried at once"</li><li>Stacked DRAM, TSVs, and advanced packaging work together to deliver performance</li></ol></div>
+
+<div class="semicon-links"><div class="semicon-linkbox next"><h3>Learn in order</h3><p><a href="https://semicon-campus.com/semiconductor-beginner-roadmap/">Back to the semiconductor beginner roadmap</a></p><p><a href="https://semicon-campus.com/dram-nand-difference/">Review DRAM, the foundation of HBM</a></p></div><div class="semicon-linkbox"><h3>Next: connections and packaging</h3><p><a href="https://semicon-campus.com/what-is-advanced-packaging-gpu-hbm/">Advanced packaging basics: connecting the GPU and HBM closely and widely</a></p><p><a href="https://semicon-campus.com/semiconductor-company-map-by-process/">See the company map by process</a></p></div></div>
+
+<div class="semicon-map"><h3>Topics to explore next</h3><ul><li>Design, materials, bonding, inspection, and thermal jobs in advanced packaging</li><li>The manufacturing process for memory chips</li></ul></div>
+
+
+<section class="mp3-section" id="revenue-phase3-career"><h2>Connect what you learned here to your next job or study</h2><p>Organize your experience in bonding and assembly, thermal evaluation, inspection, or equipment maintenance by target, task, and verified results. Comparing job scope, required experience, work location, work schedule and travel, and training programs will also make clear what knowledge to add next.</p><aside class="semicon-cta mp3-card"><h3>See the work, job postings, and learning for related job types</h3><p>See which jobs use the technology covered in this article: inspection and recovery, equipment startup, customer support, or assembly and process improvement. Go on to the job articles for tips on choosing job postings and learning.</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/" class="semicon-btn mp3-button" data-revenue-phase3-hub="237" data-cta="equipment_hub" data-cta-type="equipment_hub" data-cta-stage="career" data-cta-id="phase3_493_hub237_end" data-cta-route="phase3_493_hub237_end">See an equipment engineer's scope, job postings, and learning</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/advanced-packaging-jobs-career/" class="semicon-btn mp3-button" data-revenue-phase3-hub="651" data-cta="packaging_hub" data-cta-type="packaging_hub" data-cta-stage="career" data-cta-id="phase3_493_hub651_end" data-cta-route="phase3_493_hub651_end">See how to choose advanced packaging jobs, postings, and learning</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/" class="semicon-btn mp3-button" data-revenue-phase3-hub="277" data-cta="maintenance_hub" data-cta-type="maintenance_hub" data-cta-stage="career" data-cta-id="phase3_493_hub277_end" data-cta-route="phase3_493_hub277_end">See work, job postings, and learning in the Equipment Maintenance Hub</a></div></aside></section>
+
+
+<h2>References</h2>
+<ul><li><a rel="noopener" href="https://docs.nvidia.com/nsight-compute/2025.3/ProfilingGuide/index.html#roofline-charts" target="_blank">NVIDIA Nsight Compute Profiling Guide: Roofline Charts</a></li><li><a rel="noopener" href="https://developer.nvidia.com/blog/accelerating-hpc-applications-with-nsight-compute-roofline-analysis/" target="_blank">NVIDIA Technical Blog: Nsight Compute Roofline Analysis</a></li><li><a rel="noopener" href="https://news.skhynix.com/become-a-semiconductor-expert-with-sk-hynix-hbm/" target="_blank">SK hynix: Become a Semiconductor Expert with HBM</a></li><li><a rel="noopener" href="https://semiconductor.samsung.com/dram/hbm/" target="_blank">Samsung Semiconductor: HBM</a></li><li><a rel="noopener" href="https://www.micron.com/content/dam/micron/global/public/documents/products/product-flyer/hbm3e-product-brief.pdf" target="_blank">Micron: HBM3E Product Brief</a></li><li><a rel="noopener" href="https://3dfabric.tsmc.com/english/dedicatedFoundry/technology/cowos.htm" target="_blank">TSMC 3DFabric: CoWoS</a></li></ul>
+
+<a class="semicon-backtop" href="#semicon-top">↑ Back to top</a>
+</div>
+
+
+<aside class="related-spokes"><h2>Recommended reading</h2><ul><li><a href="/sk-hynix-indiana-hbm4e-news/">SK hynix to mass-produce HBM4E in the US, building an AI memory supply chain at its Indiana plant worth over $4 billion</a></li></ul></aside>

@@ -1,0 +1,469 @@
+
+<!--KEEP:0-->
+
+
+<!--KEEP:1-->
+
+
+<!--KEEP:2-->
+<div class="semicon-article">
+
+<p class="wp-block-paragraph">Copying a pattern with lithography does not yet remove any of the film itself.</p>
+
+
+
+<p class="wp-block-paragraph">The tiny structures in semiconductors used in smartphones and AI servers are not finished just by making a guide pattern. Only after the film is shaped into the needed form can the wafer move on to the next process.</p>
+
+
+
+<p class="wp-block-paragraph">Etching is the step that does this. But why do we need to remove only the target material, in the target direction, evenly across the whole wafer? In this article, we follow one flow covering material selection, shape, wet vs. dry, the difference between 3D NAND and GAA, and inspection, cleaning, and maintenance.</p>
+
+
+<figure class="semicon-hero">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/06/etching-dry-chamber-hero-bright.png" alt="Image of dry etching equipment and a wafer processing chamber in a semiconductor fab">
+  <figcaption>How to read this figure: An image of dry etching equipment and a wafer processing chamber. Etching is the process that transfers the pattern made by lithography into the actual film, and in today's advanced semiconductors, plasma-based methods play an important role.</figcaption>
+</figure>
+
+<figure class="semicon-hero">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/etching-lithography-to-etch-flow-fixed.png" alt="Flow in which deposition, lithography, etching, and resist removal give the film its shape">
+  <figcaption>How to read this figure: It shows how the film gets its shape through deposition → lithography → etching → resist removal. Lithography is "the step that makes the guide pattern," and etching is "the step that removes film along that guide."</figcaption>
+</figure>
+
+
+
+<h2 class="wp-block-heading">Etching turns a pattern into "the shape of the film"</h2>
+
+
+
+<p class="wp-block-paragraph">Etching is the process that removes unwanted parts of the films on a wafer.</p>
+
+
+
+<p class="wp-block-paragraph">In semiconductor manufacturing, films such as oxide, nitride, silicon, and metal are first formed on the wafer. But if the film to be processed is left over the whole surface, it does not become the lines, trenches, openings, and isolation areas the circuit needs.</p>
+
+
+
+<p class="wp-block-paragraph">So a mask, such as photoresist, is placed on top of the film. Areas covered by the mask are protected, and the film in the open areas is removed. That is the basic idea of etching.</p>
+
+
+
+<h3 class="wp-block-heading">How deposition, lithography, and etching relate</h3>
+
+
+
+<p class="wp-block-paragraph">Looking at their roles together:</p>
+
+
+
+<ul class="wp-block-list">
+<li>Deposition: forms a film with the needed properties on the wafer</li>
+<li>Lithography: makes a pattern showing which parts of the film to keep and which to process</li>
+<li>Etching: uses the pattern as a guide and removes the exposed film</li>
+<li>Cleaning / removal: reduces residue and leftover mask, then passes the wafer to the next process</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">Lithography does not cut the circuit itself. In typical photolithography, a pattern is made in the photoresist to decide which areas will be protected during the next processing step.</p>
+
+
+
+<p class="wp-block-paragraph">The process that creates the resist pattern used as the guide is <a href="https://semicon-campus.com/what-is-lithography-semiconductor-process/">lithography</a>.</p>
+
+
+
+<h3 class="wp-block-heading">Without etching, the pattern cannot be transferred to the film</h3>
+
+
+
+<p class="wp-block-paragraph">In film-processing steps, etching transfers the pattern made by lithography into the film below. For example, say an insulating film is formed over the whole wafer, and a resist pattern of thin lines is made on top. At this point, the insulating film still covers the whole surface.</p>
+
+
+
+<p class="wp-block-paragraph">When etching removes the insulating film not protected by resist, shapes such as trenches and openings appear in the film. In other words, if lithography "specifies where to process," etching in this scope is the step that transfers that specification into the film. Not every process that uses a lithography pattern has to be explained by etching alone.</p>
+
+
+
+<p class="wp-block-paragraph">As an analogy, lithography is the rough sketch, and etching is the final work done along the sketch. In reality, though, nothing is cut with a knife. Chemicals, reactive gases, plasma, and other means are used to control how easily each material reacts and how it is removed.</p>
+
+
+
+<h2 class="wp-block-heading">Why do we need to choose which material to remove?</h2>
+
+
+
+<p class="wp-block-paragraph">The hard part of etching is not just removing material. While removing the target film, you need to keep the underlying layer, the mask, and neighboring materials as intact as possible.</p>
+
+
+
+<h3 class="wp-block-heading">Selectivity is about the ratio of etch rates</h3>
+
+
+
+<p class="wp-block-paragraph">Selectivity describes how much larger the etch rate of the material you want to remove is compared with the etch rate of the material you want to keep. The etch rate is how fast a material is removed per unit of time. Put another way, the goal is to remove the target film quickly and remove the underlying layer and mask as slowly as possible.</p>
+
+
+
+<p class="wp-block-paragraph">For example, if you want to etch an oxide film but the silicon below also gets heavily etched, the result strays from the intended structure. On the other hand, if the mask wears away too quickly, the areas it should protect become exposed partway through. Rather than higher selectivity always being best, the needed selectivity is decided by which materials to keep and which shape to make.</p>
+
+
+
+<p class="wp-block-paragraph">The needed selectivity changes from process to process. When the target changes, such as oxide, nitride, silicon, or metal films, the suitable chemicals, gases, plasma conditions, and masks change too.</p>
+
+
+
+<p class="wp-block-paragraph">Looking at <a href="https://semicon-campus.com/%E6%88%90%E8%86%9C%E3%81%A8%E3%81%AF%E4%BD%95%E3%81%8B%EF%BC%9F%E3%82%A6%E3%82%A7%E3%83%8F%E3%81%AE%E4%B8%8A%E3%81%AB%E8%96%84%E3%81%84%E8%86%9C%E3%82%92%E4%BD%9C%E3%82%8B%E5%8D%8A%E5%B0%8E%E4%BD%93/">deposition</a>, which prepares the film to be etched, together with etching helps connect the flow.</p>
+
+
+
+<p class="wp-block-paragraph">The film to be etched is not on the wafer from the start. When you include deposition, which creates the film, you can see that etching is the process that links "adding, copying, and removing."</p>
+
+
+
+<h2 class="wp-block-heading">What happens if etching spreads sideways?</h2>
+
+
+
+<p class="wp-block-paragraph">When etching proceeds downward from the mask opening, if it also spreads sideways, the designed line width, opening size, and sidewall shape change.</p>
+
+
+
+<h3 class="wp-block-heading">Looking at anisotropy and isotropy through shape</h3>
+
+
+
+<p class="wp-block-paragraph">The property of etching differently depending on direction is called anisotropy. In tiny semiconductor structures, there are cases where you want to limit sideways spread and create the target depth and shape.</p>
+
+
+
+<p class="wp-block-paragraph">On the other hand, "straight down" is not the right answer for every process. Depending on the material, structure, and how it connects to later steps, sideways removal or selective lateral etching may be needed. What matters is being able to control how much to etch in which direction for the designed shape.</p>
+
+
+
+<p class="wp-block-paragraph">If sideways etching is large, the line width may miss its target, openings may widen, or spacing to neighboring structures may change. So after etching, dimensions and shapes are measured and compared with design values and process standards.</p>
+
+
+
+<h2 class="wp-block-heading">How are wet and dry etching used differently?</h2>
+
+
+
+<p class="wp-block-paragraph">There are two kinds of etching: wet etching, which uses chemicals, and dry etching, which uses reactive gases or plasma. Neither is always better. They are chosen based on material, structure, needed directionality, selectivity, and purpose of the process.</p>
+
+
+<figure class="semicon-hero">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/etching-isotropic-vs-anisotropic-fixed.png" alt="Difference between wet etching and dry etching, and how isotropic and anisotropic etching remove material">
+  <figcaption>How to read this figure: The left shows wet etching and the right shows dry etching, and how each removes material. As a beginner, it helps to first understand that wet etching tends to spread sideways too, while dry etching makes vertical shapes more easily. In real processes, they are chosen based on material and conditions.</figcaption>
+</figure>
+
+
+<h3 class="wp-block-heading">With wet etching, watch for shape changes caused by isotropic reactions</h3>
+
+
+
+<p class="wp-block-paragraph">Wet etching removes material through a chemical reaction with chemicals. In isotropic etching, the reaction on the exposed surface proceeds not only vertically but also sideways. As a result, the reaction proceeds on the side walls as well as the bottom of the opening, and an undercut can form under the mask.</p>
+
+
+
+<p class="wp-block-paragraph">This is not explained only by "the liquid flows around sideways." The shape is decided by isotropy, meaning the reaction can proceed in any direction on the exposed surface, combined with the material, mask, and chemical conditions. Some processes need sideways removal, so an undercut is not always a failure.</p>
+
+
+
+<h3 class="wp-block-heading">Dry etching uses reactive gases and plasma</h3>
+
+
+
+<p class="wp-block-paragraph">Dry etching uses reactive gases or plasma in a vacuum. Reactive species in the plasma react with the material and are pumped out as byproducts, while ions act on the surface, combining chemical and physical effects.</p>
+
+
+<figure class="semicon-hero">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/etching-plasma-mechanism-fixed.png" alt="How dry etching turns reactive gas into plasma to remove the exposed film">
+  <figcaption>How to read this figure: A concept diagram of turning reactive gas into plasma and removing the film not protected by resist. Dry etching is not simply physical scraping; it combines chemical reactions with the directionality of ions.</figcaption>
+</figure>
+
+<figure class="semicon-hero">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/06/etching-plasma-closeup-bright.png" alt="Image of processing a wafer surface with plasma etching">
+  <figcaption>How to read this figure: An image of processing a wafer surface with plasma. Creating conditions by combining the material to remove, the material to keep, resist, gas, pressure, power, and more is an important job of a process engineer.</figcaption>
+</figure>
+
+
+<h3 class="wp-block-heading">RIE combines chemical action with the directionality of ions</h3>
+
+
+
+<p class="wp-block-paragraph">Reactive ion etching (RIE) is a typical approach that uses reactive species and ions in plasma to control the directionality of the shape. However, the actual profile changes with the combination of material, gas, pressure, power, temperature, mask, and more. Rather than remembering it as "a straight evolution from wet to dry," it is safer to think of it as choosing the right action for the desired shape and material.</p>
+
+
+
+<!-- semicon-a8-top30-top30-16-1:start -->
+
+
+<!-- semicon-a8-top30-top30-16-1:end -->
+
+
+
+<h2 class="wp-block-heading">Why do deeper, narrower structures get harder? (3D NAND)</h2>
+
+
+
+<p class="wp-block-paragraph">In 3D NAND, high aspect ratio etch, which forms deep holes and trenches in stacked structures, is a major challenge. The difficulty here is different from the selective material removal seen in GAA.</p>
+
+
+
+<h3 class="wp-block-heading">High aspect ratio etch is about the ratio of depth to opening width</h3>
+
+
+
+<p class="wp-block-paragraph">The depth of a structure divided by its opening width is called the aspect ratio. The deeper and narrower the opening, the harder it is to process the top and bottom the same way.</p>
+
+
+
+<h3 class="wp-block-heading">Transporting reactive species and removing byproducts gets harder deep down</h3>
+
+
+
+<p class="wp-block-paragraph">In deep holes and trenches, the species involved in the reaction have trouble reaching the bottom, and byproducts made during processing have trouble getting back out the top. As a result, the etch rate and profile can differ between the top and the bottom. Mask wear adds to this, so looking only at depth is not enough.</p>
+
+
+
+<h3 class="wp-block-heading">Watching CD, profile, directionality, and mask wear at the same time</h3>
+
+
+
+<p class="wp-block-paragraph">In 3D NAND processing, engineers check at the same time whether etching can go deep while keeping the target CD, whether the sidewall profile holds up, whether ion directionality is maintained, and whether the mask lasts to the end. The right combination of plasma density, ion directionality, gas reactivity, pressure, temperature, power, processing time, and so on depends on the material, equipment, and structure.</p>
+
+
+
+<h2 class="wp-block-heading">It's not just "etching deep": GAA etches selectively</h2>
+
+
+
+<p class="wp-block-paragraph">In GAA (Gate-All-Around), apart from digging deep holes straight down, there is the difficulty of removing a specific material while keeping the surrounding materials.</p>
+
+
+
+<h3 class="wp-block-heading">Selective etching removes the target while keeping surrounding materials</h3>
+
+
+
+<p class="wp-block-paragraph">In selective etching, it is important to make the etch rate of the material to remove high and the etch rate of the surrounding materials to keep low. It is a process that manages differences in how materials react, not just the directionality of the shape.</p>
+
+
+
+<h3 class="wp-block-heading">Selectively removing sacrificial layers such as SiGe from surrounding materials</h3>
+
+
+
+<p class="wp-block-paragraph">When forming GAA, a step may be used that selectively removes a sacrificial layer, such as SiGe, while keeping the surrounding materials. The space left after the sacrificial layer is gone leads to other steps, such as forming the gate later. What matters here is removing only the target layer without damaging the surrounding structure.</p>
+
+
+
+<h3 class="wp-block-heading">Some cases need isotropic removal</h3>
+
+
+
+<p class="wp-block-paragraph">To remove a sacrificial layer from its surroundings, some cases need isotropic removal that lets the reaction proceed around the structure, not just on the top surface visible through the opening. So etching is not always a technology for cutting straight down. Think of them as separate challenges: in 3D NAND, transport and directionality deep down; in GAA, selectivity and the needed sideways removal.</p>
+
+
+
+<h2 class="wp-block-heading">What happens if results are not even across the wafer?</h2>
+
+
+
+<p class="wp-block-paragraph">The <a href="https://semicon-campus.com/what-is-feol-semiconductor-process/">repeated cycle of cleaning, deposition, lithography, CMP, and inspection</a>, which includes etching, is easier to understand when viewed as the whole front-end process (FEOL) flow.</p>
+
+
+
+<p class="wp-block-paragraph">In semiconductor mass production, it is not enough for just part of the wafer to be processed well. Engineers check the distribution of etch rate, line width, depth, sidewall shape, and more between the center and edge, from wafer to wafer, and across lots and tools.</p>
+
+
+
+<h3 class="wp-block-heading">Uniformity is not just "the same speed" but the distribution of shapes</h3>
+
+
+
+<p class="wp-block-paragraph">Uniformity means getting close to the target result no matter where on the wafer you look. For example, even on a 300mm wafer, if there are large differences, such as deep etching at the center but shallow at the edge, or correct line width at the center but wider at the edge, the same design produces different results.</p>
+
+
+
+<p class="wp-block-paragraph">If those differences cannot be corrected in later steps, they may affect how the structure works electrically, its connections, its insulation, and its fit with later processes. We cannot say it "always causes a defect," but the wider the variation, the more possible anomalies there are to manage.</p>
+
+
+
+<h3 class="wp-block-heading">Under-etching and over-etching cannot be treated the same way</h3>
+
+
+
+<p class="wp-block-paragraph">Etching is an irreversible process that removes material. Some processes allow extra processing after under-etching, but material removed by over-etching cannot be put back. That is why etch rate, endpoint, time, shape, and within-wafer distribution are checked, and process conditions are tightly controlled.</p>
+
+
+
+<p class="wp-block-paragraph">If conditions drift, problems can occur, such as more residue, the mask wearing faster than expected, etching too much of the underlying layer, or opening sizes shifting. Extra checks or treatment may be needed in the next step, but it cannot be simplified to "if conditions drift, just reprocess."</p>
+
+
+
+<p class="wp-block-paragraph"><a href="https://semicon-campus.com/what-is-semiconductor-yield-analysis/">Yield analysis</a> combines distributions, equipment history, and measurements to narrow down the possible causes of a drop in the good-product rate.</p>
+
+
+
+<h2 class="wp-block-heading">How are results checked? Inspection, metrology, and process control</h2>
+
+
+
+<p class="wp-block-paragraph">Etching does not end when the equipment finishes running. Engineers check whether the resulting shape is as intended and feed the results back into the next conditions.</p>
+
+
+
+<h3 class="wp-block-heading">Inspection looks for the locations of possible anomalies</h3>
+
+
+
+<p class="wp-block-paragraph">Inspection examines a large area of the wafer and narrows down places with unusual signals as possible defects. Targets can include not only particles but also residue, scratches, missing pattern parts, lines bridging together, and shape changes.</p>
+
+
+
+<h3 class="wp-block-heading">Metrology turns CD, depth, film thickness, and shape into numbers</h3>
+
+
+
+<p class="wp-block-paragraph">Metrology turns things like CD (the size of lines and holes), depth, film thickness, sidewall shape, and the alignment between layers into numbers. If inspection finds "where something is wrong," metrology shows "how far off it is."</p>
+
+
+
+<p class="wp-block-paragraph">Engineers may also confirm what a possible defect really is with high-magnification review, and compare CD and depth distributions with equipment, chamber, recipe, and lot history. The measurements are fed back into SPC, recipe corrections, equipment checks, and yield analysis.</p>
+
+
+
+<p class="wp-block-paragraph">Think of <a href="https://semicon-campus.com/semiconductor-inspection-metrology/">inspection</a>, which finds where anomalies are, separately from metrology, which turns CD, depth, film thickness, and shape into numbers.</p>
+
+
+
+<h2 class="wp-block-heading">What remains after etching? Why is cleaning needed?</h2>
+
+
+
+<p class="wp-block-paragraph">After etching, the surface may have reaction byproducts, leftover resist, residue from the mask, tiny particles, and so on. Carrying these into the next process can affect film adhesion, further processing, metrology, and defect control.</p>
+
+
+
+<h3 class="wp-block-heading">Reaction byproducts, resist, and residue affect the next process</h3>
+
+
+
+<p class="wp-block-paragraph">Because etching is a reaction that removes film, the removed material and substances created by the reaction can remain on the surface or inside the equipment. The type and amount of residue depend on the material, chemicals, gas, plasma, mask, and processing conditions, so it is checked together with the etching results.</p>
+
+
+
+<h3 class="wp-block-heading">Cleaning and removal prepare the surface to be passed to the next process</h3>
+
+
+
+<p class="wp-block-paragraph">Cleaning and removal reduce leftover substances and prepare a surface state ready for the next deposition, lithography, connection, and inspection. Instead of separating etching and cleaning as different tasks, their roles become clear when you look at the cause and effect: "what remains after etching, and how is it passed on to the next step?"</p>
+
+
+
+<h3 class="wp-block-heading">What does ultrapure water protect?</h3>
+
+
+
+<p class="wp-block-paragraph">The cleanliness of the water and chemicals used for cleaning is important so that no new particles or impurities are brought onto the surface. This raises the question of why semiconductor fabs use ultrapure water. Detailed water quality control is covered in our existing article on ultrapure water.</p>
+
+
+
+<p class="wp-block-paragraph"><a href="https://semicon-campus.com/why-semiconductor-fab-uses-ultrapure-water/">Cleaning and removal</a> reduce the reaction byproducts, resist, and residue left after etching and prepare the wafer to be passed to the next process.</p>
+
+
+<section class="mp2-section" id="revenue-phase2-learning"><h2>Connecting etching equipment and process repeatability to your work and further learning</h2><p>When etching results change, clues can come not only from process conditions but also from the history of the chamber, gases, temperature, vacuum, and consumable parts. Write separately about experience adjusting conditions yourself and experience checking equipment status and handing it over to the process team. While filling in basics of mechanics, electricity, and quality, you can compare which area of responsibility, process, equipment, or maintenance, is closest to your experience.</p></section>
+
+<h2 class="wp-block-heading">Equipment, materials, metrology, and maintenance jobs that support etching</h2>
+
+
+
+<p class="wp-block-paragraph">The etching process is not completed by a single tool. Only when conditions, materials, chambers, metrology, data, and maintenance are connected can the same shape be made again and again.</p>
+
+
+
+<h3 class="wp-block-heading">Process engineers connect conditions and results</h3>
+
+
+
+<p class="wp-block-paragraph"><a href="https://semicon-campus.com/what-is-semiconductor-process-engineer/">Process engineers</a> look at materials, structures, recipes, and measurement results to work out which conditions produce the target shape. They sort out possible causes from problems such as CD drifting, insufficient depth, more residue, or a different trend only at the wafer edge.</p>
+
+
+
+<h3 class="wp-block-heading">Equipment and maintenance teams support chamber and process repeatability</h3>
+
+
+
+<p class="wp-block-paragraph"><a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/">Equipment engineers</a> and <a href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/">maintenance staff</a> keep processing stable through the chamber, consumable parts, gas supply, temperature, vacuum, inspection history, and more. If chamber condition or part wear changes the plasma or reaction conditions, the etch rate, profile, residue, and within-wafer distribution can change too. So maintenance is not just keeping the equipment running; it is also about catching changes in results early and keeping processes repeatable.</p>
+
+
+
+<h3 class="wp-block-heading">Materials, gases, and metrology support information on selectivity, shape, and anomalies</h3>
+
+
+
+<p class="wp-block-paragraph">People in materials and gases work on reactivity and selectivity, and people in metrology and inspection turn shapes and anomalies into images and numbers. Instead of memorizing company names or job titles, it is easier to organize roles by asking "which problem in which process does this support?" <a href="https://semicon-campus.com/what-is-tokyo-electron-semiconductor-equipment/">Tokyo Electron's etching equipment</a> is one example: check company names together with their role in the process.</p>
+
+
+
+<p class="wp-block-paragraph">Rather than memorizing company names, it helps to look at which problem they support: etching, deposition, cleaning, or metrology. You can learn more in the <a href="https://semicon-campus.com/semiconductor-company-map-by-process/">semiconductor company map</a>.</p>
+
+
+
+<p class="wp-block-paragraph">Look at jobs not by process name but by which problem they solve: conditions, equipment, materials, metrology, or yield. Next, go to the <a href="https://semicon-campus.com/semiconductor-career-map/">semiconductor job map</a> to sort out the differences between roles.</p>
+
+
+
+<h2 class="wp-block-heading">Summary: Etching is the process that "transfers a pattern into the film with even shapes"</h2>
+
+
+
+<p class="wp-block-paragraph">Etching is a film-processing step that transfers the lithography pattern into the film below.</p>
+
+
+
+<p class="wp-block-paragraph">It manages material selectivity, sideways etching, deep etching in 3D NAND, selective removal in GAA, and variation across the whole wafer.</p>
+
+
+
+<p class="wp-block-paragraph">Inspection, metrology, cleaning, and maintenance pass the results on to the next process and feed conditions back into the process.</p>
+
+
+
+<h3 class="wp-block-heading">Technical references</h3>
+
+
+
+<ul class="wp-block-list">
+<li>Lam Research, Etch: https://www.lamresearch.com/products/our-processes/etch/</li>
+<li>Lam Research, Etch Essentials: https://newsroom.lamresearch.com/etch-essentials-semiconductor-manufacturing</li>
+<li>Lam Research, Vantex Product Family: https://www.lamresearch.com/product/vantex/</li>
+<li>Tokyo Electron, Etch Tactras Series: https://www.tel.com/product/tactras.html</li>
+<li>Applied Materials, Etch: https://www.appliedmaterials.com/us/en/semiconductor/products/processes/etch.html</li>
+<li>Applied Materials, Selective Etch: https://www.appliedmaterials.com/us/en/semiconductor/products/shape/selective-etch.html</li>
+</ul>
+
+
+<!-- semicon-funnel-hub-v1 -->
+<div class="semicon-cta semicon-funnel-hub">
+  <section class="mp2-section" id="revenue-phase2-career"><h2>Comparing job postings and roles based on etching equipment and process repeatability</h2><p>Organize experience in chamber checks, matching process conditions to measurement results, and managing consumable parts as sets of target equipment, tasks, and verified results. If you are considering a career change, compare the scope of work, location, work hours and travel, training, and application requirements against the job posting to separate your current experience from the knowledge you need to add.</p><aside class="semicon-cta mp2-card"><h3>See the big picture of jobs and how to choose job postings and learning</h3><p>After learning the technology, compare the scope of work, such as inspection and recovery, equipment startup, process improvement, and customer support. The job articles below cover the work itself plus options for job postings and learning.</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/" class="semicon-btn mp2-button" data-revenue-phase2-hub="277" data-cta="maintenance_hub" data-cta-type="maintenance_hub" data-cta-stage="career" data-cta-id="phase2_80_hub277_end" data-cta-route="phase2_80_hub277_end">See work, job postings, and learning at the Equipment Maintenance Hub</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/" class="semicon-btn mp2-button" data-revenue-phase2-hub="237" data-cta="equipment_hub" data-cta-type="equipment_hub" data-cta-stage="career" data-cta-id="phase2_80_hub237_end" data-cta-route="phase2_80_hub237_end">See an equipment engineer's scope, job postings, and learning</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-process-engineer/" class="semicon-btn mp2-button" data-revenue-phase2-hub="230" data-cta="process_hub" data-cta-type="process_hub" data-cta-stage="career" data-cta-id="phase2_80_hub230_end" data-cta-route="phase2_80_hub230_end">See a process engineer's scope, job postings, and learning</a></div></aside></section>
+
+<h2>Connect what you learned to jobs and job postings</h2>
+  <p>The more you learn about semiconductor processes, the easier it is to see "which jobs are hiring at which companies, and in what words." Connect the article you are reading now (the etching process) to understanding jobs in this order.</p>
+  <ol>
+    <li><a href="https://semicon-campus.com/semiconductor-career-map/">Learn the jobs in each process with the job map</a></li>
+    <li><a href="https://semicon-campus.com/semiconductor-company-map-by-process/">Learn the related companies with the company map by process</a></li>
+    <li><a href="https://semicon-campus.com/%e5%8d%8a%e5%b0%8e%e4%bd%93%e6%b1%82%e4%ba%ba%e3%82%ad%e3%83%bc%e3%83%af%e3%83%bc%e3%83%89%e4%b8%80%e8%a6%a7%ef%bd%9c%e6%9c%aa%e7%b5%8c%e9%a8%93%e8%80%85%e3%81%8c%e6%b1%82%e4%ba%ba%e7%a5%a8%e3%81%a7/">Translate into the words used in job postings with the job keyword list</a></li>
+    <li><a href="https://semicon-campus.com/how-to-read-semiconductor-job-description/">Separate duties, conditions, and work style with the guide to reading job postings</a></li>
+    <li><a href="https://semicon-campus.com/semiconductor-career-service-selection-guide/">Choose a semiconductor career-change service based on your experience</a></li>
+    <li><a href="https://semicon-campus.com/semiconductor-agent-interview-checklist/">Prepare notes before talking with an agent using the pre-interview checklist</a></li>
+  </ol>
+</div>
+
+
+
+</div>
+
+
+<aside class="related-spokes"><h2>Related articles</h2><ul><li><a href="/electrostatic-chuck-wafer-temperature/">Why do wafers stick to the equipment? The role of the electrostatic chuck and temperature control</a></li><li><a href="/rf-matching-network/">Why is RF matching needed? Why reflected power increases</a></li><li><a href="/semiconductor-ion-implantation/">What is ion implantation? Why atoms are implanted, and annealing to repair the damage</a></li><li><a href="/semiconductor-copper-damascene/">What is copper wiring in semiconductors? Why the damascene process "digs trenches and fills them"</a></li><li><a href="/semiconductor-low-k-dielectric/">What is a low-k dielectric? Why the space between wires is made "airy"</a></li></ul></aside>

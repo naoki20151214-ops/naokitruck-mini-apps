@@ -1,0 +1,303 @@
+
+<!--KEEP:0-->
+
+
+<!--KEEP:1-->
+
+
+<!--KEEP:2-->
+
+
+
+<article class="semicon-article" data-episode="080" data-slug="semiconductor-test-wafer-final" data-target="new_post">
+<h1>What Is Semiconductor Testing? How Good and Defective Chips Are Sorted, from Wafer Test to Final Test</h1>
+<div class="semicon-lead">
+<p>Even if a semiconductor looks perfect, that does not mean it will work correctly inside a smartphone or a car.</p>
+<p>Only by sending real electrical signals into a nearly finished chip and checking the response can you judge whether it is good or bad as a circuit.</p>
+<p><strong>Semiconductor testing is the process of measuring electrical behavior at several stages, both on the wafer and after packaging, and picking out only the products that meet the specifications.</strong></p>
+</div>
+
+<figure class="semicon-hero" data-media-role="explanatory-image-01" data-visual-kind="stock" data-subject="半導体テスト" data-purpose="hero-overview" data-composition="equipment-wide" data-concrete-object="true" data-selection-reason="記事冒頭で抽象図より先に、ウェハと試験設備が同時に見える実機写真を提示するため。" data-photo-assessment="実機のウェハプローバ、チャック、ステージが明瞭で、装置環境の導入写真として十分に読める。" data-provenance="articles/images/episode080/visual-policy-v1/provenance/01-prober.md"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/09/ep080-01-01-prober.webp" alt="A real wafer prober used for semiconductor testing, showing the wafer holder"><figcaption>A real wafer prober used for semiconductor testing. Covers and other parts have been removed for maintenance, so this is not exactly how it looks during mass production.<small>Credit: Ixnayonthetimmay / Wikimedia Commons / Changes: resized and converted to WebP / License: <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a> / <a href="https://commons.wikimedia.org/wiki/File:Wafer_prober_service_configuration.jpg">Source</a></small></figcaption></figure>
+
+
+<h2>What you will learn in this article</h2>
+<ul>
+<li>Why wafer testing is used to find defective dies early</li>
+<li>Why a final test is done after packaging, even when a die passed on the wafer</li>
+<li>How DFT, binning, test escapes, and overkill affect quality in mass production</li>
+</ul>
+
+<h2>Bottom line: good or bad is judged by "what happens when you apply electricity"</h2>
+<p data-fact-ids="F001">In semiconductor testing, test equipment applies voltage, current, clocks, digital signals, and so on to the semiconductor, and measures the response that comes back. That response is compared with expected values or spec limits decided in advance to decide Pass or Fail. The main point is not just whether it looks right on the outside, but whether it works as intended as a circuit and whether its electrical characteristics are within spec.</p>
+<p>The automated test equipment used for testing is called ATE (Automated Test Equipment). ATE is not a box that automatically understands everything and gives you the answer. It is equipment that creates an environment where you can apply the electrical stimulus a product needs and compare the measurement results. This article does not focus on specific equipment models. Instead, it focuses on how the judgments connect from the wafer to after packaging.</p>
+<div class="semicon-note"><strong>Where inspection ends and testing begins:</strong> Defect inspection and metrology during manufacturing look at physical conditions such as particles, patterns, and dimensions. The semiconductor testing covered here mainly uses the response to electrical signals and the electrical characteristics to judge how a product works. The two complement each other to protect quality, but they do not look at the same things.</div>
+
+<figure class="semicon-figure" data-media-role="explanatory-image-02" data-visual-kind="stock" data-subject="半導体テスト" data-purpose="stage-transition-evidence" data-composition="macro-die" data-concrete-object="true" data-selection-reason="ウェハ上のダイから外部接続を持つパッケージへ対象が移ることを、開封ICの実物で示すため。" data-photo-assessment="ダイとボンディング線が接写で明瞭だが、開封観察用の状態なので通常製品外観とは区別して説明する。" data-provenance="articles/images/episode080/visual-policy-v1/provenance/02-wire-bonding.md"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/09/ep080-02-02-wire-bonding.webp" alt="An opened IC showing the die and bonding wires that are tested in semiconductor testing"><figcaption>What is tested in semiconductor testing moves from the die on the wafer to the assembled package. The photo shows an IC opened up to see inside. It is not how a normal shipped product looks.<small>Credit: Mister rf / Wikimedia Commons / Changes: resized and converted to WebP / License: <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> / <a href="https://commons.wikimedia.org/wiki/File:Integrated_circuit_wire_bonding.jpg">Source</a></small></figcaption></figure>
+
+<h2>Semiconductor testing is built on three basic actions</h2>
+<p>The first is applying an electrical stimulus to the semiconductor you want to test. The second is measuring the signals and electrical characteristics that come back as a result. The third is comparing the measurement results with expected values or spec limits. These three are repeated in the needed order, and the results are recorded and used for the judgment.</p>
+<p>The key point here is that "it powers on, so it is good" is not always true. A chip may do one operation correctly but fail to give the expected response in another. On the other hand, even when you cannot see any difference from the outside, differences show up in the response when electricity is applied. Semiconductor testing uses these circuit-level differences to make judgments in mass production.</p>
+
+<figure class="semicon-figure" data-media-role="explanatory-image-03" data-visual-kind="stock" data-subject="半導体テスト" data-purpose="measurement-environment" data-composition="lab-station" data-concrete-object="true" data-selection-reason="刺激・測定・比較という本文の説明を、プローブ操作と計測器を備えた具体的な測定環境へ結びつけるため。" data-photo-assessment="半自動プローブステーションの実機が明瞭で、解析用設備としての外観をスマホでも把握できる。" data-provenance="articles/images/episode080/visual-policy-v1/provenance/03-probe-station.md"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/09/ep080-03-03-probe-station.webp" alt="A semi-automatic probe station used to apply electrical stimulus and measure responses in semiconductor testing"><figcaption>An example of a semi-automatic probe station for applying stimulus and measuring responses in semiconductor testing. This is not production ATE itself but an example of equipment for analysis and measurement.<small>Credit: Rgarrigan / Wikimedia Commons / Changes: resized and converted to WebP / License: <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> / <a href="https://commons.wikimedia.org/wiki/File:Micromanipulator_Semiautomatic_Probe_Station.jpg">Source</a></small></figcaption></figure>
+
+<h2>Wafer testing checks the dies before they are cut apart</h2>
+<p>A wafer holds many copies of the same circuit design lined up side by side. Each individual circuit area is called a die. In wafer testing, each die is electrically connected at this stage and the needed tests are run.</p>
+<p data-fact-ids="F003">That connection is made by the probe card. The tiny contacts on the probe card are pressed temporarily against the pads or bumps on the wafer surface, electrically connecting the die to the ATE. It does not "stick needles into the inside of the chip." It touches the circuit's external connection points and creates the inputs and outputs for the signals needed for testing.</p>
+<p>Once a die is connected, the ATE sends signals to it and reads the response. The results are recorded for each die and later used to decide which dies to send to the next process when the wafer is cut. By linking each position on the wafer to its test result, you can also see how good and bad dies are distributed.</p>
+
+<figure class="semicon-figure" data-media-role="explanatory-image-04" data-visual-kind="stock" data-subject="プローブカード" data-purpose="interface-object" data-composition="object-top-view" data-concrete-object="true" data-selection-reason="接触概念だけの模式図ではなく、ウェハとATEの間に置かれるプローブカード実物を優先して見せるため。" data-photo-assessment="円形基板と中央の接触部が視認でき、微細接点の個々の形よりも装置全体の具体物理解に適する。" data-provenance="articles/images/episode080/visual-policy-v1/provenance/04-probe-card.md"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/09/ep080-04-04-probe-card.webp" alt="A real probe card that electrically connects the wafer to the ATE"><figcaption>A real probe card. It connects the electrodes on the wafer to the test equipment through the fine contact area in the center.<small>Credit: Ajoones / Wikimedia Commons / Changes: resized and converted to WebP / License: <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a> / <a href="https://commons.wikimedia.org/wiki/File:Probe_card.JPG">Source</a></small></figcaption></figure>
+
+<h2>Why test once while still in wafer form?</h2>
+<p data-fact-ids="F002">One major reason is to find clearly defective dies before they are assembled into packages. The back-end process, where the wafer is cut, the dies are picked out, connected, and assembled into packages, also takes equipment, materials, and time. If dies found to be defective at the wafer stage can be removed first, you avoid spending unnecessary back-end work on them.</p>
+<p>This does not mean that wafer testing alone settles all of a product's quality. The role of wafer testing is to choose early which dies move on to the back-end process, and to create judgment data for use in the next step. Finding problems early and checking quality all the way to the end are separate goals, and both are pursued.</p>
+
+<figure class="semicon-figure" data-media-role="explanatory-image-05" data-visual-kind="stock" data-subject="ウェハテスト" data-purpose="wafer-object" data-composition="wafer-close-up" data-concrete-object="true" data-selection-reason="早期選別の対象である多数のダイが並ぶウェハそのものを示し、後工程前という位置づけを具体化するため。" data-photo-assessment="ダイパターンが面全体に明瞭で、ウェハ上に多数の回路が並ぶことをスマホ表示でも確認できる。" data-provenance="articles/images/episode080/visual-policy-v1/provenance/05-silicon-wafer.md"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/09/ep080-05-05-silicon-wafer.webp" alt="A silicon wafer with many die patterns lined up before wafer testing"><figcaption>In wafer testing, each die is checked on the wafer before cutting and assembly, and the candidates to send to the back-end process are chosen early.<small>Credit: 2&#215;910 / Wikimedia Commons / Changes: resized and converted to WebP / License: <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> / <a href="https://commons.wikimedia.org/wiki/File:Si_wafer.jpg">Source</a></small></figcaption></figure>
+
+<h2>Even after passing on the wafer, chips are checked again after packaging</h2>
+<p data-fact-ids="F004 F005">A die that passed wafer testing has not necessarily become a shippable product. After cutting, the die is assembled into a package and electrically connected to external terminals. The packaging process adds connections, heat, mechanical stress, and more, and new failures can occur along the way. That is why a final test is done on the finished package to check operation once again.</p>
+<p>Wafer testing and final testing are not just the same work done twice. At the wafer stage, the purpose is to screen out defective dies early. In final testing, the purpose is to confirm that the assembled product works electrically. Even if some test items overlap, the physical state of what is tested and the point at which quality is judged are different.</p>
+<p>So the idea that "it passed on the wafer, so no more checking is needed" is not correct. If you think of it as splitting the work between problems that can be found on the wafer and problems that must be checked after packaging, the reason for two stages becomes clear.</p>
+
+<figure class="semicon-figure" data-media-role="explanatory-image-06" data-visual-kind="stock" data-subject="最終テスト" data-purpose="packaged-device-object" data-composition="product-group" data-concrete-object="true" data-selection-reason="ウェハ段階との違いを、外部端子を備えた複数のパッケージIC実物で直接示すため。" data-photo-assessment="複数形状のパッケージと端子が明瞭で、組立後に確認する物理的な対象を誤解なく示せる。" data-provenance="articles/images/episode080/visual-policy-v1/provenance/06-packaged-ics.md"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/09/ep080-06-06-packaged-ics.webp" alt="Real packaged ICs with external terminals, the target of final testing"><figcaption>Final testing is done on assembled packaged ICs that have external terminals. The photo shows examples of product shapes and does not show whether they passed or failed.<small>Credit: Viswesr / Wikimedia Commons / Changes: resized and converted to WebP / License: <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a> / <a href="https://commons.wikimedia.org/wiki/File:ARM_Cortex-M0_and_M3_ICs_in_SMD_Packages.jpg">Source</a></small></figcaption></figure>
+
+<h2>DFT: testing huge circuits efficiently</h2>
+<p data-fact-ids="F006">Today's complex semiconductors are not tested by directly touching each internal transistor one by one. Mechanisms for finding faults inside the circuit efficiently, such as Scan, ATPG, and BIST, are built in from the design stage. This approach is called DFT (Design for Test, or Design for Testability).</p>
+<p>Scan is a structure that makes internal states easier to test. ATPG is the approach of creating test patterns that detect targeted faults. BIST is the approach of giving the circuit its own self-test mechanism. The important point is that testability itself is built into the design, rather than relying on test equipment alone to solve everything after manufacturing is finished.</p>
+<p>It makes the needed faults easier to find, with only a limited number of pins and limited time. DFT shows that semiconductor testing is a joint effort of design, manufacturing, and testing.</p>
+
+<figure class="semicon-figure" data-media-role="explanatory-image-07" data-visual-kind="diagram" data-subject="DFT" data-purpose="dft-relation" data-composition="vertical-stack" data-concrete-object="false" data-selection-reason="Scan、ATPG、BISTの異なる役割と設計段階での包含関係を、一つの構造として比較するため。" data-photo-assessment="実物写真では設計内部の三手法と役割分担を同時に確認できず、関係性の説明には不足する。" data-diagram-justification="実写や写真ではScan、ATPG、BISTという設計内部の役割と包含関係を同時に示せないため、縦の関係図が必要。" data-provenance="articles/images/episode080/visual-policy-v1/provenance/07-dft-testability.md"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1100" role="img" aria-labelledby="t d" role="img" aria-label="A vertical diagram showing the roles of Scan, ATPG, and BIST within DFT" style="width:100%;height:auto;display:block;">
+  <title id="t">Building DFT into the chip</title>
+  <desc id="d">An infographic showing Scan, ATPG, and BIST built into a chip to make faults easier to find from test signals</desc>
+  <rect width="800" height="1100" fill="#f6f9fc"/>
+  <circle cx="100" cy="90" r="48" fill="#dbeafe"/>
+  <path d="M70 90h18l10-22 18 44 12-22h22" fill="none" stroke="#2563eb" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="170" y="82" font-size="44" font-weight="700" fill="#10233f">Building testability</text>
+  <text x="170" y="134" font-size="44" font-weight="700" fill="#10233f">into the chip</text>
+
+  <g stroke="#64748b" stroke-width="12" stroke-linecap="round">
+    <path d="M155 286h-58M155 366h-58M155 446h-58M155 526h-58M155 606h-58M155 686h-58M155 766h-58"/>
+    <path d="M645 286h58M645 366h58M645 446h58M645 526h58M645 606h58M645 686h58M645 766h58"/>
+  </g>
+  <rect x="145" y="215" width="510" height="640" rx="52" fill="#10233f"/>
+  <rect x="180" y="250" width="440" height="570" rx="36" fill="#ffffff"/>
+  <text x="400" y="318" text-anchor="middle" font-size="46" font-weight="700" fill="#7c3aed">DFT</text>
+
+  <path d="M245 388h310" stroke="#dbe3ee" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="270" cy="388" r="62" fill="#dbeafe" stroke="#2563eb" stroke-width="7"/>
+  <g fill="none" stroke="#2563eb" stroke-width="8">
+    <circle cx="246" cy="388" r="13"/><circle cx="270" cy="388" r="13"/><circle cx="294" cy="388" r="13"/>
+    <path d="M259 388h-1M283 388h-1"/>
+  </g>
+  <text x="360" y="382" font-size="39" font-weight="700" fill="#10233f">Scan</text>
+  <text x="360" y="428" font-size="34" fill="#526071">Links the inside</text>
+
+  <path d="M245 558h310" stroke="#dbe3ee" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="270" cy="558" r="62" fill="#fef3c7" stroke="#f59e0b" stroke-width="7"/>
+  <path d="M282 494l-48 70h34l-16 58 54-78h-36z" fill="#f59e0b" stroke="#b45309" stroke-width="4" stroke-linejoin="round"/>
+  <text x="360" y="552" font-size="39" font-weight="700" fill="#10233f">ATPG</text>
+  <text x="360" y="598" font-size="34" fill="#526071">Targets faults</text>
+
+  <path d="M245 728h310" stroke="#dbe3ee" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="270" cy="728" r="62" fill="#dcfce7" stroke="#16a34a" stroke-width="7"/>
+  <path d="M270 674l42 17v35c0 36-25 60-42 68-17-8-42-32-42-68v-35z" fill="#16a34a"/>
+  <path d="M247 727l16 16 31-35" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="360" y="722" font-size="39" font-weight="700" fill="#10233f">BIST</text>
+  <text x="360" y="768" font-size="34" fill="#526071">Checks itself</text>
+
+  <path d="M62 925h208" stroke="#2563eb" stroke-width="14" stroke-linecap="round"/>
+  <path d="M246 898l31 27-31 27" fill="none" stroke="#2563eb" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="70" y="894" font-size="34" font-weight="700" fill="#2563eb">TEST signal</text>
+  <path d="M530 925h208" stroke="#16a34a" stroke-width="14" stroke-linecap="round"/>
+  <path d="M714 898l31 27-31 27" fill="none" stroke="#16a34a" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="545" y="894" font-size="34" font-weight="700" fill="#16803a">Fault found</text>
+  <text x="400" y="1040" text-anchor="middle" font-size="37" font-weight="700" fill="#10233f">Testable circuits, from the design stage</text>
+</svg>
+<figcaption>With Scan, ATPG, BIST, and more, DFT thinks about "how to measure it after it is made" from the design stage.<small>Created by: Semicon Campus editorial team / Changes: vertical mobile version</small></figcaption></figure>
+
+<h2>Stricter judgments do not always mean higher quality</h2>
+<p data-fact-ids="F007">Test judgments can go wrong in two directions. A test escape is when a defective product that should fail is passed. Overkill is when a good, usable product is failed. Keeping defects from getting out is important, but if you reject too many good products as well, you lose usable products and manufacturing cost.</p>
+<p data-fact-ids="F010">In production testing, you need enough coverage to find defects while also achieving short test time, low cost, and low overkill at the same time. Adding more test items and making judgments stricter does not automatically give the best result. You need to find the necessary faults while keeping time and cost at a level that can be sustained in mass production.</p>
+<p>This balance is hard because you cannot maximize quality alone, speed alone, or cost alone. Longer test time affects how many units can be processed, and changing the judgment limits affects the number of passes and fails. What to check and where to draw the line are considered together as one system.</p>
+
+<figure class="semicon-figure" data-media-role="explanatory-image-08" data-visual-kind="diagram" data-subject="Test Escape" data-purpose="error-tradeoff" data-composition="opposed-outcomes" data-concrete-object="false" data-selection-reason="同じ判定境界から生じる二方向の誤りを対比し、片側だけを減らせばよいわけではないと示すため。" data-photo-assessment="実物写真では不良品のPassと良品のFailという判定結果の逆方向性を同一画面で表現できない。" data-diagram-justification="写真や実写ではTest EscapeとOverkillという見た目に現れない二方向の判定誤りを同時に示せないため、比較図が必要。" data-provenance="articles/images/episode080/visual-policy-v1/provenance/08-escape-overkill-balance.md"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1040" role="img" aria-labelledby="t d" role="img" aria-label="A diagram comparing two directions of judgment error: test escape and overkill" style="width:100%;height:auto;display:block;">
+  <title id="t">Judgment errors go two ways</title>
+  <desc id="d">An infographic contrasting the true state and the wrong judgment for a test escape, which passes a defective product, and overkill, which fails a good product</desc>
+  <rect width="800" height="1040" fill="#f6f9fc"/>
+  <text x="400" y="76" text-anchor="middle" font-size="46" font-weight="700" fill="#10233f">Judgment errors go 2 ways</text>
+  <text x="400" y="126" text-anchor="middle" font-size="34" fill="#526071">Gaps between the true state and the test result</text>
+
+  <rect x="45" y="180" width="340" height="780" rx="38" fill="#fff" stroke="#fecaca" stroke-width="6"/>
+  <rect x="415" y="180" width="340" height="780" rx="38" fill="#fff" stroke="#fde68a" stroke-width="6"/>
+  <text x="215" y="244" text-anchor="middle" font-size="36" font-weight="700" fill="#b91c1c">Test Escape</text>
+  <text x="585" y="244" text-anchor="middle" font-size="36" font-weight="700" fill="#b45309">Overkill</text>
+
+  <text x="215" y="304" text-anchor="middle" font-size="34" fill="#526071">Actually defective</text>
+  <circle cx="215" cy="410" r="82" fill="#fee2e2" stroke="#dc2626" stroke-width="7"/>
+  <g stroke="#dc2626" stroke-width="8" fill="#fff" stroke-linejoin="round">
+    <rect x="161" y="356" width="108" height="108" rx="16"/>
+    <path d="M181 356v-24M215 356v-24M249 356v-24M181 488v-24M215 488v-24M249 488v-24M161 376h-24M161 410h-24M161 444h-24M293 376h-24M293 410h-24M293 444h-24"/>
+    <path d="M197 370l20 33-20 22 26 29" fill="none"/>
+  </g>
+  <path d="M215 510v86" stroke="#94a3b8" stroke-width="12" stroke-linecap="round"/>
+  <path d="M190 573l25 28 25-28" fill="none" stroke="#94a3b8" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="215" cy="680" r="78" fill="#dcfce7" stroke="#16a34a" stroke-width="7"/>
+  <path d="M177 681l25 25 52-58" fill="none" stroke="#16a34a" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="215" y="804" text-anchor="middle" font-size="42" font-weight="700" fill="#16803a">PASS</text>
+  <path d="M126 845l178 78M304 845l-178 78" stroke="#dc2626" stroke-width="12" stroke-linecap="round"/>
+  <text x="215" y="944" text-anchor="middle" font-size="34" font-weight="700" fill="#b91c1c">Defect missed</text>
+
+  <text x="585" y="304" text-anchor="middle" font-size="34" fill="#526071">Actually good</text>
+  <circle cx="585" cy="410" r="82" fill="#dcfce7" stroke="#16a34a" stroke-width="7"/>
+  <g stroke="#16a34a" stroke-width="8" fill="#fff" stroke-linejoin="round">
+    <rect x="531" y="356" width="108" height="108" rx="16"/>
+    <path d="M551 356v-24M585 356v-24M619 356v-24M551 488v-24M585 488v-24M619 488v-24M531 376h-24M531 410h-24M531 444h-24M663 376h-24M663 410h-24M663 444h-24"/>
+    <path d="M553 410l22 22 42-47" fill="none"/>
+  </g>
+  <path d="M585 510v86" stroke="#94a3b8" stroke-width="12" stroke-linecap="round"/>
+  <path d="M560 573l25 28 25-28" fill="none" stroke="#94a3b8" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="585" cy="680" r="78" fill="#fee2e2" stroke="#dc2626" stroke-width="7"/>
+  <path d="M548 643l74 74M622 643l-74 74" stroke="#dc2626" stroke-width="13" stroke-linecap="round"/>
+  <text x="585" y="804" text-anchor="middle" font-size="42" font-weight="700" fill="#b91c1c">FAIL</text>
+  <path d="M496 845l178 78M674 845l-178 78" stroke="#f59e0b" stroke-width="12" stroke-linecap="round"/>
+  <text x="585" y="944" text-anchor="middle" font-size="34" font-weight="700" fill="#b45309">Good chip rejected</text>
+  <text x="400" y="1012" text-anchor="middle" font-size="35" font-weight="700" fill="#10233f">Judgment design that reduces both</text>
+</svg>
+<figcaption>Judgment design needs to not only hold down test escapes but also avoid too much overkill, which rejects good chips.<small>Created by: Semicon Campus editorial team / Changes: vertical mobile version</small></figcaption></figure>
+
+<div class="semicon-mid-cta"><strong>See how it connects to the whole process:</strong> If you want to understand the link between test results and the share of good chips, read <a href="https://semicon-campus.com/what-is-semiconductor-yield/">What Is Semiconductor Yield?</a> first. It will help you see why wrongly rejecting good chips is also a problem.</div>
+
+<h2>Binning: "sorting" that goes beyond pass/fail</h2>
+<p data-fact-ids="F008">Test results are not always used only for a simple Pass or Fail. Binning means sorting products by test results into groups such as pass/fail, failure type, and performance grade. Recording which bin each product went into not only helps pick shippable products, but also gives you data for checking later which types of failures are common.</p>
+<p>Here too, the sorting is based on the test results for each product. The word "binning" alone does not mean that every product uses the same criteria or the same number of bins. What they share is the role of linking measured results to what happens to the product next.</p>
+
+<figure class="semicon-figure" data-media-role="explanatory-image-09" data-visual-kind="stock" data-subject="Binning" data-purpose="post-test-handling" data-composition="tray-array" data-concrete-object="true" data-selection-reason="抽象的な分類箱ではなく、テスト後に製品単位で取り扱われる複数のICとトレー実物を見せるため。" data-photo-assessment="ICがトレー内に個別配置され、分類後の物理的な取扱いを連想できるが、写真自体は特定Binを示さない。" data-provenance="articles/images/episode080/visual-policy-v1/provenance/09-ic-chips-tray.md"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/09/ep080-09-09-ic-chips-tray.webp" alt="IC packages in a tray, handled one by one after binning"><figcaption>Binning is sorting based on measurement results. The photo shows example IC packages in a tray and does not show any specific pass/fail or performance bin.<small>Credit: BrokenSphere / Wikimedia Commons / Changes: resized and converted to WebP / License: <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a> / <a href="https://commons.wikimedia.org/wiki/File:Panasonic_chips_in_tray.JPG">Source</a></small></figcaption></figure>
+
+<h2>Test data is not just for shipping decisions</h2>
+<p data-fact-ids="F009">Test results for each die and package are used not only to decide whether to ship, but also to learn about yield and investigate causes. Checking where, what type of failures, and how they increased gives clues that narrow down what the process side should investigate.</p>
+<p>Testing itself does not repair defects. But if you record the measurement results and put them in a form where distributions and trends can be seen, they feed into the next manufacturing decisions. By using the data for both shipping decisions and process improvement, testing becomes more than a step that just marks pass or fail at the end of manufacturing.</p>
+<p>Semiconductor quality is also not created by a single final test. DFT at design time, screening at the wafer stage, checks after packaging, sorting of results, and feedback to the process all link together to support the required quality and manufacturability.</p>
+
+<figure class="semicon-figure" data-media-role="explanatory-image-10" data-visual-kind="diagram" data-subject="テストデータ" data-purpose="data-feedback-loop" data-composition="branch-and-loop" data-concrete-object="false" data-selection-reason="一つの測定結果が出荷判定と原因調査へ分かれ、工程改善から次の測定へ戻る情報経路を示すため。" data-photo-assessment="実物写真ではテスト結果が複数用途へ分岐して製造判断へ戻る時間的な情報の流れを表示できない。" data-diagram-justification="写真や実写ではテストデータが出荷判定と原因調査へ分岐し、工程改善から戻る情報の循環を示せないため、流れ図が必要。" data-provenance="articles/images/episode080/visual-policy-v1/provenance/10-test-data-feedback.md"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1080" role="img" aria-labelledby="t d" role="img" aria-label="A flow diagram showing test data going to shipping decisions and cause investigation, then back to process improvement" style="width:100%;height:auto;display:block;">
+  <title id="t">Test data feeds back into process improvement</title>
+  <desc id="d">An infographic using three icons and circular arrows to show test results, failure analysis, and process improvement cycling and feeding back into manufacturing</desc>
+  <rect width="800" height="1080" fill="#f6f9fc"/>
+  <text x="400" y="78" text-anchor="middle" font-size="46" font-weight="700" fill="#10233f">Data goes back to the process</text>
+  <text x="400" y="128" text-anchor="middle" font-size="34" fill="#526071">Testing does not end with sorting</text>
+
+  <path d="M322 274C186 318 128 444 150 570" fill="none" stroke="#2563eb" stroke-width="18" stroke-linecap="round"/>
+  <path d="M124 536l27 40 29-38" fill="#2563eb"/>
+  <path d="M212 722c92 120 270 148 392 53" fill="none" stroke="#f59e0b" stroke-width="18" stroke-linecap="round"/>
+  <path d="M564 770l47 1-18 43" fill="#f59e0b"/>
+  <path d="M646 618c31-151-52-293-186-345" fill="none" stroke="#7c3aed" stroke-width="18" stroke-linecap="round"/>
+  <path d="M491 248l-42 21 37 30" fill="#7c3aed"/>
+
+  <circle cx="400" cy="292" r="126" fill="#dbeafe" stroke="#2563eb" stroke-width="8"/>
+  <rect x="325" y="222" width="150" height="110" rx="18" fill="#fff" stroke="#2563eb" stroke-width="7"/>
+  <path d="M350 305v-34M390 305v-60M430 305v-84" stroke="#2563eb" stroke-width="18" stroke-linecap="round"/>
+  <path d="M325 350h150" stroke="#2563eb" stroke-width="9" stroke-linecap="round"/>
+  <circle cx="365" cy="350" r="13" fill="#16a34a"/>
+  <circle cx="435" cy="350" r="13" fill="#dc2626"/>
+  <text x="400" y="458" text-anchor="middle" font-size="38" font-weight="700" fill="#10233f">Test results</text>
+
+  <circle cx="205" cy="690" r="126" fill="#ede9fe" stroke="#7c3aed" stroke-width="8"/>
+  <rect x="139" y="628" width="104" height="104" rx="16" fill="#fff" stroke="#7c3aed" stroke-width="7"/>
+  <path d="M158 628v-23M191 628v-23M224 628v-23M158 755v-23M191 755v-23M224 755v-23" stroke="#7c3aed" stroke-width="7"/>
+  <circle cx="239" cy="666" r="45" fill="none" stroke="#7c3aed" stroke-width="10"/>
+  <path d="M271 698l48 48" stroke="#7c3aed" stroke-width="14" stroke-linecap="round"/>
+  <text x="205" y="866" text-anchor="middle" font-size="38" font-weight="700" fill="#10233f">Failure analysis</text>
+
+  <circle cx="595" cy="690" r="126" fill="#fef3c7" stroke="#f59e0b" stroke-width="8"/>
+  <path d="M518 738V662l58 34v-34l65 38v38z" fill="#fff" stroke="#b45309" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M530 738v-118h38v76M626 700v-94" fill="none" stroke="#b45309" stroke-width="7"/>
+  <circle cx="626" cy="606" r="28" fill="#f59e0b"/>
+  <path d="M626 588v36M608 606h36" stroke="#fff" stroke-width="8" stroke-linecap="round"/>
+  <text x="595" y="866" text-anchor="middle" font-size="38" font-weight="700" fill="#10233f">Process improvement</text>
+
+  <circle cx="400" cy="650" r="72" fill="#10233f"/>
+  <text x="400" y="640" text-anchor="middle" font-size="35" font-weight="700" fill="#fff">DATA</text>
+  <path d="M370 680h60" stroke="#38bdf8" stroke-width="9" stroke-linecap="round"/>
+  <circle cx="375" cy="680" r="10" fill="#16a34a"/><circle cx="400" cy="680" r="10" fill="#f59e0b"/><circle cx="425" cy="680" r="10" fill="#dc2626"/>
+  <rect x="110" y="936" width="580" height="86" rx="43" fill="#10233f"/>
+  <path d="M168 980h100" stroke="#38bdf8" stroke-width="9" stroke-linecap="round"/>
+  <path d="M245 958l26 22-26 22" fill="none" stroke="#38bdf8" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="320" y="993" font-size="35" font-weight="700" fill="#fff">Apply to next production</text>
+</svg>
+<figcaption>Test data is used not only for sorting products, but also for investigating causes and improving the next process.<small>Created by: Semicon Campus editorial team / Changes: vertical mobile version</small></figcaption></figure>
+
+<section class="mp1-section" id="maintenance-phase1-learning"><h2>Connecting ATE, probe contact, and test issues to real work and further learning</h2><p>When dealing with changes in test results, separating product defects from changes caused by connections or measurement conditions is where this links to equipment maintenance. Understand the roles of the probe card and the ATE, and record under which test conditions things changed, what has been confirmed, and what has not. While filling gaps in electrical, measurement, and quality basics, you can compare your experience with job postings that include test equipment inspection and technical support.</p></section>
+<h2>Common misconceptions (FAQ)</h2>
+<h3>Q. If no defects are found under a microscope, is the chip good?</h3>
+<p>A. No. Even if nothing looks wrong with the appearance or patterns, the circuit's response or electrical characteristics can be out of spec. Physical inspection and metrology and electrical testing complement each other.</p>
+<h3>Q. Does a probe card stick needles into the inside of the chip?</h3>
+<p>A. No. It mainly makes temporary contact with pads or bumps on the wafer surface to electrically connect the die to the ATE.</p>
+<h3>Q. If a chip passes wafer testing, is the final test unnecessary?</h3>
+<p>A. No. New failures can occur during packaging, so the chip also needs to be checked after assembly.</p>
+<h3>Q. If judgments are made stricter, will defects stop getting out?</h3>
+<p>A. Making them stricter alone is not enough. Overkill, which fails good chips, can also increase, so the needed defect detection, repeatability of judgments, time, and cost are considered together.</p>
+
+<h2>Summary: splitting roles between the wafer and after packaging</h2>
+<figure class="semicon-figure" data-media-role="summary-infographic" data-visual-kind="diagram" data-subject="半導体テスト" data-purpose="end-summary" data-composition="vertical-process-summary" data-concrete-object="false" data-selection-reason="記事で説明した四段階と最後の品質・時間・コストの論点を、読了時に一画面で復習できるようにするため。" data-photo-assessment="単一の実写写真ではウェハ、組立、最終確認、分類という異なる時点と役割の全体順序を表現できない。" data-diagram-justification="写真や実写では半導体テストのウェハ段階から分類・データ活用までの複数工程と順序を一枚で示せないため、まとめ図が必要。" data-provenance="articles/images/episode080/visual-policy-v1/provenance/11-summary-infographic.md"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1380" role="img" aria-labelledby="t d" role="img" aria-label="A summary diagram organizing semiconductor testing in order: wafer, package, final check, and sorting and use of data" style="width:100%;height:auto;display:block;">
+  <title id="t">The four stages of semiconductor testing</title>
+  <desc id="d">A vertical infographic showing wafer testing, packaging, final testing, and binning with illustrations of a wafer, a chip, a tester, and a sorting tray</desc>
+  <rect width="800" height="1380" fill="#10233f"/>
+  <text x="400" y="78" text-anchor="middle" font-size="46" font-weight="700" fill="#fff">Pass/fail is not judged just once</text>
+  <text x="400" y="128" text-anchor="middle" font-size="34" fill="#cbd5e1">4 stages, from wafer to sorting</text>
+  <path d="M400 220v930" stroke="#475569" stroke-width="16" stroke-linecap="round"/>
+  <path d="M374 416l26 28 26-28M374 696l26 28 26-28M374 976l26 28 26-28" fill="none" stroke="#fff" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <circle cx="400" cy="300" r="118" fill="#dbeafe" stroke="#38bdf8" stroke-width="9"/>
+  <circle cx="400" cy="300" r="76" fill="#93c5fd" stroke="#2563eb" stroke-width="8"/>
+  <g fill="#2563eb">
+    <rect x="355" y="255" width="25" height="25" rx="5"/><rect x="389" y="255" width="25" height="25" rx="5"/><rect x="423" y="255" width="25" height="25" rx="5"/>
+    <rect x="355" y="289" width="25" height="25" rx="5"/><rect x="389" y="289" width="25" height="25" rx="5"/><rect x="423" y="289" width="25" height="25" rx="5"/>
+    <rect x="355" y="323" width="25" height="25" rx="5"/><rect x="389" y="323" width="25" height="25" rx="5"/><rect x="423" y="323" width="25" height="25" rx="5"/>
+  </g>
+  <path d="M310 245l-42-30M490 245l42-30" stroke="#fff" stroke-width="9" stroke-linecap="round"/>
+  <circle cx="264" cy="212" r="13" fill="#f59e0b"/><circle cx="536" cy="212" r="13" fill="#f59e0b"/>
+  <text x="400" y="486" text-anchor="middle" font-size="42" font-weight="700" fill="#38bdf8">1 Wafer test</text>
+
+  <circle cx="400" cy="600" r="118" fill="#fef3c7" stroke="#f59e0b" stroke-width="9"/>
+  <rect x="330" y="530" width="140" height="140" rx="22" fill="#fff" stroke="#b45309" stroke-width="9"/>
+  <rect x="363" y="563" width="74" height="74" rx="10" fill="#f59e0b"/>
+  <g stroke="#b45309" stroke-width="9" stroke-linecap="round">
+    <path d="M350 530v-30M382 530v-30M418 530v-30M450 530v-30M350 700v-30M382 700v-30M418 700v-30M450 700v-30"/>
+    <path d="M330 550h-30M330 582h-30M330 618h-30M330 650h-30M500 550h-30M500 582h-30M500 618h-30M500 650h-30"/>
+  </g>
+  <text x="400" y="766" text-anchor="middle" font-size="42" font-weight="700" fill="#fbbf24">2 Packaging</text>
+
+  <circle cx="400" cy="900" r="118" fill="#dcfce7" stroke="#16a34a" stroke-width="9"/>
+  <rect x="312" y="830" width="176" height="116" rx="20" fill="#fff" stroke="#16803a" stroke-width="8"/>
+  <rect x="338" y="854" width="124" height="50" rx="10" fill="#dbeafe"/>
+  <path d="M350 882h18l10-18 18 36 14-18h38" fill="none" stroke="#2563eb" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="350" cy="928" r="10" fill="#16a34a"/><circle cx="382" cy="928" r="10" fill="#f59e0b"/><circle cx="414" cy="928" r="10" fill="#dc2626"/>
+  <path d="M462 928h35" stroke="#16803a" stroke-width="9" stroke-linecap="round"/>
+  <text x="400" y="1066" text-anchor="middle" font-size="42" font-weight="700" fill="#4ade80">3 Final test</text>
+
+  <circle cx="400" cy="1200" r="118" fill="#ede9fe" stroke="#a78bfa" stroke-width="9"/>
+  <rect x="318" y="1133" width="164" height="134" rx="18" fill="#fff" stroke="#7c3aed" stroke-width="8"/>
+  <path d="M318 1178h164M373 1133v134M428 1133v134" stroke="#7c3aed" stroke-width="7"/>
+  <circle cx="346" cy="1156" r="13" fill="#16a34a"/><circle cx="400" cy="1156" r="13" fill="#38bdf8"/><circle cx="455" cy="1156" r="13" fill="#dc2626"/>
+  <path d="M338 1225l15 15 25-30" fill="none" stroke="#16a34a" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M445 1214l22 22M467 1214l-22 22" stroke="#dc2626" stroke-width="8" stroke-linecap="round"/>
+  <text x="400" y="1344" text-anchor="middle" font-size="42" font-weight="700" fill="#c4b5fd">4 Binning and sorting</text>
+</svg>
+<figcaption>Summary: semiconductor testing judges good and bad by dividing the work among early screening, post-assembly checks, sorting, and process improvement.<small>Created by: Semicon Campus editorial team / Changes: vertical mobile version</small></figcaption></figure>
+<div class="semicon-recap semicon-three-line-recap"><p>Semiconductor testing judges good and bad by comparing the response to electrical signals with expected values and specs.</p><p>Wafer testing finds defective dies early, and the final test after packaging checks the assembled product.</p><p>DFT, binning, and test data are combined to balance quality, time, cost, and overkill.</p></div>
+
+<div class="semicon-links"><div class="semicon-linkbox next"><h3>Read next</h3><p><a href="https://semicon-campus.com/what-is-semiconductor-defect-inspection/">What Is Semiconductor Defect Inspection?</a><br>Learn how particles and pattern defects are found during manufacturing, separately from electrical testing.</p></div><div class="semicon-linkbox"><h3>Where this article fits</h3><p>This article takes you from a basic introduction to manufacturing processes to how good and bad chips are judged in mass production. Next, rather than learning about specific test equipment models, learning how the work is divided with defect inspection will tie the big picture together.</p></div></div>
+
+<section class="mp1-section" id="maintenance-phase1-career"><h2>Jobs that use your knowledge of ATE, probe contact, and test issues, and your next steps</h2><p>If you have experience checking test conditions, taking electrical measurements, or inspecting equipment, organize it as a set: "the equipment, the symptom, what you checked, and the result." If you compare the equipment you would handle, night shifts and business trips, training, and application requirements against job postings, you can separate the experience you can use from the knowledge you need to add.</p><aside class="semicon-cta mp1-card"><h3>Get the big picture of the work and how to choose jobs and learning</h3><p>In the Equipment Maintenance Hub, you can check inspection and troubleshooting work, how to organize your experience, job postings, basic learning, and certification prep in one place. If you want to compare the scope of equipment roles and customer-facing roles, also see the related job articles.</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/" class="semicon-btn mp1-button" data-maintenance-phase1-hub="277" data-cta="maintenance_hub" data-cta-type="maintenance_hub" data-cta-stage="career" data-cta-id="maintenance_1182_hub277_end" data-cta-route="maintenance_1182_hub277_end">Check job duties, postings, and learning in the Equipment Maintenance Hub</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/" class="semicon-btn mp1-button" data-maintenance-phase1-hub="237" data-cta="equipment_hub" data-cta-type="equipment_hub" data-cta-stage="career" data-cta-id="maintenance_1182_hub237_end" data-cta-route="maintenance_1182_hub237_end">See an equipment engineer's scope, job postings, and learning</a></div></aside></section>
+
+<h2>Official sources we referred to</h2>
+<ul class="semicon-sources">
+<li data-source-id="S01"><a rel="noopener" href="https://www.advantest.com/en/semiconductor-basics/automated-test-equipment/" target="_blank">Advantest | What Is ATE (Automated Test Equipment)?</a></li>
+<li data-source-id="S03"><a rel="noopener" href="https://www.teradyne.com/2022/01/24/site-to-site-variation-in-parallel-test/" target="_blank">Teradyne | Site to Site Variation in Parallel Test</a></li>
+<li data-source-id="S04"><a rel="noopener" href="https://www.teradyne.com/2023/01/03/emerging-technologies-drive-system-level-test-adoption/" target="_blank">Teradyne | Emerging Technologies Are Driving System Level Test Adoption</a></li>
+<li data-source-id="S08"><a rel="noopener" href="https://www.technoprobe.com/" target="_blank">Technoprobe | Probe Card Technology Information</a></li>
+<li data-source-id="S14"><a rel="noopener" href="https://www.pdf.com/" target="_blank">PDF Solutions | Semiconductor Manufacturing Analytics</a></li>
+<li data-source-id="S21"><a rel="noopener" href="https://www.semi.org/sites/semi.org/files/2020-02/CompilationTerms1218_0.pdf" target="_blank">SEMI | International Standards: Compilation of Terms</a></li>
+</ul>
+
+<div class="semicon-editorial-note"><strong>Editorial and Shorts extraction notes</strong><br><strong>audience_question:</strong> At what stage, and how, is a finished semiconductor judged good or defective?<br><strong>causal_chain:</strong> Comparing electrical signals and responses → early screening at the wafer stage → packaging process → final test → binning and process improvement.<br><strong>factual_limits:</strong> Do not treat a wafer test Pass as a permanent guarantee. Do not describe the probe card as piercing the inside of the chip. Do not describe DFT as detecting every fault completely. Do not say that stricter judgments solve quality problems.<br><strong>candidate_section_45_60s:</strong> Why defective dies are removed early in wafer testing and chips are tested again after packaging.<br><strong>series_position:</strong> A bridge from a basic introduction to manufacturing processes to how production testing works.<br><strong>media_policy:</strong> All 11 items are original explanatory SVGs created from the EP080 Research Pack. No external images, news photos, company images, or existing EP080 video assets are used.<br><strong>publication_status:</strong> ARTICLE_HUMAN_REVIEW_ONLY. Nothing has been sent, scheduled, or published to WordPress, YouTube, or Drive.</div>
+</article>
+
