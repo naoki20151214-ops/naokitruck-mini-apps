@@ -1,0 +1,346 @@
+
+<!--KEEP:0-->
+
+
+<!--KEEP:1-->
+
+
+<!--KEEP:2-->
+<div class="semicon-article" id="semicon-top">
+
+
+
+<div class="semicon-level">
+  <div class="semicon-level-top"><span class="semicon-level-label">Learning level</span><strong>Beginner → Intermediate</strong></div>
+  <p>For readers who are starting to understand the basics of defect inspection, CD-SEM, and yield. Rather than statistical formulas, we focus on how measured values are used for process control and in real jobs.</p>
+  <p>The level labels on this site are not meant to mark "articles you can skip." They are a guide showing that reading this article will help you move on to the next stage.</p>
+</div>
+
+
+
+<p class="semicon-lead wp-block-paragraph">SPC stands for Statistical Process Control. In semiconductor manufacturing, it is used to judge whether a process is running as usual by looking at data such as line widths measured with CD-SEM, film thickness after deposition, and defect counts from defect inspection. For beginners, this article explains SPC not as formulas but as "a way of thinking that finds process abnormalities early from variation in measured values." If you have seen SPC in a job posting, or if you are interested in quality evaluation, process, or failure analysis work, reading this article will make it much easier to see "what the job is asking for" and "how to connect your experience to semiconductor jobs."</p>
+
+
+
+<div class="semicon-map">
+  <h3>What you will learn in this article</h3>
+  <ol>
+    <li>What kind of thinking SPC is</li>
+    <li>How to read the center line, control limits, and outliers on a control chart</li>
+    <li>Typical measurement data used for SPC in semiconductors</li>
+    <li>How it connects to yield improvement and quality evaluation</li>
+    <li>What "SPC," "process control," and "quality data analysis" mean in job postings</li>
+    <li>What roles and careers open up once you understand SPC</li>
+  </ol>
+</div>
+
+
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/spc-semiconductor-featured.png" alt="The big picture of SPC: finding process abnormalities early through the flow of measure, look, and act">
+  <figcaption>SPC does not end with collecting measured values. It is a system for checking "whether things are as usual" on a control chart and, if not, feeding that back to the process.</figcaption>
+</figure>
+<div class="semicon-mobile-summary">
+  <b>Key points of the diagram</b>
+  <ul>
+    <li>Measure: take CD-SEM, film thickness, defect count, and other data</li>
+    <li>Look: check on a control chart whether things are as usual</li>
+    <li>Act: if abnormal, go back to the process or tool</li>
+  </ul>
+</div>
+
+
+
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>I saw "SPC" and "process control" in a job posting. Are those words I should know even with no experience?</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>They are powerful words to know. You don't need to understand statistical formulas from the start. At first, it's enough to think of it as "a system for looking at measured values and checking whether the process is running as usual."</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>I see. So it's not just about staring at numbers. It's about noticing when something moves differently from usual.</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>Exactly. In a semiconductor fab, a small drift can lead to more defects. So people who can think about which part of the process, tool, or materials to check from changes in measured values tend to be valued, both on the shop floor and in their careers.</p></div></div>
+
+
+
+
+<h2 class="wp-block-heading">What is SPC?</h2>
+
+
+
+<p class="wp-block-paragraph">SPC is a way of looking at variation in measured values statistically to check whether a process is stable. It is widely used in manufacturing and quality control, not just in semiconductors. The NIST/SEMATECH statistics handbook also describes process control as a method for monitoring processes and products and signaling when corrective action is needed.</p>
+
+
+
+<p class="wp-block-paragraph">In semiconductor manufacturing, even when you think you are making things under the same conditions, measured values change a little every time. Line width gets a little wider, film thickness gets a little thicker, the defect count rises a little. SPC is how you tell whether these small changes are just natural variation or a sign that something is wrong with the tool or process.</p>
+
+
+
+<div class="semicon-note">
+  <p><strong>Put simply, SPC is a "health checkup for measured values."</strong></p>
+  <p>Instead of judging from a single measurement, you look at changes over time, by lot, and by tool to spot unusual movement early.</p>
+</div>
+
+
+
+<h2 class="wp-block-heading">SPC connects measured values to process control</h2>
+
+
+
+<p class="wp-block-paragraph">CD-SEM, film thickness measurement, and defect inspection produce a lot of measured values. But just storing the data does not raise yield. What matters is looking at the data and judging "Is the process stable right now?" and "Has some change started?"</p>
+
+
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/spc-data-to-process-flow.png" alt="Diagram showing how SPC connects to process control through the flow of measurement, recording, control chart, judgment, and improvement">
+  <figcaption>The essence of SPC is not collecting data but finding abnormalities early and feeding them back to the process.</figcaption>
+</figure>
+<div class="semicon-mobile-summary">
+  <b>Key points of the diagram</b>
+  <ul>
+    <li>Take measured values</li>
+    <li>Record them together with lot and tool conditions</li>
+    <li>Check on a control chart whether things are as usual</li>
+    <li>If abnormal, go back to the process, tool, or materials</li>
+  </ul>
+</div>
+
+
+
+<p class="wp-block-paragraph">For example, suppose the line width measured with CD-SEM is getting slightly narrower over time. It is still within spec, so the product may pass. But if it keeps creeping in the same direction, there may be a change in lithography conditions, etching conditions, or tool condition. SPC is used to find this "not out of spec yet, but maybe different from usual."</p>
+
+
+
+<h2 class="wp-block-heading">What is a control chart?</h2>
+
+
+
+<p class="wp-block-paragraph">A tool often used in SPC is the control chart. A control chart is a graph that lines up measured values in time order, with a center line and control limits. The center line shows the average state, and the control limits are a guide for "the usual range of variation."</p>
+
+
+
+<p class="wp-block-paragraph">The important point is that control limits and product specifications are not the same. Specifications are lines for judging "whether the product passes." Control limits are lines for judging "whether the process is running as usual." Even within spec, a control chart may show that the process has shifted away from the center.</p>
+
+
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/spc-control-chart-4patterns.png" alt="Four signs to look for on a control chart: center line, control limits, outliers, and a continuing drift, each shown as a separate example">
+  <figcaption>On a control chart, look separately at variation around the center line, distance from the control limits, single outliers, and drift that continues in one direction.</figcaption>
+</figure>
+<div class="semicon-mobile-summary">
+  <b>Key points of the diagram</b>
+  <ul>
+    <li>Center line: the average state</li>
+    <li>Control limits: the usual range of variation</li>
+    <li>Outlier: a signal to investigate</li>
+    <li>Continuing drift: a possible change in conditions</li>
+  </ul>
+</div>
+
+
+
+<div class="semicon-compare">
+<table>
+  <thead>
+    <tr><th>What to look at</th><th>Meaning</th><th>Semiconductor example</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Center line</strong></td><td>The average state of the process</td><td>The usual line width, the usual film thickness</td></tr>
+    <tr><td><strong>Control limits</strong></td><td>The range seen as normal variation</td><td>The range of variation when tools and materials are stable</td></tr>
+    <tr><td><strong>Outlier</strong></td><td>A measured value outside the normal range</td><td>The defect count jumps for one specific lot</td></tr>
+    <tr><td><strong>Continuing drift</strong></td><td>A tendency to shift gradually in the same direction</td><td>Film thickness gets thicker day by day; line width slowly gets narrower</td></tr>
+  </tbody>
+</table>
+</div>
+
+
+<section class="mp1-section" id="maintenance-phase1-learning"><h2>Connecting SPC and trend monitoring to real work and reskilling</h2><p>Where SPC meets maintenance is in matching changes on control charts against the history of tool inspections, part replacements, and condition changes on the same timeline. Keep control limits and product specifications separate, and organize which changes you reported as signals to investigate. If you want to build the ability to explain variation and possible causes, not just the steps to make a graph, learning the basics of quality control and statistics is the next step.</p></section>
+
+<h2 class="wp-block-heading">Why people who understand SPC are valuable in the job market</h2>
+
+
+
+<p class="wp-block-paragraph">People who understand SPC are valuable not simply because they can read graphs. It is because they can look at changes in measured values and think, "Is this natural variation?", "Did tool conditions change?", "Is the material lot different?", or "Should process conditions be set back?"</p>
+
+
+
+<p class="wp-block-paragraph">A system can display data on its own. But people who can form hypotheses from control chart abnormalities about the tools, processes, materials, and maintenance history on the shop floor are not easy to replace. In a semiconductor fab, even a small drop in yield has a big impact, so people who can connect SPC to process improvement tend to be valued in quality evaluation, process engineer, failure analysis, and data analysis jobs.</p>
+
+
+
+<div class="semicon-cta">
+  <h3>SPC is not "statistics"; it is a skill that creates value on the shop floor</h3>
+  <p>When a job posting mentions SPC, process control, yield improvement, or quality data analysis, it means "a job that protects the process by looking at measured values." If you are aiming for a higher annual salary or a role change in the semiconductor industry, don't just memorize these words. You will stand out if you can explain what you look at in which process, and where you go back to when something is abnormal.</p>
+</div>
+
+
+
+<h2 class="wp-block-heading">What data is monitored with SPC in semiconductors?</h2>
+
+
+
+<p class="wp-block-paragraph">In a semiconductor fab, every process produces measured values. With SPC, these values are viewed by process, by tool, and by lot to check for unusual movement.</p>
+
+
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/spc-semiconductor-data-examples.png" alt="Typical data used for SPC in semiconductors: CD, line width, film thickness, defect count, and electrical characteristics">
+  <figcaption>SPC looks not only at single measured values but at changes over time, by lot, and by tool.</figcaption>
+</figure>
+<div class="semicon-mobile-summary">
+  <b>Key points of the diagram</b>
+  <ul>
+    <li>CD / line width: watch for shifts in lithography and etching</li>
+    <li>Film thickness: watch for variation in deposition and CMP</li>
+    <li>Defect count: watch for increases in particles and scratches from cleaning and wafer transfer</li>
+    <li>Electrical characteristics: watch for performance changes in testing and process checks</li>
+  </ul>
+</div>
+
+
+
+<div class="semicon-grid">
+  <div class="semicon-card"><b>Lithography</b><span>Watches for changes in line width, overlay, and exposure conditions.</span></div>
+  <div class="semicon-card"><b>Etching</b><span>Watches for variation in CD, depth, shape, and remaining film.</span></div>
+  <div class="semicon-card"><b>Deposition</b><span>Watches film thickness, film quality, uniformity, and differences between tools.</span></div>
+  <div class="semicon-card"><b>Cleaning</b><span>Watches defect counts, particles, chemical conditions, and uneven drying.</span></div>
+  <div class="semicon-card"><b>CMP</b><span>Watches removal amount, flatness, scratches, and pad condition.</span></div>
+  <div class="semicon-card"><b>Inspection and quality</b><span>Watches lot trends, defect rates, and the effect of recurrence prevention.</span></div>
+</div>
+
+
+
+<h2 class="wp-block-heading">Why SPC helps improve yield</h2>
+
+
+
+<p class="wp-block-paragraph">SPC helps improve yield because it lets you notice changes before defects increase sharply. If you start looking for the cause after yield has dropped a lot, many lots may already be affected. If SPC helps you spot early signs of change, you can check changes in tool conditions, material lots, work conditions, and the environment at an early stage.</p>
+
+
+
+<p class="wp-block-paragraph">However, SPC is not "a tool that automatically tells you the cause when you look at a graph." A control chart is only a signal. When a signal appears, you narrow down possible causes by combining it with tool history, process conditions, materials, cleaning status, maintenance history, and other information from the shop floor.</p>
+
+
+
+<div class="semicon-note">
+  <p><strong>The key with SPC is not to overreact.</strong></p>
+  <p>Measured values have natural variation. If you change conditions right away based on a single point, you can actually make the process less stable. That is why you need control charts to separate "the usual variation" from "changes worth investigating."</p>
+</div>
+
+
+
+<h2 class="wp-block-heading">[What is it worth?] Roles where SPC skills pay off, and how to judge job postings</h2>
+
+
+
+<p class="wp-block-paragraph">SPC is a very important keyword in job postings. It appears especially in quality evaluation, quality control, process engineer, failure analysis, yield improvement, and data analysis jobs. Closing the posting because "it says SPC, so it looks hard" would be a real waste. Instead, when SPC appears in a job posting, think of it as a job close to process and quality improvement within a semiconductor fab, and an area where the more experience you gain, the easier it is to explain your market value.</p>
+
+
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/spc-career-keywords.png" alt="SPC-related keywords seen in job postings: SPC, control chart, process control, yield improvement, quality data analysis, and abnormality response">
+  <figcaption>SPC is a word that often appears in quality evaluation, process engineer, failure analysis, and data analysis jobs.</figcaption>
+</figure>
+<div class="semicon-mobile-summary">
+  <b>Key points of the diagram</b>
+  <ul>
+    <li>SPC / control chart: monitor variation in measured values</li>
+    <li>Process control: check whether the volume production line is stable</li>
+    <li>Yield improvement: look for causes from rises and falls in defects</li>
+    <li>Quality data analysis: look at measured values, defects, and lot trends</li>
+    <li>Abnormality response: isolate the cause to the tool, process, or materials</li>
+  </ul>
+</div>
+
+
+
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>Is SPC a job only for people who are good at statistics?</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>Advanced analysis jobs can require a deep understanding of statistics. But on the shop floor, what matters first is "the ability to look at measured values and notice changes that are different from usual."</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>Then it sounds like there's also a path where I start in inspection or quality evaluation and gradually learn how to read the data.</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>That's right. When you find words like SPC, process control, quality data analysis, and yield improvement in a job posting, it's a sign that the technology and the job are closely linked.</p></div></div>
+
+
+
+<div class="semicon-cta">
+  <h3>Once you understand SPC, the words you notice in job postings change</h3>
+  <p>SPC is not just a statistics term. It describes "how measured values are used to protect the process" in a semiconductor fab. When SPC, process control, yield improvement, quality data analysis, or failure analysis appears in a job posting, think of it as a job that connects inspection and metrology data to process improvement.</p>
+  <p>If you are aiming for these jobs with no experience, rather than looking only at advanced data science roles right away, it is realistic to look for entry points such as inspection and quality evaluation, equipment operation, equipment maintenance, and process support. On the other hand, if you already have manufacturing, quality, or equipment maintenance experience, being able to put that experience into words using terms like SPC and process control changes how you look to semiconductor employers.</p>
+  <p>How deeply companies expect you to know SPC varies. Some jobs only need you to read control charts, while others ask you to isolate the causes of abnormalities and propose improvements. If you are unsure which level your experience fits, it is faster to ask a career change service that knows the semiconductor industry how to read the job postings.</p>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn" href="https://semicon-campus.com/%e5%8d%8a%e5%b0%8e%e4%bd%93%e6%b1%82%e4%ba%ba%e3%82%ad%e3%83%bc%e3%83%af%e3%83%bc%e3%83%89%e4%b8%80%e8%a6%a7%ef%bd%9c%e6%9c%aa%e7%b5%8c%e9%a8%93%e8%80%85%e3%81%8c%e6%b1%82%e4%ba%ba%e7%a5%a8%e3%81%a7/">See the list of job keywords</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/how-to-read-semiconductor-job-description/">See how to read job postings</a>
+  </div>
+</div>
+
+
+
+<h2 class="wp-block-heading">Summary</h2>
+
+
+
+<p class="wp-block-paragraph">SPC is a way of thinking that looks at variation in measured values to check whether a process is running as usual. In semiconductors, data such as CD, film thickness, defect counts, and electrical characteristics are used to spot signs of abnormality on control charts.</p>
+
+
+
+<p class="wp-block-paragraph">For beginners, it is enough to first remember that "SPC is a health checkup for the process." Don't just collect data; notice changes that are different from usual, and trace possible causes back to the process, tool, or materials. Once you understand this flow, quality evaluation, process engineer, failure analysis, and yield improvement jobs become easier to see.</p>
+
+
+
+<div class="semicon-cta">
+  <h3>Looking for jobs where SPC is your strength? Start here</h3>
+  <p>Try searching job postings for "SPC," "process control," "yield improvement," and "quality data analysis." If the job duties include words like measured values, control charts, lot trends, abnormality response, and root cause analysis, the job connects to what you learned in this article.</p>
+  <p>However, the words in a job posting alone do not tell you the level actually required. If you are aiming for a higher annual salary or a role change in the semiconductor industry, first check how to choose a career change service that is strong in semiconductor jobs, and sort out how to present your experience.</p>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn" href="https://semicon-campus.com/semiconductor-career-service-selection-guide/">See how to choose career change services strong in semiconductor jobs</a>
+  </div>
+</div>
+
+<div class="semicon-cta secondary-cta">
+  <h3>For those who want to prepare before an interview</h3>
+  <p>If you are already thinking about consulting on jobs, organizing your experience, interests, requirements, and concerns in advance makes it easier to be introduced to semiconductor jobs.</p>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/semiconductor-agent-interview-checklist/">See the pre-interview checklist</a>
+  </div>
+</div>
+
+<div class="semicon-cta secondary-cta">
+  <h3>Coming up next</h3>
+  <p>We have published "What is failure analysis?", a topic that often appears in job postings alongside SPC. For beginners, it explains how to isolate why defects occurred from defects and measured values.</p>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/what-is-semiconductor-failure-analysis/">Read "What is failure analysis?"</a>
+  </div>
+</div>
+
+<div class="semicon-cta secondary-cta">
+  <h3>We also explain semiconductors simply on YouTube</h3>
+  <p>For those who want to review with diagrams, we also explain semiconductor manufacturing and process concepts in short videos on YouTube.</p>
+  <div class="semicon-btnrow">
+    <a rel="noopener" class="semicon-btn" href="https://www.youtube.com/@semicon-campus" target="_blank">Watch diagram videos on YouTube</a>
+  </div>
+</div>
+
+<div class="semicon-links">
+  <div class="semicon-linkbox next">
+    <h3>Read next</h3>
+    <p><a href="https://semicon-campus.com/what-is-cd-sem-sem-review/">What are CD-SEM and SEM review? An easy guide to semiconductor inspection and metrology that measures dimensions and examines defects in detail</a></p>
+    <p><a href="https://semicon-campus.com/what-is-semiconductor-defect-inspection/">What is defect inspection? An easy guide to the semiconductor inspection step that finds tiny defects on wafers</a></p>
+    <p><a href="https://semicon-campus.com/what-is-semiconductor-yield/">What is yield? A beginner's guide to good-product rates, defects, and improvement in semiconductor manufacturing</a></p>
+  </div>
+  <div class="semicon-linkbox">
+    <h3>Related articles</h3>
+    <p><a href="https://semicon-campus.com/what-is-semiconductor-inspection-quality-control/">What are semiconductor inspection and quality evaluation?</a></p>
+    <p><a href="https://semicon-campus.com/what-is-semiconductor-process-engineer/">What is a process engineer?</a></p>
+    <p><a href="https://semicon-campus.com/how-to-read-semiconductor-job-description/">How to read semiconductor job postings</a></p>
+    <p><a href="https://semicon-campus.com/%e5%8d%8a%e5%b0%8e%e4%bd%93%e6%b1%82%e4%ba%ba%e3%82%ad%e3%83%bc%e3%83%af%e3%83%bc%e3%83%89%e4%b8%80%e8%a6%a7%ef%bd%9c%e6%9c%aa%e7%b5%8c%e9%a8%93%e8%80%85%e3%81%8c%e6%b1%82%e4%ba%ba%e7%a5%a8%e3%81%a7/">List of semiconductor job keywords</a></p>
+  </div>
+</div>
+
+<section class="mp1-section" id="maintenance-phase1-career"><h2>Jobs that use SPC and trend monitoring knowledge, and your next steps</h2><p>If you have experience with process monitoring, quality control, or matching maintenance history against data, organize it as sets of "target tool, phenomenon, checks you did, and results." Comparing the equipment you would handle, night shifts and travel, training, and application requirements against job postings lets you separate experience you can use from knowledge you need to add.</p><aside class="semicon-cta mp1-card"><h3>Check the big picture of the work and how to choose jobs and learning</h3><p>In the Equipment Maintenance Hub, you can review inspection and abnormality response work, how to organize your experience, and options for jobs, basic learning, and certification prep in one place. If you want to compare the scope of equipment roles and customer support, also see the related role articles.</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/" class="semicon-btn mp1-button" data-maintenance-phase1-hub="277" data-cta="maintenance_hub" data-cta-type="maintenance_hub" data-cta-stage="career" data-cta-id="maintenance_351_hub277_end" data-cta-route="maintenance_351_hub277_end">Check job duties, openings, and learning in the Equipment Maintenance Hub</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/" class="semicon-btn mp1-button" data-maintenance-phase1-hub="237" data-cta="equipment_hub" data-cta-type="equipment_hub" data-cta-stage="career" data-cta-id="maintenance_351_hub237_end" data-cta-route="maintenance_351_hub237_end">See equipment engineer scope, openings, and learning</a></div></aside></section>
+
+<h2>References</h2>
+<ul class="semicon-sources">
+  <li><a rel="noopener" href="https://www.itl.nist.gov/div898/handbook/pmc/pmc.htm" target="_blank">NIST/SEMATECH e-Handbook of Statistical Methods: Process or Product Monitoring and Control</a></li>
+  <li><a rel="noopener" href="https://www.itl.nist.gov/div898/handbook/pmc/section1/pmc12.htm" target="_blank">NIST/SEMATECH e-Handbook: What are Process Control Techniques?</a></li>
+  <li><a rel="noopener" href="https://www.itl.nist.gov/div898/handbook/pmc/section3/pmc31.htm" target="_blank">NIST/SEMATECH e-Handbook: What are Control Charts?</a></li>
+  <li><a rel="noopener" href="https://digital.ahrq.gov/health-it-tools-and-resources/evaluation-resources/workflow-assessment-health-it-toolkit/all-workflow-tools/statistical-process-control" target="_blank">AHRQ: Statistical Process Control</a></li>
+</ul>
+<a class="semicon-backtop" href="#semicon-top">↑ Top</a>
+</div>
+
+
+<aside class="related-spokes"><h2>Recommended reading</h2><ul><li><a href="/semiconductor-spc-control-chart/">How to read control charts in semiconductor processes (Xbar-R charts, Western Electric rules, 3-sigma)</a></li><li><a href="/semiconductor-fdc-equipment-data/">What is happening inside the tool? Spotting early signs of abnormality with FDC and equipment data analysis</a></li></ul></aside>

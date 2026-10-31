@@ -1,0 +1,341 @@
+
+<!--KEEP:0-->
+
+
+<!--KEEP:1-->
+
+
+<!--KEEP:2-->
+<div class="semicon-article">
+
+
+
+<p class="wp-block-paragraph">Last time, we looked at "deposition," which forms thin films on a wafer.</p>
+
+
+
+<p class="wp-block-paragraph">But just forming a film by deposition does not make a circuit yet. It is only a thin layer spread over the entire wafer.</p>
+
+
+
+<p class="wp-block-paragraph">So how is that film shaped into transistors and wiring?</p>
+
+
+
+<div class="semicon-lead"><strong>The bottom line of this article</strong><br>Lithography is the process that transfers a circuit pattern onto a film on the wafer, marking "which parts to keep and which parts to remove." It prepares the film made by deposition so it can be processed in the next step, etching.</div>
+
+
+
+<figure class="semicon-hero">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/06/lithography-exposure-hero-bright.png" alt="Illustration of the lithography process, transferring a circuit pattern onto a wafer inside a lithography tool">
+  <figcaption>Lithography is the process that transfers a circuit pattern onto a wafer. It creates marks on the deposited film showing "which parts to keep and which parts to remove."</figcaption>
+</figure>
+
+
+
+<figure class="semicon-hero">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/06/lithography-flow.png" alt="Flow of the lithography process from deposition to resist coating, exposure, development, and preparation for etching">
+  <figcaption>A realistic image alone makes it hard to see how the steps connect, so here we lay out the flow. Lithography makes much more sense when you learn it together with the next step, etching.</figcaption>
+</figure>
+
+
+
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>I kind of get that deposition makes a film on the wafer. But that film is spread flat across the whole wafer, right?</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>Exactly. Deposition alone does not make a circuit yet. That is where lithography comes in.</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>Lithography. That suddenly sounds very technical.</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>The word is difficult, but the idea is quite familiar. Think of it as the process of copying a circuit pattern onto a wafer using light.</p></div></div>
+
+
+
+
+<h2 class="wp-block-heading">What is lithography?</h2>
+
+
+
+<p class="wp-block-paragraph">Lithography is the process of transferring a circuit pattern onto a wafer.</p>
+
+
+
+<p class="wp-block-paragraph">To put it more simply, it is the process of making marks on a film on the wafer that say "keep this," "remove this," or "process this in the next step."</p>
+
+
+
+<p class="wp-block-paragraph">In semiconductor manufacturing, various films such as oxide films, insulating films, and metal films are formed on the wafer. But if a film is left covering the whole surface, it is just a layer. To make a circuit, it has to be processed into the required shapes.</p>
+
+
+
+<p class="wp-block-paragraph">So a light-sensitive material called photoresist is coated on top of the film, and light is shone through a mask. The photoresist's properties change differently where light hits and where it does not, and after development, a resist pattern appears.</p>
+
+
+
+<p class="wp-block-paragraph">This resist pattern becomes the guide that decides the "areas to protect" and the "areas to remove" in the next step, etching.</p>
+
+
+
+<h2 class="wp-block-heading">Why is lithography needed?</h2>
+
+
+
+<p class="wp-block-paragraph">Semiconductor chips contain extremely fine circuits. CPUs, GPUs, memory, and AI chips all depend on building huge numbers of tiny structures on a wafer.</p>
+
+
+
+<p class="wp-block-paragraph">Simply stacking materials does not make a circuit. After the materials are stacked, they must be processed into the required shapes. Lithography is what decides those "shapes."</p>
+
+
+
+<div class="semicon-flow">
+  <strong>The basic rhythm of the front-end process</strong>
+  <div class="semicon-flow-grid">
+    <div class="semicon-flow-step"><strong>Deposition</strong><span>Form a film</span></div>
+    <div class="semicon-flow-step"><strong>Lithography</strong><span>Transfer the pattern</span></div>
+    <div class="semicon-flow-step"><strong>Etching</strong><span>Remove unwanted parts</span></div>
+  </div>
+</div>
+
+
+
+<p class="wp-block-paragraph">Think of a building: just bringing in materials does not make a house. You need a blueprint that shows where to put the pillars, where to build the walls, and where to leave open space.</p>
+
+
+
+<p class="wp-block-paragraph">Semiconductors work the same way. Deposition provides the material, lithography specifies the shape, and etching does the processing. By repeating this cycle, complex semiconductor chips are built on the wafer.</p>
+
+
+
+<!-- semicon-a8-top30-top30-17-1:start -->
+
+
+<!-- semicon-a8-top30-top30-17-1:end -->
+
+
+
+<h2 class="wp-block-heading">The basic flow of lithography</h2>
+
+
+
+<p class="wp-block-paragraph">Roughly speaking, lithography goes through the following steps.</p>
+
+
+
+<ol class="wp-block-list">
+  <li>Clean the wafer</li>
+  <li>Coat the photoresist</li>
+  <li>Shine light through a mask</li>
+  <li>Develop</li>
+  <li>Form the resist pattern</li>
+  <li>Move on to the next step, etching</li>
+</ol>
+
+
+
+<h3 class="wp-block-heading">1. Clean the wafer</h3>
+
+
+
+<p class="wp-block-paragraph">Before lithography, the wafer surface is cleaned. In semiconductor manufacturing, tiny dust and contamination are a big problem. Even particles invisible to the human eye can be huge obstacles on a wafer.</p>
+
+
+
+<h3 class="wp-block-heading">2. Coat the photoresist</h3>
+
+
+
+<p class="wp-block-paragraph">Next, photoresist is coated on the wafer surface. Photoresist is a material that reacts to light. Think of it as a thin film whose properties change with light.</p>
+
+
+
+<p class="wp-block-paragraph">The wafer is spun at high speed while liquid photoresist spreads over it, forming a very thin, even coat. Coating "evenly" is not easy, either. Uneven thickness affects the results of exposure and development.</p>
+
+
+
+<h3 class="wp-block-heading">3. Shine light through a mask</h3>
+
+
+
+<p class="wp-block-paragraph">After the photoresist is coated, light is shone through a mask. A mask is like a master plate with the circuit pattern drawn on it.</p>
+
+
+
+<figure class="semicon-hero">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/06/lithography-mask-wafer.png" alt="Schematic of a lithography tool showing the positions of the mask, light, lens, and wafer">
+  <figcaption>A lithography tool projects the mask pattern onto the photoresist on the wafer. Not only shrinking the pattern but also overlaying it in exactly the right position is important.</figcaption>
+</figure>
+
+
+
+<p class="wp-block-paragraph">The equipment used here is the lithography (exposure) tool. Companies such as ASML, Nikon, and Canon work in this field. ASML is especially dominant in cutting-edge EUV lithography tools.</p>
+
+
+
+<p class="wp-block-paragraph">However, not every step uses EUV. Not every layer in a chip is equally difficult, so EUV may be used for the truly fine, difficult layers, while other layers use other lithography technologies such as DUV.</p>
+
+
+
+<h3 class="wp-block-heading">4. Develop to form the resist pattern</h3>
+
+
+
+<p class="wp-block-paragraph">After exposure comes development. Development is a process that removes the parts of the photoresist whose properties were changed by light.</p>
+
+
+
+<figure class="semicon-hero">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/06/lithography-resist-pattern.png" alt="Diagram of how only part of the photoresist remains after exposure and development">
+  <figcaption>As a beginner, it is enough to understand that "how the resist remains depends on where light hit and where it did not."</figcaption>
+</figure>
+
+
+
+<p class="wp-block-paragraph">After development, a photoresist pattern remains on the wafer. This becomes the guide for the next step.</p>
+
+
+
+<h2 class="wp-block-heading">What is photoresist?</h2>
+
+
+
+<p class="wp-block-paragraph">Photoresist is a photosensitive material that reacts to light. In semiconductor manufacturing, it is used to create circuit patterns on wafers.</p>
+
+
+
+<p class="wp-block-paragraph">When people talk about lithography, attention tends to go to the lithography tools. Of course, those tools are very important. But without the material called photoresist, you could not transfer patterns with light.</p>
+
+
+
+<p class="wp-block-paragraph">This shows why materials makers such as Tokyo Ohka Kogyo, JSR, and Shin-Etsu Chemical are important. Equipment and materials push the limits together, as a set.</p>
+
+
+
+<h2 class="wp-block-heading">Why lithography is difficult</h2>
+
+
+
+<p class="wp-block-paragraph">There is more than one reason lithography is difficult. Typical challenges include the following.</p>
+
+
+
+<div class="semicon-grid">
+  <div class="semicon-card"><b>Patterns are extremely small</b><span>As miniaturization advances, the patterns copied with light get smaller too.</span></div>
+  <div class="semicon-card"><b>Alignment is difficult</b><span>Many layers of patterns must be stacked in exactly the right positions.</span></div>
+  <div class="semicon-card"><b>Material performance is needed</b><span>Resist sensitivity, resolution, and etch resistance are important.</span></div>
+  <div class="semicon-card"><b>Defects must be reduced</b><span>Tiny dust or defects can lead to major defects in later steps.</span></div>
+  <div class="semicon-card"><b>Stability in mass production</b><span>It is not enough to succeed with one wafer in the lab. It must be made stably in the fab.</span></div>
+  <div class="semicon-card"><b>Paired with metrology</b><span>Conditions are tuned while measuring dimensions, overlay, and defects.</span></div>
+</div>
+
+
+
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>It's finally coming together. Deposition alone just leaves a film. Lithography transfers the pattern of what to keep. Etching removes material following that pattern.</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>Exactly. Memorizing process names one by one makes them seem hard, but when you look at how they connect, the meaning becomes clear all at once.</p></div></div>
+
+
+
+<h2 class="wp-block-heading">A quick look at related companies</h2>
+
+
+
+<p class="wp-block-paragraph">Once you understand lithography, the related companies become easier to see.</p>
+
+
+
+<div class="semicon-grid">
+  <div class="semicon-card"><b>Lithography tools</b><span>ASML, Nikon, Canon, and others. They make tools that transfer the mask pattern onto the wafer.</span></div>
+  <div class="semicon-card"><b>Resists and materials</b><span>Tokyo Ohka Kogyo, JSR, Shin-Etsu Chemical, and others. Light-sensitive materials are essential.</span></div>
+  <div class="semicon-card"><b>Inspection and metrology</b><span>KLA, Hitachi High-Tech, Lasertec, and others. They measure dimensions, misalignment, and defects.</span></div>
+</div>
+
+
+
+<p class="wp-block-paragraph">You do not need to treat company names as something to memorize. If you look at which problem in which process each company supports, researching companies becomes much easier. If you want to organize companies across processes beyond lithography, see the <a href="https://semicon-campus.com/semiconductor-company-map-by-process/">semiconductor company map</a> by process.</p>
+
+
+<section class="mp2-section" id="revenue-phase2-learning"><h2>Connecting exposure, resist, and alignment to real work and further study</h2><p>To extend your lithography knowledge into a job, organize your experience of checking pattern results separately from the tool's condition, such as alignment, wafer handling, and temperature. Rather than deciding on material or process-condition issues alone, the concrete link is what information you passed to which person in charge. After reading about optics, move on to study that fills in the basics of measurement, control, and quality, and to comparing job postings that cover equipment installation and maintenance.</p></section>
+
+<h2 class="wp-block-heading">Related jobs</h2>
+
+
+
+<p class="wp-block-paragraph">Understanding lithography also broadens your picture of the jobs involved. For example, the following jobs are related.</p>
+
+
+
+<ul class="wp-block-list">
+  <li>Process engineer</li>
+  <li>Lithography process engineer</li>
+  <li>Lithography tool engineer</li>
+  <li>Photoresist materials engineer</li>
+  <li>Metrology and inspection engineer</li>
+  <li>Yield improvement engineer</li>
+  <li>Field service engineer</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">As a beginner, before looking at job postings, first understand "what this process makes," "which equipment and materials are involved," and "what kinds of problems the job solves." This makes the jobs much easier to picture.</p>
+
+
+
+<h2 class="wp-block-heading">Summary: Lithography is the process that connects deposition and etching</h2>
+
+
+
+<p class="wp-block-paragraph">Lithography is the process that transfers a circuit pattern onto a film on the wafer. A film made by deposition does not become a circuit on its own. Lithography decides "which parts to keep and which to remove," and the next step, etching, removes the unwanted parts to form the circuit shapes.</p>
+
+
+
+<ul class="wp-block-list">
+  <li>Lithography is the process of transferring a circuit pattern with light</li>
+  <li>Photoresist is a material that reacts to light</li>
+  <li>A mask is the master plate of the circuit pattern</li>
+  <li>A lithography tool transfers the mask pattern onto the wafer</li>
+  <li>EUV is important for cutting-edge miniaturization, but other technologies such as DUV are also used</li>
+  <li>Lithography is the process that connects deposition and etching</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">Once you understand lithography, you can see, as roles within the process, why ASML is important, why Japanese materials makers are strong, and why inspection and metrology are directly tied to yield.</p>
+
+
+
+<div class="semicon-links">
+  <div class="semicon-linkbox next">
+    <h3>Read next</h3>
+    <p><a href="https://semicon-campus.com/what-is-etching-semiconductor-process/"><strong>What is etching?</strong></a><br>Next, we move on to the process that removes unwanted film from the wafer following the pattern made by lithography.</p>
+  </div>
+  <div class="semicon-linkbox">
+    <h3>Related articles</h3>
+    <p><a href="https://semicon-campus.com/%e6%88%90%e8%86%9c%e3%81%a8%e3%81%af%e4%bd%95%e3%81%8b%ef%bc%9f%e3%82%a6%e3%82%a7%e3%83%8f%e3%81%ae%e4%b8%8a%e3%81%ab%e8%96%84%e3%81%84%e8%86%9c%e3%82%92%e4%bd%9c%e3%82%8b%e5%8d%8a%e5%b0%8e%e4%bd%93/">What is deposition?</a></p>
+    <p><a href="https://semicon-campus.com/semiconductor-company-map-by-process/">Semiconductor company map: Key companies and their roles by manufacturing process, explained for beginners</a></p>
+    <p><a href="https://semicon-campus.com/what-is-feol-semiconductor-process/">What is the front-end process (FEOL)?</a></p>
+    <p><a href="https://semicon-campus.com/semiconductor-manufacturing-overview/">What does semiconductor manufacturing look like as a whole?</a></p>
+  </div>
+</div>
+
+
+<section class="mp2-section" id="revenue-phase2-career"><h2>Comparing job postings and roles from exposure, resist, and alignment</h2><p>Organize experience such as alignment and wafer-handling checks, measurement records, and support for equipment installation as sets of target equipment, task, and the results you confirmed. If you are thinking about a career change, compare the scope of duties, work location, work schedule and travel, training, and requirements against the job posting. This helps you separate the experience you already have from the knowledge you need to add.</p><aside class="semicon-cta mp2-card"><h3>See the big picture of jobs, and how to choose job postings and learning</h3><p>After learning the technology, compare the scope of work you would handle, such as inspection and recovery, equipment installation, process improvement, and customer support. The job articles below cover not only the work itself but also options for job postings and learning.</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/" class="semicon-btn mp2-button" data-revenue-phase2-hub="237" data-cta="equipment_hub" data-cta-type="equipment_hub" data-cta-stage="career" data-cta-id="phase2_68_hub237_end" data-cta-route="phase2_68_hub237_end">See the equipment engineer's scope, job postings, and learning</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-field-service-engineer/" class="semicon-btn mp2-button" data-revenue-phase2-hub="270" data-cta="fse_hub" data-cta-type="fse_hub" data-cta-stage="career" data-cta-id="phase2_68_hub270_end" data-cta-route="phase2_68_hub270_end">See FSE recovery and customer support, job postings, and learning</a></div></aside></section>
+
+
+<h2 class="wp-block-heading">Official sources we referred to</h2>
+
+
+
+<ul class="semicon-sources wp-block-list">
+  <li><a rel="noopener" href="https://www.asml.com/en/technology/lithography-principles" target="_blank">ASML: Principles of lithography</a></li>
+  <li><a rel="noopener" href="https://www.asml.com/en/products/euv-lithography-systems" target="_blank">ASML: EUV lithography systems</a></li>
+  <li><a rel="noopener" href="https://www.nikon.com/business/semi/" target="_blank">Nikon: Semiconductor Lithography Systems</a></li>
+  <li><a rel="noopener" href="https://global.canon/en/product/indtech/semicon/" target="_blank">Canon: Semiconductor Lithography Equipment</a></li>
+  <li><a rel="noopener" href="https://www.tok-pr.com/en/products/photoresist.html" target="_blank">Tokyo Ohka Kogyo: Photoresists</a></li>
+  <li><a rel="noopener" href="https://www.jsr.co.jp/jsr_e/products/em/" target="_blank">JSR: Electronic Materials Business</a></li>
+  <li><a rel="noopener" href="https://www.shinetsu.co.jp/en/products/electronics-materials/photoresist/" target="_blank">Shin-Etsu Chemical: Photoresist</a></li>
+  <li><a rel="noopener" href="https://www.kla.com/products/chip-manufacturing/metrology" target="_blank">KLA: Metrology</a></li>
+  <li><a rel="noopener" href="https://www.hitachi-hightech.com/global/en/knowledge/semiconductor/room/manufacturing/cd-sem.html" target="_blank">Hitachi High-Tech: CD-SEM</a></li>
+</ul>
+
+
+
+</div>
+
+
+<aside class="related-spokes"><h2>You may also like</h2><ul><li><a href="/semiconductor-lithography-defect/">Why does a pattern that should have been transferred come out distorted? Lithography defects, focus, dose, and after-develop inspection</a></li><li><a href="/semiconductor-pellicle-photomask/">What is a semiconductor pellicle? The role of the thin film that protects the photomask</a></li><li><a href="/asml-history-euv/">What Is ASML? 40 Years from a Leaky Shed to EUV Tools</a></li></ul></aside>

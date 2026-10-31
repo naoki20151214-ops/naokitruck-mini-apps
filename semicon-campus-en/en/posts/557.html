@@ -1,0 +1,118 @@
+
+<!--KEEP:0-->
+
+
+<!--KEEP:1-->
+
+
+<!--KEEP:2-->
+<div class="semicon-article" id="semicon-top">
+
+<div class="semicon-level"><span class="semicon-level-label">Learning level</span> <strong>Beginner</strong><p>This article helps you understand Episode 27, "Why can a company without a factory make AI chips?", through the division of labor among design, manufacturing, and the back-end process.</p></div>
+
+<p class="semicon-lead"><strong>The short answer: "making" a semiconductor includes both design and manufacturing.</strong> A company that does not run its own wafer mass-production fab and instead focuses on chip planning, circuit design, and verification is called a <strong>fabless</strong> company. A contract manufacturer that takes a customer's design and builds the circuits on wafers is called a <strong>foundry</strong>.</p>
+
+<figure class="semicon-hero"><img src="https://semicon-campus.com/wp-content/uploads/2026/07/fabless-foundry-ecosystem-featured.webp" alt="Image of the division of labor: design data passes from a chip design team on the left to a wafer fab in the center, then through assembly and testing on the right to AI devices" width="1672" height="941" loading="eager" decoding="async"><figcaption>An AI chip is completed when companies that specialize in design, wafer manufacturing, and assembly and testing work together.</figcaption></figure>
+
+<div class="semicon-map"><strong>What you will learn in this article</strong><div class="semicon-map-grid"><div class="semicon-map-item"><b>Fabless</b><span>What they do without owning a fab</span></div><div class="semicon-map-item"><b>Foundry</b><span>How they build a design into wafers</span></div><div class="semicon-map-item"><b>The big picture of the division of labor</b><span>Including EDA, IP, materials, equipment, and the back-end process</span></div></div></div>
+
+
+<h2>In 30 seconds: why you can make AI chips without a fab</h2>
+
+<div class="semicon-summary"><strong>The 30-second answer</strong><p>Fabless companies design an AI chip's purpose, circuits, performance, power, verification, software, and more. Foundries connect that design to manufacturing processes and build the circuits on wafers. Companies for EDA and IP, materials, manufacturing equipment, dicing, packaging, and testing also join in. Even a company without a fab can become "a company that makes AI chips" by leading the design and turning it into a product.</p></div>
+
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>If they don't have a factory, I thought they just bought finished chips and put their name on them.</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>Not at all. Deciding what calculations to do, how fast, and at what power, and then designing it so it works as a circuit, is also an important part of "making."</p></div></div>
+
+<p class="semicon-one-line">First one-line summary: because different companies can handle design and manufacturing, even a company without a fab can create AI chips.</p>
+
+<h2>"Making" a semiconductor includes design and manufacturing</h2>
+
+<p>In everyday speech, we tend to lump everything into one word, "make." But with semiconductors, you need to think about at least two separate things: <strong>design, which decides what the chip will do</strong>, and <strong>manufacturing, which forms that circuit on a wafer</strong>.</p>
+
+<div class="semicon-two"><div class="semicon-role"><b>Design</b><span>Decide the product's purpose, circuit structure, computing performance, power use, inputs and outputs, verification method, and connection with software.</span></div><div class="semicon-role foundry"><b>Manufacture</b><span>Build circuits that follow the design rules onto wafers through steps such as masks, deposition, lithography, etching, cleaning, and wiring.</span></div></div>
+
+<figure class="semicon-visual"><img src="https://semicon-campus.com/wp-content/uploads/2026/07/fabless-foundry-design-vs-manufacturing.webp" alt="The different roles of a team that designs semiconductor circuits and a fab that builds circuits on wafers" width="1672" height="941" loading="lazy" decoding="async"><figcaption>"Making" a semiconductor splits into design, which thinks up the circuit, and manufacturing, which forms the circuit on a wafer.</figcaption></figure>
+
+<p>Design alone does not complete a chip, and manufacturing alone does not decide "what kind of AI computing the chip does." Only when the two sides go back and forth on design rules, verification results, manufacturing conditions, and ramp-up information do they get close to stably mass-producing the same design.</p>
+
+<div class="semicon-note"><p><strong>Don't get this wrong:</strong> Sending design data to a foundry does not mean the chip is finished automatically. The two sides need ongoing collaboration, including designs that fit the manufacturing process, rule checks, physical verification, prototypes, evaluation, and yield improvement.</p></div>
+
+<h2>What does a fabless company do?</h2>
+
+<p><strong>Fabless</strong> is a business model in which a company does not run its own wafer mass-production fab and focuses on chip planning, design, verification, and productization. "Fab" means a semiconductor plant, and "less" means not having one.</p>
+
+<div class="semicon-grid"><div class="semicon-card"><b>Plan the product</b><span>Decide which devices it goes in, what AI processing it does, and at what performance, power, and price range.</span></div><div class="semicon-card"><b>Design and verify the circuits</b><span>Design the layout of logic circuits, memory, inputs and outputs, and compute units, and check that they work as intended.</span></div><div class="semicon-card"><b>Make the whole product work</b><span>Coordinate software, packaging, testing, mass-production plans, and connection with customers' products.</span></div></div>
+
+<p>A fabless company is not "a company that hands off all manufacturing and forgets about it." It is responsible for product specs and design quality, and it brings products to market while coordinating with manufacturing partners and back-end companies. The point of this division of labor is not only avoiding huge fab investments, but also being able to focus resources on design and software.</p>
+
+<h2>What does a foundry do?</h2>
+
+<p>A <strong>foundry</strong> is a company that manufactures semiconductors designed by its customers under contract. It combines manufacturing processes, fabs, equipment, materials management, and quality control to build the designed circuits into wafers.</p>
+
+<p>Wafer manufacturing repeats steps many times, such as <strong>deposition</strong> to make thin films, <strong>lithography</strong> to transfer circuit patterns, <strong>etching</strong> to remove unneeded parts, and <strong>cleaning</strong> to remove dirt and residue. Tokyo Electron's official process guide also lists deposition, lithography, etching, and cleaning as major front-end processes.</p>
+
+<p>However, a foundry's role is not just running equipment. It prepares the design rules and technical information that designers use, and shares prototype lot results, wafer tests, quality and reliability, and production status with customers. TSMC's official eFoundry description also presents collaboration on design, engineering, and logistics as part of its manufacturing service.</p>
+
+<p class="semicon-one-line">One-line summary so far: fabless companies design "what to make," and foundries handle "how to make it on wafers stably."</p>
+
+<h2>How do they work together from design data to wafers?</h2>
+
+<div class="semicon-step-list"><div class="semicon-step"><b>1. Decide product specs and circuits</b><span>The fabless side turns goals for AI processing, performance, power, memory, inputs and outputs, and so on into circuits.</span></div><div class="semicon-step"><b>2. Design to fit the manufacturing technology</b><span>The design is matched to the design rules and PDK provided by the foundry. A PDK is a set of design information covering the available devices, dimensions, wiring, verification conditions, and more.</span></div><div class="semicon-step"><b>3. Verify the design and tape out</b><span>Check not only logic behavior but also wiring, timing, power, and manufacturing rules, and turn it into design data that can be handed off for mask making.</span></div><div class="semicon-step"><b>4. Build prototypes and measure</b><span>The foundry manufactures wafers and checks test results and yield. The design side also evaluates performance and behavior on real chips.</span></div><div class="semicon-step"><b>5. Adjust and move to mass production</b><span>Adjust the design, manufacturing conditions, inspection conditions, packaging, and more to get closer to a state where it can be made repeatedly.</span></div></div>
+
+<figure class="semicon-visual"><img src="https://semicon-campus.com/wp-content/uploads/2026/07/fabless-foundry-collaboration-loop.webp" alt="A collaboration cycle moving from product specs to circuit design, verification, prototype wafers, measurement, improvement, and mass production" width="1672" height="941" loading="lazy" decoding="async"><figcaption>It does not end when design data is handed over. Results from prototypes and measurements are fed back into design and manufacturing to approach mass production.</figcaption></figure>
+
+<div class="semicon-flow" role="img" aria-label="The flow of the division of labor, from fabless planning and design, to foundry wafer manufacturing, to back-end assembly and testing, to AI devices"><div class="semicon-flow-main"><div class="semicon-flow-box design"><b>Fabless</b><span>Planning, circuit design, verification</span></div><div class="semicon-arrow">→</div><div class="semicon-flow-box"><b>Design-manufacturing collaboration</b><span>PDK, verification, prototypes, evaluation</span></div><div class="semicon-arrow">→</div><div class="semicon-flow-box wafer"><b>Foundry</b><span>Wafer manufacturing, quality, mass production</span></div><div class="semicon-arrow">→</div><div class="semicon-flow-box"><b>Back-end and products</b><span>Assembly, testing, installing in devices</span></div></div><div class="semicon-support"><div>EDA</div><div>IP</div><div>Materials</div><div>Manufacturing equipment</div><div>Inspection equipment</div></div></div>
+
+<h2>EDA, IP, materials, equipment, and the back-end process are also essential</h2>
+
+<p>The fabless company and the foundry do not provide everything by themselves. Semiconductors are made possible by layers of specialist companies that support design and manufacturing.</p>
+
+<div class="semicon-grid"><div class="semicon-card"><b>EDA</b><span>Design automation tools that help with circuit design, placement and routing, timing analysis, power analysis, manufacturing rule checks, and more.</span></div><div class="semicon-card"><b>IP</b><span>Verified design building blocks, such as CPU cores, communication circuits, and memory controllers, offered in a reusable form.</span></div><div class="semicon-card"><b>Materials</b><span>Supply silicon wafers, photoresist, gases, chemicals, metals, package substrates, and more.</span></div><div class="semicon-card"><b>Manufacturing equipment</b><span>Carries out the steps that build circuits on wafers, such as deposition, lithography, etching, cleaning, and inspection / metrology.</span></div><div class="semicon-card"><b>Back-end process</b><span>Cuts wafers into chips, assembles them into packages, and makes them able to connect electrically to the outside.</span></div><div class="semicon-card"><b>Testing</b><span>Checks electrical characteristics and functions at the wafer stage and after completion to see whether chips work to spec.</span></div></div>
+
+<figure class="semicon-visual"><img src="https://semicon-campus.com/wp-content/uploads/2026/07/fabless-foundry-ecosystem-network.webp" alt="A diagram of specialist companies for EDA, IP, materials, manufacturing equipment, back-end, and testing supporting an AI chip in the center" width="1672" height="941" loading="lazy" decoding="async"><figcaption>A single AI chip is completed through the cooperation of many specialist companies, including EDA, IP, materials, equipment, back-end, and testing.</figcaption></figure>
+
+<p>According to Synopsys's official description, EDA supports the design and verification of complex chips and the development of processes and models needed for manufacturing, and it is used together with the company's silicon IP. TSMC's Open Innovation Platform is also described as a system that connects EDA certification, IP, design services, and manufacturing and packaging technology.</p>
+
+<p>After the wafer stage, chips are cut apart by <a href="https://semicon-campus.com/what-is-semiconductor-dicing/">dicing</a>, assembled into packages, and tested. ASE's official information also lists testing services in several stages, such as wafer probing, final test, and system-level test.</p>
+
+<h2>Thinking through the flow to everyday AI devices</h2>
+
+<p>Taking a chip that goes into an AI server or a smartphone as an example, you can think of the roles flowing like this.</p>
+
+<div class="semicon-step-list"><div class="semicon-step"><b>Decide the purpose of the AI processing</b><span>Decide the needed calculations and use cases, such as image recognition, generative AI, or voice processing.</span></div><div class="semicon-step"><b>Design the circuits and software</b><span>Design the compute units, memory, data movement, and inputs and outputs, and make them usable from software.</span></div><div class="semicon-step"><b>Build the circuits on wafers</b><span>The foundry stacks many front-end process steps to turn the design into real circuits on silicon.</span></div><div class="semicon-step"><b>Cut, assemble, and test</b><span>Cut the chips apart, assemble them into packages, and test them electrically and functionally.</span></div><div class="semicon-step"><b>Install them in devices</b><span>Combined with boards, cooling, power, memory, the OS, and AI software, they become products that users can touch.</span></div></div>
+
+<div class="semicon-note"><p><strong>The actual division of roles varies by product:</strong> Sometimes one company handles a wide range from design to manufacturing, and sometimes manufacturing, packaging, and testing are split among several companies. A given company does not always use the same manufacturer.</p></div>
+
+
+<section class="mp3-section" id="revenue-phase3-learning"><h2>From the map of the division of labor to your own area</h2><p>Once you understand the difference between fabless and foundry, pick one area you are interested in or have experience with: design, manufacturing, equipment, materials, or assembly and testing. If you have hands-on experience in manufacturing, maintenance, or quality, writing down the processes you handled and the results you checked gives you material for job consultations. For manufacturing jobs open to people new to semiconductors, compare training programs and working conditions, and also keep a path open to relearn any gaps in mechanical, electrical, or quality skills.</p></section>
+
+<h2>What jobs does this division of labor lead to?</h2>
+
+<p>Once you understand the difference between fabless and foundry, you can see that "working at a semiconductor company" does not mean just one kind of workplace.</p>
+
+<div class="semicon-grid"><div class="semicon-card"><b>Fabless side</b><span>Product planning, architecture, logic design, physical design, verification, embedded software, and mass-production and quality coordination.</span></div><div class="semicon-card"><b>Foundry side</b><span>Process development, process integration, manufacturing, equipment, yield, quality, and customer technical support.</span></div><div class="semicon-card"><b>Support and back-end side</b><span>EDA/IP development, materials, equipment, dicing, package design, assembly, testing, and reliability evaluation.</span></div></div>
+
+<p>Fab work is not the only semiconductor work, and design companies are not the only center of technology. The expertise you need changes depending on where you add value: design, manufacturing, materials, equipment, or the back-end process.</p>
+
+<p>If you want to look at companies by process, go to the <a href="https://semicon-campus.com/semiconductor-company-map-by-process/">semiconductor company map</a> to see how wafers and materials, manufacturing equipment, inspection / metrology, the back-end process, and more fit together.</p>
+
+<h2>Summary: a single AI chip is built from the strengths of many companies</h2>
+
+<div class="semicon-summary"><strong>The conclusion of this article</strong><ul><li>"Making" a semiconductor includes both design and wafer manufacturing</li><li>Fabless companies do not own fabs and focus on planning, circuit design, verification, and productization</li><li>Foundries connect customer designs to manufacturing technology and build the circuits on wafers</li><li>Chips are not made automatically from design data alone; collaboration on PDKs, verification, prototypes, evaluation, and ramp-up is needed</li><li>AI chips are completed by linking all the way to companies for EDA, IP, materials, equipment, the back-end process, and testing</li></ul></div>
+
+<p>A company without a fab can make AI chips not because it "makes nothing." It is because companies that focus on design, companies that focus on manufacturing, and the specialist companies supporting them link their strengths together.</p>
+
+<div class="semicon-links"><div class="semicon-linkbox next"><strong>Read next</strong><p><a href="https://semicon-campus.com/semiconductor-company-map-by-process/">Semiconductor company map: the role of each company by process</a></p></div><div class="semicon-linkbox"><strong>Learn step by step from the basics</strong><p><a href="https://semicon-campus.com/semiconductor-beginner-roadmap/">Semiconductor roadmap for beginners</a></p></div></div>
+
+
+<section class="mp3-section" id="revenue-phase3-career"><h2>Connect what you learned here to your next job or study</h2><p>Organize your experience in manufacturing, inspection, equipment maintenance, and process improvement by target, task, and the results you checked. Comparing scope of work, required experience, location, work schedule and travel, and training programs makes it clearer what knowledge to add next.</p><aside class="semicon-cta mp3-card"><h3>See job duties, postings, and learning for related roles</h3><p>See which jobs use the technology you learned in this article: inspection and recovery, equipment start-up, customer support, or assembly and process improvement. Move on to the job articles to learn how to choose postings and learning.</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/" class="semicon-btn mp3-button" data-revenue-phase3-hub="277" data-cta="maintenance_hub" data-cta-type="maintenance_hub" data-cta-stage="career" data-cta-id="phase3_557_hub277_end" data-cta-route="phase3_557_hub277_end">Check job duties, postings, and learning in the equipment maintenance hub</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/" class="semicon-btn mp3-button" data-revenue-phase3-hub="237" data-cta="equipment_hub" data-cta-type="equipment_hub" data-cta-stage="career" data-cta-id="phase3_557_hub237_end" data-cta-route="phase3_557_hub237_end">See the scope, postings, and learning for equipment engineers</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/advanced-packaging-jobs-career/" class="semicon-btn mp3-button" data-revenue-phase3-hub="651" data-cta="packaging_hub" data-cta-type="packaging_hub" data-cta-stage="career" data-cta-id="phase3_557_hub651_end" data-cta-route="phase3_557_hub651_end">See how to choose advanced packaging jobs, postings, and learning</a></div></aside></section>
+
+
+<h2>References</h2>
+
+<p>We did not use market share or cost figures, which change easily. The explanations of roles and collaboration were checked against the following official primary sources.</p>
+<ul class="semicon-source-list"><li><a rel="noopener" href="https://www.tsmc.com/english/dedicatedFoundry/services" target="_blank">TSMC | Dedicated Foundry Services</a></li><li><a rel="noopener" href="https://www.tsmc.com/english/dedicatedFoundry/oip" target="_blank">TSMC | Open Innovation Platform</a></li><li><a rel="noopener" href="https://www.tsmc.com/english/dedicatedFoundry/services/eFoundry" target="_blank">TSMC | eFoundry</a></li><li><a rel="noopener" href="https://www.synopsys.com/silicon-design.html" target="_blank">Synopsys | Electronic Design Automation</a></li><li><a rel="noopener" href="https://www.tel.com/product/" target="_blank">Tokyo Electron | Semiconductor Production Process</a></li><li><a rel="noopener" href="https://ase.aseglobal.com/test-services/" target="_blank">ASE | Test Services</a></li></ul>
+
+<a class="semicon-backtop" href="#semicon-top">↑ Back to top</a>
+</div>

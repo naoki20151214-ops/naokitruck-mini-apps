@@ -1,0 +1,189 @@
+<!--KEEP:0-->
+<div class="semicon-article" id="semicon-top">
+<div class="semicon-level">
+<div class="semicon-level-top"><span class="semicon-level-label">Learning level</span><strong class="semicon-stars" aria-label="Beginner (1 of 5)"><span class="on">★</span><span class="off">☆☆☆☆</span><span>Beginner</span></strong></div>
+</div>
+<div class="semicon-lead">
+<p>Have you ever sprayed paint through the holes in a stencil sheet to make letters? The holes have a fixed width, yet the finished letters come out a little thicker, or with blurry edges.</p>
+<p>Something similar happens with the lines in semiconductor circuits. You make them at the designed width, but when you measure the finished line, it is a little wider. Or a little narrower.</p>
+<p><strong class="semicon-key">To give the answer first: line width is not decided by a single process step.</strong> Transferring the shape with light, etching, measuring: the width changes bit by bit along the way. You cannot know where it changed without measuring and checking.</p>
+</div>
+<div class="semicon-note">
+<p>The stencil example only fits in one way: "the result does not always match the template width." How spray paint works and how semiconductor processes work are different things.</p>
+</div>
+<div class="semicon-map">
+<h3>What you will learn in this article</h3>
+<ol>
+<li><strong>Goal of this article:</strong> To understand how line width changes during manufacturing, and how to interpret measured numbers</li>
+<li>What the terms "line width" and "CD" mean</li>
+<li>Why line width changes during manufacturing</li>
+<li>How to interpret measured numbers</li>
+</ol>
+</div>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep105-blog-01-design-to-wafer-v2.png" alt="Conceptual diagram showing that line width can change between the design, the resist, and after etching"><figcaption>A schematic showing that line width can change partway through the process. The widths are examples for explanation, not measured values.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the figure</b></p>
+<ul>
+<li>Design: the line width that was decided</li>
+<li>Resist: after the shape is transferred with light</li>
+<li>After etch: after etching. Measurements are taken at these two points</li>
+</ul>
+</div>
+<div class="semicon-chat-row naoki">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">Assistant</div>
+</div>
+<div class="semicon-bubble">
+<p>Professor, if the line width is off, does that mean the design drawing was wrong?</p>
+</div>
+</div>
+<div class="semicon-chat-row teacher">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">Professor</div>
+</div>
+<div class="semicon-bubble">
+<p>Not necessarily. A line's shape is transferred with light, then etched, and finally measured. Along the way, the width can change little by little.</p>
+</div>
+</div>
+<div class="semicon-chat-row naoki">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">Assistant</div>
+</div>
+<div class="semicon-bubble">
+<p>I see. So the important thing is to find where it changed.</p>
+</div>
+</div>
+<div class="semicon-chat-row teacher">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">Professor</div>
+</div>
+<div class="semicon-bubble">
+<p>Exactly. And a measured number is only the result of looking with one particular method. Let's go through it step by step.</p>
+</div>
+</div>
+<h2 class="wp-block-heading" data-fact-ids="C01">Line width (CD) means how thick a line is</h2>
+<p>Semiconductor circuits are made with very fine lines on a thin disk called a wafer. The thickness of these lines is called the "line width." In fabs, important dimensions are also called "CD" (critical dimension) as a group.</p>
+<p>Averroes explains CD as "the smallest dimension that can be reliably made and reliably measured on the wafer." Besides line width, CD also includes the gaps between lines and the diameters of holes. In this article, we call all of these "line width."</p>
+<p>When you see a difficult term, just read it as "this is about line width." That is enough to follow this article.</p>
+<h2 class="wp-block-heading" data-fact-ids="C02">Transfer with light, etch, measure: the width changes along the way</h2>
+<p>Circuit lines are made in this order. First, the shape of the line is transferred with light onto a light-sensitive film called resist. Next, the film underneath is etched to transfer the shape down. This flow is called "pattern transfer."</p>
+<p><strong class="semicon-key">Each time the shape is transferred, the line width can change a little.</strong> PTI's glossary calls the dimension change caused by etching "etch bias" and explains that it is expressed as the difference between the CD before etching and the CD after etching. The same source also says that when reporting it as a number, you need to clearly state the convention, such as whether getting wider counts as plus or getting narrower counts as plus.</p>
+<p>In other words, just saying "it shifted" is not enough information. <strong class="semicon-key">You need to make clear compared with which point in time, in which direction, and by how much it changed.</strong></p>
+<h2 class="wp-block-heading" data-fact-ids="C03">The etching method changes the shape of the walls</h2>
+<p>There are two main ways to etch. One is to dissolve the film with chemicals. This usually etches equally in every direction, so it also etches sideways. This is called "isotropic."</p>
+<p>The other is to etch inside a plasma, a gas that carries electric charge. According to an equipment overview from the University of Kentucky, in this method tiny particles called ions hit the wafer from almost directly above. As a result, the walls are etched close to vertical. This is called "anisotropic."</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep105-blog-03-etch-profile.png" alt="Conceptual diagram showing the difference in cross sections between etching where ions strike almost vertically and etching that also removes material sideways"><figcaption>A schematic showing the difference in wall shape between etching where ions strike almost vertically and isotropic etching. It does not show actual shapes or dimensions.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the figure</b></p>
+<ul>
+<li>Left: ions strike almost vertically, and the walls are close to vertical</li>
+<li>Right: isotropic etching that also removes material sideways</li>
+</ul>
+</div>
+<p>Many conditions decide the shape, such as pressure, electrical power, and gas. If any of them changes, the state of the plasma is likely to change too. However, these sources do not tell us how many nm the line width changes when a condition changes slightly. That differs by equipment and by the film being etched.</p>
+<h2 class="wp-block-heading" data-fact-ids="C04 C05">Trench width and location also change how deep it etches</h2>
+<p>The etch rate is not always the same everywhere. Samco explains that when etching silicon, the narrower the trench, the fewer "reactive particles" reach the bottom, and the slower the etch. This is called "microloading."</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep105-blog-04-microloading.png" alt="Conceptual diagram showing that fewer reactive species reach the bottom of a narrow trench, so it etches more slowly"><figcaption>A schematic illustrating how the amount reaching the bottom changes with trench width. It does not show actual dimensions or amounts.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the figure</b></p>
+<ul>
+<li>The narrower the trench, the fewer reactive species reach the bottom</li>
+<li>The narrower the pattern, the slower the etch</li>
+</ul>
+</div>
+<p>A technical blog from semiconductor equipment maker Lam Research says something similar. Even when design rules are followed, performance and yield (the share of good products) can drop because manufacturing equipment has limited capability.</p>
+<p><strong class="semicon-key">Making it exactly as drawn does not always produce exactly that shape.</strong> The result changes depending on conditions during manufacturing.</p>
+<h2 class="wp-block-heading" data-fact-ids="C06 C07">A line's "edges" can also become jagged</h2>
+<p>Even if the average line width matches the design, the edges of the line can be jagged. The jaggedness of one edge is called "LER" (line edge roughness), and the variation in line width is called "LWR" (line width roughness). You do not need to memorize these names yet.</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep105-blog-05-ler-lwr.png" alt="Conceptual diagram showing that roughness along one edge of a line is LER and roughness in the line's width is LWR"><figcaption>A schematic showing the difference between LER and LWR. The size of the roughness is exaggerated for clarity and is not a measured value.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the figure</b></p>
+<ul>
+<li>LER: roughness along one edge</li>
+<li>LWR: roughness in the line width</li>
+</ul>
+</div>
+<p>Lam Research explains that LER is an important source of variation in advanced semiconductors and can cause lower performance or failures. However, the results in that explanation come from virtual experiments on a computer, not actual measurements.</p>
+<h2 class="wp-block-heading" data-fact-ids="C08 C09">A measured number is not the shape itself</h2>
+<p>A typical tool for measuring CD is the CD-SEM. It is a type of electron microscope. According to Hitachi High-Tech, it calculates line width from differences in image brightness. Measurements are taken after the shape is transferred with light and after etching.</p>
+<p>Here is an important point. If a line's cross section is a trapezoid, the top width and the bottom width are different. Hitachi High-Tech explains that which width counts as the measured value is decided by the measurement settings. In other words, <strong class="semicon-key">even for the same line, the number changes depending on the height at which you measure</strong>.</p>
+<p><strong class="semicon-key">"The number matches" and "the shape matches" are two different things.</strong> Think of a number as the result of looking at one place with one method.</p>
+<div class="semicon-cta">
+<h3>A closer look at measurement tools</h3>
+<p>If you want to learn more about the measurement tools themselves, also read our article on CD-SEM and SEM review.</p>
+<div class="semicon-btnrow"><a class="semicon-btn" href="https://semicon-campus.com/what-is-cd-sem-sem-review/">What are CD-SEM and SEM review?</a></div>
+</div>
+<h2 class="wp-block-heading">Why are dimension shifts a problem?</h2>
+<p>If line width or edge shape changes, circuit properties such as how easily current flows may change. However, these sources do not give a rule like "a shift of X nm means a defect." That differs by product and process. What we could confirm is only that edge roughness can, under some conditions, lead to lower performance or failures.</p>
+<h2 class="wp-block-heading" data-fact-ids="C02 C03 C08">How do you look for the cause of a shift?</h2>
+<p>When a line width shift is found on the floor, it can be investigated in roughly this order.</p>
+<ol>
+<li><strong>Measure again.</strong> The number can change depending on how it is measured.</li>
+<li><strong>Align the basis of comparison.</strong> Decide whether you are comparing after the light transfer or after etching.</li>
+<li><strong>Look at location patterns.</strong> Sort out where on the wafer, on which tool, and when it was made.</li>
+<li><strong>Check the equipment records.</strong> Compare records of shape-defining conditions, such as pressure and electrical power, with the maintenance history.</li>
+<li><strong>Confirm with more data.</strong> It may just be a coincidence, so confirm before deciding.</li>
+</ol>
+<p>Equipment adjustment and recovery are done following the official procedures of your fab or equipment maker, and under the judgment of authorized people. This article introduces ways of thinking about causes. It does not give instructions for operating equipment.</p>
+<p>Tracking down this kind of problem is shared among roles such as equipment maintenance, production engineering, process, and metrology and quality. Experience in manufacturing with dimensional tolerances and process records is likely to help with aligning "which dimension, at which point in time." For the big picture of these jobs, see <a href="https://semicon-campus.com/semiconductor-career-map/">semiconductor manufacturing jobs by process</a>.</p>
+<h2 class="wp-block-heading">Review of key terms</h2>
+<p>Here is a simple recap of the terms in this article.</p>
+<ul>
+<li><strong>Line width / CD:</strong> How thick a line is. Also includes hole diameters and gaps between lines.</li>
+<li><strong>Resist:</strong> A light-sensitive film. The line shape is transferred onto it with light.</li>
+<li><strong>Etching:</strong> The process of removing film to transfer the shape down to the layer below.</li>
+<li><strong>LER / LWR:</strong> Jaggedness of a line's edge, and variation in line width.</li>
+<li><strong>CD-SEM:</strong> An electron microscope that measures line width.</li>
+</ul>
+<h2 class="wp-block-heading">Common misunderstandings</h2>
+<h3>Q. Is a thinner line always better?</h3>
+<p>Thinness alone does not decide it. Besides the average width, edge roughness and wall shape also matter. We found no basis in these sources for saying "smaller is better."</p>
+<h3>Q. If the CD-SEM number matches the design, does the shape match the design too?</h3>
+<p>Not necessarily. If the cross section is a trapezoid, the top and bottom widths differ. You need to check where the number was measured.</p>
+<h3>Q. If the equipment settings are normal, does that mean the shift is not the equipment's fault?</h3>
+<p>Checking the settings is not enough. Even with the same settings, the etch rate can change with trench width. Look at the settings, the pattern, and the measurement method together.</p>
+<h2 class="wp-block-heading">Summary: A line width shift is a starting point for checking where it changed</h2>
+<div class="semicon-lead">
+<p>Line width (CD) can change little by little through light transfer, etching, and measurement.<br />A measured number is the result of looking at one place with one method, not the shape itself.<br />Look for the cause in this order: measure again, align the basis, look at location, check equipment records, and confirm.</p>
+</div>
+<div class="semicon-cta">
+<h3>We also explain semiconductors simply on YouTube</h3>
+<p>For those who want to review with diagrams, we also post short explanations of semiconductor manufacturing on YouTube.</p>
+<div class="semicon-btnrow"><a rel="noopener" class="semicon-btn secondary" href="https://www.youtube.com/@semicon-campus" target="_blank">Watch illustrated videos on YouTube</a></div>
+</div>
+<h2 class="wp-block-heading">Official sources used</h2>
+<ul class="semicon-sources">
+<li data-source-id="S01"><a href="https://averroes.ai/blog/what-is-critical-dimension-sem">Averroes, "What is Critical Dimension SEM"</a></li>
+<li data-source-id="S02"><a href="https://www.pti-inc.com/glossary/etch-bias/">PTI, "Etch Bias"</a></li>
+<li data-source-id="S03"><a href="https://cense.engr.uky.edu/equipment/reactive-ion-etching">University of Kentucky CENSE, "Reactive Ion Etching"</a></li>
+<li data-source-id="S04"><a href="https://www.samcointl.com/news-events/tutorials/loading-and-microloading-effect-si-drie/">Samco, "Loading Effect and Microloading Effect in Silicon DRIE"</a></li>
+<li data-source-id="S05"><a href="https://newsroom.lamresearch.com/virtual-twins-accelerate-layout-semiconductor-manufacturing">Lam Research, "Accelerating Semiconductor Development with Virtual Twins" (2025)</a></li>
+<li data-source-id="S06"><a href="https://www.globalsino.com/EM/page9.html">Practical Electron Microscopy and Database, "LER/LWR"</a></li>
+<li data-source-id="S07"><a href="https://newsroom.lamresearch.com/improving-line-edge-roughness-using-virtual-fabrication">Lam Research, "Improving Line Edge Roughness Using Virtual Fabrication"</a></li>
+<li data-source-id="S08"><a href="https://www.hitachi-hightech.com/jp/ja/knowledge/semiconductor/room/manufacturing/cd-sem.html">Hitachi High-Tech, "4. What is a CD-SEM (critical dimension SEM)?"</a></li>
+</ul>
+<section class="semicon-correction-form">
+<h2>Questions and corrections form</h2>
+<p>If you find an error or anything unclear in this article, please let us know using the form below. We will check it and fix the article.</p>
+<div class="semicon-form-shortcode">
+<div class="wpcf7 no-js" id="wpcf7-f2045-o13" lang="ja" dir="ltr" data-wpcf7-id="2045">
+<div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
+<form action="/?rest_route=%2Fwp%2Fv2%2Fposts&#038;per_page=100&#038;page=1&#038;context=view#wpcf7-f2045-o13" method="post" class="wpcf7-form init" aria-label="Contact form" novalidate="novalidate" data-status="init">
+<fieldset class="hidden-fields-container"><input type="hidden" name="_wpcf7" value="2045" /><input type="hidden" name="_wpcf7_version" value="6.1.6" /><input type="hidden" name="_wpcf7_locale" value="ja" /><input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f2045-o13" /><input type="hidden" name="_wpcf7_container_post" value="0" /><input type="hidden" name="_wpcf7_posted_data_hash" value="" />
+</fieldset>
+<p>You do not need to enter your name, phone number, or address. Please do not include fab names or confidential information.
+</p>
+<p><label>Type of report (required) <span class="wpcf7-form-control-wrap" data-name="report-type"><select class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required" aria-required="true" aria-invalid="false" name="report-type"><option value="誤りと思われる点">Possible error</option><option value="分かりにくい箇所">Unclear part</option><option value="追加してほしい説明・質問">Request for more explanation / question</option></select></span></label><br />
+<label>Related heading or text (optional) <span class="wpcf7-form-control-wrap" data-name="report-section"><input size="40" maxlength="200" class="wpcf7-form-control wpcf7-text" aria-invalid="false" value="" type="text" name="report-section" /></span></label><br />
+<label>Details (required) <span class="wpcf7-form-control-wrap" data-name="report-message"><textarea cols="40" rows="10" maxlength="3000" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" aria-required="true" aria-invalid="false" name="report-message"></textarea></span></label><br />
+<label>Email for reply (optional, only if you would like a reply) <span class="wpcf7-form-control-wrap" data-name="report-email"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-email wpcf7-text wpcf7-validates-as-email" autocomplete="email" aria-invalid="false" value="" type="email" name="report-email" /></span></label>
+</p>
+<p>Your feedback will be used to check and improve our articles. Please see our <a href="https://semicon-campus.com/privacy-policy/">handling of personal information</a>.
+</p>
+<p><input class="wpcf7-form-control wpcf7-submit has-spinner" type="submit" value="Send feedback or correction" />
+</p><div class="wpcf7-response-output" aria-hidden="true"></div>
+</form>
+</div>
+</div>
+</section>
+</div>

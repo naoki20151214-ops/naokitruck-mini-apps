@@ -1,0 +1,266 @@
+
+<!--KEEP:0-->
+
+
+<!--KEEP:1-->
+
+<!--KEEP:2-->
+
+<article class="semicon-article" id="top">
+<div class="semicon-level">
+  <div class="semicon-level-badge">Beginner</div>
+  <div>
+    <strong>Level of this article</strong><br>
+    For people learning about the semiconductor back-end process for the first time. We walk through, in order, how chips cut apart by dicing are attached to a substrate or lead frame, from alignment and bonding to heating and quality checks.
+  </div>
+</div>
+
+<p class="semicon-lead">Die bonding is a back-end process that attaches semiconductor chips, cut apart by dicing, to set positions on a substrate or lead frame. It may look like simply "placing a chip," but in practice, position accuracy, bond condition, heat paths, and keeping voids to a minimum strongly affect quality.</p>
+
+<div class="semicon-note">
+  <strong>First, understand it as a technology</strong><br>
+  This article first explains what die bonding means, the process flow, attachment methods, and quality defects. Then it points to next steps for people who saw this term in a job posting, people who want to research equipment and materials companies, and people who want to learn the back-end process systematically.
+</div>
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/die-bonding-flow.png" alt="Basic die bonding flow: pickup, alignment, attaching and bonding, heating and curing, then checking">
+  <figcaption>Die bonding proceeds in this order: pick up the chip, align it, attach it, cure it, and check it. It is not just "placing" the chip. The bond condition is also controlled so that the chip does not peel off later or have trouble getting rid of heat.</figcaption>
+</figure>
+
+<div class="semicon-map">
+  <strong>What you will learn in this article</strong>
+  <ul>
+    <li>What die bonding is and where it fits in the back-end process</li>
+    <li>The flow of chip pickup, alignment, and attaching and bonding</li>
+    <li>Attachment methods such as adhesive, die attach film, solder, and sintering</li>
+    <li>Why misalignment, tilt, voids, and poor adhesion are problems</li>
+    <li>Terms you will see in job postings and company research, and what to read next</li>
+  </ul>
+</div>
+
+
+<h2>What is die bonding?</h2>
+
+<p>Die bonding is the process of attaching a semiconductor chip inside a package. In English, it is called die bonding or die attach. After dicing cuts the wafer into individual chips, each chip is placed at a set position on a substrate, lead frame, interposer, or similar base and attached.</p>
+
+<p>What matters here is not just attaching the chip, but placing it "in the right position, facing the right way, stably, and in a way that meets heat and electrical requirements." If a chip is slightly shifted, tilted, or has air gaps left in the bonding layer, it can cause problems later in wire bonding, encapsulation, or testing.</p>
+
+<p>ASMPT describes die bonding as an important assembly process that attaches semiconductor chips to substrates. Materials makers such as Henkel and Indium also treat die attach materials as materials that affect package reliability and thermal performance. In other words, die bonding is a process where equipment, materials, temperature, pressure, and position accuracy all come together.</p>
+
+<div class="semicon-mobile-summary">If you are reading on your phone, this is all you need to start. Die bonding is "the process of accurately attaching a cut chip to the base of its package." The key to quality is keeping misalignment, tilt, voids, and poor adhesion under control.</div>
+
+<h2>Where does it fit in the back-end process?</h2>
+
+<p>Semiconductor manufacturing is broadly divided into the front-end process and the back-end process. In the front-end process, transistors and wiring are made on a silicon wafer. In the back-end process, that wafer is cut apart, and each chip is assembled into a form that can be used as an actual component.</p>
+
+<p>Die bonding is a typical process that comes right after dicing. Dicing cuts the chips apart, die bonding attaches them to a base, and then the chips move on to wire bonding or flip-chip bonding, encapsulation, and final testing.</p>
+
+<div class="semicon-grid two">
+  <div class="semicon-card"><b>Dicing</b><span>The process of cutting the wafer into individual chips. It is important to pass chips to the next process with minimal chipping, cracking, and contamination.</span></div>
+  <div class="semicon-card"><b>Die bonding</b><span>The process of attaching the cut chips to a substrate or lead frame. Position, tilt, and bond condition are controlled.</span></div>
+</div>
+
+<h2>The flow from dicing to die bonding</h2>
+
+<p>The detailed conditions for die bonding vary with the product, package structure, materials, and equipment. But for beginners, it is easiest to understand it as the following five steps.</p>
+
+<h3>1. Pick up the chip</h3>
+<p>After dicing, the chips are lined up on tape. The tool recognizes the target chip and gently lifts it with a vacuum nozzle or similar part. At this point, it is important not to crack the chip, not to scratch its surface, and not to get its orientation wrong. When a job posting mentions terms like "pickup," "chip feeding," or "transfer," the job may include work or equipment management around this step.</p>
+
+<h3>2. Align with the substrate or lead frame</h3>
+<p>The base that the chip is attached to has a set position where the chip must go. The tool uses cameras and other means to see the positions of the chip and the base, and aligns them so they do not shift. If alignment is loose, defects are more likely later in wiring connection or visual inspection.</p>
+
+<h3>3. Attach with adhesive, solder, sintering material, or similar</h3>
+<p>Methods for attaching the chip include epoxy adhesives, die attach film, solder, and silver sintering material. Which method is used depends on how well the product needs to release heat, the electrical connection, cost, and reliability.</p>
+
+<h3>4. Heat, cure, and bond</h3>
+<p>When adhesive or film is used, heat is applied to cure it. When solder or sintering material is used, controlling conditions such as temperature, time, and pressure is also important. If the temperature is too low, adhesion may be poor. If it is too high, it can put extra stress on the materials or the chip.</p>
+
+<h3>5. Check position, tilt, and voids</h3>
+<p>After attachment, the chip is checked to see whether it is in the correct position, whether it is tilted, and whether any voids remain in the bonding layer. Visual inspection, X-ray inspection, and checking tool data may be involved. Small oddities found here lead to yield improvement later.</p>
+
+<h2>A quick look at the different attachment methods</h2>
+
+<p>The attachment method used in die bonding varies with the type of product. As a beginner, you do not need to memorize every material name. It is enough to see the big differences: "attaching with adhesive," "attaching with film," and "using solder or sintering to release heat more easily."</p>
+
+<div class="semicon-table-wrap">
+  <table class="semicon-table">
+    <thead>
+      <tr><th>Attachment method</th><th>How it works</th><th>What to watch</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Adhesive</td><td>Attaches the chip with a liquid or paste material</td><td>Amount applied, overflow, curing conditions, bond strength</td></tr>
+      <tr><td>Die attach film</td><td>Uses adhesive that is already in film form</td><td>Thickness, lamination, voids, ease of processing</td></tr>
+      <tr><td>Solder</td><td>Bonds with a metal material, creating a path for heat and electricity</td><td>Wettability, voids, temperature conditions, reliability</td></tr>
+      <tr><td>Sintering material</td><td>Bonds by firing particles such as silver until they fuse</td><td>Thermal conductivity, pressure, temperature, fit with power semiconductors</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<p>For products that generate a lot of heat, such as power semiconductors, getting heat out of the chip is very important. Indium explains that thermal conductivity and void reduction are key points for die attach materials. Henkel also presents die attach films and pastes as materials that affect the reliability of wire-bonded packages.</p>
+
+
+<!-- semicon-a8-top30-top30-7-1:start -->
+
+
+<!-- semicon-a8-top30-top30-7-1:end -->
+<h2>What to look for in quality</h2>
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/die-bonding-quality.png" alt="Quality points in die bonding: keeping misalignment, tilt, voids, and poor adhesion under control">
+  <figcaption>Die bonding quality is not decided only at the moment the chip is placed. Checks cover position, tilt, the bonding layer, heat paths, and how easy the chip is to handle in later processes.</figcaption>
+</figure>
+
+<h3>Misalignment</h3>
+<p>This is when the chip is shifted from its set position. If the shift is large, problems may appear later in wire bonding or encapsulation, or the chip may be rejected in visual inspection. The tool's camera recognition, transfer, and substrate positioning are involved.</p>
+
+<h3>Tilt</h3>
+<p>This is when the chip does not sit level and is slanted. With tilt, the thickness of the bonding layer varies from place to place, which can affect how heat escapes and how connections are made in later processes. Even a difference that looks small can affect package reliability.</p>
+
+<h3>Voids</h3>
+<p>A void is an empty space left inside the bonding layer. If there are many air gaps, heat may have trouble escaping, or the bond strength may drop. Especially for products that need to release heat, how well voids are suppressed is important.</p>
+
+<h3>Poor adhesion</h3>
+<p>This is when the adhesive or solder does not work well enough and the chip is not firmly attached. The amount of material, heating conditions, pressure, and surface condition are involved. Poor adhesion affects reliability in later processes and during use.</p>
+
+<div class="semicon-note">
+  <strong>The link to yield</strong><br>
+  Die bonding defects sometimes show up later as questions like "Why do chips in only this lot peel off easily?", "Why do they break easily from heat?", or "Why have visual defects increased?" That is why it is important to look at tool conditions, material lots, temperature, pressure, and inspection results together.
+</div>
+
+<h2>Related equipment, materials, and companies</h2>
+
+<p>Die bonding involves equipment that transfers and aligns chips, materials such as adhesives and films, and systems for heating, curing, and inspection. Not only equipment companies but also materials companies and outsourced back-end assembly companies are important.</p>
+
+<div class="semicon-grid">
+  <div class="semicon-card"><b>Equipment</b><span>Die bonders, flip-chip bonders, pickup mechanisms, image recognition, transfer, heated stages, and more.</span></div>
+  <div class="semicon-card"><b>Materials</b><span>Adhesives, die attach film, solder, silver sintering material, thermal interface materials, and more.</span></div>
+  <div class="semicon-card"><b>Inspection</b><span>Visual inspection, position checks, X-ray inspection, void checks, bond condition checks, and more.</span></div>
+</div>
+
+<p>ASMPT offers equipment for die bonding and flip-chip assembly. Henkel handles adhesive materials such as die attach film and die attach paste. Indium presents die attach materials for semiconductor packaging, such as solder and preforms.</p>
+
+<p>When researching companies, it is easier to understand if you don't just look at the company name, but sort them into "equipment," "materials," "inspection," or "outsourced back-end assembly." Die bonding is exactly where equipment, materials, and quality meet.</p>
+
+<div class="semicon-cta">
+  <h3>For those researching companies and equipment</h3>
+  <p>Die bonding is a process that involves back-end equipment, adhesive materials, inspection, and packaging companies. If you want to look at companies by process, the company map makes the connections easier to see.</p>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn" href="https://semicon-campus.com/semiconductor-company-map-by-process/">See the company map by process</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/what-is-backend-semiconductor-process/">Review the whole back-end process</a>
+  </div>
+</div>
+
+<section class="mp1-section" id="maintenance-phase1-learning"><h2>Connecting die bonders, transfer, and alignment to real work and further learning</h2><p>For die bonding problems, separate the issue (misalignment, tilt, voids, and so on), then compare the condition of the transfer, image recognition, and heating sections with the material and bonding conditions. If you handled checks on pickup or alignment, summarize the parts you checked, the quality results, and the information you passed to specialists. This can lead to learning that fills gaps in mechanical and control basics, and to job searches that use your maintenance experience with transfer systems.</p></section>
+<h2>Die bonding also leads to jobs</h2>
+
+<p>Die bonding connects to several jobs, such as manufacturing operator, inspection and quality, materials and process, and equipment maintenance. In job postings, it may appear with terms such as "die bond," "die attach," "chip mounting," "bonding conditions," "visual inspection," and "X-ray inspection."</p>
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/die-bonding-jobs.png" alt="Diagram showing that die bonding connects to jobs as equipment operator, inspection and quality, materials and process, and equipment maintenance">
+  <figcaption>Even within die bonding, the job varies depending on whether it centers on operating equipment, also covers bonding conditions and materials, or includes inspection and quality records.</figcaption>
+</figure>
+
+<div class="semicon-table-wrap">
+  <table class="semicon-table">
+    <thead>
+      <tr><th>Related job</th><th>What the work covers</th><th>Common terms in job postings</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Manufacturing operator</td><td>Chip feeding, operating equipment, checking conditions, work records</td><td>Die bond, assembly, equipment operator, cleanroom</td></tr>
+      <tr><td>Inspection / quality</td><td>Misalignment, tilt, voids, bond condition, visual checks</td><td>Visual inspection, X-ray inspection, quality checks, failure analysis</td></tr>
+      <tr><td>Materials / process</td><td>Adhesives, solder, sintering, curing conditions, bonding conditions</td><td>Bonding conditions, process conditions, process improvement, materials evaluation</td></tr>
+      <tr><td>Equipment maintenance</td><td>Checking pickup, transfer, image recognition, heating sections, and alignment</td><td>Equipment maintenance, maintenance, transfer systems, image recognition, equipment startup</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="semicon-cta">
+  <h3>For those who saw "die bond" or "die attach" in a job posting</h3>
+  <p>Even within die bonding, the job varies depending on whether it centers on operating equipment, also covers managing alignment and bonding conditions, or includes visual inspection and quality records. If you want to sort out the job duties first, go to the guide on reading job postings. If you are already looking for jobs, go to the guide to choosing career services by experience.</p>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn" href="https://semicon-campus.com/how-to-read-semiconductor-job-description/">Check job duties and how to read job postings</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/semiconductor-career-service-selection-guide/">Compare semiconductor career services by experience</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/%e5%8d%8a%e5%b0%8e%e4%bd%93%e6%b1%82%e4%ba%ba%e3%82%ad%e3%83%bc%e3%83%af%e3%83%bc%e3%83%89%e4%b8%80%e8%a6%a7%ef%bd%9c%e6%9c%aa%e7%b5%8c%e9%a8%93%e8%80%85%e3%81%8c%e6%b1%82%e4%ba%ba%e7%a5%a8%e3%81%a7/">See related job posting keywords</a>
+  </div>
+</div>
+
+<h2>Summary</h2>
+
+<p>Die bonding is a back-end process that attaches semiconductor chips, cut apart by dicing, to a substrate or lead frame. It proceeds in this order: pickup, alignment, attaching and bonding, heating and curing, and checking.</p>
+
+<p>The key points for beginners are misalignment, tilt, voids, and poor adhesion. Once you understand these, you will see how back-end quality, yield, equipment, materials, and job posting terms all connect.</p>
+
+<div class="semicon-cta">
+  <h3>Choose your next step based on your goal</h3>
+  <p>Now that you understand die bonding, it is easier to know where to go next if you decide what you want to learn: "the whole back-end process," "job postings," or "companies and equipment."</p>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn" href="https://semicon-campus.com/what-is-backend-semiconductor-process/">Learn the whole back-end process</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/how-to-read-semiconductor-job-description/">Sort out terms you saw in job postings</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/semiconductor-company-map-by-process/">Research companies and equipment</a>
+  </div>
+</div>
+
+<h2>Coming next</h2>
+
+<p>If you are reading on, we recommend <a href="https://semicon-campus.com/what-is-semiconductor-wire-bonding/">What is wire bonding?</a>, which covers connecting the attached chip to external terminals with fine metal wires. It explains, for beginners, how the chip is electrically connected after it is placed by die bonding.</p>
+
+<p>Next time, we will cover "encapsulation and molding," which protects the chip and wires with resin or similar materials. Let's follow how the back-end process gradually brings the chip closer to a finished product.</p>
+
+<div class="semicon-note">
+  <strong>We also explain semiconductors clearly on YouTube</strong><br>
+  If you want to learn semiconductor manufacturing through short videos and diagrams, check out our YouTube channel, <a href="https://www.youtube.com/@semicon-campus">Semiconductor Classroom for the AI Era</a>.
+</div>
+
+<h2>What to read next</h2>
+
+<div class="semicon-links">
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/what-is-semiconductor-dicing/">What is dicing?</a></strong>
+    <p>Explains the process right before die bonding, where the wafer is cut into chips.</p>
+  </div>
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/what-is-backend-semiconductor-process/">What is the back-end process?</a></strong>
+    <p>The parent article that covers the whole back-end process, from dicing and die bonding to connection, encapsulation, and testing.</p>
+  </div>
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/how-to-read-semiconductor-job-description/">How to read semiconductor job postings</a></strong>
+    <p>An article on reading job postings by separating job duties, requirements, and working style.</p>
+  </div>
+</div>
+
+<h2>Related articles</h2>
+
+<div class="semicon-links">
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/what-is-semiconductor-inspection-quality-control/">What is semiconductor inspection and quality evaluation?</a></strong>
+    <p>Learn about jobs involved in post-die-bonding checks, such as misalignment, visual inspection, and X-ray inspection.</p>
+  </div>
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/">What is a semiconductor maintenance job?</a></strong>
+    <p>Leads to jobs that keep equipment running, covering transfer, pickup, heating sections, image recognition, and more.</p>
+  </div>
+</div>
+
+
+<section class="mp1-section" id="maintenance-phase1-career"><h2>Jobs that use knowledge of die bonders, transfer, and alignment, and your next steps</h2><p>If you have experience checking transfer, pickup, or heating sections, or with alignment, organize it as sets of "target tool, issue, checks you did, and result." Compare the equipment you would handle, night shift and travel, training, and application requirements against the job posting, so you can separate the experience you can use from the knowledge you need to add.</p><aside class="semicon-cta mp1-card"><h3>Check the big picture of the work, and how to choose jobs and learning</h3><p>On the Equipment Maintenance Hub, you can review inspection and troubleshooting work, how to organize your experience, and jobs, basic learning, and certification prep all in one place. If you want to compare the scope of tool ownership and customer support, see the related job articles as well.</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/" class="semicon-btn mp1-button" data-maintenance-phase1-hub="277" data-cta="maintenance_hub" data-cta-type="maintenance_hub" data-cta-stage="career" data-cta-id="maintenance_466_hub277_end" data-cta-route="maintenance_466_hub277_end">See job duties, openings, and learning on the Equipment Maintenance Hub</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/" class="semicon-btn mp1-button" data-maintenance-phase1-hub="237" data-cta="equipment_hub" data-cta-type="equipment_hub" data-cta-stage="career" data-cta-id="maintenance_466_hub237_end" data-cta-route="maintenance_466_hub237_end">See the scope, openings, and learning for equipment engineers</a></div></aside></section>
+
+<h2>References</h2>
+
+<div class="semicon-note">
+  <ul>
+    <li><a href="https://semi.asmpt.com/en/products/icd/da/">ASMPT: Die Bonding</a></li>
+    <li><a href="https://semi.asmpt.com/en/news-center/market-insights/innovative-die-attach-solutions-for-advanced-blt-control/">ASMPT: Innovative Die Attach Solutions for Advanced BLT Control</a></li>
+    <li><a href="https://next.henkel-adhesives.com/us/en/applications/wirebond-semiconductor-packaging/die-attach-film.html">Henkel: Die Attach Film</a></li>
+    <li><a href="https://next.henkel-adhesives.com/us/en/applications/wirebond-semiconductor-packaging/die-attach-paste.html">Henkel: Die Attach Paste</a></li>
+    <li><a href="https://www.indium.com/applications/semiconductor-packaging-and-assembly/die-attach/">Indium Corporation: Die Attach</a></li>
+  </ul>
+</div>
+
+<div class="semicon-note">
+  <strong>How we researched this article</strong><br>
+  To help beginners grasp the big picture of the back-end process, this article checks basic information published by equipment and materials makers and explains technical terms in simple language. Actual tool conditions and material choices vary with product structure, package, and reliability requirements. Last checked: July 11, 2026.
+</div>
+
+<a class="semicon-backtop" href="#top" aria-label="Back to top">↑</a>
+</article>

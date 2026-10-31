@@ -1,0 +1,329 @@
+
+<!--KEEP:0-->
+
+
+<!--KEEP:1-->
+
+
+<!--KEEP:2-->
+<div class="semicon-article" id="semicon-top">
+
+
+
+<div class="semicon-level">
+  <div class="semicon-level-top"><span class="semicon-level-label">Learning level</span><strong>Beginner → Intermediate</strong></div>
+  <p>This is for people who are starting to understand the basics of deposition, CMP, inspection, and SPC. We explain film thickness measurement not just as "measuring how thick a thin film is," but as a term that connects to process control, yield, and job postings.</p>
+  <p>The level label is a guide to reading order. The idea is to get the big picture from beginner articles, then connect it to job and job-posting terms with intermediate articles like this one.</p>
+</div>
+
+
+
+<p class="semicon-lead wp-block-paragraph">Film thickness measurement is semiconductor metrology that measures the thickness of thin films formed on a wafer. It checks whether a film from deposition is too thick, whether CMP removed too much, and whether there is unevenness between the center and edge of the wafer. This article explains film thickness measurement for beginners and connects it to deposition, CMP, SPC, yield improvement, and the terms "thin-film evaluation," "metrology," and "process control" that appear in job postings.</p>
+
+
+
+<div class="semicon-map">
+  <h3>What you will learn in this article</h3>
+  <ol>
+    <li>What film thickness measurement measures</li>
+    <li>Why film thickness is measured after deposition and CMP</li>
+    <li>What "too thick," "too thin," and "uneven" mean</li>
+    <li>The roles of reflectometry, ellipsometry, XRR, and mapping</li>
+    <li>How it connects to SPC and yield improvement</li>
+    <li>What "film thickness measurement," "thin-film evaluation," and "metrology" mean in job postings</li>
+  </ol>
+</div>
+
+
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/film-thickness-featured.png" alt="What is film thickness measurement? Light is used to measure the thickness of a thin film on a wafer and judge whether it is too thick, too thin, uneven, or normal">
+  <figcaption>Film thickness measurement measures the thickness of a thin film to confirm that the process is working as intended.</figcaption>
+</figure>
+<div class="semicon-mobile-summary">
+  <b>Key points of the figure</b>
+  <ul>
+    <li>Measure the thickness of thin films</li>
+    <li>Look for films that are too thick, too thin, or uneven</li>
+    <li>Feed the results back into reviewing process conditions</li>
+  </ul>
+</div>
+
+
+
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>"Film thickness" came up a lot in the deposition and CMP articles. If it is just measuring thickness, it sounds easy. Why is it so important?</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>In semiconductors, even a tiny difference in film thickness can affect electrical properties and yield. So we need to measure not just "was it made?" but "was it made at the target thickness, evenly?"</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>So it is not enough for the average to be right.</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>Exactly. Is it different between the center and the edge? Does it drift from lot to lot? Does it change only on a certain tool? Film thickness measurement is also an entry point for finding a process's habits.</p></div></div>
+
+
+
+
+<h2 class="wp-block-heading">What is film thickness measurement?</h2>
+
+
+
+<p class="wp-block-paragraph">Film thickness measurement means measuring the thickness of thin films formed on a wafer. Semiconductor manufacturing forms many kinds of films again and again: oxide films, insulating films, metal films, barrier films, resist films, and more. If a film is not at its target thickness, it affects the next process and the final chip performance.</p>
+
+
+
+<p class="wp-block-paragraph">For example, if an insulating film is too thin, leakage may increase in places where current should not flow. If it is too thick, the dimensions of the next process or the electrical properties may shift. In CMP, where films are polished away, film thickness measurement is also needed to check for leftover film or over-polishing.</p>
+
+
+
+<div class="semicon-note">
+  <p><strong>Put simply for beginners, film thickness measurement is "a health checkup for thin films."</strong></p>
+  <p>It is not just about measuring thickness. It is used to see whether the process is running as usual, whether there is unevenness across the wafer, and whether the wafer can safely move to the next process.</p>
+</div>
+
+
+
+<h2 class="wp-block-heading">Film thickness measurement closes the loop on the process</h2>
+
+
+
+<p class="wp-block-paragraph">Film thickness measurement does not end with producing a number. You form a film with deposition, polish it with CMP, and then measure its thickness. If it turns out too thick, too thin, or too uneven, you go back and review conditions such as gas flow, processing time, temperature, polishing conditions, and equipment maintenance.</p>
+
+
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/film-thickness-flow.png" alt="Film thickness measurement closes the loop on the process: make the film, measure thickness, look at the distribution, judge, and feed back to conditions">
+  <figcaption>Film thickness measurement feeds measured values back into process conditions to stabilize deposition and CMP.</figcaption>
+</figure>
+<div class="semicon-mobile-summary">
+  <b>Key points of the figure</b>
+  <ul>
+    <li>Measure thickness after deposition or CMP</li>
+    <li>Look at the distribution, such as center vs. edge and tool-to-tool differences</li>
+    <li>If abnormal, go back to adjusting conditions or maintenance</li>
+  </ul>
+</div>
+
+
+
+<p class="wp-block-paragraph">This idea also connects to SPC. If you look at film thickness measurements lot by lot, it becomes easier to notice changes such as the process slowly drifting thicker, only one tool running thin, or unevenness growing only at the wafer edge.</p>
+
+
+
+<h2 class="wp-block-heading">Three abnormal patterns in film thickness</h2>
+
+
+
+<p class="wp-block-paragraph">The abnormal patterns seen in film thickness measurement fall into three broad types: "too thick," "too thin," and "uneven." The key point is not to feel safe based on the average alone. Even if the average thickness is close to target, a poor distribution across the wafer can lead to performance variation between chips and lower yield.</p>
+
+
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/film-thickness-bad-patterns.png" alt="Three abnormal patterns in film thickness: too thick, too thin, and uneven between center and edge">
+  <figcaption>For film thickness, look not only at the average but also at unevenness across the wafer and changes between lots.</figcaption>
+</figure>
+<div class="semicon-mobile-summary">
+  <b>Key points of the figure</b>
+  <ul>
+    <li>Too thick: dimensions and electrical properties in the next process shift</li>
+    <li>Too thin: the insulating or barrier role becomes weaker</li>
+    <li>Uneven between center and edge: suspect equipment conditions or the CMP state</li>
+  </ul>
+</div>
+
+
+
+<div class="semicon-grid">
+  <div class="semicon-card"><b>Too thick</b><span>Suspect a deposition time that is too long, a reaction that is too strong, leftover film, and so on.</span></div>
+  <div class="semicon-card"><b>Too thin</b><span>Suspect insufficient deposition, etching or CMP going too far, film damage, and so on.</span></div>
+  <div class="semicon-card"><b>Uneven</b><span>Suspect the temperature, gas distribution, polishing state across the wafer, or the equipment condition.</span></div>
+</div>
+
+
+
+<h2 class="wp-block-heading">Common methods for film thickness measurement</h2>
+
+
+
+<p class="wp-block-paragraph">There are several methods for measuring film thickness. Common ones include reflectometry, which uses reflected light; ellipsometry, which looks at changes in polarization; and XRR, which uses X-rays. In real fabs, the method is chosen based on the film type, its thickness, whether it is transparent or opaque, whether it is single-layer or multilayer, and whether it needs to be measured quickly during volume production.</p>
+
+
+
+<h3 class="wp-block-heading">Some films are easy to measure with light, while others need different methods</h3>
+
+
+
+<p class="wp-block-paragraph">What matters in film thickness measurement is not "which method is the most impressive," but choosing "which method fits which film." For films that interact well with light, such as oxide films, nitride films, resist films, and interlayer dielectric films, reflectometry and ellipsometry are commonly used. Their strength is that they do not damage the wafer and can measure quickly on a production line.</p>
+
+
+
+<p class="wp-block-paragraph">On the other hand, for metal films such as copper, aluminum, and tungsten, or for complex multilayer films, optical measurement alone may not be enough. In those cases, methods suited to the purpose are combined, such as XRR using X-rays, estimating thickness or film condition from sheet resistance, and cross-section observation. In other words, film thickness measurement is a job that changes the measuring method to fit "the film material," "the thickness," and "the purpose of the process."</p>
+
+
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/film-thickness-methods.png" alt="Common methods for film thickness measurement: reflectometry, ellipsometry, XRR, and mapping">
+  <figcaption>More than the names of methods, it is important to understand "which film is measured, in which process, and for what purpose."</figcaption>
+</figure>
+<div class="semicon-mobile-summary">
+  <b>Key points of the figure</b>
+  <ul>
+    <li>Reflectometry: reads film thickness from reflected light</li>
+    <li>Ellipsometry: reads film thickness and optical properties from changes in polarization</li>
+    <li>XRR / X-ray: evaluates thin and multilayer films with high precision</li>
+    <li>Mapping: shows the film thickness distribution across the wafer</li>
+  </ul>
+</div>
+
+
+
+<p class="wp-block-paragraph">KLA, Onto Innovation, Nova, and Semilab are well-known companies that offer thin-film measurement and metrology equipment. KLA describes thin-film reflectometers that measure film thickness, refractive index, and more, and Onto Innovation and Nova also offer metrology products for semiconductors.</p>
+
+
+
+<div class="semicon-compare">
+<table>
+  <thead>
+    <tr><th>Method</th><th>Beginner's view</th><th>How it appears in job postings</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Reflectometry</strong></td><td>Reads thin-film thickness from the pattern of reflected light</td><td>Film thickness measurement, thin-film measurement, optical measurement</td></tr>
+    <tr><td><strong>Ellipsometry</strong></td><td>Reads film thickness and optical properties from changes in polarization</td><td>Ellipsometry, thin-film evaluation, optical properties</td></tr>
+    <tr><td><strong>XRR / X-ray</strong></td><td>Evaluates thin and multilayer films with high precision</td><td>X-ray evaluation, XRR, materials evaluation</td></tr>
+    <tr><td><strong>Mapping</strong></td><td>Shows the center, edge, and in-wafer distribution</td><td>Within-wafer uniformity, variation analysis, process control</td></tr>
+  </tbody>
+</table>
+</div>
+
+
+<section class="mp1-section" id="maintenance-phase1-learning"><h2>Connect film thickness measurement and post-maintenance quality checks to real work and further study</h2><p>In post-maintenance checks, separate "the equipment runs" from "the process results have returned to the expected state." Experience comparing not just average film thickness but also in-wafer distribution and lot-to-lot changes against the equipment history connects to recovery checks and process improvement. Record measurements under consistent conditions, and organize what you handed over to the quality team. Learning the basics of metrology and quality control helps you explain the results.</p></section>
+
+<h2 class="wp-block-heading">Why people who understand film thickness measurement are valued in the job market</h2>
+
+
+
+<p class="wp-block-paragraph">The value of someone who understands film thickness measurement is not just being able to operate the measuring tool. It lies in being able to look at the measurements and think about which way the process is drifting, which conditions to go back to, and what the possible causes of a yield drop are.</p>
+
+
+
+<p class="wp-block-paragraph">A deposition process engineer looks at film thickness uniformity and lot-to-lot variation and adjusts temperature, pressure, gas flow, and processing time. In CMP, they look at over-polishing and leftover film and think about polishing conditions, slurry, and pad condition. In quality evaluation and inspection jobs, people check when the measurements started changing by combining them with SPC and yield data.</p>
+
+
+
+<div class="semicon-cta">
+  <h3>Film thickness measurement is a term that links technical articles to job postings</h3>
+  <p>If you find "film thickness measurement," "thin-film evaluation," "metrology," "within-wafer uniformity," "SPC," or "yield improvement" in a job posting, it connects to this article. If you have experience in quality control, analysis, evaluation, equipment maintenance, or process improvement, putting into words how you fed measurements back into process improvement makes you stronger.</p>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn" href="https://semicon-campus.com/%e5%8d%8a%e5%b0%8e%e4%bd%93%e6%b1%82%e4%ba%ba%e3%82%ad%e3%83%bc%e3%83%af%e3%83%bc%e3%83%89%e4%b8%80%e8%a6%a7%ef%bd%9c%e6%9c%aa%e7%b5%8c%e9%a8%93%e8%80%85%e3%81%8c%e6%b1%82%e4%ba%ba%e7%a5%a8%e3%81%a7/">See the job keyword list</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/how-to-read-semiconductor-job-description/">See how to read job postings</a>
+  </div>
+</div>
+
+
+
+<h2 class="wp-block-heading">What words appear in job postings?</h2>
+
+
+
+<p class="wp-block-paragraph">In job postings, film thickness measurement may appear as is, but it may also appear as "thin-film evaluation," "metrology," "optical measurement," "within-wafer uniformity," "process control," "SPC," or "yield improvement." These keywords are common in postings for deposition, CMP, inspection and metrology, quality evaluation, and process engineer roles.</p>
+
+
+
+<div class="semicon-cta">
+  <h3>Metrology roles make good use of lab, analysis, and quality experience</h3>
+  <p>Jobs that specialize in measurement like film thickness measurement may appear in job postings under names such as "metrology engineer," "measurement and evaluation," "thin-film evaluation," or "analysis and evaluation." They are less visible than design or process development roles, but they are important roles that support quality and yield on the production line.</p>
+  <p>People with experience in science lab work, chemical analysis, physical measurement, instrumental analysis, quality evaluation, or tester measurement can easily describe it as "experience taking measurements, looking at variation, and thinking about possible causes," even with no semiconductor experience. When reading job postings, look not only at equipment names but also at phrases such as "connect measurement data to process improvement," "check within-wafer uniformity," and "manage variation with SPC."</p>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn" href="https://semicon-campus.com/semiconductor-career-service-selection-guide/">See how to choose a career service strong in metrology and evaluation roles</a>
+  </div>
+</div>
+
+
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/film-thickness-career-keywords.png" alt="Film thickness keywords seen in job postings: film thickness measurement, thin-film evaluation, metrology technology, deposition, CMP, SPC, yield">
+  <figcaption>Film thickness measurement may appear across postings for deposition, CMP, inspection, and process control.</figcaption>
+</figure>
+<div class="semicon-mobile-summary">
+  <b>Key points of the figure</b>
+  <ul>
+    <li>Film thickness measurement: measuring the thickness of thin films</li>
+    <li>Thin-film evaluation: checking film quality, uniformity, and optical properties</li>
+    <li>Metrology technology: managing the process with measurement data</li>
+    <li>Deposition / CMP: linked to the processes that make and polish films</li>
+    <li>SPC / yield: looking at variation and feeding it back into improvement</li>
+  </ul>
+</div>
+
+
+
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>I thought film thickness measurement was only for the people in charge of measurement. But it is closely related to deposition and CMP work too.</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>That is right. Film thickness data shows whether the process is on target, whether the equipment condition has changed, and whether CMP is over-polishing. That is why it is a term that cuts across process, quality, and inspection.</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>So when I see "thin-film evaluation" or "metrology" in a job posting, I can think that film thickness measurement might be involved.</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>That is a good way to see it. If you have no experience at all, start from inspection, measurement, or equipment operation. If you have experience, organize how you fed measurements back into process improvement. Your way of reading job postings should change quite a bit.</p></div></div>
+
+
+
+<h2 class="wp-block-heading">Summary</h2>
+
+
+
+<p class="wp-block-paragraph">Film thickness measurement is semiconductor metrology that measures the thickness of thin films formed on a wafer. After a film is formed by deposition, or polished by CMP, it checks whether the film is too thick, too thin, uneven, or normal.</p>
+
+
+
+<p class="wp-block-paragraph">For beginners, it is enough to first remember "film thickness measurement is a health checkup for thin films." It does not end with producing a number. What matters is feeding it back into process conditions and connecting it to SPC and yield improvement. Once you understand film thickness measurement, jobs in deposition, CMP, inspection and metrology, quality evaluation, and process engineering become easier to understand.</p>
+
+
+
+<div class="semicon-cta">
+  <h3>To connect film thickness measurement to a job, look at the words in job postings</h3>
+  <p>Try searching job postings for "film thickness measurement," "thin-film evaluation," "metrology," "optical measurement," "within-wafer uniformity," "SPC," and "yield improvement." If the job description includes words like deposition, CMP, measurement data, process control, quality evaluation, or equipment conditions, the job connects to this article.</p>
+  <p>Job postings alone do not tell you the full level of experience required. How to present experience in quality, analysis, evaluation, equipment maintenance, manufacturing engineering, or process improvement for semiconductor jobs differs by role. First, check how to choose a career service strong in semiconductor jobs, and organize how you will put your experience into words.</p>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn" href="https://semicon-campus.com/semiconductor-career-service-selection-guide/">See how to choose a career service strong in semiconductor jobs</a>
+  </div>
+</div>
+
+<div class="semicon-cta secondary-cta">
+  <h3>Coming next</h3>
+  <p>We have published the next article, "What Is Overlay Metrology?" It explains what happens when patterns layered by lithography are misaligned, and how measuring that misalignment connects to yield and lithography work.</p>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn" href="https://semicon-campus.com/what-is-overlay-metrology/">Read "What Is Overlay Metrology?"</a>
+  </div>
+</div>
+
+<div class="semicon-cta secondary-cta">
+  <h3>We also explain semiconductors simply on YouTube</h3>
+  <p>For people who want to review with diagrams, we also post short YouTube videos explaining semiconductor manufacturing and how processes work.</p>
+  <div class="semicon-btnrow">
+    <a rel="noopener" class="semicon-btn" href="https://www.youtube.com/@semicon-campus" target="_blank">Watch diagram videos on YouTube</a>
+  </div>
+</div>
+
+<div class="semicon-links">
+  <div class="semicon-linkbox next">
+    <h3>Read next</h3>
+    <p><a href="https://semicon-campus.com/%e6%88%90%e8%86%9c%e3%81%a8%e3%81%af%e4%bd%95%e3%81%8b%ef%bc%9f%e3%82%a6%e3%82%a7%e3%83%8f%e3%81%ae%e4%b8%8a%e3%81%ab%e8%96%84%e3%81%84%e8%86%9c%e3%82%92%e4%bd%9c%e3%82%8b%e5%8d%8a%e5%b0%8e%e4%bd%93/">What is deposition? The semiconductor process that forms thin films on a wafer</a></p>
+    <p><a href="https://semicon-campus.com/what-is-cmp-semiconductor-process/">What is CMP? The semiconductor manufacturing process that flattens the wafer surface</a></p>
+    <p><a href="https://semicon-campus.com/what-is-spc-semiconductor-process-control/">What is SPC? Semiconductor quality control that connects inspection and metrology data to process control</a></p>
+  </div>
+  <div class="semicon-linkbox">
+    <h3>Related articles</h3>
+    <p><a href="https://semicon-campus.com/what-is-semiconductor-inspection-quality-control/">What is semiconductor inspection and quality evaluation?</a></p>
+    <p><a href="https://semicon-campus.com/what-is-semiconductor-yield/">What is yield?</a></p>
+    <p><a href="https://semicon-campus.com/what-is-semiconductor-failure-analysis/">What is failure analysis?</a></p>
+    <p><a href="https://semicon-campus.com/%e5%8d%8a%e5%b0%8e%e4%bd%93%e6%b1%82%e4%ba%ba%e3%82%ad%e3%83%bc%e3%83%af%e3%83%bc%e3%83%89%e4%b8%80%e8%a6%a7%ef%bd%9c%e6%9c%aa%e7%b5%8c%e9%a8%93%e8%80%85%e3%81%8c%e6%b1%82%e4%ba%ba%e7%a5%a8%e3%81%a7/">Semiconductor job keyword list</a></p>
+  </div>
+</div>
+
+<section class="mp1-section" id="maintenance-phase1-career"><h2>Jobs that use knowledge of film thickness measurement and post-maintenance quality checks, and your next steps</h2><p>If you have experience in evaluating measurement data, equipment maintenance, or process improvement, organize it as a set: "the equipment, the symptom, the checks you did, and the result." Comparing the assigned equipment, night shift and travel, training, and requirements against job postings helps you separate the experience you can use from the knowledge you need to add.</p><aside class="semicon-cta mp1-card"><h3>Check the big picture of the job and how to choose jobs and learning</h3><p>In the equipment maintenance hub, you can review inspection and troubleshooting work, how to organize your experience, and jobs, basic learning, and certification prep all in one place. If you want to compare the scope of equipment roles and customer support, also see the related role articles.</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/" class="semicon-btn mp1-button" data-maintenance-phase1-hub="277" data-cta="maintenance_hub" data-cta-type="maintenance_hub" data-cta-stage="career" data-cta-id="maintenance_380_hub277_end" data-cta-route="maintenance_380_hub277_end">Check duties, jobs, and learning in the equipment maintenance hub</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/" class="semicon-btn mp1-button" data-maintenance-phase1-hub="237" data-cta="equipment_hub" data-cta-type="equipment_hub" data-cta-stage="career" data-cta-id="maintenance_380_hub237_end" data-cta-route="maintenance_380_hub237_end">See an equipment engineer's scope, jobs, and learning</a></div></aside></section>
+
+<h2>References</h2>
+<ul class="semicon-sources">
+  <li><a rel="noopener" href="https://www.kla.com/products/instruments/thin-film-reflectometers" target="_blank">KLA: Thin-Film Thickness Measurement</a></li>
+  <li><a rel="noopener" href="https://ontoinnovation.com/product-categories/metrology/" target="_blank">Onto Innovation: Metrology products</a></li>
+  <li><a rel="noopener" href="https://www.novami.com/" target="_blank">Nova: Materials Metrology</a></li>
+  <li><a rel="noopener" href="https://semilab.com/category/products/thin-film-thickness-measurement" target="_blank">Semilab: Thin Film Thickness Measurement</a></li>
+  <li><a rel="noopener" href="https://www.nist.gov/programs-projects/thin-film-rgtms" target="_blank">NIST: Thin Film RGTMs</a></li>
+</ul>
+<a class="semicon-backtop" href="#semicon-top">↑ Back to top</a>
+</div>
+
+
+<aside class="related-spokes"><h2>You may also like</h2><ul><li><a href="/film-thickness-uniformity/">Causes of worsening within-wafer film thickness uniformity (WiWNU, WTWNU) and equipment maintenance</a></li></ul></aside>

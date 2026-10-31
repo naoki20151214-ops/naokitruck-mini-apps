@@ -1,0 +1,205 @@
+<!--KEEP:0-->
+<div class="semicon-article" id="semicon-top">
+<div class="semicon-level">
+<div class="semicon-level-top"><span class="semicon-level-label">Learning level</span><strong class="semicon-stars" aria-label="Beginner (1 of 5)"><span class="on">★</span><span class="off">☆☆☆☆</span><span>Beginner</span></strong></div>
+</div>
+<div class="semicon-lead">
+<p>Have you ever left your phone sitting unused, only to notice later that the battery has dropped a little?</p>
+<p>Even when the screen is off, the chips inside your phone keep using a tiny bit of electricity. One reason is "leakage current." This is electricity that keeps flowing a little even after a switch is turned off. In this article, we use the comparison of a "sluice gate" to explain why leakage current becomes a problem as chips get smaller.</p>
+</div>
+<div class="semicon-note">
+<p>The sluice gate comparison fits only in these ideas: "there is a set height where flow begins" and "water leaks through even a small gap." Water does not actually flow inside a real transistor.</p>
+</div>
+<div class="semicon-map">
+<h3>What you will learn in this article</h3>
+<ol>
+<li><strong>Goal of this article:</strong> Understand why, as chips get smaller, speed and standby power become a trade-off</li>
+<li><strong>First half:</strong> What leakage current is, and why it was not a problem in the past</li>
+<li><strong>Second half:</strong> Threshold voltage and the real nature of the dilemma, seen through the sluice gate comparison</li>
+</ol>
+</div>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep116-blog-ep116-04-phone.jpg" alt="Image of a smartphone lying face down on a wooden desk in a dim room"><figcaption>An image of a phone on a desk. Not a real scene. EP116 article image (AI-generated). The generated image was reduced in size and optimized as a JPEG.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the diagram</b></p>
+<ul>
+<li>A phone not in use</li>
+<li>The screen is off</li>
+<li>Still, the battery drains little by little</li>
+</ul>
+</div>
+<div class="semicon-chat-row naoki">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">Assistant</div>
+</div>
+<div class="semicon-bubble">
+<p>Professor, why does my phone's battery drain even when I'm not using it?</p>
+</div>
+</div>
+<div class="semicon-chat-row teacher">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">Professor</div>
+</div>
+<div class="semicon-bubble">
+<p>Electricity is leaking little by little from the switches inside the chip. This is called leakage current.</p>
+</div>
+</div>
+<div class="semicon-chat-row naoki">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">Assistant</div>
+</div>
+<div class="semicon-bubble">
+<p>But if a switch is off, the flow should stop, right?</p>
+</div>
+</div>
+<div class="semicon-chat-row teacher">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">Professor</div>
+</div>
+<div class="semicon-bubble">
+<p>That's the interesting part this time. Let's go through it step by step with the sluice gate comparison.</p>
+</div>
+</div>
+<h2 class="wp-block-heading" data-fact-ids="C01">Power drains even when you are not using it</h2>
+<p>Semiconductors contain huge numbers of tiny switches called "transistors." Transistors let electricity flow or stop it to create signals of 0 and 1. But sometimes a little electricity keeps flowing even though the switch should be off. According to EE Times Japan, this current while the switch is off is called off-current, or subthreshold leakage current, and when it increases, standby power consumption increases. <strong class="semicon-key">Leakage current is electricity that keeps flowing a little even after a switch is turned off.</strong></p>
+<details class="semicon-quiz">
+<summary>Check quiz: What kind of electricity is leakage current?</summary>
+<p>Answer: Electricity that keeps flowing a little even after a switch is turned off.</p>
+</details>
+<h2 class="wp-block-heading" data-fact-ids="C02">In the past, just making things smaller was enough</h2>
+<p>Semiconductors have improved in performance as transistors got smaller. From the 1970s to the 1990s, following a rule called "Dennard scaling," simply making things smaller made circuits faster with almost no increase in power consumption. This rule was published in 1974 by Dennard and colleagues at IBM. An article covering a talk by NVIDIA's Bill Dally explains that shrinking dimensions to 0.7 times doubles the number of transistors that fit in the same area and makes them 1.4 times faster. By also lowering the voltage to 0.7 times, power consumption stayed almost the same.</p>
+<p>Also, at that time, the power used while switches were off was small enough to ignore. So there was almost no need to worry about leakage current.</p>
+<h2 class="wp-block-heading" data-fact-ids="C03">From the late 1990s, leakage started to rise</h2>
+<p>From the late 1990s, however, things changed. As transistors got smaller, leakage current suddenly started to increase. Behind this was a particular reason related to keeping speed up. From the next section, we will look at that reason using a sluice gate comparison.</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep116-blog-01-leak.png" alt="Concept diagram showing leakage current, where a little electricity keeps flowing even after the switch is turned off"><figcaption>A simplified diagram of leakage current, which keeps flowing a little even after the switch is turned off. For explanation only.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the diagram</b></p>
+<ul>
+<li>The switch is off</li>
+<li>Still, a little flows</li>
+<li>This is leakage current</li>
+</ul>
+</div>
+<details class="semicon-quiz">
+<summary>Check quiz: Around when did leakage current suddenly start to increase?</summary>
+<p>Answer: From the late 1990s.</p>
+</details>
+<h2 class="wp-block-heading" data-fact-ids="C04">Think of the switch as a sluice gate</h2>
+<p>Imagine a transistor as a sluice gate on a river. When you raise the gate, water flows. But if you raise it only a little, no water flows. It starts to flow only after the gate passes a set height. This height where flow begins is the "threshold voltage." The force that lifts the gate corresponds to the voltage applied to the chip.</p>
+<p>According to the article, the amount of current that flows is determined by the difference between the applied voltage and the threshold voltage. The bigger the difference, the more current flows. In sluice gate terms, the higher you lift the gate above the set height, the more strongly the water flows.</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep116-blog-ep116-05-sluice.jpg" alt="Image of a river sluice gate raised slightly with water flowing out from under it"><figcaption>An image of a sluice gate used for the comparison. Not an actual transistor. EP116 article image (AI-generated). The generated image was reduced in size and optimized as a JPEG.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the diagram</b></p>
+<ul>
+<li>When you raise the gate</li>
+<li>water flows</li>
+<li>We compare the switch to a sluice gate</li>
+</ul>
+</div>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep116-blog-02-gate.png" alt="Concept diagram comparing threshold voltage to the set height of a sluice gate, showing water flowing when the gate is lifted above that height"><figcaption>A simplified diagram comparing the relationship between threshold voltage and applied voltage to a sluice gate. For explanation only.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the diagram</b></p>
+<ul>
+<li>The set height where flow begins</li>
+<li>This is the threshold voltage</li>
+<li>Water flows by the amount you go above it</li>
+</ul>
+</div>
+<details class="semicon-quiz">
+<summary>Check quiz: In the sluice gate comparison, what does the "set height" stand for?</summary>
+<p>Answer: The threshold voltage.</p>
+</details>
+<h2 class="wp-block-heading" data-fact-ids="C05">Why does lowering the voltage make chips slower?</h2>
+<p>To save electricity, chips have lowered their applied voltage each time they were made smaller. But the threshold voltage does not change much even as transistors shrink. As a result, the lifting height gets closer to the set height. In other words, the difference between the applied voltage and the threshold voltage shrinks, and less electricity flows. The EE Times Japan article explains that the current is proportional to the square of this difference. So when the difference gets smaller, the current drops even more sharply than the difference does.</p>
+<p>When less electricity flows, it takes longer for the next switch to start working. This is because circuit speed depends heavily on the time it takes for electricity from one switch to drive the next switch. That is why lowering the voltage alone does not make a chip faster.</p>
+<details class="semicon-quiz">
+<summary>Check quiz: Why does less electricity flow when the voltage is lowered?</summary>
+<p>Answer: Because the difference between the applied voltage and the threshold voltage shrinks.</p>
+</details>
+<h2 class="wp-block-heading" data-fact-ids="C06">Lower the set height, and now it leaks</h2>
+<p>The idea that came up was to lower the threshold voltage. If the set height is lower, water flows well with just a small lift, so speed can be kept. A talk abstract from the Institute of Electronics, Information and Communication Engineers (IEICE) also describes how the supply voltage was lowered while lowering the threshold voltage as transistors were scaled down.</p>
+<p>But when the set height is low, water gets through even a tiny gap. Water slowly leaks from a gate that should be closed. This is leakage current. <strong class="semicon-key">The lower the threshold voltage, the more electricity leaks while the switch is off.</strong> This is why power drains even when you are not using the device.</p>
+<details class="semicon-quiz">
+<summary>Check quiz: What increases when the threshold voltage is lowered?</summary>
+<p>Answer: The electricity that leaks while the switch is off, in other words, leakage current.</p>
+</details>
+<h2 class="wp-block-heading" data-fact-ids="C07">If you don't lower it, power during operation goes up</h2>
+<p>So what if you don't lower the threshold voltage? Leakage does not increase. But then you can no longer lower the applied voltage, because you need to keep the voltage difference to get enough current. As a result, the power the chip uses while running goes up a lot.</p>
+<h2 class="wp-block-heading" data-fact-ids="C08">Speed and standby power become a trade-off</h2>
+<p>In short: choose speed, and it leaks during standby. Hold down leakage, and it uses more power while running. Chips were caught in this dilemma. The EE Times Japan article explains this situation as the end of the old Dennard scaling.</p>
+<p>To escape this dilemma, the shape and materials of transistors have been changed. The IEICE abstract also lists strained silicon, FinFETs, and other approaches as ways to improve performance. In upcoming articles, we will look at those approaches one by one.</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep116-blog-03-trade.png" alt="Concept diagram showing the dilemma between lowering and not lowering the threshold voltage"><figcaption>A simplified diagram of the dilemma between lowering and not lowering the threshold voltage. For explanation only.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the diagram</b></p>
+<ul>
+<li>Lower it, and speed is kept</li>
+<li>But it leaks during standby</li>
+<li>Don't lower it, and power during operation goes up</li>
+</ul>
+</div>
+<details class="semicon-quiz">
+<summary>Check quiz: What does it mean that chips were caught in a "dilemma"?</summary>
+<p>Answer: Choosing speed increases the electricity leaking during standby, and holding down leakage increases the power used while running.</p>
+</details>
+<div class="semicon-cta">
+<h3>Learn about the jobs that handle this process</h3>
+<p>If you want to know about the jobs that handle this process, please read this article too.</p>
+<div class="semicon-btnrow"><a class="semicon-btn" href="https://semicon-campus.com/semiconductor-career-map/">Look at semiconductor manufacturing jobs by process</a></div>
+</div>
+<p>We introduce the big picture of manufacturing in <a href="https://semicon-campus.com/semiconductor-manufacturing-overview/">The big picture of the semiconductor manufacturing process</a>.</p>
+<h2 class="wp-block-heading">Word review</h2>
+<ul>
+<li><strong>Transistor:</strong> A tiny switch that lets electricity flow or stops it.</li>
+<li><strong>Leakage current:</strong> Electricity that keeps flowing a little even after a switch is turned off.</li>
+<li><strong>Threshold voltage:</strong> The voltage at which a switch starts to turn on. In the sluice gate comparison, it is the set height where flow begins.</li>
+<li><strong>Standby:</strong> The state when a chip is not processing anything.</li>
+<li><strong>Supply voltage:</strong> The voltage applied to a chip. In the sluice gate comparison, it is the force that lifts the gate.</li>
+<li><strong>Scaling (miniaturization):</strong> Making transistors smaller.</li>
+</ul>
+<h2 class="wp-block-heading">Common misunderstandings</h2>
+<h3>Q. Does leakage current happen because the switch is broken?</h3>
+<p>No. Even a transistor that works normally lets a little electricity flow while it is off. The lower the threshold voltage, the more it increases.</p>
+<h3>Q. Does lowering the voltage always make a chip faster?</h3>
+<p>No. Lowering the voltage reduces the electricity that flows, so speed actually stops improving.</p>
+<h3>Q. Does lowering the threshold voltage solve the problem?</h3>
+<p>No. Speed can be kept, but leakage while the switch is off increases, so standby power goes up. Whether to lower the threshold voltage is a trade-off between valuing speed and valuing standby power.</p>
+<h2 class="wp-block-heading">Summary</h2>
+<div class="semicon-lead">
+<p>Leakage current is electricity that keeps flowing a little even after a switch is turned off, and it started to rise sharply in the late 1990s.<br />Lowering the threshold voltage to keep speed increases the electricity that leaks while the switch is off.<br />If the threshold voltage is not lowered, the supply voltage cannot be lowered either, and power during operation goes up, so chips were caught in a dilemma.</p>
+</div>
+<div class="semicon-note">
+<p>The diagrams in this article are also posted together on Instagram (semicon_campus). Save them so you can look back at them.</p>
+</div>
+<div class="semicon-cta">
+<h3>We also explain semiconductors simply on YouTube</h3>
+<p>For those who want to review with diagrams, we also give short explanations of semiconductor manufacturing on YouTube.</p>
+<div class="semicon-btnrow"><a rel="noopener" class="semicon-btn secondary" href="https://www.youtube.com/@semicon-campus" target="_blank">Watch diagram videos on YouTube</a></div>
+</div>
+<h2 class="wp-block-heading">Official sources we used</h2>
+<ul class="semicon-sources">
+<li data-source-id="S01"><a href="https://eetimes.itmedia.co.jp/ee/articles/1701/13/news025.html">EE Times Japan, Akira Fukuda, "NVIDIA explains the MOSFET scaling law (Dennard scaling), Part 1" (2017, Japanese)</a></li>
+<li data-source-id="S02"><a href="https://ken.ieice.org/ken/paper/20070126yArf/">IEICE technical committee talk abstract, Shinichiro Kimura, "Current Status and Future of High-Speed, Low-Power Silicon Devices" (2007, Japanese)</a></li>
+</ul>
+<section class="semicon-correction-form">
+<h2>Questions and corrections form</h2>
+<p>If you find an error or anything unclear in this article, please let us know using the form below. We will check it and fix the article.</p>
+<div class="semicon-form-shortcode">
+<div class="wpcf7 no-js" id="wpcf7-f2045-o1" lang="ja" dir="ltr" data-wpcf7-id="2045">
+<div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
+<form action="/?rest_route=%2Fwp%2Fv2%2Fposts&#038;per_page=100&#038;page=1&#038;context=view#wpcf7-f2045-o1" method="post" class="wpcf7-form init" aria-label="Contact form" novalidate="novalidate" data-status="init">
+<fieldset class="hidden-fields-container"><input type="hidden" name="_wpcf7" value="2045" /><input type="hidden" name="_wpcf7_version" value="6.1.6" /><input type="hidden" name="_wpcf7_locale" value="ja" /><input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f2045-o1" /><input type="hidden" name="_wpcf7_container_post" value="0" /><input type="hidden" name="_wpcf7_posted_data_hash" value="" />
+</fieldset>
+<p>You do not need to enter your name, phone number, or address. Please do not include fab names or confidential company information.
+</p>
+<p><label>Type of report (required) <span class="wpcf7-form-control-wrap" data-name="report-type"><select class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required" aria-required="true" aria-invalid="false" name="report-type"><option value="誤りと思われる点">Possible error</option><option value="分かりにくい箇所">Unclear section</option><option value="追加してほしい説明・質問">Request for more explanation / question</option></select></span></label><br />
+<label>Related heading or text (optional) <span class="wpcf7-form-control-wrap" data-name="report-section"><input size="40" maxlength="200" class="wpcf7-form-control wpcf7-text" aria-invalid="false" value="" type="text" name="report-section" /></span></label><br />
+<label>Details (required) <span class="wpcf7-form-control-wrap" data-name="report-message"><textarea cols="40" rows="10" maxlength="3000" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" aria-required="true" aria-invalid="false" name="report-message"></textarea></span></label><br />
+<label>Email address for a reply (only if you would like a reply; optional) <span class="wpcf7-form-control-wrap" data-name="report-email"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-email wpcf7-text wpcf7-validates-as-email" autocomplete="email" aria-invalid="false" value="" type="email" name="report-email" /></span></label>
+</p>
+<p>Your feedback will be used to review and improve our articles. Please see our <a href="https://semicon-campus.com/privacy-policy/">Privacy policy</a>.
+</p>
+<p><input class="wpcf7-form-control wpcf7-submit has-spinner" type="submit" value="Send feedback or correction" />
+</p><div class="wpcf7-response-output" aria-hidden="true"></div>
+</form>
+</div>
+</div>
+</section>
+</div>
