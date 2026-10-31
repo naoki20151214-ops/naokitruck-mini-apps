@@ -1,0 +1,194 @@
+<!--KEEP:0-->
+<div class="semicon-article" id="semicon-top">
+<div class="semicon-level">
+<div class="semicon-level-top"><span class="semicon-level-label">Learning level</span><strong class="semicon-stars" aria-label="Beginner (level 1 of 5)"><span class="on">★</span><span class="off">☆☆☆☆</span><span>Beginner</span></strong></div>
+</div>
+<div class="semicon-lead">
+<p>Say you bake 100 cookies, and 92 of them come out unburned and good enough to sell in a shop. Those 92 cookies show the idea of "yield." It is the share of usable items out of everything you made.</p>
+<p>Semiconductor fabs use the same kind of number. It is the share of good chips among all the chips made on a wafer (the round disk that semiconductors are made on). The higher this number, the more good chips you get from the same materials and effort. To give you the answer first: <strong class="semicon-key">yield goes up by repeating improvements that "find the cause of defects and fix it."</strong></p>
+</div>
+<div class="semicon-note">
+<p>The cookie example only fits one point: "the share of good items." Cookies and semiconductors fail for completely different reasons.</p>
+</div>
+<div class="semicon-map">
+<h3>What you will learn in this article</h3>
+<ol>
+<li><strong>Goal of this article:</strong> Understand what yield is and get the big picture of the improvement cycle that raises it</li>
+<li><strong>First half:</strong> The types of yield loss, and their main cause, "defects"</li>
+<li><strong>Second half:</strong> "Yield learning," which raises yield, and how it connects to earlier articles</li>
+</ol>
+</div>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep110-blog-ep110-05-wafer.jpg" alt="Illustration of an engineer in a cleanroom suit holding up and looking at a wafer covered with many chips"><figcaption>Illustration of an engineer looking at a wafer. This is not a real fab or a real person. Yield is the share of good chips among the chips on a wafer. EP110 article image (AI-generated). The generated image was resized and optimized as a JPEG.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the figure</b></p>
+<ul>
+<li>The round disk is a wafer, with many chips on it</li>
+<li>The share of good chips among them is the yield</li>
+<li>The higher it is, the more good chips you get for the same effort</li>
+</ul>
+</div>
+<div class="semicon-chat-row naoki">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">Assistant</div>
+</div>
+<div class="semicon-bubble">
+<p>Professor, what is yield?</p>
+</div>
+</div>
+<div class="semicon-chat-row teacher">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">Professor</div>
+</div>
+<div class="semicon-bubble">
+<p>It is the share of good chips among the chips you made. The higher it is, the less waste there is.</p>
+</div>
+</div>
+<div class="semicon-chat-row naoki">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">Assistant</div>
+</div>
+<div class="semicon-bubble">
+<p>How do you raise it?</p>
+</div>
+</div>
+<div class="semicon-chat-row teacher">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">Professor</div>
+</div>
+<div class="semicon-bubble">
+<p>Find the cause of defects and fix it. Then repeat. Let's go through it step by step.</p>
+</div>
+</div>
+<h2 class="wp-block-heading" data-fact-ids="C01 C02">There are two types of yield loss</h2>
+<p>According to lecture notes from the University of California, Berkeley, <strong class="semicon-key">yield loss in a wafer fab is divided into two types: "line yield" and "die yield."</strong> A die is each individual chip cut from the wafer.</p>
+<p>Line yield loss comes from careless wafer handling or process mistakes. Examples include skipping a step, mixing up procedure documents, or equipment going out of control. Die yield, on the other hand, is the share of individual chips that work. The notes call the probability that a chip works the die yield.</p>
+<h2 class="wp-block-heading" data-fact-ids="C02 C03">The main thing that breaks chips: tiny "defects"</h2>
+<p>Much of the chip-level loss is caused by very small defects. According to the notes, <strong class="semicon-key">a defect means any physical abnormality that causes a circuit to fail.</strong> Specific examples include particles (dust), scratches, shorts where wires connect when they should not, and opens where wires are broken.</p>
+<p>A tool used here is the "wafer map." It marks the chips that failed an electrical test on a diagram of the wafer. If the defect locations are clustered, that gives a clue to the cause.</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep110-blog-ep110-06-wafermap.jpg" alt="Illustration of a round wafer map on a monitor, with red dots marking defects scattered across it"><figcaption>Illustration of someone looking at a wafer map. This is not real equipment or real measurement results. A wafer map is a diagram that marks the chips that did not work. EP110 article image (AI-generated). The generated image was resized and optimized as a JPEG.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the figure</b></p>
+<ul>
+<li>Chips that did not work are marked on a diagram</li>
+<li>Clusters of marks give clues to the cause</li>
+<li>You can see where defects are at a glance</li>
+</ul>
+</div>
+<p>However, not all loss comes from defects. The notes give an example: at the edge of a wafer, film thickness is hard to control, so chips at the edge can all fail.</p>
+<h2 class="wp-block-heading" data-fact-ids="C04">The larger the chip, the lower the yield</h2>
+<p>Even in the same fab with the same number of defects, yield changes with chip size. <strong class="semicon-key">That is because the larger the chip, the more likely it is to contain at least one defect.</strong> The notes also explain that with the same process and the same defect density, a wafer of large chips has lower yield than a wafer of small chips.</p>
+<p>So products with larger chips need fabs with fewer defects.</p>
+<p>This also shows one more important point. Comparing the yields of products with different chip sizes directly is not a fair comparison. So the notes introduce a way to work backward from the yield figure to the fab's "defect density," that is, how many defects there are per square centimeter. The idea is that a fab with lower defect density can produce at higher yield.</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep110-blog-01-chipsize.png" alt="Concept diagram showing that with the same number of defects, large chips are more likely to hit a defect than small chips"><figcaption>Schematic of the relationship between chip size and defects. The defect positions and counts are for explanation and are not measured data.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the figure</b></p>
+<ul>
+<li>The number of defects is the same</li>
+<li>The larger the chip, the more likely it hits a defect</li>
+<li>So the larger the chip, the lower the yield</li>
+</ul>
+</div>
+<h2 class="wp-block-heading" data-fact-ids="C05">Defects can be thought of as adding up step by step</h2>
+<p>A wafer goes through many process steps before it becomes chips. The notes introduce a way to think of defect density as a sum across process steps and layers. With this approach, the overall yield is the product of the yields of each step.</p>
+<p>For example, say three steps have yields of 98%, 95%, and 99%. Multiplying them gives an overall yield of about 92%. That is the same number as in the cookie example. You can see that even slightly improving the lowest step, at 95%, has a big effect on the whole. (This is a calculation for explanation.)</p>
+<p>This is useful because it clearly separates which steps lower the yield and by how much. You can also calculate how much the overall yield would rise if you reduced defects in a given step. <strong class="semicon-key">You can decide the order of fixes by the numbers.</strong></p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep110-blog-02-steps.png" alt="Concept diagram comparing the losses of steps A, B, and C, showing that step B, with the largest loss, is fixed first"><figcaption>Schematic of the idea of comparing losses by process step. The loss sizes are examples for explanation and are not measured data.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the figure</b></p>
+<ul>
+<li>Compare losses step by step</li>
+<li>Find the step with the largest loss</li>
+<li>Fixing the largest one first has the biggest effect</li>
+</ul>
+</div>
+<h2 class="wp-block-heading" data-fact-ids="C06">The core of raising yield: "yield learning"</h2>
+<p>So how do fabs actually raise yield? The industry's technology roadmap (ITRS) presents a concept called yield learning. It is the effort to raise yield by gathering knowledge about the process and the wafers, using it well, and finding and solving manufacturing problems.</p>
+<p>The roadmap describes yield improvement work as raising the baseline yield of a technology generation from its research-and-development level to a "mature yield." The yield here is the result of chip-level testing (wafer sort).</p>
+<p><strong class="semicon-key">Find, solve, and find again.</strong> This repetition is what yield learning is all about. The roadmap lists challenges such as detecting ever-smaller defects and quickly pinpointing root causes as data volumes grow.</p>
+<h2 class="wp-block-heading" data-fact-ids="C07">Two types of causes; the clear-cut ones get solved first</h2>
+<p>Causes that lower yield fall into two broad groups: "systematic" causes with a clear mechanism, and "random" causes that are closer to chance. According to the inspection equipment maker KLA, most systematic causes are solved as yield ramps up.</p>
+<p>So what is left at the end? Mainly random defects caused by process equipment and the environment. In other words, <strong class="semicon-key">you first fix the big causes, and at the end you deal with small variations.</strong></p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep110-blog-03-curve.png" alt="Concept diagram showing yield rising over time, with systematic causes solved first and random defects remaining at the end"><figcaption>Schematic of yield rising as systematic causes are solved first. The curve shape is for explanation and is not measured data.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the figure</b></p>
+<ul>
+<li>First, clear-cut (systematic) causes are solved</li>
+<li>Yield rises over time</li>
+<li>Random defects are what remain at the end</li>
+</ul>
+</div>
+<h2 class="wp-block-heading" data-fact-ids="C08">"Tool monitoring": getting a clear verdict for each tool</h2>
+<p>It is surprisingly hard to tell where a defect was created. KLA notes that defects are sometimes found many steps away from where they came from. That is where tool monitoring comes in.</p>
+<p>The method is very simple. First, inspect a bare wafer. Next, run that wafer through the tool you want to check. Finally, inspect it again. <strong class="semicon-key">Any defects added between the two inspections were added by that tool.</strong> There is no doubt, and the cause becomes clear.</p>
+<p>KLA also says that when this is combined with proper control limits and an out-of-control action plan (OCAP), the sources of random yield loss can be identified and addressed tool by tool. Finding a problem and taking action go together as a set.</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep110-blog-04-toolmon.png" alt="Concept diagram of the tool monitoring flow: inspect a wafer, run it through a tool, inspect again, and judge that added defects came from that tool"><figcaption>Schematic of the tool monitoring flow. This is a simplified flow for explanation, not the procedure of any specific fab.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the figure</b></p>
+<ul>
+<li>Inspect to record the current state</li>
+<li>Run it through the tool and inspect again</li>
+<li>Added defects came from that tool</li>
+</ul>
+</div>
+<h2 class="wp-block-heading">All the earlier articles are parts of this cycle</h2>
+<p>In fact, this whole series has been one improvement cycle. Measuring line width (CD). Finding lithography defects. Watching for changes in numbers with SPC. Catching early signs from equipment data with FDC. Searching for causes with root cause analysis. Each one handles part of the cycle: watch, notice, find the cause, fix, and confirm.</p>
+<div class="semicon-cta">
+<h3>Learn about the jobs that watch over yield</h3>
+<p>If you want to learn about the jobs that handle this monitoring, please read this article too.</p>
+<div class="semicon-btnrow"><a class="semicon-btn" href="https://semicon-campus.com/semiconductor-career-map/">See semiconductor manufacturing jobs by process</a></div>
+</div>
+<p>How to notice changes in the numbers is covered in <a href="https://semicon-campus.com/what-is-spc-semiconductor-process-control/">What is SPC (statistical process control)?</a>. Note that equipment adjustment and recovery are done following the official procedures of your fab or manufacturer, and under the judgment of authorized staff. This article introduces concepts and does not give instructions for operating equipment.</p>
+<h2 class="wp-block-heading">Key terms review</h2>
+<ul>
+<li><strong>Yield:</strong> The share of good items among everything made.</li>
+<li><strong>Line yield:</strong> The share not lost to wafer handling or process mistakes.</li>
+<li><strong>Die yield:</strong> The share of individual chips that work.</li>
+<li><strong>Defect:</strong> A small physical abnormality that breaks a circuit.</li>
+<li><strong>Wafer map:</strong> A diagram of the wafer with the chips that did not work marked on it.</li>
+<li><strong>Yield learning:</strong> A repeated learning cycle of finding causes and solving them.</li>
+<li><strong>Systematic and random causes:</strong> Causes with a clear mechanism, and causes closer to chance.</li>
+<li><strong>Tool monitoring:</strong> A method of finding defects added by a tool by inspecting, running through the tool, and inspecting again.</li>
+</ul>
+<h2 class="wp-block-heading" data-fact-ids="C09">Common misconceptions</h2>
+<h3>Q. Is low yield only caused by having many defects?</h3>
+<p>No. Defects are a major cause, but not the only one. Chips can also fail for reasons other than defects, as with losses at the wafer edge.</p>
+<h3>Q. Is 100% yield the goal?</h3>
+<p>The goal depends on the application. According to KLA, consumer-product fabs treat the point where further improvement is no longer worth the effort and cost as "mature yield." For applications with high reliability requirements, such as car parts, they aim even higher.</p>
+<h2 class="wp-block-heading">Summary</h2>
+<div class="semicon-lead">
+<p>Yield is the share of good chips among the chips made, and the main cause of loss is tiny defects.<br />Yield goes up through "yield learning": finding the causes of defects, solving them, and finding more.<br />Watch, notice, find the cause, fix, and confirm. This repetition is the flow of the whole series.</p>
+</div>
+<div class="semicon-cta">
+<h3>We also explain semiconductors simply on YouTube</h3>
+<p>For those who want to review with diagrams, we also post short explanations of semiconductor manufacturing on YouTube.</p>
+<div class="semicon-btnrow"><a rel="noopener" class="semicon-btn secondary" href="https://www.youtube.com/@semicon-campus" target="_blank">Watch illustrated videos on YouTube</a></div>
+</div>
+<h2 class="wp-block-heading">Official sources we referred to</h2>
+<ul class="semicon-sources">
+<li data-source-id="S01"><a href="https://fog.misty.com/perry/cod/references/yield_models.pdf">Robert C. Leachman, "Yield Modeling and Analysis" (UC Berkeley IEOR 130 lecture notes, 2014)</a></li>
+<li data-source-id="S02"><a href="https://www.kla.com/documents/02_ProcessWatchAutomotive_2018_03.pdf">KLA, "Process Watch: Baseline yield predicts baseline reliability" (2018)</a></li>
+<li data-source-id="S03"><a href="https://www.semiconductors.org/wp-content/uploads/2018/08/YieldEnhanc2003.pdf">ITRS, "Yield Enhancement" (International Technology Roadmap for Semiconductors, 2003 edition)</a></li>
+</ul>
+<section class="semicon-correction-form">
+<h2>Questions and corrections form</h2>
+<p>If you find an error or anything unclear in this article, please let us know using the form below. We will check it and fix the article.</p>
+<div class="semicon-form-shortcode">
+<div class="wpcf7 no-js" id="wpcf7-f2045-o8" lang="ja" dir="ltr" data-wpcf7-id="2045">
+<div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
+<form action="/?rest_route=%2Fwp%2Fv2%2Fposts&#038;per_page=100&#038;page=1&#038;context=view#wpcf7-f2045-o8" method="post" class="wpcf7-form init" aria-label="Contact form" novalidate="novalidate" data-status="init">
+<fieldset class="hidden-fields-container"><input type="hidden" name="_wpcf7" value="2045" /><input type="hidden" name="_wpcf7_version" value="6.1.6" /><input type="hidden" name="_wpcf7_locale" value="ja" /><input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f2045-o8" /><input type="hidden" name="_wpcf7_container_post" value="0" /><input type="hidden" name="_wpcf7_posted_data_hash" value="" />
+</fieldset>
+<p>You do not need to enter your name, phone number, or address. Please do not include fab names or confidential company information.
+</p>
+<p><label>Type of report (required) <span class="wpcf7-form-control-wrap" data-name="report-type"><select class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required" aria-required="true" aria-invalid="false" name="report-type"><option value="誤りと思われる点">Possible error</option><option value="分かりにくい箇所">Unclear section</option><option value="追加してほしい説明・質問">Request for more explanation / question</option></select></span></label><br />
+<label>Related heading or text (optional) <span class="wpcf7-form-control-wrap" data-name="report-section"><input size="40" maxlength="200" class="wpcf7-form-control wpcf7-text" aria-invalid="false" value="" type="text" name="report-section" /></span></label><br />
+<label>Details (required) <span class="wpcf7-form-control-wrap" data-name="report-message"><textarea cols="40" rows="10" maxlength="3000" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" aria-required="true" aria-invalid="false" name="report-message"></textarea></span></label><br />
+<label>Email address for a reply (only if you would like a reply; optional) <span class="wpcf7-form-control-wrap" data-name="report-email"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-email wpcf7-text wpcf7-validates-as-email" autocomplete="email" aria-invalid="false" value="" type="email" name="report-email" /></span></label>
+</p>
+<p>Your feedback will be used to review and improve our articles. Please see our <a href="https://semicon-campus.com/privacy-policy/">Privacy policy</a>.
+</p>
+<p><input class="wpcf7-form-control wpcf7-submit has-spinner" type="submit" value="Send feedback or correction" />
+</p><div class="wpcf7-response-output" aria-hidden="true"></div>
+</form>
+</div>
+</div>
+</section>
+</div>
