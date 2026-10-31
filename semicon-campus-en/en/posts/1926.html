@@ -1,0 +1,170 @@
+<p>A machine in the factory is running fine again today.</p>
+<p>No strange noises. No alarms. Production has not stopped.</p>
+<p>But the equipment maintenance technician says this:</p>
+<p>"Let's replace this part at the next maintenance."</p>
+<p>Even though it isn't broken yet?</p>
+<p>Replacing an expensive part costs money. The tool has to be stopped during the replacement work. Wouldn't it be cheaper to use the part until the very end?</p>
+<p>In fact, in a semiconductor fab, this way of thinking can lead to unexpected defects.</p>
+<p>That is because <strong>a machine that is running is not the same as a machine that is making good-quality semiconductors</strong>.</p>
+<p>In this article, we use parts that wear out little by little inside semiconductor manufacturing equipment as examples, and think together about what a maintenance technician looks at when deciding to replace a part.</p>
+<h2 data-fact-ids="C5">1. Product quality starts to change before the machine stops</h2>
+<p>For example, imagine a machine tool that cuts metal.</p>
+<p>Even as the cutting tool slowly wears, the machine keeps running. But the dimensions of the cut products may gradually start to differ.</p>
+<p>A similar problem happens in semiconductor manufacturing equipment.</p>
+<p>The difference is that semiconductors involve extremely small dimensions.</p>
+<p>Inside the equipment are parts with different roles, such as seals that hold the vacuum and rings exposed to plasma.</p>
+<p>Each part also wears in a different way. For rings, research has looked at how their shape relates to processing conditions. For some rubber materials used in seals, researchers have studied how the material changes when exposed to high temperatures.</p>
+<p>For example, in equipment that uses plasma, the shape of the ring around the wafer can affect processing conditions. Also, rubber-like parts used for sealing may change their properties depending on the material and operating environment.</p>
+<p>The changes differ from part to part, but in equipment maintenance, it is important to think about how each change affects the role of the equipment.</p>
+<p>This is why maintenance in a semiconductor fab is difficult.</p>
+<p><strong>"Not broken" alone is not enough to feel safe.</strong></p>
+<figure class="wp-block-image size-large"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep097-fig01-quality-vs-operation-optimized.png" alt="Schematic placing a running tool next to changing processing quality, showing that tool operation and stable production of good products are not the same" width="1280" height="720" loading="lazy" class="wp-image-1935" srcset="https://semicon-campus.com/wp-content/uploads/2026/10/ep097-fig01-quality-vs-operation-optimized.png 1280w, https://semicon-campus.com/wp-content/uploads/2026/10/ep097-fig01-quality-vs-operation-optimized-300x169.png 300w, https://semicon-campus.com/wp-content/uploads/2026/10/ep097-fig01-quality-vs-operation-optimized-1024x576.png 1024w, https://semicon-campus.com/wp-content/uploads/2026/10/ep097-fig01-quality-vs-operation-optimized-768x432.png 768w, https://semicon-campus.com/wp-content/uploads/2026/10/ep097-fig01-quality-vs-operation-optimized-240x135.png 240w, https://semicon-campus.com/wp-content/uploads/2026/10/ep097-fig01-quality-vs-operation-optimized-320x180.png 320w, https://semicon-campus.com/wp-content/uploads/2026/10/ep097-fig01-quality-vs-operation-optimized-640x360.png 640w" sizes="(max-width: 1280px) 100vw, 1280px" /><figcaption class="wp-element-caption">Even when a tool is running, processing quality still needs to be checked separately.</figcaption></figure>
+<h2 data-fact-ids="C1 C4">2. What does the ring around the wafer do?</h2>
+<p>Among the steps that build semiconductor circuits is a process called "etching," which removes unwanted material.</p>
+<p>Some etching uses a state called plasma to process the wafer surface.</p>
+<p>A wafer is a thin disc.</p>
+<p>If the center and the edge of this disc are processed very differently, the results will vary within the same wafer.</p>
+<p>So some designs place a ring-shaped part around the wafer to even out the electrical state and plasma behavior near the edge.</p>
+<p>This part is the <strong>focus ring</strong>.</p>
+<p>The focus ring does not become part of the product.</p>
+<p>But it supports the environment needed to process the product correctly.</p>
+<p>The problem is that the ring itself is also exposed to plasma and is slowly worn away.</p>
+<figure class="wp-block-image size-large"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep097-fig02-focus-ring-location-optimized.png" alt="Schematic cross-section showing the focus ring surrounding the wafer edge and the plasma region above it" width="1280" height="720" loading="lazy" class="wp-image-1936" srcset="https://semicon-campus.com/wp-content/uploads/2026/10/ep097-fig02-focus-ring-location-optimized.png 1280w, https://semicon-campus.com/wp-content/uploads/2026/10/ep097-fig02-focus-ring-location-optimized-300x169.png 300w, https://semicon-campus.com/wp-content/uploads/2026/10/ep097-fig02-focus-ring-location-optimized-1024x576.png 1024w, https://semicon-campus.com/wp-content/uploads/2026/10/ep097-fig02-focus-ring-location-optimized-768x432.png 768w, https://semicon-campus.com/wp-content/uploads/2026/10/ep097-fig02-focus-ring-location-optimized-240x135.png 240w, https://semicon-campus.com/wp-content/uploads/2026/10/ep097-fig02-focus-ring-location-optimized-320x180.png 320w, https://semicon-campus.com/wp-content/uploads/2026/10/ep097-fig02-focus-ring-location-optimized-640x360.png 640w" sizes="(max-width: 1280px) 100vw, 1280px" /><figcaption class="wp-element-caption">A schematic showing the positions of the wafer, focus ring, and plasma region.</figcaption></figure>
+<h2 data-fact-ids="C1 C4">3. Why is a tiny amount of wear a problem?</h2>
+<p>What happens if the shape of the focus ring changes a little?</p>
+<p>One study used a computer model of plasma made with argon gas and changed the ring's shape conditions. The results showed differences near the wafer edge, such as in the direction from which ions arrive.</p>
+<p>This was not a measurement of an actual worn ring. This study alone also does not tell us how many millimeters of wear lead to defects. Still, it gives a clue for understanding that the ring's shape affects the processing environment.</p>
+<p>That's a bit difficult, isn't it?</p>
+<p>Here, imagine rain falling at an angle.</p>
+<p>Rain falling straight down hits a surface differently from rain falling at a slant.</p>
+<p>Likewise, the direction in which ions in the plasma travel toward the wafer affects the processing result.</p>
+<p>Of course, rain and plasma are not the same thing. This is just an analogy to picture the difference in direction.</p>
+<p>The key point is that <strong>if the ring's shape changes, the processing conditions at the wafer edge may change too</strong>.</p>
+<p>The focus ring is not broken. It is not cracked.</p>
+<p>Even so, it may no longer do its real job, which is processing products under the same conditions, as well as it used to.</p>
+<figure class="wp-block-image size-large"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep097-fig03-ring-shape-ion-angle-optimized.png" alt="Schematic of a pure-argon CCP simulation showing that ion trajectories toward the wafer edge differ under different ring shape conditions" width="1280" height="720" loading="lazy" class="wp-image-1937" srcset="https://semicon-campus.com/wp-content/uploads/2026/10/ep097-fig03-ring-shape-ion-angle-optimized.png 1280w, https://semicon-campus.com/wp-content/uploads/2026/10/ep097-fig03-ring-shape-ion-angle-optimized-300x169.png 300w, https://semicon-campus.com/wp-content/uploads/2026/10/ep097-fig03-ring-shape-ion-angle-optimized-1024x576.png 1024w, https://semicon-campus.com/wp-content/uploads/2026/10/ep097-fig03-ring-shape-ion-angle-optimized-768x432.png 768w, https://semicon-campus.com/wp-content/uploads/2026/10/ep097-fig03-ring-shape-ion-angle-optimized-240x135.png 240w, https://semicon-campus.com/wp-content/uploads/2026/10/ep097-fig03-ring-shape-ion-angle-optimized-320x180.png 320w, https://semicon-campus.com/wp-content/uploads/2026/10/ep097-fig03-ring-shape-ion-angle-optimized-640x360.png 640w" sizes="(max-width: 1280px) 100vw, 1280px" /><figcaption class="wp-element-caption">This shows the finding from a pure-argon CCP simulation that ion incidence direction differs depending on the ring shape conditions.</figcaption></figure>
+<h2 data-fact-ids="C6 C7 C8">4. What if you were the maintenance technician?</h2>
+<p>Let's think about this using a fictional fab.</p>
+<p>One day, you get a call from the inspection staff.</p>
+<p>"Lately, the processing results at the wafer edge have been changing little by little."</p>
+<p>The tool has not stopped. No alarms have gone off.</p>
+<p>You look through past inspection results.</p>
+<p>You find that the results did not change sharply all at once, but drifted slowly over several days.</p>
+<p>So, what do you do?</p>
+<p>Do you replace the focus ring right away?</p>
+<p>In fact, jumping to a replacement here is also risky.</p>
+<p>That is because there could be other causes, such as gas flow, tool temperature, plasma conditions, or a problem on the measurement side.</p>
+<p>Equipment maintenance is not about replacing every suspicious part one after another.</p>
+<p>It is about checking the operating history and inspection results to narrow down the possible causes.</p>
+<p>If you conclude that ring wear is the cause, replacement becomes a strong option.</p>
+<p>Then, after the replacement, you check whether the processing results have returned to the original control range.</p>
+<p>Only after all this can you judge whether the fix worked.</p>
+<p>The fab story so far is a fictional example to explain the technical way of thinking.</p>
+<h2 data-fact-ids="C9 C10">5. A rubber ring supports the vacuum equipment</h2>
+<p>There is another important part with a familiar shape.</p>
+<p>It is the <strong>O-ring</strong>.</p>
+<p>It is a round, rubber-like ring used to seal the gap between parts.</p>
+<p>Semiconductor manufacturing equipment includes steps where the air inside is pumped out to create a vacuum.</p>
+<p>To hold a vacuum, unwanted gas must be kept from leaking in from outside.</p>
+<p>That is where seals such as O-rings do their job.</p>
+<p>But O-rings cannot be used forever either.</p>
+<p>For example, a study that exposed some fluororubbers used for seals to high temperatures for a long time reported chemical changes in the material. This is a result for specific materials and test conditions. It does not mean that every O-ring wears the same way under the same conditions.</p>
+<p>For example, comparing a new rubber band with one that has hardened after long use makes the difference easy to picture.</p>
+<p>However, O-rings in semiconductor equipment are made from special materials and do not have the same properties as ordinary rubber bands.</p>
+<p>How an O-ring degrades depends on its material and the environment where it is used.</p>
+<p>For example, a study that kept a specific fluororubber in hot air for a long time confirmed chemical changes in the material.</p>
+<p>However, this study alone does not tell us how much the sealing performance of O-rings installed in actual semiconductor equipment changes.</p>
+<p>If sealing becomes insufficient, it may become harder to maintain the vacuum, or unwanted gas may get into the process.</p>
+<p><strong>An O-ring that has not snapped yet and an O-ring that still seals as well as needed are also two different things.</strong></p>
+<p>If you want to learn more about how sealing works, such as O-ring grooves and squeeze, see also our <a href="https://semicon-campus.com/o-ring-vacuum-seal/">guide to O-rings and vacuum seals</a>.</p>
+<figure class="wp-block-image size-large"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep097-fig04-o-ring-seal-principle-optimized.png" alt="Schematic cross-section showing an O-ring in a groove compressed against the mating surface, blocking the gas path at the contact area" width="1280" height="720" loading="lazy" class="wp-image-1938" srcset="https://semicon-campus.com/wp-content/uploads/2026/10/ep097-fig04-o-ring-seal-principle-optimized.png 1280w, https://semicon-campus.com/wp-content/uploads/2026/10/ep097-fig04-o-ring-seal-principle-optimized-300x169.png 300w, https://semicon-campus.com/wp-content/uploads/2026/10/ep097-fig04-o-ring-seal-principle-optimized-1024x576.png 1024w, https://semicon-campus.com/wp-content/uploads/2026/10/ep097-fig04-o-ring-seal-principle-optimized-768x432.png 768w, https://semicon-campus.com/wp-content/uploads/2026/10/ep097-fig04-o-ring-seal-principle-optimized-240x135.png 240w, https://semicon-campus.com/wp-content/uploads/2026/10/ep097-fig04-o-ring-seal-principle-optimized-320x180.png 320w, https://semicon-campus.com/wp-content/uploads/2026/10/ep097-fig04-o-ring-seal-principle-optimized-640x360.png 640w" sizes="(max-width: 1280px) 100vw, 1280px" /><figcaption class="wp-element-caption">An O-ring is compressed between the groove and the mating surface, and the contact area blocks the gas path.</figcaption></figure>
+<h2 data-fact-ids="C6 C7 C8 C9">6. So what do you base the replacement date on?</h2>
+<p>After reading this far, one question comes up.</p>
+<p>"I get that you replace parts before they break. But when should you replace them?"</p>
+<p>There are several ways to make this decision.</p>
+<p>The first is to use a set amount of time or number of uses as the standard.</p>
+<p>For example, based on the manufacturer's recommendations or past usage records, you plan to replace a part when it reaches a certain number of operating hours or processing cycles.</p>
+<p>This is called <strong>time-based maintenance</strong>.</p>
+<p>The second is to look at the current condition of the part or tool.</p>
+<p>You watch changes in vacuum, processing results, temperature, vibration, and so on, and use signs of degradation to decide.</p>
+<p>This is <strong>condition-based maintenance</strong>.</p>
+<p>The third is to analyze past data and predict when a problem is likely to occur.</p>
+<p>This is called <strong>predictive maintenance</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>How the replacement decision is made</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Time-based maintenance</td>
+<td>The set time or number of uses has been reached</td>
+</tr>
+<tr>
+<td>Condition-based maintenance</td>
+<td>The current condition shows signs of degradation</td>
+</tr>
+<tr>
+<td>Predictive maintenance</td>
+<td>Future degradation or failure is predicted from data</td>
+</tr>
+</tbody>
+</table>
+<p>We also introduce the idea of planning inspections and replacements before failures happen in our <a href="https://semicon-campus.com/preventive-maintenance-semiconductor/">guide to preventive maintenance for semiconductor equipment</a>.</p>
+<p>These approaches do not compete with each other.</p>
+<p>In practice, they are combined depending on how important the part is and how much a failure would affect production.</p>
+<p>Replacement intervals also differ by tool, part, gases used, temperature, and operating conditions. There is no one-size-fits-all replacement time that applies to every tool.</p>
+<figure class="wp-block-image size-large"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep097-fig05-maintenance-interval-methods-optimized.png" alt="Diagram comparing TBM based on time intervals, CBM based on condition data, and PdM that predicts the future" width="1280" height="720" loading="lazy" class="wp-image-1939" srcset="https://semicon-campus.com/wp-content/uploads/2026/10/ep097-fig05-maintenance-interval-methods-optimized.png 1280w, https://semicon-campus.com/wp-content/uploads/2026/10/ep097-fig05-maintenance-interval-methods-optimized-300x169.png 300w, https://semicon-campus.com/wp-content/uploads/2026/10/ep097-fig05-maintenance-interval-methods-optimized-1024x576.png 1024w, https://semicon-campus.com/wp-content/uploads/2026/10/ep097-fig05-maintenance-interval-methods-optimized-768x432.png 768w, https://semicon-campus.com/wp-content/uploads/2026/10/ep097-fig05-maintenance-interval-methods-optimized-240x135.png 240w, https://semicon-campus.com/wp-content/uploads/2026/10/ep097-fig05-maintenance-interval-methods-optimized-320x180.png 320w, https://semicon-campus.com/wp-content/uploads/2026/10/ep097-fig05-maintenance-interval-methods-optimized-640x360.png 640w" sizes="(max-width: 1280px) 100vw, 1280px" /><figcaption class="wp-element-caption">Replacement timing organized from three viewpoints: time, condition data, and future prediction.</figcaption></figure>
+<h2 data-fact-ids="C6 C7 C8">7. Replacing earlier is not always better</h2>
+<p>"If it protects quality, why not replace parts as early as possible?"</p>
+<p>You might be tempted to think so.</p>
+<p>But replacement work also has costs and risks.</p>
+<p>When the tool is stopped, nothing can be produced during that time.</p>
+<p>Replacement parts are also needed.</p>
+<p>On top of that, opening the tool to work on it is itself a risk, for example of foreign particles getting in or parts being assembled incorrectly.</p>
+<p>On the other hand, if replacement is put off too long, part degradation may cause product defects or sudden stoppages.</p>
+<p>In other words, the maintenance technician is making a judgment between two problems.</p>
+<p><strong>Too early, and waste increases. Too late, and quality or production suffers.</strong></p>
+<p>That is why they decide by combining the manufacturer's standards, usage history, inspection results, and product inspection data.</p>
+<h2 data-fact-ids="C6 C7 C8">8. Once the part is replaced, is the job done?</h2>
+<p>This is another important point for understanding semiconductor equipment maintenance.</p>
+<p>A new focus ring has been installed.</p>
+<p>A degraded O-ring has been replaced.</p>
+<p>The tool is powered on, and no abnormal alarms appear.</p>
+<p>Can production restart now?</p>
+<p>Not necessarily.</p>
+<p>Replacing a part may have changed the conditions inside the tool.</p>
+<p>So checks are carried out according to the tool and process.</p>
+<p>For example, leak checks as needed for vacuum systems, or test runs and evaluation of processing results for processing tools.</p>
+<p>Only after confirming that the results meet the set standards is the decision made to return to production.</p>
+<p>Replacing a part does not by itself guarantee that the tool is back to its original condition.</p>
+<p>That is why checks suited to the tool and process are needed after replacement.</p>
+<p>What to check, and which standards must be met before production can restart, follow the official procedures set by the equipment manufacturer and the fab.</p>
+<p>Finishing the replacement work and getting the tool back to a state where it may make products are not the same thing.</p>
+<p>Note that real maintenance work involves hazards such as high voltage, vacuum, residual gases, and chemicals. Replacement and recovery must follow the official procedures of the equipment manufacturer and the site, and be carried out by authorized personnel.</p>
+<figure class="wp-block-image size-large"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep097-fig06-post-replacement-qualification-optimized.png" alt="Diagram showing the flow of part replacement, tool check, process check, and the decision to return to production, noting that standards differ by tool and process" width="1280" height="720" loading="lazy" class="wp-image-1940" srcset="https://semicon-campus.com/wp-content/uploads/2026/10/ep097-fig06-post-replacement-qualification-optimized.png 1280w, https://semicon-campus.com/wp-content/uploads/2026/10/ep097-fig06-post-replacement-qualification-optimized-300x169.png 300w, https://semicon-campus.com/wp-content/uploads/2026/10/ep097-fig06-post-replacement-qualification-optimized-1024x576.png 1024w, https://semicon-campus.com/wp-content/uploads/2026/10/ep097-fig06-post-replacement-qualification-optimized-768x432.png 768w, https://semicon-campus.com/wp-content/uploads/2026/10/ep097-fig06-post-replacement-qualification-optimized-240x135.png 240w, https://semicon-campus.com/wp-content/uploads/2026/10/ep097-fig06-post-replacement-qualification-optimized-320x180.png 320w, https://semicon-campus.com/wp-content/uploads/2026/10/ep097-fig06-post-replacement-qualification-optimized-640x360.png 640w" sizes="(max-width: 1280px) 100vw, 1280px" /><figcaption class="wp-element-caption">After replacement, the tool and process are checked, and the return to production is decided based on the conditions.</figcaption></figure>
+<h2 data-fact-ids="C5 C6 C7 C8">9. Semiconductor equipment maintenance also protects product quality</h2>
+<p>Even in ordinary factories, bearings, seals, tools, and other parts are sometimes replaced before they fail.</p>
+<p>That experience also carries over to maintaining semiconductor manufacturing equipment.</p>
+<p>In semiconductor manufacturing equipment, the shape of a part can affect processing conditions.</p>
+<p>For example, a simulation study that changed the shape of the focus ring found differences in the direction of ions heading toward the wafer edge.</p>
+<p>Knowledge like this also gives clues when checking the condition of parts and deciding whether they need replacing.</p>
+<p>That is why what matters is not just whether the machine runs, but <strong>whether it can keep making products of the same quality, consistently</strong>.</p>
+<p>Think back to the words of the maintenance technician at the start.</p>
+<p>"Let's replace this part at the next maintenance."</p>
+<p>That decision did not mean wastefully throwing away a part that still worked.</p>
+<p>Can that part keep doing its job of making the next product, and the one after that, at the required quality?</p>
+<p>The technician was thinking that far ahead when deciding whether replacement was needed.</p>
+<p>Maintaining semiconductor manufacturing equipment is not just about fixing broken machines.</p>
+<p><strong>It is also about spotting the chance that product quality will start to slip before the machine breaks, and supporting stable production.</strong></p>
+<h2>References and sources</h2>
+<ul class="semicon-sources">
+<li data-source-id="S01">Shanghai Famous Trade Co., Ltd., "Quartz Focus Rings for Semiconductor Etching: Purity, Plasma Resistance, Edge Uniformity, and Dimensional Precision": <a href="https://japanese.galliumnitridewafer.com/news/quartz-focus-rings-for-semiconductor-etching-purity-plasma-resistance-edge-uniformity-and-dimensiona-411135.html">https://japanese.galliumnitridewafer.com/news/quartz-focus-rings-for-semiconductor-etching-purity-plasma-resistance-edge-uniformity-and-dimensiona-411135.html</a></li>
+<li data-source-id="S02">Hwang, S. J. &amp; Lee, H. J., "Design Optimization of Focus Ring Geometry for Improved Wafer-Edge Ion Energy-Angle Distributions in Pulsed Capacitively Coupled Plasma Etching": <a href="https://www.mdpi.com/2504-4494/10/9/338">https://www.mdpi.com/2504-4494/10/9/338</a></li>
+<li data-source-id="S03">FTMaintenance, "What is Time-Based Maintenance?": <a href="https://ftmaintenance.com/maintenance-management/what-is-time-based-maintenance/">https://ftmaintenance.com/maintenance-management/what-is-time-based-maintenance/</a></li>
+<li data-source-id="S04">IBM, "What is Predictive Maintenance?": <a href="https://www.ibm.com/think/topics/predictive-maintenance">https://www.ibm.com/think/topics/predictive-maintenance</a></li>
+<li data-source-id="S05">Puga et al., study on high-temperature thermo-oxidative degradation of FKM and FFKM O-rings (published record): <a href="https://elib.dlr.de/220694/">https://elib.dlr.de/220694/</a></li>
+<li data-source-id="S06">M. Barnwell Services, "Sealing Products for the Semiconductor Industry": <a href="https://www.barnwell.co.uk/sealing-products-for-the-semiconductor/">https://www.barnwell.co.uk/sealing-products-for-the-semiconductor/</a></li>
+</ul>
