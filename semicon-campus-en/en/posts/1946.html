@@ -1,0 +1,59 @@
+<p>On October 9, 2026, Intel published a roadmap for confidential computing. According to the official article, the platform code-named "Diamond Rapids" will be the last next-generation Xeon platform with SGX, and after that, confidential computing will focus on TDX. However, no launch date for Diamond Rapids or specific end year for SGX was announced. This is not news that SGX as a whole will stop working right away; it is an announcement showing a shift in focus in Intel's Xeon product strategy.<a href="https://www.intel.com/content/www/us/en/newsroom/opinion/confidential-computing-growing-momentum-sharpened-focus.html">Intel official announcement</a></p>
+<h2>What was announced</h2>
+<p>The core of this news is that Intel stated a plan to move the unit of protection in confidential computing from application-centered SGX to virtual-machine-centered TDX. Intel also says it plans to continue support and security updates for existing SGX platforms into the early 2030s. "The early 2030s" does not mean a specific end year, so it cannot be turned into a concrete year for how long updates will continue.<a href="https://www.intel.com/content/www/us/en/newsroom/opinion/confidential-computing-growing-momentum-sharpened-focus.html">Intel's roadmap explanation</a></p>
+<p>Here, we need to separate plans from results. That Diamond Rapids will be the last Xeon with SGX is a plan on Intel's roadmap. It is not a fact confirmed on shipping hardware. This announcement also does not include independent statistics showing that TDX has been widely adopted across the industry, or performance and cost comparisons with SGX. TDX's ease of deployment at cloud scale should be read as Intel's own assessment.<a href="https://www.intel.com/content/www/us/en/newsroom/opinion/confidential-computing-growing-momentum-sharpened-focus.html">Intel official announcement</a></p>
+<h2>The difference between SGX and TDX</h2>
+<p>Confidential computing is the idea of protecting data not only while it is stored or in transit, but also while it is being processed by a CPU or other hardware. In a normal cloud environment, the OS and virtualization software called a hypervisor have high privileges. Confidential computing aims to protect important data and processing by setting up a hardware protection boundary that is separate from this management software.</p>
+<p><strong>SGX</strong> is a method that places an application's important code and data in a protected area called an "enclave." An enclave is a mechanism that carves out just the parts you most want to protect, rather than the whole application, as a small trust boundary. This makes it easier to design the scope of protection in detail, but the application must be adapted for SGX, and you must manage which data passes in and out of the enclave.<a href="https://www.intel.com/content/www/us/en/developer/articles/technical/tdx-performance-isolated-partitioned-vms.html">Intel technical explanation of SGX and TDX</a></p>
+<p><strong>TDX</strong> is a method that isolates an entire guest virtual machine as a "Trust Domain." A virtual machine is an independent computer environment that runs on one physical server. According to Intel's technical explanation, TDX aims to isolate the Trust Domain from non-TD software such as the virtual machine monitor, hypervisor, and host OS, and to protect the confidentiality and integrity of memory and CPU state.<a href="https://www.intel.com/content/www/us/en/developer/articles/technical/tdx-performance-isolated-partitioned-vms.html">Intel technical explanation of TDX</a></p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>SGX</th>
+<th>TDX</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Unit of protection</td>
+<td>Enclave within an application</td>
+<td>Trust Domain covering a whole virtual machine</td>
+</tr>
+<tr>
+<td>How to adopt</td>
+<td>May require a dedicated app design</td>
+<td>Designed for easy migration without major changes to existing VMs</td>
+</tr>
+<tr>
+<td>Main strength</td>
+<td>Small trust boundary</td>
+<td>Compatibility with cloud operations and scale of deployment</td>
+</tr>
+</tbody>
+</table>
+<p>Simply put, SGX "tightly encloses part of an app," while TDX "protects a virtual machine as a whole." TDX leans toward making existing VM workloads easier to adopt, but that does not erase SGX's ability to keep the trust boundary small at the app level. Which is better depends on the workload and software setup.<a href="https://www.intel.com/content/www/us/en/products/details/processors/xeon/features/trust-domain-extensions.html">Intel TDX product information</a></p>
+<h2>Why TDX gets attention in the AI era</h2>
+<p>AI services sometimes process user input, internal company documents, training data, inference results, and more in the cloud. If this information can be protected even during processing, it may widen the options for handling workloads that require confidentiality in cloud environments. Intel describes TDX's ease of deployment at cloud scale and its operating model as features suited to broad use, but this is Intel's assessment, not independent market statistics.<a href="https://www.intel.com/content/www/us/en/newsroom/opinion/confidential-computing-growing-momentum-sharpened-focus.html">Intel official announcement</a></p>
+<p>As an extension of TDX, Intel also mentions TDX Connect, which targets confidential computing that includes attached devices such as GPUs, Smart NICs, and storage. This points toward considering trusted I/O with peripheral devices, not just Trust Domains on the CPU. However, this announcement alone does not settle the timing of implementation on specific GPU products, supported configurations, or AI processing performance.<a href="https://www.intel.com/content/www/us/en/products/details/processors/xeon/features/trust-domain-extensions.html">Intel TDX product information</a></p>
+<p>Another important term is <strong>remote attestation</strong>. This is a mechanism that lets parties, such as the one handing over data, confirm that a given Trust Domain and software state are running on a TDX-enabled platform. Intel's technical materials describe TDX features that can verify the running state of protected workloads. However, even with attestation, it does not automatically prevent application design mistakes or information leaks by legitimate users.<a href="https://www.intel.com/content/www/us/en/developer/articles/technical/tdx-performance-isolated-partitioned-vms.html">Intel technical explanation of TDX</a></p>
+<h2>Limits, and what the announcement does not tell us</h2>
+<p>TDX is not a mechanism that eliminates every attack or implementation flaw. The actual scope of protection depends not only on the CPU and memory, but also on the virtualization platform, firmware, attached devices, and how the cloud is operated. The performance, cost, and difficulty of migration for SGX and TDX also vary with workloads and software implementation. Intel's announcement does not include benchmarks comparing the two under the same conditions or specific performance guarantees for AI processing.</p>
+<p>Intel also lists post-quantum cryptography and stronger attestation as future investment areas. The TDX documentation list shows updates to related specifications, such as the CPU Architectural Extensions in August 2026 and the TDX Connect ABI in September of the same year. However, updated documents do not mean that features have been implemented or commercially offered in every product.<a href="https://www.intel.com/content/www/us/en/newsroom/opinion/confidential-computing-growing-momentum-sharpened-focus.html">Intel official announcement</a><a href="https://www.intel.com/content/www/us/en/developer/tools/trust-domain-extensions/documentation.html?DocID=787041">Intel TDX documentation list</a></p>
+<h2>Points to check going forward</h2>
+<ol>
+<li>The official launch timing of Diamond Rapids and the actual scope of SGX support.</li>
+<li>When, and under what conditions, new use of SGX will end on successor Xeons.</li>
+<li>Exactly which products will be covered by support and security updates for existing SGX platforms.</li>
+<li>Which GPU, Smart NIC, and storage configurations can use TDX Connect.</li>
+<li>Performance on AI workloads, operating costs, and support from cloud providers and software companies.</li>
+<li>How remote attestation and post-quantum cryptography will be implemented in real services.</li>
+</ol>
+<p>This news is not an immediate end to SGX. It is news that Intel has shown a plan to shift its development focus from fine-grained isolation at the application level to confidential computing that protects existing VMs at cloud scale and includes attached devices. Going forward, we need to see how far the roadmap policy turns into actual product specifications, cloud offerings, and measured results for AI.</p>
+<h2>Sources</h2>
+<ul>
+<li><a href="https://www.intel.com/content/www/us/en/newsroom/opinion/confidential-computing-growing-momentum-sharpened-focus.html">Intel Newsroom: Confidential Computing &#8211; Growing Momentum, Sharpened Focus</a></li>
+<li><a href="https://www.intel.com/content/www/us/en/developer/articles/technical/tdx-performance-isolated-partitioned-vms.html">Intel Developer: Performance Considerations of Hardware-Isolated Partitioned VMs with Intel TDX</a></li>
+<li><a href="https://www.intel.com/content/www/us/en/products/details/processors/xeon/features/trust-domain-extensions.html">Intel: Trust Domain Extensions product information</a></li>
+<li><a href="https://www.intel.com/content/www/us/en/developer/tools/trust-domain-extensions/documentation.html?DocID=787041">Intel Developer: Intel TDX documentation</a></li>
+</ul>
