@@ -1,0 +1,94 @@
+<article class="semicon-template-v2 sc-lesson">
+<!--KEEP:0-->
+<div class="sc-head"><span class="sc-head-ico"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="56" height="56"><rect width="120" height="120" rx="26" fill="#12634f"/><g transform="translate(10 10)" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M50 14C50 14 26 44 26 60a24 24 0 0048 0C74 44 50 14 50 14z"/><path d="M40 62a10 10 0 0010 10" stroke="#e8a317"/><path d="M78 20l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="#e8a317" stroke="none"/></g></svg></span><span class="sc-head-txt"><span class="sc-head-sub">SEMICON CAMPUS Free Courses</span><b>Cleaning Course</b><span class="sc-head-lv">Level 3 Intro · Lesson 6</span></span></div>
+<div class="semicon-hook">
+<p>In Lesson 3, we looked at the flow of RCA cleaning. After SC-1 and after SC-2, there was a step called "rinse with pure water." And at the very end, there is "drying."</p>
+<p>In this lesson, we look at <strong>the water used for rinsing</strong> and <strong>how wafers are dried</strong>. This is an important finishing step to keep the cleaned surface from getting dirty at the end.</p>
+</div>
+<div class="sc-legend"><mark class="sc-exam">Yellow highlights</mark> = key points that appear on this course's tests</div>
+<h2>What you will learn in this article</h2>
+<ul>
+<li><strong>Ultrapure water (UPW)</strong> and <strong>resistivity</strong> (a measure of how clean water is)</li>
+<li>How impurities in rinse water affect the wafer</li>
+<li><strong>Watermarks</strong> that form during drying</li>
+<li>A drying method (<strong>Marangoni drying</strong>)</li>
+</ul>
+<h2>① Rinsing after cleaning uses pure water</h2>
+<p>In Figure 1 of Lesson 3, there was a "rinse with pure water" step after both SC-1 and SC-2. It is an important task that washes away the chemicals. The water used here is not tap water but <strong>ultrapure water (UPW)</strong>. It is water with almost all impurities, such as ions, removed.</p>
+<p>How clean it is, is expressed by <strong>resistivity</strong>. Resistivity is how hard it is for electricity to pass through. The more ions are dissolved in water, the more easily electricity passes (lower resistivity), so <mark class="sc-exam">the higher the resistivity, the fewer the ions and the cleaner the water</mark>. The unit is MΩ·cm (megohm-centimeters).</p>
+<div class="sc-box sc-ev"><b class="t">Evidence</b></p>
+<p>ASTM's (a US standards organization) "guide for ultrapure water used in the electronics and semiconductor industries" (D5127) lists <mark class="sc-exam">18.2 MΩ·cm (at 25°C)</mark> as the resistivity at the point of use for generations with fine line widths (0.35 to 0.032 micrometers). The theoretical upper limit, even for water with no ions at all, is said to be <strong>18.25 MΩ·cm</strong>. The 2015 ITRS guidelines call for a value greater than 18.0.</p>
+</div>
+<div class="sc-box sc-num"><b class="t">Let's think in numbers</b></p>
+<p>The difference between the theoretical limit of 18.25 and the standard's 18.2 is 18.25 − 18.2 = <strong>0.05</strong>. This means using water that is clean almost to the limit.</p>
+<p>The inverse of resistivity is how easily electricity passes (conductivity). 1 ÷ 18.2 ≈ <strong>0.055 microsiemens per centimeter</strong>. This water barely conducts electricity.</p>
+</div>
+<details class="semicon-quiz">
+<summary>Quick quiz: What does high resistivity in ultrapure water mean?</summary>
+<p>Answer: That there are few ions (impurities) in the water.</p>
+</details>
+<h2>② What happens to impurities in rinse water?</h2>
+<p>If ions remain in the rinse water, they can stick to the wafer surface and harm its electrical properties. Also, references say pure water has the property of <mark class="sc-exam">dissolving a very small amount of the wafer's silicon</mark>. Clean does not mean safe. You need to think about rinse time and even how the wafer is dried afterward.</p>
+<h2>③ Drying can leave "watermarks"</h2>
+<p>After rinsing, the water is dried off. If the water <strong>evaporates</strong> here, silicon compounds and other substances dissolved in it are left on the wafer surface. These marks are called <mark class="sc-exam">watermarks (water stains)</mark>. They look like small stains, but if they get between fine lines, they cause defects.</p>
+<p>In other words, instead of just letting water evaporate, it is important to <strong>remove the water from the wafer before it evaporates</strong>.</p>
+<details class="semicon-quiz">
+<summary>Quick quiz: How do watermarks form?</summary>
+<p>Answer: Water left on the wafer surface evaporates, and silicon compounds and other substances dissolved in it are left behind as marks.</p>
+</details>
+<h2>④ Marangoni drying: using a difference in surface tension</h2>
+<p>According to patent documents, spin drying (spinning the wafer to fling off water) or IPA vapor drying alone sometimes cannot fully eliminate watermarks. That is why <strong>Marangoni drying</strong> is widely used.</p>
+<p>In Marangoni drying, IPA (isopropyl alcohol) vapor is floated above the water surface, and the wafer is slowly pulled up through it. IPA has <mark class="sc-exam">lower surface tension (the force that makes a liquid's surface try to shrink)</mark> than water, and this difference is generally explained as acting in the direction that pulls water away from the wafer surface.</p>
+<figure><svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" role="img" style="width:100%;height:auto;max-width:640px;display:block;margin:0 auto" font-family="sans-serif"><rect x="180" y="190" width="280" height="90" rx="6" fill="#cfe3f7" stroke="#1a5fb4" stroke-width="3"/><text x="320" y="262" text-anchor="middle" font-size="15" fill="#1a5fb4">Ultrapure water (rinse water)</text><rect x="180" y="130" width="280" height="58" fill="#fdf2d0" stroke="#e0b030" stroke-width="2" stroke-dasharray="6 5"/><text x="320" y="156" text-anchor="middle" font-size="14" fill="#8a6500">IPA (alcohol) vapor</text><rect x="304" y="40" width="32" height="170" rx="3" fill="#d9d9d9" stroke="#777" stroke-width="2"/><text x="320" y="30" text-anchor="middle" font-size="14" fill="#333">Wafer (pulled up slowly)</text><g stroke="#555" stroke-width="3" fill="none"><path d="M370 170 V90"/><path d="M370 90 l-6 10 m6 -10 l6 10"/></g><g fill="#1a5fb4"><circle cx="296" cy="196" r="4"/><circle cx="294" cy="206" r="4"/><circle cx="344" cy="198" r="4"/></g><text x="530" y="170" text-anchor="middle" font-size="13" fill="#c0392b">Water runs off</text><text x="530" y="188" text-anchor="middle" font-size="13" fill="#c0392b">the raised surface</text><text x="100" y="170" text-anchor="middle" font-size="13" fill="#555">Water surface tension: high</text><text x="100" y="188" text-anchor="middle" font-size="13" fill="#555">IPA surface tension: low</text></svg><figcaption>Figure 1: Diagram of Marangoni drying (drawn by our editors to explain the idea; real equipment looks different)</figcaption></figure>
+<div class="sc-box sc-num"><b class="t">Let's think in numbers</b></p>
+<p>One patent gives the surface tension at 20°C as about 21 for IPA and about 72 for water (in dynes per centimeter). 72 ÷ 21 ≈ <strong>about 3.4 times</strong>. Water's surface pulls inward about 3.4 times more strongly.</p>
+</div>
+<div class="sc-box sc-why" style="border-left:4px solid #1a5fb4"><b class="t">See the real thing (external site, in English)</b></p>
+<p>You can read a detailed explanation of equipment that makes ultrapure water on an introduction page from an equipment maker (MKS).</p>
+<p><a rel="nofollow noopener" href="https://www.mks.com/n/semiconductor-ultrapure-water" target="_blank">MKS: "Ultrapure Water for Semiconductor Manufacturing"</a></p>
+</div>
+<details class="semicon-quiz">
+<summary>Quick quiz: Why is Marangoni drying widely used?</summary>
+<p>Answer: Because spin drying or IPA vapor drying alone sometimes cannot fully eliminate watermarks.</p>
+</details>
+<div class="sc-box sc-key"><b class="t">Key points of this lesson</b></p>
+<p>Rinsing uses ultrapure water, and its cleanliness is expressed by resistivity (around 18.2 MΩ·cm). When water evaporates during drying, watermarks are left. So the water is removed before it evaporates. Marangoni drying uses the fact that IPA has lower surface tension than water.</p>
+</div>
+<p>In the next lesson, we look at how to handle hydrofluoric acid (HF), which needs special care among the chemicals used in cleaning.</p>
+<h2>Word review</h2>
+<p><strong>Ultrapure water (UPW)</strong>: Water with almost all impurities, such as ions, removed.</p>
+<p><strong>Resistivity</strong>: How hard it is for electricity to pass through. For water, a higher value means fewer ions.</p>
+<p><strong>Watermark</strong>: A mark left by impurities that remain after water evaporates.</p>
+<p><strong>IPA</strong>: Isopropyl alcohol. A liquid with lower surface tension than water.</p>
+<p><strong>Surface tension</strong>: The force that makes a liquid's surface try to shrink.</p>
+<h2>Common misconceptions</h2>
+<h3>Q. Is pure water safe, so it never harms the wafer?</h3>
+<p>No. References say pure water has the property of dissolving a very small amount of the wafer's silicon. You need to think about time and even how the wafer is dried.</p>
+<h3>Q. Is drying just a matter of letting the water evaporate?</h3>
+<p>No. Evaporation leaves watermarks. It is important to remove the water before it evaporates.</p>
+<h2>Sources</h2>
+<ul class="semicon-sources sc-sources">
+<li><a rel="nofollow noopener" href="https://store.astm.org/d5127-12.html" target="_blank">ASTM D5127-12: "Standard Guide for Ultra-Pure Water Used in the Electronics and Semiconductor Industries" (resistivity of 18.2 MΩ·cm; theoretical upper limit of 18.25)</a></li>
+<li><a rel="nofollow noopener" href="https://www.mks.com/n/semiconductor-ultrapure-water" target="_blank">MKS: "Ultrapure Water for Semiconductor Manufacturing" (an equipment maker's introduction page; a secondary source)</a></li>
+<li><a rel="nofollow noopener" href="https://www.google.ca/patents/US5934299" target="_blank">US5934299A: "Apparatus and method for improved washing and drying of semiconductor wafers" (Marangoni drying, watermarks, and surface tension values; as described in the patent)</a></li>
+</ul>
+</article>
+<p><!--KEEP:1--></p>
+<aside class="course-nav-wash3">
+<h2>Other lessons in the Cleaning Level 3 course</h2>
+<p><a href="/wash-3/">Back to the Cleaning Level 3 course list</a></p>
+<ul>
+<li><a href="/semiconductor-why-wafer-cleaning/">Why is semiconductor cleaning needed so many times? The role of the cleaning process</a></li>
+<li><a href="/semiconductor-wafer-contamination-types/">4 types of contamination removed in semiconductor cleaning: particles, organics, metals, and native oxide</a></li>
+<li><a href="/rca-clean-sc1-sc2/">The basics of semiconductor cleaning, "RCA cleaning": what SC-1 and SC-2 contain and why the order matters</a></li>
+<li><a href="/wet-cleaning-problems-dry-cleaning/">Challenges in semiconductor cleaning: the risk of over-cleaning and dry cleaning</a></li>
+<li><a href="/wafer-cleanliness-measurement/">How semiconductor cleaning is evaluated: measuring particles, metals, and organics</a></li>
+<li><a href="/cleanroom-class-contamination-sources/">How to read cleanroom class standards (ISO 14644-1 and US Federal Standard), plus FFUs and ULPA filters [Cleaning Level 3, Lesson 1 Extra]</a></li>
+<li><a href="/native-oxide-hf-last-hydrogen-termination/">How fast does native oxide come back? The surface after HF and "hydrogen termination" [Cleaning Level 3, Lesson 2 Extra]</a></li>
+<li><a href="/rca-clean-history-sc1-particle-removal/">How SC-1 cleaning (APM) works: removing particles with zeta potential, ammonia, and hydrogen peroxide [Cleaning Level 3, Lesson 3 Extra]</a></li>
+<li><a href="/batch-vs-single-wafer-cleaning-one-bath/">Batch vs. single-wafer cleaning: the evolution from multiple baths to one bath [Cleaning Level 3, Lesson 4 Extra]</a></li>
+<li><a href="/txrf-total-reflection-xray-fluorescence-basics/">How TXRF works: measuring metals on the wafer surface with total reflection [Cleaning Level 3, Lesson 5 Extra]</a></li>
+<li><a href="/wafer-cleaning-chemical-safety-hydrofluoric-acid/">Safety of chemicals used in cleaning: hydrofluoric acid (HF) is dangerous even when it does not hurt</a></li>
+</ul>
+<p>Want to learn about cleaning equipment makers? See also <a href="/what-is-screen-semiconductor-cleaning-equipment/">What makes SCREEN special? A beginner's guide to semiconductor cleaning equipment and related processes and jobs</a>.</p>
+</aside>

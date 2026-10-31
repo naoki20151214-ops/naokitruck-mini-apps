@@ -1,0 +1,103 @@
+<article class="semicon-template-v2 sc-lesson" data-slug="wet-cleaning-problems-dry-cleaning" data-target="new_post" data-course="洗浄コース3級-4">
+<!--KEEP:0-->
+<div class="sc-head"><span class="sc-head-ico"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="56" height="56"><rect width="120" height="120" rx="26" fill="#12634f"/><g transform="translate(10 10)" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M50 14C50 14 26 44 26 60a24 24 0 0048 0C74 44 50 14 50 14z"/><path d="M40 62a10 10 0 0010 10" stroke="#e8a317"/><path d="M78 20l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="#e8a317" stroke="none"/></g></svg></span><span class="sc-head-txt"><span class="sc-head-sub">SEMICON CAMPUS Free Courses</span><b>Cleaning Course</b><span class="sc-head-lv">Level 3 Intro · Lesson 4</span></span></div>
+<div class="semicon-hook">
+<p>So far, we have looked at ways to remove contamination. But in fact, <strong>cleaning itself also causes problems</strong>.</p>
+<p>In this article, we explain, step by step, the challenges of "wet cleaning," which uses liquids, and the idea of "dry cleaning," which uses no liquid.</p>
+</div>
+<div class="sc-legend"><mark class="sc-exam">Yellow highlights</mark> = key points that appear on this course's tests</div>
+<h2>What you will learn in this article</h2>
+<ul>
+<li><strong>Why over-cleaning is a problem</strong> (the surface gets rough)</li>
+<li><strong>5 challenges of wet cleaning</strong></li>
+<li><strong>What dry cleaning methods there are</strong></li>
+</ul>
+<h2 data-fact-ids="W13">① Over-cleaning makes the surface rough</h2>
+<p>Lecture materials from KTH (Royal Institute of Technology, Sweden) first list <mark class="sc-exam">surface roughness (microroughness)</mark> as a problem with wet cleaning. The cleaning solution or metal contamination etches the silicon surface and creates very fine bumps. In particular, they explain that <strong>a high concentration of the ammonia in SC-1 etches and damages silicon</strong>.</p>
+<figure><svg viewBox="0 0 640 230" role="img" aria-label="How the surface changes with cleaning (cross-section)">
+<text x="150" y="24" font-size="16" font-weight="700" fill="#2e9e5b" text-anchor="middle">Cleaned just right</text>
+<text x="490" y="24" font-size="16" font-weight="700" fill="#d6455d" text-anchor="middle">Over-cleaned</text>
+<rect x="20" y="110" width="260" height="90" fill="#cfd8e3"/>
+<path d="M20 110H280" stroke="#2e9e5b" stroke-width="4"/>
+<text x="150" y="160" font-size="13" fill="#1b2430" text-anchor="middle">Silicon</text>
+<text x="150" y="95" font-size="13" fill="#1b2430" text-anchor="middle">Smooth surface</text>
+<polygon points="360,100 380,82 400,104 420,80 440,106 460,84 480,102 500,78 520,106 540,82 560,100 580,84 600,100 620,90 620,200 360,200" fill="#cfd8e3" stroke="#d6455d" stroke-width="3" stroke-linejoin="round"/><text x="490" y="160" font-size="13" fill="#1b2430" text-anchor="middle">Silicon</text>
+<text x="490" y="52" font-size="13" fill="#1b2430" text-anchor="middle">Bumpy (microroughness)</text>
+<text x="490" y="70" font-size="12" fill="#5b6877" text-anchor="middle">Strong ammonia, high temp, long time</text>
+<path d="M300 150h40" stroke="#1b2430" stroke-width="3"/><path d="M332 143l10 7-10 7" fill="none" stroke="#1b2430" stroke-width="3"/>
+<text x="320" y="190" font-size="12" fill="#5b6877" text-anchor="middle">Over-cleaning</text>
+<text x="320" y="222" font-size="12" fill="#5b6877" text-anchor="middle">Result: charge carriers move less easily, and gate oxide quality also drops</text>
+</svg><figcaption>Figure 1: How over-cleaning roughens the surface (schematic, based on the explanation in KTH's lecture materials)</figcaption></figure>
+<div class="sc-box sc-why"><b class="t">Why is a rough surface a problem?</b><p>According to KTH's materials, a rough surface lowers how easily the particles that carry electricity move through the transistor's channel (carrier mobility). It also has a large negative effect on the quality of thermally grown gate oxide and on how hard it is to break down (breakdown voltage). In other words, <strong>cleaning to remove contamination can end up lowering transistor performance</strong>.</p></div>
+<div class="sc-box sc-ev"><b class="t">Evidence</b><p>The "Problems in Wet Cleaning" slide in KTH IH2655, "Lecture 3: Wafer Clean and Wet Processing" (Mikael Östling, 2012).</p></div>
+<details class="semicon-quiz"><summary>Quick quiz: In SC-1, a high concentration of what makes the silicon surface easier to damage?</summary><p>Answer: The concentration of ammonia (NH4OH).</p></details>
+<h2 data-fact-ids="W14">② 3 ways to reduce roughness</h2>
+<p>KTH's materials give the following 3 countermeasures.</p>
+<ul>
+<li><mark class="sc-exam">Lower the ammonia concentration</mark></li>
+<li><mark class="sc-exam">Lower the cleaning temperature</mark></li>
+<li><mark class="sc-exam">Shorten the cleaning time</mark></li>
+</ul>
+<p>IMEC's "ammonia : hydrogen peroxide : pure water = 0.05 : 1 : 5," which we saw in Lesson 3, is an example of the first idea.</p>
+<div class="sc-box sc-num"><b class="t">Let's think in numbers</b><p>When making 10 liters of solution, how much ammonia do you need?</p><p>Standard SC-1 (1:1:5) adds up to 7, so 10 × 1 ÷ 7 ≈ <strong>1.43 liters</strong>. The IMEC method (0.05:1:5) adds up to 6.05, so 10 × 0.05 ÷ 6.05 ≈ <strong>0.083 liters (83 milliliters)</strong>.</p><p>1.43 ÷ 0.083 ≈ <strong>about 17</strong>, so that is a difference of about 17 times. (Even though "0.05 vs. 1 is a 20-times difference," the totals differ, so it comes out to about 17 times.)</p></div>
+<details class="semicon-quiz"><summary>Quick quiz: Name 3 ways to reduce surface roughness.</summary><p>Answer: Lower the ammonia concentration, lower the temperature, and shorten the time.</p></details>
+<h2 data-fact-ids="W15">③ 5 challenges of wet cleaning</h2>
+<p>Besides roughness, KTH's materials list the following 5 challenges of wet cleaning.</p>
+<ul>
+<li><mark class="sc-exam">It can bring in particles</mark> (chemicals and pure water contain particles)</li>
+<li><mark class="sc-exam">Drying is difficult</mark></li>
+<li><mark class="sc-exam">It is costly</mark></li>
+<li><mark class="sc-exam">Waste liquid must be treated</mark></li>
+<li><mark class="sc-exam">It has become a poor fit for advanced integration technology</mark></li>
+</ul>
+<div class="sc-box sc-why"><b class="t">Why would cleaning bring in particles?</b><p>Because neither the cleaning solution nor the pure water is guaranteed to be 100% clean. KTH's materials even include a graph showing the number of particles in semiconductor-grade chemicals. <strong>If the cleaning tool (the liquid) is dirty, the more you clean, the dirtier things get</strong>.</p></div>
+<div class="sc-box sc-num"><b class="t">Let's think in numbers</b><p>In Lesson 1, about 80 of roughly 400 steps were cleaning. If each cleaning needs 10 liters of chemicals and pure water, that is 80 × 10 = <strong>800 liters</strong> (along the route one wafer travels). (10 liters is just an example to show the idea.)</p><p>The more times you clean, the more cost and waste liquid increase. The numbers show why it is worth improving how cleaning is done.</p></div>
+<details class="semicon-quiz"><summary>Quick quiz: Name one challenge of wet cleaning.</summary><p>Answer: (Examples) Any of these: it brings in particles, drying is hard, it is costly, waste liquid must be treated, or it is a poor fit for advanced technology.</p></details>
+<figure><svg viewBox="0 0 640 300" role="img" aria-label="Challenges of wet cleaning and methods of dry cleaning">
+<rect x="0" y="0" width="310" height="300" rx="12" fill="#e8f0fc" stroke="#1f5fbf" stroke-width="2"/>
+<text x="155" y="30" font-size="17" font-weight="700" fill="#1f5fbf" text-anchor="middle">Wet cleaning (with liquid)</text>
+<text x="155" y="52" font-size="12" fill="#5b6877" text-anchor="middle">5 challenges</text>
+<g font-size="14" fill="#1b2430"><text x="24" y="86">① Can bring in particles</text><text x="24" y="122">② Drying is difficult</text><text x="24" y="158">③ It is costly</text><text x="24" y="194">④ Waste liquid must be treated</text><text x="24" y="230">⑤ Poor fit for advanced tech</text><text x="24" y="266" font-weight="700" fill="#d6455d">+ Over-cleaning roughens surface</text></g>
+<rect x="330" y="0" width="310" height="300" rx="12" fill="#e9f6ee" stroke="#2e9e5b" stroke-width="2"/>
+<text x="485" y="30" font-size="17" font-weight="700" fill="#2e9e5b" text-anchor="middle">Dry cleaning (no liquid)</text>
+<text x="485" y="52" font-size="12" fill="#5b6877" text-anchor="middle">4 methods</text>
+<g font-size="14" fill="#1b2430"><text x="354" y="86">① HF / water vapor (gas)</text><text x="354" y="122">② UV ozone cleaning</text><text x="354" y="158">③ Hydrogen / argon plasma</text><text x="354" y="194">④ Thermal cleaning</text><text x="354" y="240" font-weight="700" fill="#b87800">Be careful:</text><text x="354" y="262">Don't let the energy</text><text x="354" y="282">damage the wafer</text></g>
+<path d="M312 150h16" stroke="#1b2430" stroke-width="3"/>
+</svg><figcaption>Figure 2: Challenges of wet cleaning and methods of dry cleaning (as organized in KTH's lecture materials)</figcaption></figure>
+<h2 data-fact-ids="W16">④ "Dry cleaning," which uses no liquid</h2>
+<p>That is where <mark class="sc-exam">"dry cleaning," which removes contamination with gases or energy instead of liquids</mark>, comes in. KTH's materials introduce the following 4 methods.</p>
+<ul>
+<li><strong>HF / water vapor (gas) cleaning:</strong> Removes native oxide with HF vapor</li>
+<li><strong>UV ozone cleaning (UVOC):</strong> Breaks down organics with ultraviolet light and ozone</li>
+<li><strong>Hydrogen / argon plasma cleaning</strong></li>
+<li><strong>Thermal cleaning</strong></li>
+</ul>
+<div class="sc-box sc-why"><b class="t">What should you watch out for in dry cleaning?</b><p>To drive reactions at low temperatures, you need energy. That energy comes from plasma, ion beams, short-wavelength light, heat, and so on. However, KTH's materials say it is important <mark class="sc-exam">not to let that energy damage the wafer</mark>.</p></div>
+<h2>⑤ The "containers" used for cleaning matter too</h2>
+<p>The containers that hold chemicals and the carriers that move wafers can also be sources of contamination. KTH's materials say that <mark class="sc-exam">SC-1, SC-2, and similar solutions use quartz or Teflon containers</mark>, <mark class="sc-exam">HF uses Teflon containers</mark>, and wafer carriers should be only quartz or Teflon.</p>
+<div class="sc-box sc-key"><b class="t">Key points of this lesson</b><p>Over-cleaning roughens the surface and lowers transistor performance. The countermeasure is to lower concentration, temperature, and time. Wet cleaning has challenges with particles, drying, cost, waste liquid, and fit with advanced technology, so dry cleaning is also used.</p></div>
+<p>In the next article, we look at how to check the "quality" of cleaning.</p>
+<h2>Word review</h2>
+<ul>
+<li><strong>Microroughness:</strong> Very fine bumps that form on a surface.</li>
+<li><strong>Wet cleaning:</strong> A method that cleans using liquids.</li>
+<li><strong>Dry cleaning:</strong> A method that cleans with gases or energy instead of liquids.</li>
+<li><strong>Teflon and quartz:</strong> Container materials that resist chemicals and give off little contamination.</li>
+</ul>
+<h2>Common misconceptions</h2>
+<h3>Q. The more you clean, the cleaner it gets, right?</h3>
+<p>No. Over-cleaning can roughen the surface and lower transistor performance.</p>
+<h3>Q. If you clean with liquid, particles will never increase, right?</h3>
+<p>No. Particles in chemicals and pure water can stick to the wafer.</p>
+<h2>Official sources we referred to</h2>
+<ul class="semicon-sources sc-sources">
+<li data-source-id="S03"><a href="https://www.kth.se/social/upload/4f1d17ccf27654791f000000/Lecture%203.pdf">KTH Royal Institute of Technology, IH2655, "Lecture 3: Wafer Clean and Wet Processing" (Mikael Östling, Spring 2012)</a></li>
+</ul>
+</article>
+
+
+<div id="sc-read" style="max-width:720px;margin:28px auto 0"></div>
+<!--KEEP:1-->
+<!--KEEP:2-->
+
+<aside class="course-nav-wash3"><h2>Other lessons in the Cleaning Level 3 course</h2><p><a href="/wash-3/">Back to the Cleaning Level 3 course list</a></p><ul><li><a href="/semiconductor-why-wafer-cleaning/">Why is semiconductor cleaning needed so many times? The role of the cleaning process</a></li><li><a href="/semiconductor-wafer-contamination-types/">4 types of contamination removed in semiconductor cleaning: particles, organics, metals, and native oxide</a></li><li><a href="/rca-clean-sc1-sc2/">The basics of semiconductor cleaning, "RCA cleaning": what SC-1 and SC-2 contain and why the order matters</a></li><li><a href="/wafer-cleanliness-measurement/">How semiconductor cleaning is evaluated: measuring particles, metals, and organics</a></li><li><a href="/cleanroom-class-contamination-sources/">How to read cleanroom class standards (ISO 14644-1 and US Federal Standard), plus FFUs and ULPA filters [Cleaning Level 3, Lesson 1 Extra]</a></li><li><a href="/native-oxide-hf-last-hydrogen-termination/">How fast does native oxide come back? The surface after HF and "hydrogen termination" [Cleaning Level 3, Lesson 2 Extra]</a></li><li><a href="/rca-clean-history-sc1-particle-removal/">How SC-1 cleaning (APM) works: removing particles with zeta potential, ammonia, and hydrogen peroxide [Cleaning Level 3, Lesson 3 Extra]</a></li><li><a href="/batch-vs-single-wafer-cleaning-one-bath/">Batch vs. single-wafer cleaning: the evolution from multiple baths to one bath [Cleaning Level 3, Lesson 4 Extra]</a></li><li><a href="/txrf-total-reflection-xray-fluorescence-basics/">How TXRF works: measuring metals on the wafer surface with total reflection [Cleaning Level 3, Lesson 5 Extra]</a></li><li><a href="/ultrapure-water-rinse-drying-watermark/">Semiconductor wafer drying (Marangoni drying and IPA drying) and preventing watermarks: ultrapure water rinsing and drying</a></li><li><a href="/wafer-cleaning-chemical-safety-hydrofluoric-acid/">Safety of chemicals used in cleaning: hydrofluoric acid is dangerous even when it doesn't hurt</a></li></ul><p>Want to learn about cleaning equipment makers? See also <a href="/what-is-screen-semiconductor-cleaning-equipment/">What makes SCREEN special? A beginner's guide to semiconductor cleaning equipment and related processes and jobs</a>.</p></aside>
