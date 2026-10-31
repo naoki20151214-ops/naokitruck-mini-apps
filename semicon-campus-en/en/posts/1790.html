@@ -1,0 +1,195 @@
+<!--KEEP:0-->
+<article class="semicon-template-v2" data-episode="092" data-slug="o-ring-vacuum-seal" data-target="new_post" data-template-version="2">
+<div class="semicon-hook" data-fact-ids="F001 F013">
+<p>You closed the tool's lid, but you can't pump the air out well enough.</p>
+<p>The small O-ring at the joint is an important part that blocks the way in for air.</p>
+<p>But a bad vacuum alone is not a reason to decide on replacing the O-ring.</p>
+</div>
+<p>An O-ring is a ring-shaped seal found at places such as the lids and piping joints of equipment that processes semiconductors. Placed in a groove and squeezed, it presses tightly against the surfaces and keeps unwanted gas from flowing in. The pump removes the gas, and the seal closes off the joint. With both of these roles in place, you can approach the required pressure.<a class="semicon-source-ref" href="#source-S005">[5]</a><a class="semicon-source-ref" href="#source-S006">[6]</a></p>
+<p>The "one ring" in the title is a question about a small part that supports a single joint. It does not mean the whole tool has only one O-ring. Even if you have done inspections and replacements in manufacturing, with semiconductor equipment, connecting "what is being sealed" with "what an abnormal number means" shows you the decisions needed before and after replacing a part.</p>
+<h2>What you will learn in this article</h2>
+<ul>
+<li>Why vacuum seals are needed, and how an O-ring seals using the groove, squeeze, and contact pressure</li>
+<li>Why scratches, degradation, and the wrong material lead to abnormalities, and the differences between four gas loads</li>
+<li>How to narrow down causes from pressure changes and helium (He) testing, and how to confirm recovery after replacement</li>
+</ul>
+<nav class="learning-map" aria-label="Reading order for this article">
+<ol>
+<li><a href="#need">What does it protect? To why seals are needed and how they work</a></li>
+<li><a href="#locations">Where are they? To locations in the tool, scratches, and degradation</a></li>
+<li><a href="#materials">Why change materials? To compatibility with the environment</a></li>
+<li><a href="#gas-loads">Where does the gas come from? To the four phenomena</a></li>
+<li><a href="#troubleshooting">What do you measure? To isolating causes and He testing</a></li>
+<li><a href="#recovery">What counts as fixed? To confirming recovery and the job</a></li>
+</ol>
+</nav>
+<section id="need" data-fact-ids="F001">
+<h2>1. Why does semiconductor equipment need vacuum seals?</h2>
+<p>A vacuum seal protects the boundary that keeps the inside of a tool at the required pressure and atmosphere. A vacuum is a state with lower pressure than the atmosphere. In semiconductor manufacturing, pressure and the gases used are controlled in steps such as deposition, which adds material, and etching, which removes unwanted material. An O-ring is not a material built into the wafer. It is a part that supports the equipment that processes wafers.</p>
+<p>If there is a path between the outside atmosphere and a pumped-down chamber, gas enters the vacuum side. A chamber is the vessel where processing happens, and a flange is a joint that connects pipes or vessels. Just putting metal surfaces together can leave tiny gaps, so the boundary is sealed with a seal.<a class="semicon-source-ref" href="#source-S005">[5]</a></p>
+<p>What matters here is to separate sealing from pumping. Even if the seal is sound, pressure will not drop if the pump cannot pump enough. On the other hand, even if the pump is running, the load increases if gas keeps coming in from outside. If you first understand it as "looking at the balance between how gas gets in and how it gets out," you are less likely to judge a vacuum problem by part name alone.<a class="semicon-source-ref" href="#source-S006">[6]</a></p>
+</section>
+<section id="mechanism" data-fact-ids="F002 F003">
+<h2>2. How does an O-ring seal a gap?</h2>
+<p>An O-ring presses against the surfaces through the compression and elasticity it has when installed, forming a continuous contact area. An elastomer is a rubber-like material that deforms when force is applied and tries to return when the force is removed. An O-ring has a round cross-section, and when it is placed in the groove of a joint and clamped by the mating surface, that cross-section deforms.<a class="semicon-source-ref" href="#source-S002">[2]</a></p>
+<p>The amount it is squeezed is called <strong>squeeze</strong>, and the ratio to the original cross-section thickness is called the squeeze ratio. The pressure created at the contact area by the force trying to spring back is the <strong>contact pressure</strong>. The rubber deforms to follow tiny irregularities in the surface, which helps block the path for gas. Rather than thinking only a thin single point is touching, understand that a contact band forms on the deformed cross-section.<a class="semicon-source-ref" href="#source-S005">[5]</a></p>
+<p>The recess the O-ring sits in is called the <strong>groove</strong>, and it determines where the O-ring sits and how it deforms. The design is not "just clamp it hard in a shallow groove." Too little squeeze can lead to poor contact, but too much compression or overfilling can also cause damage. You consider width, depth, dimensional variation, and even room for thermal expansion or swelling from chemicals.<a class="semicon-source-ref" href="#source-S001">[1]</a><a class="semicon-source-ref" href="#source-S005">[5]</a></p>
+<p>Some designs use the pressure difference to help the seal. But that is not a mechanism that heals scratches. You cannot say that pressure lets you ignore a few scratches. The required squeeze ratio also changes between face seals and seals around a shaft, and with material and temperature. Do not try to solve problems on site by tightening more. Check the dimensions and installation conditions specified for the tool.</p>
+</section>
+<section id="locations" data-fact-ids="F001 F003">
+<h2>3. Where are O-rings in semiconductor equipment?</h2>
+<p>When looking for O-rings, look at "where gas is separated" rather than the ring itself. Candidates for checking seals include chamber lids and doors that open and close, vacuum piping connections, pump connections, and the mounting ports of vacuum gauges that measure pressure. You also need to look at scratches on the mating surfaces.<a class="semicon-source-ref" href="#source-S005">[5]</a></p>
+<p>A chamber that switches pressure to load and unload wafers is called a <strong>load lock</strong>. The sealing of the doors that separate it and the valves that open and close the transfer space is also important. However, a leak inside a valve is not always outside air coming in. Gas may move from one compartment to the next. Check on the drawings what the seal is separating.</p>
+<p>Not every connection uses an O-ring. For example, the ISO-KF vacuum flange has a design that places a centering ring with an O-ring between two flanges. On the other hand, a standard CF flange uses a copper metal gasket. Gas lines and valves also have different designs, so don't assume "it's a vacuum system, so it's the same rubber everywhere." Check the parts list against the specified parts.<a class="semicon-source-ref" href="#source-S010">[10]</a></p>
+</section>
+<section id="degradation" data-fact-ids="F004 F005 F006 F012">
+<h2>4. Why do scratches, foreign matter, and set lead to abnormalities?</h2>
+<p>They lead to abnormalities because the designed contact condition and material properties can no longer be maintained. Even a new O-ring can be a candidate for cuts or poor contact if it catches on a sharp edge during installation, is clamped while twisted, or partly sticks out of the groove. This is <strong>installation damage</strong>. "It was just replaced" is not proof that it is sound.<a class="semicon-source-ref" href="#source-S003">[3]</a></p>
+<p>Foreign matter can also prevent contact between the seal and the surface, or damage the seal when it is tightened. If you look only at scratches on the O-ring, you may leave dirt in the groove or scratches on the flange surface. If the mating side does not change even after you replace the part, the same problem may come back.</p>
+<p>When rubber that has been squeezed for a long time is removed, the deformation that keeps it from returning to its original thickness is called <strong>compression set</strong>. It is what people call "set" or loss of springback. When there is less room to spring back, it becomes harder to follow slight changes in the joint. However, a compression set test value alone cannot tell you "it will leak in so many days." Conditions such as temperature, time, and specimen shape matter.<a class="semicon-source-ref" href="#source-S002">[2]</a></p>
+<p>Exposure to heat and chemicals can also cause swelling, shrinking, hardening, and cracking. Swelling means the material expands, for example by absorbing a medium. It may seem that getting thicker would strengthen contact, but if the groove loses its spare room or the material properties change, sealing can become unstable. For long-term use, consider temperature, media, and opening/closing history in addition to days since replacement.<a class="semicon-source-ref" href="#source-S003">[3]</a></p>
+<p>Plasma is a state in which gas is ionized and contains ions, electrons, and so on. When plasma used in processing or cleaning acts on a seal, the seal can wear through chemical reactions with reactive particles or physical erosion by ion bombardment. This is not the same as thermal degradation, and the behavior changes with installation location, process conditions, and material formulation.<a class="semicon-source-ref" href="#source-S008">[8]</a></p>
+</section>
+<section id="materials" data-fact-ids="F007">
+<h2>5. Why change O-ring materials depending on the environment?</h2>
+<p>The purpose of material selection is to maintain sealing and cleanliness in that location. "High heat resistance" alone does not tell you whether it can withstand the chemicals used, whether gas passes through it easily, or whether it sheds particles. Even with the same material code, properties change if the formulation or product grade differs.<a class="semicon-source-ref" href="#source-S001">[1]</a><a class="semicon-source-ref" href="#source-S009">[9]</a></p>
+<h3>What are NBR, EPDM, and silicone chosen for?</h3>
+<p><strong>NBR (nitrile rubber)</strong> is a material chosen for its compatibility with oil and its mechanical properties. However, being usable with oil does not automatically mean it is suitable for high temperatures or other chemicals. <strong>EPDM (ethylene propylene rubber)</strong> is chosen for its compatibility with things like hot water. Its suitability for oil and other media must be checked case by case.<a class="semicon-source-ref" href="#source-S002">[2]</a></p>
+<p><strong>Silicone rubber (VMQ)</strong> is chosen for its temperature range and flexibility. On the other hand, you also need to consider gas permeation and mechanical damage. Choosing it because "it's soft, so it's ideal for vacuum" or "it looks clean, so it has little outgassing" misses necessary conditions.<a class="semicon-source-ref" href="#source-S001">[1]</a></p>
+<h3>Is it fine to choose either FKM or FFKM?</h3>
+<p><strong>FKM (fluoroelastomer)</strong> is a material chosen for heat resistance, oil resistance, relatively low gas permeation, and more. <strong>FFKM (perfluoroelastomer)</strong> is a candidate for harsh chemicals, high temperatures, and the like. However, neither is a material that is uniformly suitable for all chemicals and all plasmas.<a class="semicon-source-ref" href="#source-S002">[2]</a></p>
+<p>A DuPont technical document shows a comparison in which even FFKM produces different amounts of particles after plasma exposure depending on the formulation. You must not extend this result into a ranking for all materials and processes. Rather than deciding "FFKM is the best," check temperature, gases and chemicals, plasma exposure, compression and opening/closing, permeation and outgassing, particles, and the tool's specified parts. A material name is a starting point for selection, not a guarantee that a substitute will work.<a class="semicon-source-ref" href="#source-S008">[8]</a><a class="semicon-source-ref" href="#source-S009">[9]</a></p>
+</section>
+<section id="gas-loads" data-fact-ids="F008 F009">
+<h2>6. A bad vacuum is not caused only by leak holes</h2>
+<p>When pressure is slow to drop, separate where the gas comes from and the path it takes. Here, the amount of gas that enters the vacuum side or is released inside and must be pumped out is called the <strong>gas load</strong>. From a single symptom of a bad pressure reading, you cannot judge the following four to be the same phenomenon.</p>
+<h3>Entering from outside through a path: Real Leak</h3>
+<p>A <strong>real leak</strong> is gas entering through an actual flow path that connects the outside to the vacuum side. Candidates include not only cuts in O-rings but also mating surfaces, piping, welds, and more. Even when you suspect a real leak at a seal, don't narrow the check to the rubber alone.<a class="semicon-source-ref" href="#source-S005">[5]</a></p>
+<h3>Gas trapped inside coming out with a delay: Virtual Leak</h3>
+<p>A <strong>virtual leak</strong> is a phenomenon in which gas slowly comes out of a small trapped space inside, looking like a leak. For example, gas left at the bottom of a blind screw hole may come out through a narrow path. The path is different from a real leak, where new outside air comes in. Even when considering an internal venting path as a countermeasure, it does not mean connecting the vacuum chamber to outside air.<a class="semicon-source-ref" href="#source-S005">[5]</a></p>
+<h3>Passing through the material: Permeation</h3>
+<p><strong>Permeation</strong> is gas dissolving into a material, diffusing through it, and moving to the other side. It can happen even if the O-ring has no hole through it. It changes with the type of gas, temperature, formulation, thickness, and so on, so "there is no leak hole" is not the same as "there is no gas movement."<a class="semicon-source-ref" href="#source-S012">[12]</a></p>
+<h3>Coming out of surfaces and materials: Outgassing</h3>
+<p><strong>Outgassing</strong> is moisture stuck to the walls, or gases and volatile components contained in materials, coming out into the vacuum side. The history of opening the chamber, cleaning, and deposits also matter. Searching only for one leak hole on the outside cannot explain gas coming from walls and materials.<a class="semicon-source-ref" href="#source-S006">[6]</a></p>
+<div class="semicon-table-wrap">
+<table>
+<caption>Tell the four phenomena apart by the gas path</caption>
+<thead>
+<tr>
+<th scope="col">Phenomenon</th>
+<th scope="col">What you mainly want to check</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">Real leak</th>
+<td>Whether there is a flow path connecting the outside to the vacuum side</td>
+</tr>
+<tr>
+<th scope="row">Virtual leak</th>
+<td>Whether a trapped space inside is being pumped out with a delay</td>
+</tr>
+<tr>
+<th scope="row">Permeation</th>
+<td>Whether movement through the material is affecting the measurement</td>
+</tr>
+<tr>
+<th scope="row">Outgassing</th>
+<td>Whether gas is coming from walls, materials, or deposits</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>These can overlap. Don't rank them by type alone, such as "this one happens suddenly" or "this one has little effect on the process." Consider changes over time together with test results.</p>
+</section>
+<section id="process" data-fact-ids="F012 F013">
+<h2>7. Why do seal problems affect the process?</h2>
+<p>What we want to protect in semiconductor processes is not just the pressure number, but also the environment needed to get the same processing results under the same conditions. If outside air gets in, the gas to be pumped out increases, and it can also affect the composition of the gases the process needs. How the effect shows up depends on whether pressure control can keep up and what gas comes in, and how much.<a class="semicon-source-ref" href="#source-S006">[6]</a></p>
+<p>Another path is contamination from the seal itself. Material eroded by plasma and components in the formulation can become sources of <strong>particle</strong> and metal contamination. Outside air entering through a leak hole and contamination generated from seal material are not the same cause and effect. A pressure reading alone cannot guarantee the cleanliness of the material.<a class="semicon-source-ref" href="#source-S008">[8]</a></p>
+<p>Changes in conditions may affect process repeatability, processing results, and yield, which is the percentage of good products. However, we do not conclude that a vacuum problem means product defects are certain, or that a yield drop means the O-ring is the cause. Link the condition of the seal, pressure and gas history, and process evaluation to check whether there is an effect and how far it extends.</p>
+</section>
+<section id="troubleshooting" data-fact-ids="F010 F013">
+<h2>8. What data do maintenance technicians use to narrow down the cause?</h2>
+<p>Isolating the cause starts by restating "the vacuum is bad" as observable symptoms. Since when, in which process, and after what change did it happen? Separating whether it was right after maintenance, only during gas introduction, or whether pressure won't drop even with time changes which candidates you check next.</p>
+<p>First, check whether the pressure reading can be trusted. A vacuum gauge is an instrument that measures pressure, but care is needed in interpreting it depending on the measurement method, operating conditions, contamination, and calibration status. Don't conclude that gas is flowing in from outside based on one reading alone. Compare it with normal history, tool alarms, and related measurements.</p>
+<p>Next, look at the <strong>pump-down</strong>, that is, how pressure drops from the start of pumping. The reference pressure observed under specified pumping, temperature, and waiting conditions, without introducing process gas, is called the <strong>base pressure</strong>. If you don't compare under the same conditions as normal, you may treat differences in open time or adsorbed moisture as failures.<a class="semicon-source-ref" href="#source-S006">[6]</a></p>
+<p>In a <strong>rate-of-rise</strong> test, which looks at how pressure rises, you isolate the pumped-down volume from the pump side and watch how pressure changes over time. Follow the actual tool's procedures for measurement range and valve operation. Under conditions where temperature and volume are stable and effects such as residual pumping are minimized, volume × rate of pressure rise gives an estimate of the total gas load appearing inside.<a class="semicon-source-ref" href="#source-S004">[4]</a></p>
+<p>However, you cannot call that value the real leak rate as is, because outgassing, virtual leaks, and more are mixed in. A tendency for outgassing to decrease over time is useful evidence, but you cannot pin down the cause from the curve alone. A rate-of-rise test is not a test that shows the location, as in "this O-ring is leaking here."</p>
+<aside class="semicon-mid-cta">
+<p>Pressure changes alone cannot tell you where the leak is. Along with the He testing explanation below, reading the <a href="https://semicon-campus.com/helium-leak-testing/">article on isolating causes with helium leak testing signals</a> deepens your understanding of the relationship between spray position and response.</p>
+</aside>
+<p>For example, as a <strong>hypothetical example for explanation</strong>, suppose pumping became slow after maintenance in which the chamber lid was opened. While keeping the lid seal and mating surfaces as candidates, also consider increased moisture outgassing from opening, valve status, and measurement conditions. "The place you just touched" is a strong clue, but that alone does not confirm the failure location.</p>
+<ul>
+<li><strong>Seals and mating surfaces:</strong> candidates for checking scratches, foreign matter, dimensions, installation, and tightening</li>
+<li><strong>Piping and valves:</strong> candidates such as leaks at connections, valves that don't close properly, or a blocked pumping path</li>
+<li><strong>Pump:</strong> candidates for checking operation, pumping capacity, and the condition of connections and the exhaust side</li>
+<li><strong>Gas introduction:</strong> candidates such as whether flow and valve states are as intended</li>
+<li><strong>Vacuum gauge and chamber:</strong> candidates such as measurement errors, outgassing from deposits, and trapped volumes</li>
+</ul>
+<p>This list is not a work procedure to perform in the same order on every tool. It is a way of thinking: form hypotheses by comparing with normal conditions, and narrow down candidates by testing with changed compartments or conditions.<a class="semicon-source-ref" href="#source-S004">[4]</a><a class="semicon-source-ref" href="#source-S005">[5]</a><a class="semicon-source-ref" href="#source-S007">[7]</a></p>
+</section>
+<section id="helium" data-fact-ids="F011">
+<h2>9. What can and can't He leak detection tell you?</h2>
+<p><strong>He leak detection (helium leak testing)</strong> is a test that links helium applied to search for leaks with the detector's signal. In the vacuum spray method, you pump out the inside of the target, connect it to the detector, and apply helium locally to suspicious joints on the outside. If there is a path, helium enters the vacuum side and reaches the detector.<a class="semicon-source-ref" href="#source-S007">[7]</a></p>
+<p>The detector does not see the leak hole like a photograph. You narrow down the location by looking at where you sprayed, how long it took for the signal to appear, and whether it repeats at the same spot. You check the measurement system with a <strong>calibrated leak</strong> that supplies a known helium flow, and also consider response delays caused by piping volume and pumping speed.<a class="semicon-source-ref" href="#source-S007">[7]</a></p>
+<p>Helium left over from before the test affects the background signal. Also, helium can permeate rubber, so even if a signal appears with a delay, you cannot say it necessarily passed through a cut. Combine the relationship to spray position, changes over time, calibration, and background. Not only the performance of the detector itself, but also the measurement system including the backing pump matters.<a class="semicon-source-ref" href="#source-S011">[11]</a><a class="semicon-source-ref" href="#source-S012">[12]</a></p>
+<p>Even if no signal appears, the result is "not detected under those test conditions and in that scope." It does not rule out outgassing, virtual leaks, vacuum gauge problems, or whether process conditions are appropriate. Also distinguish the purposes of a test that searches locally for a location and a test that judges pass/fail by the leak rate of the whole tool or target.<a class="semicon-source-ref" href="#source-S007">[7]</a></p>
+</section>
+<section id="recovery" data-fact-ids="F004 F014">
+<h2>10. After replacing an O-ring, what counts as recovery?</h2>
+<p>Replacement is one step in fixing the cause. During replacement, check the specified part, look for scratches and dirt on the new part, and inspect the groove and mating surface. Think of cleaning foreign matter, installing without twisting or pinching, and tightening as specified as one continuous process. Even if you put in a new part, sealing conditions may not be restored if surface scratches remain.<a class="semicon-source-ref" href="#source-S002">[2]</a><a class="semicon-source-ref" href="#source-S003">[3]</a></p>
+<p>Don't assume about lubricants either, as in "if it's for vacuum, just apply it." Check the vapor pressure, which changes with temperature, and compatibility with materials and processes. If you use one, stick to the product and amount the tool allows, and don't add it on your own in places that require cleanliness. Polishing out scratches, machining grooves, and changing materials are also not the same decision as a normal replacement.<a class="semicon-source-ref" href="#source-S005">[5]</a></p>
+<p>After assembly, check for leaks in the target scope, and see whether pump-down, base pressure, and pressure stability recover under the same conditions as normal. If pumping is slow even though no leak is found, reconsider the measurement system and remaining gas loads. You check the completion of the replacement work and the recovery of the tool's condition separately.<a class="semicon-source-ref" href="#source-S004">[4]</a><a class="semicon-source-ref" href="#source-S007">[7]</a></p>
+<p>For maintenance that affects the process, it leads into the <strong>post-maintenance qualification</strong> set by the fab or for the tool. Checking particles and film thickness on test wafers, etching results, and so on as needed are examples of check items. It is not a common standard that requires the same tests for every O-ring replacement.</p>
+<p>Leak checking evaluates sealing, while qualification evaluates whether the tool can be returned to production. Pressure recovery alone cannot guarantee contamination levels or processing results, so judge by the items and pass/fail values for the target process. Recording the work done, the parts used, and the test conditions and results lets you compare under the same conditions if the problem recurs.<a class="semicon-source-ref" href="#source-S008">[8]</a></p>
+</section>
+<section id="work" data-fact-ids="F013 F014">
+<h2>11. How does this knowledge connect to equipment maintenance work?</h2>
+<p>What helps in equipment maintenance is not just memorizing O-ring material names. It is the ability to think through "symptom → data → hypothesis → isolation → repair → recovery check" as one flow. Turn the symptom of bad pressure into observations of when and what changed, and record the results you confirmed separately from the candidate causes.</p>
+<p>Experience with inspection, replacement, measurement, and record keeping in manufacturing connects with this way of thinking. With semiconductor equipment, you add vacuum paths, process gases, materials and contamination, and post-maintenance qualification on top of that. Being able to explain why a replacement was needed and the evidence that the tool recovered, in addition to being able to replace an O-ring, leads to understanding the job.</p>
+<p>Note that maintenance of the equipment itself and facility maintenance, which handles the fab's power, air conditioning, gas supply, and so on, have different scopes. Don't treat them as the same job based on job titles alone. Look at the equipment handled and the scope of checks and recovery.</p>
+</section>
+<section id="faq">
+<h2>Common misconceptions</h2>
+<h3>Q. If the vacuum is bad, should I replace the O-ring first?</h3>
+<p>It is one candidate cause, but you can't decide on that alone. Also check pressure history, pumping, valves, gas introduction, vacuum gauges, and chamber gas loads, and narrow down candidates with the necessary tests.</p>
+<h3>Q. Can FFKM be used anywhere?</h3>
+<p>No. Even the same FFKM has different properties depending on formulation and operating conditions. Choose by considering temperature, media, plasma, cleanliness, and the tool's specifications together.</p>
+<h3>Q. If He testing finds no leak, is the repair complete?</h3>
+<p>Checking for leaks under test conditions is separate from the recovery of pumping, the tool, and the process. In addition to testing the target scope, the specified recovery checks are needed.</p>
+</section>
+<h2>Summary</h2>
+<div class="semicon-three-line-recap">
+<p>An O-ring seals a joint through compression in the groove and contact pressure.</p>
+<p>For vacuum problems, consider real leaks, virtual leaks, permeation, outgassing, and equipment condition separately.</p>
+<p>Equipment maintenance is the job of narrowing down and fixing causes, then confirming that leaks are gone and the tool and process have recovered.</p>
+</div>
+<aside class="semicon-career-cta">
+<p><strong>Read next: from understanding vacuum systems to equipment maintenance work</strong></p>
+<p>For people who want to know what kind of semiconductor equipment work their inspection and replacement experience connects to. You can sort out the equipment handled, post-maintenance checks, and the knowledge needed along with the flow of the work.</p>
+<p><a class="semicon-cta-link" href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/" data-cta-stage="career" data-cta-type="tech_to_job" data-cta-route="o_ring_vacuum_seal_to_maintenance_end">Learn about semiconductor maintenance jobs</a><br />
+</aside>
+<h2>Official sources used</h2>
+<p class="semicon-note">The source numbers in the text correspond to the documents below. We distinguish general material trends from results for specific formulations and test conditions. This article explains ways of thinking about replacement and testing; actual work conditions and pass/fail values are set by the tool's and fab's procedures. Sources checked: October 3, 2026.</p>
+<ul class="semicon-sources">
+<li id="source-S001" data-source-id="S001">[1] <a href="https://www.parker.com/content/dam/Parker-com/Literature/O-Ring-Division-Literature/ORD-5705-Parker-O-Ring-Vacuum-Sealing-Guide.pdf">Parker: O-Ring Vacuum Sealing Guide, ORD 5705</a> — Material formulation, permeation, compression, groove and surface conditions.</li>
+<li id="source-S002" data-source-id="S002">[2] <a href="https://www.trelleborg.com/-/media/tss-media-repository/tss_website/pdf-and-other-literature/catalogs/o_ring_gb_en.pdf">Trelleborg: O-Rings &amp; Back-up Rings (June 2024 edition)</a> — Materials, compression set, installation and initial compression.</li>
+<li id="source-S003" data-source-id="S003">[3] <a href="https://www.trelleborg.com/en/inthegroove/products-and-solutions/technical-support">Trelleborg: Technical Support</a> — Causes of O-ring damage, chemical degradation, thermal degradation, and set.</li>
+<li id="source-S004" data-source-id="S004">[4] <a href="https://www.leybold.com/en/knowledge/vacuum-fundamentals/leak-detection/pressure-rise-and-drop-tests">Leybold: Pressure rise and drop tests</a> — Rate-of-rise testing and its limits when outgassing overlaps.</li>
+<li id="source-S005" data-source-id="S005">[5] <a href="https://www.pfeiffervacuum.com/il/en/knowledge/vacuum-technology/knowledge-book/3-mechanical-components-in-vacuum/3.3-connections.html">Pfeiffer Vacuum: Vacuum Connections</a> — Seals and mating surfaces, grooves, and virtual leaks from trapped spaces.</li>
+<li id="source-S006" data-source-id="S006">[6] <a href="https://www.pfeiffervacuum.com/global/en/knowledge/vacuum-technology/knowledge-book/1-introduction/1_3_influences/">Pfeiffer Vacuum: Influences in Vacuum Systems</a> — Contamination, outgassing, permeation, and their relation to pumping.</li>
+<li id="source-S007" data-source-id="S007">[7] <a href="https://www.pfeiffervacuum.com/pl/pl/knowledge/vacuum-technology/knowledge-book/7-leak-detection/7_2_leak_detection_with_tracer_gases/">Pfeiffer Vacuum: Leak Detection with Tracer Gases</a> — Calibration, local testing, integral testing, and response time.</li>
+<li id="source-S008" data-source-id="S008">[8] <a href="https://www.dupont.com/content/dam/dupont/amer/us/en/kalrez/public/documents/en/Contamination_considerations_for_perfluoroelastomer_seals_used_in_deposition_processes.pdf">DuPont: Contamination Considerations for Perfluoroelastomer Seals used in Deposition Processes</a> — A 2008 technical document. Plasma erosion and contamination, and a comparison of FFKM formulations under specific conditions.</li>
+<li id="source-S009" data-source-id="S009">[9] <a href="https://www.qnityelectronics.com/knowledge/elastomer-chemical-resistance-guide.html">Qnity: Elastomers Chemical Resistance &amp; Kalrez Application Guide</a> — An official document moved from its former DuPont location. Selection by temperature, pressure, and other conditions.</li>
+<li id="source-S010" data-source-id="S010">[10] <a href="https://www.leybold.com/en/products/vacuum-hardware-and-valves/hardware">Leybold: Hardware</a> — ISO-KF O-rings and CF copper gaskets.</li>
+<li id="source-S011" data-source-id="S011">[11] <a href="https://www.agilent.com/en/product/vacuum-technologies/helium-leak-detection">Agilent: Helium Leak Detection</a> — He testing measurement systems, background, and pumping conditions.</li>
+<li id="source-S012" data-source-id="S012">[12] <a href="https://www.pfeiffervacuum.com/media/documents/leak-detection-know-how/leak-detection-compendium-pfeiffer-vacuum.pdf">Pfeiffer Vacuum: Leak Detection Compendium</a> — Material permeation, and the differences in what each detection method can tell you.</li>
+</ul>
+</article>
+<aside class="related-spokes">
+<h2>Related articles</h2>
+<ul>
+<li><a href="/vacuum-gauge/">How Do You Measure Pressure in a Vacuum? Understanding Vacuum Gauges in Semiconductor Equipment</a></li>
+</ul>
+</aside>
+<p class="pillar-link">For an overview of the main parts of the equipment, see the <a href="/semiconductor-equipment-components-map/">map of semiconductor manufacturing equipment structure and main parts</a>.</p>

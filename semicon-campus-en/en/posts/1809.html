@@ -1,0 +1,224 @@
+<!--KEEP:0-->
+<article class="semicon-template-v2" data-episode="093" data-slug="vacuum-gate-valve" data-target="new_post" data-template-version="2">
+<div class="semicon-hook" data-fact-ids="F001 F012">
+<p>You want to keep the pressure in the inner chamber, even while moving material in and out.</p>
+<p>Vacuum valves connect and separate the spaces and gas paths in a tool, in the order required.</p>
+<p>Even if an alarm says a valve won't open, that doesn't mean the valve itself is broken.</p>
+</div>
+<p><strong>A vacuum valve is not just an open/close part.</strong> It isolates spaces that have been pumped out, provides the opening for transferring wafers, and, depending on the type, adjusts pressure by changing how easily gas can be pumped away. Even maintenance technicians familiar with pneumatics and sensors will find it easier to sort out semiconductor equipment problems if they look not only at "did it move?" but also at "what did it connect to what?" and "how did the pressure change?"<a class="semicon-source-ref" href="#source-S1">[1]</a><a class="semicon-source-ref" href="#source-S2">[2]</a></p>
+<h2>What you'll learn in this article</h2>
+<ul>
+<li>The boundaries that vacuum valves protect between the process chamber, transfer chamber, load lock, and pumps</li>
+<li>How gate opening and closing, differential pressure, conductance, and pressure control are connected</li>
+<li>How to narrow down the cause of an alarm by separating the command, air pressure, mechanical motion, position confirmation, and pressure response</li>
+</ul>
+<nav class="learning-map" aria-label="Reading order for this article">
+<ol>
+<li><a href="#need">Why are they needed? Tool boundaries and wafer transfer</a></li>
+<li><a href="#conductance">Why doesn't the pump alone decide it? How easily gas flows</a></li>
+<li><a href="#drive">How do they move? Pneumatics and control</a></li>
+<li><a href="#open-alarm">When a valve won't open, what do you check in order?</a></li>
+<li><a href="#pressure">When it's closed but the vacuum is poor, what do you suspect?</a></li>
+<li><a href="#maintenance">Inspection, recovery, and maintenance work</a></li>
+</ol>
+</nav>
+<section id="need" data-fact-ids="F001 F002">
+<h2>1. Why does semiconductor equipment need "boundaries" inside?</h2>
+<p>Vacuum valves are needed because connected spaces can't always be kept in the same state. A chamber is a vessel or room inside the tool, and a vacuum is a state with lower pressure than the atmosphere. The place where wafers, the objects being processed, are moved in and out needs different pressure conditions from the place where they are processed.</p>
+<p>If the atmospheric side and the process chamber were connected by an open path, gas from the atmospheric side would flow into the vacuum side. With a setup that returns the whole process chamber to atmosphere every time a wafer is exchanged, you can't exchange wafers while keeping the vacuum conditions needed for processing. So boundaries are opened and closed to pump down or vent only the spaces that need it.<a class="semicon-source-ref" href="#source-S8">[8]</a><a class="semicon-source-ref" href="#source-S16">[16]</a></p>
+<p>Comparing a vacuum valve to "a door to a room" makes its role easier to grasp. But what the real thing stops is not people walking through; it's a path that gas flows through. For transfer valves, an opening that wafers can pass through is also needed. You have to consider leaks when closed, particles when moving, and the pressure difference between the two sides, so it's not enough for a plate to simply move.<a class="semicon-source-ref" href="#source-S1">[1]</a></p>
+<p>It's important not to think of it as "flowing vacuum." What flows is gas, and the pump removes gas. The valve connects or blocks that path. The valve itself doesn't create a vacuum; it achieves the needed state by changing the relationship between the chamber and the pump.</p>
+</section>
+<section id="locations" data-fact-ids="F002 F003">
+<h2>2. Which parts of the tool are being isolated and connected?</h2>
+<p>What you should look at is "what is on each side of the valve," more than the part name. In tools with multiple chambers, different boundaries are managed between the process chamber, transfer chamber, load lock, and pumping system. The following is a typical functional layout; not every tool has the same number, shape, or order of valves.<a class="semicon-source-ref" href="#source-S1">[1]</a><a class="semicon-source-ref" href="#source-S9">[9]</a></p>
+<div class="semicon-table-wrap">
+<table>
+<caption>Four locations for looking at both sides of a valve</caption>
+<thead>
+<tr>
+<th scope="col">Location</th>
+<th scope="col">Required state</th>
+<th scope="col">Role of the valve</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">Process Chamber<br />Process chamber</th>
+<td>Maintains the pressure and gas conditions needed for processing</td>
+<td>Isolates the transfer side. On the pumping side, handles shutoff and flow adjustment</td>
+</tr>
+<tr>
+<th scope="row">Transfer Chamber<br />Transfer chamber</th>
+<td>Moves wafers between chambers</td>
+<td>Provides the opening during transfer and isolates the neighboring chamber when needed</td>
+</tr>
+<tr>
+<th scope="row">Load Lock<br />Load lock</th>
+<td>Sets up conditions for handoff between the atmospheric and vacuum sides</td>
+<td>Separates the outside from the inner vacuum space, and connects them during transfer</td>
+</tr>
+<tr>
+<th scope="row">Pumping system<br />Pumping system</th>
+<td>Removes gas from the chamber to the pump</td>
+<td>Separates the pump and piping. If used for control, changes how easily gas is pumped</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Transfer valves are a product group used to isolate load locks and process chambers. Valves in pumping lines are for passing gas, and wafers don't necessarily pass through them. Edwards also offers examples of gate valves for pump isolation in semiconductor fabs. Even among "gate valves," what they let through and what they stop differs.<a class="semicon-source-ref" href="#source-S9">[9]</a><a class="semicon-source-ref" href="#source-S17">[17]</a></p>
+</section>
+<section id="transfer" data-fact-ids="F002 F006">
+<h2>3. In a load lock, pressure conditions are set before connecting</h2>
+<p>A load lock is a handoff room between the atmospheric and vacuum sides. The key is that you can change the state of the front room while keeping the inner process chamber under vacuum. ULVAC's equipment also shows an example of transferring substrates through a load lock without breaking the process chamber's vacuum.<a class="semicon-source-ref" href="#source-S8">[8]</a><a class="semicon-source-ref" href="#source-S16">[16]</a></p>
+<p>A typical loading sequence works as follows. This is an explanation for understanding the function; it does not specify actual operating procedures or allowable opening values.</p>
+<ol>
+<li>With the inner vacuum side isolated, receive a wafer from the atmospheric side.</li>
+<li>Close the atmospheric side and pump the gas out of the load lock. This pressure-lowering action is called pump-down.</li>
+<li>Once the pressure and transfer conditions defined by the tool are met, open the vacuum-side valve.</li>
+<li>Transfer the wafer, and close the needed boundaries after the transfer is complete.</li>
+</ol>
+<p>On the unloading side, a wafer received from the vacuum side is returned to the atmospheric side from a load lock isolated from the inner area. Introducing gas to bring the pressure back up is called venting. Pump-down, venting, valve opening and closing, and transfer must be linked in the right order as separate actions.<a class="semicon-source-ref" href="#source-S8">[8]</a><a class="semicon-source-ref" href="#source-S9">[9]</a></p>
+<h3>Look at differential pressure both "when closed" and "when opening"</h3>
+<p>Differential pressure is the difference in pressure between the two sides of a valve. If one side is at atmosphere and the other is under vacuum, a large pressure difference acts on the two faces of the closed plate. "The differential pressure it can withstand while closed" and "the differential pressure at which it is allowed to open" are not necessarily the same condition. Product materials from VAT and Kurt J. Lesker also list separate conditions for differential pressure before opening.<a class="semicon-source-ref" href="#source-S2">[2]</a><a class="semicon-source-ref" href="#source-S6">[6]</a><a class="semicon-source-ref" href="#source-S15">[15]</a></p>
+<p>So whether a valve can be opened isn't decided just by whether the pneumatic cylinder can move. First set up the pressure conditions of the adjacent spaces, then check the specifications and control permission conditions. Don't use a number from one model in public materials as a common standard for other valves or tools.</p>
+</section>
+<section id="mechanism" data-fact-ids="F003 F004 F010 F011">
+<h2>4. Separate the motion of retracting the gate from the motion of sealing</h2>
+<p>A gate valve creates an opening by retracting the plate that blocks the flow path. When open, gas and transferred objects pass through easily; when closed, contact between the plate and the sealing surface isolates the boundary. VAT describes gate valves as a structure suited to isolation and relatively simple control, and one that easily achieves high conductance.<a class="semicon-source-ref" href="#source-S1">[1]</a></p>
+<p>Conductance is how easily gas passes through piping or an opening. A large opening matters not only because wafers pass through it. Not obstructing gas flow is also important on the pumping side. When closed, the receiving sealing surface called the valve seat and seals such as O-rings do their work. Movement and sealing are related, but reaching the closed position alone does not prove airtightness.<a class="semicon-source-ref" href="#source-S2">[2]</a><a class="semicon-source-ref" href="#source-S4">[4]</a></p>
+<p>In semiconductor equipment, particles from friction during opening and closing are also considered. Particles are called "particles," and contamination by unwanted substances is called "contamination." Manufacturers show designs that reduce particle generation and impact during operation, but the specific mechanisms differ by product. One manufacturer's low-friction mechanism can't be described as the structure of all gate valves.<a class="semicon-source-ref" href="#source-S2">[2]</a><a class="semicon-source-ref" href="#source-S9">[9]</a><a class="semicon-source-ref" href="#source-S10">[10]</a></p>
+<h3>Don't mix up shape names and function names</h3>
+<p>Isolation is a role: "to isolate." "Isolation valve" doesn't always refer to just one structure. Some products isolate with a gate, while other setups connect and shut off piping with an angle valve that bends the flow path about 90 degrees. Angle valves are a good choice for space-saving piping, but they don't necessarily have the same ease of flow as a gate.<a class="semicon-source-ref" href="#source-S1">[1]</a><a class="semicon-source-ref" href="#source-S5">[5]</a><a class="semicon-source-ref" href="#source-S7">[7]</a></p>
+<p>On the other hand, a throttle valve, a control valve that restricts flow, adjusts pressure by changing its opening. Functions can overlap depending on the model, but separating "the role of fully opening and fully closing for shutoff" from "the role of using intermediate openings" makes the tool's operation easier to read.<a class="semicon-source-ref" href="#source-S2">[2]</a><a class="semicon-source-ref" href="#source-S3">[3]</a></p>
+</section>
+<section id="conductance" data-fact-ids="F004 F005">
+<h2>5. Even with a strong pump, gas won't be removed if the path is narrow</h2>
+<p>A chamber's pumping capacity isn't determined by the pump alone. If the piping and valves leading to the pump obstruct gas flow, the effective pumping speed available at the chamber becomes smaller. Effective pumping speed is the pumping capacity available at that chamber, including the effect of the flow path in between.<a class="semicon-source-ref" href="#source-S11">[11]</a></p>
+<p>For example, consider a case where a pumping valve that was fully open in normal operation now only opens partway. Even if the pump runs the same way, the condition of the path gas can pass through has changed. When pump-down is slow, you need to look not only at whether the pump is running, but also at the actual valve opening and the piping path.</p>
+<p>The basic relationship is <strong>1/S<sub>eff</sub> = 1/S<sub>pump</sub> + 1/C</strong>. S<sub>eff</sub> is the effective pumping speed at the chamber, S<sub>pump</sub> is the pumping speed at the pump, and C is the conductance of the flow path in between. If the path in between has low conductance, even a more powerful pump can't use its capacity fully at the chamber.<a class="semicon-source-ref" href="#source-S11">[11]</a></p>
+<p>However, C is not a fixed value determined simply by pipe diameter. It also depends on pipe length and shape, gas type, and how the flow behaves at different pressures. Use this formula as the core of your understanding, but use values for the relevant conditions in real calculations. You can't yet conclude that "it's open, so the flow path is fine," or that "replacing the pump will make it faster."<a class="semicon-source-ref" href="#source-S2">[2]</a><a class="semicon-source-ref" href="#source-S11">[11]</a></p>
+<h3>During processing, flow is sometimes deliberately restricted to hold pressure</h3>
+<p>In the process chamber, the goal isn't only to remove gas thoroughly. Sometimes the needed gas is introduced and a set pressure is maintained. An MFC is a device that controls the flow rate of introduced gas. A throttle valve on the pumping side restricts the path gas takes to the pump and changes the effective pumping speed. The process chamber pressure is determined by the balance between what comes in and the state of the outlet side.<a class="semicon-source-ref" href="#source-S2">[2]</a><a class="semicon-source-ref" href="#source-S3">[3]</a></p>
+<p>APC stands for automatic pressure control. It uses a closed loop in which a controller compares the pressure sensor's reading with the set pressure and adjusts the valve position. A closed loop is a system that measures the result and feeds it back into the operation. If the pressure is unstable, consider not only the valve's motion but also the readings, inlet flow, pump, and control state.<a class="semicon-source-ref" href="#source-S2">[2]</a></p>
+</section>
+<section id="drive" data-fact-ids="F007 F008 F009">
+<h2>6. Connect your pneumatics experience to the "results" on the vacuum side</h2>
+<p>In a pneumatic automatic valve, compressed air drives an actuator, and that force is transmitted to the valve mechanism. An actuator is a drive unit that converts supplied energy into mechanical motion. A solenoid valve receives an electrical signal and switches the flow path of the drive air. This solenoid valve and the valve body that opens and closes the vacuum side have different roles.<a class="semicon-source-ref" href="#source-S2">[2]</a><a class="semicon-source-ref" href="#source-S13">[13]</a></p>
+<p>Experience with cylinders, regulators, limit switches, and PLC inputs/outputs on factory equipment is useful here. A PLC is a controller that handles the sequence and conditions of machines. However, vacuum valve drive methods differ by product: manual, pneumatic, electric, and so on. The diagnostic examples from here on are for pneumatic valves, and air-system checks don't apply directly to electric valves.<a class="semicon-source-ref" href="#source-S1">[1]</a></p>
+<p>An Open Command is issued, the control output reaches the solenoid valve, the supply air switches, the actuator and valve move, and the position sensor returns the result. Look at it as this chain. The signal that returns the result to the control side is the feedback. Also check the product specifications for whether the valve closes or holds its position when air is lost or power is cut. You can't assume that a pneumatic valve always closes with a spring.<a class="semicon-source-ref" href="#source-S4">[4]</a><a class="semicon-source-ref" href="#source-S5">[5]</a><a class="semicon-source-ref" href="#source-S13">[13]</a></p>
+<h3>Look separately at the actual position and what the control side recognizes</h3>
+<p>A position sensor detects a given position. Some valves have Open/Closed position indicators or switches. For detecting cylinder position, magnetic switches and similar devices are used in general pneumatic equipment too. Which method is used depends on the model.<a class="semicon-source-ref" href="#source-S4">[4]</a><a class="semicon-source-ref" href="#source-S7">[7]</a><a class="semicon-source-ref" href="#source-S14">[14]</a></p>
+<p><strong>The valve moving, the sensor detecting it, and the PLC receiving the signal are separate checkpoints.</strong> Even if the position is correct, a shifted detection position or a wiring problem could mean that Open is not returned to the control side. Conversely, "moving a little" doesn't mean it reached the fully open position. Separate physical motion, detection signal, and control input in order.</p>
+<h3>Interlocks separate "can move" from "is allowed to move"</h3>
+<p>An interlock is a system that permits an action only when the tool's conditions are met. The pressure on both sides of the valve, the pump state, doors, and the positions of the transfer robot and wafers may all affect permission to open. The specific conditions and combinations are each equipment maker's design, not a list common to all tools.</p>
+<p>For example, if opening is prohibited because the differential pressure condition isn't met, the valve not moving may itself be the result of protection. In maintenance, don't aim to override the prohibition first; check which condition isn't being met. This view from control to vacuum response is a diagnostic way of thinking that links manufacturers' configuration materials; it does not reproduce the sequence of any specific tool.<a class="semicon-source-ref" href="#source-S2">[2]</a><a class="semicon-source-ref" href="#source-S5">[5]</a><a class="semicon-source-ref" href="#source-S13">[13]</a><a class="semicon-source-ref" href="#source-S14">[14]</a></p>
+</section>
+<section id="open-alarm" data-fact-ids="F007 F008 F009 F012">
+<h2>7. Break "the valve won't open" into eight checkpoints</h2>
+<p>A valve alarm tells you the tool couldn't confirm the state it expected. The alarm name alone can't pinpoint the failed part. First record the alarm definition, the process step where it occurred, the times of the command and position confirmation, and any alarms that occurred at the same time, and see how far things progressed normally. Below is an example of the troubleshooting steps organized in our revised research notes.</p>
+<h3>① Was the Open Command issued?</h3>
+<p>Separate "it should have opened" from "an open command was actually issued." The request on the tool screen, the command inside the controller, and the output signal don't necessarily mean the same thing. If no command was generated, this is the stage to investigate the process state and upstream conditions. Replacing the valve body won't fix a missing command.</p>
+<h3>② Is it blocked by an interlock?</h3>
+<p>If there is an open request but the output isn't permitted, check the permission conditions. Read through the actual control specifications to see whether the neighboring chamber's pressure isn't ready yet, or whether the transfer position doesn't meet the conditions. The display shows only the fact that it "is not permitted"; why the condition isn't met must be investigated separately.</p>
+<h3>③ Is the air supply normal?</h3>
+<p>The air supply is the drive air. Check not only that the fab has compressed air, but that the required pressure is reaching the target valve. Regulators, leaks in piping and fittings, filters, and moisture or debris in the air are also candidates. Confirm the required pressure with the manufacturer's specification, and don't judge by a single uniform value.<a class="semicon-source-ref" href="#source-S20">[20]</a></p>
+<h3>④ Is the solenoid switching?</h3>
+<p>Separate the control output from the solenoid valve's operation. The idea is to check the electrical output and connections according to the specifications, then see whether the air actually switches beyond that point. Don't judge everything from the solenoid valve to the actuator as normal just because the output display shows ON.<a class="semicon-source-ref" href="#source-S13">[13]</a></p>
+<h3>⑤ Is the actuator moving?</h3>
+<p>After the air switches, check whether the drive unit is making its specified movement. Insufficient supply, air leaks, and problems with the drive unit or mechanism are candidates. The sound of the solenoid valve alone can't prove that the needed travel was achieved.</p>
+<h3>⑥ Is the valve physically open?</h3>
+<p>Separate the drive unit's motion from the vacuum-side gate moving to its specified position. Use available position indicators or the manufacturer's specified inspection methods to see whether it stopped partway. Don't determine the cause by forcing it to move; follow approved procedures, including stopping and isolating the tool, to inspect the mechanism.</p>
+<h3>⑦ Does the Open sensor detect it, and is the feedback arriving?</h3>
+<p>If the physical position is correct, separate sensor detection, wiring and connectors, and PLC input. The section to investigate differs between a case where there is sensor output but no control input, and a case where the sensor itself isn't detecting. Before suspecting a sensor fault, also confirm that the valve really reached the detection position.<a class="semicon-source-ref" href="#source-S4">[4]</a><a class="semicon-source-ref" href="#source-S5">[5]</a><a class="semicon-source-ref" href="#source-S14">[14]</a></p>
+<h3>⑧ Did the pressure change in a way that fits what it connected to?</h3>
+<p>Once the open command and Open confirmation are both in place, also look at the pressure response of the connected chamber or pumping system. But opening any valve doesn't necessarily lower the pressure. The result differs depending on whether it connects to a pump or to another chamber. Compare under the same conditions as the normal history, and include the vacuum gauge location, gas inflow, and pump state.<a class="semicon-source-ref" href="#source-S2">[2]</a><a class="semicon-source-ref" href="#source-S11">[11]</a></p>
+<p>For example, if the observations are "command issued, permission granted, physical position fully open, sensor output present, no PLC input," you can first narrow it down to the section from the sensor to the control input. This is a hypothetical example for explanation, not a field record. Not jumping to a conclusion about the cause, and recording which sections you've confirmed, is the starting point for avoiding replacing parts one after another.</p>
+<aside class="semicon-mid-cta" aria-label="Keep learning">
+<p>Even if the open/close signals are all correct, the vacuum results may not be normal. In the next section, <a href="#pressure">"Troubleshooting from pressure changes and seals,"</a> let's connect the mechanical and control checks to the vacuum side.</p>
+</aside>
+</section>
+<section id="pressure" data-fact-ids="F010 F012 F013">
+<h2>8. When it's closed but the vacuum is poor, separate position from airtightness</h2>
+<p><strong>A Closed signal confirms the closed position. It is not a signal that directly measures whether leakage is within the allowable range.</strong> Even if the position is closed, damaged O-rings, particles on the seat, scratches on the sealing surface, or leaks from other joints may prevent the required isolation performance.<a class="semicon-source-ref" href="#source-S2">[2]</a><a class="semicon-source-ref" href="#source-S4">[4]</a><a class="semicon-source-ref" href="#source-S5">[5]</a></p>
+<h3>Connecting the O-rings from EP092 to the valve's sealing surfaces</h3>
+<p>An O-ring is a ring-shaped seal that seals by being compressed in a groove. In a valve, there are seals not only on the closing plate but also at other boundaries such as the lid and bonnet. Understand which joint isolates what, and check material, temperature, compatibility with the gases used, compression set, scratches, and dirt on the seat. Compression set is permanent deformation where the seal doesn't fully recover after compression is released.<a class="semicon-source-ref" href="#source-S2">[2]</a><a class="semicon-source-ref" href="#source-S4">[4]</a></p>
+<p>The principles from EP092, "O-rings and vacuum seals," help here to separate position confirmation from airtightness. But you can't conclude an O-ring failure from the symptom of poor vacuum alone. Piping and chambers outside the valve, the pump, and the measurement side are also candidates. Also, some products for ultra-high vacuum use rubber-type seals, so don't assume "high vacuum always requires metal seals."<a class="semicon-source-ref" href="#source-S4">[4]</a></p>
+<h3>Connecting the vacuum gauges from EP091 to the pressure response before and after opening/closing</h3>
+<p>EP091, "Vacuum gauges," is about the side that measures the tool's pressure. Opening and closing a valve changes the connected spaces and how easily gas is pumped, so clues also appear in how pressure changes over time. Overlaying the pressure history with the open/close signals at the same times helps you sort out after which action things started to differ from normal.<a class="semicon-source-ref" href="#source-S2">[2]</a><a class="semicon-source-ref" href="#source-S11">[11]</a></p>
+<p>However, "the pressure didn't change as expected" does not equal "the valve failed." Vacuum gauge problems, a different measurement location, gas inflow, and pump state can also change what you see. Treat the information that the gate actually moved and the pressure reading as separate observations, and cross-check them. It's important not to use the position signal as a substitute for pressure measurement, and not to use pressure measurement as a substitute for position confirmation.</p>
+<p>To isolate leaks, use isolation checks and leak tests that follow the tool's procedures. Don't decide the leak location from pressure alone; check candidates such as seals and adjacent piping. Test conditions and pass/fail values are matched to the model and configuration. The cross-cutting diagnosis in this section is a way of thinking organized in our research notes, not a method for pinpointing the failure location with a single measurement.</p>
+</section>
+<section id="vacuum-symptoms" data-fact-ids="F004 F005 F011 F012 F013">
+<h2>9. Think about slow pumping and fluctuating pressure path by path too</h2>
+<p>When pump-down is slow, separate whether gas "is hard to remove," "keeps coming in," or "is being measured differently." Candidates remain: the valve isn't fully open, the piping restricts flow, the pump's capacity has changed, there is a leak or continuous gas inflow, or there is a problem on the vacuum gauge side.<a class="semicon-source-ref" href="#source-S2">[2]</a><a class="semicon-source-ref" href="#source-S11">[11]</a></p>
+<p>So compare not only the ultimate pressure but also the time to reach it, the actual valve position, the gas inlet state, and the pump state against the normal history for the same process step. If the flow path in between is the cause, pumping can be slow even when the pump's status display is normal. Restriction or contamination from deposits is also a candidate, but don't assume the location or substance of deposits from symptoms alone.</p>
+<p>When the pressure fluctuates during processing, look at the APC chain. Check the set pressure and measured value, valve position, MFC flow rate, pump state, and the effects of leaks and outgassing separately. Even if the valve moves frequently, the control may be responding to changes in the readings or on the inlet side. Don't decide that the part with the most noticeable motion is the cause; look for where in the closed loop the change began.<a class="semicon-source-ref" href="#source-S2">[2]</a><a class="semicon-source-ref" href="#source-S3">[3]</a></p>
+<p>Particles and seal wear affect both sealing and cleanliness. We can confirm that manufacturers make particle reduction a design goal, but we can't claim that particles from one valve will always cause a specific defect or yield loss. Link dirt or wear observed during maintenance to effects on processing results only with evidence for each.<a class="semicon-source-ref" href="#source-S9">[9]</a><a class="semicon-source-ref" href="#source-S10">[10]</a></p>
+</section>
+<section id="maintenance" data-fact-ids="F010 F012 F014">
+<h2>10. From inspection to recovery, look at vacuum, mechanics, and control together</h2>
+<p>In preventive maintenance, combine the manufacturer's specified inspection items with the number of open/close cycles, temperature, contamination from the process, and the history of operation and leaks. Service intervals given for clean conditions can't be applied as-is to processes with heavy deposits. VAT also explains that maintenance intervals become shorter due to contamination and high temperatures.<a class="semicon-source-ref" href="#source-S2">[2]</a></p>
+<p>Items to check are the seals and sealing surfaces, drive air, solenoid valves and piping, position confirmation, mechanical motion, and vacuum performance. Replacement parts and maintenance kits are matched to the model. Even if you replace only the O-ring, you may not get the expected result if scratches or dirt on the seat or problems with other seals remain.<a class="semicon-source-ref" href="#source-S2">[2]</a><a class="semicon-source-ref" href="#source-S7">[7]</a></p>
+<p>When confirming recovery too, record separately that it could open and close, that the position signal returned, and that the required airtightness and pressure response were achieved. If you record which observations were abnormal before the repair, you can judge improvement by checking under the same conditions after the repair. Which tests allow the tool to return to operation is decided by the actual maintenance procedures; don't set pass/fail values based only on this article.</p>
+<p>Skills built in manufacturing, such as tracing pneumatics from the supply point to the end, separating sensor output from PLC input, and watching mechanical motion and wear, are a foundation for semiconductor equipment too. Add vacuum, differential pressure, conductance, cleanliness, and process conditions, and you can read the same "won't open" alarm from a broader perspective.</p>
+<p>Related company materials are also easier to sort out if you read them by role. VAT and Edwards are useful for vacuum valves, Leybold for pumping and conductance, CKD and SMC for pneumatic drive and position detection, and ULVAC for load lock configurations inside tools. This describes the relationship of product and technical materials; it doesn't indicate hiring conditions or job openings.<a class="semicon-source-ref" href="#source-S1">[1]</a><a class="semicon-source-ref" href="#source-S11">[11]</a><a class="semicon-source-ref" href="#source-S13">[13]</a><a class="semicon-source-ref" href="#source-S14">[14]</a><a class="semicon-source-ref" href="#source-S16">[16]</a><a class="semicon-source-ref" href="#source-S17">[17]</a></p>
+</section>
+<section id="faq" data-fact-ids="F005 F006 F008 F010 F012">
+<h2>Common misconceptions</h2>
+<h3>Q. When a valve alarm appears, should I just replace the valve body first?</h3>
+<p>The alarm alone can't tell you which part to replace. Separate the command, interlock, air supply, solenoid valve, drive unit, position detection, and control input, and check in which section the expected state wasn't reached.</p>
+<h3>Q. If there's an Open/Closed signal, is vacuum performance also normal?</h3>
+<p>Position confirmation and vacuum performance are separate. Even if the valve moves to the specified position, isolation performance may be insufficient if the seals or sealing surfaces are in poor condition. Cross-check position, signals, and pressure response.</p>
+<h3>Q. Will using a stronger pump fix slow pumping?</h3>
+<p>If the conductance of the valves or piping in between is low, the pumping capacity available at the chamber is limited. Look not only at the pump, but also at valve opening, flow path, gas inflow, leaks, and the measurement side.</p>
+<h3>Q. Can a gate valve be opened between atmosphere and vacuum?</h3>
+<p>Check the conditions it can withstand while closed and the conditions for opening separately. Allowable differential pressure and interlocks differ by product and tool, and values from another model can't be used as a common standard.</p>
+</section>
+<section id="recap">
+<h2>Summary</h2>
+<div class="semicon-three-line-recap">
+<p>Vacuum valves manage the boundaries between chambers, transfer, and pumping, and support the required pressure conditions.</p>
+<p>The result of opening and closing depends on how differential pressure, conductance, seals, pneumatics, sensors, and control work together.</p>
+<p>Don't decide the failed part from the alarm name; narrow down the cause by separating the command, physical motion, signals, and pressure.</p>
+</div>
+<p>If you want to understand chamber connections further, go on to <a href="https://semicon-campus.com/load-lock-wafer-exchange/">How load locks and wafer exchange work</a> to see the boundaries valves protect as one cycle of the tool.</p>
+</section>
+<aside class="semicon-career-cta" aria-label="Connecting technical understanding to jobs">
+<p><strong>Connect your current maintenance experience to work on semiconductor equipment</strong></p>
+<p>How can you extend your pneumatics, mechanical, and control experience into an understanding of vacuum and cleanliness? You can learn about semiconductor equipment maintenance jobs through their duties: inspection, isolating causes, recovery, and preventive maintenance.</p>
+<p><a class="semicon-cta-link" href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/">Learn about semiconductor equipment maintenance work</a><br />
+</aside>
+<section id="references">
+<h2>Official sources we referred to</h2>
+<div class="semicon-note">
+<p>Source numbers correspond to the revised research notes for EP093. Check product specifications such as opening conditions, voltage, and inspection intervals in the materials for that model. The diagnostic order and the links to EP091 and EP092 are our own organization, connecting the structure and principles in these materials.</p>
+</div>
+<ul class="semicon-sources">
+<li id="source-S1" data-source-id="S1">[1] VAT: <a href="https://www.vatgroup.com/vacuum-valves">Vacuum Valves</a> — Roles in isolation and control, structural options.</li>
+<li id="source-S2" data-source-id="S2">[2] VAT: <a href="https://www.vatgroup.com/glossary">Glossary</a> — Conductance, differential pressure, seals, pneumatics, pressure control, maintenance.</li>
+<li id="source-S3" data-source-id="S3">[3] VAT: <a href="https://www.vatgroup.com/series/617-hv-butterfly-control-valve">61.7 HV Butterfly Control Valve</a> — Opening control on the pumping side and pressure sensors.</li>
+<li id="source-S4" data-source-id="S4">[4] VAT: <a href="https://www.vatgroup.com/series/ultra-high-vacuum-gate-valve">10.8 Ultra High Vacuum Gate Valve</a> — Product example of pneumatics, position indication, and seals.</li>
+<li id="source-S5" data-source-id="S5">[5] VAT: <a href="https://www.vatgroup.com/series/150-isolation-gate-valve?_locale=en">15.0 Vacuum Isolation Gate Valve</a> — Product example of isolation, drive, and position confirmation.</li>
+<li id="source-S6" data-source-id="S6">[6] VAT: <a href="https://www.vatgroup.com/series/mini-uhv-gate-valve">01.0 Mini UHV Gate Valve</a> — Differential pressure conditions when closed and when opening.</li>
+<li id="source-S7" data-source-id="S7">[7] VAT: <a href="https://www.vatgroup.com/series/242-Angle-Valve-with-Seal-Protection">24.2 Angle Valve with Seal Protection</a> — Product example of angle structure, position confirmation, and maintenance.</li>
+<li id="source-S8" data-source-id="S8">[8] VAT: <a href="https://www.vatgroup.com/series/970-load-lock">97.0 Load Lock</a> — Handoff between the atmospheric and vacuum sides.</li>
+<li id="source-S9" data-source-id="S9">[9] VAT: <a href="https://www.vatgroup.com/solutions/semiconductor-production/substrate-transfer">Substrate Transfer</a> — Transfer valves and low-friction, low-particle design.</li>
+<li id="source-S10" data-source-id="S10">[10] VAT: <a href="https://www.vatgroup.com/ja/solutions/semiconductor-production/process-control-isolation">Process Control &amp; Isolation</a> — Isolation, control, and particle countermeasures in semiconductor processes.</li>
+<li id="source-S11" data-source-id="S11">[11] Leybold: <a href="https://www.leybold.com/en-be/knowledge/vacuum-fundamentals/fundamental-physics-of-vacuum/how-to-calculate-vacuum-conductance">How is conductance in vacuum calculated</a> — Flow path resistance and effective pumping speed.</li>
+<li id="source-S13" data-source-id="S13">[13] CKD: <a href="https://www.ckd.co.jp/kiki/en/technopedia/fluid/system/air/">Technopedia — Air operated valve</a> — Compressed air, solenoid valves, piston drive.</li>
+<li id="source-S14" data-source-id="S14">[14] SMC: <a href="https://www.smcworld.com/webcatalog/en-jp/categoryID/478?ca_id=478">Auto Switches for Air Cylinders</a> — Cylinder position detection.</li>
+<li id="source-S15" data-source-id="S15">[15] Kurt J. Lesker: <a href="https://www.lesker.com/valves/gatevalves-standard-ss-man-copper/part/sg1000mccfm">SG1000MCCFM Gate Valve</a> — Product-specific differential pressure before opening.</li>
+<li id="source-S16" data-source-id="S16">[16] ULVAC: <a href="https://www.ulvac.com/markets/PVD/RandDPVD/CS200">CS-200 R&amp;D Sputter System</a> — Load lock transfer that keeps the process chamber under vacuum.</li>
+<li id="source-S17" data-source-id="S17">[17] Edwards: <a href="https://www.edwardsvacuum.com/ja-jp/vacuum-pumps/our-products/valves-for-vacuum-systems/gate-valves">Gate valves for vacuum systems</a> — Products for pump isolation in semiconductor fabs.</li>
+<li id="source-S20" data-source-id="S20">[20] CKD: <a href="https://www.ckd.co.jp/kiki/en/file/23901">Pneumatic components — Safety precautions</a> — Supply pressure, air quality, and operating problems.</li>
+</ul>
+</section>
+</article>
+<aside class="related-spokes">
+<h2>Recommended reading</h2>
+<ul>
+<li><a href="/vacuum-gauge/">How do you measure pressure in a vacuum? Understanding vacuum gauges in semiconductor equipment</a></li>
+</ul>
+</aside>
+<p class="pillar-link">For the big picture of a tool's main components, see the <a href="/semiconductor-equipment-components-map/">map of semiconductor manufacturing equipment structure and main components</a>.</p>
