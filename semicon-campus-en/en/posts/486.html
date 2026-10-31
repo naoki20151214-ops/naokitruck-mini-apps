@@ -1,0 +1,109 @@
+
+<!--KEEP:0-->
+
+
+<!--KEEP:1-->
+
+
+<!--KEEP:2-->
+<!--KEEP:3-->
+<div class="semicon-article" id="semicon-top">
+
+<div class="semicon-level"><span class="semicon-level-label">Learning level</span> <strong>Beginner</strong><p>For people who are starting to see the roles of the CPU, memory, and storage.</p></div>
+
+<p class="semicon-lead">DRAM and NAND are both memory semiconductors, but they are not parts that do the same job. DRAM quickly moves data in and out while you work, and NAND keeps photos and apps even after the power is turned off. This article sorts out the differences in role, cells, uses, and manufacturing step by step, through a conversation between Naoki and Professor Owl and diagrams.</p>
+
+<p>If you want to start with how they relate to the CPU, reading <a href="https://semicon-campus.com/cpu-memory-storage-difference/">The difference between CPU, memory, and storage</a> first will make this easier to understand.</p>
+
+<div class="semicon-map"><strong class="semicon-map-title">What you will learn in this article</strong><ol><li>The biggest difference between DRAM and NAND</li><li>Why data disappears or stays when the power is turned off</li><li>Their roles in PCs, smartphones, SSDs, servers, and AI</li><li>Where cell structures and manufacturing processes get difficult</li></ol></div>
+
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>If both DRAM and NAND store data, why not just use the faster one?</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>You can't decide by speed alone. The role changes depending on whether the data is used quickly while working or kept after the power is turned off.</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>DRAM is for working, and NAND is for saving. That's why you need both.</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>Exactly. First, let's compare the big picture of the two with a diagram.</p></div></div>
+
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/dram-nand-role-overview.png" alt="Role comparison: the CPU exchanges working data with DRAM and saves data to an SSD that uses NAND"><figcaption>DRAM handles data in use, and NAND handles data to keep for a long time.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the figure</b><ul><li>DRAM is a temporary place for data in use</li><li>NAND is a place for long-term storage</li><li>DRAM loses data when the power is off</li><li>NAND keeps data even when the power is off</li></ul></div>
+
+
+<h2>Comparing DRAM and NAND in a table</h2>
+<div class="semicon-compare"><table><thead><tr><th>Comparison</th><th>DRAM</th><th>NAND</th></tr></thead><tbody><tr><td>Main role</td><td>Holds data in use</td><td>Stores data for a long time</td></tr><tr><td>Power off</td><td>Data is basically lost</td><td>Data remains</td></tr><tr><td>Main uses</td><td>Main memory in PCs and smartphones, servers, around GPUs</td><td>SSDs, smartphone storage, USB drives, SD cards</td></tr><tr><td>How data is held</td><td>Refreshes the charge in capacitors</td><td>Holds the charge state in an insulated region</td></tr><tr><td>Capacity approach</td><td>Handles the capacity needed for main memory at high speed</td><td>Easy to make denser; suited to large-capacity storage</td></tr><tr><td>Cost tendency</td><td>The price per bit generally tends to be higher</td><td>The price per bit is generally easier to lower</td></tr><tr><td>Design priority</td><td>Low-latency, fine-grained reading and writing</td><td>High density, large capacity, non-volatility</td></tr></tbody></table></div>
+<div class="semicon-note"><p><strong>Performance, capacity, and price vary by product.</strong> "DRAM is fast with a higher price per bit, and NAND is dense and large-capacity with a price per bit that is easier to lower" is a general design tendency. Actual values vary with generation, standard, product configuration, market conditions, controller, and access method.</p></div>
+
+<div class="semicon-basic-complete">You now understand the basics of DRAM and NAND.</div>
+<div class="semicon-deep-break"><strong>From here on is an optional deep dive</strong><p>Continue only if you want to learn about cell structures, uses, manufacturing processes, companies, and jobs.</p></div>
+
+
+
+<h2>Why does DRAM lose data when the power is turned off?</h2>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>I get that it's for working. But why does it lose data when the power is turned off?</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>DRAM represents 0s and 1s with the charge in tiny capacitors. The charge leaks little by little, so it must be read and written back again.</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>So to keep its memory, it checks and rewrites over and over.</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>That's called refresh. When the power is gone, refresh stops too, and the data can no longer be kept.</p></div></div>
+
+<p>A typical DRAM cell is the "1T1C," which combines one transistor and one capacitor. It reads the charge state of the capacitor and refreshes it regularly. Because of this property, DRAM is classified as <strong>volatile memory</strong>.</p>
+
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/dram-1t1c-refresh-concept.png" alt="Conceptual diagram of a DRAM cell made of one transistor and one capacitor, and refresh that makes up for charge leakage"><figcaption>DRAM repeatedly reads and writes back before the cell's charge leaks away completely.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the figure</b><ul><li>A typical cell has one transistor and one capacitor</li><li>The cell's charge decreases over time</li><li>Refresh keeps the memory</li></ul></div>
+
+<h2>Why does NAND keep data even when the power is turned off?</h2>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>NAND also uses charge, so why doesn't its data disappear?</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>It stores charge in an insulated region and tells 0s and 1s apart by that state. Its structure keeps the charge from escaping quickly even when the power is turned off.</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>That's why it can save photos and apps. But it doesn't last forever, right?</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>Right. The SSD controller handles wear leveling, error correction, and more to support cell lifespan and data reliability.</p></div></div>
+
+<p>Typical NAND methods include floating gate and charge trap. Both use the fact that the transistor's properties change depending on the charge state. The explanation so far of "telling 0s and 1s apart" is a simplification to help you grasp the mechanism. Some real products read multiple threshold voltage states and record multiple bits in one cell. Because it can keep its memory without frequent refresh, NAND is <strong>non-volatile memory</strong>.</p>
+
+<div class="semicon-grid"><div class="semicon-card"><b>NAND</b><span>A semiconductor chip that stores data.</span></div><div class="semicon-card"><b>SSD</b><span>A storage device that combines NAND, a controller, firmware, and more.</span></div><div class="semicon-card"><b>Controller</b><span>Spreads out writes, corrects errors, and manages reading and writing.</span></div></div>
+
+<h2>How are they used in PCs, smartphones, and SSDs?</h2>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>How do apps and photos move between DRAM and NAND?</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>While saved, they sit on the NAND side. When you open an app, the needed data moves to DRAM, and the CPU or GPU processes it.</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>So you spread things out on the desk only while working, and put the results you want to keep back in storage.</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>Exactly. But the actual transfers and management are handled by the OS and various controllers working together.</p></div></div>
+<p>When you open an app, the part of the data stored on the SSD or similar that is needed for the work is loaded into DRAM. The CPU or GPU processes it, and when you save the results you want to keep, they are written back to the NAND side.</p>
+
+<div class="semicon-grid"><div class="semicon-card"><b>PCs and smartphones</b><span>Running apps go in DRAM; photos, videos, and the apps themselves go on the NAND side.</span></div><div class="semicon-card"><b>Servers</b><span>Because they handle many tasks at once, they combine large-capacity DRAM with fast storage.</span></div><div class="semicon-card"><b>SSDs</b><span>Use NAND as the storage medium, with a controller hiding complex operations from the user.</span></div></div>
+
+<h2>In AI, which matters more: DRAM or NAND?</h2>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>I hear HBM is important for AI. Does that mean NAND is no longer needed?</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>HBM is high-bandwidth memory based on DRAM. It helps supply data during computation, but NAND is still needed for long-term storage of training data and models.</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>So even in AI, DRAM-type memory is for working and NAND is for saving.</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>That's right. Systems are built by combining three things: how fast you compute, how fast you deliver data, and how much you store.</p></div></div>
+
+<div class="semicon-note"><p><strong>HBM is not a type of NAND.</strong> It is memory that stacks multiple DRAM dies and is mounted near a GPU or similar chip to get wide bandwidth. Its structure and advanced packaging are covered in a separate article.</p></div>
+
+<h2>Even among memory semiconductors, the hard parts of manufacturing differ</h2>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>Are DRAM and NAND made the same way in the fab?</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>Many processes are shared, but the hard parts differ. For DRAM, it's the structure that holds charge in tiny cells. For 3D NAND, the big challenges are the many layers and deep vertical holes.</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>Because their roles differ, the structures they aim for in deposition and etching change too.</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>Exactly. Differences in companies, equipment, materials, inspection, and jobs also come into view from here.</p></div></div>
+
+<div class="semicon-grid"><div class="semicon-card"><b>Hard parts of DRAM</b><span>High-aspect-ratio capacitors, thin films, materials, charge retention, and variation control.</span></div><div class="semicon-card"><b>Hard parts of 3D NAND</b><span>Multilayer deposition, deep-hole etching, film uniformity, and alignment.</span></div><div class="semicon-card"><b>Shared hard parts</b><span>Keeping defect reduction, inspection, electrical characteristics, and yield all at a high level.</span></div></div>
+
+
+<section class="mp3-section" id="revenue-phase3-learning"><h2>Apply your understanding of DRAM and NAND to choosing a PC</h2><p>Once you understand the difference between DRAM and NAND, figure out whether the problem with your PC is a lack of working memory or a lack of storage capacity. Check your usage and the standards your model supports, then compare adding parts with replacing the PC itself. Even with the same capacity, roles and connection methods differ. People with manufacturing or inspection experience can also broaden their understanding to the processes that make memory and the jobs that support the equipment.</p><p>Checklist before comparing: memory usage and free space, DDR generation and form factor, and SSD connection method. Separate what you can try in your current setup from what needs replacing before choosing candidates.</p></section>
+
+<h2>Frequently asked questions</h2>
+<h3>Which is faster, DRAM or NAND?</h3><p>In typical systems, DRAM has lower latency than NAND storage and can do fine-grained reading and writing at high speed. However, actual performance varies with generation, standard, connection, controller, and access method.</p>
+<h3>Is NAND memory or storage?</h3><p>NAND is a memory semiconductor. An SSD, which combines NAND with a controller and other parts, is a storage product.</p>
+<h3>Can't DRAM be used for saving data?</h3><p>Ordinary DRAM loses data when power is cut, so it is not suited to long-term storage. There are special backup configurations, but typical PCs use DRAM for working and SSDs for saving.</p>
+
+<h2>Summary</h2>
+<div class="semicon-note"><ul><li>DRAM is volatile memory that holds data in use</li><li>NAND is non-volatile memory that keeps data even when the power is off</li><li>DRAM needs refresh</li><li>NAND holds a charge state, and the SSD controller handles wear leveling, error correction, and more</li><li>The difference in roles leads to differences in cell structure, manufacturing processes, companies, and jobs</li></ul></div>
+
+<div class="semicon-links"><div class="semicon-linkbox next"><h3>Learn in order</h3><p><a href="https://semicon-campus.com/semiconductor-beginner-roadmap/">See the semiconductor beginner roadmap</a></p><p><a href="https://semicon-campus.com/semiconductor-manufacturing-overview/">See the big picture of semiconductor manufacturing</a></p></div><div class="semicon-linkbox"><h3>Expand to companies and jobs</h3><p><a href="https://semicon-campus.com/semiconductor-company-map-by-process/">See the company map by process</a></p><p><a href="https://semicon-campus.com/semiconductor-career-map/">See the semiconductor job map</a></p></div></div>
+
+<div class="semicon-map"><h3>Topics to explore next</h3><ul><li>What is HBM?</li><li>The manufacturing process of memory semiconductors</li></ul><p>These articles have not been written yet, so there are no links for now.</p></div>
+
+
+<section class="mp3-section" id="revenue-phase3-career"><h2>Connect what you learned in this article to your next job or study</h2><p>Organize your experience in memory manufacturing, inspection, and tool operation by target, work, and the results you confirmed. Comparing scope of duties and required experience, work location, working hours and business trips, and training systems makes the knowledge you need to add next more concrete.</p><aside class="semicon-cta mp3-card"><h3>See duties, jobs, and learning for related job types</h3><p>You can check which jobs use the technology you learned in this article: inspection and recovery, tool startup, customer support, or assembly and process improvement. Go on to the job articles to see how to choose jobs and learning.</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/" class="semicon-btn mp3-button" data-revenue-phase3-hub="277" data-cta="maintenance_hub" data-cta-type="maintenance_hub" data-cta-stage="career" data-cta-id="phase3_486_hub277_end" data-cta-route="phase3_486_hub277_end">Check duties, jobs, and learning in the Equipment Maintenance Hub</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/" class="semicon-btn mp3-button" data-revenue-phase3-hub="237" data-cta="equipment_hub" data-cta-type="equipment_hub" data-cta-stage="career" data-cta-id="phase3_486_hub237_end" data-cta-route="phase3_486_hub237_end">See the scope, jobs, and learning for equipment engineers</a></div></aside></section>
+
+
+<h2>References</h2>
+<ul><li><a rel="noopener" href="https://www.micron.com/educatorhub/courses/intro-to-memory" target="_blank">Micron: Intro to Memory</a></li><li><a rel="noopener" href="https://www.kioxia.com/ja-jp/rd/glossary.html" target="_blank">Kioxia: Glossary of technical terms</a></li><li><a rel="noopener" href="https://www.kioxia.com/ja-jp/rd/technology/history.html" target="_blank">Kioxia: History of technology development</a></li></ul>
+<a class="semicon-backtop" href="#semicon-top">↑ Back to top</a>
+</div>
+
+
+<aside class="related-spokes"><h2>Recommended reading</h2><ul><li><a href="/cxmt-lpddr6-mass-production-xiaomi-news/">China's CXMT starts mass production of LPDDR6 for new Xiaomi smartphones: Is Chinese DRAM catching up with global leaders?</a></li><li><a href="/kioxia-sandisk-5trillion-news/">Kioxia and SanDisk to invest about ¥5 trillion in Japan, boosting flash memory production on AI demand</a></li></ul></aside>

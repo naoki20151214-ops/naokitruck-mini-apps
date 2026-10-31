@@ -1,0 +1,218 @@
+<!--KEEP:0-->
+
+<!--KEEP:1-->
+
+<div class="semicon-article">
+
+<p class="semicon-level">For complete beginners</p>
+
+<div class="semicon-symptom-hook">
+  <strong>Do any of these "slow" moments sound familiar?</strong>
+  <div class="semicon-symptom-list">
+    <div class="semicon-symptom-item">It gets sluggish when you open more tabs or apps</div>
+    <div class="semicon-symptom-item">Startup and file loading are slow</div>
+    <div class="semicon-symptom-item">Video exports and calculations take a long time</div>
+  </div>
+  <p>All of these count as "my PC is slow," but the part most likely involved is not the same.</p>
+</div>
+
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>I just assumed it was all slow because my PC is old. Do the causes differ depending on the symptom?</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>They do. The part to check depends on whether you're short on workspace, reading from storage is slow, or the processing itself takes time.</p></div></div>
+
+<p class="semicon-section-heading" role="heading" aria-level="2">CPU vs. memory vs. storage in 30 seconds</p>
+
+<div class="semicon-quick">
+  <p class="semicon-quick-title">Here are the three key takeaways</p>
+  <div class="semicon-role-grid">
+    <div class="semicon-role"><b>CPU = processes</b><span>Runs instructions and carries out calculations and control</span></div>
+    <div class="semicon-role"><b>Memory = work in progress</b><span>Temporarily holds the data you are using right now</span></div>
+    <div class="semicon-role"><b>Storage = keeps</b><span>Keeps data even after the power is off</span></div>
+  </div>
+  <div class="semicon-relation" aria-label="Data is read from storage into memory, and the CPU processes it">
+    <span>Storage</span><span class="semicon-arrow">→</span><span>Memory</span><span class="semicon-arrow">→</span><span>CPU</span>
+  </div>
+</div>
+
+<p class="semicon-lead">Apps and files are saved in storage. When you use them, they are loaded into memory, and the CPU processes that data. No single part can do a computer's work on its own.</p>
+
+
+
+
+<h2>Why split the work into three roles?</h2>
+
+<p>You might think, "Wouldn't it be faster to put everything inside the CPU?" But memory devices involve more than speed. Capacity, price, and whether data stays when the power is off all matter.</p>
+
+<div class="semicon-reason-grid">
+  <div class="semicon-card"><strong>The CPU is good at processing</strong><p>It can run complex instructions, but it is not a place to store lots of photos or apps for the long term.</p></div>
+  <div class="semicon-card"><strong>Memory is good at quick handoffs</strong><p>It can pass data to the CPU right away, but typical main memory loses its contents when the power is off.</p></div>
+  <div class="semicon-card"><strong>Storage is good at keeping data</strong><p>It can hold large amounts of data, but as a workspace the CPU uses directly, it is slower than memory.</p></div>
+</div>
+
+<p>By splitting the work among fast processing, a quick workspace, and large-capacity storage, computers balance speed, capacity, and price.</p>
+
+<h2>Understanding the three roles with a desk analogy</h2>
+
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>I get the roles. But I still can't picture the three working together.</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>It's easier to see if you think of a worker, a desk, and a bookshelf.</p></div></div>
+
+<div class="semicon-analogy-grid">
+  <div class="semicon-card"><strong>Worker = CPU</strong><p>Reads the documents and does the calculations and decisions.</p></div>
+  <div class="semicon-card"><strong>Desk = memory</strong><p>The workspace where the documents in use are spread out.</p></div>
+  <div class="semicon-card"><strong>Bookshelf = storage</strong><p>Keeps finished documents for a long time.</p></div>
+</div>
+
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>If the desk is small, you have to swap documents more often. So that's what it feels like when a PC slows down from low memory.</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>That's right. But the analogy is only a starting point for grasping the roles. In reality, data is read and written as electrical signals.</p></div></div>
+
+<div class="semicon-real-note">
+  <strong>Keep the analogy and the real mechanism separate</strong>
+  <p>The CPU does not think like a person, and memory is not a real desk. The CPU is a circuit that runs instructions, and memory and storage are semiconductors that hold data.</p>
+</div>
+
+<h2>How do the three work together when you open an app?</h2>
+
+<div class="semicon-flow">
+  <div class="semicon-flow-step"><strong>1. Storage</strong><span>Reads the saved app or file</span></div>
+  <div class="semicon-flow-arrow">→</div>
+  <div class="semicon-flow-step"><strong>2. Memory</strong><span>Holds the data needed during work</span></div>
+  <div class="semicon-flow-arrow">→</div>
+  <div class="semicon-flow-step"><strong>3. CPU</strong><span>Runs instructions and moves the processing forward</span></div>
+</div>
+
+<p>For example, when you open a photo editing app, the program and images are loaded from the SSD into memory. The CPU uses the data in memory to draw the screen and carry out edits.</p>
+
+<p>When memory runs short, the OS also uses part of storage as a temporary overflow area. Storage is slower than main memory, so switching apps and other actions tend to become sluggish.</p>
+
+<div class="semicon-basic-complete">You now understand the basics of the CPU, memory, and storage.</div>
+<div class="semicon-deep-break"><strong>The rest is an optional deep dive</strong><p>Continue only if you want to learn about the cache near the CPU, DRAM in main memory, and NAND used in SSDs. At the end, there is a table to help you decide what to check on your PC.</p></div>
+
+
+
+<h2>Deep dive: cache, DRAM, and NAND</h2>
+
+<h3>What is the "cache" inside the CPU?</h3>
+
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>I heard there's memory inside the CPU too. Is it the same as my PC's 16 GB of memory?</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>It's not the same. People usually mean the cache, a small, fast memory that keeps data the CPU needs right at hand.</p></div></div>
+
+<p>If the CPU had to go all the way to main memory every time it needed data, it would spend more time waiting. The cache solves this by keeping frequently used data inside or near the CPU.</p>
+
+<p>The CPU also has registers inside it, but this article focuses on the cache, which people often confuse with a PC's "memory capacity."</p>
+
+<h3>What is DRAM in main memory?</h3>
+
+<p>The "16 GB memory" or "32 GB memory" in a PC's specs is main memory, mainly built with DRAM. It holds the data you are using now, such as your browser, documents, and videos.</p>
+
+<p>Main memory (DRAM) basically loses its contents when the power is off. In exchange, it can pass data to and from the CPU relatively quickly.</p>
+
+<h3>What is NAND, the basis of storage?</h3>
+
+<p>NAND flash memory is non-volatile memory that keeps data even when the power is off. It is used in SSDs, USB flash drives, smartphone storage, and more.</p>
+
+<p>An SSD does not work with NAND alone. It is paired with an SSD controller that manages where data is stored, spreads out writes, and corrects errors.</p>
+
+<div class="semicon-memory-layers">
+  <div class="semicon-memory-layer"><b>Cache</b><span>Right next to the CPU. Small and fast</span></div>
+  <div class="semicon-memory-layer"><b>DRAM</b><span>Data in use. Basically erased when power is off</span></div>
+  <div class="semicon-memory-layer"><b>NAND</b><span>Long-term storage. Stays even when power is off</span></div>
+</div>
+
+<h3>How do they differ as semiconductors?</h3>
+
+<p>A CPU is a logic semiconductor that handles calculation and control. DRAM and NAND, on the other hand, are memory semiconductors focused on holding data.</p>
+
+<div class="semicon-table-wrap">
+  <table>
+    <thead><tr><th>Type of semiconductor</th><th>Examples</th><th>Main role</th><th>Related fields</th></tr></thead>
+    <tbody>
+      <tr><td>Logic semiconductors</td><td>CPU, GPU, AI chips</td><td>Calculation, control, decisions</td><td>Design, process, EDA, leading-edge manufacturing</td></tr>
+      <tr><td>Memory semiconductors</td><td>DRAM, NAND, HBM</td><td>Temporary holding, storage, data supply</td><td>Memory manufacturing, materials, equipment, quality, yield improvement</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<p>Even among semiconductors, different purposes mean different structures, manufacturing processes, and inspection priorities. The differences between CPUs, DRAM, and NAND also lead to differences in companies and job types.</p>
+
+<h3>In the AI era, memory speed matters too</h3>
+
+<p>AI reads and writes huge amounts of data over and over. Even if a GPU can calculate quickly, it has to wait if the data it needs doesn't arrive.</p>
+
+<p>That is why, for AI semiconductors, not only the compute chip but also the distance to memory and the amount of data that can be moved at once matter. You can dig deeper into HBM in <a href="https://semicon-campus.com/what-is-hbm-high-bandwidth-memory/">How HBM supports AI and GPUs</a>.</p>
+
+
+<section class="mp3-section" id="revenue-phase3-learning"><h2>Review your CPU, memory, and storage</h2><p>When your PC feels slow, compare the symptom table in this article with your usage rates and check whether the CPU, memory, or storage is falling short. If your model allows upgrades, narrow down candidates by the supported standards. If it can't be upgraded, or several parts fall short, compare that with replacing the whole computer. Thinking about speed together with the software you need, data storage, and budget makes choosing a learning setup more concrete.</p><p>Checklist before comparing: CPU, memory, and disk usage rates; whether upgrades are possible; required software and budget. Separate what you can try with your current setup from what needs replacing before choosing candidates.</p></section>
+
+<h2>Narrowing down the cause from the symptoms</h2>
+
+<p>Here we sort the symptoms you recognized at the start by "part most likely involved," "what to check first," and "what to consider." You can't be certain from symptoms alone, but you can narrow down where to look.</p>
+
+<div class="semicon-table-wrap semicon-decision-table">
+  <table class="semicon-decision">
+    <thead><tr><th>Problem</th><th>Part most likely involved</th><th>What to check first</th><th>What to consider</th></tr></thead>
+    <tbody>
+      <tr><td>It gets sluggish when you open more browser tabs or apps</td><td>Memory</td><td>Whether usage is close to the limit</td><td>Adding memory, but check whether your model supports it</td></tr>
+      <tr><td>Video exports and calculations take a long time</td><td>CPU</td><td>Whether CPU usage stays high for long periods</td><td>Upgrading the CPU or the PC itself. Also check the effect of software and the GPU</td></tr>
+      <tr><td>Startup and file loading are slow</td><td>Storage</td><td>Whether it is an HDD or SSD, and whether free space and drive health are sufficient</td><td>Moving to or replacing with an SSD, freeing up space</td></tr>
+      <tr><td>Not enough storage space</td><td>Storage</td><td>Free space and unneeded files</td><td>A larger SSD or external storage</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="semicon-decision-cards" aria-label="What to check for each PC problem">
+  <div class="semicon-decision-card"><strong>It gets sluggish when you open more browser tabs or apps</strong><dl><dt>Part most likely involved</dt><dd>Memory</dd><dt>Check</dt><dd>Whether usage is close to the limit</dd><dt>Consider</dt><dd>Adding memory, but check whether your model supports it</dd></dl></div>
+  <div class="semicon-decision-card"><strong>Video exports and calculations take a long time</strong><dl><dt>Part most likely involved</dt><dd>CPU</dd><dt>Check</dt><dd>Whether CPU usage stays high for long periods</dd><dt>Consider</dt><dd>Upgrading the CPU or the PC itself. Also check the effect of software and the GPU</dd></dl></div>
+  <div class="semicon-decision-card"><strong>Startup and file loading are slow</strong><dl><dt>Part most likely involved</dt><dd>Storage</dd><dt>Check</dt><dd>Whether it is an HDD or SSD, and whether free space and drive health are sufficient</dd><dt>Consider</dt><dd>Moving to or replacing with an SSD, freeing up space</dd></dl></div>
+  <div class="semicon-decision-card"><strong>Not enough storage space</strong><dl><dt>Part most likely involved</dt><dd>Storage</dd><dt>Check</dt><dd>Free space and unneeded files</dd><dt>Consider</dt><dd>A larger SSD or external storage</dd></dl></div>
+</div>
+
+<div class="semicon-caution">
+  <strong>Note</strong>
+  <p>A slow PC can also be caused by the GPU, your internet connection, heat, power settings, or problems with the OS or apps. Before buying parts, check CPU, memory, and storage usage with a tool such as Task Manager.</p>
+</div>
+
+<h2>Summary and what to read next</h2>
+
+<div class="semicon-summary">
+  <ul>
+    <li>The CPU runs instructions and carries out calculations and control</li>
+    <li>Memory is the workspace that holds the data you are using now</li>
+    <li>Storage is where data is kept even after the power is off</li>
+    <li>Cache, DRAM, and NAND differ in their distance from the CPU, speed, capacity, and role in holding data</li>
+    <li>When your PC is slow, look at the symptoms and usage rates before deciding which part to change</li>
+  </ul>
+</div>
+
+<h3>What to learn next</h3>
+
+<div class="semicon-next-actions">
+  <div class="semicon-next-card">
+    <h4>Dig deeper into DRAM and NAND</h4>
+    <p>Learn how working memory and storage memory are built, and how they differ when the power is off.</p>
+    <p><a href="https://semicon-campus.com/dram-nand-difference/">Read more on the difference between DRAM and NAND</a></p>
+  </div>
+  <div class="semicon-next-card">
+    <h4>Learn step by step</h4>
+    <p>Go from CPUs and memory to semiconductor manufacturing in a beginner-friendly order.</p>
+    <p><a href="https://semicon-campus.com/semiconductor-beginner-roadmap/">See the semiconductor beginner roadmap</a></p>
+  </div>
+  <div class="semicon-next-card">
+    <h4>Connect to companies and jobs</h4>
+    <p><a href="https://semicon-campus.com/semiconductor-company-map-by-process/">See semiconductor companies by process</a><br><a href="https://semicon-campus.com/semiconductor-career-map/">See job types in the semiconductor industry</a></p>
+  </div>
+</div>
+
+
+<section class="mp3-section" id="revenue-phase3-career"><h2>Connect what you learned here to your next job or study</h2><p>Organize your experience checking PC configurations and isolating usage problems in terms of what you worked on, what you did, and what you found. Comparing scope of work, required experience, work location, work hours and travel, and training will make it clearer what knowledge to build next.</p><aside class="semicon-cta mp3-card"><h3>See job descriptions, job postings, and learning for related roles</h3><p>See where the technology in this article is used: inspection and recovery, equipment start-up, customer support, or assembly and process improvement. Go on to the job articles to learn how to choose job postings and study options.</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/" class="semicon-btn mp3-button" data-revenue-phase3-hub="237" data-cta="equipment_hub" data-cta-type="equipment_hub" data-cta-stage="career" data-cta-id="phase3_479_hub237_end" data-cta-route="phase3_479_hub237_end">See the equipment engineer's scope, job postings, and learning</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/" class="semicon-btn mp3-button" data-revenue-phase3-hub="277" data-cta="maintenance_hub" data-cta-type="maintenance_hub" data-cta-stage="career" data-cta-id="phase3_479_hub277_end" data-cta-route="phase3_479_hub277_end">Check job duties, job postings, and learning in the maintenance hub</a></div></aside></section>
+
+
+<h2>Primary sources used</h2>
+
+<ul>
+  <li><a href="https://www.intel.com/content/www/us/en/support/articles/000027820/processors/intel-xeon-processors.html">Intel: CPU cache hierarchy information</a></li>
+  <li><a href="https://www.micron.com/products/memory/dram-components">Micron: DRAM components</a></li>
+  <li><a href="https://www.kioxia.com/en-jp/rd/technology/nand-flash.html">KIOXIA: What is NAND Flash Memory?</a></li>
+</ul>
+
+</div>
+
+<aside class="related-spokes"><h2>Related articles</h2><ul><li><a href="/cpu-gpu-difference-ai/">How are CPUs and GPUs different? A beginner's guide to why AI uses GPUs</a></li></ul></aside>
