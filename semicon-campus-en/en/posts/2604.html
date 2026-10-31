@@ -1,0 +1,204 @@
+<!--KEEP:0-->
+<div class="semicon-article" id="semicon-top">
+<div class="semicon-level">
+<div class="semicon-level-top"><span class="semicon-level-label">Learning level</span><strong class="semicon-stars" aria-label="Beginner (level 1 of 5)"><span class="on">★</span><span class="off">☆☆☆☆</span><span>Beginner</span></strong></div>
+</div>
+<div class="semicon-lead">
+<p>Pure water barely conducts electricity. But dissolve just a pinch of salt in it, and it starts to conduct. Even a tiny amount of something mixed in can completely change how electricity flows.</p>
+<p>Semiconductor fabs do something similar. They shoot a tiny amount of other atoms into specific spots on a wafer (the round disk that semiconductors are made on) to change how electricity flows there. This process is called "ion implantation." To give you the answer first: ion implantation is the process that creates the paths for electricity in transistors, and it is finished with a heat treatment called "annealing" after the atoms go in.</p>
+</div>
+<div class="semicon-note">
+<p>The salt water example only fits one point: "mixing in a little changes how electricity flows." Salt water and a silicon wafer work in completely different ways.</p>
+</div>
+<div class="semicon-map">
+<h3>What you will learn in this article</h3>
+<ol>
+<li><strong>Goal of this article:</strong> Understand what ion implantation does and why it is needed, along with annealing</li>
+<li><strong>First half:</strong> The purpose of ion implantation and how the equipment that shoots atoms works</li>
+<li><strong>Second half:</strong> Why implantation damages the crystal, and how annealing repairs it</li>
+</ol>
+</div>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep111-blog-ep111-05-implanter-1.jpg" alt="Illustration of a large ion implanter with a long beamline in a cleanroom, with an engineer standing beside it"><figcaption>Illustration of an ion implanter. This is not real equipment or a real person. EP111 article image (AI-generated). The generated image was resized and optimized as a JPEG.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the figure</b></p>
+<ul>
+<li>A large tool that shoots atoms</li>
+<li>The beam path runs a long way</li>
+<li>Used in the process that creates paths for electricity</li>
+</ul>
+</div>
+<div class="semicon-chat-row naoki">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">Assistant</div>
+</div>
+<div class="semicon-bubble">
+<p>Professor, what does it mean to shoot atoms into a wafer?</p>
+</div>
+</div>
+<div class="semicon-chat-row teacher">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">Professor</div>
+</div>
+<div class="semicon-bubble">
+<p>We mix a few other atoms into a substrate that barely conducts electricity, to change how electricity flows through it.</p>
+</div>
+</div>
+<div class="semicon-chat-row naoki">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">Assistant</div>
+</div>
+<div class="semicon-bubble">
+<p>Once they are shot in, is that the end of it?</p>
+</div>
+</div>
+<div class="semicon-chat-row teacher">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">Professor</div>
+</div>
+<div class="semicon-bubble">
+<p>No. The crystal gets damaged, so we need to repair it with heat. Let's go through it step by step.</p>
+</div>
+</div>
+<h2 class="wp-block-heading" data-fact-ids="C01 C02">Ion implantation turns a wafer into a "usable semiconductor"</h2>
+<p>According to an introductory guide from SCREEN Semiconductor Solutions, ion implantation is the process that creates the places in a semiconductor where electricity flows or is stored. Specifically, ions such as boron or arsenic are shot into a silicon wafer. An ion is an atom that carries an electric charge. The guide also says that without ion implantation, the electricity needed for devices to work properly would not flow, and no working IC could be made. (The guide itself notes that this is a very rough way to put it.)</p>
+<p>Nissin Ion Equipment, a maker of ion implanters, explains it as the process of shooting impurities that change electrical properties into a substrate that barely conducts electricity, turning it into a "usable semiconductor." <strong class="semicon-key">A substrate that cannot be used as-is becomes usable by mixing in atoms.</strong></p>
+<p>In the front-end process (FEOL), this step is repeated many times, along with photoresist coating, lithography (exposure), etching, cleaning, planarization, and more. For example, ion implantation is used to create the source and drain of a transistor (NMOS), which are the entrance and exit for electricity.</p>
+<p>Here is a little history, too. According to Georgia Tech lecture notes, Shockley patented the idea of ion implantation in 1956. The first commercial implanter appeared in 1973. Today's implanters are large tools that cost millions of dollars.</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep111-blog-ep111-06-wafer-1.jpg" alt="Illustration of an engineer in a cleanroom suit holding and looking at a silicon wafer"><figcaption>Illustration of an engineer looking at a wafer. This is not a real fab or a real person. Atoms are shot into the wafer. EP111 article image (AI-generated). The generated image was resized and optimized as a JPEG.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the figure</b></p>
+<ul>
+<li>The target is the wafer</li>
+<li>The surface shape barely changes</li>
+<li>Atoms go inside</li>
+</ul>
+</div>
+<h2 class="wp-block-heading" data-fact-ids="C03">How the equipment shoots atoms</h2>
+<p>So how are atoms actually shot into a wafer? According to a ScienceDirect overview of book chapters, the flow is as follows.</p>
+<ol>
+<li>Electrons are fired at a source gas or other material to create ions.</li>
+<li>A magnet that bends the beam by 90 degrees separates the ions by mass and selects only the ions needed.</li>
+<li>The selected ions are accelerated with voltage and hit the wafer.</li>
+<li>An electric field sweeps the beam side to side so it covers the whole wafer.</li>
+</ol>
+<p>Boron ions come from gases such as boron trifluoride (BF3), and phosphorus and arsenic ions come from gases such as phosphine (PH3) and arsine (AsH3). Highly toxic gases are often used, so the equipment must be handled with care.</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep111-blog-01-flow-1.png" alt="Concept diagram of the ion implanter flow: turning gas into ions, selecting ions with a magnet, accelerating them with voltage, and sweeping the beam to hit the wafer"><figcaption>Schematic of the ion implanter flow. A step where a magnet selects the ions comes in the middle. This is a simplified flow for explanation, not the structure of any specific tool.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the figure</b></p>
+<ul>
+<li>Turn gas into ions</li>
+<li>A magnet selects only the ions needed</li>
+<li>Accelerate them and sweep the beam to hit the wafer</li>
+</ul>
+</div>
+<h2 class="wp-block-heading" data-fact-ids="C04">Depth is set by "acceleration," and amount by "current"</h2>
+<p>According to Georgia Tech lecture notes (Professor Alan Doolittle), the depth the ions reach is set by the acceleration energy, in other words the voltage. Meanwhile, the amount implanted (the dose) is controlled very precisely by adding up the measured ion current. <strong class="semicon-key">Being able to set depth and amount separately</strong> is a major strength of ion implantation.</p>
+<p>How do the implanted ions stop? The lecture notes describe two mechanisms. One is collisions with silicon nuclei. The other is a kind of drag as the ions move through the sea of electrons. The ions pass through thousands of layers of atoms in the crystal before they finally stop.</p>
+<p>The lecture notes also list these other advantages.</p>
+<ul>
+<li>It is fast. For a medium dose, one 12-inch wafer can take as little as 25 seconds.</li>
+<li>The concentration peak can be placed inside the wafer, not at the surface.</li>
+<li>By implanting several times at different energies, complex profiles can be made.</li>
+</ul>
+<p>This is the difference from "diffusion," which spreads atoms using heat. According to the ScienceDirect overview, in diffusion the concentration is highest at the surface and drops with depth. In ion implantation, the concentration peak sits a little below the surface. This depth is called the "range."</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep111-blog-02-depth-1.png" alt="Concept diagram of depth and amount, showing that weak acceleration gives shallow implants and strong acceleration gives deep ones, and that the amount is set precisely by measuring current"><figcaption>Schematic of how the ion depth and the implanted amount are set. This figure is for explanation and is not measured data.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the figure</b></p>
+<ul>
+<li>Depth is set by how strong the acceleration is</li>
+<li>Amount is set by measuring current</li>
+<li>Depth and amount can be set separately</li>
+</ul>
+</div>
+<h2 class="wp-block-heading" data-fact-ids="C05">It has weaknesses too: implantation damages the crystal</h2>
+<p>On the other hand, there are weaknesses. The lecture notes point out that very deep or very shallow profiles are hard to make, that highly toxic gases are often used, and that the equipment is expensive.</p>
+<p>The biggest issue is crystal damage. High-energy ions knock silicon atoms out of place and damage the crystal. According to the lecture notes, the damage happens as ions collide with nuclei and slow to a stop, and it is greatest around the depth where the ions stop. The higher the dose, the more damage there is. <strong class="semicon-key">If the crystal stays damaged, electricity cannot be controlled well.</strong></p>
+<p>Another tricky issue is "channeling." A crystal has directions where atoms line up to form tunnel-like paths. If ions travel down those paths, they go deeper than planned. This effect is very sensitive to angle, so it must be avoided for repeatable results. According to the lecture notes, many implants are done with the wafer tilted about 7 degrees.</p>
+<h2 class="wp-block-heading" data-fact-ids="C06">Masks: implanting only where needed</h2>
+<p>The whole wafer is not implanted the same way. According to the ScienceDirect overview, ion implantation is a physical method done near room temperature, so it works with standard lithography and can dope just small areas. The lecture notes also explain that thick or dense materials can be used as a "mask" to protect areas that should not be implanted. The denser the material, the better it stops ions.</p>
+<h2 class="wp-block-heading" data-fact-ids="C07">Annealing repairs the damage and puts the atoms to work</h2>
+<p>So how is the damage repaired? The answer is "annealing," a process that applies heat. According to the lecture notes, of the implanted atoms, only those that settle into proper positions in the crystal work as dopants. High-temperature annealing increases that share. In other words, <strong class="semicon-key">only atoms that settle into proper positions (seats) in the crystal, as if swapping places with silicon atoms, do their job.</strong> At the moment of implantation, fast ions crash into the crystal, so it is not a neat swap. That is why annealing is needed to make the atoms sit back down in their seats.</p>
+<p>The ScienceDirect overview describes two heat treatment methods. One uses a tube furnace at relatively low temperatures of about 600–1000 degrees to limit sideways spreading. The other is rapid thermal annealing (RTA). The lecture notes also say that for silicon, it is often easier to regrow the crystal from a layer whose crystal structure has been destroyed than to remove the damage.</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep111-blog-03-anneal-1.png" alt="Concept diagram showing a crystal damaged by implantation being repaired by annealing heat, with atoms working in their proper positions"><figcaption>Schematic of a damaged crystal being repaired by annealing. Atom positions are for explanation and are not measured data.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the figure</b></p>
+<ul>
+<li>Implantation damages the crystal</li>
+<li>Heat (annealing) repairs the damage</li>
+<li>Atoms work in their proper positions</li>
+</ul>
+</div>
+<p>However, more heat is not always better. According to the lecture notes, the implanted atoms spread out during high-temperature steps after implantation. <strong class="semicon-key">You want to repair the damage, but you do not want the atoms to spread.</strong> This balance is what makes annealing difficult.</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep111-blog-04-balance-1.png" alt="Concept diagram showing that too little heat leaves damage and too much heat spreads atoms, so the right balance of heat is needed"><figcaption>Schematic of the heat balance in annealing. The comparison of three cases is an example for explanation.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the figure</b></p>
+<ul>
+<li>Too little heat leaves damage</li>
+<li>The right amount of heat repairs the damage</li>
+<li>Too much heat spreads the atoms</li>
+</ul>
+</div>
+<h2 class="wp-block-heading" data-fact-ids="C08">It is becoming more important for power semiconductors, too</h2>
+<p>According to Nissin Ion Equipment, ion implantation has become more important in recent years in making power devices for cars as well.</p>
+<div class="semicon-cta">
+<h3>Learn about the jobs that handle this process</h3>
+<p>If you want to learn about the jobs that handle this process, please read this article too.</p>
+<div class="semicon-btnrow"><a class="semicon-btn" href="https://semicon-campus.com/semiconductor-career-map/">See semiconductor manufacturing jobs by process</a></div>
+</div>
+<p>For the big picture of manufacturing, see <a href="https://semicon-campus.com/semiconductor-manufacturing-overview/">An overview of the semiconductor manufacturing process</a>. Note that equipment adjustment and recovery are done following the official procedures of your fab or manufacturer, and under the judgment of authorized staff. This article introduces concepts and does not give instructions for operating equipment.</p>
+<h2 class="wp-block-heading">Key terms review</h2>
+<ul>
+<li><strong>Ion:</strong> An atom that carries an electric charge.</li>
+<li><strong>Ion implantation:</strong> The process of accelerating ions and shooting them into a wafer.</li>
+<li><strong>Dose:</strong> The amount implanted.</li>
+<li><strong>Dopant:</strong> An atom mixed in to change how electricity flows.</li>
+<li><strong>Source and drain:</strong> The entrance and exit for electricity in a transistor.</li>
+<li><strong>Channeling:</strong> An effect where ions travel too deep along paths in the crystal.</li>
+<li><strong>Annealing:</strong> The process of applying heat to repair damage and put the atoms to work.</li>
+</ul>
+<h2 class="wp-block-heading">Common misconceptions</h2>
+<h3>Q. Is ion implantation a process that digs trenches in the wafer?</h3>
+<p>No. Digging trenches is etching. Ion implantation puts atoms inside the wafer, and the visible shape barely changes.</p>
+<h3>Q. Do all implanted atoms change how electricity flows?</h3>
+<p>No. Only atoms that settle into proper positions in the crystal do their job. That is why annealing is needed.</p>
+<h3>Q. Is ion implantation a matter of replacing silicon atoms with other atoms?</h3>
+<p>As an end result, you could say that. However, at the moment of implantation, fast ions knock silicon atoms aside as they stop, so it is not a neat replacement. The ions only start working once they settle into seats in the crystal.</p>
+<h2 class="wp-block-heading">Summary</h2>
+<div class="semicon-lead">
+<p>Ion implantation is the process of shooting ions such as boron or arsenic into a wafer to create paths for electricity.<br />Depth is set by acceleration and amount by current, separately, but the crystal gets damaged and the atoms do not work yet.<br />Annealing repairs the damage and puts the atoms to work. However, too much heat makes the atoms spread.</p>
+</div>
+<div class="semicon-cta">
+<h3>We also explain semiconductors simply on YouTube</h3>
+<p>For those who want to review with diagrams, we also post short explanations of semiconductor manufacturing on YouTube.</p>
+<div class="semicon-btnrow"><a rel="noopener" class="semicon-btn secondary" href="https://www.youtube.com/@semicon-campus" target="_blank">Watch illustrated videos on YouTube</a></div>
+</div>
+<h2 class="wp-block-heading">Official sources we referred to</h2>
+<ul class="semicon-sources">
+<li data-source-id="S01"><a href="https://alan.ece.gatech.edu/ECE6450/Lectures/ECE6450L5-Ion%20Implantation.pdf">Alan Doolittle, "ECE 6450 Lecture 5: Ion Implantation" (Georgia Tech lecture notes)</a></li>
+<li data-source-id="S02"><a href="https://www.screen.co.jp/spe/technical/guide/implantation">SCREEN Semiconductor Solutions, "Ion Implantation (Introduction to Semiconductors for Beginners)"</a></li>
+<li data-source-id="S03"><a href="https://www.nissin-ion.co.jp/prd/ion-implanter/">Nissin Ion Equipment, "What Is Ion Implantation? (Equipment Business)"</a></li>
+<li data-source-id="S04"><a href="https://www.sciencedirect.com/topics/engineering/ion-implantation">ScienceDirect Topics, "Ion Implantation" (excerpts from book chapters)</a></li>
+</ul>
+<section class="semicon-correction-form">
+<h2>Questions and corrections form</h2>
+<p>If you find an error or anything unclear in this article, please let us know using the form below. We will check it and fix the article.</p>
+<div class="semicon-form-shortcode">
+<div class="wpcf7 no-js" id="wpcf7-f2045-o7" lang="ja" dir="ltr" data-wpcf7-id="2045">
+<div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
+<form action="/?rest_route=%2Fwp%2Fv2%2Fposts&#038;per_page=100&#038;page=1&#038;context=view#wpcf7-f2045-o7" method="post" class="wpcf7-form init" aria-label="Contact form" novalidate="novalidate" data-status="init">
+<fieldset class="hidden-fields-container"><input type="hidden" name="_wpcf7" value="2045" /><input type="hidden" name="_wpcf7_version" value="6.1.6" /><input type="hidden" name="_wpcf7_locale" value="ja" /><input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f2045-o7" /><input type="hidden" name="_wpcf7_container_post" value="0" /><input type="hidden" name="_wpcf7_posted_data_hash" value="" />
+</fieldset>
+<p>You do not need to enter your name, phone number, or address. Please do not include fab names or confidential company information.
+</p>
+<p><label>Type of report (required) <span class="wpcf7-form-control-wrap" data-name="report-type"><select class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required" aria-required="true" aria-invalid="false" name="report-type"><option value="誤りと思われる点">Possible error</option><option value="分かりにくい箇所">Unclear section</option><option value="追加してほしい説明・質問">Request for more explanation / question</option></select></span></label><br />
+<label>Related heading or text (optional) <span class="wpcf7-form-control-wrap" data-name="report-section"><input size="40" maxlength="200" class="wpcf7-form-control wpcf7-text" aria-invalid="false" value="" type="text" name="report-section" /></span></label><br />
+<label>Details (required) <span class="wpcf7-form-control-wrap" data-name="report-message"><textarea cols="40" rows="10" maxlength="3000" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" aria-required="true" aria-invalid="false" name="report-message"></textarea></span></label><br />
+<label>Email address for a reply (only if you would like a reply; optional) <span class="wpcf7-form-control-wrap" data-name="report-email"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-email wpcf7-text wpcf7-validates-as-email" autocomplete="email" aria-invalid="false" value="" type="email" name="report-email" /></span></label>
+</p>
+<p>Your feedback will be used to review and improve our articles. Please see our <a href="https://semicon-campus.com/privacy-policy/">Privacy policy</a>.
+</p>
+<p><input class="wpcf7-form-control wpcf7-submit has-spinner" type="submit" value="Send feedback or correction" />
+</p><div class="wpcf7-response-output" aria-hidden="true"></div>
+</form>
+</div>
+</div>
+</section>
+</div>

@@ -1,0 +1,212 @@
+<!--KEEP:0-->
+<div class="semicon-article" id="semicon-top">
+<div class="semicon-level">
+<div class="semicon-level-top"><span class="semicon-level-label">Learning level</span><strong class="semicon-stars" aria-label="Beginner (1 of 5)"><span class="on">★</span><span class="off">☆☆☆☆</span><span>Beginner</span></strong></div>
+</div>
+<div class="semicon-lead">
+<p>Have you noticed that phone chargers are smaller than they used to be? More and more new chargers are small and light, yet still charge quickly. One reason is the material used for the semiconductors inside the charger.</p>
+<p>Semiconductors that control the flow of electricity are called "power semiconductors," and for a long time they were made from silicon. Now, two new materials are joining silicon: "silicon carbide (SiC)" and "gallium nitride (GaN)." This article explains the differences and the reasons, step by step.</p>
+</div>
+<div class="semicon-note">
+<p>There are other reasons chargers have gotten smaller. This article covers only the part related to semiconductor materials.</p>
+</div>
+<div class="semicon-map">
+<h3>What you will learn in this article</h3>
+<ol>
+<li><strong>Goal of this article:</strong> Understand why silicon carbide and gallium nitride are used in power semiconductors</li>
+<li><strong>First half:</strong> The role of power semiconductors, power loss, and the limits of silicon</li>
+<li><strong>Second half:</strong> Band gap and breakdown electric field, and the strengths of silicon carbide and gallium nitride</li>
+</ol>
+</div>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep114-blog-ep114-05-charger.jpg" alt="Illustration of a small new charger and a large old charger side by side on a desk"><figcaption>Illustration of new and old chargers side by side. These are not real products. EP114 article image (AI-generated). The generated image was resized and optimized as a JPEG.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the figure</b></p>
+<ul>
+<li>The new charger is small</li>
+<li>The old charger is large</li>
+<li>The difference in materials plays a part</li>
+</ul>
+</div>
+<div class="semicon-chat-row naoki">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">Assistant</div>
+</div>
+<div class="semicon-bubble">
+<p>Professor, did chargers get smaller because of semiconductor materials?</p>
+</div>
+</div>
+<div class="semicon-chat-row teacher">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">Professor</div>
+</div>
+<div class="semicon-bubble">
+<p>That's right. The material of the semiconductors that control the flow of electricity has started to change from silicon to something new.</p>
+</div>
+</div>
+<div class="semicon-chat-row naoki">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">Assistant</div>
+</div>
+<div class="semicon-bubble">
+<p>What's good about the new materials?</p>
+</div>
+</div>
+<div class="semicon-chat-row teacher">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">Professor</div>
+</div>
+<div class="semicon-bubble">
+<p>Less electricity is lost as heat, and the parts can be made smaller, too. Let's look at it step by step.</p>
+</div>
+</div>
+<h2 class="wp-block-heading" data-fact-ids="C01">Chargers got smaller because of semiconductor materials</h2>
+<p>An explainer from STMicroelectronics says that semiconductors made with gallium nitride are well suited to chargers and power adapters for phones and computers. The reasons are higher conversion efficiency, smaller size, and more power handled in the same size. <strong class="semicon-key">Semiconductor materials play a part in making chargers smaller.</strong></p>
+<details class="semicon-quiz">
+<summary>Quick quiz: What part of the semiconductor is involved in making chargers smaller?</summary>
+<p>Answer: The semiconductor material. New materials such as gallium nitride are starting to be used.</p>
+</details>
+<h2 class="wp-block-heading" data-fact-ids="C02">"Power semiconductors" control the flow of electricity</h2>
+<p>Power semiconductors are semiconductors that control the flow of electricity efficiently. A glossary from Kyoto University explains that "power electronics" is the technology of using semiconductors to convert electric power into a convenient form and control it freely. It is used widely, from home appliances to industrial, railway, and power systems. Examples include phone chargers, trains, and charging stations for electric vehicles.</p>
+<details class="semicon-quiz">
+<summary>Quick quiz: What do power semiconductors do?</summary>
+<p>Answer: They control the flow of electricity efficiently.</p>
+</details>
+<h2 class="wp-block-heading" data-fact-ids="C03">"Power loss": some electricity turns into heat every time it is controlled</h2>
+<p>However, every time the flow of electricity is controlled, some of the electricity is lost as heat. This is called "power loss." An EE Times Japan article explains that loss increases as output current grows, and that switching to materials with lower loss is one hoped-for way to reduce it. When loss is high, batteries drain faster, and you also need many measures to get rid of the heat.</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep114-blog-01-loss.png" alt="Concept diagram of power loss, where some electricity is lost as heat each time a power semiconductor controls the flow of electricity"><figcaption>Schematic showing the flow of power loss. The numbers for incoming electricity are examples to show the idea, not measured values.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the figure</b></p>
+<ul>
+<li>The flow of electricity is controlled</li>
+<li>Some of it is lost as heat</li>
+<li>This is power loss</li>
+</ul>
+</div>
+<details class="semicon-quiz">
+<summary>Quick quiz: In power loss, what does the lost electricity turn into?</summary>
+<p>Answer: Heat.</p>
+</details>
+<h2 class="wp-block-heading" data-fact-ids="C04">The limits of silicon, and new materials</h2>
+<p>Until now, power semiconductors have mainly used silicon. According to an explainer from Toshiba, silicon MOSFETs (electrical switches) are only available as products up to about 1000 volts, while silicon carbide MOSFETs are available up to about 3300 volts. When silicon is made to withstand high voltage, its resistance when current flows tends to become large. An EE Times Japan article (2019) explains that silicon carbide power devices are already in practical use in home appliances, industry, cars, railways, and power systems.</p>
+<p>That is why materials with a wider band gap than silicon, called "wide-gap" materials, have started to be used. An EE Times Japan article names silicon carbide (SiC) and gallium nitride (GaN) as typical examples. Semiconductors are made from thin, round plates called wafers. The idea is to change the wafer material from silicon to these new materials.</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep114-blog-ep114-06-wafer.jpg" alt="Illustration of a dark silicon carbide wafer next to a light-colored gallium nitride wafer"><figcaption>Illustration of wafers made of new materials. These are not the actual colors or shapes of real wafers. EP114 article image (AI-generated). The generated image was resized and optimized as a JPEG.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the figure</b></p>
+<ul>
+<li>Wafers made of new materials</li>
+<li>Silicon carbide and gallium nitride</li>
+<li>Both have a wide band gap</li>
+</ul>
+</div>
+<details class="semicon-quiz">
+<summary>Quick quiz: What are the two materials that have started to be used instead of silicon?</summary>
+<p>Answer: Silicon carbide (SiC) and gallium nitride (GaN).</p>
+</details>
+<h2 class="wp-block-heading" data-fact-ids="C05">Band gap and "breakdown electric field"</h2>
+<p>The band gap is the amount of energy an electron must overcome before it can move. Toshiba's explainer says that silicon carbide has a large band gap and strong bonds between its atoms, so it is hard to break even under high voltage. This resistance to breaking is called the "breakdown electric field." According to Kyoto University's glossary, silicon carbide has about 3 times the band gap of silicon, about 10 times the breakdown electric field, and about 3 times the thermal conductivity.</p>
+<p>In materials where atoms are bonded more strongly, electrons are held more tightly, so they need more energy to start moving. <strong class="semicon-key">Because electrons do not move easily, the material is hard to break even under high voltage.</strong></p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep114-blog-02-bandgap.png" alt="Concept diagram showing that a band gap wider than silicon's makes electrons harder to move and the material stronger against high voltage"><figcaption>Schematic showing band gap width and resistance to voltage. The height of the wall is an illustration for explanation.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the figure</b></p>
+<ul>
+<li>A higher wall makes it harder for electrons to move</li>
+<li>The material is hard to break even under high voltage</li>
+<li>That is the breakdown electric field</li>
+</ul>
+</div>
+<details class="semicon-quiz">
+<summary>Quick quiz: Is a material with a wide band gap strong or weak against high voltage?</summary>
+<p>Answer: Strong. Electrons do not move easily, so it is hard to break.</p>
+</details>
+<h2 class="wp-block-heading" data-fact-ids="C06">Silicon carbide cuts loss with a thinner layer</h2>
+<p>According to an EE Times Japan article, wide-gap semiconductors have a breakdown electric field about 10 times higher than silicon, so the layer that withstands voltage can be made about one-tenth as thick. A thinner layer means lower resistance when current flows, which reduces loss. <strong class="semicon-key">Because the material can withstand high voltage, the layer can be thinner, and loss can be reduced.</strong></p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep114-blog-03-thin.png" alt="Concept diagram showing that about 10 times the breakdown electric field lets the voltage-withstanding layer be about one-tenth as thick, reducing resistance and loss"><figcaption>Schematic comparing the thickness of the voltage-withstanding layer. The thickness ratio is an illustration showing the rough figure of about one-tenth.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the figure</b></p>
+<ul>
+<li>The voltage-withstanding layer can be about one-tenth as thick</li>
+<li>A thinner layer has lower resistance</li>
+<li>Loss goes down</li>
+</ul>
+</div>
+<p>According to Toshiba's explainer, silicon carbide MOSFETs work with electrons only, so the loss when turning the switch off is small. They can also run at high frequencies, which helps make parts such as transformers smaller. They also handle high temperatures well. According to EE Times Japan, the upper limit for silicon is about 125–150°C, while the near-term target for wide-gap semiconductors is 175–200°C. In one example where they were used in equipment that drives train motors, loss went down, and size and weight were reduced as well.</p>
+<details class="semicon-quiz">
+<summary>Quick quiz: When the breakdown electric field is high, what happens to the layer that withstands voltage?</summary>
+<p>Answer: It can be made about one-tenth as thick. That lowers resistance and reduces loss.</p>
+</details>
+<h2 class="wp-block-heading" data-fact-ids="C07">Gallium nitride switches fast</h2>
+<p>Gallium nitride has a wide band gap of 3.4 electron volts, and electrons move through it very easily. STMicroelectronics' explainer says that, as a result, it has low resistance and a high switching speed (switching frequency). Faster switching lets parts such as transformers be made smaller.</p>
+<p>The same explainer says gallium nitride is ideal for uses that need very fast switching at lower voltage and lower power, with examples such as power adapters and on-board chargers for electric vehicles. In short, silicon carbide is used for high voltage and high power, and gallium nitride is used for small, fast power supplies.</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep114-blog-04-usage.png" alt="Concept diagram showing silicon carbide used for high voltage and high power, and gallium nitride used for small, fast power supplies"><figcaption>Schematic showing how silicon carbide and gallium nitride are used for different purposes. This is an explanatory diagram.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the figure</b></p>
+<ul>
+<li>Silicon carbide for high voltage</li>
+<li>Gallium nitride for small, fast power supplies</li>
+<li>The material is chosen to fit the use</li>
+</ul>
+</div>
+<details class="semicon-quiz">
+<summary>Quick quiz: Which one is better suited to small, fast power supplies like chargers? (1) Silicon carbide (2) Gallium nitride</summary>
+<p>Answer: (2) Gallium nitride.</p>
+</details>
+<div class="semicon-cta">
+<h3>Learn about the jobs behind each process</h3>
+<p>If you want to learn about the jobs that handle this process, try reading this article, too.</p>
+<div class="semicon-btnrow"><a class="semicon-btn" href="https://semicon-campus.com/semiconductor-career-map/">See semiconductor manufacturing jobs by process</a></div>
+</div>
+<p>For the big picture of manufacturing, see <a href="https://semicon-campus.com/semiconductor-manufacturing-overview/">An overview of the semiconductor manufacturing process</a>. Equipment adjustment and recovery are done following the official procedures of your fab or manufacturer, under the judgment of authorized staff. This article introduces concepts and does not give instructions for operating equipment.</p>
+<h2 class="wp-block-heading">Word review</h2>
+<ul>
+<li><strong>Power semiconductor:</strong> A semiconductor that controls the flow of electricity efficiently.</li>
+<li><strong>Power loss:</strong> Some electricity being lost as heat each time it is controlled.</li>
+<li><strong>Band gap:</strong> The amount of energy an electron must overcome before it can move.</li>
+<li><strong>Breakdown electric field:</strong> How strongly a material resists breaking under high voltage.</li>
+<li><strong>Silicon carbide (SiC):</strong> A wide-band-gap material made of silicon and carbon.</li>
+<li><strong>Gallium nitride (GaN):</strong> A wide-band-gap material made of gallium and nitrogen.</li>
+</ul>
+<h2 class="wp-block-heading">Common misunderstandings</h2>
+<h3>Q. Are silicon carbide and gallium nitride the same material?</h3>
+<p>No. Silicon carbide is a compound of silicon and carbon, and gallium nitride is a compound of gallium and nitrogen. Both have a wide band gap, but they are good at different uses.</p>
+<h3>Q. Does a wider band gap make everything better?</h3>
+<p>No. For example, running wide-gap semiconductors at 250–300°C was considered, but there were problems such as increased loss and getting surrounding parts to handle it, so it has not been put into practical use. Wider is not always better.</p>
+<h2 class="wp-block-heading">Summary</h2>
+<div class="semicon-lead">
+<p>Power semiconductors control the flow of electricity, but each time, some electricity is lost as heat.<br />Silicon carbide and gallium nitride have a wide band gap and can withstand high voltage, so the layer can be thinner and loss can be reduced.<br />Silicon carbide is used for high voltage and high power, and gallium nitride is used for small, fast power supplies.</p>
+</div>
+<div class="semicon-cta">
+<h3>We also explain semiconductors simply on YouTube</h3>
+<p>For those who want to review with diagrams, we also post short videos on semiconductor manufacturing on YouTube.</p>
+<div class="semicon-btnrow"><a rel="noopener" class="semicon-btn secondary" href="https://www.youtube.com/@semicon-campus" target="_blank">Watch illustrated videos on YouTube</a></div>
+</div>
+<h2 class="wp-block-heading">Official sources used</h2>
+<ul class="semicon-sources">
+<li data-source-id="S01"><a href="https://toshiba.semicon-storage.com/jp/semiconductor/knowledge/faq/mosfet_sic-mosfet/sic-mosfet-001.html">Toshiba Electronic Devices &amp; Storage, "What kind of material is SiC? And what are the features of SiC MOSFETs?"</a></li>
+<li data-source-id="S02"><a href="https://www.kyoto-u.ac.jp/archive/prev/news_data/h/h1/news6/2009/091007_1_1">Kyoto University, "World's highest-performance high-capacity SiC trench MOSFET achieved" (glossary)</a></li>
+<li data-source-id="S03"><a href="https://eetimes.itmedia.co.jp/ee/articles/1909/30/news027_2.html">EE Times Japan, Akira Fukuda, "SiC power devices accelerate the electrification of mobility" (2019)</a></li>
+<li data-source-id="S04"><a href="https://eetimes.itmedia.co.jp/ee/articles/2401/09/news026_2.html">EE Times Japan, Akira Fukuda, "Methods for improving the power density of automotive power devices" (2024)</a></li>
+<li data-source-id="S05"><a href="https://www.st.com/content/st_com/ja/about/innovation-and-technology/gan.html">STMicroelectronics, "GaN (gallium nitride)"</a></li>
+</ul>
+<section class="semicon-correction-form">
+<h2>Questions and corrections form</h2>
+<p>If you find an error or anything unclear in this article, please let us know using the form below. We will check it and fix the article.</p>
+<div class="semicon-form-shortcode">
+<div class="wpcf7 no-js" id="wpcf7-f2045-o3" lang="ja" dir="ltr" data-wpcf7-id="2045">
+<div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
+<form action="/?rest_route=%2Fwp%2Fv2%2Fposts&#038;per_page=100&#038;page=1&#038;context=view#wpcf7-f2045-o3" method="post" class="wpcf7-form init" aria-label="Contact form" novalidate="novalidate" data-status="init">
+<fieldset class="hidden-fields-container"><input type="hidden" name="_wpcf7" value="2045" /><input type="hidden" name="_wpcf7_version" value="6.1.6" /><input type="hidden" name="_wpcf7_locale" value="ja" /><input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f2045-o3" /><input type="hidden" name="_wpcf7_container_post" value="0" /><input type="hidden" name="_wpcf7_posted_data_hash" value="" />
+</fieldset>
+<p>You do not need to enter your name, phone number, or address. Please do not include fab names or confidential company information.
+</p>
+<p><label>Type of report (required) <span class="wpcf7-form-control-wrap" data-name="report-type"><select class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required" aria-required="true" aria-invalid="false" name="report-type"><option value="誤りと思われる点">Possible error</option><option value="分かりにくい箇所">Unclear section</option><option value="追加してほしい説明・質問">Request for more explanation / question</option></select></span></label><br />
+<label>Related heading or text (optional) <span class="wpcf7-form-control-wrap" data-name="report-section"><input size="40" maxlength="200" class="wpcf7-form-control wpcf7-text" aria-invalid="false" value="" type="text" name="report-section" /></span></label><br />
+<label>Details (required) <span class="wpcf7-form-control-wrap" data-name="report-message"><textarea cols="40" rows="10" maxlength="3000" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" aria-required="true" aria-invalid="false" name="report-message"></textarea></span></label><br />
+<label>Email address for a reply (only if you would like a reply; optional) <span class="wpcf7-form-control-wrap" data-name="report-email"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-email wpcf7-text wpcf7-validates-as-email" autocomplete="email" aria-invalid="false" value="" type="email" name="report-email" /></span></label>
+</p>
+<p>Your feedback will be used to review and improve our articles. Please see our <a href="https://semicon-campus.com/privacy-policy/">Privacy policy</a>.
+</p>
+<p><input class="wpcf7-form-control wpcf7-submit has-spinner" type="submit" value="Send feedback or correction" />
+</p><div class="wpcf7-response-output" aria-hidden="true"></div>
+</form>
+</div>
+</div>
+</section>
+</div>

@@ -1,0 +1,165 @@
+<!--KEEP:0-->
+<article class="semicon-template-v2" data-episode="094" data-slug="sensor-interlock" data-template-version="2" data-research="episodes/094/research/deep-research-result.md">
+<div class="semicon-hook">
+<p>The door is closed, but the equipment says it is "open" and will not run.</p>
+<p>When that happens, the door itself has not necessarily failed.</p>
+<p>The equipment does not understand the physical object directly. It compares sensor signals with conditions to decide whether an action is allowed.</p>
+</div>
+<p>The focus of this article is <strong>sensors and interlocks</strong> in semiconductor manufacturing equipment. A sensor is the entry point that turns a state, such as pressure or position, into a signal. We treat an interlock as a mechanism that does not permit an action, or moves operation toward a stop, when set conditions are not met. "Dangerous" covers both hazards to people and states that are unsuitable for the equipment or the process. Without mixing up those two purposes, we follow the path from the physical object to the control decision.<a class="source-ref" href="#source-S03">[S03]</a><a class="source-ref" href="#source-S04">[S04]</a><a class="source-ref" href="#source-S09">[S09]</a></p>
+<h2>What you will learn in this article</h2>
+<ul>
+<li>Why equipment checks pressure, flow, temperature, position, doors, and more</li>
+<li>The flow from Sensor → Signal → I/O → Controller → Logic to permit, inhibit, or stop</li>
+<li>After an interlock trips, where to start narrowing down the cause in the real equipment and the signal path</li>
+</ul>
+<nav class="learning-map" aria-label="Reading order for this article">
+<ol>
+<li><a href="#need">Why detection and stop mechanisms are needed</a></li>
+<li><a href="#chain">The path equipment uses to judge a state</a></li>
+<li><a href="#protect">How people, equipment, wafers, and the process are protected</a></li>
+<li><a href="#trouble">What to check, in order, after a stop</a></li>
+<li><a href="#branches">How to separate six possible causes</a></li>
+<li><a href="#maintenance">How this connects to equipment maintenance work</a></li>
+</ol>
+</nav>
+<section id="need">
+<h2>1. Why does equipment check its state before and while it runs?</h2>
+<p>The reason is that commands on the equipment screen alone cannot tell you the real pressure or door position. Semiconductor equipment uses parts that measure chamber vacuum, gas flow, temperature, the position of valves and transfer mechanisms, and whether a wafer or carrier is present. However, what is monitored and where sensors are placed differs by tool. This is not a list of one tool's standard configuration. It is an explanation that combines safety frameworks with product examples from various companies.<a class="source-ref" href="#source-S08">[S08]</a><a class="source-ref" href="#source-S11">[S11]</a><a class="source-ref" href="#source-S13">[S13]</a><a class="source-ref" href="#source-S14">[S14]</a></p>
+<p>For example, manufacturers offer vacuum gauges that measure load lock or chamber pressure, MFCs that measure and adjust flow, and optical sensors that detect whether a wafer carrier is present. If equipment moved to the next action without confirming the required state, operations could proceed while pressure, flow, position, or other conditions are not in place. Which conditions block which actions depends on each design.<a class="source-ref" href="#source-S14">[S14]</a><a class="source-ref" href="#source-S11">[S11]</a><a class="source-ref" href="#source-S13">[S13]</a><a class="source-ref" href="#source-S04">[S04]</a></p>
+<p>On the other hand, a mechanism that refuses to allow a start when conditions are not met can prevent operation in the wrong order or state. If conditions are lost during operation, the equipment may move to a designed stop state. The role of an interlock is not "stop everything immediately, no matter what." What to permit and what to inhibit is defined according to the hazard, process, and equipment involved.<a class="source-ref" href="#source-S04">[S04]</a><a class="source-ref" href="#source-S09">[S09]</a></p>
+</section>
+<section id="chain">
+<h2>2. What path does the signal take from the sensor to the stop decision?</h2>
+<p>Equipment does not understand "danger" the way people do. A sensor converts a physical state into an electrical signal or digital information, and the controller receives it through I/O, the controller's inputs and outputs. The controller compares it with the set conditions, decides whether to permit (Permit) or block (Inhibit) the action, and sends the needed output to the drive parts. The single line below is <strong>this article's own summary</strong>, linking the IEEE definition of a sensor, industrial controller I/O documents, and explanations of interlocks. It does not represent the wiring diagram of every semiconductor tool.<a class="source-ref" href="#source-S03">[S03]</a><a class="source-ref" href="#source-S06">[S06]</a><a class="source-ref" href="#source-S04">[S04]</a></p>
+<p class="signal-chain"><strong>Physical state → Sensor → Signal → I/O → Controller → Logic → Permit / Inhibit → Output → Actuator</strong></p>
+<p>A Sensor is the part that detects the actual state, and a Signal is the information that carries the result. I/O is the connection point that brings signals into the controller or sends them out. The Controller is the control device that receives input values, and Logic is the judgment, such as "under this condition, the action is allowed." An Actuator is the side that acts on commands, such as a valve or motor. Industrial equipment has ON/OFF inputs as well as continuous inputs such as 0/4–20 mA or 0–10 V, but communication methods and electrical specs depend on the model.<a class="source-ref" href="#source-S06">[S06]</a><a class="source-ref" href="#source-S11">[S11]</a></p>
+<p>In one pressure gauge example, a 0–10 V output that matches the pressure is passed to the controller. The idea is that the controller maps the signal range to a measured value and compares it with the conditions the equipment defines. However, 0–10 V is an MKS product example. It does not mean every vacuum gauge has the same output. Thresholds are also specific to each tool. When the pressure on the screen differs from reality, do not treat the real pressure, the sensor output, the value at the I/O, and the screen display as the same thing. Compare them one stage at a time.<a class="source-ref" href="#source-S02">[S02]</a><a class="source-ref" href="#source-S06">[S06]</a></p>
+<p>Door and position detection are examples of ON/OFF signals. Even if a door is physically closed, the controller cannot recognize it as "closed" if the switch has not actuated, the wiring is broken, or the signal does not reach the I/O. Conversely, even if the screen shows normal, a sensor's measuring point and response have limits. It is important not to treat the display alone as proof of the physical state.<a class="source-ref" href="#source-S10">[S10]</a><a class="source-ref" href="#source-S06">[S06]</a><a class="source-ref" href="#source-S01">[S01]</a></p>
+</section>
+<section id="protect">
+<h2>3. What does an interlock protect?</h2>
+<p>Even if a "stop" looks the same, what is being protected is not always the same. We separate safety functions related to <strong>people</strong>, conditions that prevent damage to <strong>equipment</strong>, and conditions that prevent an unsuitable order of steps for <strong>wafers and the process</strong>. These three are a classification for understanding. They are not an official alarm classification from equipment makers.<a class="source-ref" href="#source-S08">[S08]</a><a class="source-ref" href="#source-S09">[S09]</a><a class="source-ref" href="#source-S04">[S04]</a></p>
+<p>Doors and guards are examples related to people. There are product examples of safety interlock switches. However, simply adding a switch does not make the whole tool compliant with SEMI S2. SEMI S2 is an EHS guideline for semiconductor manufacturing equipment, and safety function design depends on the specific hazards and risk assessment. We do not claim that safety PLCs, redundancy, and manual reset are uniformly required on every tool.<a class="source-ref" href="#source-S10">[S10]</a><a class="source-ref" href="#source-S16">[S16]</a><a class="source-ref" href="#source-S08">[S08]</a><a class="source-ref" href="#source-S09">[S09]</a></p>
+<p>Examples of protecting equipment include protecting pumps, heaters, motors, and the like from unsuitable operating conditions. On the process side, pressure, gas flow, valve position, wafer presence, and more can be conditions for start permission or step order. If processing continues after conditions are lost, the intended process conditions may not be met. "Protecting wafers" here does not mean preventing every wafer defect. It means not proceeding with transfer or processing in an unsuitable state or order. What actually stops, and where, must be checked for each tool.<a class="source-ref" href="#source-S04">[S04]</a><a class="source-ref" href="#source-S02">[S02]</a><a class="source-ref" href="#source-S11">[S11]</a><a class="source-ref" href="#source-S13">[S13]</a></p>
+<p>Also, you cannot decide from the name alone that "Alarm" on screen always means a stop, or that "Interlock" always means the same stop action. Is it a notification, a refusal to allow a start, or did it cut outputs during operation? In maintenance, check the outputs that actually acted and the inhibit conditions, not the name.<a class="source-ref" href="#source-S04">[S04]</a><a class="source-ref" href="#source-S11">[S11]</a></p>
+</section>
+<section id="trouble">
+<h2>4. When an interlock trips, what do you check, in order?</h2>
+<p>The first step is not replacing parts. It is identifying <strong>which condition stopped which action, and when</strong>. Below is a diagnostic order that combines several of the Research sources. It does not replace actual work procedures or safety measures for real tools. Follow the equipment maker's procedures for physical checks and measurements.<a class="source-ref" href="#source-S01">[S01]</a><a class="source-ref" href="#source-S06">[S06]</a><a class="source-ref" href="#source-S07">[S07]</a></p>
+<ol>
+<li><strong>Look at the event history.</strong> Line up the first event, the time it occurred, related alarms, and the operation just before. Do not assume a later alarm is the original cause.</li>
+<li><strong>Find the permit condition that was lost.</strong> Identify which value or state went NG: pressure, flow, temperature, position, door, etc.</li>
+<li><strong>Compare the display and the trend.</strong> Look not only at the current value but also at the order of changes, the setpoint, and consistency with related measurements.</li>
+<li><strong>Check the physical state.</strong> Using permitted, safe methods, confirm whether the displayed problem really exists. Whether an independent measurement or visual check is possible is also decided by the tool's procedures.</li>
+<li><strong>Trace the signal path.</strong> Compare the sensor output, power supply, wiring and connectors, I/O input, and the controller's recognition, in order.</li>
+<li><strong>Separate the decision from the action.</strong> After checking thresholds, settings, and logic conditions, see whether a command was issued and whether the drive parts or mechanism actually moved.</li>
+</ol>
+<p>With this order, you can see whether the screen and the physical object are abnormal in the same direction, or whether they disagree somewhere along the way. For example, if pressure is really high, replacing the vacuum gauge alone will not fix it. On the other hand, if an independent check shows normal pressure but only the controller says NG, investigate closely from the sensor to the I/O. This is a <strong>diagnostic summary</strong> linking the sources, not a common procedure set by a single manufacturer.<a class="source-ref" href="#source-S01">[S01]</a><a class="source-ref" href="#source-S02">[S02]</a><a class="source-ref" href="#source-S06">[S06]</a><a class="source-ref" href="#source-S14">[S14]</a></p>
+</section>
+<aside class="semicon-note" aria-label="Continue learning">
+<p>If you want to look more closely at just the signal entry point, reread <a href="#chain">the flow from sensor to control decision</a> in this article alongside the stop history. In the next section, we separate six possible causes behind the same alarm.</p>
+</aside>
+<section id="branches">
+<h2>5. Separate possible causes into six layers</h2>
+<p>The place where an interlock trips is not the address of the root cause. Even if the screen says "door open" or "pressure too low," there are several layers between the physical object and the signal that make that condition true. The breakdown below is <strong>this article's own summary</strong>, combining fault diagnosis, I/O documents, and equipment part examples from the Research sources.<a class="source-ref" href="#source-S01">[S01]</a><a class="source-ref" href="#source-S06">[S06]</a><a class="source-ref" href="#source-S04">[S04]</a></p>
+<div class="semicon-table-wrap">
+<table>
+<caption>Six possible causes for comparing the display with the physical state</caption>
+<thead>
+<tr>
+<th scope="col">Layer</th>
+<th scope="col">Mismatch to check</th>
+<th scope="col">Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">Real equipment problem</th>
+<td>Is the physical state also failing the condition?</td>
+<td>Pressure, flow, temperature, etc., are actually outside the permit conditions</td>
+</tr>
+<tr>
+<th scope="row">Sensor problem</th>
+<td>Does the sensor output match the physical state?</td>
+<td>Drift, contamination, calibration issues, shifted detection position</td>
+</tr>
+<tr>
+<th scope="row">Wiring problem</th>
+<td>Is the output reaching its destination?</td>
+<td>Broken wires, loose connectors, power or noise issues</td>
+</tr>
+<tr>
+<th scope="row">I/O problem</th>
+<td>Is the input channel reading the signal correctly?</td>
+<td>Mismatched input type, scaling, or channel</td>
+</tr>
+<tr>
+<th scope="row">Logic problem</th>
+<td>Is the relationship between the controller's conditions and the current value valid?</td>
+<td>Mismatched thresholds, settings, or permit conditions</td>
+</tr>
+<tr>
+<th scope="row">Mechanical position problem</th>
+<td>Did the mechanism reach the specified position in response to the command?</td>
+<td>A valve or mechanism stops partway; the position is not reached</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>It is dangerous to decide "false detection" without first ruling out a real equipment problem. Conversely, even if the physical object looks normal, you cannot yet say the sensor output is correct. Narrow down possibilities such as a broken or shorted sensor, calibration drift, or temporary noise by comparing the controller's display with the physical state.<a class="source-ref" href="#source-S01">[S01]</a><a class="source-ref" href="#source-S07">[S07]</a></p>
+<p>For position in particular, separate <strong>"the mechanism is in that position" from "the controller recognizes that position."</strong> There are product examples of proximity sensors that detect position without contact. If the mechanism has not actually arrived, look at the drive or mechanical side. If it has arrived but detection does not change, look at the sensor or its mounting. If the sensor output changes but the control input does not, move on to the wiring and I/O side.<a class="source-ref" href="#source-S12">[S12]</a><a class="source-ref" href="#source-S06">[S06]</a><a class="source-ref" href="#source-S01">[S01]</a></p>
+<p>The same applies to the door example. The observation that the door was closed, the fact that the switch detected it, the fact that the I/O received ON, and the result that the Logic gave permission are each checked separately. Do not casually bypass a safety function just to confirm the action works. Identify the cause using the specified procedure. The design and test conditions of safety functions depend on each tool.<a class="source-ref" href="#source-S10">[S10]</a><a class="source-ref" href="#source-S16">[S16]</a><a class="source-ref" href="#source-S08">[S08]</a></p>
+</section>
+<section id="examples">
+<h2>6. For pressure and flow alarms, look beyond the measuring device too</h2>
+<p>For a pressure interlock, first check whether the required pressure has really not been reached. On the physical side, candidates include pumps, valves, gas inflow, and leaks. On the signal side, there are the vacuum gauge, wiring, I/O, and thresholds. INFICON shows product examples of vacuum gauges for process chambers, transfer chambers, and load locks, and MKS shows an example of a gauge with a voltage output that follows pressure. The cause branches beyond that are a summary linking the sources. No specific pressure value can be the stop criterion for every tool.<a class="source-ref" href="#source-S14">[S14]</a><a class="source-ref" href="#source-S02">[S02]</a><a class="source-ref" href="#source-S01">[S01]</a></p>
+<p>For a flow alarm, look not only at the MFC setpoint and measured value but also separate the supply side, valves, flow path, feedback, and communication or wiring. An MFC is a device that measures and controls flow, and there are product examples with analog signals or digital communication. A flow switch is a different configuration that turns a set flow condition into a switch signal. You cannot immediately conclude that the MFC itself failed just because the result was "flow too low."<a class="source-ref" href="#source-S11">[S11]</a><a class="source-ref" href="#source-S05">[S05]</a><a class="source-ref" href="#source-S01">[S01]</a></p>
+<p>Temperature is the same. Do not treat the displayed value alone as the cause. Thermocouples and RTDs use different measuring principles, so separate the sensor type, mounting position, heating and cooling side, I/O, and thresholds. Process temperature control and equipment overheat protection have different purposes, so it is important not to imagine a single mechanism just because both are called a "temperature alarm."<a class="source-ref" href="#source-S15">[S15]</a><a class="source-ref" href="#source-S06">[S06]</a></p>
+</section>
+<section id="maintenance">
+<h2>7. This troubleshooting is the work of equipment maintenance</h2>
+<p>In equipment maintenance, before "replacing the part that stopped," you confirm with evidence which state broke down. By layering the event history, value trends, physical state, electrical drawings, I/O list, and control conditions, it becomes harder to confuse the real equipment, sensors, wiring, I/O, logic, and drive mechanisms. This order is a practical summary combining the Research sources. It does not replace manufacturer-specific maintenance procedures.<a class="source-ref" href="#source-S01">[S01]</a><a class="source-ref" href="#source-S06">[S06]</a><a class="source-ref" href="#source-S07">[S07]</a></p>
+<p>In preventive maintenance, candidates include inspecting, cleaning, checking connections, and calibrating sensors, as well as specified function checks. Safety switches are checked following the manufacturer's documents and the tool's safety procedures. Being able to separate mechanical position drift from electrical signal problems, and real vacuum system problems from vacuum gauge problems, helps not only with recovering from a stop but also with preventing recurrence.<a class="source-ref" href="#source-S07">[S07]</a><a class="source-ref" href="#source-S16">[S16]</a><a class="source-ref" href="#source-S01">[S01]</a></p>
+<p>People with factory experience in sensors, wiring, PLCs, pneumatics, and motors can apply this way of reading signal paths to semiconductor equipment. On the other hand, vacuum, gases, wafer transfer, and tool-specific safety conditions need to be learned separately. This is about how the technical skills needed for the job connect. It is not a guess about the requirements of any specific job posting.<a class="source-ref" href="#source-S06">[S06]</a><a class="source-ref" href="#source-S08">[S08]</a><a class="source-ref" href="#source-S11">[S11]</a><a class="source-ref" href="#source-S14">[S14]</a></p>
+</section>
+<section id="faq">
+<h2>Frequently asked questions</h2>
+<h3>If the door is closed but it says "Door Open," should I replace the switch?</h3>
+<p>You cannot decide yet. Check the door and switch positions, the switch output, the wiring, and recognition at the I/O separately. Even if the door is physically closed, the controller is not necessarily receiving the closed state.<a class="source-ref" href="#source-S10">[S10]</a><a class="source-ref" href="#source-S06">[S06]</a></p>
+<h3>Does an Alarm always mean an interlock stop?</h3>
+<p>You cannot tell from the name alone. Check what the equipment actually did: a notification, a start inhibit, a stop during operation, and so on.<a class="source-ref" href="#source-S04">[S04]</a><a class="source-ref" href="#source-S11">[S11]</a></p>
+<h3>If the sensor value is normal, is the equipment safe?</h3>
+<p>That alone does not prove it. The measuring location, response, and the condition of wiring and inputs have limits, so when needed, check the physical state independently by safe means. Whether safety functions are adequate is also judged by the specific design and risk assessment.<a class="source-ref" href="#source-S01">[S01]</a><a class="source-ref" href="#source-S08">[S08]</a></p>
+</section>
+<section id="summary">
+<h2>Summary in three lines</h2>
+<p>Equipment turns the state reported by sensors into permission or inhibition of actions through I/O and control conditions.<br />Think about people's safety, equipment protection, and wafer and process conditions as separate purposes.<br />After a stop, do not pick a part from the alarm name alone. Trace from the physical state to the signal, I/O, Logic, and mechanical motion.</p>
+<h3>Read next</h3>
+<ul>
+<li><a href="https://semicon-campus.com/load-lock-wafer-exchange/">How load locks and wafer exchange work</a> — why pressure and transfer order are related</li>
+</ul>
+<p>If you want to connect these mechanisms to a job, see <a href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/">semiconductor equipment maintenance work</a> to learn how inspection and isolating causes lead to real tasks.</p>
+</section>
+<section id="sources">
+<h2>Sources</h2>
+<p>The [Sxx] marks in the text correspond to Source IDs in the EP094 Research master document. Specs in manufacturer documents are product examples; for decisions about a specific tool, use that tool's documentation. The diagnostic order and the classification of what is protected are this article's own summary, combining the sources below.</p>
+<ol>
+<li id="source-S01">[S01] IR Engineer Education Institute: <a href="https://engineer-education.com/sensor-failure-diagnosis_response-design/">Key points of sensor fault diagnosis and fault-response design</a> — fault diagnosis and signal consistency checks.</li>
+<li id="source-S02">[S02] MKS Instruments: <a href="https://www.mks.com/p/626D11TDE">626D11TDE Absolute Pressure Transducer</a> — product example of pressure measurement and output.</li>
+<li id="source-S03">[S03] IEEE: <a href="https://technav.ieee.org/area/sensors/">Sensors</a> — definition of a sensor.</li>
+<li id="source-S04">[S04] C-P Systems: <a href="https://c-psystems.com/glossary-process-interlock/">What Is Process Interlock?</a> — concepts of permit, stop, and sequence.</li>
+<li id="source-S05">[S05] PSG Dover / Malema: <a href="https://www.psgdover.com/malema/products/flow-switches">Flow Switches</a> — switch signals for flow conditions.</li>
+<li id="source-S06">[S06] Siemens: <a href="https://sid.siemens.com/r/A6V14300949/25901888779___en-US_22503589003">Configure controller I/Os</a> — input types and scaling.</li>
+<li id="source-S07">[S07] Meskernel: <a href="https://www.meskernel.com/news/user-guide-and-tips-installation-calibration-and-maintenance-of-sensors-286425.html">Installation, Calibration, and Maintenance of Sensors</a> — inspection and calibration.</li>
+<li id="source-S08">[S08] SEMI: <a href="https://store-us.semi.org/products/s00200-semi-s2-environmental-health-and-safety-guideline-for-semiconductor-manufacturing-equipment">SEMI S2</a> — EHS guideline for semiconductor equipment.</li>
+<li id="source-S09">[S09] SEMI: <a href="https://www.semi.org/en/standards-watch-2022-June/safety-interlock-design-systems-in-semi-s2">Safety Interlock Design Systems in SEMI S2</a> — discussion of safety interlock design.</li>
+<li id="source-S10">[S10] OMRON: <a href="https://automation.omron.com/en/us/products/family/D4NS">D4NS Tongue Interlock Switches</a> — product example of a door safety switch.</li>
+<li id="source-S11">[S11] Brooks Instrument: <a href="https://www.brooksinstrument.com/product/sla5800-series">SLA5800 Mass Flow Controllers &amp; Meters</a> — example of flow measurement, control, and signal types.</li>
+<li id="source-S12">[S12] OMRON: <a href="https://www.ia.omron.com/support/guide/41/overview.html">Overview of Proximity Sensors</a> — non-contact position detection.</li>
+<li id="source-S13">[S13] OMRON: <a href="https://www.ia.omron.com/products/family/1171/lineup.html">Wafer-carrier Mounting Photomicrosensors</a> — example of detecting wafer carrier presence.</li>
+<li id="source-S14">[S14] INFICON: <a href="https://www.inficon.com/en/products/vacuum-gauge-and-controller/bcg552-trigon">Trigon BCG552 Vacuum Gauge</a> — example of vacuum measurement inside semiconductor equipment.</li>
+<li id="source-S15">[S15] OMEGA Engineering: <a href="https://www.jp.omega.com/techref/measureguide.html">Practical Guidelines for Temperature Measurement</a> — temperature measurement methods.</li>
+<li id="source-S16">[S16] Rockwell Automation: <a href="https://www.rockwellautomation.com/en-us/support/documentation/technical/safety-sensors-and-switches/safety-interlock-switches.html">Safety Interlock Switches Technical Documentation</a> — types of safety switches and documentation.</li>
+</ol>
+</section>
+</article>

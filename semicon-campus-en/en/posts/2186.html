@@ -1,0 +1,183 @@
+<!--KEEP:0-->
+<div class="semicon-article" id="semicon-top">
+<div class="semicon-level">
+<div class="semicon-level-top"><span class="semicon-level-label">Learning level</span><strong class="semicon-stars" aria-label="Beginner (1 of 5)"><span class="on">★</span><span class="off">☆☆☆☆</span><span>Beginner</span></strong></div>
+</div>
+<div class="semicon-lead">
+<p>Have you ever taken a photo with your phone and found it blurry because the focus was off? Or it was so bright that it washed out to white? Or so dark you could barely see anything?</p>
+<p>Something similar happens in the step that "prints" semiconductor circuits with light. The focus can be off. The amount of light can be too much or too little. When that happens, the width and shape of the printed lines no longer match the design.</p>
+<p>Here is the short answer: <strong class="semicon-key">in the step that prints with light, the shape falls apart unless both "focus" and "amount of light" are within the right range.</strong> That is why the pattern is measured and inspected right after it is printed and developed.</p>
+</div>
+<div class="semicon-note">
+<p>The camera comparison only fits in one way: "if focus and brightness are off, the result changes." How a camera works and how a semiconductor exposure tool works are different things.</p>
+</div>
+<div class="semicon-map">
+<h3>What you will learn in this article</h3>
+<ol>
+<li><strong>Goal of this article:</strong> Understand that focus and amount of light decide the shape in the step that prints circuit patterns with light, and why the pattern is measured right after printing</li>
+<li>The step called lithography, and the names of the tools used in it</li>
+<li>Why focus and amount of light (dose) affect the shape</li>
+<li>Why the pattern is measured and inspected right after printing, and how people on site look for causes</li>
+</ol>
+</div>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep106-blog-01-litho-flow.png" alt="Concept diagram showing the flow of printing a shape with light, developing it, and measuring it right away"><figcaption>A simplified diagram of the flow: print with light, develop, measure. It does not show actual equipment or dimensions.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the diagram</b></p>
+<ul>
+<li>Print with light: shine ultraviolet light through a mask to print the shape onto the resist</li>
+<li>Develop: keep the printed shape</li>
+<li>Measure: measure right after developing (ADI)</li>
+</ul>
+</div>
+<div class="semicon-chat-row naoki">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">Assistant</div>
+</div>
+<div class="semicon-bubble">
+<p>Professor, it's just printing with light. Why would the shape fall apart?</p>
+</div>
+</div>
+<div class="semicon-chat-row teacher">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">Professor</div>
+</div>
+<div class="semicon-bubble">
+<p>It's just like a camera. If the focus is off or the amount of light isn't right, it won't print well.</p>
+</div>
+</div>
+<div class="semicon-chat-row naoki">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">Assistant</div>
+</div>
+<div class="semicon-bubble">
+<p>I see. So finding the right range is what matters.</p>
+</div>
+</div>
+<div class="semicon-chat-row teacher">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">Professor</div>
+</div>
+<div class="semicon-bubble">
+<p>Exactly. And if you measure right after printing, you can even redo it. Let's go through it step by step.</p>
+</div>
+</div>
+<h2 class="wp-block-heading" data-fact-ids="C01 C02">Lithography is the step that prints circuit patterns with light</h2>
+<p>Semiconductor circuits are built on a thin disk called a wafer. According to Hitachi High-Tech, each circuit layer is made mainly through three steps: "deposition," which adds a thin film; "pattern transfer," which prints a shape with light; and "etching," which removes film to finish the shape. Of these, "pattern transfer" is lithography (photolithography).</p>
+<p>In lithography, a film that changes its properties when hit by light is first coated on top of the film on the wafer. This is called "photoresist." Next, a "photomask" is used. A photomask is a glass master plate with the circuit pattern drawn on it.</p>
+<p>The exposure tool shines ultraviolet light through the photomask. The light passes only through the parts of the mask without a pattern. Photoresist that is hit by the light is exposed and changes chemically. A lens shrinks the pattern to a fraction of its size and prints it onto the wafer. After that, the wafer is "developed" to keep the printed shape.</p>
+<h2 class="wp-block-heading" data-fact-ids="C04 C06">Two conditions that decide the shape: focus and amount of light</h2>
+<p>When printing with light, "focus" and "dose" are important. Focus means how sharp the image is in focus. ASML explains focus as "how sharp the image is." Dose is the amount of light, meaning the exposure energy given to the resist.</p>
+<p>These two are very similar to focus and brightness (exposure) in a photo. When focus is off, the image blurs. When there is too much or too little light, the resist reacts too little or too much.</p>
+<p>So how do you find the right values? A document from the nanofab at the University of California, Santa Barbara introduces a test called an "FEM (focus-exposure matrix)." The dose and focus are changed little by little along the rows and columns, and each square of the grid is exposed. Then each square is checked to see whether the resulting shape is within the allowed range. The document notes that in failed squares, sometimes no pattern can be seen at all.</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep106-blog-02-process-window.png" alt="Concept diagram of a grid with varying focus and amount of light, where only the middle range passes"><figcaption>A simplified diagram of the process window when focus and amount of light are changed. The grid colors are for explanation only and are not measured data.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the diagram</b></p>
+<ul>
+<li>Vertical: focus; horizontal: amount of light</li>
+<li>Blue squares: pass. Gray: fail</li>
+<li>Choose the center of the passing range</li>
+</ul>
+</div>
+<h2 class="wp-block-heading" data-fact-ids="C06 C07">The right range: the "process window"</h2>
+<p><strong class="semicon-key">The area where the passing squares gather is called the "process window."</strong> Like a window, it is the region where "printing works well within this range." The UCSB document recommends choosing the center of the window. You only know where the center is after checking all the bad results: dose too high, dose too low, focus too high, and focus too low.</p>
+<p>It also warns against choosing the "best square." <strong class="semicon-key">The best square is often at the edge of the window, so even a small variation can push it out of spec.</strong></p>
+<p>A doctoral thesis from TU Wien explains the same idea. The effect of focus changes with dose, so the two are studied by changing them together. A graph of the results is called a "Bossung plot." Besides line width (CD), the graph can also show the slope of the walls (sidewall angle) and how much resist is lost (resist loss). The process window is the set of focus and light-amount combinations where all of these are within spec.</p>
+<p>The thesis also says that when defocus (focus error) is large, the pattern becomes more sensitive to other errors, so the usable focus range in practice is narrower than the theoretical value.</p>
+<h2 class="wp-block-heading" data-fact-ids="C03">There is also a limit to how fine light can print</h2>
+<p>ASML expresses the smallest printable dimension (CD) as "CD = k1 × wavelength ÷ NA." Wavelength is the length of the light wave. NA (numerical aperture) is a number that shows how well a lens gathers light. k1 is a factor that depends on the process.</p>
+<p>From this formula, you can see that the shorter the wavelength of light, and the better the lens gathers light, the finer the shapes that can be printed.</p>
+<h2 class="wp-block-heading" data-fact-ids="C05 C08">Measure right after developing, while you can still redo it</h2>
+<p>Whether the printed shape is correct is checked by measuring after development. According to Hitachi High-Tech, after development the dimensions are measured with a CD-SEM (an electron microscope that measures line width). This measurement step is sometimes called "ADI," short for After Development Inspection. Measurements are also taken after etching in the same way. That one is "AEI," or After Etch Inspection.</p>
+<p>Why measure right after developing? According to an announcement from KLA, an inspection equipment maker, <strong class="semicon-key">right after development, the wafer can be inspected while it can still be "reworked."</strong> Once film has been removed by etching, it likely cannot be redone in the same way. Finding defects from the printing step before etching is much better.</p>
+<p>The same announcement also says that early defects in the printing step used to be hard to catch reliably. That is why measurement and inspection technology matters.</p>
+<div class="semicon-cta">
+<h3>Learn a bit more about lithography</h3>
+<p>If you want to learn the basics of lithography in a little more detail, please read this article too.</p>
+<div class="semicon-btnrow"><a class="semicon-btn" href="https://semicon-campus.com/what-is-lithography-semiconductor-process/">What is lithography?</a></div>
+</div>
+<h2 class="wp-block-heading" data-fact-ids="C04">Position error, or "overlay," is also a lithography defect</h2>
+<p>Not only the "width" and "shape" of the printed pattern matter, but also its "position." Circuits are built by stacking many layers. ASML calls the accuracy of aligning two layers "overlay."</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep106-blog-03-overlay.png" alt="Concept diagram showing two layers that line up exactly and two layers that are slightly shifted"><figcaption>A simplified diagram of overlay between two layers. The shift is exaggerated to make it easy to see and is not a measured value.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the diagram</b></p>
+<ul>
+<li>Left: the two layers line up</li>
+<li>Right: the two layers are shifted</li>
+<li>The shift is measured and sent back to the exposure tool for correction</li>
+</ul>
+</div>
+<p>Focus and overlay are monitored by measuring how well repeating test patterns (metrology targets) printed on the wafer turned out. The results are sent from tools built into the production line back to the exposure tool and used for correction. In other words, measuring is not only for keeping records; it is also used to fix the next exposure.</p>
+<h2 class="wp-block-heading" data-fact-ids="C04 C06 C08">How equipment maintenance and production engineering look for the cause of errors</h2>
+<p>When an error in the printed shape is found on site, it is likely checked in an order like this.</p>
+<ol>
+<li><strong>Check the measurement results after development.</strong> See how much, and in which direction, the line width and position are off.</li>
+<li><strong>Review the focus and dose records.</strong> Compare the exposure tool settings with the values actually used.</li>
+<li><strong>Sort out where it happens.</strong> Summarize where on the wafer, in which lot, on which tool, and when it happened.</li>
+<li><strong>Check where the process window is with a test (FEM).</strong> See whether the current conditions are at the center of the window or near the edge.</li>
+<li><strong>Confirm with more data.</strong> Things may have just happened at the same time by chance, so confirm before deciding.</li>
+</ol>
+<p>Equipment adjustment and recovery are done according to the official procedures of your fab or equipment maker, under the judgment of authorized people. This article introduces a way of thinking about causes; it does not give instructions for operating equipment.</p>
+<p>The work of tracking down this kind of problem is shared among process, production engineering, equipment maintenance, and inspection / metrology staff. Manufacturing experience handling condition records and variation against specs is likely to help you think about "which conditions are within the right range." You can see the big picture of the jobs in <a href="https://semicon-campus.com/semiconductor-career-map/">Look at semiconductor manufacturing jobs by process</a>.</p>
+<h2 class="wp-block-heading">Word review</h2>
+<p>Here are the words from this article again, in simple terms.</p>
+<ul>
+<li><strong>Lithography:</strong> The step that prints circuit patterns with light.</li>
+<li><strong>Photoresist:</strong> A film that changes its properties when hit by light. The shape is printed onto it.</li>
+<li><strong>Photomask:</strong> A glass master plate with the circuit pattern drawn on it.</li>
+<li><strong>Focus:</strong> How sharp the image is.</li>
+<li><strong>Dose:</strong> The amount of light. The exposure energy given to the resist.</li>
+<li><strong>Process window:</strong> The range of focus and amount of light where printing works well.</li>
+<li><strong>ADI:</strong> Measuring and inspecting after development.</li>
+<li><strong>Overlay:</strong> The accuracy of aligning two layers.</li>
+</ul>
+<h2 class="wp-block-heading">Common misunderstandings</h2>
+<h3>Q. If the focus is right, does the amount of light not matter?</h3>
+<p>It does matter. The effect of focus changes with the amount of light. That is why the two are changed together to find the range where printing works well.</p>
+<h3>Q. Is it safe to use the conditions that gave the best result?</h3>
+<p>Not necessarily. The best conditions are often at the edge of the range where printing works well, so a small variation can push them out of spec. The basic rule is to choose the center of the range.</p>
+<h3>Q. If you measure after development, do you not need to measure after etching?</h3>
+<p>No. You measure both after development and after etching. After development, you check at a stage where rework is still possible; after etching, you check the shape after the film has been removed.</p>
+<h2 class="wp-block-heading">Summary: the printing step depends on the "right range" of focus and amount of light</h2>
+<div class="semicon-lead">
+<p>In the step that prints with light, the shape falls apart unless focus and amount of light are within the right range.<br />That range is called the process window, and you choose its center, not the best single point.<br />Measuring and inspecting right after development is done to find defects while rework is still possible.</p>
+</div>
+<div class="semicon-cta">
+<h3>We also explain semiconductors simply on YouTube</h3>
+<p>For those who want to review with diagrams, we also give short explanations of semiconductor manufacturing on YouTube.</p>
+<div class="semicon-btnrow"><a rel="noopener" class="semicon-btn secondary" href="https://www.youtube.com/@semicon-campus" target="_blank">Watch diagram videos on YouTube</a></div>
+</div>
+<h2 class="wp-block-heading">Official sources we used</h2>
+<ul class="semicon-sources">
+<li data-source-id="S01"><a href="https://www.hitachi-hightech.com/jp/ja/knowledge/semiconductor/room/manufacturing/process.html">Hitachi High-Tech, "1. Semiconductor Manufacturing Process" (Japanese)</a></li>
+<li data-source-id="S02"><a href="https://www.asml.com/en/technology/lithography-principles/measuring-accuracy">ASML, "Measuring accuracy"</a></li>
+<li data-source-id="S03"><a href="https://www.asml.com/en/technology/lithography-principles/rayleigh-criterion">ASML, "Rayleigh criterion"</a></li>
+<li data-source-id="S04"><a href="https://wiki.nanofab.ucsb.edu/wiki/Lithography_Calibration_-_Analyzing_a_Focus-Exposure_Matrix">UCSB Nanofab, "Lithography Calibration &#8211; Analyzing a Focus-Exposure Matrix"</a></li>
+<li data-source-id="S05"><a href="https://www.iue.tuwien.ac.at/phd/kirchauer/node41.html">TU Wien (Kirchauer doctoral thesis), "Focus Effects and Process Window"</a></li>
+<li data-source-id="S06"><a href="https://ir.kla.com/news-events/press-releases/detail/78/kla-tencor-announces-voyager-1015-and-surfscan-sp7">KLA, "Voyager 1015 and Surfscan SP7" (press release)</a></li>
+</ul>
+<section class="semicon-correction-form">
+<h2>Questions and corrections form</h2>
+<p>If you find an error or anything unclear in this article, please let us know using the form below. We will check it and fix the article.</p>
+<div class="semicon-form-shortcode">
+<div class="wpcf7 no-js" id="wpcf7-f2045-o12" lang="ja" dir="ltr" data-wpcf7-id="2045">
+<div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
+<form action="/?rest_route=%2Fwp%2Fv2%2Fposts&#038;per_page=100&#038;page=1&#038;context=view#wpcf7-f2045-o12" method="post" class="wpcf7-form init" aria-label="Contact form" novalidate="novalidate" data-status="init">
+<fieldset class="hidden-fields-container"><input type="hidden" name="_wpcf7" value="2045" /><input type="hidden" name="_wpcf7_version" value="6.1.6" /><input type="hidden" name="_wpcf7_locale" value="ja" /><input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f2045-o12" /><input type="hidden" name="_wpcf7_container_post" value="0" /><input type="hidden" name="_wpcf7_posted_data_hash" value="" />
+</fieldset>
+<p>You do not need to enter your name, phone number, or address. Please do not include fab names or confidential company information.
+</p>
+<p><label>Type of report (required) <span class="wpcf7-form-control-wrap" data-name="report-type"><select class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required" aria-required="true" aria-invalid="false" name="report-type"><option value="誤りと思われる点">Possible error</option><option value="分かりにくい箇所">Unclear section</option><option value="追加してほしい説明・質問">Request for more explanation / question</option></select></span></label><br />
+<label>Related heading or text (optional) <span class="wpcf7-form-control-wrap" data-name="report-section"><input size="40" maxlength="200" class="wpcf7-form-control wpcf7-text" aria-invalid="false" value="" type="text" name="report-section" /></span></label><br />
+<label>Details (required) <span class="wpcf7-form-control-wrap" data-name="report-message"><textarea cols="40" rows="10" maxlength="3000" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" aria-required="true" aria-invalid="false" name="report-message"></textarea></span></label><br />
+<label>Email address for a reply (only if you would like a reply; optional) <span class="wpcf7-form-control-wrap" data-name="report-email"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-email wpcf7-text wpcf7-validates-as-email" autocomplete="email" aria-invalid="false" value="" type="email" name="report-email" /></span></label>
+</p>
+<p>Your feedback will be used to review and improve our articles. Please see our <a href="https://semicon-campus.com/privacy-policy/">Privacy policy</a>.
+</p>
+<p><input class="wpcf7-form-control wpcf7-submit has-spinner" type="submit" value="Send feedback or correction" />
+</p><div class="wpcf7-response-output" aria-hidden="true"></div>
+</form>
+</div>
+</div>
+</section>
+</div>

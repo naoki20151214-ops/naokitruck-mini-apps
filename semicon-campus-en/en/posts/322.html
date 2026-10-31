@@ -1,0 +1,336 @@
+<!--KEEP:0-->
+
+
+<!--KEEP:1-->
+
+
+<!--KEEP:2-->
+<div class="semicon-article">
+
+
+
+<p class="semicon-lead wp-block-paragraph">Defect inspection is the step that finds tiny particles, scratches, missing pattern areas, dimensional shifts, and other problems on wafers and chips. In semiconductor manufacturing, even defects too small to see can cause circuit shorts, open circuits, leakage current, and lower yield. For beginners, this article explains what defect inspection looks at, how inspection data is used to improve yield, and what kinds of jobs it shows up as in job postings.</p>
+
+
+
+<div class="semicon-map">
+  <h3>What you will learn in this article</h3>
+  <ol>
+    <li>What the defect inspection step does</li>
+    <li>The differences between particles, scratches, bridges, opens, and overlay errors</li>
+    <li>How to feed defect maps back into yield improvement</li>
+    <li>Why inspection equipment companies such as KLA and Lasertec matter</li>
+    <li>What "defect inspection," "SEM," "failure analysis," and "SPC" mean in job postings</li>
+  </ol>
+</div>
+
+
+
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>The yield article said inspection is important for reducing defects. But is defect inspection just "looking for bad chips"?</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>Not only that. Defect inspection does more than find bad ones. It is the entry point for reading where defects are increasing and feeding that back into process improvement.</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>So inspection isn't the goal. It's the starting point for finding the cause.</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>Exactly. Only when you connect "finding" defects, "sorting" them, "looking at where they are," and "tracing back to possible causes" does it really help improve yield.</p></div></div>
+
+
+
+
+<h2 class="wp-block-heading">What is defect inspection?</h2>
+
+
+
+<p class="wp-block-paragraph">Defect inspection is the step that examines wafer surfaces, thin films, wiring patterns, chip appearance, and more, during or after semiconductor manufacturing, to find abnormalities that lead to defects. Because semiconductor circuits are extremely fine, even particles invisible to the naked eye or a slight pattern shift can be a big problem for the product.</p>
+
+
+
+<p class="wp-block-paragraph">For example, if a small particle is left between two wires, it can cause an electrical short. On the other hand, if a thin line that should be connected is broken, it becomes an open circuit. If film thickness or line width drifts from the standard, electrical characteristics vary. Defect inspection exists to find these problems early.</p>
+
+
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/semiconductor-defect-inspection-flow.png" alt="Defect inspection flow: a diagram showing imaging, detection, classification, analysis, and improvement">
+  <figcaption>Defect inspection does not "end with taking images." It finds suspicious spots, sorts them by type, narrows down possible causes, and sends the results back to the process and equipment.</figcaption>
+</figure>
+<div class="semicon-mobile-summary">
+  <b>Key points of the diagram</b>
+  <ul>
+    <li>Imaging: view the wafer with light or electron beams</li>
+    <li>Detection: pick up suspicious spots</li>
+    <li>Classification: sort by type, such as particles or scratches</li>
+    <li>Analysis: narrow down possible causes from location and process</li>
+    <li>Improvement: send results back to the process and equipment</li>
+  </ul>
+</div>
+
+
+
+<h2 class="wp-block-heading">Why defect inspection directly affects yield</h2>
+
+
+
+<p class="wp-block-paragraph">Yield is the share of chips made that can actually be used as good products. If defect inspection is weak, you miss where defects are increasing. Then you keep making defects with the same tool, the same materials, and the same process conditions.</p>
+
+
+
+<p class="wp-block-paragraph">In fabs with strong defect inspection, people can ask questions like "Which lot did they increase in?", "Are there more at the center of the wafer or at the edge?", "Did they increase after passing through a specific tool?", and "Was it after cleaning, lithography, or etching?" Narrowing down possible causes from how defects appear is more important than simply finding them.</p>
+
+
+
+<div class="semicon-note">
+  <p><strong>The essence of defect inspection is "making the next decision faster."</strong></p>
+  <p>Defects do not disappear the moment you inspect them. But once you know the location, type, and timing of defects, you can take action, such as changing process conditions, checking tools, reviewing cleaning, or checking material lots. This is yield improvement.</p>
+</div>
+
+
+
+<h2 class="wp-block-heading">Main defects found by inspection</h2>
+
+
+
+<p class="wp-block-paragraph">Not all defects are the same. Particles, scratches, bridges, opens, and overlay errors have different causes and fixes. Understanding them separately makes it easier to see how the steps of semiconductor manufacturing connect.</p>
+
+
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/semiconductor-defect-types-map.png" alt="Types of semiconductor defects: a diagram showing particles, scratches, bridges, opens, and overlay errors on a wafer">
+  <figcaption>Even for the same "defect," the process to go back to is different. Particles may involve cleaning or wafer transfer, missing patterns may involve lithography or etching, and steps or surface conditions may involve CMP.</figcaption>
+</figure>
+
+
+
+<div class="semicon-compare">
+<table>
+  <thead>
+    <tr><th>Defect type</th><th>What is happening</th><th>Processes often involved</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Particles and contamination</strong></td><td>Small particles or chemical residue remain on the wafer</td><td>Cleaning, wafer transfer, chemical control, cleanroom control</td></tr>
+    <tr><td><strong>Scratches and chipping</strong></td><td>The surface gets scratched or the edge chips</td><td>Wafer transfer, handling, contact inside tools, polishing</td></tr>
+    <tr><td><strong>Bridges</strong></td><td>Wires or patterns that should be separate are connected</td><td>Lithography, etching, deposition, cleaning</td></tr>
+    <tr><td><strong>Opens</strong></td><td>A line that should be connected is broken</td><td>Lithography, etching, CMP, wiring formation</td></tr>
+    <tr><td><strong>Overlay errors</strong></td><td>The previous layer and the next layer are misaligned</td><td>Lithography, exposure tools, alignment, wafer flatness</td></tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<h2 class="wp-block-heading">Defect maps show which part of the process is suspicious</h2>
+
+
+
+<p class="wp-block-paragraph">In defect inspection, people sometimes look at where defects are on the wafer like a map. It is easiest to think of this as a defect map, or wafer map. Whether defects are scattered randomly, concentrated at the edge, or appear as streaks in one direction changes which causes you suspect.</p>
+
+
+
+<p class="wp-block-paragraph">For example, if there are many defects only at the wafer edge, wafer transfer, holding, chemical flow, or edge processing are suspected. If only a specific lot is bad, material lots or tool conditions are suspected. If defects increase only in specific patterns, lithography or etching conditions may be involved.</p>
+
+
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/semiconductor-defect-feedback-loop.png" alt="Flow of feeding defect data back into yield improvement: a diagram showing defect maps, lot comparison, tool history, and process improvement">
+  <figcaption>Defect data is a clue for process improvement. By looking at location, lot, tool history, and process conditions together, you narrow down possible causes.</figcaption>
+</figure>
+
+
+
+<!-- semicon-a8-top30-top30-30-1:start -->
+
+
+<!-- semicon-a8-top30-top30-30-1:end -->
+
+
+
+<h2 class="wp-block-heading">Equipment and companies involved in defect inspection</h2>
+
+
+
+<p class="wp-block-paragraph">Defect inspection involves optical inspection tools, electron beam inspection tools, SEM review tools, mask inspection tools, metrology tools, data analysis software, and more. Inspection equipment plays the role of "turning invisible defects into visible information" inside a semiconductor fab.</p>
+
+
+
+<p class="wp-block-paragraph">Leading companies include KLA, known for inspection, metrology, and process control; Lasertec, known for photomask and EUV-related inspection; and Applied Materials, which covers manufacturing equipment as well as metrology and control. For readers in Japan, understanding inspection equipment companies shows that the semiconductor industry is not made up only of "companies that make chips."</p>
+
+
+
+<div class="semicon-cta">
+  <h3>Inspection equipment companies are also worth a close look for your career</h3>
+  <p>Inspection equipment companies such as KLA and Lasertec work in an important area that affects yield in semiconductor fabs. In particular, listed companies like Lasertec disclose information such as average annual salary in their annual securities reports, and they tend to attract attention in the job market as high-value semiconductor companies.</p>
+  <p>In other words, understanding defect inspection makes it easier to see "which companies are strong and why," "which roles require high expertise," and "which words to look for in job postings."</p>
+  <p>What matters here is not applying right away. First, look for words like "defect inspection," "SEM," "failure analysis," "yield improvement," "field service," and "process control" in job postings, and connect your technical understanding with your understanding of companies.</p>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn" href="https://semicon-campus.com/semiconductor-company-map-by-process/">See the company map by process</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/semiconductor-career-service-selection-guide/">Before looking for jobs at KLA or Lasertec, see how to choose career change services</a>
+  </div>
+</div>
+
+
+
+<div class="semicon-compare">
+<table>
+  <thead>
+    <tr><th>Area</th><th>What it looks at</th><th>Key point for beginners</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Wafer defect inspection</strong></td><td>Particles, scratches, pattern abnormalities, lot abnormalities</td><td>An entry point directly tied to yield improvement</td></tr>
+    <tr><td><strong>SEM review</strong></td><td>Checks detected defects at high magnification</td><td>Looks closely at "Is it really a defect?" and "What kind of defect is it?"</td></tr>
+    <tr><td><strong>Mask inspection</strong></td><td>Defects in masks and blanks used in lithography</td><td>Prevents defects before lithography</td></tr>
+    <tr><td><strong>Data analysis</strong></td><td>Defect maps, lot trends, tool history</td><td>Connects inspection results to process improvement</td></tr>
+  </tbody>
+</table>
+</div>
+
+
+<section class="mp2-section" id="revenue-phase2-learning"><h2>Connecting defect inspection and inspection equipment to real work and reskilling</h2><p>To describe your defect inspection experience, organize not just the number of defects but also how you matched their location, type, and time of occurrence against tool and process history. Checking inspection conditions, reviewing images, and reporting to process staff are points of contact with equipment support and quality improvement. While filling gaps in quality control and metrology basics, compare how much of inspection, equipment, and customer support work each job covers.</p></section>
+
+<h2 class="wp-block-heading">Jobs you can see through defect inspection</h2>
+
+
+
+<p class="wp-block-paragraph">Understanding defect inspection makes semiconductor industry roles much easier to see. That is because inspection and metrology work, quality evaluation work, process engineer work, equipment engineer and field service engineer work, and data analysis work are all connected.</p>
+
+
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/semiconductor-defect-career-map.png" alt="Jobs you can see through defect inspection: a diagram showing inspection and metrology, quality evaluation, process, equipment and FSE, and data analysis">
+  <figcaption>Defect inspection is a crossroads of inspection, quality, process, equipment, and data analysis. Even people new to semiconductors can find entry points by reading job posting terms one by one.</figcaption>
+</figure>
+<div class="semicon-mobile-summary">
+  <b>Key points of the diagram</b>
+  <ul>
+    <li>Inspection and metrology: check wafers and patterns with tools</li>
+    <li>Quality evaluation: pass/fail judgment, reporting, and preventing recurrence</li>
+    <li>Process: trace defect causes back to process conditions</li>
+    <li>Equipment and FSE: keep inspection and manufacturing tools in good condition</li>
+    <li>Data analysis: read defect maps and lot trends</li>
+  </ul>
+</div>
+
+
+
+<div class="semicon-grid">
+  <div class="semicon-card"><b>Inspection and metrology</b><span>Checks wafers and patterns with tools and detects abnormalities.</span></div>
+  <div class="semicon-card"><b>Quality evaluation</b><span>Handles pass/fail judgment, reporting, preventing recurrence, and organizing quality data.</span></div>
+  <div class="semicon-card"><b>Process</b><span>Traces possible defect causes back to process conditions and reduces defects.</span></div>
+  <div class="semicon-card"><b>Equipment and FSE</b><span>Keeps inspection and manufacturing tools in good condition and responds when problems occur.</span></div>
+  <div class="semicon-card"><b>Data analysis</b><span>Looks at defect maps, lot trends, and SPC to find points to improve.</span></div>
+  <div class="semicon-card"><b>Manufacturing operator</b><span>Protects quality through inspection procedures, tool operation, and reporting abnormalities.</span></div>
+</div>
+
+
+
+<h2 class="wp-block-heading">What words appear in job postings?</h2>
+
+
+
+<p class="wp-block-paragraph">Job postings do not always use the words "defect inspection." In practice, the work is split into words like inspection, metrology, SEM, review, visual inspection, failure analysis, yield improvement, SPC, quality evaluation, and process improvement.</p>
+
+
+
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>Defect inspection work sounds interesting. But when a posting says SEM or failure analysis, it looks impossible for someone with no experience.</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>It depends on the job. But there is more than one entry point. There are also routes where you start as a manufacturing operator, in inspection, quality evaluation, equipment maintenance, or as an FSE, and learn how to read tools and defects on the job.</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>So rather than aiming only for "analysis jobs" from the start, it's more realistic to break down the words in job postings and look for an entry point I can get into.</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>Exactly. So when you read a job posting, don't judge by the job title alone. Look at the job duties, the tools used, the data handled, and the training. If you can't read all of this on your own, it is worth using a career change service that knows semiconductor jobs well.</p></div></div>
+
+
+
+<div class="semicon-compare">
+<table>
+  <thead>
+    <tr><th>Words in job postings</th><th>Meaning</th><th>Article to read</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Defect inspection / visual inspection</strong></td><td>Finding abnormalities on wafers and chips</td><td><a href="https://semicon-campus.com/what-is-semiconductor-inspection-quality-control/">What are inspection and quality evaluation?</a></td></tr>
+    <tr><td><strong>SEM / review</strong></td><td>Looking at defects in detail with an electron microscope</td><td>To be covered in the next article</td></tr>
+    <tr><td><strong>Failure analysis</strong></td><td>Investigating why defects occurred</td><td><a href="https://semicon-campus.com/what-is-semiconductor-yield/">What is yield?</a></td></tr>
+    <tr><td><strong>SPC</strong></td><td>Statistically controlling variation in measured values</td><td><a href="https://semicon-campus.com/how-to-read-semiconductor-job-description/">How to read job postings</a></td></tr>
+    <tr><td><strong>Process improvement</strong></td><td>Reviewing conditions and procedures to reduce defects</td><td><a href="https://semicon-campus.com/what-is-semiconductor-process-engineer/">What is a process engineer?</a></td></tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<div class="semicon-cta">
+  <h3>Once you know what the words mean, check them in real job postings</h3>
+  <p>Once this article has made "defect inspection," "SEM," "failure analysis," and "yield improvement" clear, the next step is to look for the same words in job postings. Don't stop at studying; it is important to connect what you learn to real roles, companies, and application requirements.</p>
+  <p>If you are aiming for the semiconductor industry with no experience, you don't need to look only at advanced analysis jobs right away. First, look at entry points such as manufacturing operator, inspection, quality evaluation, equipment maintenance, and field service, and sort out which is closest to your experience. This makes decisions easier.</p>
+  <div class="semicon-stack">
+    <div class="semicon-stack-item"><b>1. Pick out job keywords</b><p>Look for defect inspection, SEM, visual inspection, failure analysis, SPC, yield improvement, and process improvement.</p></div>
+    <div class="semicon-stack-item"><b>2. Break down the job duties</b><p>See whether the work is tool operation, data organization, root cause analysis, or work at customer sites.</p></div>
+    <div class="semicon-stack-item"><b>3. Choose who to consult</b><p>Semiconductor jobs are hard to judge by job title alone, so choosing a service that can read job postings with you makes mismatches less likely.</p></div>
+  </div>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn" href="https://semicon-campus.com/%e5%8d%8a%e5%b0%8e%e4%bd%93%e6%b1%82%e4%ba%ba%e3%82%ad%e3%83%bc%e3%83%af%e3%83%bc%e3%83%89%e4%b8%80%e8%a6%a7%ef%bd%9c%e6%9c%aa%e7%b5%8c%e9%a8%93%e8%80%85%e3%81%8c%e6%b1%82%e4%ba%ba%e7%a5%a8%e3%81%a7/">Organize job keywords</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/how-to-read-semiconductor-job-description/">See how to read job postings</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/semiconductor-career-service-selection-guide/">Aiming for the semiconductor industry with no experience? See how to choose career change services</a>
+  </div>
+</div>
+
+
+<section class="mp2-section" id="revenue-phase2-career"><h2>Comparing jobs and roles from defect inspection and inspection equipment</h2><p>Organize your experience with defect maps and image review, checking inspection conditions, and reporting to the process side as sets of: the equipment involved, the work you did, and the results you confirmed. If you are considering a career change, compare scope of work, location, work hours and travel, training, and application requirements against job postings to separate your current experience from the knowledge you need to add.</p><aside class="semicon-cta mp2-card"><h3>See the big picture of each role and how to choose jobs and learning</h3><p>After learning the technology, compare the scope of work you would handle, such as inspection and recovery, tool installation, process improvement, and customer support. The role articles below let you check learning and job options as well as job duties.</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/" class="semicon-btn mp2-button" data-revenue-phase2-hub="237" data-cta="equipment_hub" data-cta-type="equipment_hub" data-cta-stage="career" data-cta-id="phase2_322_hub237_end" data-cta-route="phase2_322_hub237_end">See equipment engineer scope, openings, and learning</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-field-service-engineer/" class="semicon-btn mp2-button" data-revenue-phase2-hub="270" data-cta="fse_hub" data-cta-type="fse_hub" data-cta-stage="career" data-cta-id="phase2_322_hub270_end" data-cta-route="phase2_322_hub270_end">See FSE recovery and customer support work, openings, and learning</a></div></aside></section>
+
+
+<h2 class="wp-block-heading">Summary</h2>
+
+
+
+<p class="wp-block-paragraph">Defect inspection is the step that finds tiny defects on wafers and chips. But its real value is not just "finding defects." It lies in reading defect types, locations, timing, and lot trends, and sending clues for improvement back to the process, equipment, materials, cleaning, lithography, etching, CMP, and more.</p>
+
+
+
+<p class="wp-block-paragraph">If you want to understand semiconductor manufacturing at an intermediate level, you cannot skip defect inspection. That is because yield, quality, process improvement, equipment maintenance, and data analysis all connect here.</p>
+
+
+
+<div class="semicon-cta">
+  <h3>Read next</h3>
+  <p><a href="https://semicon-campus.com/what-is-cd-sem-sem-review/">What are CD-SEM and SEM review? An easy guide to semiconductor inspection and metrology that measures dimensions and examines defects in detail</a></p>
+</div>
+
+
+
+<div class="semicon-cta">
+  <h3>Review with diagrams on YouTube too</h3>
+  <p>For those who want to review with diagrams, we also explain semiconductor manufacturing in short videos on YouTube.</p>
+  <div class="semicon-btnrow">
+    <a rel="noopener" class="semicon-btn" href="https://www.youtube.com/@semicon-campus" target="_blank">Watch diagram videos on YouTube</a>
+  </div>
+</div>
+
+
+
+<div class="semicon-links">
+  <div class="semicon-linkbox next">
+    
+    <p><a href="https://semicon-campus.com/what-is-semiconductor-yield/">What is yield? A beginner's guide to good-product rates, defects, and improvement in semiconductor manufacturing</a></p>
+    <p><a href="https://semicon-campus.com/what-is-semiconductor-inspection-quality-control/">What are semiconductor inspection and quality evaluation? An easy guide to jobs you can join with no experience</a></p>
+  </div>
+  <div class="semicon-linkbox">
+    <h3>Related articles</h3>
+    <p><a href="https://semicon-campus.com/what-is-semiconductor-process-engineer/">What is a process engineer?</a></p>
+    <p><a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/">What is an equipment engineer?</a></p>
+    <p><a href="https://semicon-campus.com/how-to-enter-semiconductor-industry-without-experience/">How to enter the semiconductor industry with no experience</a></p>
+  </div>
+</div>
+
+
+
+<h3 class="wp-block-heading">Public information referenced</h3>
+
+
+
+<ul class="semicon-sources wp-block-list">
+  <li><a rel="noopener" href="https://www.kla.com/" target="_blank">KLA: public information on process control, defect inspection and review, and metrology</a></li>
+  <li><a rel="noopener" href="https://www.lasertec.co.jp/products/semiconductor/" target="_blank">Lasertec: public information on semiconductor inspection equipment</a></li>
+  <li><a rel="noopener" href="https://www.lasertec.co.jp/ir/data/securities.html" target="_blank">Lasertec: Annual securities reports</a></li>
+  <li><a rel="noopener" href="https://arxiv.org/abs/2308.08376" target="_blank">Automated Semiconductor Defect Inspection in Scanning Electron Microscope Images: a Systematic Review</a></li>
+</ul>
+
+
+
+<!--KEEP:3-->
+<a class="semicon-backtop" href="#" aria-label="Back to top">↑<span>Top</span></a>
+</div>
+
+
+<aside class="related-spokes"><h2>Recommended reading</h2><ul><li><a href="/semiconductor-particle-defect/">Why do tiny invisible particles break semiconductors? Particle defects and equipment maintenance</a></li></ul></aside>

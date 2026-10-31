@@ -1,0 +1,294 @@
+
+<!--KEEP:0-->
+
+
+<!--KEEP:1-->
+
+
+<!--KEEP:2-->
+<div class="semicon-article">
+
+
+
+<p class="semicon-lead wp-block-paragraph">Yield is the percentage of chips made in semiconductor manufacturing that are actually good and usable. When yield is low, you get fewer chips you can sell, even with the same wafers, the same equipment, and the same materials. This article explains, for beginners, what yield means, why defects increase, and the jobs involved in yield improvement.</p>
+
+
+
+<div class="semicon-map">
+  <h3>What you will learn in this article</h3>
+  <ol>
+    <li>What yield is</li>
+    <li>Why yield directly affects semiconductor cost and volume production</li>
+    <li>Where to look for the causes of increasing defects</li>
+    <li>How yield connects to inspection, process, quality, and data analysis jobs</li>
+    <li>What "yield improvement," "defect analysis," and "SPC" mean in job postings</li>
+  </ol>
+</div>
+
+
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/semiconductor-yield-featured.png" alt="Diagram showing that yield is the idea that determines the good-chip rate in semiconductor manufacturing">
+  <figcaption>Yield is a way of looking at how many of the chips you made are usable. The fewer defects there are, the more good chips you get from the same wafer.</figcaption>
+</figure>
+
+
+
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>I often see "yield is important" in semiconductor articles. Honestly, I only vaguely understand it.</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>Yield is extremely important. Simply put, it is "how many good, sellable products you got out of what you made."</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>So if you make 100 and 90 are usable, the yield is 90%?</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>Exactly. In semiconductors, a difference of just a few percent has a big effect on cost, delivery times, volume production ramp-up, and company profits.</p></div></div>
+
+
+
+
+<h2 class="wp-block-heading">What is yield?</h2>
+
+
+
+<p class="wp-block-paragraph">Yield is the percentage of products that could have been made that are actually usable as good products. In semiconductors, many chip areas are made on a single wafer. Only those that meet standards for electrical characteristics, appearance, reliability, and so on are used as good products.</p>
+
+
+
+<p class="wp-block-paragraph">Semiconductor industry materials describe yield as "the number of sellable products divided by the number of products that could potentially have been made." It may look difficult, but beginners only need to remember it as "the percentage of usable chips."</p>
+
+
+
+<h3 class="wp-block-heading">In practice, yield is seen as the product of "three yields"</h3>
+
+
+
+<p class="wp-block-paragraph">Going one step deeper, semiconductor yield is not just one number. In practice, it is broken down into stages: from wafer start to the end of the front-end process, until the chips on the wafer pass electrical testing, and then until they are packaged in the back-end process and pass final testing.</p>
+
+
+
+<div class="semicon-compare">
+<table>
+  <thead>
+    <tr><th>Type of yield</th><th>What it measures</th><th>Examples of main problems</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Wafer yield<br>Line yield</strong></td><td>The percentage of started wafers that make it through the front-end process without breaking or being scrapped.</td><td>Wafer breakage, transfer errors, lots scrapped mid-process, etc.</td></tr>
+    <tr><td><strong>Chip yield<br>Die yield</strong></td><td>The percentage of chip areas on the wafer that pass electrical testing and inspection.</td><td>Lithography misalignment, etch residue, particle contamination, film thickness non-uniformity, wiring defects, etc.</td></tr>
+    <tr><td><strong>Package yield<br>Assembly yield</strong></td><td>The percentage of diced chips that are assembled and pass final testing after packaging.</td><td>Connection failures, thermal stress, encapsulation defects, scratches, characteristic failures after mounting, etc.</td></tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<div class="semicon-note">
+  <p><strong>Overall yield = wafer yield × chip yield × package yield</strong></p>
+  <p>For beginners, "the percentage of good chips" is enough. But if you move to the intermediate level, remembering this multiplication changes how you see things. Even if only the front-end process is good, the number of final products will not increase if chips fail in the back-end process. Semiconductor manufacturing is the technology of reducing losses at every stage.</p>
+</div>
+
+
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/semiconductor-yield-formula.png" alt="Diagram showing that yield is the number of good products divided by the number made">
+  <figcaption>Yield is calculated by dividing the number of good products by the number made. If 92 out of 100 are good, the yield is 92%.</figcaption>
+</figure>
+
+
+
+<!-- semicon-a8-top30-top30-28-1:start -->
+
+
+<!-- semicon-a8-top30-top30-28-1:end -->
+
+
+
+<h2 class="wp-block-heading">Why is yield important?</h2>
+
+
+
+<p class="wp-block-paragraph">Yield is important because semiconductor manufacturing costs are extremely high. Wafers, chemicals, gases, electricity, cleanrooms, manufacturing equipment, and labor are all expensive. Even at the same cost, if there are fewer good products, the cost per chip goes up.</p>
+
+
+
+<div class="semicon-note">
+  <p><strong>In the AI chip era, package yield is also a battleground</strong></p>
+  <p>For GPUs and AI chips, advanced packaging, which places multiple chips and HBM side by side or stacks them, has become important. Here, not only the yield of individual chips but the overall yield after combining them becomes a major challenge.</p>
+  <p>For example, if you combine four chips that each have a 90% chance of being good, the chance that all of them are good drops to <strong>0.9 × 0.9 × 0.9 × 0.9 = about 65.6%</strong>. This is because if even one defective chip is mixed in, the whole assembled product becomes unusable.</p>
+  <p>That is why inspection technology to select dies confirmed to be good before assembly, called <strong>KGD (Known Good Die)</strong>, and yield improvement in the packaging process are very important. For semiconductors in the AI era, quality control not only in the front-end process but also in the back-end process and advanced packaging becomes a competitive advantage.</p>
+</div>
+
+
+
+<div class="semicon-compare">
+<table>
+  <thead><tr><th>Situation</th><th>Good chips from the same wafer</th><th>What it means</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Low yield</strong></td><td>Few good chips</td><td>Few sellable chips despite using materials and equipment, so costs become heavy</td></tr>
+    <tr><td><strong>High yield</strong></td><td>Many good chips</td><td>More chips can be shipped from the same equipment, and volume production tends to be stable</td></tr>
+    <tr><td><strong>Variable yield</strong></td><td>The number of good chips changes from lot to lot</td><td>Cause tracking is needed, and isolating process, equipment, materials, and environment becomes important</td></tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<p class="wp-block-paragraph">When bringing a new process or new product into volume production, yield is not always high from the start. So engineers look at inspection data and process data, find where defects are increasing, and improve things step by step. This is yield improvement.</p>
+
+
+
+<h2 class="wp-block-heading">Where do defects increase?</h2>
+
+
+
+<p class="wp-block-paragraph">There is not always just one cause of lower yield. Causes can lie in many places, such as materials, processes, equipment, environment, design, and inspection conditions.</p>
+
+
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/semiconductor-yield-loss-map.png" alt="Diagram showing causes of increasing defects in materials, processes, equipment, environment, and design and inspection">
+  <figcaption>Defects are not determined by materials alone, equipment alone, or workers alone. It is important to isolate causes one by one.</figcaption>
+</figure>
+
+
+
+<div class="semicon-grid">
+  <div class="semicon-card"><b>Materials</b><span>Wafer defects, impurities, metal contamination, chemical quality, and more have an effect.</span></div>
+  <div class="semicon-card"><b>Processes</b><span>Deposition non-uniformity, lithography misalignment, etch residue, insufficient cleaning, CMP over-polishing, etc.</span></div>
+  <div class="semicon-card"><b>Equipment</b><span>Condition drift, worn parts, chamber contamination, sensor abnormalities, and more lead to defects.</span></div>
+  <div class="semicon-card"><b>Environment</b><span>Particles, temperature and humidity, chemical residue, and control inside the cleanroom are involved.</span></div>
+  <div class="semicon-card"><b>Design</b><span>The less margin a design has due to miniaturization, the more easily slight variations lead to defects.</span></div>
+  <div class="semicon-card"><b>Inspection</b><span>Measurement variation or shifts in judgment criteria can make pass/fail decisions unstable.</span></div>
+</div>
+
+
+
+<h2 class="wp-block-heading">What does yield improvement work involve?</h2>
+
+
+
+<p class="wp-block-paragraph">Yield improvement is not simply about "making things more carefully." It is work that narrows down causes by looking at the location, type, and timing of defects, process conditions, equipment status, material lots, and inspection data.</p>
+
+
+
+<div class="semicon-stack">
+  <div class="semicon-stack-item"><b>1. Find defects</b><p>Use visual inspection, defect inspection, electrical testing, film thickness measurement, line width measurement, and more to see where abnormalities are.</p></div>
+  <div class="semicon-stack-item"><b>2. Look at the defect distribution</b><p>Check whether defects are concentrated in the wafer center or at the edge, and whether they appear only in specific lots or on specific tools.</p></div>
+  <div class="semicon-stack-item"><b>3. Narrow down candidate causes</b><p>Compare process conditions, equipment maintenance history, material lots, work timing, and measurement conditions.</p></div>
+  <div class="semicon-stack-item"><b>4. Change conditions and verify</b><p>Change deposition, etching, cleaning, CMP, and other conditions to see whether defects decrease.</p></div>
+  <div class="semicon-stack-item"><b>5. Standardize</b><p>Reflect the improved conditions in procedures and control limits so the same defect does not recur.</p></div>
+</div>
+
+
+
+<p class="wp-block-paragraph">KLA is a company that handles process control and yield management using inspection, metrology, and computational analysis. In explanations of manufacturing data management such as Applied SmartFactory, yield management is also treated as a system that collects data from across the entire fab to speed up yield learning and volume production ramp-up. In other words, yield improvement is not just about on-site intuition. It is also work involving measurement and data.</p>
+
+
+<section class="mp2-section" id="revenue-phase2-learning"><h2>Connect your yield and improvement records to real work and relearning</h2><p>The starting point for connecting yield to your career is recording the location, process, and time where defects increased, all together. If you separate experience checking equipment status and material lots from experience confirming the cause, it becomes easier to explain the scope you were responsible for. Keep two paths open, relearning quality control and statistics, and comparing technical jobs that use manufacturing, quality, or maintenance experience, and check the assigned processes and training system in job postings.</p></section>
+
+<h2 class="wp-block-heading">Jobs you can see through yield</h2>
+
+
+
+<p class="wp-block-paragraph">Once you understand yield, semiconductor jobs become much easier to see. Process engineering, inspection and metrology, quality, and data analysis are all strongly connected to yield.</p>
+
+
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/semiconductor-yield-career-map.png" alt="Process engineer, inspection and metrology, quality, and data analysis jobs seen through yield">
+  <figcaption>Yield is a common language for process, inspection, quality, and data analysis. It is also an important keyword in job postings.</figcaption>
+</figure>
+
+
+
+<div class="semicon-compare">
+<table>
+  <thead><tr><th>Job</th><th>Relationship to yield</th><th>Words seen in job postings</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Process engineer</strong></td><td>Adjusts process conditions to reduce defects</td><td>Condition setting, process improvement, yield improvement, DOE</td></tr>
+    <tr><td><strong>Inspection and metrology</strong></td><td>Measures defects, film thickness, line width, and electrical characteristics</td><td>Inspection, measurement, SEM, film thickness, defect inspection</td></tr>
+    <tr><td><strong>Quality and yield</strong></td><td>Manages defect rates, specifications, and recurrence prevention</td><td>Quality control, quality assurance, defect analysis, SPC</td></tr>
+    <tr><td><strong>Data analysis</strong></td><td>Finds trends in process data and inspection data</td><td>Data analysis, Python, statistics, process data</td></tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<div class="semicon-cta">
+  <h3>When "yield improvement" appears in a job posting, check what the work actually is</h3>
+  <p>Yield improvement work differs depending on whether it involves adjusting process conditions, looking at inspection data, or compiling quality documents. In job postings, check the assigned process, the tools used, the data handled, and how far you can be involved in improvements.</p>
+  <p>Yield improvement, defect analysis, and process data analysis directly affect a fab's profits and production stability, so they are areas where experienced-hire jobs tend to offer better pay. Rather than aiming for them right away with no experience, sort out where your experience fits among process, inspection, quality, equipment, and data analysis before consulting. This makes job introductions more accurate.</p>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn" href="https://semicon-campus.com/what-is-semiconductor-process-engineer/">See the process engineer article</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/semiconductor-career-service-selection-guide/">See how to choose a career-change service</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/how-to-read-semiconductor-job-description/">See how to read job postings</a>
+  </div>
+</div>
+
+
+
+<h2 class="wp-block-heading">Yield terms beginners should know</h2>
+
+
+
+<div class="semicon-stack">
+  <div class="semicon-stack-item"><b>Defect rate</b><p>The percentage of what you made that turned out defective. It looks at yield from the opposite side.</p><div class="semicon-tagrow"><span class="semicon-tag">Defect</span><span class="semicon-tag">Yield</span></div></div>
+  <div class="semicon-stack-item"><b>Defect density</b><p>A way of looking at how many defects there are on a wafer or chip. The more miniaturized things become, the bigger a problem small defects become.</p><div class="semicon-tagrow"><span class="semicon-tag">Defect</span><span class="semicon-tag">Inspection</span></div></div>
+  <div class="semicon-stack-item"><b>SPC</b><p>Short for Statistical Process Control. It manages variation in measured values statistically to check whether the process is running as usual.</p><div class="semicon-tagrow"><span class="semicon-tag">Statistics</span><span class="semicon-tag">Process control</span></div></div>
+  <div class="semicon-stack-item"><b>Yield ramp</b><p>Raising yield step by step to bring a new product or new process closer to volume production.</p><div class="semicon-tagrow"><span class="semicon-tag">Volume production ramp-up</span><span class="semicon-tag">Improvement</span></div></div>
+</div>
+
+
+
+<h2 class="wp-block-heading">Summary: Yield is the report card of semiconductor manufacturing</h2>
+
+
+
+<p class="wp-block-paragraph">Yield is the percentage of chips made that are actually good and usable. The higher the yield, the more usable chips you get from the same wafers, the same equipment, and the same materials.</p>
+
+
+
+<p class="wp-block-paragraph">The causes of lower yield lie in many places, such as materials, processes, equipment, environment, design, and inspection. That is why in semiconductor manufacturing, inspection is not the end. It is important to look at data, isolate causes, change conditions, and prevent recurrence.</p>
+
+
+
+<p class="wp-block-paragraph">Once you understand yield, the jobs of process engineering, inspection and quality evaluation, quality assurance, and data analysis all connect. Don't just read technical articles. Also pay attention to words in job postings such as "yield improvement," "defect analysis," "SPC," and "process improvement."</p>
+
+
+
+<h2 class="wp-block-heading">Read next</h2>
+
+
+
+<div class="semicon-links">
+  <div class="semicon-linkbox next">
+
+    <p><a href="https://semicon-campus.com/what-is-semiconductor-defect-inspection/">What is defect inspection? An easy guide to the semiconductor inspection process that finds tiny defects on wafers</a></p>
+    <p>Let's see how small defects that lower yield are found and fed back into process improvement.</p>
+    <p><a href="https://semicon-campus.com/what-is-semiconductor-inspection-quality-control/">What is semiconductor inspection and quality evaluation? An easy guide to the job of protecting quality for people new to semiconductors</a></p>
+    <p>Let's see what role inspection and quality evaluation play in protecting yield.</p>
+  </div>
+  <div class="semicon-linkbox">
+    <h3>Related articles</h3>
+    <p><a href="https://semicon-campus.com/what-is-semiconductor-process-engineer/">What is a process engineer? A beginner's guide to condition setting and yield improvement</a></p>
+    <p><a href="https://semicon-campus.com/what-is-etching-semiconductor-process/">What is etching? The process that removes film to create shapes</a></p>
+    <p><a href="https://semicon-campus.com/what-is-cmp-semiconductor-process/">What is CMP? The process that flattens the wafer surface</a></p>
+    <p><a href="https://semicon-campus.com/%e5%8d%8a%e5%b0%8e%e4%bd%93%e6%b1%82%e4%ba%ba%e3%82%ad%e3%83%bc%e3%83%af%e3%83%bc%e3%83%89%e4%b8%80%e8%a6%a7%ef%bd%9c%e6%9c%aa%e7%b5%8c%e9%a8%93%e8%80%85%e3%81%8c%e6%b1%82%e4%ba%ba%e7%a5%a8%e3%81%a7/">List of semiconductor job posting keywords</a></p>
+  </div>
+</div>
+
+
+<section class="mp2-section" id="revenue-phase2-career"><h2>Compare jobs and job types based on your yield and improvement records</h2><p>Organize your experience with defect records, process data checks, and cross-checking against equipment and material history as a set: the target equipment, the work, and the results you confirmed. If you are considering a career change, compare the scope of duties, work location, working hours and business trips, training system, and application requirements with job postings. This lets you separate your current experience from the knowledge you need to add.</p><aside class="semicon-cta mp2-card"><h3>See the big picture of job types and how to choose jobs and learning</h3><p>After learning the technology, compare the scope of work you would handle, such as inspection and recovery, tool startup, process improvement, and customer support. In the job articles below, you can check job and learning options in addition to the duties.</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/" class="semicon-btn mp2-button" data-revenue-phase2-hub="277" data-cta="maintenance_hub" data-cta-type="maintenance_hub" data-cta-stage="career" data-cta-id="phase2_314_hub277_end" data-cta-route="phase2_314_hub277_end">Check duties, jobs, and learning in the Equipment Maintenance Hub</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/" class="semicon-btn mp2-button" data-revenue-phase2-hub="237" data-cta="equipment_hub" data-cta-type="equipment_hub" data-cta-stage="career" data-cta-id="phase2_314_hub237_end" data-cta-route="phase2_314_hub237_end">See the scope, jobs, and learning for equipment engineers</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-process-engineer/" class="semicon-btn mp2-button" data-revenue-phase2-hub="230" data-cta="process_hub" data-cta-type="process_hub" data-cta-stage="career" data-cta-id="phase2_314_hub230_end" data-cta-route="phase2_314_hub230_end">See the scope, jobs, and learning for process engineers</a></div></aside></section>
+
+
+<h2 class="wp-block-heading">References</h2>
+
+
+
+<ul class="semicon-sources">
+  <li><a rel="noopener" href="https://www.semiconductors.org/wp-content/uploads/2018/09/Yield.pdf" target="_blank">Semiconductor Industry Association &#8211; Yield Enhancement</a></li>
+  <li><a rel="noopener" href="https://www.kla.com/" target="_blank">KLA &#8211; Process Control &#038; Yield Management</a></li>
+  <li><a rel="noopener" href="https://www.kla.com/products/software-solutions/semiconductor" target="_blank">KLA &#8211; Semiconductor Software Solutions</a></li>
+  <li><a rel="noopener" href="https://appliedsmartfactory.com/semiconductor-blog/quality/yield-management/" target="_blank">Applied SmartFactory &#8211; Yield Management</a></li>
+  <li><a rel="noopener" href="https://appliedsmartfactory.com/semiconductor-blog/quality/improve-yield-learning/" target="_blank">Applied SmartFactory &#8211; Yield and Defect Management Solutions</a></li>
+</ul>
+
+
+
+</div>
