@@ -21,6 +21,7 @@ SCRIPT_STRINGS = {
     '一覧を見る': 'See all',
     'ニュース': 'News',
     '次の必要性へ': 'Next reason',
+    "x.count+'本</p>": "x.count+' articles</p>",
 }
 
 
@@ -32,12 +33,16 @@ ap = argparse.ArgumentParser()
 ap.add_argument('--en-base', default=SITE + 'en/', help='英語版トップの URL（Polylang のディレクトリ方式なら /en/）')
 args = ap.parse_args()
 
+# 旧 URL（日本語スラッグなど）→ 現在のスラッグ。日本語サイトで 301 リダイレクトされているもの
+redirects = json.load(open(p('source/redirects.json'), encoding='utf-8'))
+
 keys = sorted(x[len(p('en')) + 1:-5] for x in glob.glob(p('en', '*', '*.html')))
-manifest, slug_map = [], {}
+manifest, slug_map, id_map = [], {}, {}
 for k in keys:
     ja = json.load(open(p('source/ja', k + '.json'), encoding='utf-8'))
     en = json.load(open(p('en', k + '.json'), encoding='utf-8'))
     slug_map[urllib.parse.unquote(ja['slug']).lower()] = en['slug']
+    id_map[str(ja['id'])] = en['slug']
     manifest.append({**{f: ja[f] for f in ('id', 'type', 'link', 'date', 'parent', 'menu_order', 'template',
                                          'categories', 'tags', 'featured_media')},
                      'ja_slug': ja['slug'], 'slug': en['slug'], 'title': en['title'], 'excerpt': en['excerpt'],
@@ -46,6 +51,8 @@ for k in keys:
 
 def relink(m):
     path = urllib.parse.unquote(m.group(1)).strip('/').lower()
+    if path in redirects:
+        path = redirects[path]
     if path in slug_map:
         return args.en_base + slug_map[path] + '/' + (m.group(2) or '')
     if path.startswith('category/'):
@@ -64,6 +71,8 @@ for k in keys:
             block = block.replace(ja_s, en_s)
         body = body.replace(f'<!--KEEP:{i}-->', block, 1)
     body = LINK_RE.sub(relink, body)
+    body = re.sub(r'https://semicon-campus\.com/\?p=(\d+)',
+                  lambda m: args.en_base + id_map[m.group(1)] + '/' if m.group(1) in id_map else m.group(0), body)
     if args.en_base.rstrip('/') + '/' != SITE:
         body = re.sub(r'(href=")' + re.escape(SITE) + r'(")', r'\1' + args.en_base + r'\2', body)
     os.makedirs(os.path.dirname(p('dist', k + '.html')), exist_ok=True)
