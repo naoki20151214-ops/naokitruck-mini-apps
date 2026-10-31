@@ -1,0 +1,257 @@
+
+<!--KEEP:0-->
+
+
+<!--KEEP:1-->
+
+<!--KEEP:2-->
+
+<article class="semicon-article" id="top">
+<div class="semicon-level">
+  <div class="semicon-level-badge">Beginner</div>
+  <div>
+    <strong>Article level</strong><br>
+    For people learning the semiconductor back-end process for the first time. This article walks step by step through how a chip fixed in place by die bonding is connected to a substrate or lead frame with fine metal wire, from ball formation and bonding to loop formation and quality checks.
+  </div>
+</div>
+
+<p class="semicon-lead">Wire bonding is a back-end process that electrically connects the electrode pads on a semiconductor chip to terminals on a substrate or lead frame, using fine metal wire made of gold, copper, aluminum, or similar materials. It looks like simply attaching thin wires, but bond strength, loop shape, wire breaks, and contact with neighboring wires all affect quality.</p>
+
+<div class="semicon-note">
+  <strong>First, understand it as a technology</strong><br>
+  This article first explains what wire bonding means, the process flow, materials, and quality defects. Then it points to next steps for people who saw this term in a job posting, people who want to research equipment makers, and people who want to learn the back-end process systematically.
+</div>
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/wire-bonding-flow.png" alt="Basic flow of wire bonding: ball formation, first bond, loop formation, second bond, and inspection, in that order">
+  <figcaption>Wire bonding is a process that connects a chip to external terminals with fine metal wire. The thinner the wire, the more carefully bond strength, wire height, and distance from neighboring wires must be controlled.</figcaption>
+</figure>
+
+<div class="semicon-map">
+  <strong>What you will learn in this article</strong>
+  <ul>
+    <li>What wire bonding is and where it fits in the back-end process</li>
+    <li>The flow of ball formation, first bond, loop formation, second bond, and inspection</li>
+    <li>Differences between wire materials such as gold, copper, and aluminum wire</li>
+    <li>Why wire breaks, poor bonds, loop deformation, and shorts are problems</li>
+    <li>Terms you'll see in job postings and company research, and what to read next</li>
+  </ul>
+</div>
+
+
+<h2>What is wire bonding?</h2>
+
+<p>A semiconductor chip is fixed to a substrate or lead frame by die bonding. But just fixing it in place doesn't connect it electrically to the outside world. The circuits inside the chip need to be connected to the terminals outside the package. Wire bonding is the most common way to do this.</p>
+
+<p>In wire bonding, the tiny electrode pads on the chip are connected to connection points on the substrate or lead frame with extremely fine metal wire. ASMPT describes wire bonding as one of the key interconnect technologies in electronic components. K&#038;S also explains that in ball bonding, a small ball is formed at the tip of a fine wire made of gold, copper, or similar metal, and bonded using heat, pressure, and ultrasonic energy.</p>
+
+<p>Put simply for beginners, wire bonding is "the process of creating an electrical path from the chip's circuits to the outside." If a wire breaks here, a bond is weak, or a wire touches its neighbor, it can lead to problems such as no current flow, short circuits, or lower reliability.</p>
+
+<div class="semicon-mobile-summary">If you're reading on a phone, this part is enough to start. Wire bonding is "the process of connecting a chip and substrate with fine metal wire." The key quality points are preventing wire breaks, poor bonds, loop deformation, and shorts.</div>
+
+<h2>Where does it fit in the back-end process?</h2>
+
+<p>In the back-end process, the wafer is first cut into chips by dicing. Next, die bonding fixes each chip to a substrate or lead frame. After that, wire bonding, flip-chip bonding, or similar methods are used to electrically connect the chip to external terminals.</p>
+
+<p>In other words, wire bonding is the "electrical connection step" that comes after die bonding. Even if a chip is fixed in the right position, it won't work as a product if the wire connections are weak. That's why the back-end flow is easier to follow if you understand the fixing step and the connecting step as a set.</p>
+
+<div class="semicon-grid two">
+  <div class="semicon-card"><b>Die bonding</b><span>The process of fixing diced chips to a substrate or lead frame. Position, tilt, and adhesion are controlled.</span></div>
+  <div class="semicon-card"><b>Wire bonding</b><span>The process of electrically connecting the fixed chip to external terminals with fine metal wire. It prevents wire breaks and shorts.</span></div>
+</div>
+
+<h2>Basic flow of wire bonding</h2>
+
+<p>There are several methods of wire bonding. Here, we use the common method of ball bonding as an example and organize it into five steps for beginners.</p>
+
+<h3>1. Form a ball at the tip of the metal wire</h3>
+<p>First, a small ball is formed at the tip of the fine metal wire. When gold or copper wire is used, this ball is the first thing bonded to the pad on the chip. K&#038;S explains the flow of forming this ball, bonding it to the chip, and then connecting to the substrate or lead frame.</p>
+
+<h3>2. Make the first bond to the pad on the chip</h3>
+<p>The chip has small electrode pads for connecting to the outside. The equipment aligns the position, presses the tip of the metal wire onto the pad, and bonds it using heat, pressure, ultrasonic energy, and so on. If this bond is weak, the wire may come off later or fail to connect electrically.</p>
+
+<h3>3. Form a loop and carry the wire to the substrate side</h3>
+<p>After the first bond, the equipment lifts the wire and carries it in an arc to the substrate or lead frame. The shape of this arc is called the loop. If the loop is too high, too low, or too close to a neighboring wire, it can affect molding or reliability during use.</p>
+
+<h3>4. Make the second bond to the substrate or lead frame</h3>
+<p>The other end of the wire is bonded to the connection point on the substrate or lead frame. Here too, the bond position, bond strength, and how the wire is cut are important. Each wire is very thin, but a product has many wires lined up, so stable, repeatable precision is required.</p>
+
+<h3>5. Check for breaks, height, and shape</h3>
+<p>After bonding, the wires are checked to make sure they aren't broken, that loop height and shape are stable, and that they don't touch neighboring wires or components. Various checks are done depending on the product and fab, such as visual inspection, equipment data, pull tests, and shear tests.</p>
+
+<h2>Differences in wire materials and methods</h2>
+
+<p>Wire bonding uses gold wire, copper wire, aluminum wire, and more. Which material is used depends on the product's purpose, cost, bondability, reliability, and current and heat conditions. At the beginner stage, it's enough to understand that "when the wire material changes, the bonding conditions and the quality points to watch also change."</p>
+
+<div class="semicon-table-wrap">
+  <table class="semicon-table">
+    <thead>
+      <tr><th>Material / method</th><th>Rough characteristics</th><th>Points to watch</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Gold wire</td><td>A classic wire material that has been used for a long time.</td><td>Bond stability, material cost, reliability</td></tr>
+      <tr><td>Copper wire</td><td>Sometimes used for cost or electrical performance reasons.</td><td>Oxidation control, bonding conditions, effect on pads</td></tr>
+      <tr><td>Aluminum wire</td><td>Sometimes used as thick wire in power semiconductors and similar devices.</td><td>High current, bond strength, wedge bonding</td></tr>
+      <tr><td>Ball bonding</td><td>A method that forms a ball at the wire tip and bonds it to the chip.</td><td>Ball shape, bond position, loop shape</td></tr>
+      <tr><td>Wedge bonding</td><td>A method that bonds wire or ribbon with a wedge-shaped tool.</td><td>Thick wire, ribbon, power packages</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<p>ASMPT explains that flexible process control is becoming important in wire bonding to handle smaller, higher-density packages and new wire materials. In other words, wire bonding is a long-established process, yet it is still an area where equipment control and material support continue to advance.</p>
+
+<h2>Quality points to watch</h2>
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/wire-bonding-quality.png" alt="Quality points in wire bonding: preventing wire breaks, poor bonds, loop deformation, and shorts">
+  <figcaption>Wire bonding quality can't be judged just by whether the wire is visible. It includes bond strength, loop height, distance from neighboring wires, and reliability after molding.</figcaption>
+</figure>
+
+<h3>Wire breaks</h3>
+<p>This is when a wire is broken and current can't flow. Some breaks can be seen visually, while some connection failures are found only through testing. Wire breaks lead directly to product malfunctions.</p>
+
+<h3>Poor bonds</h3>
+<p>This is when the wire is not attached well enough to the pad on the chip or the connection point on the substrate. Bonding conditions, surface condition, wire material, tool condition, and more are involved. If a bond is weak, there is a risk it will come off in later steps or during use.</p>
+
+<h3>Loop deformation</h3>
+<p>This is when the wire's height or shape is not stable. If the loop is too high, it can easily deform during molding. If it's too low, it may touch the chip or components. Care is also needed when it is too close to a neighboring wire.</p>
+
+<h3>Shorts</h3>
+<p>This is when a wire touches a place it should not connect to, causing an electrical short. The spacing between wires, loop shape, flow during molding, and component layout are involved.</p>
+
+<div class="semicon-note">
+  <strong>Connection to yield</strong><br>
+  Wire bonding defects may be found as electrical defects in final testing. That's why it's important to look not only at visual inspection but also to connect equipment conditions, materials, pad condition, bond strength, and electrical test results.
+</div>
+
+<h2>Related equipment and companies</h2>
+
+<p>The central equipment in wire bonding is called a wire bonder. Well-known equipment companies include Kulicke &#038; Soffa and ASMPT. K&#038;S offers products such as ball bonders, wedge bonders, and capillaries. ASMPT also handles wire bonding equipment for ICs and discrete devices.</p>
+
+<div class="semicon-grid">
+  <div class="semicon-card"><b>Equipment</b><span>Ball bonders, wedge bonders, image recognition, transfer, stages, wire feed, and more.</span></div>
+  <div class="semicon-card"><b>Consumables</b><span>Capillaries, wedge tools, gold wire, copper wire, aluminum wire, ribbon, and more.</span></div>
+  <div class="semicon-card"><b>Inspection</b><span>Visual inspection, bond position, loop height, wire breaks, shorts, bond strength, and more.</span></div>
+</div>
+
+<p>When researching companies, it's easier to understand if you separate "bonder makers," "tool and wire makers," "back-end contract manufacturers," and "inspection equipment makers." Wire bonding is a process where equipment, materials, and inspection overlap.</p>
+
+<div class="semicon-cta">
+  <h3>For those researching companies and equipment</h3>
+  <p>Wire bonding involves back-end equipment, interconnect materials, inspection, and packaging companies. If you want to look at companies by process, the company map makes the connections easier to see.</p>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn" href="https://semicon-campus.com/semiconductor-company-map-by-process/">See the company map by process</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/what-is-backend-semiconductor-process/">Review the whole back-end process</a>
+  </div>
+</div>
+
+<section class="mp1-section" id="maintenance-phase1-learning"><h2>Connecting wire bonders, tools, and feed systems to real work and relearning</h2><p>When investigating poor bonds or loop deformation, record separately which of these you checked: tool condition, wire feed, image recognition, or bonding conditions. If you can pair inspection and replacement of consumable parts with the quality checks that followed, it becomes easier to explain your bonder maintenance or equipment maintenance experience. Expand from learning that fills gaps in mechanical, control, and quality basics to comparing job requirements that match the equipment you'd handle.</p></section>
+<h2>Wire bonding also connects to jobs</h2>
+
+<p>Wire bonding connects to several jobs, including manufacturing operator, inspection and quality, materials and process, equipment maintenance, and process improvement. In job postings, it may appear with terms like "wire bond," "bonder," "back-end assembly," "visual inspection," "bonding conditions," and "equipment maintenance."</p>
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/wire-bonding-jobs.png" alt="Diagram showing how wire bonding connects to equipment operator, inspection and quality, materials and process, and equipment maintenance jobs">
+  <figcaption>Even with the same wire bonding, the job differs depending on whether it centers on operating equipment, also includes inspection and quality records, or extends to bonding conditions and materials.</figcaption>
+</figure>
+
+<div class="semicon-table-wrap">
+  <table class="semicon-table">
+    <thead>
+      <tr><th>Related job</th><th>Work involved</th><th>Common terms in job postings</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Manufacturing operator</td><td>Loading materials, operating equipment, checking conditions, work records</td><td>Wire bond, bonder, back-end assembly, cleanroom</td></tr>
+      <tr><td>Inspection and quality</td><td>Wire breaks, loop shape, poor bonds, shorts, visual checks</td><td>Visual inspection, quality checks, wire breaks, shorts, failure analysis</td></tr>
+      <tr><td>Materials and process</td><td>Gold, copper, and aluminum wire, bonding conditions, loop conditions, improvement</td><td>Bonding conditions, process improvement, process conditions, material evaluation</td></tr>
+      <tr><td>Equipment maintenance</td><td>Inspecting capillaries, wire feed, transfer, and image recognition units</td><td>Equipment maintenance, maintenance, equipment startup, bonder maintenance</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="semicon-cta">
+  <h3>If you saw "wire bond" or "bonder" in a job posting</h3>
+  <p>Even with the same wire bonding, the job differs depending on whether it centers on operating equipment, includes managing bonding conditions, or also covers inspection and quality records. If you want to sort out the job duties first, go to the guide to reading job postings. If you're already job hunting, go to the guide to choosing career change services by experience.</p>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn" href="https://semicon-campus.com/how-to-read-semiconductor-job-description/">Check job duties and how to read job postings</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/semiconductor-career-service-selection-guide/">Compare semiconductor career change services by experience</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/%e5%8d%8a%e5%b0%8e%e4%bd%93%e6%b1%82%e4%ba%ba%e3%82%ad%e3%83%bc%e3%83%af%e3%83%bc%e3%83%89%e4%b8%80%e8%a6%a7%ef%bd%9c%e6%9c%aa%e7%b5%8c%e9%a8%93%e8%80%85%e3%81%8c%e6%b1%82%e4%ba%ba%e7%a5%a8%e3%81%a7/">See related job keywords</a>
+  </div>
+</div>
+
+<h2>Summary</h2>
+
+<p>Wire bonding is a back-end process that electrically connects the electrode pads on a semiconductor chip to terminals on a substrate or lead frame with fine metal wire. It proceeds in this order: ball formation, first bond, loop formation, second bond, and inspection.</p>
+
+<p>The key points for beginners are wire breaks, poor bonds, loop deformation, and shorts. Once you understand these, you'll see how back-end quality, yield, equipment, materials, and the terms in job postings all connect.</p>
+
+<div class="semicon-cta">
+  <h3>Choose your next step based on your goal</h3>
+  <p>Once you understand wire bonding, it's easier to keep going if you decide what you want to learn next: "the whole back-end process," "job postings," or "companies and equipment."</p>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn" href="https://semicon-campus.com/what-is-backend-semiconductor-process/">Learn the whole back-end process</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/how-to-read-semiconductor-job-description/">Sort out terms you saw in job postings</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/semiconductor-company-map-by-process/">Research companies and equipment</a>
+  </div>
+</div>
+
+<h2>Coming up next</h2>
+
+<p>Next, we'll explain "What Is Encapsulation and Molding?", which protects the chip and wires with resin or similar materials. We'll explain for beginners why they need protection from the outside after being electrically connected with wires.</p>
+
+<div class="semicon-note">
+  <strong>We also explain semiconductors clearly on YouTube</strong><br>
+  If you want to learn semiconductor manufacturing through short videos and diagrams, also check out our YouTube channel, <a href="https://www.youtube.com/@semicon-campus">Semiconductor Classroom for the AI Era</a>.
+</div>
+
+<h2>Read next</h2>
+
+<div class="semicon-links">
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/what-is-semiconductor-die-bonding/">What Is Die Bonding?</a></strong>
+    <p>Explains the step right before wire bonding, which fixes the chip to the substrate.</p>
+  </div>
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/what-is-backend-semiconductor-process/">What Is the Back-End Process?</a></strong>
+    <p>The parent article for understanding the whole back-end process, from dicing and die bonding to interconnection, molding, and testing.</p>
+  </div>
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/how-to-read-semiconductor-job-description/">How to Read Semiconductor Job Postings</a></strong>
+    <p>An article on reading job postings by separating job duties, application requirements, and work style.</p>
+  </div>
+</div>
+
+<h2>Related articles</h2>
+
+<div class="semicon-links">
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/what-is-semiconductor-inspection-quality-control/">What Is Semiconductor Inspection and Quality Evaluation?</a></strong>
+    <p>Understand jobs involved in checks after wire bonding, such as wire breaks, visual inspection, and quality checks.</p>
+  </div>
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/">What Is a Semiconductor Maintenance Technician?</a></strong>
+    <p>Connects to jobs that support equipment, such as bonders, transfer, image recognition, and the area around capillaries.</p>
+  </div>
+</div>
+
+<section class="mp1-section" id="maintenance-phase1-career"><h2>Jobs that use knowledge of wire bonders, tools, and feed systems, and your next steps</h2><p>If you have experience inspecting tools, feed systems, and transfer, or checking bond quality, organize each item as a set: "target equipment, symptom, the checks you did, and the result." Compare the equipment you'd handle, night shifts and business travel, training system, and application requirements against job postings. This helps you separate the experience you can use from the knowledge you need to add.</p><aside class="semicon-cta mp1-card"><h3>Check the big picture of the work and how to choose job postings and learning</h3><p>In the Equipment Maintenance Hub, you can review inspection and troubleshooting work, how to organize your experience, and job postings, basic learning, and certification prep all in one place. If you want to compare the scope of equipment roles and customer support, also see the related job articles.</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/" class="semicon-btn mp1-button" data-maintenance-phase1-hub="277" data-cta="maintenance_hub" data-cta-type="maintenance_hub" data-cta-stage="career" data-cta-id="maintenance_473_hub277_end" data-cta-route="maintenance_473_hub277_end">Check job duties, job postings, and learning in the Equipment Maintenance Hub</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/" class="semicon-btn mp1-button" data-maintenance-phase1-hub="237" data-cta="equipment_hub" data-cta-type="equipment_hub" data-cta-stage="career" data-cta-id="maintenance_473_hub237_end" data-cta-route="maintenance_473_hub237_end">See the scope, job postings, and learning for equipment engineers</a></div></aside></section>
+
+<h2>References</h2>
+
+<div class="semicon-note">
+  <ul>
+    <li><a href="https://semi.asmpt.com/en/products/icd/wb/">ASMPT: Wire Bonding</a></li>
+    <li><a href="https://semi.asmpt.com/en/products/icd/wb/ball-bonding/">ASMPT: Gold Wire Ball Bonding</a></li>
+    <li><a href="https://www.kns.com/products-services/ball-bonding">Kulicke &#038; Soffa: Ball Bonding</a></li>
+    <li><a href="https://www.kns.com/products-services/ball-bonder">Kulicke &#038; Soffa: Ball Bonder</a></li>
+    <li><a href="https://www.kns.com/products-services/vertical-wire-bonding">Kulicke &#038; Soffa: Vertical Wire Bonding Technology</a></li>
+  </ul>
+</div>
+
+<div class="semicon-note">
+  <strong>How we researched this article</strong><br>
+  To help beginners get the big picture of the back-end process, this article checks basic information published by equipment makers and breaks down technical terms. Actual materials, bonding conditions, and inspection methods vary with product structure, package, and reliability requirements. Last checked: July 11, 2026.
+</div>
+
+<a class="semicon-backtop" href="#top" aria-label="Back to top">↑</a>
+</article>
