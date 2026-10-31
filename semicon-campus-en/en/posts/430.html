@@ -1,0 +1,285 @@
+<!--KEEP:0-->
+
+
+<!--KEEP:1-->
+
+<!--KEEP:2-->
+
+<article class="semicon-article" id="top">
+<p class="semicon-lead">A wafer may take weeks to finish. But if the final cut chips the edge of a die or cracks it near the circuits, that die can't be used as a good part. Dicing is not "just cutting." It is the process of separating the wafer into individual chips without destroying the value that is almost complete.</p>
+
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>We're just cutting a round wafer into square chips. Why do they chip or crack?</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>Because we apply force from a blade or a laser to a thin wafer. If the cutting position shifts a little, or the force or heat is too strong, it can damage the finished circuits.</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>So it's not just cutting speed. You also have to control position, force, and even contamination after cutting.</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>Exactly. We get holding, alignment, cutting conditions, and cleaning right, then pass the good parts made in the front-end process on to the next step.</p></div></div>
+
+<div class="semicon-mobile-summary">This article goes one step beyond the big picture of "a round wafer becomes square chips" and focuses on <strong>chipping, accuracy, and yield at the moment of cutting</strong>.</div>
+
+<div class="semicon-level">
+  <div class="semicon-level-badge">Beginner</div>
+  <div>
+    <strong>Level of this article</strong><br>
+    For people learning the back-end process of semiconductors for the first time. No math. We walk through how a wafer is cut into individual chips, the difference between blade and laser dicing, and why chipping and cracking happen.
+  </div>
+</div>
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/dicing-flow.png" alt="Basic dicing flow: mount on tape, align, cut, clean and dry, then pick up">
+  <figcaption>Dicing is more than "cutting." Quality is protected through the whole flow: holding the wafer, aligning it, removing cutting debris, and passing good chips to the next step.</figcaption>
+</figure>
+
+<div class="semicon-map">
+  <strong>4 things to protect at the moment of cutting</strong>
+  <ul>
+    <li><strong>Chipping:</strong> Don't break the chip edges</li>
+    <li><strong>Cracks:</strong> Don't leave small cracks</li>
+    <li><strong>Position:</strong> Avoid the circuits and cut exactly along the set path</li>
+    <li><strong>Cleanliness:</strong> Don't carry debris or moisture into the next step</li>
+  </ul>
+</div>
+
+<div class="semicon-map">
+  <strong>What you'll learn in this article</strong>
+  <ul>
+    <li>What dicing is and where it fits in the back-end process</li>
+    <li>The difference between blade dicing and laser dicing</li>
+    <li>Quality points such as chipping, cracks, particles, and misalignment</li>
+    <li>Where to start when looking at equipment and control items</li>
+    <li>What to read next, depending on whether you're job hunting, researching companies, or studying</li>
+  </ul>
+</div>
+
+
+<h2>Why is dicing needed?</h2>
+
+<p>In the front-end process (FEOL), many identical circuits are built on a silicon wafer. The wafer is still a disk, so it can't be used as a part inside a smartphone, car, or server. So, early in the back-end process, the wafer is cut into individual chips. This cutting process is called dicing.</p>
+
+<p>You can picture it like breaking a big chocolate bar into small pieces. But with semiconductors, each chip contains fine circuits. If the cutting path shifts a little, an edge chips, or contamination remains, it can cause problems later in connection, encapsulation, or inspection.</p>
+
+<p>In other words, dicing looks simple, but it affects quality and yield. It's easiest to think of it as an important bridge that keeps the circuits built over a long time in the front-end process as good parts until the end. DISCO also describes blade dicing as a series of steps: fixing the wafer on tape, cutting it with a blade, and handling the separated chips.</p>
+
+
+
+<h2>Where does it fit in the back-end process?</h2>
+
+<p>The back-end process turns the circuits made in the front-end process into a form that can be used as real products. Roughly, dicing cuts the chips apart, die bonding attaches them to a substrate or lead frame, wire bonding or bumps connect them electrically, molding protects them, and finally they are inspected.</p>
+
+<p>Dicing is the entrance to this flow. If a chip gets chipped or cracked here, it may become a defect no matter how carefully it is assembled later. That's why, in the back-end process, "separating cleanly" first is so important.</p>
+
+<div class="semicon-grid two">
+  <div class="semicon-card"><b>Front-end process</b><span>Builds circuits on the wafer. Mainly deposition, lithography, etching, CMP, inspection, and more.</span></div>
+  <div class="semicon-card"><b>Back-end process</b><span>Cuts, attaches, connects, protects, and inspects the circuits on the wafer to make products.</span></div>
+</div>
+
+
+<!-- semicon-a8-top30-top30-24-1:start -->
+
+
+<!-- semicon-a8-top30-top30-24-1:end -->
+<h2>Basic dicing flow</h2>
+
+<p>The detailed flow of dicing varies by product and equipment. But for beginners, it's easiest to understand in the following 5 steps.</p>
+
+<h3>1. Mount the wafer on tape to hold it</h3>
+<p>If you cut the wafer as is, it may move during cutting, and the finished chips may scatter. So the wafer is mounted on special tape and fixed to a frame. When a job posting says "wafer setting," "material setting," or "setup," it may include preparation work like this.</p>
+
+<h3>2. Align the position</h3>
+<p>On the wafer, there are paths for cutting between the chips. The equipment checks the position with a camera or similar and cuts along those paths. If this shifts, it may cut into the edge of a chip. Alignment is a key point that determines dicing quality.</p>
+
+<h3>3. Cut with a blade or laser</h3>
+<p>The most common method is blade dicing, which cuts with a thin blade spinning at high speed. There are also methods that use a laser or plasma. With any method, the goal is to "cut into the required shape with as little damage as possible."</p>
+
+<figure class="semicon-figure">
+  <img src="https://semicon-campus.com/wp-content/uploads/2026/07/dicing-blade-street.png" alt="Top view and cross section of blade dicing. The blade runs down the center of the street between chips and cuts the wafer using cooling water. The tape below holds the chips" loading="lazy" decoding="async" width="2400" height="1280">
+  <figcaption>From above, the blade travels along the street between chips. In cross section, it cuts through the wafer while leaving the dicing tape below, which keeps the chips in place.</figcaption>
+</figure>
+
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>So "following the cutting path" means running the blade through the center of the street.</p></div></div>
+
+<h3>4. Clean and dry</h3>
+<p>Cutting produces debris and fine contamination. If it stays on the chips or tape, it can cause visual defects or trouble in later steps. So after cutting, the wafer is cleaned and dried to get it ready for the next step.</p>
+
+<h3>5. Pick up the good chips</h3>
+<p>The separated chips are sent to the next step, such as die bonding. Even when picking up chips, they must be handled so they don't crack or chip. In the back-end process, quality is decided by how the chips are handled before and after cutting, too.</p>
+
+<figure class="semicon-figure">
+  <img src="https://semicon-campus.com/wp-content/uploads/2026/07/dicing-tape-pickup.png" alt="How chips are picked up after cutting. The chips stay lined up on the tape and are taken out one by one with a vacuum nozzle and ejector pins from below" loading="lazy" decoding="async" width="2400" height="1280">
+  <figcaption>Even after cutting, the chips stay lined up on the tape. In typical pickup, ejector pins push from below while a vacuum nozzle above picks up good chips one at a time.</figcaption>
+</figure>
+
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>The tape doesn't just hold the wafer during cutting. It also keeps the cut chips lined up as they move on to the next step.</p></div></div>
+
+<h2>Blade dicing and laser dicing</h2>
+
+<p>There are several dicing methods. For beginners, it's enough to roughly understand that there are "methods that cut with a blade" and "methods that use light." Hamamatsu Photonics describes stealth dicing, which uses a laser, as a method that creates a modified layer inside the wafer and splits it. KLA introduces plasma dicing as a separation method different from conventional mechanical cutting.</p>
+
+<div class="semicon-table-wrap">
+  <table class="semicon-table">
+    <thead>
+      <tr><th>Method</th><th>How it works (roughly)</th><th>What beginners should look at</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Blade dicing</td><td>A thin blade spins at high speed and physically cuts the wafer.</td><td>Blade condition, cutting conditions, and cooling and cleaning affect quality.</td></tr>
+      <tr><td>Laser dicing</td><td>A laser cuts the wafer, or creates starting points where it breaks easily, to separate it.</td><td>Sometimes used for thin wafers or brittle materials.</td></tr>
+      <tr><td>Plasma dicing</td><td>Uses the idea of plasma etching to split the wafer into chips.</td><td>Gets attention when you want narrower spacing between chips or less damage.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<p>Job postings may not name the method in detail and may just say "dicing equipment," "cutting equipment," or "wafer processing." If you see words like blade replacement, laser processing, condition setting, cutting quality, or visual inspection, the job is likely quite close to dicing.</p>
+
+<h2>Quality points in dicing</h2>
+
+<p>What matters in dicing is whether the cut chips can be used in the next step. The four quality points beginners should know are chipping, cracks, particles, and misalignment.</p>
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/dicing-quality.png" alt="Quality points in dicing: control chipping, cracks, particles, and misalignment">
+  <figcaption>If a job posting mentions "visual inspection," "cutting quality," "blade replacement," or "condition adjustment," the job may involve checking quality points like these.</figcaption>
+</figure>
+
+<h3>Chipping</h3>
+<p>This is when small pieces break off the edge of a chip. Large chipping can let cracks spread in later steps or affect reliability. Blade condition, cutting speed, cooling water, and the condition of the wafer and films are all factors.</p>
+
+<h3>Cracks</h3>
+<p>This is when a crack forms in a chip. Besides cracks you can see, there are tiny cracks that cause problems later. Cracks directly affect product reliability, so they are a very important check item in the back-end process.</p>
+
+<h3>Particles</h3>
+<p>This is when debris or contamination remains. In semiconductors, even tiny particles can lead to defects. Cleaning and drying after cutting, cleanliness inside the equipment, and work procedures are important.</p>
+
+<h3>Misalignment</h3>
+<p>This is when the cut drifts off the path it should follow. Large misalignment may damage areas close to the chip's circuits. Equipment alignment, camera recognition, and recipe settings are all factors.</p>
+
+<div class="semicon-note">
+  <strong>The link to yield</strong><br>
+  Dicing defects directly affect back-end yield. Even a chip that was good after the front-end process can become an unshippable product if it chips or cracks during cutting. That's why dicing connects to jobs in manufacturing operation, inspection, quality, equipment maintenance, and process improvement.
+</div>
+
+<section class="mp1-section" id="maintenance-phase1-learning"><h2>Connecting dicing, consumable parts, and cutting problems to real work and relearning</h2><p>When chipping or misalignment increases, don't blame the blade condition alone. Overlaying the history of cutting conditions, cooling and cleaning, and alignment is where equipment maintenance comes in. Record how quality changed before and after replacing consumables, and organize the range you inspected yourself. You can relearn the basics of machinery, maintenance, and quality while also explaining that experience when you talk with someone about technical jobs.</p></section>
+<h2>Dicing is a process that leads to jobs, too</h2>
+
+<p>Dicing is a point of contact both for people entering a semiconductor fab with no experience and for people who want to use mechanical, electrical, or quality experience. You may start with operating equipment or inspection, and as you get used to it, your work may expand to checking conditions, replacing blades, handling problems, and improvement activities.</p>
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/dicing-jobs.png" alt="Diagram showing that dicing connects to jobs in equipment operation, inspection and quality, equipment maintenance, and process improvement">
+  <figcaption>Dicing connects not only to running equipment but also to inspection and quality, equipment maintenance, and process improvement. Check the scope of the work in the job posting.</figcaption>
+</figure>
+
+<div class="semicon-table-wrap">
+  <table class="semicon-table">
+    <thead>
+      <tr><th>Related job</th><th>Work involved</th><th>Common words in job postings</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Manufacturing operator</td><td>Wafer setting, recipe selection, equipment operation, work records</td><td>Dicing, wafer processing, equipment operator, cleanroom</td></tr>
+      <tr><td>Inspection and quality</td><td>Checking appearance, chipping, cracks, contamination, and misalignment after cutting</td><td>Visual inspection, quality checks, cutting quality, defect records</td></tr>
+      <tr><td>Equipment maintenance</td><td>Blade replacement, cleaning, equipment inspection, troubleshooting</td><td>Blade replacement, upkeep, maintenance, equipment maintenance</td></tr>
+      <tr><td>Process improvement</td><td>Improving cutting conditions, yield, and defect causes</td><td>Condition setting, yield improvement, process improvement, defect analysis</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="semicon-cta">
+  <h3>If you saw "dicing" in a job posting</h3>
+  <p>Even if a posting says "dicing," the actual work differs by company. The experience you gain changes depending on whether the job is mainly equipment operation, includes inspection and records, or extends to blade replacement and condition adjustment. If you still want to sort out the job content, go to how to read job postings. If you're already looking for jobs, go to choosing a career change service by experience.</p>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn" href="https://semicon-campus.com/how-to-read-semiconductor-job-description/">I want to check the job content</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/semiconductor-career-service-selection-guide/">Compare semiconductor career services by experience</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/%e5%8d%8a%e5%b0%8e%e4%bd%93%e6%b1%82%e4%ba%ba%e3%82%ad%e3%83%bc%e3%83%af%e3%83%bc%e3%83%89%e4%b8%80%e8%a6%a7%ef%bd%9c%e6%9c%aa%e7%b5%8c%e9%a8%93%e8%80%85%e3%81%8c%e6%b1%82%e4%ba%ba%e7%a5%a8%e3%81%a7/">See related job keywords</a>
+  </div>
+</div>
+
+<h2>Related companies and equipment makers</h2>
+
+<p>DISCO is widely known as a leading dicing equipment maker. It is strong in areas that thin and cut wafers, such as blade dicing, laser processing, and grinding and polishing. When researching companies, it's easier to understand them if you look at "which process the company is involved in," not just the company name.</p>
+
+<p>Many companies are also involved in the back-end process, including assembly and test contractors called OSATs, the back-end divisions of chipmakers, and makers of inspection equipment, handling equipment, and materials. Once you understand dicing, back-end job postings and company maps become a bit easier to read.</p>
+
+<div class="semicon-cta">
+  <h3>If you're researching processing methods or equipment companies</h3>
+  <p>Dicing is a process where back-end companies, equipment makers, contract processors, and inspection and quality meet. When looking at companies, it helps to sort them by which area they work in: "blade," "laser," "plasma," "visual inspection," "cleaning," or "pickup."</p>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn" href="https://semicon-campus.com/semiconductor-company-map-by-process/">See the company map by process</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/what-is-backend-semiconductor-process/">Review the whole back-end process</a>
+  </div>
+</div>
+
+<h2>Summary</h2>
+
+<p>Dicing is the back-end process that cuts a wafer finished in the front-end process into individual semiconductor chips. It's not just cutting with a blade or laser. Holding, alignment, cleaning, drying, and pickup all matter for passing chips to the next step in good condition.</p>
+
+<p>When beginners read job postings, look for words like "dicing," "wafer cutting," "blade replacement," "visual inspection," "equipment operator," "maintenance," and "process improvement." If you read postings after understanding the technical flow, it's easier to see which job type the work is close to, rather than just a task name.</p>
+
+<div class="semicon-cta">
+  <h3>Choose your next step based on your goal</h3>
+  <p>This page is an entry point for learning about dicing. From here, it's easier not to get lost if you choose where to go based on why you're reading.</p>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn" href="https://semicon-campus.com/how-to-read-semiconductor-job-description/">I saw it in a job posting</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/semiconductor-career-service-selection-guide/">See how to find jobs that match your experience</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/semiconductor-company-map-by-process/">I want to research companies and equipment</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/what-is-backend-semiconductor-process/">I want to learn the back-end process</a>
+  </div>
+</div>
+
+<h2>Coming next</h2>
+
+<p>If you read one more, we recommend <a href="https://semicon-campus.com/what-is-semiconductor-die-bonding/">What is die bonding?</a>, which covers attaching cut chips to a substrate or lead frame. It explains for beginners how the chips separated by dicing are built into a package. Next time, we'll cover "wire bonding," which connects the attached chip to external terminals with thin gold wire or similar.</p>
+
+<div class="semicon-note">
+  <strong>We also explain semiconductors simply on YouTube</strong><br>
+  If you want to learn semiconductor manufacturing through short videos and diagrams, check out our YouTube channel <a href="https://www.youtube.com/@semicon-campus">Semiconductor Classroom for the AI Era</a>.
+</div>
+
+<h2>Read next</h2>
+
+<div class="semicon-links">
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/what-is-backend-semiconductor-process/">What is the back-end process?</a></strong>
+    <p>The parent article covering the whole back-end process, from dicing and die bonding to connection, encapsulation, and inspection.</p>
+  </div>
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/how-to-read-semiconductor-job-description/">How to read semiconductor job postings</a></strong>
+    <p>An article on reading job postings by separating job content, requirements, work style, and training.</p>
+  </div>
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/semiconductor-company-map-by-process/">Company map by process</a></strong>
+    <p>Organizes which companies are involved in which process.</p>
+  </div>
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/semiconductor-career-map/">Semiconductor industry job map</a></strong>
+    <p>See where manufacturing, inspection and quality, equipment maintenance, and process improvement related to dicing fit.</p>
+  </div>
+</div>
+
+<h2>Related articles</h2>
+
+<div class="semicon-links">
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/what-is-semiconductor-inspection-quality-control/">What is semiconductor inspection and quality evaluation?</a></strong>
+    <p>Understand how checking appearance and quality after cutting connects to inspection and quality jobs.</p>
+  </div>
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/">What is a semiconductor maintenance job?</a></strong>
+    <p>For people interested in equipment inspection, parts replacement, and troubleshooting.</p>
+  </div>
+</div>
+
+<section class="mp1-section" id="maintenance-phase1-career"><h2>Jobs that use knowledge of dicing, consumable parts, and cutting problems, and your next steps</h2><p>If you have experience replacing consumables, checking cutting quality, or inspecting equipment, organize it as a set: "target equipment, symptom, what you checked, and result." Compare the equipment you'd handle, night shift and travel, training, and requirements with the job posting. This helps you separate the experience you can use from the knowledge you need to fill in.</p><aside class="semicon-cta mp1-card"><h3>Check the big picture of the work and how to choose jobs and learning</h3><p>On the equipment maintenance hub, you can review inspection and troubleshooting work, how to organize your experience, and job postings, basic learning, and certification prep all in one place. If you want to compare the scope of equipment responsibility and customer support, see the related job articles as well.</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/" class="semicon-btn mp1-button" data-maintenance-phase1-hub="277" data-cta="maintenance_hub" data-cta-type="maintenance_hub" data-cta-stage="career" data-cta-id="maintenance_430_hub277_end" data-cta-route="maintenance_430_hub277_end">Check job content, postings, and learning on the equipment maintenance hub</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/" class="semicon-btn mp1-button" data-maintenance-phase1-hub="237" data-cta="equipment_hub" data-cta-type="equipment_hub" data-cta-stage="career" data-cta-id="maintenance_430_hub237_end" data-cta-route="maintenance_430_hub237_end">See an equipment engineer's scope, postings, and learning</a></div></aside></section>
+
+<h2>References</h2>
+
+<div class="semicon-note">
+  <ul>
+    <li><a href="https://www.disco.co.jp/eg/solution/library/dicing/basic.html">DISCO: Basic Processes Using Blade Dicing Saws</a></li>
+    <li><a href="https://www.disco.co.jp/eg/solution/library/index.html">DISCO: Solutions Library</a></li>
+    <li><a href="https://www.hamamatsu.com/jp/en/applications/semiconductor/wafer_dicing.html">Hamamatsu Photonics: Wafer dicing</a></li>
+    <li><a href="https://www.kla.com/advance/innovation/plasma-dicing-101-the-basics">KLA: Plasma Dicing 101</a></li>
+  </ul>
+</div>
+
+<div class="semicon-note">
+  <strong>How we researched this article</strong><br>
+  To help beginners grasp the big picture of the process, we reviewed basic materials published by equipment makers and technology companies and explained technical terms in plain language. Last checked: July 11, 2026.
+</div>
+
+<a class="semicon-backtop" href="#top" aria-label="Back to top of page">↑</a>
+</article>
