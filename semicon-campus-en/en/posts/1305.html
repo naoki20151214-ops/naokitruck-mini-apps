@@ -1,0 +1,63 @@
+
+<!--KEEP:0-->
+
+<p>On September 28, 2026, Fraunhofer AISEC in Germany announced that it had completed functional validation of silicon prototype chips for its OpenTitan-based RISC-V Secure Element and had entered the technology transfer stage. Going forward, it plans to offer not only the complete secure element but also individual security IP blocks in a licensable form that can be built into SoCs, ASICs, and chiplets. <a href="https://www.aisec.fraunhofer.de/en/media/press-releases/2026/fraunhofer-RISC-V-secure-element-accelerates-secure-chip-development-after-successful-silicon-validation.html">Fraunhofer AISEC announcement</a></p>
+
+<p>One thing to note here is not to treat the announcement date and the date functional validation was completed as the same. The publication date is September 28, but it is not stated when the validation work on the prototype chips itself was completed. Also, what we can confirm is only the stage of "finishing functional validation and moving on to licensing and joint development." It is not an announcement that mass-produced parts have already been adopted in customer products.</p>
+
+
+<h2>What does this news mean?</h2>
+
+<p>Semiconductor security features are not something you can simply add with software after a product ships. Mechanisms that make sure only the correct programs run at startup, and circuits that handle secret keys safely, need to be built in from the chip design stage. If design companies build security features from scratch every time, development time, verification burden, and the risk of design errors all increase.</p>
+
+<p>Fraunhofer explains that the implementation, developed by AISEC, EMFT, and IIS under the Trusted Electronic Bayern Center framework, was manufactured using GlobalFoundries' 22nm FD-SOI technology and prototyped in Dresden. This announcement goes beyond presenting a research-stage design. After confirming functions on real silicon, it moves toward IP and integration support for porting it into customers' designs. <a href="https://www.iis.fraunhofer.de/en/pr/2026/press-release-risc-v-secure-element-licensable.html">Related Fraunhofer IIS announcement</a></p>
+
+<p>In other words, the core of the news is not that "a new encryption method was invented." It is that a path has been shown for offering OpenTitan-based security functions as building blocks customers can easily reuse in their own SoCs and ASICs. For chiplets, too, it may widen the option of combining security functions as a dedicated die or dedicated block. However, the specific connection method, packaging, certification boundary, and license scope are not settled by this announcement alone.</p>
+
+<h2>Technical terms made simple</h2>
+
+<h3>What is a Root of Trust?</h3>
+
+<p>A Root of Trust is the hardware or software foundation that a system first trusts as "correct." For example, to check that the program a smartphone or embedded device loads after power-on has not been tampered with, you first need a trustworthy checker.</p>
+
+<p>In the OpenTitan design, a hard-to-change silicon ROM is the starting point, and it uses public keys and similar means to verify the signature of the next boot stage. That stage then verifies the software that runs after it, and so on, chaining trust together. By running only authorized code, tampering can be detected even before the OS or applications start. <a href="https://opentitan.org/book/doc/security/">OpenTitan official security documentation</a></p>
+
+<h3>Secure boot and key management</h3>
+
+<p>Secure boot is a mechanism that checks the digital signatures of firmware and the bootloader at startup and runs only legitimate code. Key management refers to the mechanisms for safely storing and using the keys used for that signature check and the secret information unique to each device.</p>
+
+<p>Fraunhofer lists a hardware Root of Trust, secure boot, secure key storage, device identity, authentication, and secure firmware updates as features. These may look like separate functions, but in practice they are closely linked. To identify a device, confirm the correct owner or server, and accept only authorized updates, startup trust, keys, authentication, and update management must be designed together. <a href="https://opentitan.org/book/doc/security/specs/">OpenTitan security model specification</a></p>
+
+<h3>What is post-quantum cryptography?</h3>
+
+<p>Post-quantum cryptography refers to encryption methods designed to withstand the threat that future quantum computers may break the public-key encryption widely used today. Fraunhofer says this platform supports both conventional cryptography and post-quantum cryptography.</p>
+
+<p>However, this primary announcement does not confirm which algorithms were adopted, which operations are accelerated in hardware, or what the performance and power consumption are. The phrase "post-quantum ready" alone does not mean complete security against every quantum computer attack or that product certification has been obtained.</p>
+
+<h2>How OpenTitan relates to the Fraunhofer implementation</h2>
+
+<p>OpenTitan is an open-source silicon Root of Trust project. It covers not only secure boot but also device authentication, key management, provisioning, lifecycle management, firmware updates, and a verification approach that includes side-channel analysis and fault injection. This allows a trust boundary inside the chip to be built without relying on software alone.</p>
+
+<p>On the other hand, the general design and security model described in OpenTitan's official documents cannot simply be equated with Fraunhofer's implementation specs. From this announcement alone, we do not know which OpenTitan revision or configuration was used, which features were added or changed, or whether it has undergone third-party evaluation or certification. Even in OpenTitan's official specs, the architecture specification for integrated IP is listed as a target for a future release.</p>
+
+
+<section class="mp6-section" id="revenue-phase6-learning"><h2>Turn your understanding of security IP into verification notes and learning</h2><p>Once you understand the role of a secure element, reread the public specs by splitting them into startup, key management, updates, and verification. Separate claims from what has been proven, and add sources to technical terms. Tools for reading English documents and courses for learning spreadsheet or programming basics are different entry points. First make comparison notes using public information and free learning environments, and consider paid options once the tasks you struggle with become clear.</p></section>
+
+<h2>What is confirmed, and what is still a plan</h2>
+
+<table><thead><tr><th>Item</th><th>What we can confirm now</th><th>What is still unknown</th></tr></thead><tbody><tr><td>Silicon</td><td>Announced as prototyped in 22nm FD-SOI with functional validation completed</td><td>Test items, conditions, performance, area, power consumption</td></tr><tr><td>Offering</td><td>IP licensing, integration support, and joint development offered</td><td>Pricing; scope of RTL, verification IP, and firmware</td></tr><tr><td>Cryptographic features</td><td>Described as supporting conventional and post-quantum cryptography</td><td>Algorithms, accelerators, performance</td></tr><tr><td>Market introduction</td><td>Plan to move to technology transfer into customer designs</td><td>Mass-production adoption, customer names, shipment record</td></tr></tbody></table>
+
+<p>Fraunhofer points to benefits such as shorter development time, lower technical risk, and a smaller external attack surface. However, these are effects and expectations described by Fraunhofer. They do not show independent customer deployments or quantitative comparisons with other security IP. Completing functional validation also does not automatically guarantee resistance to physical attacks, mass-production yield, long-term supply, third-party certification, or performance in customer products.</p>
+
+<h2>What to watch next</h2>
+
+<p>Going forward, first, we need to see what the license actually includes. The value customers get will vary greatly depending on which IP blocks, RTL, software, verification environment, and design services are provided. Second, it matters whether customer chips using the implementation are announced or reach mass production. Between functional validation of a prototype chip and mass-production IP used by multiple customers over the long term, there is additional verification and certification.</p>
+
+<p>Third, we need to assess the post-quantum cryptography methods, performance, memory usage, power consumption, and update methods. For chiplets, the focus will also include protecting die-to-die communication, trust boundaries within the package, initial key provisioning, and how ownership is transferred. This announcement is an important step in moving a validated security foundation into commercial IP, but it is best read with some distance: it is not news that mass-production adoption has been completed.</p>
+
+
+<section class="mp6-section" id="revenue-phase6-career"><h2>From what you have learned to your next study and comparison</h2><p>Organize what you learned about public specs and verification scope by three points: subject, conditions, and source. By checking related basic articles, learning entry points, and PC requirements by purpose, you can separate what you can try for free from paid options.</p><aside class="semicon-cta mp6-card"><h3>Choose your next step from related articles that fit your goal</h3><p>If you want to know about the work, go to the job articles. If you want to broaden your basics, go to the learning articles. If you want to review your home setup, go to the PC and memory guides. You can also compare how to choose jobs, learning, and equipment in each article.</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/semiconductor-beginner-roadmap/" class="semicon-btn mp6-button" data-revenue-phase6-hub="391" data-cta="learning_hub" data-cta-type="learning_hub" data-cta-stage="career" data-cta-id="phase6_1305_hub391_end" data-cta-route="phase6_1305_hub391_end">Check basics, jobs, and how to learn in the semiconductor learning hub</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/cpu-memory-storage-difference/" class="semicon-btn mp6-button" data-revenue-phase6-hub="479" data-cta="pc_guide" data-cta-type="pc_guide" data-cta-stage="career" data-cta-id="phase6_1305_hub479_end" data-cta-route="phase6_1305_hub479_end">Find out whether a slow PC is due to the CPU, memory, or storage</a></div></aside></section>
+
+
+<h2>Sources</h2>
+<ul><li><a href="https://www.aisec.fraunhofer.de/en/media/press-releases/2026/fraunhofer-RISC-V-secure-element-accelerates-secure-chip-development-after-successful-silicon-validation.html">Fraunhofer AISEC: Announcement on functional validation and IP offering of the RISC-V Secure Element (September 28, 2026)</a></li><li><a href="https://www.iis.fraunhofer.de/en/pr/2026/press-release-risc-v-secure-element-licensable.html">Fraunhofer IIS: Announcement on the licensable RISC-V Secure Element (September 28, 2026)</a></li><li><a href="https://opentitan.org/book/doc/security/">OpenTitan official: Security</a></li><li><a href="https://opentitan.org/book/doc/security/specs/">OpenTitan official: OpenTitan Security Model Specification</a></li><li><a href="https://www.iis.fraunhofer.de/de/pr/2026/pressemitteilung-sicherheitschip-made-in-germany.html">Fraunhofer IIS: Earlier announcement of a Root of Trust security chip for connected devices (July 6, 2026)</a></li></ul>
