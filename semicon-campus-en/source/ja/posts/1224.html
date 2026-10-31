@@ -1,0 +1,46 @@
+
+<!--KEEP:0-->
+
+<p>2026年9月22日、MicroVisionは完全子会社Scantinelによる、AIデータセンター向けの「ELSFP（External Laser Small Form Factor Pluggable）」モジュールを発表しました。今回示されたのは、CPO（Co-Packaged Optics）と呼ばれる光接続方式に向けて、レーザー光源を外部の交換可能な小型モジュールに分ける構想です。発表では、Scantinelの2次元フォトニック集積回路（PIC）を中心にした技術が紹介されました。<a href="https://ir.microvision.com/news/press-releases/detail/476/microvision-introduces-advanced-photonics-technology-for">MicroVisionの発表資料</a></p>
+
+
+<h2>今回、何が発表されたのか</h2>
+<p>MicroVisionによると、ScantinelのELSFPは、AIデータセンターで使われる次世代のCPOシステム向けに、光源を中央集約し、保守や交換をしやすくするためのモジュールです。光通信では、電気信号を光信号に変換するためにレーザー光源が必要です。ELSFPは、そのレーザーを演算チップや光エンジンのパッケージに固定するのではなく、外部のプラガブルな部品として扱います。<a href="https://via.tt.se/pressmeddelande/4562201/microvision-introduces-advanced-photonics-technology-for-next-generation-ai-data-center-scale-up-architecture?publisherId=3236991">配信された一次発表本文</a></p>
+<p>発表日は2026年9月22日です。Scantinelは、スペインのMálagaで開かれた光通信関連イベントの週に、この技術を公開したと説明されています。ただし、今回確認できるのは技術の発表と商用化に向けた協議であり、量産品の出荷や顧客採用が始まったという意味ではありません。</p>
+
+<h2>ELSFPとCPOを初心者向けに解説</h2>
+<h3>CPOとは何か</h3>
+<p>CPOは、演算チップの近くに光通信部品を配置し、チップと光エンジンを一体的に組み合わせる考え方です。AIサーバーでは、GPUや専用AIアクセラレーター同士が大量のデータをやり取りします。電気信号を長い基板配線で運ぶと、信号の損失や消費電力が問題になりやすくなります。そこで、チップの近くで電気信号を光信号へ変換し、高速な光通信につなげる構成が検討されています。</p>
+<p>一方で、CPOには熱と保守の課題があります。レーザーは光を作る部品ですが、動作時には熱を発生します。レーザーをチップやパッケージに組み込むと、冷却設計が複雑になり、故障時にチップ側まで含めて交換しなければならない可能性があります。外部レーザー方式は、このレーザーを管理しやすい場所に分離する発想です。<a href="https://www.lumentum.com/en/products/data-center/cw-lasers/uhp-lasers-cpo">LumentumのCPO向け説明</a>でも、外部レーザーによる熱管理、保守、交換性、複数の光エンジンでの光源共有が説明されています。</p>
+<h3>ELSFPとは何か</h3>
+<p>OIFの「OIF-ELSFP-02.0」では、ELSFPはCPOシステム内の光トランシーバーへ、連続波（CW）のレーザー光を供給する外部レーザー用フォームファクターと定義されています。フォームファクターとは、部品の大きさや接続方法など、機器に組み込むための標準的な形状・仕様のことです。</p>
+<p>また、OIF資料はELSFPについて、プラガブルな電気光学ブラインドメイト接続によって現場交換できる構成を示しています。ブラインドメイトとは、機器を分解して細かな配線を手作業で接続しなくても、モジュールを差し込むことで電気・光の接続を成立させる仕組みです。これにより、データセンターの保守担当者がレーザー部品だけを交換しやすくなる可能性があります。<a href="https://www.oiforum.com/wp-content/uploads/OIF-ELSFP-02.0-1.pdf">OIF-ELSFP-02.0</a></p>
+
+<h2>Scantinelの技術と今回の意味</h2>
+<p>MicroVisionは、今回のELSFP技術の中心にScantinelの2次元PICを据えています。PICは「Photonic Integrated Circuit」の略で、光を導く、分ける、変換するなどの機能を、半導体のように小さな基板上へ集積した光回路です。電子回路を一つのチップへ集積するのと似ていますが、PICは光信号を扱います。</p>
+<p>同社は、このPICがScantinelのFMCW LiDARアーキテクチャを支えるコア技術と同じであり、AIデータセンターの光接続にも応用できると説明しています。FMCWは、周波数を連続的に変化させた光を使って距離や速度を測る方式です。MicroVisionは2025年11月10日、ScantinelのFMCW LiDAR事業や関連資産を取得する協業を発表していました。今回のニュースは、自動車などのセンシング分野で使われてきたフォトニクス資産を、データセンターの光接続へ広げようとする動きと見ることができます。<a href="https://ir.microvision.com/news/press-releases/detail/433/microvision-collaborates-with-leading-photonics-ecosystem">2025年11月の取得協業発表</a></p>
+<p>AIデータセンターでは、計算能力の向上だけでなく、チップ間でデータを運ぶネットワークの性能も重要です。外部レーザーを複数の光エンジンで共有できれば、レーザーを各チップに個別搭載する設計とは異なる、保守や熱設計の選択肢が生まれます。ただし、これはELSFPという方式の一般的な利点であり、Scantinelのモジュールが実際にどの程度の性能を達成したかを示す結果ではありません。</p>
+
+
+<section class="mp4-section" id="revenue-phase4-learning"><h2>光接続の構想を、測定と顧客説明へ</h2><p>ELSFPの仕組みを読んだら、接続方式、交換の担当、測定項目と比較条件を整理します。構想や製品発表と、現場で安定運用できることは分けて考えましょう。光や電気の測定、実装確認、設備点検の経験は、装置・FSE・実装の仕事を調べる材料になります。海外チームや顧客への説明を担いたい人は、技術基礎とビジネス英会話の準備を併用できます。</p></section>
+
+<h2>発表からはまだ分からないこと</h2>
+<p>今回のリリースには、波長、光出力、通信帯域、消費電力、挿入損失、熱特性、信頼性試験の結果が記載されていません。さらに、OIF仕様への適合試験、量産開始時期、価格、顧客名、契約金額も明らかにされていません。そのため、「電力効率や経済性を改善する」という説明は、現時点では企業が示す設計目標または期待として読む必要があります。</p>
+<p>MicroVisionは、商用化を加速するため、複数の潜在的なライセンシーや開発パートナーと協議中だと述べています。これは事業化を検討しているという意味であり、契約締結、量産採用、売上発生を意味しません。また、OIFの資料はELSFPの標準的な仕組みを説明するものですが、Scantinelのモジュールが仕様の全項目に適合することを証明する資料ではありません。</p>
+
+<h2>今後、何を見ればよいか</h2>
+<p>今後の確認ポイントは、まず具体的な仕様の開示です。光出力や消費電力、挿入損失、許容温度、交換回数、信頼性試験の結果が示されれば、発表段階の構想から実用性の評価へ進めます。次に、CPOシステムや光エンジンを手がける企業との共同開発、評価サンプル、規格適合の発表が重要です。</p>
+<p>さらに、実際の顧客名、量産時期、販売契約、売上への寄与が発表されるかにも注目する必要があります。AI向け半導体では、技術のアイデアが優れていても、熱設計、光ファイバー接続、製造歩留まり、保守体制、コストを同時に解決しなければ大規模採用には届きません。今回のニュースは、Scantinelのフォトニクス技術をAIデータセンターへ応用する方向性を示したものです。製品性能と商用化の成否は、今後の試験結果と顧客採用によって判断されます。</p>
+
+
+<section class="mp4-section" id="revenue-phase4-career"><h2>この記事の知識を、次の仕事・学習へつなげる</h2><p>光・電気の測定、接続確認、顧客への説明の経験を、対象・作業・確認した結果で整理します。担当範囲と必要経験、勤務地、勤務・出張、教育体制を比較すると、次に補う知識も具体的になります。</p><aside class="semicon-cta mp4-card"><h3>関連する職種の仕事内容・求人・学習を見る</h3><p>記事で学んだ技術が、点検・復旧、装置立上げ、顧客対応、実装・工程改善のどの仕事で使われるか確認できます。職種記事の求人・学習の選び方へ進みましょう。</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/" class="semicon-btn mp4-button" data-revenue-phase4-hub="237" data-cta="equipment_hub" data-cta-type="equipment_hub" data-cta-stage="career" data-cta-id="phase4_1224_hub237_end" data-cta-route="phase4_1224_hub237_end">装置エンジニアの担当範囲・求人・学習を見る</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-field-service-engineer/" class="semicon-btn mp4-button" data-revenue-phase4-hub="270" data-cta="fse_hub" data-cta-type="fse_hub" data-cta-stage="career" data-cta-id="phase4_1224_hub270_end" data-cta-route="phase4_1224_hub270_end">FSEの復旧・顧客対応と求人・学習を見る</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/advanced-packaging-jobs-career/" class="semicon-btn mp4-button" data-revenue-phase4-hub="651" data-cta="packaging_hub" data-cta-type="packaging_hub" data-cta-stage="career" data-cta-id="phase4_1224_hub651_end" data-cta-route="phase4_1224_hub651_end">先端パッケージの仕事・求人・学習の選び方を見る</a></div></aside></section>
+
+
+<h2>出典</h2>
+<ul>
+<li><a href="https://ir.microvision.com/news/press-releases/detail/476/microvision-introduces-advanced-photonics-technology-for">MicroVision「MicroVision Introduces Advanced Photonics Technology for Next-Generation AI Data Center Scale-Up Architecture」</a></li>
+<li><a href="https://via.tt.se/pressmeddelande/4562201/microvision-introduces-advanced-photonics-technology-for-next-generation-ai-data-center-scale-up-architecture?publisherId=3236991">ACCESS Newswire配信ミラー「MicroVision Introduces Advanced Photonics Technology for Next-Generation AI Data Center Scale-Up Architecture」</a></li>
+<li><a href="https://www.oiforum.com/wp-content/uploads/OIF-ELSFP-02.0-1.pdf">Optical Internetworking Forum「External Laser Small Form Factor Pluggable (ELSFP) Implementation Agreement OIF-ELSFP-02.0」</a></li>
+<li><a href="https://ir.microvision.com/news/press-releases/detail/433/microvision-collaborates-with-leading-photonics-ecosystem">MicroVision「MicroVision Collaborates with Leading Photonics Ecosystem to Acquire FMCW Lidar Business」</a></li>
+<li><a href="https://www.lumentum.com/en/products/data-center/cw-lasers/uhp-lasers-cpo">Lumentum「UHP Laser Sources for CPO」</a></li>
+</ul>

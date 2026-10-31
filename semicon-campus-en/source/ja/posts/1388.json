@@ -1,0 +1,20 @@
+{
+ "id": 1388,
+ "type": "post",
+ "slug": "daily-news-190ae3f46e76327add74",
+ "link": "https://semicon-campus.com/daily-news-190ae3f46e76327add74/",
+ "date": "2026-10-01T14:00:00",
+ "modified": "2026-10-27T20:04:15",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  20
+ ],
+ "tags": [
+  19
+ ],
+ "featured_media": 2807,
+ "title": "EverspinのCXL接続MRAM実演、AIメモリー階層を変える可能性",
+ "excerpt": "Everspinが実演したCXL接続MRAMを初心者向けに解説。DRAMとNAND SSDの違い、AIのチェックポイントやKVキャッシュへの用途、性能主張の限界と今後の注目点を整理します。"
+}

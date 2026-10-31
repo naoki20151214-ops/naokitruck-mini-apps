@@ -1,0 +1,16 @@
+[
+ {
+  "id": 18,
+  "name": "YouTube Deep Dive",
+  "slug": "youtube-deep-dive",
+  "parent": 0,
+  "description": ""
+ },
+ {
+  "id": 19,
+  "name": "Semiconductor News",
+  "slug": "semiconductor-news",
+  "parent": 0,
+  "description": "The latest semiconductor news articles, linked from posts on X."
+ }
+]

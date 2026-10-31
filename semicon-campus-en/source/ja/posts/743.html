@@ -1,0 +1,173 @@
+
+<!--KEEP:0-->
+
+
+<!--KEEP:1-->
+
+
+<!--KEEP:2-->
+<article class="charge40-article" data-episode="40">
+
+
+
+<div class="charge40-answer">
+  <small>最初に一言で回答</small>
+  <strong>バイパス充電は、ゲーム中に充電器から来た電力をバッテリーではなくスマホ本体へ回し、バッテリーの充電による熱や負担を抑えやすくする機能です。</strong>
+</div>
+<p>「ゲームをしながら充電するとスマホによくない」と言われるのは、ゲームの発熱にバッテリー充電の発熱が重なりやすいからです。ただし、ケーブルを挿すことと、バッテリーを充電することは同じではありません。この記事では、電力管理回路が電気の通り道を切り替える仕組みと、対応条件・限界を初心者向けに整理します。</p>
+
+<div class="charge40-points">
+  <div class="charge40-card"><b>熱が増える理由</b><span>ゲーム中はCPUやGPUなどが動き、そこへバッテリー充電の負荷も加わります。</span></div>
+  <div class="charge40-card"><b>バイパスの役割</b><span>対応条件がそろうと、充電器の電力を本体側へ直接回して充電を一時停止します。</span></div>
+  <div class="charge40-card"><b>重要な限界</b><span>CPU・GPU・画面などの発熱は残り、全機種で使えるわけでもありません。</span></div>
+</div>
+<figure class="charge40-media"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/08/short-040-bypass-light-clip-01.jpg" alt="ゲーム中のスマホに充電ケーブルが接続されているイメージ" loading="lazy"><figcaption>ゲームをしながら充電する場面。問題はケーブルの存在そのものではなく、電力がバッテリーへ入る経路と熱の重なり方です。</figcaption></figure>
+
+
+
+
+<h2 class="wp-block-heading">1. まず、普通の充電では電気がどこへ行く？</h2>
+
+
+
+<p>充電器からスマホへ電力が入ると、電力管理回路がその使い道を調整します。大きく分けると、電力は<strong>今すぐ動作する本体</strong>と<strong>あとで使うために蓄えるバッテリー</strong>へ向かいます。</p>
+<div class="charge40-flow" aria-label="通常充電時の電力の流れ">
+  <div class="charge40-card"><b>充電器</b><span>USB PDなどで電力を供給</span></div>
+  <div class="charge40-card"><b>電力管理回路</b><span>本体とバッテリーへ配分</span></div>
+  <div class="charge40-card"><b>本体＋バッテリー</b><span>動作しながら充電も進む</span></div>
+</div>
+<p>ゲーム中は、画面表示・通信・CPU・GPUなどが働くため、本体側の消費電力が大きくなります。同時にバッテリーへ電気をためると、変換や充電にともなう熱も加わり、全体の温度が上がりやすくなります。</p>
+<figure class="charge40-media"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/08/short-040-bypass-light-clip-03.jpg" alt="スマホと充電ケーブルを電力の入口として示したイメージ" loading="lazy"><figcaption>充電器から入った電力は、電力管理回路を通って、本体とバッテリーの使い道へ分かれます。</figcaption></figure>
+
+
+
+<h2 class="wp-block-heading">2. 「ゲーム中の充電がNG」と言われてきた理由</h2>
+
+
+
+<p>スマホの温度が上がると、機種によっては性能を抑える制御が入ったり、充電速度が下がったりします。これは、部品を保護するための正常な制御です。</p>
+<p>ここで注意したいのは、熱の原因をバッテリーだけに求めないことです。ゲーム中のCPUやGPU、ディスプレイ、通信回路、電源回路自体も発熱します。バッテリーの充電を止めても、ゲームの計算負荷が消えるわけではありません。</p>
+<div class="charge40-points">
+  <div class="charge40-card"><b>本体側の熱</b><span>CPUやGPUがゲームの計算を続けることで生まれる熱。</span></div>
+  <div class="charge40-card"><b>バッテリー側の熱</b><span>電気をためる変換・充電動作にともなう熱。</span></div>
+  <div class="charge40-card"><b>周囲の条件</b><span>ケース、室温、置き場所、通信状態でも温度は変わります。</span></div>
+</div>
+<figure class="charge40-media"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/08/short-040-bypass-light-clip-04.jpg" alt="スマホ内部のCPUとGPUが発熱している概念図" loading="lazy"><figcaption>ゲームの計算を担当するCPUやGPUの発熱は、バイパス充電を使っても残ります。</figcaption></figure>
+<figure class="charge40-media"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/08/short-040-bypass-light-clip-05.jpg" alt="スマホ内部のバッテリーが発熱している概念図" loading="lazy"><figcaption>バッテリーへの充電にも熱がともないます。バイパス充電は、この側の熱を減らしやすくします。</figcaption></figure>
+<figure class="charge40-media"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/08/short-040-bypass-light-clip-06.jpg" alt="スマホ全体の温度が上がりやすい状態を示した概念図" loading="lazy"><figcaption>複数の熱源が重なると、端末全体の温度が上がりやすくなります。</figcaption></figure>
+<div class="charge40-warning"><strong>境界を先に確認：</strong>バイパス充電はスマホ全体を冷却する機能ではありません。バッテリー充電による熱や負担を減らすための、電力経路の制御です。</div>
+
+
+
+<h2 class="wp-block-heading">3. バイパス充電では、何が変わる？</h2>
+
+
+
+<p>バイパス充電が有効になると、電力管理回路は充電器から来た電力を、バッテリーへためる経路ではなく本体のシステムへ回します。バッテリーの充電を一時停止し、ケーブルからの電力でゲームを動かすイメージです。</p>
+<div class="charge40-flow" aria-label="バイパス充電時の電力の流れ">
+  <div class="charge40-card"><b>充電器</b><span>電力を供給</span></div>
+  <div class="charge40-card"><b>電力管理回路</b><span>バッテリー側を一時停止</span></div>
+  <div class="charge40-card"><b>スマホ本体</b><span>ゲームや画面へ電力を送る</span></div>
+</div>
+<p>この切り替えで、バッテリー充電にともなう発熱や充電サイクルの負担を抑えやすくなります。メーカーによって「Pause USB PD charging when gaming」「Heat Suppression power control」など呼び方は違いますが、考え方は似ています。</p>
+<figure class="charge40-media"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/08/short-040-bypass-light-clip-08.jpg" alt="バッテリー側の充電を止めて本体側へ電力を回す概念図" loading="lazy"><figcaption>バイパス充電では、バッテリーへ向かう矢印を止め、本体側へ電力を回す考え方を取ります。</figcaption></figure>
+<figure class="charge40-media"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/08/short-040-bypass-light-clip-09.jpg" alt="スマホ内部の電力経路が本体へ切り替わる概念図" loading="lazy"><figcaption>名前の通り、バッテリーを経由する道を一時的に迂回する機能です。</figcaption></figure>
+<figure class="charge40-media"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/08/short-040-bypass-light-clip-10.jpg" alt="本体側へ直接電力が流れるスマホ内部の概念図" loading="lazy"><figcaption>本体側へ電力を送ることで、ゲームを動かしながらバッテリー充電の負担を抑えます。</figcaption></figure>
+
+
+
+<h2 class="wp-block-heading">4. 仕組みを支えるのは、電力を切り替える半導体回路</h2>
+
+
+
+<p>スマホには、電圧や電流を調整し、電池や各回路へ安全に電力を配る電力管理回路があります。バイパス充電では、この回路が充電器から来た電力の経路を状況に応じて制御します。</p>
+<p>初心者向けには「電気の分かれ道にある自動スイッチ」と考えるとわかりやすいでしょう。実際の回路構成や制御条件は機種ごとに異なるため、すべてのスマホが同じ部品・同じ経路を持つわけではありません。</p>
+<div class="charge40-note"><strong>チップとの関係：</strong>ゲームを計算するCPUやGPUとは別に、電力を安全に扱う半導体回路があります。バイパス充電は、その電力管理側の機能です。</div>
+<figure class="charge40-media"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/08/short-040-bypass-light-clip-12.jpg" alt="電力を管理する半導体回路を光の経路で示した概念図" loading="lazy"><figcaption>電力管理回路が、充電器から来た電気をどこへ送るかを制御します。</figcaption></figure>
+<figure class="charge40-media"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/08/short-040-bypass-light-clip-14.jpg" alt="スマホ本体へ電力を振り分ける回路の概念図" loading="lazy"><figcaption>バイパス時は、本体側の電力経路が優先されます。内部構成は機種ごとに異なります。</figcaption></figure>
+
+
+
+<h2 class="wp-block-heading">5. なぜ対応条件があるのか</h2>
+
+
+
+<p>電力を本体へ直接回すには、スマホ・充電器・ソフトウェアの組み合わせが対応していなければなりません。たとえばSamsungの公式説明では、対応Galaxy端末で、ゲームが前面で動作し、25W以上のPD／PPS対応充電器が接続され、バッテリー残量が20％を超えていることなどが条件として示されています。</p>
+<p>Sonyの「H.S. power control」も、特定の製品・OSに限られる機能として案内されています。名称や最低出力、残量条件はメーカーや機種で変わるため、他社のスマホへそのまま当てはめてはいけません。</p>
+<div class="charge40-points">
+  <div class="charge40-card"><b>対応端末</b><span>機能を持つ機種・OSであること。</span></div>
+  <div class="charge40-card"><b>対応充電器</b><span>必要なPD・PPSなどの規格や出力を満たすこと。</span></div>
+  <div class="charge40-card"><b>動作状態・残量</b><span>ゲームが前面で動く、残量が条件以上など、機種固有の条件。</span></div>
+</div>
+<figure class="charge40-media"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/08/short-040-bypass-light-clip-17.jpg" alt="一部の対応スマホだけがバイパス充電を使えることを示す概念図" loading="lazy"><figcaption>対応機種に限られる機能です。設定画面やメーカーのサポート情報を確認します。</figcaption></figure>
+<figure class="charge40-media"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/08/short-040-bypass-light-clip-18.jpg" alt="対応する充電器とケーブルを示したイメージ" loading="lazy"><figcaption>端末だけでなく、PDやPPSなど充電器側の条件が関係する場合もあります。</figcaption></figure>
+
+
+
+<h2 class="wp-block-heading">6. バッテリーの劣化は完全に止まる？</h2>
+
+
+
+<p>完全に止まるわけではありません。バイパス充電で抑えやすいのは、ゲーム中にバッテリーへ充電するときの熱や負担です。バッテリーは時間、温度、充放電など複数の影響を受けます。</p>
+<p>また、充電器から本体へ直接電力を送っても、CPUやGPU、画面、通信回路が動けば、その分の熱は発生します。高温の場所で長時間ゲームを続けることまで安全にする機能ではありません。</p>
+
+
+
+<h2 class="wp-block-heading">7. 使う前に確認する4つの項目</h2>
+
+
+
+<p>機能名を見つけたら、すぐに「ゲーム中ならいつでも使える」と考えず、次の順番で確認します。まず端末の設定やメーカーのサポートページで機能の対象機種を調べます。次に、必要な充電規格と出力を確認し、手元の充電器・ケーブルが条件を満たすかを見ます。</p>
+<p>そのうえで、ゲームを前面で起動した状態、必要なバッテリー残量、温度や省電力モードの制限を確認します。機能がオンになっても、画面を切ったり別のアプリへ移ったりすると通常の充電へ戻る機種があります。表示が増えないことだけで故障と決めつけず、機種ごとの説明を優先してください。</p>
+<div class="charge40-points">
+  <div class="charge40-card"><b>1. 端末</b><span>対応モデル・OS・ゲームモードを確認。</span></div>
+  <div class="charge40-card"><b>2. 充電器</b><span>PD／PPSや出力条件を確認。</span></div>
+  <div class="charge40-card"><b>3. 残量と状態</b><span>残量、前面表示、温度条件を確認。</span></div>
+</div>
+<p>最後に、バイパス充電は「充電速度を上げる機能」ではなく、「ゲーム中にバッテリーへ電力をためない選択肢」だと理解します。プレイ後に充電したいなら、機能をオフにする操作が必要な製品もあります。</p>
+<figure class="charge40-media"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/08/short-040-bypass-light-clip-19.jpg" alt="ケーブルを挿すこと自体が悪いわけではないことを示したイメージ" loading="lazy"><figcaption>確認するべきなのはケーブルの有無ではなく、端末がどの電力経路を選んでいるかです。</figcaption></figure>
+
+
+<section class="mp5-section" id="revenue-phase5-learning"><h2>電力の通り道を、電気の基礎学習へ</h2><p>バイパス充電の仕組みが分かったら、給電条件、充電の状態、端末の温度、動かすアプリを記録します。機能があるだけで発熱がなくなるとは考えず、メーカーの説明と自分の利用条件を照合しましょう。電源回路を理解するための電気の基礎と、比較メモを表やグラフにする技能を学ぶ入口があります。端末を分解せず、公開情報と通常の設定で確認できる範囲から学びを進めます。</p></section>
+
+
+<h2 class="wp-block-heading">8. よくある誤解（FAQ）</h2>
+
+
+
+<div class="charge40-faq">
+  <details><summary>ケーブルを挿すこと自体がスマホを傷めますか？</summary><p>ケーブル接続とバッテリー充電は別の概念です。対応機種のバイパス機能では、接続したままバッテリーへの充電を止め、本体側へ電力を回します。</p></details>
+  <details><summary>バイパス充電ならスマホは熱くなりませんか？</summary><p>いいえ。CPU、GPU、画面、通信回路などの発熱は残ります。減らしやすいのは、バッテリー充電にともなう熱と負担です。</p></details>
+  <details><summary>どのスマホでも使えますか？</summary><p>いいえ。対応端末、OS、ゲームモード、充電器、出力、バッテリー残量などの条件があります。メーカーの説明書や設定画面で確認してください。</p></details>
+  <details><summary>バイパス充電中はバッテリー残量が必ず増えませんか？</summary><p>機能が有効な間は、バッテリーを充電せず本体へ電力を送る設計が一般的です。ただし、具体的な表示や切り替え条件は機種によって異なります。</p></details>
+</div>
+
+
+
+<h2 class="wp-block-heading">まとめ：充電の問題は「電気の通り道」で考える</h2>
+
+
+
+<figure class="charge40-media charge40-media--summary"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/08/short-040-bypass-light-summary-infographic.jpg" data-media-role="summary-infographic" alt="通常充電とバイパス充電で電力の通り道が変わることを示すまとめインフォグラフィック" loading="lazy"><figcaption>まとめ図：電力管理回路が、本体とバッテリーのどちらへ電力を回すかを制御します。</figcaption></figure>
+<p>ゲーム中にスマホが熱くなりやすいのは、ゲームの計算負荷にバッテリー充電の負担が重なることがあるためです。バイパス充電は、電力管理回路で充電器の電力を本体側へ回し、バッテリー充電を一時停止します。</p>
+<p>ただし、CPUやGPUの熱を消す機能ではなく、すべての機種で使えるわけでもありません。対応端末・充電器・残量・ゲームモードなどの条件を確認して使う機能です。</p>
+<figure class="charge40-media"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/08/short-040-bypass-light-clip-20.jpg" alt="ケーブル接続とバッテリー充電が別であることを示すまとめイメージ" loading="lazy"><figcaption>最後に覚えることは一つ。ケーブルを挿すことと、バッテリーを充電することは別です。</figcaption></figure>
+<div class="charge40-note"><strong>今日の要点：</strong>「ケーブルを挿す」と「バッテリーを充電する」は別。電力の通り道を切り替える半導体回路が、ゲーム中の熱と負担を抑える選択肢を作っています。</div>
+
+
+
+<section class="mp5-section" id="revenue-phase5-career"><h2>理解した内容から、次の学習と比較へ</h2><p>給電条件と温度・動作時間の比較を、対象・条件・出典の三つで整理しましょう。関連する基礎記事、学習の入口、PCの要件を目的別に確認すると、無料で試せる範囲と有料の選択肢を分けて検討できます。</p><aside class="semicon-cta mp5-card"><h3>目的に合う関連記事から、次の行動を選ぶ</h3><p>仕事内容を知りたい方は職種記事へ、基礎を広げたい方は学習記事へ、自宅環境を見直す方はPC・メモリの解説へ進めます。各記事の求人・学習・機材の選び方も比較できます。</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/semiconductor-beginner-roadmap/" class="semicon-btn mp5-button" data-revenue-phase5-hub="391" data-cta="learning_hub" data-cta-type="learning_hub" data-cta-stage="career" data-cta-id="phase5_743_hub391_end" data-cta-route="phase5_743_hub391_end">半導体学習Hubで基礎・仕事・学び方を確認する</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/cpu-memory-storage-difference/" class="semicon-btn mp5-button" data-revenue-phase5-hub="479" data-cta="pc_guide" data-cta-type="pc_guide" data-cta-stage="career" data-cta-id="phase5_743_hub479_end" data-cta-route="phase5_743_hub479_end">PCの遅さをCPU・メモリ・保存容量から切り分ける</a></div></aside></section>
+
+
+
+<h2 class="wp-block-heading">出典</h2>
+
+
+
+<ul class="charge40-refs">
+  <li><a rel="noopener" href="https://www.samsung.com/ae/support/mobile-devices/what-is-the-pause-usb-pd-charging-when-gaming-feature/" target="_blank">Samsung公式「Pause USB PD charging when gaming」</a>：充電器の電力をシステムへ回す仕組み、発熱低減、対応条件の一例。</li>
+  <li><a rel="noopener" href="https://www.sony.com/electronics/support/articles/00264227" target="_blank">Sony公式「Heat Suppression (HS) power control」</a>：ゲーム中に本体を直接給電し、バッテリー充電を止める機能の説明。</li>
+</ul>
+<p class="charge40-source">メーカー別の条件を全機種へ一般化せず、公式サポート情報を参照しています。</p>
+</article>
+

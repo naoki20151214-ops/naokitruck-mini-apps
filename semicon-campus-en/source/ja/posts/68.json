@@ -1,0 +1,18 @@
+{
+ "id": 68,
+ "type": "post",
+ "slug": "what-is-lithography-semiconductor-process",
+ "link": "https://semicon-campus.com/what-is-lithography-semiconductor-process/",
+ "date": "2026-06-30T21:07:59",
+ "modified": "2026-10-30T21:22:53",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  5
+ ],
+ "tags": [],
+ "featured_media": 69,
+ "title": "リソグラフィとは何か？光で回路の模様を写す半導体製造の要をやさしく解説",
+ "excerpt": "リソグラフィとは、ウェハ上の膜に「どこを残し、どこを削るか」という回路の模様を写す工程です。成膜で作った薄い膜を、次のエッチングで加工できるようにする、半導体製造の要をやさしく解説します。"
+}

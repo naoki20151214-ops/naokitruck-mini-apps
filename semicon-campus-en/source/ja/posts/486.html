@@ -1,0 +1,109 @@
+
+<!--KEEP:0-->
+
+
+<!--KEEP:1-->
+
+
+<!--KEEP:2-->
+<!--KEEP:3-->
+<div class="semicon-article" id="semicon-top">
+
+<div class="semicon-level"><span class="semicon-level-label">学習レベル</span> <strong>初級</strong><p>CPU・メモリ・ストレージの役割が少し見えてきた人向けです。</p></div>
+
+<p class="semicon-lead">DRAMもNANDもメモリ半導体ですが、同じ仕事をする部品ではありません。DRAMは作業中のデータを素早く出し入れし、NANDは写真やアプリを電源OFF後も残します。この記事では、役割、セル、用途、製造の違いを、なおきとふくろう先生の会話と図解で一段ずつ整理します。</p>
+
+<p>CPUとの関係から確認したい方は、先に<a href="https://semicon-campus.com/cpu-memory-storage-difference/">CPU・メモリ・ストレージの違い</a>を読むと理解しやすくなります。</p>
+
+<div class="semicon-map"><strong class="semicon-map-title">この記事でわかること</strong><ol><li>DRAMとNANDの一番大きな違い</li><li>電源を切ると消える・残る理由</li><li>PC、スマホ、SSD、サーバー、AIでの役割</li><li>セル構造と製造工程で難しくなる場所</li></ol></div>
+
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>DRAMもNANDもデータを覚えるなら、速い方だけ使えばいいのでは？</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>速さだけでは決められないんじゃ。作業中に素早く使うのか、電源を切った後も残すのかで役割が変わる。</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>DRAMが作業用、NANDが保存用。だから両方必要なんですね。</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>その通りじゃ。まずは2つの全体像を図で比べよう。</p></div></div>
+
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/dram-nand-role-overview.png" alt="CPUがDRAMと作業データをやり取りし、NANDを使うSSDへデータを保存する役割比較"><figcaption>DRAMは作業中のデータ、NANDは長く残すデータを担当します。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b><ul><li>DRAMは作業中の一時置き場</li><li>NANDは長期保存の場所</li><li>DRAMは電源OFFで消える</li><li>NANDは電源OFFでも残る</li></ul></div>
+
+
+<h2>DRAMとNANDの違いを表で比較</h2>
+<div class="semicon-compare"><table><thead><tr><th>比較</th><th>DRAM</th><th>NAND</th></tr></thead><tbody><tr><td>主な役割</td><td>作業中のデータを置く</td><td>データを長く保存する</td></tr><tr><td>電源OFF</td><td>基本的に消える</td><td>残る</td></tr><tr><td>主な用途</td><td>PC・スマホのメインメモリ、サーバー、GPU周辺</td><td>SSD、スマホ保存領域、USB、SDカード</td></tr><tr><td>保持方法</td><td>コンデンサの電荷をリフレッシュ</td><td>絶縁された領域の電荷状態を保持</td></tr><tr><td>容量の考え方</td><td>主記憶として必要な容量を高速に扱う</td><td>高密度化しやすく、大容量保存に向く</td></tr><tr><td>コストの傾向</td><td>一般に1ビット当たりの単価は高くなりやすい</td><td>一般に1ビット当たりの単価を下げやすい</td></tr><tr><td>設計の優先</td><td>低遅延で細かく読み書き</td><td>高密度・大容量・不揮発性</td></tr></tbody></table></div>
+<div class="semicon-note"><p><strong>性能・容量・価格は製品ごとに変わります。</strong> 「DRAMは高速でビット単価が高め、NANDは高密度・大容量でビット単価を下げやすい」というのは一般的な設計傾向です。世代、規格、製品構成、市況、コントローラ、アクセス方法で実際の値は変動します。</p></div>
+
+<div class="semicon-basic-complete">ここまででDRAMとNANDの基本は理解できました。</div>
+<div class="semicon-deep-break"><strong>ここから先は任意の深掘りです</strong><p>セル構造、用途、製造工程、企業や仕事まで知りたい人だけ進んでください。</p></div>
+
+
+
+<h2>DRAMはなぜ電源を切ると消えるのか</h2>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>作業用なのはわかりました。でも、なぜ電源を切ると消えるんですか？</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>DRAMは小さなコンデンサの電荷で0と1を表す。電荷は少しずつ漏れるので、読み直して書き戻す必要があるんじゃ。</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>記憶を保つために、何度も確認して書き直しているんですね。</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>それがリフレッシュじゃ。電源がなくなるとリフレッシュも止まり、データを保てなくなる。</p></div></div>
+
+<p>DRAMの代表的なセルは、1個のトランジスタと1個のコンデンサを組み合わせた「1T1C」です。コンデンサの電荷状態を読み、定期的にリフレッシュします。この性質からDRAMは<strong>揮発性メモリ</strong>に分類されます。</p>
+
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/dram-1t1c-refresh-concept.png" alt="トランジスタ1個とキャパシタ1個で構成されるDRAMセルと、電荷漏れを補うリフレッシュの概念図"><figcaption>DRAMはセルの電荷が漏れ切る前に、読み出しと書き戻しを繰り返します。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b><ul><li>代表的なセルはトランジスタ1個とキャパシタ1個</li><li>セルの電荷は時間とともに減る</li><li>記憶を保つためにリフレッシュする</li></ul></div>
+
+<h2>NANDはなぜ電源を切っても残るのか</h2>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>NANDも電荷を使うのに、こちらはなぜ消えないんですか？</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>絶縁された領域へ電荷を蓄え、その状態で0と1を見分ける。電源を切っても電荷がすぐ逃げない構造なんじゃ。</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>だから写真やアプリを保存できる。でも永久に壊れないわけではないんですよね。</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>その通り。SSDコントローラがウェアレベリングや誤り訂正などを行い、セルの寿命とデータの信頼性を支えている。</p></div></div>
+
+<p>NANDの代表的な方式には、浮遊ゲートとチャージトラップがあります。どちらも電荷状態によってトランジスタの性質が変わることを利用します。ここまでの「0と1を見分ける」という説明は仕組みをつかむための簡略化です。実製品には、複数のしきい値電圧状態を読み分け、1つのセルへ複数ビットを記録する方式もあります。短い間隔でリフレッシュしなくても記憶を保てるため、NANDは<strong>不揮発性メモリ</strong>です。</p>
+
+<div class="semicon-grid"><div class="semicon-card"><b>NAND</b><span>データを記憶する半導体チップです。</span></div><div class="semicon-card"><b>SSD</b><span>NAND、コントローラ、ファームウェアなどを組み合わせた記憶装置です。</span></div><div class="semicon-card"><b>コントローラ</b><span>書き込みの分散、誤り訂正、読み書きの管理を行います。</span></div></div>
+
+<h2>PC・スマホ・SSDではどう使い分けるのか</h2>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>アプリや写真は、DRAMとNANDの間をどう動くんですか？</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>保存中はNAND側、アプリを開くと必要なデータがDRAMへ移り、CPUやGPUが処理する。</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>作業するときだけ机へ広げ、残したい結果は保存場所へ戻すんですね。</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>その通り。ただし実際の転送や管理は、OSや各種コントローラが連携して行うんじゃ。</p></div></div>
+<p>アプリを開くと、SSDなどに保存されていたデータのうち、作業に必要な部分がDRAMへ読み込まれます。CPUやGPUが処理し、残したい結果を保存するとNAND側へ書き戻されます。</p>
+
+<div class="semicon-grid"><div class="semicon-card"><b>PC・スマホ</b><span>実行中のアプリはDRAM、写真・動画・アプリ本体はNAND側へ置きます。</span></div><div class="semicon-card"><b>サーバー</b><span>多数の処理を同時に扱うため、大容量DRAMと高速なストレージを組み合わせます。</span></div><div class="semicon-card"><b>SSD</b><span>NANDを保存媒体として使い、コントローラが利用者から複雑な動作を隠します。</span></div></div>
+
+<h2>AIではDRAMとNANDのどちらが重要なのか</h2>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>AIではHBMが重要と聞きます。NANDは必要なくなるんですか？</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>HBMはDRAMを基礎にした広帯域メモリじゃ。計算中のデータ供給を助けるが、学習データやモデルの長期保存にはNANDも必要じゃ。</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>AIでも、DRAM系が作業、NANDが保存という役割は続くんですね。</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>そうじゃ。計算する速さ、データを渡す速さ、保存する量の3つを組み合わせてシステムを作る。</p></div></div>
+
+<div class="semicon-note"><p><strong>HBMはNANDの仲間ではありません。</strong> 複数のDRAMダイを積層し、GPUなどの近くへ実装して広い帯域を得るメモリです。構造と先端パッケージは別記事で扱います。</p></div>
+
+<h2>同じメモリ半導体でも製造の難所が違う</h2>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>DRAMとNANDは、工場でも同じように作るんですか？</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>共通工程は多いが、難所は違う。DRAMは小さなセルで電荷を保つ構造、3D NANDは多数の層と深い縦穴が大きな課題になる。</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>役割が違うから、成膜やエッチングで狙う構造も変わるんですね。</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>その通り。企業、装置、材料、検査、職種の違いも、ここから見えてくる。</p></div></div>
+
+<div class="semicon-grid"><div class="semicon-card"><b>DRAMの難所</b><span>高アスペクト比のコンデンサ、薄膜、材料、電荷保持、ばらつき管理。</span></div><div class="semicon-card"><b>3D NANDの難所</b><span>多層成膜、深穴エッチング、膜の均一性、位置合わせ。</span></div><div class="semicon-card"><b>共通の難所</b><span>欠陥低減、検査、電気特性、歩留まりを高い水準でそろえること。</span></div></div>
+
+
+<section class="mp3-section" id="revenue-phase3-learning"><h2>DRAM・NANDの理解をPC選びへ</h2><p>DRAMとNANDの違いが分かったら、自分のPCで困っていることが作業用メモリの不足か、保存容量の不足かを切り分けます。使用量と機種の対応規格を確認してから、増設部品とPC本体の更新を比較しましょう。同じ容量でも役割や接続方式は違います。製造・検査の経験がある人は、メモリを作る工程や装置を支える仕事へ理解を広げることもできます。</p><p>比較前の確認メモ：メモリ使用量と空き容量、DDR世代・形状、SSD接続方式。今の環境で試せる範囲と、更新が必要な箇所を分けてから候補を選びましょう。</p></section>
+
+<h2>よくある疑問</h2>
+<h3>DRAMとNANDはどちらが速い？</h3><p>一般的なシステムではDRAMの方がNANDストレージより低遅延で、細かな読み書きを高速に行えます。ただし実性能は世代、規格、接続、コントローラ、アクセス方法で変わります。</p>
+<h3>NANDはメモリ？ストレージ？</h3><p>NANDはメモリ半導体です。NANDとコントローラなどを組み合わせたSSDはストレージ製品です。</p>
+<h3>DRAMは保存に使えない？</h3><p>通常のDRAMは電源断でデータを失うため、長期保存には向きません。特殊なバックアップ構成はありますが、一般的なPCではDRAMを作業用、SSDを保存用として使います。</p>
+
+<h2>まとめ</h2>
+<div class="semicon-note"><ul><li>DRAMは作業中のデータを置く揮発性メモリ</li><li>NANDは電源OFFでも残る不揮発性メモリ</li><li>DRAMはリフレッシュが必要</li><li>NANDは電荷状態を保持し、SSDコントローラがウェアレベリングや誤り訂正などを行う</li><li>役割の違いは、セル構造・製造工程・企業・職種の違いへつながる</li></ul></div>
+
+<div class="semicon-links"><div class="semicon-linkbox next"><h3>順番に学ぶ</h3><p><a href="https://semicon-campus.com/semiconductor-beginner-roadmap/">半導体初心者ロードマップを見る</a></p><p><a href="https://semicon-campus.com/semiconductor-manufacturing-overview/">半導体製造の全体像を見る</a></p></div><div class="semicon-linkbox"><h3>企業・仕事へ広げる</h3><p><a href="https://semicon-campus.com/semiconductor-company-map-by-process/">工程別企業マップを見る</a></p><p><a href="https://semicon-campus.com/semiconductor-career-map/">半導体の職種マップを見る</a></p></div></div>
+
+<div class="semicon-map"><h3>次に深掘りするテーマ</h3><ul><li>HBMとは何か</li><li>メモリ半導体の製造工程</li></ul><p>未作成のため、現時点ではリンクを設置しません。</p></div>
+
+
+<section class="mp3-section" id="revenue-phase3-career"><h2>この記事の知識を、次の仕事・学習へつなげる</h2><p>メモリ製造、検査、装置操作の経験を、対象・作業・確認した結果で整理します。担当範囲と必要経験、勤務地、勤務・出張、教育体制を比較すると、次に補う知識も具体的になります。</p><aside class="semicon-cta mp3-card"><h3>関連する職種の仕事内容・求人・学習を見る</h3><p>記事で学んだ技術が、点検・復旧、装置立上げ、顧客対応、実装・工程改善のどの仕事で使われるか確認できます。職種記事の求人・学習の選び方へ進みましょう。</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/" class="semicon-btn mp3-button" data-revenue-phase3-hub="277" data-cta="maintenance_hub" data-cta-type="maintenance_hub" data-cta-stage="career" data-cta-id="phase3_486_hub277_end" data-cta-route="phase3_486_hub277_end">設備保全Hubで仕事内容・求人・学習を確認する</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/" class="semicon-btn mp3-button" data-revenue-phase3-hub="237" data-cta="equipment_hub" data-cta-type="equipment_hub" data-cta-stage="career" data-cta-id="phase3_486_hub237_end" data-cta-route="phase3_486_hub237_end">装置エンジニアの担当範囲・求人・学習を見る</a></div></aside></section>
+
+
+<h2>参考資料</h2>
+<ul><li><a rel="noopener" href="https://www.micron.com/educatorhub/courses/intro-to-memory" target="_blank">Micron: Intro to Memory</a></li><li><a rel="noopener" href="https://www.kioxia.com/ja-jp/rd/glossary.html" target="_blank">KIOXIA: 技術用語集</a></li><li><a rel="noopener" href="https://www.kioxia.com/ja-jp/rd/technology/history.html" target="_blank">KIOXIA: 技術開発ヒストリー</a></li></ul>
+<a class="semicon-backtop" href="#semicon-top">↑ 先頭</a>
+</div>
+
+
+<aside class="related-spokes"><h2>あわせて読みたい</h2><ul><li><a href="/cxmt-lpddr6-mass-production-xiaomi-news/">中国CXMT、LPDDR6を量産開始　Xiaomi新型スマホに採用へ、中国DRAMは世界大手に迫るのか</a></li><li><a href="/kioxia-sandisk-5trillion-news/">キオクシアとSanDisk、日本に約5兆円投資　AI需要でフラッシュメモリ生産を強化</a></li></ul></aside>

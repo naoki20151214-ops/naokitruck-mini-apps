@@ -1,0 +1,20 @@
+{
+ "id": 665,
+ "type": "post",
+ "slug": "what-is-ucie",
+ "link": "https://semicon-campus.com/what-is-ucie/",
+ "date": "2026-07-22T06:42:55",
+ "modified": "2026-10-22T13:56:39",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  4,
+  2,
+  10
+ ],
+ "tags": [],
+ "featured_media": 661,
+ "title": "UCIeとは？チップレット間接続とPCIe・CXLの関係を初心者向けに解説",
+ "excerpt": "UCIeとは何かを、チップレット間接続の課題、物理層・プロトコル・ソフトウェアモデル、PCIe・CXLとの関係、標準化の利点と限界、用途、関連職種まで図解します。"
+}

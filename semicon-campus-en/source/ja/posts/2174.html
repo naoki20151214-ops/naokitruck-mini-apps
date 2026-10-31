@@ -1,0 +1,189 @@
+<!--KEEP:0-->
+<div class="semicon-article" id="semicon-top">
+<div class="semicon-level">
+<div class="semicon-level-top"><span class="semicon-level-label">学習レベル</span><strong class="semicon-stars" aria-label="初級（5段階中の1）"><span class="on">★</span><span class="off">☆☆☆☆</span><span>初級</span></strong></div>
+</div>
+<div class="semicon-lead">
+<p>ステンシルシートの穴にスプレーを吹きつけて、文字を書いたことはありませんか。穴の太さは決まっているのに、できあがった文字は、少し太くなったり、縁がにじんだりします。</p>
+<p>半導体の回路の線でも、似たことが起こります。設計どおりの太さで作ったはずなのに、できあがった線を測ると、少し太い。あるいは、少し細い。</p>
+<p><strong class="semicon-key">先に答えを言うと、線の太さは、一つの工程だけで決まるわけではありません。</strong>光で形を写す、削る、測る。この途中で、少しずつ変わります。どこで変わったのかは、測って確かめないと分かりません。</p>
+</div>
+<div class="semicon-note">
+<p>ステンシルの例が合っているのは、「型どおりの太さにならないことがある」という点だけです。スプレーの仕組みと、半導体の工程の仕組みは、別のものです。</p>
+</div>
+<div class="semicon-map">
+<h3>この記事でわかること</h3>
+<ol>
+<li><strong>この記事の目的：</strong>線の太さが、作る途中でどう変わるかと、測った数字の受け取り方を、つかむこと</li>
+<li>「線幅」と「CD」という言葉の意味</li>
+<li>線の太さが、作る途中で変わる理由</li>
+<li>測った数字を、どう受け取ればよいか</li>
+</ol>
+</div>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep105-blog-01-design-to-wafer-v2.png" alt="設計、レジスト、エッチング後で、線の太さが変わりうることを示す概念図"><figcaption>線の太さが工程の途中で変わりうることを表した模式図。太さは説明用の例で、実測値ではありません。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>設計：決めた線の太さ</li>
+<li>レジスト：光で形を写した後</li>
+<li>エッチ後：削った後。この二つの時点で測る</li>
+</ul>
+</div>
+<div class="semicon-chat-row naoki">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">助手</div>
+</div>
+<div class="semicon-bubble">
+<p>博士、線の太さがずれるって、設計図が間違っていたということですか？</p>
+</div>
+</div>
+<div class="semicon-chat-row teacher">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">博士</div>
+</div>
+<div class="semicon-bubble">
+<p>そうとは限らんのじゃ。線は、光で形を写して、削って、最後に測る。その途中で、少しずつ太さが変わることがあるんじゃよ。</p>
+</div>
+</div>
+<div class="semicon-chat-row naoki">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">助手</div>
+</div>
+<div class="semicon-bubble">
+<p>なるほど。じゃあ、どこで変わったのかを見つけるのが大事なんですね。</p>
+</div>
+</div>
+<div class="semicon-chat-row teacher">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">博士</div>
+</div>
+<div class="semicon-bubble">
+<p>その通りじゃ。測った数字も、ある方法で見た結果にすぎん。順番に、やさしく見ていこう。</p>
+</div>
+</div>
+<h2 class="wp-block-heading" data-fact-ids="C01">線幅（CD）とは、線の太さのこと</h2>
+<p>半導体の回路は、ウェハと呼ぶ薄い円盤の上に、とても細い線で作ります。この線の太さを「線幅」と呼びます。工場では、大切な寸法をまとめて「CD（シーディー）」とも呼びます。</p>
+<p>CDは、「ウェハの上で、確実に作れて、確実に測れる、いちばん小さい寸法」のことだと、Averroesの解説は説明しています。線の太さのほかに、線と線のすき間や、穴の直径もCDに入ります。この記事では、まとめて「線の太さ」と書きます。</p>
+<p>むずかしい言葉が出てきたら、「線の太さの話だな」と読み替えてください。それで十分に、この記事の中身がつかめます。</p>
+<h2 class="wp-block-heading" data-fact-ids="C02">光で写して、削って、測る。太さは途中で変わる</h2>
+<p>回路の線は、次の順番で作ります。まず、レジストという、光に反応する膜に、光で線の形を写します。次に、エッチングという方法で、下の膜を削って、形を移します。この流れを「パターン転写」と呼びます。</p>
+<p><strong class="semicon-key">形を移すたびに、線の太さは少しずつ変わることがあります。</strong>PTIの用語集は、エッチングで変わった寸法を「エッチングバイアス」と呼び、削る前のCDと、削ったあとのCDの差で表す、と説明しています。同じ資料は、数字で伝えるときには、「太くなったらプラスか、細くなったらプラスか」といった決まりを、はっきり書く必要があるとも述べています。</p>
+<p>つまり、「ずれた」と言うだけでは、情報が足りません。<strong class="semicon-key">いつの時点と比べて、どちら向きに、どれだけ変わったのかを、はっきりさせる必要があります。</strong></p>
+<h2 class="wp-block-heading" data-fact-ids="C03">削り方で、壁の形が変わる</h2>
+<p>削る方法は、大きく二つあります。一つは、薬液で溶かす方法です。ふつう、どの向きにも同じように削れるので、横にも削れてしまいます。これを「等方的」と呼びます。</p>
+<p>もう一つは、プラズマという、電気を帯びた気体の中で削る方法です。ケンタッキー大学の設備紹介によると、この方法では、イオンという小さな粒が、ほぼ真上からウェハに当たります。そのため、壁が垂直に近い形に削れます。これを「異方性」と呼びます。</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep105-blog-03-etch-profile.png" alt="イオンがほぼ垂直に当たる加工と、横にも削れる加工の断面の違いを示す概念図"><figcaption>イオンがほぼ垂直に当たる加工と、等方的な加工の壁の形の違いを表した模式図。実際の形や寸法を示すものではありません。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>左：イオンがほぼ垂直に当たり、壁が垂直に近い</li>
+<li>右：横にも削れる等方的な加工</li>
+</ul>
+</div>
+<p>圧力、電気の強さ、ガスなど、形を決める条件はいくつもあります。どれかが変われば、プラズマの状態も変わると考えられます。ただし、条件が少し変わると線の太さが何nm変わる、という関係は、この資料からは言えません。装置や、削る膜によって違うからです。</p>
+<h2 class="wp-block-heading" data-fact-ids="C04 C05">溝の幅や、削る場所でも、掘れ方が変わる</h2>
+<p>削る速さは、場所によって同じとは限りません。Samcoの解説は、シリコンを削る場合、溝が狭いほど、底まで届く「反応する粒」が減って、削る速さが遅くなる、と説明しています。これを「マイクロローディング」と呼びます。</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep105-blog-04-microloading.png" alt="狭い溝は底に届く反応種が少なく、掘れる速さが下がる様子を示す概念図"><figcaption>溝の幅によって底に届く量が変わるイメージを表した模式図。実際の寸法・量を示すものではありません。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>狭い溝ほど、底に届く反応種が減る</li>
+<li>パターンの幅が狭いほど、掘れる速さが下がる</li>
+</ul>
+</div>
+<p>半導体製造装置メーカーのLam Researchの技術ブログも、似たことを述べています。設計のルールを守っていても、製造装置の力に限りがあるために、性能や歩留まり（良品の割合）が下がることがある、という内容です。</p>
+<p><strong class="semicon-key">設計図どおりに作れば、そのままの形ができる、とは限りません。</strong>作る途中の条件によって、できあがりが変わります。</p>
+<h2 class="wp-block-heading" data-fact-ids="C06 C07">線の「縁」がギザギザになることもある</h2>
+<p>線の太さの平均が設計どおりでも、線の縁がギザギザしていることがあります。片側の縁のギザギザを「LER」、線の幅のばらつきを「LWR」と呼びます。名前は、いまは覚えなくて大丈夫です。</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep105-blog-05-ler-lwr.png" alt="線の片側の端のゆらぎがLER、線の幅のゆらぎがLWRであることを示す概念図"><figcaption>LERとLWRの違いを表した模式図。ゆらぎの大きさは見やすいよう誇張しており、実測値ではありません。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>LER：片側の縁のゆらぎ</li>
+<li>LWR：線の幅のゆらぎ</li>
+</ul>
+</div>
+<p>Lam Researchの解説は、LERは先端の半導体で大切なばらつきの原因で、性能が下がったり、故障したりする原因になりうる、と述べています。ただし、この解説の結果は、コンピューターの上の仮想の実験で、実際に測った値ではありません。</p>
+<h2 class="wp-block-heading" data-fact-ids="C08 C09">測った数字は、形そのものではない</h2>
+<p>CDを測る代表的な装置が、CD-SEM（シーディーセム）です。電子顕微鏡の一種で、日立ハイテクの解説によると、画像の明るさの違いから、線の太さを計算します。測るのは、光で形を写した後と、削った後です。</p>
+<p>ここで、大事なことがあります。線の断面が台形の場合、上の幅と下の幅は違います。日立ハイテクの解説は、どこの幅を測った値にするかは、測定の設定で決める、と説明しています。つまり、<strong class="semicon-key">同じ線でも、測る高さによって、数字が変わります</strong>。</p>
+<p><strong class="semicon-key">「数字が合っている」ことと、「形が合っている」ことは、別のことです。</strong>数字は、ある方法で、ある場所を見た結果だと考えましょう。</p>
+<div class="semicon-cta">
+<h3>測る装置を、もう少し詳しく</h3>
+<p>測る装置そのものを、もう少し詳しく知りたい方は、CD-SEMとSEMレビューの記事も読んでみてください。</p>
+<div class="semicon-btnrow"><a class="semicon-btn" href="https://semicon-campus.com/what-is-cd-sem-sem-review/">CD-SEM・SEMレビューとは何か</a></div>
+</div>
+<h2 class="wp-block-heading">寸法のずれは、何が困るのか</h2>
+<p>線の太さや縁の形が変わると、電気の流れやすさなど、回路の性質が変わる可能性があります。ただし、「何nmずれたら不良」という決まりは、この記事の資料からは言えません。製品や工程によって違うからです。確認できた範囲は、縁のギザギザが、条件によって性能低下や故障につながりうる、というところまでです。</p>
+<h2 class="wp-block-heading" data-fact-ids="C02 C03 C08">ずれの原因は、どうやって探すのか</h2>
+<p>現場で線の太さのずれを見つけたら、次のような順番で調べる、と考えられます。</p>
+<ol>
+<li><strong>もう一度測る。</strong>測り方で、数字が変わることがあるためです。</li>
+<li><strong>比べる基準をそろえる。</strong>光で写した後と、削った後の、どちらを比べるのかを決めます。</li>
+<li><strong>場所の特徴を見る。</strong>ウェハのどこで、どの装置で、いつ作ったものかを整理します。</li>
+<li><strong>装置の記録を調べる。</strong>圧力や電気の強さなど、形を決める条件の記録と、点検の履歴を見比べます。</li>
+<li><strong>追加のデータで確かめる。</strong>たまたま同時に起きただけかもしれないので、確かめてから判断します。</li>
+</ol>
+<p>設備の調整や復旧は、所属する工場やメーカーの正式な手順と、権限のある人の判断のもとで行います。この記事は、原因を考えるときの見方を紹介するもので、設備の操作を指示するものではありません。</p>
+<p>この問題を追う仕事は、設備保全、生産技術、プロセス、計測・品質などの担当が分担します。製造業で、寸法の公差や工程の記録を扱った経験は、「どの時点の、何の寸法なのか」をそろえる力として活きる、と考えられます。仕事の全体像は、<a href="https://semicon-campus.com/semiconductor-career-map/">半導体製造の仕事を工程別に見てみる</a>から確認できます。</p>
+<h2 class="wp-block-heading">ことばのおさらい</h2>
+<p>この記事に出てきた言葉を、やさしい言い方で、もう一度まとめます。</p>
+<ul>
+<li><strong>線幅・CD：</strong>線の太さのこと。穴の直径や、線のすき間も含みます。</li>
+<li><strong>レジスト：</strong>光に反応する膜。ここに、光で線の形を写します。</li>
+<li><strong>エッチング：</strong>膜を削って、写した形を下の膜へ移す工程です。</li>
+<li><strong>LER・LWR：</strong>線の縁のギザギザと、線の幅のばらつきのことです。</li>
+<li><strong>CD-SEM：</strong>線の太さを測る電子顕微鏡です。</li>
+</ul>
+<h2 class="wp-block-heading">よくある誤解</h2>
+<h3>Q. 線は、細ければ細いほどよいのですか？</h3>
+<p>細さだけでは決まりません。太さの平均に加えて、縁のギザギザや、壁の形も関わります。この記事の資料からも、「小さければよい」と言える根拠は見つかっていません。</p>
+<h3>Q. CD-SEMの数字が設計どおりなら、形も設計どおりですか？</h3>
+<p>そうとは限りません。断面が台形なら、上と下で幅が違います。どこを測った数字なのかを、確かめる必要があります。</p>
+<h3>Q. 装置の設定が正常なら、ずれは装置のせいではないのですか？</h3>
+<p>設定の確認だけでは、足りません。同じ設定でも、溝の幅によって、削る速さが変わる例があるためです。設定、パターン、測り方の三つを合わせて見ます。</p>
+<h2 class="wp-block-heading">まとめ：線の太さのずれは、どこで変わったかを確かめる入口</h2>
+<div class="semicon-lead">
+<p>線幅（CD）は、光で写す、削る、測る、という途中で、少しずつ変わることがあります。<br />測った数字は、ある方法で、ある場所を見た結果で、形そのものではありません。<br />原因は、測り直す、基準をそろえる、場所を見る、装置の記録を調べる、確かめる、の順で探します。</p>
+</div>
+<div class="semicon-cta">
+<h3>YouTubeでも、半導体をやさしく解説しています</h3>
+<p>図解で復習したい人向けに、YouTubeでも半導体製造を短く解説しています。</p>
+<div class="semicon-btnrow"><a rel="noopener" class="semicon-btn secondary" href="https://www.youtube.com/@semicon-campus" target="_blank">YouTubeで図解動画を見る</a></div>
+</div>
+<h2 class="wp-block-heading">参考にした公式情報</h2>
+<ul class="semicon-sources">
+<li data-source-id="S01"><a href="https://averroes.ai/blog/what-is-critical-dimension-sem">Averroes「What is Critical Dimension SEM」</a></li>
+<li data-source-id="S02"><a href="https://www.pti-inc.com/glossary/etch-bias/">PTI「Etch Bias」</a></li>
+<li data-source-id="S03"><a href="https://cense.engr.uky.edu/equipment/reactive-ion-etching">University of Kentucky CENSE「Reactive Ion Etching」</a></li>
+<li data-source-id="S04"><a href="https://www.samcointl.com/news-events/tutorials/loading-and-microloading-effect-si-drie/">Samco「Loading Effect and Microloading Effect in Silicon DRIE」</a></li>
+<li data-source-id="S05"><a href="https://newsroom.lamresearch.com/virtual-twins-accelerate-layout-semiconductor-manufacturing">Lam Research「Accelerating Semiconductor Development with Virtual Twins」（2025年）</a></li>
+<li data-source-id="S06"><a href="https://www.globalsino.com/EM/page9.html">Practical Electron Microscopy and Database「LER/LWR」</a></li>
+<li data-source-id="S07"><a href="https://newsroom.lamresearch.com/improving-line-edge-roughness-using-virtual-fabrication">Lam Research「Improving Line Edge Roughness Using Virtual Fabrication」</a></li>
+<li data-source-id="S08"><a href="https://www.hitachi-hightech.com/jp/ja/knowledge/semiconductor/room/manufacturing/cd-sem.html">日立ハイテク「4. CD-SEM（測長SEM）とは」</a></li>
+</ul>
+<section class="semicon-correction-form">
+<h2>質問・訂正フォーム</h2>
+<p>この記事の内容に誤りや、分かりにくい点があれば、下のフォームからお知らせください。確認して、記事を直します。</p>
+<div class="semicon-form-shortcode">
+<div class="wpcf7 no-js" id="wpcf7-f2045-o13" lang="ja" dir="ltr" data-wpcf7-id="2045">
+<div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
+<form action="/?rest_route=%2Fwp%2Fv2%2Fposts&#038;per_page=100&#038;page=1&#038;context=view#wpcf7-f2045-o13" method="post" class="wpcf7-form init" aria-label="コンタクトフォーム" novalidate="novalidate" data-status="init">
+<fieldset class="hidden-fields-container"><input type="hidden" name="_wpcf7" value="2045" /><input type="hidden" name="_wpcf7_version" value="6.1.6" /><input type="hidden" name="_wpcf7_locale" value="ja" /><input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f2045-o13" /><input type="hidden" name="_wpcf7_container_post" value="0" /><input type="hidden" name="_wpcf7_posted_data_hash" value="" />
+</fieldset>
+<p>お名前・電話番号・住所の入力は不要です。工場名や社外秘の情報は記載しないでください。
+</p>
+<p><label>報告の種類（必須） <span class="wpcf7-form-control-wrap" data-name="report-type"><select class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required" aria-required="true" aria-invalid="false" name="report-type"><option value="誤りと思われる点">誤りと思われる点</option><option value="分かりにくい箇所">分かりにくい箇所</option><option value="追加してほしい説明・質問">追加してほしい説明・質問</option></select></span></label><br />
+<label>該当する見出し・文章（任意） <span class="wpcf7-form-control-wrap" data-name="report-section"><input size="40" maxlength="200" class="wpcf7-form-control wpcf7-text" aria-invalid="false" value="" type="text" name="report-section" /></span></label><br />
+<label>内容（必須） <span class="wpcf7-form-control-wrap" data-name="report-message"><textarea cols="40" rows="10" maxlength="3000" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" aria-required="true" aria-invalid="false" name="report-message"></textarea></span></label><br />
+<label>返信用メールアドレス（返信をご希望の場合のみ・任意） <span class="wpcf7-form-control-wrap" data-name="report-email"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-email wpcf7-text wpcf7-validates-as-email" autocomplete="email" aria-invalid="false" value="" type="email" name="report-email" /></span></label>
+</p>
+<p>ご意見は記事の確認・改善のために利用します。<a href="https://semicon-campus.com/privacy-policy/">個人情報の取り扱い</a>をご確認ください。
+</p>
+<p><input class="wpcf7-form-control wpcf7-submit has-spinner" type="submit" value="ご意見・訂正報告を送信" />
+</p><div class="wpcf7-response-output" aria-hidden="true"></div>
+</form>
+</div>
+</div>
+</section>
+</div>

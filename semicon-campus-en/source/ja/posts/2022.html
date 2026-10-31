@@ -1,0 +1,29 @@
+<p>2026年10月13日、Marvell、Microsoft、Oracleの3社は、Open Compute Project（OCP）のSecurity Trackで、データセンター向けの統合HSMを標準化する新しいワーキンググループを設立したと発表しました。今回の発表は、完成した製品の発売や量産開始ではありません。サーバーに組み込むハードウェアセキュリティの共通仕様を、複数企業で策定し始めるという段階です。<a href="https://www.marvell.com/company/newsroom/marvell-microsoft-oracle-ocp-data-center-hardware-security.html">Marvellの発表</a></p>
+<p>AIサービスでは、学習データ、推論データ、顧客情報、モデルそのものなど、保護すべきデータが大規模になります。そこで重要になるのが、暗号鍵をどこで生成し、どこに保管し、誰が使えるようにするかという鍵管理です。今回の動きは、AIを動かすサーバーの内部に、鍵を守る仕組みを標準的な部品・プロトコルとして組み込もうとするものです。</p>
+<h2>何が発表されたのか</h2>
+<p>3社が策定対象として挙げたのは、サーバー内の安全な鍵キャッシュ、暗号鍵のライフサイクル管理、ハードウェア境界、鍵保管庫、認証チェーンなどです。鍵キャッシュとは、暗号処理で頻繁に使う鍵を一時的に保持する仕組みです。ただし、通常のメモリにそのまま置けば、OSや不正なプログラムから読み取られる危険があります。統合HSMでは、鍵を保護された領域内で扱うことが目標になります。<a href="https://www.marvell.com/company/newsroom/marvell-microsoft-oracle-ocp-data-center-hardware-security.html">発表された仕様の対象</a></p>
+<p>3社は、NISTのFIPS 140-3 Level 3を目標とするオープン仕様を策定し、初期ドラフトを2026年のOCP Global Summit付近、その後にバージョン1.0を公開する計画を示しました。これは会社が示した予定であり、仕様1.0の完成、製品の量産、認証取得がすでに完了したという意味ではありません。</p>
+<p>Microsoftは同日、Azure Integrated HSMを発展させるProject Tesseraについても説明しました。アーキテクチャ、仕様、プロトコル、ドライバー、ソフトウェア、ファームウェア、再現可能ビルド環境をオープンソース化する取り組みです。Microsoftの説明では、Tessera Integrated HSMとMarvell LiquidSecurity 2 HSMの間で、HSMパーティションの複製とレジリエンシーリングを実演し、HSM間通信にポスト量子暗号を使いました。これは実演の報告であり、OCPの最終標準が承認されたことを示すものではありません。<a href="https://azure.microsoft.com/en-us/blog/advancing-hardware-security-with-open-source-integrated-hsm-technology/">MicrosoftのProject Tessera説明</a></p>
+<h2>HSMとは何か</h2>
+<p>HSMはHardware Security Moduleの略で、暗号鍵を汎用OSや通常のメモリから分離し、保護された境界の内側で暗号処理を行う装置または機能です。たとえば、クラウド上のデータを暗号化する鍵を、アプリケーションのメモリに置いたままにするのではなく、HSMの内部に保管します。アプリケーションは「このデータを暗号化して」と要求しますが、鍵そのものを外へ取り出せない設計にできます。</p>
+<p>従来は、計算を行うサーバーと、ネットワークで接続されたHSMを別の装置として置く構成が一般的でした。この方式では、鍵操作のたびに通信が発生し、HSMという集中サービスへの依存も生じます。MicrosoftはAzure Integrated HSMについて、サーバー内に近接・内蔵させ、鍵をHSM境界内に保ちながら、中央集中型のリモートHSMで生じるネットワーク往復を避ける設計として説明しています。<a href="https://azure.microsoft.com/en-us/blog/protecting-azure-infrastructure-from-silicon-to-systems/">MicrosoftのAzure基盤説明</a></p>
+<h2>FIPS 140-3 Level 3の意味</h2>
+<p>FIPS 140-3は、暗号モジュールの設計、実装、運用を評価するためのNISTの要求規格です。4段階のセキュリティレベルがあり、評価対象には、モジュールの仕様、インターフェース、利用者の役割と認証、ソフトウェアやファームウェア、物理セキュリティ、機密セキュリティパラメータの管理、自己テスト、ライフサイクル保証などが含まれます。<a href="https://csrc.nist.gov/pubs/fips/140-3/final">NISTのFIPS 140-3</a></p>
+<p>つまり「Level 3」は、特定の暗号アルゴリズムやチップの処理速度だけを表す言葉ではありません。鍵をどう保管するか、誰が操作できるか、改ざんをどう検知するか、故障や更新時にどう安全性を維持するかなど、暗号モジュール全体に関わる要求です。今回の3社はLevel 3を目標にしていますが、発表時点で将来の統合HSMが認証取得済みだと確認されたわけではありません。</p>
+<h2>半導体業界とAIサービスへの意味</h2>
+<p>今回の重要性は、クラウド事業者ごとの専用実装にとどまらず、サーバー、セキュリティチップ、CPUやSoC、ファームウェア、管理ソフトウェアの間に共通の接続方法を作ろうとしている点です。仕様が広く採用されれば、異なるベンダーのHSMやサーバーでも、鍵保護とワークロード認証を連携させやすくなる可能性があります。</p>
+<p>AIの機密計算では、入力データやモデルを処理するワークロードが「本当に認証済みの環境で動いているか」を確認する必要があります。ここでいうワークロード認証とは、実行するプログラムやサーバーの状態を確認し、許可された処理だけに鍵を使わせる考え方です。HSM、測定ブート、認証、Confidential Computingなどを組み合わせれば、ハードウェアからソフトウェアまでの信頼連鎖を構築できます。ただし、実際の安全性は個々の実装、設定、運用方法にも左右されます。</p>
+<p>ポスト量子暗号も注目点です。これは、将来の量子コンピューターによって現在の公開鍵暗号が破られるリスクを考え、新しい方式へ移行するための暗号技術です。Microsoftは今回の実演でHSM間通信にポスト量子暗号を使ったと説明しましたが、最終仕様でどのアルゴリズムを必須にするか、認証をどう行うか、いつ製品へ組み込まれるかは確定していません。</p>
+<h2>まだ残る課題と今後の確認点</h2>
+<p>第一に、標準化の進展を確認する必要があります。初期ドラフトが公開されても、参加企業、仕様の必須項目、互換性試験、OCPでの最終承認が決まったとは限りません。バージョン1.0がいつ公開され、どの製品が準拠するのかが次の焦点です。</p>
+<p>第二に、FIPS 140-3の認証状況を製品ごとに確認しなければなりません。NISTのImplementation Guidanceは、サブチップ暗号サブシステム、プロセッサ暗号アクセラレーター、鍵カプセル化メカニズムなどについて更新されています。FIPS適合性は製品名だけで判断できず、対象モジュール、評価範囲、検証結果を確認する必要があります。<a href="https://csrc.nist.gov/projects/cryptographic-module-validation-program/fips-140-3-ig-announcements">NISTのImplementation Guidance更新</a></p>
+<p>第三に、性能と運用の実測です。内蔵HSMはネットワーク往復を減らせる可能性がありますが、独立したベンチマークによる遅延、スループット、消費電力、障害時の復旧性は今回の資料では示されていません。鍵のバックアップ、ファームウェア更新、製造・供給網の信頼性、異なるHSM間での鍵ポリシー統合も、実用化に向けた重要な論点です。</p>
+<p>今回の発表は、AI時代のサーバーで鍵保護を標準部品として扱う方向を示すものです。しかし現時点では、標準化の開始、技術実演、将来計画が確認された段階です。今後はOCP仕様の公開、相互運用試験、独立した認証結果、量産製品の登場を順に確認することが、発表と実用化を見分けるポイントになります。</p>
+<h2>出典</h2>
+<ul>
+<li><a href="https://www.marvell.com/company/newsroom/marvell-microsoft-oracle-ocp-data-center-hardware-security.html">Marvell, Microsoft and Oracle Establish OCP Working Group to Standardize Data Center Hardware Security</a></li>
+<li><a href="https://azure.microsoft.com/en-us/blog/advancing-hardware-security-with-open-source-integrated-hsm-technology/">Advancing hardware security with open-source Integrated HSM technology</a></li>
+<li><a href="https://csrc.nist.gov/pubs/fips/140-3/final">NIST, FIPS 140-3, Security Requirements for Cryptographic Modules</a></li>
+<li><a href="https://azure.microsoft.com/en-us/blog/protecting-azure-infrastructure-from-silicon-to-systems/">Protecting Azure Infrastructure from silicon to systems</a></li>
+<li><a href="https://csrc.nist.gov/projects/cryptographic-module-validation-program/fips-140-3-ig-announcements">NIST, Cryptographic Module Validation Program: FIPS 140-3 IG Announcements</a></li>
+</ul>

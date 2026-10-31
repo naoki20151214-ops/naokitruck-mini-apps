@@ -1,0 +1,20 @@
+{
+ "id": 380,
+ "type": "post",
+ "slug": "what-is-film-thickness-measurement",
+ "link": "https://semicon-campus.com/what-is-film-thickness-measurement/",
+ "date": "2026-07-07T10:12:53",
+ "modified": "2026-10-30T21:22:55",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  5,
+  9,
+  12
+ ],
+ "tags": [],
+ "featured_media": 375,
+ "title": "膜厚測定とは何か？成膜・CMP後の薄膜の厚さを測る半導体計測をやさしく解説",
+ "excerpt": "膜厚測定とは、成膜やCMP後の薄膜の厚さを測り、厚すぎる・薄すぎる・ムラがある状態を見つける半導体計測です。測定方法、SPC・歩留まりとの関係、求人票で見るキーワードまで初心者向けに解説します。"
+}

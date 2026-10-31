@@ -1,0 +1,20 @@
+{
+ "id": 1022,
+ "type": "post",
+ "slug": "daily-news-45c333f405f614618182",
+ "link": "https://semicon-campus.com/daily-news-45c333f405f614618182/",
+ "date": "2026-09-18T10:00:00",
+ "modified": "2026-10-27T20:05:06",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  20
+ ],
+ "tags": [
+  19
+ ],
+ "featured_media": 2856,
+ "title": "InfineonがAIサーバー電源向け小型ゲートドライバーを発表、120Vの条件は",
+ "excerpt": "Infineonが2026年9月17日に発表したAIサーバー向けゲートドライバーを解説。小型2チャネル構成の役割、120V定格の温度条件、サンプル提供と量産の違い、今後の注目点を整理します。"
+}

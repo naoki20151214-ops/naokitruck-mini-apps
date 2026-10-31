@@ -1,0 +1,18 @@
+{
+ "id": 1206,
+ "type": "post",
+ "slug": "turbomolecular-pump",
+ "link": "https://semicon-campus.com/turbomolecular-pump/",
+ "date": "2026-09-30T18:00:00",
+ "modified": "2026-10-30T21:32:33",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  21
+ ],
+ "tags": [],
+ "featured_media": 2809,
+ "title": "ターボ分子ポンプ（TMP）とは？粗引きが必要な理由と高真空を作る二段構え",
+ "excerpt": "ターボ分子ポンプはなぜ粗引きポンプと組み合わせる？ 高真空を作る仕組み 半導体装置の真空は、一台のポンプだけで作るものではありません。高真空側を担当するTMPと、起動時の粗引き・出口側の背圧を支えるポンプが役割を分けます […]"
+}

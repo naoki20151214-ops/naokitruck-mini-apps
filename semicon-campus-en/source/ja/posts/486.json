@@ -1,0 +1,19 @@
+{
+ "id": 486,
+ "type": "post",
+ "slug": "dram-nand-difference",
+ "link": "https://semicon-campus.com/dram-nand-difference/",
+ "date": "2026-09-10T00:14:48",
+ "modified": "2026-10-30T21:22:56",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  4,
+  2
+ ],
+ "tags": [],
+ "featured_media": 484,
+ "title": "DRAMとNANDフラッシュは何が違う？作業用メモリと保存用ストレージの仕組み",
+ "excerpt": "DRAMとNANDフラッシュは、速い版と遅い版の違いではありません。電荷を保持するセル構造、リフレッシュ、電源OFF後の保持、SSDでの役割まで初心者向けに解説します。"
+}

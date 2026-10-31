@@ -1,0 +1,18 @@
+{
+ "id": 2191,
+ "type": "post",
+ "slug": "semiconductor-spc-control-chart",
+ "link": "https://semicon-campus.com/semiconductor-spc-control-chart/",
+ "date": "2026-10-22T17:59:00",
+ "modified": "2026-10-30T21:15:42",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  9
+ ],
+ "tags": [],
+ "featured_media": 2748,
+ "title": "半導体工程の管理図（Xbar-R管理図・ウェスタンエレクトリックルール・3シグマ）の読み方",
+ "excerpt": "「いつも通りか」を数字で見張るSPC（統計的工程管理）と管理図の見方を、中心線・管理限界・3シグマ、異常のサイン、半導体の工程での使われ方とあわせて、初心者向けにやさしく解説します。"
+}

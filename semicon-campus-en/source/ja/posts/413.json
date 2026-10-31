@@ -1,0 +1,20 @@
+{
+ "id": 413,
+ "type": "post",
+ "slug": "what-is-semiconductor-yield-analysis",
+ "link": "https://semicon-campus.com/what-is-semiconductor-yield-analysis/",
+ "date": "2026-07-10T01:49:39",
+ "modified": "2026-10-30T21:22:55",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  5,
+  9,
+  12
+ ],
+ "tags": [],
+ "featured_media": 408,
+ "title": "歩留まり解析とは何か？欠陥マップと工程データで不良原因を追う半導体の仕事を解説",
+ "excerpt": "歩留まり解析とは、半導体工場で良品率が下がった原因を、欠陥マップ、測定値、工程履歴、装置データから追う仕事です。欠陥検査、SPC、不良解析、工程データ解析との関係や求人票で見る言葉まで初心者向けに解説します。"
+}

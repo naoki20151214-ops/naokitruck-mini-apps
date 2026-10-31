@@ -1,0 +1,20 @@
+{
+ "id": 2089,
+ "type": "post",
+ "slug": "daily-news-19719219af9b88dc4194",
+ "link": "https://semicon-campus.com/daily-news-19719219af9b88dc4194/",
+ "date": "2026-10-16T11:00:00",
+ "modified": "2026-10-27T20:03:15",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  20
+ ],
+ "tags": [
+  19
+ ],
+ "featured_media": 2754,
+ "title": "AIラックのPCIeを光でつなぐ、1060nm VCSEL実演の意味",
+ "excerpt": "Lumentum、Astera Labs、Corningが発表した1060nm VCSELによるPCIe over Optics実演を、技術背景、意義、限界、今後の注目点から初心者向けに解説します。"
+}

@@ -1,0 +1,20 @@
+{
+ "id": 895,
+ "type": "post",
+ "slug": "daily-news-af1857cb2e69a466e31f",
+ "link": "https://semicon-campus.com/daily-news-af1857cb2e69a466e31f/",
+ "date": "2026-09-11T12:00:00",
+ "modified": "2026-10-27T20:05:25",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  20
+ ],
+ "tags": [
+  19
+ ],
+ "featured_media": 2876,
+ "title": "ルネサスRZ/G3L・RZ/G3SE発売、待機電力1mW級の意味と設計の狙い",
+ "excerpt": "ルネサスが2026年9月10日に発表したRZ/G3L・RZ/G3SEを解説。待機電力1mW級の条件、Linux状態を保持する仕組み、映像機能の違いと共通基板設計の意義を整理します。"
+}

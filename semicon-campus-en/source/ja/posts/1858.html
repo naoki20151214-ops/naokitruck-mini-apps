@@ -1,0 +1,395 @@
+<article class="semicon-template-v2" data-episode="095" data-slug="equipment-alarm-initial-response">
+<aside class="semicon-difficulty" aria-label="記事の難易度">
+<p><strong>難易度：★☆☆☆☆ 入門</strong><br />半導体装置を初めて学ぶ人向け</p>
+</aside>
+<div class="semicon-locked-body">
+<p>工場で機械を使っていると、突然止まることがあります。</p>
+<p>半導体を作る装置でも同じです。</p>
+<p>ある日、装置が突然止まりました。</p>
+<p>画面を見ると、こんな表示が並んでいます。</p>
+<ul>
+<li>冷却水の圧力が低い</li>
+<li>温度が高い</li>
+<li>処理用の電力が止まった</li>
+<li>処理が中断された</li>
+</ul>
+<p>4つも異常が出ています。</p>
+<p>では、4か所が同時に壊れたのでしょうか。</p>
+<p>実は、そうとは限りません。</p>
+<p>ここが、設備保全の仕事を理解するうえでとても大切なポイントです。</p>
+<hr/>
+<h2>アラームに書いてある場所が、壊れた場所とは限らない</h2>
+<p>まず知ってほしいのは、</p>
+<p><strong>アラームは「原因を教えてくれる表示」ではない</strong></p>
+<p>ということです。</p>
+<p>アラームが教えてくれるのは、</p>
+<blockquote>
+<p>「ここでおかしな状態を見つけました」</p>
+</blockquote>
+<p>ということです。</p>
+<p>たとえば車で考えてみましょう。</p>
+<p>車を運転していて、エンジンの温度が高くなったとします。</p>
+<p>だからといって、</p>
+<blockquote>
+<p>「温度計が壊れた！」</p>
+</blockquote>
+<p>とは限りません。</p>
+<p>冷却水が減っているのかもしれません。</p>
+<p>冷却用のファンが動いていないのかもしれません。</p>
+<p>温度を測るセンサーがおかしい可能性もあります。</p>
+<p>つまり、</p>
+<p><strong>画面に出た症状と、本当の原因は別かもしれない</strong></p>
+<p>ということです。</p>
+<p>半導体装置でも同じです。</p>
+<hr/>
+<h2>まず見るのは「何が最初に起きたのか」</h2>
+<p>先ほどの4つの表示を、起きた順番に並べてみます。</p>
+<ol>
+<li>冷却水の圧力が下がった</li>
+<li>装置の温度が上がった</li>
+<li>処理用の電力が止まった</li>
+<li>処理が中断された</li>
+</ol>
+<p>こうして見ると、少し景色が変わりませんか。</p>
+<p>最初は4つの故障に見えました。</p>
+<p>でも、</p>
+<blockquote>
+<p>冷却水の圧力が下がった<br />
+↓<br />
+十分に冷やせなくなった<br />
+↓<br />
+温度が上がった<br />
+↓<br />
+装置が危険を避けるために処理を止めた</p>
+</blockquote>
+<p>という一つの流れだった可能性があります。</p>
+<p>もちろん、この時点ではまだ本当の原因だとは断定できません。</p>
+<p>ですが、</p>
+<p><strong>「最後に出たアラーム」だけを見るより、ずっと原因に近づけます。</strong></p>
+<p>一つの異常がきっかけになって、その後に別のアラームが次々と出ることがあります。</p>
+<p>これを専門用語では、</p>
+<p><strong>Alarm Cascade（アラーム・カスケード）</strong></p>
+<p>と呼びます。</p>
+<p>名前は難しそうですが、意味は単純です。</p>
+<blockquote>
+<p><strong>一つの異常から、アラームが連鎖して出ること</strong></p>
+</blockquote>
+<p>です。</p>
+<hr/>
+<h2>では「最初のアラーム」を探せばいい？</h2>
+<p>ここでも、もう一段考える必要があります。</p>
+<p>たとえば、</p>
+<p>「冷却水圧が低い」</p>
+<p>というアラームが最初だったとします。</p>
+<p>だから、</p>
+<blockquote>
+<p>冷却水圧低下が最初の異常だ</p>
+</blockquote>
+<p>と決めていいでしょうか。</p>
+<p>実は、まだ分かりません。</p>
+<p>アラームが出る前から、冷却水の圧力が少しずつ下がっていた可能性があるからです。</p>
+<p>たとえば、</p>
+<p>正常<br />
+↓<br />
+少し低下<br />
+↓<br />
+さらに低下<br />
+↓<br />
+設定された限界を超える<br />
+↓<br />
+アラーム発生</p>
+<p>という流れかもしれません。</p>
+<p>つまり設備保全担当者が探したいのは、</p>
+<p><strong>最初に鳴ったアラームではありません。</strong></p>
+<p>本当に探したいのは、</p>
+<blockquote>
+<p><strong>装置がいつ最初に「いつもと違う状態」になったのか</strong></p>
+</blockquote>
+<p>です。</p>
+<p>この最初の変化を、</p>
+<p><strong>First Abnormal Event</strong></p>
+<p>と呼ぶことがあります。</p>
+<p>日本語にすれば、</p>
+<p><strong>「最初の異常事象」</strong></p>
+<p>くらいの意味です。</p>
+<p>専門用語より、</p>
+<blockquote>
+<p>「いつからおかしくなり始めた？」</p>
+</blockquote>
+<p>と覚えた方が分かりやすいでしょう。</p>
+<hr/>
+<h2>どうやって「いつから」を調べるの？</h2>
+<p>そこで使うのが、装置に残っている記録です。</p>
+<p>半導体装置では、</p>
+<ul>
+<li>何時にアラームが出たか</li>
+<li>その前にどんな操作があったか</li>
+<li>圧力はいくつだったか</li>
+<li>温度はいくつだったか</li>
+</ul>
+<p>などが記録されていることがあります。</p>
+<p>設備保全担当者は、その記録を見ながら、</p>
+<blockquote>
+<p>10時02分　冷却水圧が少し低下<br />
+10時03分　さらに低下<br />
+10時04分　温度上昇<br />
+10時05分　処理停止</p>
+</blockquote>
+<p>のように並べていきます。</p>
+<p>すると、</p>
+<p><strong>「装置が止まった瞬間」ではなく、「異常が始まった瞬間」</strong></p>
+<p>が見えてきます。</p>
+<hr/>
+<h2>でも画面の数字は、本当に正しい？</h2>
+<p>ここでもう一つ問題があります。</p>
+<p>画面に、</p>
+<blockquote>
+<p>冷却水圧が低い</p>
+</blockquote>
+<p>と表示されていたとします。</p>
+<p>では、本当に水の圧力が下がっているのでしょうか。</p>
+<p>これも、すぐには分かりません。</p>
+<p>なぜなら、装置の画面が配管の中を直接見ているわけではないからです。</p>
+<p>流れをものすごく簡単にすると、</p>
+<p><strong>水の圧力<br />
+↓<br />
+測る部品<br />
+↓<br />
+電気の信号<br />
+↓<br />
+装置のコンピューター<br />
+↓<br />
+画面に表示</strong></p>
+<p>という順番です。</p>
+<p>たとえば家庭用の体温計でも同じです。</p>
+<p>本当の体温が39℃なのか。</p>
+<p>それとも体温計が壊れて39℃と表示しているのか。</p>
+<p>画面だけでは区別できません。</p>
+<p>半導体装置でも、</p>
+<blockquote>
+<p><strong>本当に設備側がおかしいのか</strong></p>
+<p>それとも</p>
+<p><strong>測っている側がおかしいのか</strong></p>
+</blockquote>
+<p>を分けて考えます。</p>
+<hr/>
+<h2>ここでSensorやPLCという言葉が出てくる</h2>
+<p>ここまで理解できれば、専門用語はそれほど難しくありません。</p>
+<p>圧力や温度を測る部品を、</p>
+<p><strong>Sensor（センサー）</strong></p>
+<p>と呼びます。</p>
+<p>センサーが測った情報を、</p>
+<p><strong>Signal（信号）</strong></p>
+<p>として装置へ送ります。</p>
+<p>その信号が装置へ入る入口を、</p>
+<p><strong>I/O（入出力）</strong></p>
+<p>と呼びます。</p>
+<p>そして、その情報を見て、</p>
+<blockquote>
+<p>正常なのか<br />
+異常なのか<br />
+装置を動かすのか<br />
+止めるのか</p>
+</blockquote>
+<p>を判断する制御装置の一つが、</p>
+<p><strong>PLC</strong></p>
+<p>です。</p>
+<p>全部を一度に覚える必要はありません。</p>
+<p>まずは、</p>
+<blockquote>
+<p><strong>実際の状態<br />
+→ 測る<br />
+→ 情報を送る<br />
+→ 装置が判断する</strong></p>
+</blockquote>
+<p>という流れだけ理解できれば十分です。</p>
+<hr/>
+<h2>一瞬の数字ではなく「変化」を見る</h2>
+<p>設備保全担当者は、装置が止まった瞬間の数字だけを見るわけではありません。</p>
+<p>たとえば冷却水圧が、</p>
+<p>ずっと5だったのに突然2になったのか。</p>
+<p>5<br />
+↓<br />
+4.8<br />
+↓<br />
+4.5<br />
+↓<br />
+4.0<br />
+↓<br />
+3.0</p>
+<p>と少しずつ下がっていたのか。</p>
+<p>この違いはかなり重要です。</p>
+<p>そこで、</p>
+<p><strong>時間とともに数字がどう変わったのか</strong></p>
+<p>を見ます。</p>
+<p>たとえば横軸が時間、縦軸が水圧のグラフです。</p>
+<p>こうした時間変化の記録を、</p>
+<p><strong>Trend Data（トレンドデータ）</strong></p>
+<p>と呼びます。</p>
+<p>つまり難しく考えなくて大丈夫です。</p>
+<blockquote>
+<p><strong>数字の履歴</strong></p>
+</blockquote>
+<p>です。</p>
+<p>これを見ると、</p>
+<blockquote>
+<p>「装置が止まる10分前から水圧が下がっている」</p>
+</blockquote>
+<p>といったことが分かる場合があります。</p>
+<p>すると、</p>
+<p>「突然壊れた」</p>
+<p>と思っていた故障が、</p>
+<p>実はその前から少しずつ悪くなっていたこともあります。</p>
+<hr/>
+<h2>設備保全は「犯人探し」に少し似ている</h2>
+<p>ここまでの流れを整理してみます。</p>
+<p>装置が止まりました。</p>
+<p>まず確認できた事実は、</p>
+<blockquote>
+<p>冷却水圧の表示が下がっていた。</p>
+</blockquote>
+<p>これだけです。</p>
+<p>まだ、</p>
+<blockquote>
+<p>冷却水設備が壊れた</p>
+</blockquote>
+<p>とは言えません。</p>
+<p>そこで、</p>
+<blockquote>
+<p>実際に水圧が下がったのでは？</p>
+</blockquote>
+<p>という原因候補を考えます。</p>
+<p>同時に、</p>
+<blockquote>
+<p>圧力を測るセンサーがおかしいのでは？</p>
+</blockquote>
+<p>という別の候補も考えられます。</p>
+<p>そして、それぞれを安全な方法で確認します。</p>
+<p>この考え方には名前があります。</p>
+<p>実際に確認できたものが、</p>
+<p><strong>Fact（事実）</strong></p>
+<p>です。</p>
+<p>まだ確認できていない原因候補が、</p>
+<p><strong>Hypothesis（仮説）</strong></p>
+<p>です。</p>
+<p>その仮説が正しいか確かめることを、</p>
+<p><strong>Verification（検証）</strong></p>
+<p>と呼びます。</p>
+<p>そして最後に、</p>
+<blockquote>
+<p>「今回の停止を起こした本当の原因はこれだった」</p>
+</blockquote>
+<p>と確認できたものが、</p>
+<p><strong>Root Cause（根本原因）</strong></p>
+<p>です。</p>
+<p>でも、この英語を覚えることが重要なのではありません。</p>
+<p>大事なのは、</p>
+<blockquote>
+<p><strong>見えた症状だけで決めつけない</strong></p>
+<p><strong>考えられる原因を出す</strong></p>
+<p><strong>一つずつ確かめる</strong></p>
+</blockquote>
+<p>という考え方です。</p>
+<hr/>
+<h2>Resetして動けば修理完了？</h2>
+<p>もう一つ大事なことがあります。</p>
+<p>装置が止まったとき、</p>
+<p>Resetを押したら動き始めた。</p>
+<p>すると、</p>
+<blockquote>
+<p>「直った！」</p>
+</blockquote>
+<p>と思いたくなります。</p>
+<p>でも、本当に直ったのでしょうか。</p>
+<p>たとえば家庭のブレーカーが落ちたとします。</p>
+<p>ブレーカーを戻したら電気がつきました。</p>
+<p>でも、なぜブレーカーが落ちたのか分からないままなら、また落ちるかもしれません。</p>
+<p>装置も同じです。</p>
+<p>再起動できたことと、</p>
+<p><strong>原因がなくなったことは別です。</strong></p>
+<p>だから設備保全では、</p>
+<blockquote>
+<p>なぜ止まったのか<br />
+同じことがもう一度起きないか</p>
+</blockquote>
+<p>まで確認します。</p>
+<hr/>
+<h2>では、装置が止まったら最初に何を見る？</h2>
+<p>ここまでを、できるだけ簡単にまとめます。</p>
+<p>装置が止まったら、</p>
+<p>まず安全を確認します。</p>
+<p>そのうえで、</p>
+<p><strong>① どんなアラームが出たかを見る</strong></p>
+<p>でも、それだけで故障箇所を決めません。</p>
+<p>次に、</p>
+<p><strong>② 何が最初に起きたかを見る</strong></p>
+<p>アラームやイベントの時刻を確認します。</p>
+<p>そして、</p>
+<p><strong>③ その前から数字が変化していなかったかを見る</strong></p>
+<p>圧力や温度などの履歴を確認します。</p>
+<p>さらに、</p>
+<p><strong>④ 本当に設備がおかしいのか、測定側がおかしいのかを分ける</strong></p>
+<p>という考え方をします。</p>
+<p>最後に、</p>
+<p><strong>⑤ 原因候補を一つずつ確かめる</strong></p>
+<p>という流れです。</p>
+<hr/>
+<h2>設備保全担当者の仕事は「アラームを消すこと」ではない</h2>
+<p>設備保全の仕事というと、</p>
+<p>「壊れた部品を交換する人」</p>
+<p>というイメージがあるかもしれません。</p>
+<p>でも実際には、その前の仕事がとても重要です。</p>
+<p>装置が止まった。</p>
+<p>アラームが出た。</p>
+<p>数字が変わった。</p>
+<p>では、</p>
+<blockquote>
+<p><strong>なぜそうなったのか。</strong></p>
+</blockquote>
+<p>これを、</p>
+<p>装置の記録や状態を見ながら一つずつ考えていきます。</p>
+<p>つまり<a href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/">設備保全担当者</a>は、</p>
+<p><strong>画面に出た症状から、本当の原因を探していく仕事</strong></p>
+<p>でもあります。</p>
+<p>製造業で、</p>
+<p>「機械がおかしいとき、音や温度や動きを見ながら原因を探した」</p>
+<p>という経験がある人なら、その考え方は<a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/">半導体装置</a>でもつながっています。</p>
+<hr/>
+<h2>まとめ</h2>
+<p>この記事で一番覚えてほしいのは、これです。</p>
+<p><strong>アラームは答えではありません。</strong></p>
+<p>アラームは、</p>
+<blockquote>
+<p>「ここで何かがおかしいよ」</p>
+</blockquote>
+<p>と教えてくれる入口です。</p>
+<p>そこから、</p>
+<p><strong>いつ最初に変わった？<br />
+本当に設備がおかしい？<br />
+数字を測る側は正常？<br />
+他の数字はどう変わった？</strong></p>
+<p>と一つずつ確認します。</p>
+<p>そして、</p>
+<p><strong>症状 → 原因候補 → 確認 → 本当の原因</strong></p>
+<p>と進んでいきます。</p>
+<p>これが、半導体製造装置の設備保全で使われる基本的な考え方です。</p>
+<p>読み終わった今、</p>
+<p><strong>Alarm Cascade、Sensor、Trend Data、Root Cause</strong></p>
+<p>という言葉も、最初より少し意味が分かるようになっているはずです。</p>
+</div>
+<section class="semicon-sources" aria-label="出典">
+<h2>出典</h2>
+<ol>
+<li id="ref-s01"><strong>[S01]</strong> International Society of Automation (ISA), “Getting the most from your safety alarms.” <a href="https://www.isa.org/intech-home/2016/may-june/features/getting-the-most-from-your-safety-alarms">https://www.isa.org/intech-home/2016/may-june/features/getting-the-most-from-your-safety-alarms</a></li>
+<li id="ref-s02"><strong>[S02]</strong> OMRON, “Programmable Controllers — Introduction.” <a href="https://www.ia.omron.com/support/guide/26/introduction.html">https://www.ia.omron.com/support/guide/26/introduction.html</a></li>
+<li id="ref-s03"><strong>[S03]</strong> Schneider Electric, “Alarms UI — EcoStruxure Power Monitoring Expert.” <a href="https://product-help.se.com/docs/EcoStruxure/Power-Monitoring-Expert-2024/content/8_reference/webapps/alarmviews/ref_alarms_ui.htm">https://product-help.se.com/docs/EcoStruxure/Power-Monitoring-Expert-2024/content/8_reference/webapps/alarmviews/ref_alarms_ui.htm</a></li>
+<li id="ref-s04"><strong>[S04]</strong> Siemens, “Enabling and analyzing event history — Desigo PXC4/5/7 and DXR2 Commissioning.” <a href="https://sid.siemens.com/r/A6V13151547/31262763019__V6.1_en-US_31144805515">https://sid.siemens.com/r/A6V13151547/31262763019__V6.1_en-US_31144805515</a></li>
+<li id="ref-s05"><strong>[S05]</strong> OSHA, 29 CFR 1910.147, “The control of hazardous energy (lockout/tagout).” <a href="https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.147">https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.147</a></li>
+<li id="ref-s06"><strong>[S06]</strong> Brooks Instrument, “GF100/GF120xHT/GF101 Series Installation &amp; Operation Manual — Maintenance &amp; Troubleshooting.” <a href="https://sales.brooksinstrument.com/hubfs/Installation-Manual-GF100-GF120xHT-GF101-EN.pdf">https://sales.brooksinstrument.com/hubfs/Installation-Manual-GF100-GF120xHT-GF101-EN.pdf</a></li>
+<li id="ref-s07"><strong>[S07]</strong> Edwards Vacuum, “Dry Vacuum Pump — Instructions / Fault finding (A74401880).” <a href="https://www.lesker.com/newweb/vacuum_pumps/pdf/manuals/mxds-manual.pdf">https://www.lesker.com/newweb/vacuum_pumps/pdf/manuals/mxds-manual.pdf</a></li>
+<li id="ref-s08"><strong>[S08]</strong> Rockwell Automation, “Studio 5000 Logix Designer — Trends.” <a href="https://www.rockwellautomation.com/en-us/docs/studio-5000-logix-designer/38-01/contents-ditamap/studio-5000-logix-designer/trends.html">https://www.rockwellautomation.com/en-us/docs/studio-5000-logix-designer/38-01/contents-ditamap/studio-5000-logix-designer/trends.html</a></li>
+<li id="ref-s09"><strong>[S09]</strong> Rockwell Automation, “Troubleshooting: Trend chart is missing data points.” <a href="https://www.rockwellautomation.com/en-us/docs/factorytalk-view/16-00-00/se-help-ditamap/factorytalk-view-site-edition-help/trends/using-trend-objects/troubles-trend-miss-data-points.html">https://www.rockwellautomation.com/en-us/docs/factorytalk-view/16-00-00/se-help-ditamap/factorytalk-view-site-edition-help/trends/using-trend-objects/troubles-trend-miss-data-points.html</a></li>
+<li id="ref-s10"><strong>[S10]</strong> American Society for Quality (ASQ), “What is Root Cause Analysis (RCA)?” <a href="https://asq.org/quality-resources/root-cause-analysis">https://asq.org/quality-resources/root-cause-analysis</a></li>
+</ol>
+</section>
+</article>

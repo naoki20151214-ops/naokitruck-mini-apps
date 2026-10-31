@@ -1,0 +1,18 @@
+{
+ "id": 2186,
+ "type": "post",
+ "slug": "semiconductor-lithography-defect",
+ "link": "https://semicon-campus.com/semiconductor-lithography-defect/",
+ "date": "2026-10-21T04:26:24",
+ "modified": "2026-10-30T21:29:57",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  5
+ ],
+ "tags": [],
+ "featured_media": 2750,
+ "title": "半導体リソグラフィの不良とは？ピント・露光量・現像後検査で見る原因",
+ "excerpt": "光で回路の形を写すリソグラフィで、ピント（フォーカス）と光の量（ドーズ）がずれると形がくずれる理由を、プロセスウィンドウ、現像後検査、オーバーレイとあわせて、初心者向けにやさしく解説します。"
+}

@@ -1,0 +1,20 @@
+{
+ "id": 1800,
+ "type": "post",
+ "slug": "daily-news-0da342ee3d4a1aac7b4f",
+ "link": "https://semicon-campus.com/daily-news-0da342ee3d4a1aac7b4f/",
+ "date": "2026-10-04T11:00:00",
+ "modified": "2026-10-27T20:04:03",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  20
+ ],
+ "tags": [
+  19
+ ],
+ "featured_media": 2793,
+ "title": "JEDECがシリコンフォトニクス信頼性規格を公開、量産標準化の一歩",
+ "excerpt": "JEDECが公開したJESD264を初心者向けに解説。シリコンフォトニクスの仕組み、規格の対象、AIデータセンターへの意味と今後の課題を整理します。"
+}

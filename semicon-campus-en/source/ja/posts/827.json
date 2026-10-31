@@ -1,0 +1,20 @@
+{
+ "id": 827,
+ "type": "post",
+ "slug": "daily-news-ae5ef9274d40ba08f1a5",
+ "link": "https://semicon-campus.com/daily-news-ae5ef9274d40ba08f1a5/",
+ "date": "2026-09-08T10:00:00",
+ "modified": "2026-10-27T20:05:31",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  20
+ ],
+ "tags": [
+  19
+ ],
+ "featured_media": 2886,
+ "title": "Infineon、AI向け電源半導体の評価サンプル提供を発表　6mm角でピーク300A",
+ "excerpt": "Infineonが2026年9月7日、AI向け電源半導体TDA235E5・TDA235E0を発表。6mm角でピーク300Aという仕様、垂直給電の仕組み、評価サンプルと量産の違い、今後の確認点を解説します。"
+}

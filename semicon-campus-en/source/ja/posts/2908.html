@@ -1,0 +1,103 @@
+<article class="semicon-template-v2 sc-lesson" data-slug="wet-cleaning-problems-dry-cleaning" data-target="new_post" data-course="洗浄コース3級-4">
+<!--KEEP:0-->
+<div class="sc-head"><span class="sc-head-ico"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="56" height="56"><rect width="120" height="120" rx="26" fill="#12634f"/><g transform="translate(10 10)" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M50 14C50 14 26 44 26 60a24 24 0 0048 0C74 44 50 14 50 14z"/><path d="M40 62a10 10 0 0010 10" stroke="#e8a317"/><path d="M78 20l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="#e8a317" stroke="none"/></g></svg></span><span class="sc-head-txt"><span class="sc-head-sub">SEMICON CAMPUS 無料講座</span><b>洗浄コース</b><span class="sc-head-lv">3級 入門 ・ 第4講</span></span></div>
+<div class="semicon-hook">
+<p>ここまで、汚れを落とす方法を見てきました。でも、じつは、<strong>洗うこと自体にも、困りごとがあります</strong>。</p>
+<p>この記事では、液で洗う「ウェット洗浄」の課題と、液を使わない「ドライ洗浄」という考え方を、順に説明します。</p>
+</div>
+<div class="sc-legend"><mark class="sc-exam">黄色のマーカー</mark> ＝ この講座のテストに出す重要ポイント</div>
+<h2>この記事でわかること</h2>
+<ul>
+<li><strong>洗いすぎると、なぜ困るのか</strong>（表面があれる）</li>
+<li><strong>ウェット洗浄の5つの課題</strong></li>
+<li><strong>ドライ洗浄には、どんな方法があるのか</strong></li>
+</ul>
+<h2 data-fact-ids="W13">① 洗いすぎると、表面があれる</h2>
+<p>KTH（スウェーデン王立工科大学）の講義資料は、ウェット洗浄の問題として、まず<mark class="sc-exam">表面のあれ（マイクロラフネス）</mark>をあげています。洗う液や、汚れの金属が、シリコンの表面をけずってしまい、ごく細かいでこぼこができる、という問題です。とくに、SC-1に入っている<strong>アンモニア水の濃度が高いと、シリコンをけずって傷める</strong>と説明されています。</p>
+<figure><svg viewBox="0 0 640 230" role="img" aria-label="洗い方で変わる表面の状態（断面）">
+<text x="150" y="24" font-size="16" font-weight="700" fill="#2e9e5b" text-anchor="middle">ほどよく洗う</text>
+<text x="490" y="24" font-size="16" font-weight="700" fill="#d6455d" text-anchor="middle">洗いすぎる</text>
+<rect x="20" y="110" width="260" height="90" fill="#cfd8e3"/>
+<path d="M20 110H280" stroke="#2e9e5b" stroke-width="4"/>
+<text x="150" y="160" font-size="13" fill="#1b2430" text-anchor="middle">シリコン</text>
+<text x="150" y="95" font-size="13" fill="#1b2430" text-anchor="middle">表面がなめらか</text>
+<polygon points="360,100 380,82 400,104 420,80 440,106 460,84 480,102 500,78 520,106 540,82 560,100 580,84 600,100 620,90 620,200 360,200" fill="#cfd8e3" stroke="#d6455d" stroke-width="3" stroke-linejoin="round"/><text x="490" y="160" font-size="13" fill="#1b2430" text-anchor="middle">シリコン</text>
+<text x="490" y="52" font-size="13" fill="#1b2430" text-anchor="middle">でこぼこ（マイクロラフネス）</text>
+<text x="490" y="70" font-size="12" fill="#5b6877" text-anchor="middle">アンモニア水が濃い・温度が高い・時間が長い</text>
+<path d="M300 150h40" stroke="#1b2430" stroke-width="3"/><path d="M332 143l10 7-10 7" fill="none" stroke="#1b2430" stroke-width="3"/>
+<text x="320" y="190" font-size="12" fill="#5b6877" text-anchor="middle">洗いすぎ</text>
+<text x="320" y="222" font-size="12" fill="#5b6877" text-anchor="middle">結果：電気を運ぶ粒が動きにくくなり、ゲート酸化膜の品質も落ちる</text>
+</svg><figcaption>図1　洗いすぎで表面があれるイメージ（模式図。KTHの講義資料の説明をもとに作成）</figcaption></figure>
+<div class="sc-box sc-why"><b class="t">なぜ、表面があれると困るのか？</b><p>KTHの資料によると、表面があれると、トランジスタの通り道（チャネル）で電気を運ぶ粒の動きやすさ（キャリア移動度）が下がります。また、熱でつくったゲート酸化膜の品質と、こわれにくさ（絶縁破壊電圧）にも、大きな悪影響があります。つまり、<strong>汚れを落とすために洗って、トランジスタの性能を落としてしまう</strong>ことがあるのです。</p></div>
+<div class="sc-box sc-ev"><b class="t">根拠</b><p>KTH IH2655「Lecture 3: Wafer Clean and Wet Processing」（Mikael Östling、2012年）の「Problems in Wet Cleaning」のスライド。</p></div>
+<details class="semicon-quiz"><summary>確認クイズ：SC-1で、何の濃度が高いと、シリコンの表面が傷みやすいですか？</summary><p>答え：アンモニア水（NH4OH）の濃度です。</p></details>
+<h2 data-fact-ids="W14">② あれを減らす3つの方法</h2>
+<p>KTHの資料が示す対策は、次の3つです。</p>
+<ul>
+<li><mark class="sc-exam">アンモニア水の濃度を下げる</mark></li>
+<li><mark class="sc-exam">洗う温度を下げる</mark></li>
+<li><mark class="sc-exam">洗う時間を短くする</mark></li>
+</ul>
+<p>第3講で見た、IMECの「アンモニア水：過酸化水素水：純水＝0.05：1：5」は、この1つ目の考え方の例です。</p>
+<div class="sc-box sc-num"><b class="t">数字で考えてみよう</b><p>10リットルの液をつくるとき、アンモニア水はどれくらい必要でしょう。</p><p>標準のSC-1（1：1：5）は合計7なので、10 × 1 ÷ 7 ≒ <strong>1.43リットル</strong>。IMECの方法（0.05：1：5）は合計6.05なので、10 × 0.05 ÷ 6.05 ≒ <strong>0.083リットル（83ミリリットル）</strong>。</p><p>1.43 ÷ 0.083 ≒ <strong>約17倍</strong>の差です。（「0.05と1の差は20倍」でも、全体の合計がちがうため、約17倍になります）</p></div>
+<details class="semicon-quiz"><summary>確認クイズ：表面のあれを減らす方法を、3つ答えてください。</summary><p>答え：アンモニア水の濃度を下げる、温度を下げる、時間を短くする、です。</p></details>
+<h2 data-fact-ids="W15">③ ウェット洗浄の5つの課題</h2>
+<p>KTHの資料は、ウェット洗浄の課題として、あれのほかにも、次の5つをあげています。</p>
+<ul>
+<li><mark class="sc-exam">粒子をもちこむことがある</mark>（薬品や純水に、粒子がふくまれる）</li>
+<li><mark class="sc-exam">乾かすのがむずかしい</mark></li>
+<li><mark class="sc-exam">コストがかかる</mark></li>
+<li><mark class="sc-exam">廃液の処理が必要</mark></li>
+<li><mark class="sc-exam">先端の集積技術と相性が悪くなってきた</mark></li>
+</ul>
+<div class="sc-box sc-why"><b class="t">なぜ、洗うのに、粒子をもちこむのか？</b><p>洗う液も、純水も、100％きれいとは限らないからです。KTHの資料には、半導体用の薬品の中に含まれる粒子の数を示すグラフもあります。<strong>洗う道具（液）が汚れていれば、洗うほど汚れる</strong>ことになってしまいます。</p></div>
+<div class="sc-box sc-num"><b class="t">数字で考えてみよう</b><p>第1講で、約400工程のうち約80が洗浄でした。もし、洗浄1回につき、薬品や純水が10リットルいるとすると、80 × 10 ＝ <strong>800リットル</strong>（1枚のウェハが通る道のりで）。（10リットルは、考え方を示すための例です）</p><p>回数が多いほど、コストや廃液も増えます。洗い方を工夫する意味が、数字でわかります。</p></div>
+<details class="semicon-quiz"><summary>確認クイズ：ウェット洗浄の課題を、1つ答えてください。</summary><p>答え：（例）粒子をもちこむ、乾かしにくい、コストがかかる、廃液の処理が必要、先端技術と相性が悪い、のどれか。</p></details>
+<figure><svg viewBox="0 0 640 300" role="img" aria-label="ウェット洗浄の課題とドライ洗浄の方法">
+<rect x="0" y="0" width="310" height="300" rx="12" fill="#e8f0fc" stroke="#1f5fbf" stroke-width="2"/>
+<text x="155" y="30" font-size="17" font-weight="700" fill="#1f5fbf" text-anchor="middle">ウェット洗浄（液で洗う）</text>
+<text x="155" y="52" font-size="12" fill="#5b6877" text-anchor="middle">5つの課題</text>
+<g font-size="14" fill="#1b2430"><text x="24" y="86">① 粒子をもちこむことがある</text><text x="24" y="122">② 乾かすのがむずかしい</text><text x="24" y="158">③ コストがかかる</text><text x="24" y="194">④ 廃液の処理が必要</text><text x="24" y="230">⑤ 先端技術と相性が悪い</text><text x="24" y="266" font-weight="700" fill="#d6455d">＋ 洗いすぎで表面があれる</text></g>
+<rect x="330" y="0" width="310" height="300" rx="12" fill="#e9f6ee" stroke="#2e9e5b" stroke-width="2"/>
+<text x="485" y="30" font-size="17" font-weight="700" fill="#2e9e5b" text-anchor="middle">ドライ洗浄（液を使わない）</text>
+<text x="485" y="52" font-size="12" fill="#5b6877" text-anchor="middle">4つの方法</text>
+<g font-size="14" fill="#1b2430"><text x="354" y="86">① HF／水蒸気（ガス）</text><text x="354" y="122">② 紫外線オゾン洗浄</text><text x="354" y="158">③ 水素／アルゴンのプラズマ</text><text x="354" y="194">④ 加熱による洗浄</text><text x="354" y="240" font-weight="700" fill="#b87800">気をつけること：</text><text x="354" y="262">エネルギーで、ウェハを</text><text x="354" y="282">傷めないようにする</text></g>
+<path d="M312 150h16" stroke="#1b2430" stroke-width="3"/>
+</svg><figcaption>図2　ウェット洗浄の課題と、ドライ洗浄の方法（KTHの講義資料の整理）</figcaption></figure>
+<h2 data-fact-ids="W16">④ 液を使わない「ドライ洗浄」</h2>
+<p>そこで考えられたのが、<mark class="sc-exam">液を使わず、ガスやエネルギーで汚れを落とす「ドライ洗浄」</mark>です。KTHの資料は、方法として次の4つを紹介しています。</p>
+<ul>
+<li><strong>HF／水蒸気（ガス）による洗浄：</strong>フッ酸の蒸気で、自然酸化膜を落とす</li>
+<li><strong>紫外線オゾン洗浄（UVOC）：</strong>紫外線とオゾンで、有機物を分解する</li>
+<li><strong>水素／アルゴンのプラズマ洗浄</strong></li>
+<li><strong>加熱による洗浄</strong></li>
+</ul>
+<div class="sc-box sc-why"><b class="t">ドライ洗浄で、気をつけることは？</b><p>低い温度で反応を起こすには、エネルギーが必要です。そのエネルギーは、プラズマ、イオンビーム、短い波長の光、熱などから与えます。ただし、<mark class="sc-exam">そのエネルギーで、ウェハを傷めないようにすること</mark>が大切だと、KTHの資料は述べています。</p></div>
+<h2>⑤ 洗う「入れもの」も大切</h2>
+<p>薬品を入れる容器や、ウェハを運ぶ入れもの（キャリア）も、汚れの原因になります。KTHの資料では、<mark class="sc-exam">SC-1・SC-2などは、石英またはテフロンの容器</mark>、<mark class="sc-exam">フッ酸は、テフロンの容器</mark>を使う、ウェハのキャリアは、石英かテフロンだけ、とされています。</p>
+<div class="sc-box sc-key"><b class="t">この講のポイント</b><p>洗いすぎは、表面をあらして、トランジスタの性能を落とす。対策は、濃度・温度・時間を下げること。ウェット洗浄には、粒子・乾燥・コスト・廃液・先端技術との相性という課題があり、ドライ洗浄も使われる。</p></div>
+<p>次の記事では、洗浄の「出来ばえ」を、どうやって確かめるのかを見ていきます。</p>
+<h2>ことばのおさらい</h2>
+<ul>
+<li><strong>マイクロラフネス：</strong>表面にできる、ごく細かいでこぼこです。</li>
+<li><strong>ウェット洗浄：</strong>液を使って洗う方法です。</li>
+<li><strong>ドライ洗浄：</strong>液を使わず、ガスやエネルギーで洗う方法です。</li>
+<li><strong>テフロン・石英：</strong>薬品にも強く、汚れが出にくい容器の材料です。</li>
+</ul>
+<h2>よくある誤解</h2>
+<h3>Q. たくさん洗うほど、きれいになりますか？</h3>
+<p>いいえ。洗いすぎると、表面があれて、トランジスタの性能が落ちることがあります。</p>
+<h3>Q. 液で洗えば、ぜったいに粒子は増えませんか？</h3>
+<p>いいえ。薬品や純水にふくまれる粒子が、ウェハにつくことがあります。</p>
+<h2>参考にした公式情報</h2>
+<ul class="semicon-sources sc-sources">
+<li data-source-id="S03"><a href="https://www.kth.se/social/upload/4f1d17ccf27654791f000000/Lecture%203.pdf">KTH Royal Institute of Technology, IH2655「Lecture 3: Wafer Clean and Wet Processing」（Mikael Östling、2012年春）</a></li>
+</ul>
+</article>
+
+
+<div id="sc-read" style="max-width:720px;margin:28px auto 0"></div>
+<!--KEEP:1-->
+<!--KEEP:2-->
+
+<aside class="course-nav-wash3"><h2>洗浄3級コースの他の講義</h2><p><a href="/wash-3/">洗浄3級コース一覧へ戻る</a></p><ul><li><a href="/semiconductor-why-wafer-cleaning/">半導体洗浄はなぜ何度も必要？洗浄工程の役割と理由</a></li><li><a href="/semiconductor-wafer-contamination-types/">半導体洗浄で落とす汚れ4種類：粒子・有機物・金属・自然酸化膜</a></li><li><a href="/rca-clean-sc1-sc2/">半導体洗浄の基本「RCA洗浄」：SC-1とSC-2の中身と順番の理由</a></li><li><a href="/wafer-cleanliness-measurement/">半導体洗浄の評価方法：粒子・金属・有機物の測り方</a></li><li><a href="/cleanroom-class-contamination-sources/">クリーンルームのクラス規格（ISO 14644-1・米国連邦規格）の読み方とFFU・ULPAフィルタ【洗浄3級・第1講 補講】</a></li><li><a href="/native-oxide-hf-last-hydrogen-termination/">自然酸化膜はどのくらいで戻る？フッ酸のあとの表面と「水素終端」【洗浄3級・第2講 補講】</a></li><li><a href="/rca-clean-history-sc1-particle-removal/">SC-1洗浄（APM）のメカニズム｜ゼータ電位とアンモニア・過酸化水素水でパーティクルを除去する原理【洗浄3級・第3講 補講】</a></li><li><a href="/batch-vs-single-wafer-cleaning-one-bath/">バッチ洗浄と枚葉洗浄のちがい：複数槽から1槽方式への進化【洗浄3級・第4講 補講】</a></li><li><a href="/txrf-total-reflection-xray-fluorescence-basics/">TXRFの仕組み：全反射で、ウェハ表面の金属を測る【洗浄3級・第5講 補講】</a></li><li><a href="/ultrapure-water-rinse-drying-watermark/">半導体ウェハ乾燥（マランゴニ乾燥・IPA乾燥）とウォーターマーク対策｜超純水のすすぎと乾燥</a></li><li><a href="/wafer-cleaning-chemical-safety-hydrofluoric-acid/">洗浄で使う薬液の安全：フッ酸は、痛くなくても危険</a></li></ul><p>洗浄装置メーカーを知りたい方は、<a href="/what-is-screen-semiconductor-cleaning-equipment/">SCREENとは何がすごい？半導体洗浄装置と関わる工程・職種を初心者向けに解説</a>もどうぞ。</p></aside>

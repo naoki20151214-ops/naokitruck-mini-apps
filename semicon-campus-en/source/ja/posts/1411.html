@@ -1,0 +1,174 @@
+<!--KEEP:0-->
+<article id="semicon-ep091" class="semicon-template-v2" data-episode="091" data-slug="vacuum-gauge" data-target="new_post">
+<div class="semicon-hook">
+<p>真空装置の扉を閉め、ポンプを動かす。表示の数字が下がっていく。</p>
+<p>でも、その数字がいつもより下がらないとき、何が起きているのでしょうか。</p>
+<p>真空計の仕組みがわかると、「数字を見る」が「装置の状態を考える」に変わります。</p>
+</div>
+<p>半導体の製造装置は、大気圧から低い圧力へ排気し、必要に応じてガスを入れながらウェハを処理します。この記事の中心は、<strong>大きく変わる圧力をどう測り、なぜ複数の真空計を使い分けるのか</strong>です。測定原理を理解したあとで、設備保全や生産技術の仕事で表示値をどう読むかまで考えます。</p>
+<h2>この記事でわかること</h2>
+<ul>
+<li>真空でも圧力が存在し、その圧力を測る理由</li>
+<li>ピラニ・隔膜・電離という測定方式が見ているもの</li>
+<li>排気、ガス導入、異常時の数字を読むための考え方</li>
+</ul>
+<h2 id="why">1．真空計がなければ「必要な状態になったか」がわからない</h2>
+<p data-fact-ids="F001 F008">半導体製造装置でいうチャンバーは、ウェハを処理するための容器・空間です。ポンプが動いていることと、チャンバー内が必要な圧力に達したことは同じではありません。真空計は、その空間の圧力を数字に変えるセンサーです。</p>
+<p>たとえば、ポンプが運転していても、外から気体が入り続けたり、排気経路の状態が変わったりすれば、圧力の下がり方は変わります。真空計がなければ、「排気を始めた」という動作はわかっても、「中がどうなったか」を圧力で確認できません。</p>
+<p data-fact-ids="F008">処理中の圧力は、ガス、プラズマ、物質の輸送、反応の条件に関係します。プラズマとは、気体の一部が電離して、電子やイオンを含む状態です。圧力が違えば処理条件も変わり得るため、真空計は排気の確認だけでなく、工程の条件を管理するためにも使われます。ただし、圧力を上げれば必ず品質が良くなる、という単純な関係ではありません。</p>
+<p>半導体製造のクリーンルームの写真を見ると、ウェハの周囲に多くの装置があることがわかります。ここで学ぶ圧力の測定は、チップ内部の信号ではなく、こうした製造装置の状態を知るための計測です。</p>
+<figure data-media-role="explanatory-image-01" data-visual-kind="photo" data-subject="半導体製造のクリーンルーム" data-purpose="fabrication-context" data-composition="facility-wide" data-concrete-object="true" data-selection-reason="実在の半導体製造設備の写真で、本文の計測対象がチップ内部ではなく装置側にあることを示す。" data-photo-assessment="利用可能な実物写真の被写体と権利を確認し、本文の装置状態の説明に合う具体物を選択した。" data-provenance="articles/images/episode091/provenance/01-fabrication-context.md"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep091-01-fabrication-context-094cb27d9e24.webp" width="1280" height="688" alt="半導体製造のクリーンルーム" loading="lazy"><figcaption>半導体製造のクリーンルーム。実在の半導体製造設備の写真で、本文の計測対象がチップ内部ではなく装置側にあることを示す。<br />出典：<a href="https://commons.wikimedia.org/wiki/File:How_ST_designs_and_manufactures_semiconductor_devices_-_screenshot_1.png">Wikimedia Commons個別写真</a>／作者：STMicroelectronics (original work) Una tantum (screenshot)／<a href="https://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>。加工：長辺1280px以内に縮小・WebP変換（トリミングなし）。</figcaption></figure>
+<p>処理装置から取り出すウェハも、装置と製品のつながりを想像する手がかりになります。写真だけから装置の圧力や真空計の構成は判定できませんが、装置内の条件を整えてから製品を扱う、という視点は持てます。</p>
+<figure data-media-role="explanatory-image-02" data-visual-kind="photo" data-subject="処理装置から取り出すウェハ" data-purpose="wafer-process-context" data-composition="wafer-tool" data-concrete-object="true" data-selection-reason="実際のウェハと処理装置の写真。排気動作や特定の真空計構成をこの静止画から断定しない。" data-photo-assessment="利用可能な実物写真の被写体と権利を確認し、本文の装置状態の説明に合う具体物を選択した。" data-provenance="articles/images/episode091/provenance/02-wafer-process-context.md"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep091-02-wafer-process-context-ed101e7c36de.webp" width="1280" height="692" alt="処理装置から取り出すウェハ" loading="lazy"><figcaption>処理装置から取り出すウェハ。実際のウェハと処理装置の写真。排気動作や特定の真空計構成をこの静止画から断定しない。<br />出典：<a href="https://commons.wikimedia.org/wiki/File:A_semiconductor_wafer_being_removed_from_processing_equipment.jpg">Wikimedia Commons個別写真</a>／作者：YouTube — Purdue Engineering／<a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>。加工：長辺1280px以内に縮小・WebP変換（トリミングなし）。</figcaption></figure>
+<h2 id="pressure">2．「真空」は何もない空間ではなく、気体が少ない状態</h2>
+<p data-fact-ids="F001">真空という言葉から、気体が完全に消えた空間を思い浮かべるかもしれません。しかし、実際の真空装置には通常、残った気体があります。真空とは、通常の大気圧より低い圧力の状態を扱う言葉です。「真空度が高い」は、「圧力が低い」と読み替えると理解しやすくなります。</p>
+<p>圧力は、気体が壁などへ及ぼす力を、単位面積当たりで表したものです。温度が同じなら、気体の分子数密度が小さくなるほど圧力も低くなる、という関係で考えられます。排気とは、この容器内の気体を取り除き、圧力を下げていく過程です。</p>
+<p data-fact-ids="F002">単位にはPa（パスカル）を使います。資料や装置によってTorrやmbarを使う場合もあるため、数字を比較するときは単位まで読む必要があります。また、完全真空を0とする「絶対圧」と、大気圧などを基準にした差で表す「ゲージ圧」は基準が違います。名称にGaugeと付いていても、その表示がゲージ圧とは限りません。</p>
+<div class="semicon-note">
+<p><strong>表示の「0」は、気体が完全にゼロという証明ではありません。</strong>計器の測定範囲や表示・調整条件を確認して読みます。ゼロ点を調整する操作と、標準と比較して測定特性を確認する校正も、別のものです。</p>
+</div>
+<p>排気に使う真空ポンプの写真は、気体を取り除く機器の具体例です。この写真のポンプが、特定の半導体製造工程で使われていることを示すものではありません。</p>
+<figure data-media-role="explanatory-image-03" data-visual-kind="photo" data-subject="排気に使う真空ポンプ" data-purpose="pumpdown-object" data-composition="pump-closeup" data-concrete-object="true" data-selection-reason="実物の真空ポンプ。一般的な排気の具体物として示す写真で、半導体量産装置の採用機種とは扱わない。" data-photo-assessment="利用可能な実物写真の被写体と権利を確認し、本文の装置状態の説明に合う具体物を選択した。" data-provenance="articles/images/episode091/provenance/03-pumpdown-object.md"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep091-03-pumpdown-object-cb1a07d8afe4.webp" width="914" height="1280" alt="排気に使う真空ポンプ" loading="lazy"><figcaption>排気に使う真空ポンプ。実物の真空ポンプ。一般的な排気の具体物として示す写真で、半導体量産装置の採用機種とは扱わない。<br />出典：<a href="https://commons.wikimedia.org/wiki/File:Oil_vacuum_pump-small.jpg">Wikimedia Commons個別写真</a>／作者：real name: Nadina Wiórkiewicz pl.wiki: Nadine90 commons: Nadine90／<a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>。加工：長辺1280px以内に縮小・WebP変換（トリミングなし）。</figcaption></figure>
+<h3>圧力が下がると、扱う真空領域が変わる</h3>
+<p data-fact-ids="F003">真空は広い圧力範囲を扱います。次の区分は、JIS Z 8126-1:2021の改正についての学会資料に基づくものです。領域名を暗記するより、装置の圧力が桁違いに変わることに注目してください。<a class="semicon-source-ref" href="#source-R1">［R1］</a></p>
+<div class="semicon-table-wrap" role="region" aria-label="真空領域と圧力の対応">
+<table>
+<thead>
+<tr>
+<th scope="col">真空領域</th>
+<th scope="col">圧力 p（Pa）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>低真空</td>
+<td>大気圧未満、100以上</td>
+</tr>
+<tr>
+<td>中真空</td>
+<td>0.1以上、100未満</td>
+</tr>
+<tr>
+<td>高真空</td>
+<td>10⁻⁶以上、0.1未満</td>
+</tr>
+<tr>
+<td>超高真空</td>
+<td>10⁻⁹以上、10⁻⁶未満</td>
+</tr>
+<tr>
+<td>極高真空</td>
+<td>10⁻⁹未満</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>10⁻⁶ Paは0.000001 Paです。大気圧付近の状態と、このような低圧の状態では、計器が検出する変化の大きさも違います。すべての半導体装置が表の最も低い圧力まで排気するわけではなく、必要な圧力は工程と装置の設計によります。</p>
+<h2 id="range">3．なぜ、1種類の真空計では足りないのか</h2>
+<p data-fact-ids="F004">大きく違う圧力を測るには、広い範囲で、検出できる変化が得られなければなりません。気体が熱を運ぶ性質を使う方式、圧力で膜が変形することを使う方式、気体を電離して電流を測る方式では、得意な範囲と、数字に影響する条件が違います。</p>
+<p>排気を始めたときに使える方式が、ずっと低い圧力でも同じ精度で使えるとは限りません。逆に、高真空側を測る方式だけで、大気圧付近からの変化をすべて把握することもできません。そこで、測定範囲が重なる部分を含めて、複数方式を組み合わせます。</p>
+<p>半導体製造設備が並ぶクリーンルームの写真では、機器が装置の中や周囲に取り付けられる様子を想像できます。ただし、外観だけで真空計の種類や接続位置まで決めつけることはできません。実務では装置の資料で確認します。</p>
+<figure data-media-role="explanatory-image-04" data-visual-kind="photo" data-subject="半導体製造設備が並ぶクリーンルーム" data-purpose="equipment-location" data-composition="equipment-wide" data-concrete-object="true" data-selection-reason="半導体の製造設備を示す写真。装置名、プロセス値、見えない気体の量は写真から推定しない。" data-photo-assessment="利用可能な実物写真の被写体と権利を確認し、本文の装置状態の説明に合う具体物を選択した。" data-provenance="articles/images/episode091/provenance/04-equipment-location.md"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep091-04-equipment-location-c28f97e9ae83.webp" width="1280" height="992" alt="半導体製造設備が並ぶクリーンルーム" loading="lazy"><figcaption>半導体製造設備が並ぶクリーンルーム。半導体の製造設備を示す写真。装置名、プロセス値、見えない気体の量は写真から推定しない。<br />出典：<a href="https://commons.wikimedia.org/wiki/File:Clean_room.jpg">Wikimedia Commons個別写真</a>／作者：Uploaded by Duk 08:45, 16 Feb 2005 (UTC)／<a href="https://commons.wikimedia.org/wiki/Commons:Public_domain">Public domain</a>。加工：長辺1280px以内に縮小・WebP変換（トリミングなし）。</figcaption></figure>
+<div class="semicon-note">
+<p>「ピラニなら何Paから何Pa」という一律の数字では選びません。製品の型式、測定範囲、精度、対象ガスなどを確認します。同じ方式名でも製品仕様は違います。<a class="semicon-source-ref" href="#source-R6">［R6］</a><a class="semicon-source-ref" href="#source-R9">［R9］</a></p>
+</div>
+<h2 id="pirani">4．排気の進み方を、気体が運ぶ熱から読む──ピラニ真空計</h2>
+<p data-fact-ids="F005">ピラニ真空計（Pirani Gauge）は、気体が熱を運ぶ性質を使う「熱伝導型」の真空計です。センサー内部には、加熱する細い線などの測定部分があります。その周囲の気体へ逃げる熱の量が、圧力に応じて変わることを利用します。</p>
+<p>たとえば測定部分の温度を一定に保つ方式では、そのために供給する電力を見ます。排気が進んで周囲の気体が減ると、気体を通して失われる熱が変わります。その変化を圧力へ換算して表示します。ULVACの公式説明も、熱損失と供給電力の関係で原理を説明しています。<a class="semicon-source-ref" href="#source-R4">［R4］</a></p>
+<p>フランジを備えたピラニセンサーの写真では、装置とつながる部分や接続部が見えます。フランジとは、機器や配管を接続するためのつば状の部分です。圧力の数字は、このような実物のセンサーと配線を通して得られます。</p>
+<figure data-media-role="explanatory-image-05" data-visual-kind="photo" data-subject="フランジを備えたピラニセンサー" data-purpose="pirani-housing" data-composition="sensor-connector" data-concrete-object="true" data-selection-reason="実物のピラニセンサー外観。フランジと筐体を示し、隔膜型センサーの写真として流用しない。" data-photo-assessment="利用可能な実物写真の被写体と権利を確認し、本文の装置状態の説明に合う具体物を選択した。" data-provenance="articles/images/episode091/provenance/05-pirani-housing.md"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep091-05-pirani-housing-e0fe90b4d30b.webp" width="1092" height="727" alt="フランジを備えたピラニセンサー" loading="lazy"><figcaption>フランジを備えたピラニセンサー。実物のピラニセンサー外観。フランジと筐体を示し、隔膜型センサーの写真として流用しない。<br />出典：<a href="https://commons.wikimedia.org/wiki/File:Pirani_sensor.jpg">Wikimedia Commons個別写真</a>／作者：Ulfbastel／<a href="https://commons.wikimedia.org/wiki/Commons:Public_domain">Public domain</a>。加工：長辺1280px以内に縮小・WebP変換（トリミングなし）。</figcaption></figure>
+<p>ピラニ真空計のセンサー部分を見ておくと、画面上の数字の裏側に測定部分があると理解できます。写真は原理を想像するための実物例で、本文が特定型式の分解や交換を指示するものではありません。</p>
+<figure data-media-role="explanatory-image-06" data-visual-kind="photo" data-subject="ピラニ真空計のセンサー部分" data-purpose="pirani-sensing-element" data-composition="element-closeup" data-concrete-object="true" data-selection-reason="ピラニ真空計の実物写真。写真の表示や部品寸法から測定レンジや温度を断定しない。" data-photo-assessment="利用可能な実物写真の被写体と権利を確認し、本文の装置状態の説明に合う具体物を選択した。" data-provenance="articles/images/episode091/provenance/06-pirani-sensing-element.md"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep091-06-pirani-sensing-element-bbc17dcb4685.webp" width="1280" height="569" alt="ピラニ真空計のセンサー部分" loading="lazy"><figcaption>ピラニ真空計のセンサー部分。ピラニ真空計の実物写真。写真の表示や部品寸法から測定レンジや温度を断定しない。<br />出典：<a href="https://commons.wikimedia.org/wiki/File:Pirani_02.jpg">Wikimedia Commons個別写真</a>／作者：ErwinMeier／<a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>。加工：長辺1280px以内に縮小・WebP変換（トリミングなし）。</figcaption></figure>
+<h3>気体の種類が変わると、同じ圧力でも表示に影響する</h3>
+<p data-fact-ids="F005">熱の運ばれ方は、気体の種類によっても違います。そのためピラニ真空計では、圧力だけでなく、測定するガスと計器の校正条件を考える必要があります。校正で想定した気体と異なる気体を測ると、指示値が変わり得ます。<a class="semicon-source-ref" href="#source-R5">［R5］</a></p>
+<p>これが、数字をそのまま絶対的な正解として扱わない理由の一つです。排気開始から圧力が下がる傾向を見ることと、異なるガスで正確な圧力を比較することは、同じ条件ではありません。温度や測定部分の汚れなど、計器側の状態も確認対象になります。</p>
+<h2 id="capacitance">5．処理中の圧力を、膜の変形から読む──隔膜式真空計</h2>
+<p data-fact-ids="F006">キャパシタンスマノメータ（Capacitance Manometer）は、隔膜と呼ばれる薄い膜の変形を使います。圧力を受けて膜が動くと、膜と電極の間の静電容量が変わります。静電容量とは、電気を蓄える性質を表す量です。この変化から圧力を求めるため、静電容量式の隔膜真空計とも呼ばれます。</p>
+<p>気体が運ぶ熱を測るピラニとは違い、圧力による膜の変形を直接使うので、ガス種への依存が小さいことが特長です。メーカー公式資料はガス種に依存しない測定として説明しており、処理中の圧力を監視する用途にも使われます。<a class="semicon-source-ref" href="#source-R2">［R2］</a><a class="semicon-source-ref" href="#source-R3">［R3］</a></p>
+<p>ただし、この方式も一台ですべての圧力を同じように測れるわけではありません。フルスケール、つまり測定範囲の上限などが違う製品があります。工程が必要とする範囲と精度に合うものを選ぶ、という考え方は変わりません。<a class="semicon-source-ref" href="#source-R9">［R9］</a></p>
+<h2 id="ionization">6．気体がさらに少なくなったら、電離を使って読む</h2>
+<p data-fact-ids="F007">電離とは、気体の原子や分子が電子を失うなどして、電荷を持つイオンになることです。電離真空計（Ionization Gauge）は、この現象に関連する電流から、残った気体の圧力を求めます。高真空側を測る方式として使われます。</p>
+<h3>熱陰極式：加熱して電子を出す</h3>
+<p>熱陰極式（Hot Cathode）は、加熱した陰極から電子を出し、その電子で残留気体を電離します。生じた正イオンを集めて電流を測り、圧力へ換算します。陰極は、この仕組みで電子を出す側の電極です。気体が少ない状態を、気体と電子の相互作用を使って調べると考えると、ピラニとの違いが見えてきます。<a class="semicon-source-ref" href="#source-R7">［R7］</a></p>
+<p>熱陰極式の中にもBayard–Alpert型やExtractor型などの構造があります。方式名だけで測定の下限・上限を固定せず、個別仕様で確認します。また、気体の種類で感度が変わるため、表示値を比べるときにはガス条件も必要です。<a class="semicon-source-ref" href="#source-R8">［R8］</a><a class="semicon-source-ref" href="#source-R10">［R10］</a></p>
+<h3>冷陰極式：高電圧と磁場で放電を利用する</h3>
+<p>冷陰極式（Cold Cathode）は、熱陰極式のように陰極を加熱して電子を出す方式ではなく、高電圧と磁場を使う放電を利用します。放電・電離に関連する電流が圧力に応じて変わることから測定します。ペニング型や逆マグネトロン型などがあります。「冷」という文字だけから、温度の影響がない計器と考えるのは適切ではありません。<a class="semicon-source-ref" href="#source-R11">［R11］</a></p>
+<p>ペニング型真空計の電極部分の写真は、電離真空計の内部に実物の電極構造があることを示す例です。写真の構造を、すべての冷陰極式真空計へそのまま当てはめないようにします。</p>
+<figure data-media-role="explanatory-image-07" data-visual-kind="photo" data-subject="ペニング型真空計の電極部分" data-purpose="cold-cathode-object" data-composition="electrode-closeup" data-concrete-object="true" data-selection-reason="実物のペニング型電極。冷陰極型の具体物として示し、熱陰極の部品として誤用しない。" data-photo-assessment="利用可能な実物写真の被写体と権利を確認し、本文の装置状態の説明に合う具体物を選択した。" data-provenance="articles/images/episode091/provenance/07-cold-cathode-object.md"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep091-07-cold-cathode-object-71a5c16884b3.webp" width="1280" height="802" alt="ペニング型真空計の電極部分" loading="lazy"><figcaption>ペニング型真空計の電極部分。実物のペニング型電極。冷陰極型の具体物として示し、熱陰極の部品として誤用しない。<br />出典：<a href="https://commons.wikimedia.org/wiki/File:Penning_01.jpg">Wikimedia Commons個別写真</a>／作者：ErwinMeier／<a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>。加工：長辺1280px以内に縮小・WebP変換（トリミングなし）。</figcaption></figure>
+<h2 id="sequence">7．装置の時間の流れで、真空計の役割をつなぐ</h2>
+<p data-fact-ids="F004 F008">ここまでの原理を、装置の動きに重ねてみます。以下は役割を理解するための一般的な流れで、特定装置の運転手順や、固定のセンサー構成を示すものではありません。</p>
+<ol>
+<li><strong>大気圧付近から排気を開始する。</strong>まず、対応する測定範囲の真空計で圧力の下がり方を見ます。</li>
+<li><strong>圧力がさらに低くなる。</strong>高真空側に対応した方式の値を使います。範囲が重なるところでは、計器の特性を踏まえて状態を確認します。</li>
+<li><strong>必要な排気状態に到達する。</strong>所定の排気条件で到達する圧力を基底圧力（Base Pressure）と呼びます。工程ごとの基準と照らして読みます。</li>
+<li><strong>ガスを入れて処理する。</strong>今度は気体が入ることと出ることの両方が、チャンバー圧力に関係します。処理中の圧力を監視・制御する計器の役割が重要になります。</li>
+</ol>
+<p data-fact-ids="F008">MFC（Mass Flow Controller）は、導入するガスの流量を制御する機器です。一方、スロットルバルブは排気経路の気体の通りやすさを変えるバルブです。装置によっては、真空計の値を読み、バルブなどを調整して圧力を制御します。流量の設定だけで、チャンバー圧力が自動的に決まるわけではありません。</p>
+<p>研究用の真空成膜チャンバーの写真は、容器、接続部、周辺機器という具体物を想像するためのものです。研究装置の写真を、特定の量産半導体装置やガス制御方式の実例として断定しません。</p>
+<figure data-media-role="explanatory-image-08" data-visual-kind="photo" data-subject="研究用の真空成膜チャンバー" data-purpose="pressure-control-context" data-composition="chamber-wide" data-concrete-object="true" data-selection-reason="研究施設の真空成膜チャンバー。具体的な容器の例であり、半導体量産装置の写真とは主張しない。" data-photo-assessment="利用可能な実物写真の被写体と権利を確認し、本文の装置状態の説明に合う具体物を選択した。" data-provenance="articles/images/episode091/provenance/08-pressure-control-context.md"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep091-08-pressure-control-context-28627f2db2c6.webp" width="852" height="1280" alt="研究用の真空成膜チャンバー" loading="lazy"><figcaption>研究用の真空成膜チャンバー。研究施設の真空成膜チャンバー。具体的な容器の例であり、半導体量産装置の写真とは主張しない。<br />出典：<a href="https://commons.wikimedia.org/wiki/File:FZU_Optics_PJachimova_5.jpg">Wikimedia Commons個別写真</a>／作者：Akademie věd České republiky / Czech Academy of Sciences (Pavlína Jáchimová)／<a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>。加工：長辺1280px以内に縮小・WebP変換（トリミングなし）。</figcaption></figure>
+<p data-fact-ids="F004">コンビネーション真空計は、たとえばピラニと冷陰極式など、異なる原理を組み合わせた計器です。一つの製品で広い範囲を扱えても、一つの原理がすべての圧力を同じように測っているわけではありません。複数方式の役割を製品の中でつないでいるのです。<a class="semicon-source-ref" href="#source-R12">［R12］</a><a class="semicon-source-ref" href="#source-R13">［R13］</a></p>
+<div class="semicon-mid-cta">
+<p><strong>原理がわかったら、次は装置の状態を読む練習です。</strong>製造現場で慣れ親しんだ「いつもとの差を見る」という観察を、圧力の変化にも重ねてみましょう。<a href="#maintenance">次の節で、異常時の考え方を読む</a></p>
+</div>
+<h2 id="maintenance">8．設備保全では、数字の高さだけでなく「動き方」を見る</h2>
+<p data-fact-ids="F009">同じ到達圧力でも、そこまでにかかった時間や、途中の変化が違うことがあります。保全担当者は、一点の数字だけでなく、排気開始からの圧力の推移を、通常の履歴や装置条件と比べます。排気曲線とは、時間に対して圧力がどう変わったかを表す記録です。</p>
+<p>たとえば「いつもより下がりにくい」という観察から始めます。そのとき、真空計が故障した、とすぐ決めません。気体が入り込むリーク、ポンプやバルブの状態、シール部、部材から放出される気体など、装置側の候補があります。さらに、センサーの汚れ、配線、電源、調整や校正の状態という計測側の候補もあります。</p>
+<h3>同じ表示でも、考える候補を分ける</h3>
+<ul>
+<li><strong>排気中に圧力が下がらない：</strong>通常の排気履歴と比較し、ポンプ、排気経路、ガス流入、計器状態などを候補として整理する。</li>
+<li><strong>ガス導入に合わせて表示が変わった：</strong>ガス流量やバルブ状態に加え、計器のガス種依存も考える。</li>
+<li><strong>一つの計器だけが違う値を示す：</strong>他の計器の範囲、測定位置、ガス条件を揃えて比較し、計測側の要因も調べる。</li>
+</ul>
+<p>これは、表示だけで原因を確定する表ではありません。たとえば高い圧力はリークの可能性を考える材料にはなりますが、それだけでリークと断定はできません。観察した事実と、その事実から考えた原因候補を分けて記録すると、次に何を確認するかが明確になります。</p>
+<p>ピラニ真空計の外観を改めて見ると、「センサー」「接続」「表示」という実物の連なりを意識できます。装置の内部状態だけでなく、数字を得る経路にも確認対象があるということです。</p>
+<figure data-media-role="explanatory-image-09" data-visual-kind="photo" data-subject="ピラニ真空計の外観" data-purpose="measurement-inspection" data-composition="instrument-overview" data-concrete-object="true" data-selection-reason="ピラニ真空計の実物外観。値が動く様子や校正結果をこの写真から読み取らない。" data-photo-assessment="利用可能な実物写真の被写体と権利を確認し、本文の装置状態の説明に合う具体物を選択した。" data-provenance="articles/images/episode091/provenance/09-measurement-inspection.md"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep091-09-measurement-inspection-4cdbe98f421b.webp" width="1280" height="536" alt="ピラニ真空計の外観" loading="lazy"><figcaption>ピラニ真空計の外観。ピラニ真空計の実物外観。値が動く様子や校正結果をこの写真から読み取らない。<br />出典：<a href="https://commons.wikimedia.org/wiki/File:Pirani_01.jpg">Wikimedia Commons個別写真</a>／作者：ErwinMeier／<a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>。加工：長辺1280px以内に縮小・WebP変換（トリミングなし）。</figcaption></figure>
+<h3>別の真空計との比較も、条件を揃えてから</h3>
+<p data-fact-ids="F005 F007 F010">二つの表示が違う場合、どちらかが壊れているとは限りません。ピラニや電離真空計にはガス種依存があり、感度や校正係数が関係します。測定範囲、場所、温度、汚れなども含めて読みます。<a class="semicon-source-ref" href="#source-R14">［R14］</a></p>
+<p>校正は、標準との比較によって計器の測定特性を確認することです。ゼロ調整をしたから、すべての範囲で正確になった、と判断しないようにします。また、校正の周期をすべての真空計で一律に決めるのではなく、必要な精度、使用条件、履歴を踏まえて管理します。</p>
+<div class="semicon-note">
+<p>異常時に装置が停止するかどうかも、インターロックや制御の設計によります。インターロックは、条件に応じて動作を許可・制限する仕組みです。本文は保護機能の解除や調整作業を勧めるものではありません。実際の確認・操作は、その装置の手順と担当範囲に従います。</p>
+</div>
+<h2 id="career">9．「数字から原因候補を考える」が、仕事につながる</h2>
+<p>設備保全や生産技術の仕事を理解するうえで、この学習の到達点は真空計の名称を覚えることだけではありません。大切なのは、数字がどの原理で得られ、その数字を変える条件は何かを考えられることです。</p>
+<p>製造現場で、設備音、温度、時間、製品の状態をいつもの状態と比べてきた経験があれば、ここにも似た思考の順序を見つけられます。まず「いつもと違う」を具体的に記録する。次に、工程や装置の動きと照らす。そのあとで、原因候補を整理する。半導体装置では、その観察対象の一つが圧力になります。</p>
+<p>たとえば「真空計の値が高い」という報告を、「排気開始後のこの時点で、通常の履歴より高い。ガス導入条件はこうだった」と説明できれば、状態を共有しやすくなります。そのうえで、排気側、ガス側、計測側という候補を分けて考えます。これは知識を単語から、仕事で使う判断材料へ変える練習です。</p>
+<p>ウェハを扱う研究者の写真は、装置の条件と半導体の実物がつながる場面を想像するためのものです。写真の人物を設備保全担当者と断定するものではありません。</p>
+<figure data-media-role="explanatory-image-10" data-visual-kind="photo" data-subject="ウェハを扱う研究者" data-purpose="career-context" data-composition="person-wafer" data-concrete-object="true" data-selection-reason="ウェハを扱う研究者の写真。設備保全の作業を撮影したとは主張せず、製造技術に関わる具体物を示す。" data-photo-assessment="利用可能な実物写真の被写体と権利を確認し、本文の装置状態の説明に合う具体物を選択した。" data-provenance="articles/images/episode091/provenance/10-career-context.md"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep091-10-career-context-1cdb6d19e412.webp" width="1280" height="853" alt="ウェハを扱う研究者" loading="lazy"><figcaption>ウェハを扱う研究者。ウェハを扱う研究者の写真。設備保全の作業を撮影したとは主張せず、製造技術に関わる具体物を示す。<br />出典：<a href="https://commons.wikimedia.org/wiki/File:Silicon_wafer_researcher.jpg">Wikimedia Commons個別写真</a>／作者：U.S. Department of Energy／<a href="https://commons.wikimedia.org/wiki/Commons:Public_domain">Public domain</a>。加工：長辺1280px以内に縮小・WebP変換（トリミングなし）。</figcaption></figure>
+<div class="semicon-career-cta">
+<p><strong>学んだ知識を、装置の仕事へつなげる</strong></p>
+<p>圧力の数字から装置状態を考える視点が見えてきたら、半導体製造装置エンジニアがどんな仕事をするのかも確認してみてください。</p>
+<p><a class="semicon-cta-link" href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/">半導体製造装置エンジニアの仕事を知る</a></div>
+<h2>よくある誤解</h2>
+<h3>Q. 真空度が高いなら、圧力の数字も大きいのですか？</h3>
+<p>逆です。真空度が高いほど、圧力は低くなります。「真空度」と「圧力」を混ぜず、表示の単位と基準を確認して読みます。完全に気体がないことを、表示値だけで証明できるわけでもありません。</p>
+<h3>Q. ガス種に依存しにくい隔膜式だけ使えばよいのですか？</h3>
+<p>ガス種への依存が小さいことと、すべての範囲を測れることは別です。必要な範囲と精度に合う製品を選び、高真空側などの目的に応じて別方式も使います。複数の計器は、測定範囲と用途を補い合います。</p>
+<h3>Q. 圧力が下がらなければ、真空計を交換すれば直りますか？</h3>
+<p>表示異常の原因が計器とは限りません。実際のガス流入や排気の変化もあり得ます。通常の履歴、他の計器、ポンプやバルブ、ガス条件、計測系の状態を照合し、原因候補を切り分けます。</p>
+<h2>まとめ</h2>
+<ul class="semicon-three-line-recap">
+<li>真空にも残留気体があり、圧力を測ることで装置の状態を知る。</li>
+<li>熱、膜の変形、電離という異なる原理を、範囲と用途に応じて使い分ける。</li>
+<li>保全では表示値の動きと条件を照合し、排気・ガス・計測の原因候補を考える。</li>
+</ul>
+<p>真空計は、気体の少ない空間を理解する入口です。圧力を下げる側の仕組みも学びたい場合は、<a href="https://semicon-campus.com/turbomolecular-pump/">ターボ分子ポンプの解説</a>へ進むと、計測と排気をつなげて考えられます。</p>
+<h2>参考にした公式情報</h2>
+<p class="semicon-note">技術説明の根拠には、メーカー公式資料と真空用語に関する学会資料を使っています。本文中の［R番号］は下記に対応します。製品資料の測定範囲は、その製品の仕様であり、方式全体の共通範囲として一般化していません。写真の出典・権利情報は各写真の下に記載しています。</p>
+<ul class="semicon-sources">
+<li id="source-R1" data-source-id="R1">［R1］<a href="https://www.jstage.jst.go.jp/article/vss/65/8/65_20180914/_pdf">JIS Z 8126-1:2021 真空技術―用語―第1部：一般用語の改正</a> — 真空領域と圧力の定義。</li>
+<li id="source-R2" data-source-id="R2">［R2］<a href="https://showcase.ulvac.co.jp/ja/products/vacuum-gauge/capacitance-manometer/ccmt-1d.html">キャパシタンスマノメータ Model CCMT-1D</a> — 隔膜式の測定原理とゼロ調整。</li>
+<li id="source-R3" data-source-id="R3">［R3］<a href="https://s1.mks.com/c/capacitance-manometers">Baratron® Capacitance Manometers</a> — 隔膜式の直接測定とガス種への非依存。</li>
+<li id="source-R4" data-source-id="R4">［R4］<a href="https://showcase.ulvac.co.jp/ja/support/products/vacuum-gauge/pirani-vacuum-gauge/pirani-QA1.html">ピラニ真空計：測定原理</a> — ピラニの温度制御と熱損失。</li>
+<li id="source-R5" data-source-id="R5">［R5］<a href="https://showcase.ulvac.co.jp/download/VacuumGauge/Manual/0070_GP-1G/GP-1G_J.pdf">GP-1G Pirani Gauge Manual — 測定ガスの種類と指示値</a> — ピラニの測定ガスと指示値。</li>
+<li id="source-R6" data-source-id="R6">［R6］<a href="https://www.inficon.com/en/products/vacuum-gauge-and-controller/im540">IM540 — Gauges Overview</a> — 方式別の製品測定範囲の例。</li>
+<li id="source-R7" data-source-id="R7">［R7］<a href="https://www.inficon.com/media/5790/download/TINA31E1_Operating-manual_long.pdf?language=ja&amp;v=1">HPG400 Operating Manual</a> — 熱陰極式の原理とガス種感度。</li>
+<li id="source-R8" data-source-id="R8">［R8］<a href="https://www.inficon.com/en/products/vacuum-gauge-and-controller/bag055">BAG055 Bayard-Alpert Hot Cathode Gauge</a> — Bayard–Alpert型熱陰極式の製品例。</li>
+<li id="source-R9" data-source-id="R9">［R9］<a href="https://showcase.ulvac.co.jp/ja/how-to/selection-guide/vacuum-gauge-guide.html">真空計 Selection Guide — Capacitance Manometer</a> — 隔膜式のフルスケール別選定。</li>
+<li id="source-R10" data-source-id="R10">［R10］<a href="https://www.inficon.com/en/products/vacuum-gauge-and-controller/ie414-ie514">IE414 / IE514 High-end Hot Ion Gauges</a> — Extractor型熱陰極式の製品例。</li>
+<li id="source-R11" data-source-id="R11">［R11］<a href="https://www.inficon.com/media/11155/download/MAG084-Cold-Cathode-Gauge.pdf?language=ja&amp;v=3">MAG084 Cold Cathode Gauge</a> — 冷陰極式の原理と製品仕様。</li>
+<li id="source-R12" data-source-id="R12">［R12］<a href="https://www.pfeiffer-vacuum.com/api/empolis/resource/environment/project1_p/documents/pfeifferSharepointProd/11333-113159OEN.pdf">ACC 2009 Cold Cathode / Pirani Gauge Manual</a> — 冷陰極式とピラニを組み合わせた計器。</li>
+<li id="source-R13" data-source-id="R13">［R13］<a href="https://www.diavac.co.jp/item2/%E3%82%B3%E3%83%B3%E3%83%93%E3%83%8D%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E7%9C%9F%E7%A9%BA%E8%A8%88%E3%80%80pc-3da/">コンビネーション真空計 PC-3DA</a> — コンビネーション真空計の製品例。</li>
+<li id="source-R14" data-source-id="R14">［R14］<a href="https://www.inficon.com/media/11441/download/PBR-260-Operating-Manual.pdf?language=ja&amp;v=1">PBR 260 Operating Manual — Gas Type Dependence</a> — ピラニ・熱陰極式のガス種依存と校正係数。</li>
+</ul>
+</article>
+<p class="pillar-link">装置の主要部品の全体像は、<a href="/semiconductor-equipment-components-map/">半導体製造装置の構造・主要部品マップ</a>で確認できます。</p>

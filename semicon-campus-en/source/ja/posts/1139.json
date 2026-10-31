@@ -1,0 +1,20 @@
+{
+ "id": 1139,
+ "type": "post",
+ "slug": "daily-news-46475d548eee8673caa1",
+ "link": "https://semicon-campus.com/daily-news-46475d548eee8673caa1/",
+ "date": "2026-09-22T10:00:00",
+ "modified": "2026-10-27T20:04:55",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  20
+ ],
+ "tags": [
+  19
+ ],
+ "featured_media": 2843,
+ "title": "Microchip、Hailo買収完了　エッジAI半導体をどう統合するのか",
+ "excerpt": "Microchipが2026年9月21日にHailo買収を完了。AIアクセラレーターやビジョン処理を組み込み製品と統合する狙い、技術用語、未確定事項を初心者向けに解説します。"
+}

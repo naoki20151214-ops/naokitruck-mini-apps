@@ -1,0 +1,46 @@
+
+<!--KEEP:0-->
+
+<p>Marvellは、AIデータセンター向けの2nm光インターコネクト技術をECOC 2026で実演する計画を発表しました。対象には、1レーンあたり400Gbpsの光PAM4、800G ZR/ZR+プラガブルとMACsec、1.6T ZR、1.6T O-band coherent-liteが含まれます。ただし、発表時点で確認できるのは「実演予定」であり、実演が完了したことや、量産出荷・顧客導入まで確認されたわけではありません。<a href="https://investor.marvell.com/news-events/press-releases/detail/1034/marvell-to-showcase-industry-first-2nm-optical-technology-demos-for-ai-data-center-infrastructure-at-ecoc-2026">Marvell公式発表</a></p>
+
+
+<h2>何が発表されたのか</h2>
+<p>発表の中心は、AI計算機をつなぐ光通信部品に2nm世代の設計を使い、異なる距離や用途に対応する複数の技術をまとめて示すことです。Marvellの説明では、接続対象はXPU、CPU、AIアクセラレーター、メモリー資源などで、AIデータセンターのscale-up、scale-out、scale-acrossに関係します。</p>
+<p>日付には注意が必要です。ECOC 2026の開催期間は2026年9月20日から24日ですが、これはイベントの日程です。投資家向けページと公式リリース一覧は発表日を2026年9月21日と表示する一方、同じ内容のニュースルーム本文は2026年9月20日付です。したがって、記事上は「9月20〜21日に公式ページで発表された」と整理するのが安全です。<a href="https://www.marvell.com/company/newsroom/marvell-industry-first-2nm-optical-technology-ai-data-center-infrastructure-ecoc-2026.html">ニュースルーム掲載</a> <a href="https://www.marvell.com/company/newsroom/press-releases.html">公式リリース一覧</a></p>
+
+<h2>光DSPとPAM4をやさしく理解する</h2>
+<p><strong>光DSP</strong>は、電気信号を光信号に変換し、光ファイバーを通る間に生じる波形の歪みや誤りをデジタル処理で補正する半導体です。光ファイバーそのものだけで高速通信が成立するのではなく、送信側と受信側で信号を整え、相手が正しくデータを読めるようにする役割を担います。AIサーバーの台数やアクセラレーター間の通信量が増えるほど、この処理を小さな電力と面積で行うことが重要になります。<a href="https://www.marvell.com/solutions/data-center/optical-dsp.html">Marvellの光DSP解説</a></p>
+<p><strong>PAM4</strong>は、信号の電圧を4つの水準で表す変調方式です。1回の信号変化で2ビット相当を表せるため、従来の2水準方式より同じ速度を少ない電気的な変化で実現しやすい一方、各水準の間隔が狭くなり、ノイズや歪みの影響を受けやすくなります。MarvellはPAM4 DSPを主に約500mまでのデータセンター内接続向けとして説明しています。</p>
+<p>今回の400G/laneは、複数レーンを束ねることで1.6T級などの接続につながる速度軸です。ただし、レーン数、実効スループット、ビット誤り率、光ファイバーの距離、実測消費電力は、今回確認できる資料だけでは分かりません。</p>
+
+<h2>coherentとcoherent-liteは何が違うのか</h2>
+<p><strong>coherent</strong>方式は、光の振幅だけでなく位相など複数の情報を使い、DSPで複雑な信号処理を行う通信方式です。長距離で弱くなった信号や波形の変化を扱いやすく、Marvellの技術解説では数十kmから1000km超の接続向けと整理されています。</p>
+<p><strong>coherent-lite</strong>は、その長距離向けcoherentと、データセンター内で使われるPAM4の中間に位置する考え方です。Marvellは、O-bandを使う2〜20km程度のキャンパス接続向けとして説明しています。つまり、同じ敷地内の建物間や近距離のデータセンター間など、PAM4では距離が足りず、長距離coherentでは構成が大きくなりやすい領域を狙います。1.6T O-band coherent-liteの背景には、2024年に発表されたAquilaの説明があります。<a href="https://www.marvell.com/company/newsroom/marvell-unveils-industrys-first-coherent-lite-1-6-tbps-o-band-optimized-dsp.html">Aquilaに関する公式発表</a></p>
+
+<h2>なぜAIデータセンターで重要なのか</h2>
+<p>AI処理では、計算を担当するアクセラレーター同士が大量のデータを交換します。計算チップを高性能にしても、チップ間の接続が遅い、距離が足りない、消費電力が大きいと、システム全体の性能を引き出せません。そこで、データセンター内、キャンパス内、データセンター間という距離ごとに、PAM4、coherent-lite、ZR/ZR+を使い分ける構成が重要になります。</p>
+<p>Marvellは、2nm化と光・シリコン設計によって性能、帯域密度、電力効率を改善できると説明しています。しかし、これは会社の主張です。「industry-first」という表現や低消費電力・高性能という効果を、今回の発表だけで競合製品と独立比較することはできません。2nmという製造世代の名前だけから、実際の電力、歩留まり、到達距離、実効速度を計算することもできません。<a href="https://investor.marvell.com/news-events/press-releases/detail/1034/marvell-to-showcase-industry-first-2nm-optical-technology-demos-for-ai-data-center-infrastructure-at-ecoc-2026">発表におけるMarvellの説明</a></p>
+
+
+<section class="mp5-section" id="revenue-phase5-learning"><h2>光DSPの実演から、評価条件を説明するメモへ</h2><p>400Gや1.6Tの発表を読んだら、レーン当たりの速度、構成、評価条件を同じ表で整理します。実演の予定と量産で使える仕様は分けて確認しましょう。電気・信号・計測の基礎を学ぶ方法と、英文の公開資料を読み直す方法を選べます。学習メモをスライドへまとめる場合も、数値や図の出典と利用条件を自分で確かめ、AIの生成結果を技術評価の結論としてそのまま採用しないことが大切です。</p></section>
+
+<h2>計画と実証をどう見分けるか</h2>
+<p>Marvellは2026年3月、2nm Electraによる1.6T ZR/ZR+ DSPと、2nm Libraによる800G ZR/ZR+ DSPを発表し、2026年下半期に顧客サンプリングを開始する予定だと説明しました。ここでいうサンプリングは、選ばれた顧客が評価する段階の計画であり、量産開始、量産歩留まり、広範な採用を意味しません。<a href="https://www.marvell.com/company/newsroom/marvell-1-6t-zr-zr-plus-pluggable-2nm-coherent-dsp-ai-interconnects.html">ElectraとLibraの公式発表</a></p>
+<p>今後は、ECOCで予定されたデモが実際に完了したか、実測の消費電力とビット誤り率はどの程度か、どの距離・光モジュール条件で測定したかを確認する必要があります。さらに、標準との互換性、他社製品との相互接続、量産時期、顧客による採用実績も重要です。今回の資料では、これらの独立した検証結果や顧客導入は確認できません。公式発表後に同件の訂正・内容変更リリースは確認されていませんが、ECOC期間中や終了後の更新がないことを将来まで保証するものではありません。</p>
+
+<h2>まとめ</h2>
+<p>今回のニュースは、Marvellが2nm光DSPを使い、400G/lane PAM4から800G、1.6T、さらに将来の高帯域接続まで、距離に応じた光インターコネクトの品ぞろえを示したものです。AIデータセンターの通信容量を増やす方向性として注目できますが、現段階では実演計画と会社の性能説明が中心です。量産、実測性能、相互接続性、顧客採用が確認されて初めて、実際のインフラを変える技術かどうかを判断できます。</p>
+
+
+<section class="mp5-section" id="revenue-phase5-career"><h2>理解した内容から、次の学習と比較へ</h2><p>通信仕様と評価条件の整理を、対象・条件・出典の三つで整理しましょう。関連する基礎記事、学習の入口、PCの要件を目的別に確認すると、無料で試せる範囲と有料の選択肢を分けて検討できます。</p><aside class="semicon-cta mp5-card"><h3>目的に合う関連記事から、次の行動を選ぶ</h3><p>仕事内容を知りたい方は職種記事へ、基礎を広げたい方は学習記事へ、自宅環境を見直す方はPC・メモリの解説へ進めます。各記事の求人・学習・機材の選び方も比較できます。</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/semiconductor-beginner-roadmap/" class="semicon-btn mp5-button" data-revenue-phase5-hub="391" data-cta="learning_hub" data-cta-type="learning_hub" data-cta-stage="career" data-cta-id="phase5_1150_hub391_end" data-cta-route="phase5_1150_hub391_end">半導体学習Hubで基礎・仕事・学び方を確認する</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/" class="semicon-btn mp5-button" data-revenue-phase5-hub="237" data-cta="equipment_hub" data-cta-type="equipment_hub" data-cta-stage="career" data-cta-id="phase5_1150_hub237_end" data-cta-route="phase5_1150_hub237_end">装置エンジニアの担当範囲・求人・学習を見る</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-field-service-engineer/" class="semicon-btn mp5-button" data-revenue-phase5-hub="270" data-cta="fse_hub" data-cta-type="fse_hub" data-cta-stage="career" data-cta-id="phase5_1150_hub270_end" data-cta-route="phase5_1150_hub270_end">FSEの復旧・顧客対応と求人・学習を見る</a></div></aside></section>
+
+
+<h2>出典</h2>
+<ul>
+<li><a href="https://investor.marvell.com/news-events/press-releases/detail/1034/marvell-to-showcase-industry-first-2nm-optical-technology-demos-for-ai-data-center-infrastructure-at-ecoc-2026">Marvell投資家向け発表：ECOC 2026での2nm光技術デモ</a></li>
+<li><a href="https://www.marvell.com/company/newsroom/marvell-industry-first-2nm-optical-technology-ai-data-center-infrastructure-ecoc-2026.html">Marvellニュースルーム：同発表</a></li>
+<li><a href="https://www.marvell.com/solutions/data-center/optical-dsp.html">Marvell Optical DSPs：光DSP、PAM4、coherentの技術解説</a></li>
+<li><a href="https://www.marvell.com/company/newsroom/marvell-1-6t-zr-zr-plus-pluggable-2nm-coherent-dsp-ai-interconnects.html">Marvell：2nm Electra・Libraと1.6T ZR/ZR+の発表</a></li>
+<li><a href="https://www.marvell.com/company/newsroom/marvell-unveils-industrys-first-coherent-lite-1-6-tbps-o-band-optimized-dsp.html">Marvell：1.6Tbps O-band coherent-lite DSPの発表</a></li>
+<li><a href="https://www.marvell.com/company/newsroom/press-releases.html">Marvell公式プレスリリース一覧</a></li>
+</ul>

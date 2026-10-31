@@ -1,0 +1,182 @@
+<!--KEEP:0-->
+<div class="semicon-article" id="semicon-top">
+<div class="semicon-level">
+<div class="semicon-level-top"><span class="semicon-level-label">学習レベル</span><strong class="semicon-stars" aria-label="初級（5段階中の1）"><span class="on">★</span><span class="off">☆☆☆☆</span><span>初級</span></strong></div>
+</div>
+<div class="semicon-lead">
+<p>毎朝、体重計に乗って、数字を記録しているとします。体重は、毎日、少し増えたり、少し減ったりします。それが、その人の「いつも通り」です。</p>
+<p>ところが、ある日、急に、いつもよりずっと増えていた。あるいは、毎日、少しずつ、10日間、増え続けた。どちらも、「いつもと違う」ことに気づけます。</p>
+<p>半導体の工場でも、同じことをしています。工程で測った数字を、時間の順に並べて、「いつも通りか」を見張ります。<strong class="semicon-key">先に答えを言うと、点が線の外に出たときだけでなく、線の内側でも、並び方に「くせ」が出たときが、異常のサインです。</strong></p>
+</div>
+<div class="semicon-note">
+<p>体重の例が合っているのは、「いつもの幅と比べて、違いに気づく」という点だけです。体重と、半導体の工程は、別のものです。</p>
+</div>
+<div class="semicon-map">
+<h3>この記事でわかること</h3>
+<ol>
+<li><strong>この記事の目的：</strong>SPCと管理図で「いつも通りか」を見張るしくみと、異常のサインの見方を、つかむこと</li>
+<li>SPC（統計的工程管理）と、管理図という言葉の意味</li>
+<li>管理図の三本の線と、「異常のサイン」の見方</li>
+<li>半導体の工場では、何を見張り、サインが出たらどう動くのか</li>
+</ol>
+</div>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep107-blog-01-control-chart.png" alt="中心線と上下の管理限界の間に点が並び、一つだけ上の線の外に出ている管理図の概念図"><figcaption>管理図を表した模式図。点の位置は説明用の例で、実測データではありません。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>点を、時間の順に並べる</li>
+<li>真ん中の線が平均。上下の線は、過去のデータから決める</li>
+<li>線の外に出た点は、原因を調べるサイン</li>
+</ul>
+</div>
+<div class="semicon-chat-row naoki">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">助手</div>
+</div>
+<div class="semicon-bubble">
+<p>博士、SPCって、何を見張るのですか？</p>
+</div>
+</div>
+<div class="semicon-chat-row teacher">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">博士</div>
+</div>
+<div class="semicon-bubble">
+<p>工程が「いつも通り」か、じゃよ。測った数字を、時間の順に並べて、線と比べるんじゃ。</p>
+</div>
+</div>
+<div class="semicon-chat-row naoki">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">助手</div>
+</div>
+<div class="semicon-bubble">
+<p>線の外に出たら、異常ということですか？</p>
+</div>
+</div>
+<div class="semicon-chat-row teacher">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">博士</div>
+</div>
+<div class="semicon-bubble">
+<p>それだけではないぞ。線の内側でも、並び方にくせが出たら、サインなんじゃ。順に、見ていこう。</p>
+</div>
+</div>
+<h2 class="wp-block-heading" data-fact-ids="C03">SPCは、「いつも通りか」を数字で見張る方法</h2>
+<p>SPCは、Statistical Process Controlの略で、日本語では「統計的工程管理」と呼びます。統計とは、数字のばらつきを使って、ものごとを判断する考え方のことです。</p>
+<p>米国の標準技術研究所（NIST）のハンドブックは、SPCの土台になる考え方を、「今起きていることと、以前に起きたことの比較」と説明しています。工程が、ふだんどう動くかを、過去のデータから調べておきます。そして、新しく測ったデータが、その範囲に入っているかを、見比べます。</p>
+<p>同じハンドブックは、対になる考え方も紹介しています。「統計的品質管理（SQC）」です。こちらは、出荷する製品が、お客さんの決めた規格を満たすかを、確かめることが目的です。つまり、SPCは「工程の様子」を見張り、SQCは「製品が規格を満たすか」を確かめる、という違いがあります。</p>
+<h2 class="wp-block-heading" data-fact-ids="C01 C02">管理図とは、点を時間の順に並べた図</h2>
+<p>SPCで使う、代表的な道具が「管理図」です。ASQ（米国品質協会）の解説によると、管理図は、工程が時間とともにどう変わるかを調べるグラフです。測った値を、時間の順に点で並べます。</p>
+<p>図には、必ず三本の線があります。真ん中の「中心線」は、平均を表します。上の線を「上側管理限界（UCL）」、下の線を「下側管理限界（LCL）」と呼びます。この三本の線は、過去のデータから決めます。</p>
+<p>この図で、二つのことを見ます。一つは、「平均」です。ASQは、的あてにたとえています。弾が集まっている場所が、平均です。もう一つは、「範囲」で、弾がどれだけ、ぎゅっと集まっているかを表します。<strong class="semicon-key">管理図は、この「平均」と「範囲」の、両方を見張ります。</strong></p>
+<p>たとえば、毎日、同じ条件で測った値を、1日1点ずつ並べていくと、1本の管理図ができあがります。</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep107-blog-03-target.png" alt="弾が的の中心から外れた位置に集まる場合と、中心のまわりに広く散らばる場合を比べた平均と範囲の概念図"><figcaption>平均と範囲を、的あてにたとえた模式図。弾の位置は説明用で、実測データではありません。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>左：平均がずれた（弾が、中心から外れて集まる）</li>
+<li>右：範囲が広がった（弾が、広く散らばる）</li>
+<li>管理図は、平均と範囲の両方を見張る</li>
+</ul>
+</div>
+<h2 class="wp-block-heading" data-fact-ids="C05">「ふつうのばらつき」と「異常のサイン」</h2>
+<p>同じ条件で作っても、測った数字は、毎回、少しずつ変わります。NISTのハンドブックは、偶然の原因（chance causes）だけで起きるばらつきと、特定できる原因（assignable cause）で起きるばらつきを、区別しています。</p>
+<p>管理限界は、工程が「いつも通り」のあいだは、ほとんどの点が、上下の線の内側に入るように決めます。<strong class="semicon-key">点が線の外に出たら、「特定できる原因」があるかもしれないので、調べます。</strong></p>
+<h2 class="wp-block-heading" data-fact-ids="C04">線の内側でも、並び方の「くせ」に注意</h2>
+<p>点が線の内側にあれば、安心でしょうか。ASQは、線の内側でも、注意すべき「管理外れのサイン」を挙げています。たとえば、次のようなものです。</p>
+<ul>
+<li>点が一つ、管理限界の外に出る。</li>
+<li>点が8つ続けて、中心線の同じ側に並ぶ。</li>
+<li>連続する3点のうち2点が、中心線の同じ側で、「2σ（シグマ）」より遠くにある。</li>
+<li>連続する5点のうち4点が、中心線の同じ側で、「1σ」より遠くにある。</li>
+</ul>
+<p>σ（シグマ）は、ばらつきの大きさを表す「標準偏差」という数字です。管理図では、中心線から、σの何倍離れているかで、点の位置を考えます。</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep107-blog-02-run.png" alt="点がすべて上下の線の内側にあるのに、八つ続けて中心線の上側に並んでいる、くせのある管理図の概念図"><figcaption>線の内側でも、並び方にくせがある管理図の模式図。点の位置は説明用で、実測データではありません。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>点は、すべて線の内側</li>
+<li>でも、8点続けて、中心線の同じ側</li>
+<li>並び方のくせも、サインになる</li>
+</ul>
+</div>
+<p>「8つ続けて同じ側」は、体重の例で言えば、「10日間、増え続けた」にあたります。一回一回は、いつもの幅に収まっていても、並びに「くせ」があれば、何かが変わり始めている、と考えられます。</p>
+<h2 class="wp-block-heading" data-fact-ids="C05 C08">限界は「3シグマ」。それでも、まれに誤報がある</h2>
+<p>管理限界は、中心線から、σの3倍の位置に置くのが、ふつうです。これを「3シグマ限界」と呼びます。NISTのハンドブックによると、ばらつきが正規分布（左右対称な、山の形の分布）に従う場合、工程に変化がなくても、点が線の外に出る確率は、0.27%です。</p>
+<p>この確率から、平均して、約371点に1回は、「何も起きていないのに、線の外に出る」ことになります。これを「誤報」と呼びます。つまり、<strong class="semicon-key">サインが出たら、すぐに「故障だ」と決めつけず、まず、調べます。</strong></p>
+<h2 class="wp-block-heading" data-fact-ids="C06 C07">半導体の工場では、何を見張るのか</h2>
+<p>半導体の工程でも、測った数字を、管理図に並べます。たとえば、日立ハイテクの解説によると、現像のあとのレジストの寸法や、エッチングのあとの配線の幅は、CD-SEMという電子顕微鏡で測ります。この測定は、「測るたびの、ばらつき」も小さく、標準偏差3σで、測った寸法の1%程度の再現性がある、と書かれています。</p>
+<p>たとえば、測った線の太さを、測るたびに1点ずつ、時間の順に並べれば、そのまま管理図になります。線の太さが、少しずつ太くなっていく、といった変化にも、並びを見れば気づけます。</p>
+<p>ASMLの解説によると、ピントの合い具合（フォーカス）や、層の重なり（オーバーレイ）も、ウェハに印刷した試験パターンを測って、見張ります。測った結果は、生産ラインの装置から、露光装置へ戻されて、補正に使われます。見張る目的は、歩留まり（良品の割合）を上げることです。</p>
+<h2 class="wp-block-heading" data-fact-ids="C04">サインが出たら、どう動くのか</h2>
+<p>ASQは、管理外れのサインが出たときの手順を、説明しています。点に印をつけて、原因を調べます。そして、どう調べたか、何が分かったか、原因は何か、どう直したかを、記録します。</p>
+<p>また、新しい管理図を始めたばかりのときは、最初の20点で決めた線は、仮のものです。工程が「いつも通り」に動いている期間の点が、20点以上そろったら、線を計算し直します。</p>
+<p>設備の調整や復旧は、所属する工場やメーカーの正式な手順と、権限のある人の判断のもとで行います。この記事は、見方を紹介するもので、設備の操作を指示するものではありません。</p>
+<div class="semicon-cta">
+<h3>SPCを、仕事の面から</h3>
+<p>SPCを、仕事や求人の面から知りたい方は、こちらの記事も読んでみてください。</p>
+<div class="semicon-btnrow"><a class="semicon-btn" href="https://semicon-campus.com/what-is-spc-semiconductor-process-control/">SPC（統計的工程管理）とは何か</a></div>
+</div>
+<p>この見張りを担当するのは、プロセス、生産技術、設備保全、品質などの担当です。製造業で、記録した数字の変化に気づいた経験は、「いつもと何が違うのか」を考える力として活きる、と考えられます。仕事の全体像は、<a href="https://semicon-campus.com/semiconductor-career-map/">半導体製造の仕事を工程別に見てみる</a>から確認できます。</p>
+<h2 class="wp-block-heading">ことばのおさらい</h2>
+<p>この記事に出てきた言葉を、やさしい言い方で、もう一度まとめます。むずかしく感じたら、この一覧に戻って、読み返してください。</p>
+<ul>
+<li><strong>SPC：</strong>統計的工程管理。「いつも通りか」を、数字で見張る方法です。</li>
+<li><strong>管理図：</strong>測った値を、時間の順に並べた図です。</li>
+<li><strong>中心線：</strong>平均を表す、真ん中の線です。</li>
+<li><strong>管理限界（UCL・LCL）：</strong>過去のデータから決める、上下の線です。</li>
+<li><strong>σ（シグマ）：</strong>ばらつきの大きさを表す数字（標準偏差）です。</li>
+<li><strong>3シグマ限界：</strong>中心線からσの3倍の位置に置く、管理限界です。</li>
+<li><strong>管理外れのサイン：</strong>線の外に出る、同じ側に続く、など、「いつもと違う」合図です。</li>
+</ul>
+<h2 class="wp-block-heading">よくある誤解</h2>
+<h3>Q. 点が線の内側にあれば、問題ありませんか？</h3>
+<p>そうとは限りません。8つ続けて同じ側に並ぶなど、並び方の「くせ」も、サインになります。線の内側にあっても、並びを見る習慣が大切です。</p>
+<h3>Q. 点が線の外に出たら、必ず、装置の故障ですか？</h3>
+<p>必ずではありません。3シグマの限界でも、何も起きていないのに、線の外に出ることがあります。まず、原因を調べて、記録します。</p>
+<h3>Q. SPCは、製品が規格を満たすかを、確かめるものですか？</h3>
+<p>少し違います。SPCは、「いつも通りか」という工程の様子を見張ります。製品が規格を満たすかを確かめるのは、統計的品質管理（SQC）です。</p>
+<h2 class="wp-block-heading">まとめ：SPCは、「いつも通りか」を、数字の並び方で見張る</h2>
+<div class="semicon-lead">
+<p>SPCは、過去のデータで決めた線と比べて、「いつも通りか」を見張る方法です。<br />管理図では、点が線の外に出たときだけでなく、線の内側でも、並び方の「くせ」がサインになります。<br />サインが出たら、すぐに決めつけず、原因を調べて、記録します。</p>
+</div>
+<div class="semicon-cta">
+<h3>YouTubeでも、半導体をやさしく解説しています</h3>
+<p>図解で復習したい人向けに、YouTubeでも半導体製造を短く解説しています。</p>
+<div class="semicon-btnrow"><a rel="noopener" class="semicon-btn secondary" href="https://www.youtube.com/@semicon-campus" target="_blank">YouTubeで図解動画を見る</a></div>
+</div>
+<h2 class="wp-block-heading">参考にした公式情報</h2>
+<ul class="semicon-sources">
+<li data-source-id="S01"><a href="https://asq.org/quality-resources/control-chart">ASQ「Control Chart」</a></li>
+<li data-source-id="S02"><a href="https://www.itl.nist.gov/div898/handbook/pmc/section1/pmc12.htm">NIST/SEMATECH e-Handbook「6.1.2. What are Process Control Techniques?」</a></li>
+<li data-source-id="S03"><a href="https://www.itl.nist.gov/div898/handbook/pmc/section3/pmc31.htm">NIST/SEMATECH e-Handbook「6.3.1. What are Control Charts?」</a></li>
+<li data-source-id="S04"><a href="https://www.itl.nist.gov/div898/handbook/pmc/section3/pmc321.htm">NIST/SEMATECH e-Handbook「6.3.2.1. Shewhart X-bar and R and S Control Charts」</a></li>
+<li data-source-id="S05"><a href="https://www.hitachi-hightech.com/jp/ja/knowledge/semiconductor/room/manufacturing/cd-sem.html">日立ハイテク「4. CD-SEM（測長SEM）とは」</a></li>
+<li data-source-id="S06"><a href="https://www.asml.com/en/technology/lithography-principles/measuring-accuracy">ASML「Measuring accuracy」</a></li>
+</ul>
+<section class="semicon-correction-form">
+<h2>質問・訂正フォーム</h2>
+<p>この記事の内容に誤りや、分かりにくい点があれば、下のフォームからお知らせください。確認して、記事を直します。</p>
+<div class="semicon-form-shortcode">
+<div class="wpcf7 no-js" id="wpcf7-f2045-o11" lang="ja" dir="ltr" data-wpcf7-id="2045">
+<div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
+<form action="/?rest_route=%2Fwp%2Fv2%2Fposts&#038;per_page=100&#038;page=1&#038;context=view#wpcf7-f2045-o11" method="post" class="wpcf7-form init" aria-label="コンタクトフォーム" novalidate="novalidate" data-status="init">
+<fieldset class="hidden-fields-container"><input type="hidden" name="_wpcf7" value="2045" /><input type="hidden" name="_wpcf7_version" value="6.1.6" /><input type="hidden" name="_wpcf7_locale" value="ja" /><input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f2045-o11" /><input type="hidden" name="_wpcf7_container_post" value="0" /><input type="hidden" name="_wpcf7_posted_data_hash" value="" />
+</fieldset>
+<p>お名前・電話番号・住所の入力は不要です。工場名や社外秘の情報は記載しないでください。
+</p>
+<p><label>報告の種類（必須） <span class="wpcf7-form-control-wrap" data-name="report-type"><select class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required" aria-required="true" aria-invalid="false" name="report-type"><option value="誤りと思われる点">誤りと思われる点</option><option value="分かりにくい箇所">分かりにくい箇所</option><option value="追加してほしい説明・質問">追加してほしい説明・質問</option></select></span></label><br />
+<label>該当する見出し・文章（任意） <span class="wpcf7-form-control-wrap" data-name="report-section"><input size="40" maxlength="200" class="wpcf7-form-control wpcf7-text" aria-invalid="false" value="" type="text" name="report-section" /></span></label><br />
+<label>内容（必須） <span class="wpcf7-form-control-wrap" data-name="report-message"><textarea cols="40" rows="10" maxlength="3000" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" aria-required="true" aria-invalid="false" name="report-message"></textarea></span></label><br />
+<label>返信用メールアドレス（返信をご希望の場合のみ・任意） <span class="wpcf7-form-control-wrap" data-name="report-email"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-email wpcf7-text wpcf7-validates-as-email" autocomplete="email" aria-invalid="false" value="" type="email" name="report-email" /></span></label>
+</p>
+<p>ご意見は記事の確認・改善のために利用します。<a href="https://semicon-campus.com/privacy-policy/">個人情報の取り扱い</a>をご確認ください。
+</p>
+<p><input class="wpcf7-form-control wpcf7-submit has-spinner" type="submit" value="ご意見・訂正報告を送信" />
+</p><div class="wpcf7-response-output" aria-hidden="true"></div>
+</form>
+</div>
+</div>
+</section>
+</div>

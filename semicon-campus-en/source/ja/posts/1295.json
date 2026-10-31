@@ -1,0 +1,20 @@
+{
+ "id": 1295,
+ "type": "post",
+ "slug": "daily-news-12d8fb58b54f5a76ebe4",
+ "link": "https://semicon-campus.com/daily-news-12d8fb58b54f5a76ebe4/",
+ "date": "2026-09-28T12:00:00",
+ "modified": "2026-10-27T20:04:26",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  20
+ ],
+ "tags": [
+  19
+ ],
+ "featured_media": 2816,
+ "title": "Applied Materials、3D NANDのMo配線を高精度に分離する新技術",
+ "excerpt": "Applied Materialsが説明した3D NAND向けMo選択除去技術を、発表日、仕組み、3D積層の背景、量産検証の限界と今後の注目点から初心者向けに解説します。"
+}

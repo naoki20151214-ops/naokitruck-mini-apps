@@ -1,0 +1,21 @@
+{
+ "id": 400,
+ "type": "post",
+ "slug": "what-is-overlay-metrology",
+ "link": "https://semicon-campus.com/what-is-overlay-metrology/",
+ "date": "2026-07-08T20:38:30",
+ "modified": "2026-10-22T13:56:46",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  7,
+  5,
+  9,
+  12
+ ],
+ "tags": [],
+ "featured_media": 395,
+ "title": "オーバーレイ計測とは何か？露光の位置ずれを測る半導体計測を文系向けに解説",
+ "excerpt": "オーバーレイ計測とは、前に作った層と次に露光する層の位置ずれを測る半導体計測です。リソグラフィ、CD-SEM、膜厚測定との違い、歩留まりや求人票で見るキーワードまで初心者向けに解説します。"
+}

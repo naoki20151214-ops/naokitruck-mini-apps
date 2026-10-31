@@ -1,0 +1,20 @@
+{
+ "id": 351,
+ "type": "post",
+ "slug": "what-is-spc-semiconductor-process-control",
+ "link": "https://semicon-campus.com/what-is-spc-semiconductor-process-control/",
+ "date": "2026-07-06T20:00:11",
+ "modified": "2026-10-30T21:22:55",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  5,
+  9,
+  12
+ ],
+ "tags": [],
+ "featured_media": 346,
+ "title": "半導体のSPC（統計的工程管理）とは？Cpk・FDCとの違いをやさしく解説",
+ "excerpt": "SPCとは、測定値のばらつきを見て工程がいつも通りかを判断する統計的工程管理です。CD-SEM、膜厚、欠陥数、管理図、歩留まり改善、求人票で見るキーワードまで初心者向けに解説します。"
+}

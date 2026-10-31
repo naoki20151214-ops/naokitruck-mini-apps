@@ -1,0 +1,20 @@
+{
+ "id": 1372,
+ "type": "post",
+ "slug": "daily-news-3a870232566fcb9e547b",
+ "link": "https://semicon-campus.com/daily-news-3a870232566fcb9e547b/",
+ "date": "2026-09-30T18:00:00",
+ "modified": "2026-10-27T20:04:15",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  20
+ ],
+ "tags": [
+  19
+ ],
+ "featured_media": 2808,
+ "title": "NuvotonのEIS内蔵IC、26セル電池の劣化診断を身近に",
+ "excerpt": "ヌヴォトンが発表した26セル対応EIS内蔵バッテリ監視ICを解説。EISの仕組み、発表の意義、限界、2027年1月のサンプル提供で注目すべき点を整理します。"
+}

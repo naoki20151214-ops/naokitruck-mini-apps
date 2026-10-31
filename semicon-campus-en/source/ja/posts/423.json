@@ -1,0 +1,20 @@
+{
+ "id": 423,
+ "type": "post",
+ "slug": "what-is-backend-semiconductor-process",
+ "link": "https://semicon-campus.com/what-is-backend-semiconductor-process/",
+ "date": "2026-07-10T16:39:52",
+ "modified": "2026-10-30T21:22:55",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  5,
+  10,
+  12
+ ],
+ "tags": [],
+ "featured_media": 419,
+ "title": "後工程とは何か？半導体チップを使える形にする組立・パッケージ工程を初心者向けに解説",
+ "excerpt": "後工程とは、前工程で作った半導体回路を切り出し、つなぎ、封止し、検査して製品にする工程です。ダイシング、ボンディング、モールド、最終検査に加え、求人票で見るべき言葉、未経験求人と技術職求人の違い、先端パッケージ導線まで初心者向けに解説します。"
+}

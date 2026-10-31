@@ -1,0 +1,85 @@
+
+<!--KEEP:0-->
+
+
+<!--KEEP:1-->
+
+<!-- Episode: 066 | Research Pack: rp-semiconductor-cleanroom | Local editorial candidate. -->
+<!--KEEP:2-->
+<article class="s66" data-episode="066" data-research-pack="rp-semiconductor-cleanroom">
+<p>半導体工場で働く人が、全身を覆う防塵服を着ているのを見たことはありますか。</p>
+<p>あれは、見た目を清潔にするためだけの服ではありません。</p>
+<p><strong>クリーンルームは、微粒子や環境の変動が回路の欠陥に変わる前に、製造環境を管理して歩留まりを守る場所です。</strong></p>
+<div class="answer">半導体工場のクリーンルームとは、空気中の粒子濃度をはじめ、空気の流れ、人・装置・材料からの汚染、温度・湿度などを管理する空間です。目的は「ホコリをゼロにする」ことではなく、ウェハ上の微細なパターンや膜、配線を汚染から守り、良品になるダイの数を減らしにくくすることです。</div>
+<p class="source">基本定義の出典：<a href="https://www.iso.org/standard/53394.html">ISO 14644-1:2015</a>、<a href="https://www.iso.org/standard/88599.html">ISO 14644-5:2025</a>。</p>
+<figure><img loading="lazy" decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/09/ep066-01-visual.jpg" width="720" height="1280" alt="白い防塵服とマスクを着た作業員がウェハを慎重に扱う半導体クリーンルームの自作説明素材"><figcaption>防塵服は人から製品へ移る汚染を抑える役割を持ちます。Episode 066用の自作・AI生成説明素材です。</figcaption></figure>
+
+<h2>この記事でわかること</h2>
+<ul><li>クリーンルームが普通の工場では足りない理由。</li><li>微粒子がパターン、膜、配線の欠陥へ変わる道筋。</li><li>防塵服、フィルター、空調、気流、清浄度管理の役割。</li><li>人が汚染源になる理由と、歩留まりとの関係。</li><li>先端半導体ほど汚染管理が難しくなる理由。</li></ul>
+<h2>クリーンルームは「掃除された部屋」ではない</h2>
+<p>普通の工場では、床や設備を掃除し、目に見えるゴミを取り除けば、製造を続けられることがあります。しかし半導体工場で作るのは、目で見える大きさの部品ではありません。シリコンのウェハという円盤の上に、薄い膜を重ね、光で模様を作り、削り、洗い、また次の層を作ります。</p>
+<p>ウェハは半導体デバイスを作る土台です。ダイは、完成後に一つのチップとして切り出される区画を指します。製造中は、この小さな区画に必要なパターン、膜、界面、配線を多数の工程で積み重ねます。だから異物の問題は、床にゴミがあるという話ではなく、工程の途中で形や材料の状態を変えてしまうという話になります。</p>
+<figure><img loading="lazy" decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/09/ep066-02-visual.jpg" width="720" height="1280" alt="微細なパターンが形成されたウェハを精密装置上で扱う自作説明素材"><figcaption>ウェハには、工程ごとに異なる膜やパターンが形成されます。完成品のチップではなく、製造途中のウェハを示す模式的な素材です。</figcaption></figure>
+<div class="dialogue"><p><strong>なおき：</strong>クリーンルームは、部屋をきれいに掃除して密閉すれば十分ではないのですか？</p><p><strong>ふくろう先生：</strong>人が歩き、装置が動き、ウェハを運び、保守作業をするたびに、粒子や分子状の汚染源が生まれます。だから最初に掃除するだけでなく、発生したものを流し、濾過し、測り、運用し続ける必要があります。</p></div>
+<p>クリーンルームの中心的な清浄度分類は、空気中の粒子の<strong>個数濃度</strong>です。これは、決められた粒径以上の粒子が、空気1立方メートルの中に何個あるかという考え方です。ISO Classの数字は粒子の個数そのものではありません。</p>
+<p>たとえばISO Class 1は「ホコリが1個だけ」という意味ではなく、0.1マイクロメートル以上の粒子について、1立方メートルあたり10個以下という分類値です。Class 5なら0.5マイクロメートル以上で3,520個／立方メートル、Class 7なら352,000個／立方メートルというように、粒径と単位を一緒に見ます。</p>
+<p class="source">清浄度の定義と分類値の出典：<a href="https://www.iso.org/standard/53394.html">ISO 14644-1:2015</a>。数字はResearch Packに記載された分類値を使用しています。</p>
+<h2>微粒子は、回路を直接突き刺すのではなく欠陥の起点になる</h2>
+<p>ウェハ上の粒子が問題になるのは、完成した回路へ大きなゴミが落ちて物理的に壊すからだけではありません。粒子や残渣が、後続工程のマスク、局所的な障害物、膜の剥離源、接触を邪魔する異物として働くことがあります。その結果、狙った形が欠けたり、余計な材料が残ったりします。</p>
+<figure><img loading="lazy" decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/09/ep066-03-visual.jpg" width="720" height="1280" alt="微細な配線パターンの上に異物粒子が入り欠けや橋渡しを生む因果を示す自作説明素材"><figcaption>異物は、パターン形成や配線構造の途中で、欠けや不要な橋渡しの起点になり得ます。図は厳密な縮尺ではありません。</figcaption></figure>
+<p>フォトリソグラフィでは、ウェハ上の感光膜や原版の近くに異物があると、模様の転写を乱すことがあります。成膜では膜の中へ取り込まれたり、後の剥離源になったりします。エッチングでは、粒子や残渣が局所的なマスクのように働き、削れ方を変える場合があります。</p>
+<p>配線では、隣り合う導体を意図せずつなぐ<strong>ショート</strong>、本来つながるはずの配線やビアが切れる<strong>オープン</strong>、接触抵抗が高くなる、といった異常につながり得ます。ここでいうビアは、異なる導電層の間をつなぐ通り道です。つまり粒子は、単なる表面の汚れではなく、構造や電気特性の欠陥へ変換される可能性があります。</p>
+<p class="source">欠陥と歩留まりへの関係：<a href="https://www.lamresearch.com/glossary/defect/">Lam Research：Defect</a>、<a href="https://www.kla.com/products/inspection-and-metrology/wafer-inspection">KLA：Wafer Inspection</a>。</p>
+<h2>同じ異物でも、微細な構造ほど影響を受けやすい</h2>
+<p>微細化が進むと、同じ大きさの異物が、パターンや工程の余白に対して相対的に大きな存在になる場面が増えます。広い間隔の構造なら影響が出ない位置にある粒子でも、狭い線と線の間や重要な接点にあれば、形状を乱す可能性があります。</p>
+<figure><img loading="lazy" decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/09/ep066-04-visual.jpg" width="720" height="1280" alt="同じ異物が広いパターン間隔では影響が小さく細いパターンでは余白を乱しやすいことを比べる自作説明素材"><figcaption>同じ異物でも、構造の間隔や位置によって意味が変わります。微細化の説明用の比較素材です。</figcaption></figure>
+<p>ただし、回路の寸法が半分になれば、粒子への耐性も必ず半分になる、という単純な法則ではありません。欠陥の致命度は、粒子の大きさだけでなく、位置、材質、工程、立体構造、電気的な役割、後の工程で除去されるかどうかなどで変わります。技術ノードの名前を、そのまま全配線の物理的な線幅と読むこともできません。</p>
+<p>NISTは、先端半導体製造で粒子濃度と粒径分布の管理が歩留まりやデバイス性能に関係し、より小さな粒子を測る必要が出てくると整理しています。安全な言い方は、「微細化で欠陥に対する許容マージンが狭くなる傾向があり、以前は問題にならなかった小さな異物まで歩留まりに関係し得る」です。</p>
+<p class="source">微粒子計測と先端製造の出典：<a href="https://www.nist.gov/publications/method-assigning-priorities-united-states-measurement-system-usms-needs-nano">NIST：Nano-electrotechnologies</a>。</p>
+<h2>人間自身が大きな汚染源になる理由</h2>
+<p>クリーンルームで防塵服を着る大きな理由は、人から製品を守るためです。人の皮膚、毛髪、衣服の繊維、外から付着したダスト、呼吸や会話、動作による再飛散などが汚染源になり得ます。特に人がいる空間では、歩く、腕を動かす、材料を扱うといった動作が続くため、発塵量は服装や活動によって変わります。</p>
+<p>そのため、カバーオール、フード、マスク、手袋、ブーツなどで皮膚や通常の衣服を覆い、更衣手順や動作も管理します。手袋は、手からの汚染を抑えるだけでなく、製品を直接触らないための境界にもなります。ゆっくり動く、決められた搬送方法を守る、清浄側の衣服を床や不潔な面に触れさせない、といった運用も重要です。</p>
+<figure><img loading="lazy" decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/09/ep066-05-visual.jpg" width="720" height="1280" alt="多数のダイが並ぶウェハのうち一部の局所領域だけに影響が現れる自作説明素材"><figcaption>人や装置が汚染源になっても、影響範囲は局所欠陥から広い範囲の異常までさまざまです。</figcaption></figure>
+<div class="boundary"><strong>防塵服と安全用PPEは同じではありません。</strong><br>クリーンガーメントは主に、人から製品・環境へ移る汚染を抑えるための衣服です。薬品や危険ガス、機械的な危険から作業者を守る安全用の個人防護具とは目的が異なり、工程の危険に応じた別の装備が必要になる場合があります。</div>
+<p>なお、「人間が必ず最大の汚染源」と言い切るのは正確ではありません。装置、搬送機構、工程そのもの、材料、薬液やプロセスガスも汚染源になります。人は主要な源の一つですが、どの工程で何が支配的かは、設備と作業条件によって変わります。</p>
+<p class="source">人由来汚染とクリーンルーム運用の出典：<a href="https://www.iso.org/standard/88599.html">ISO 14644-5:2025</a>、<a href="https://www.kla.com/products/inspection-and-metrology/wafer-inspection">KLA：Wafer Inspection</a>。</p>
+<h2>フィルターと空調は、空気を入れるだけでなく流して戻す</h2>
+<p>クリーンルームの空調は、家庭の部屋へきれいな空気を一度入れたら終わり、というものではありません。人、装置、材料、工程からは、管理していても汚染物が継続的に発生します。そこで、フィルターを通した空気を製品の近くへ送り、粒子を滞留させずにリターン側へ運び、再び濾過して循環させます。</p>
+<figure><img loading="lazy" decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/09/ep066-06-visual.jpg" width="720" height="1280" alt="天井のフィルターから清浄空気が下向きに流れウェハ周辺を通って戻るクリーンルーム断面の自作説明素材"><figcaption>天井側から空気を送り、製品付近を通って戻す代表的な構成です。実際の設備はゾーンや工程で異なります。</figcaption></figure>
+<p>HEPAやULPAは、循環空気から粒子を除去する高性能フィルターです。ここで「0.3マイクロメートル以上を100％取る」「それより小さい粒子は全部通る」と説明するのは正しくありません。フィルターの捕集効率は、最も通りやすい粒径付近など、適用する規格や条件で評価します。</p>
+<p>空気の流れにも種類があります。高清浄な領域では一方向流を使うことがありますが、部屋全体が完全に乱れないという意味ではありません。設備の発熱、発塵、配置、必要清浄度、エネルギーなどを考えて、混合・希釈を利用する方式を含めて設計します。</p>
+<figure><img loading="lazy" decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/09/ep066-09-airflow-controls.jpg" width="1200" height="720" alt="フィルターから下向きに空気を送り製品と装置の近くを通してリターンと再循環へつなぐクリーンルーム管理図"><figcaption>クリーンルームは、発生源をゼロにするのではなく、空気を流し、戻し、濾過し続ける仕組みです。</figcaption></figure>
+<p>清浄度を守るゾーンでは、周囲より少し高い圧力にして、扉の隙間などから未処理の空気が入りにくくすることもあります。これは「クリーンルームが真空」という意味ではありません。人が働く部屋は通常、大気圧に近い状態で、装置の中の真空工程とは別の概念です。危険物を閉じ込める局所設備では、清浄度のための正圧と安全のための局所排気を別の要求として組み合わせます。</p>
+<p class="source">空気の循環、フィルター、ゾーニング、差圧の出典：<a href="https://www.iest.org/standards/cleanrooms">IEST：Cleanroom Standards</a>、<a href="https://www.imec-int.com/en/articles/cleanroom">imec：Cleanroom</a>。</p>
+<h2>管理するのは粒子だけではない</h2>
+<p>ISO Classで代表されるのは空気中の粒子濃度ですが、半導体の製造環境には別の汚染や変動もあります。AMC（Airborne Molecular Contamination）は、粒子というより分子状・気相の化学汚染です。粒子カウンターで空気中の粒子数が少ないと分かっても、化学的に十分清浄だと自動的に証明されるわけではありません。</p>
+<table><thead><tr><th>管理対象</th><th>製造への関係</th></tr></thead><tbody><tr><td>粒子</td><td>ウェハ、原版、装置へ付着し、パターンや膜の欠陥の起点になる。</td></tr><tr><td>AMC・材料の揮発</td><td>工程、製品、装置へ影響する化学汚染になり得る。</td></tr><tr><td>温度・湿度</td><td>工程の再現性、表面状態、静電気などに関係する。</td></tr><tr><td>圧力・気流</td><td>低清浄度側からの空気の侵入や、粒子の滞留を抑える。</td></tr><tr><td>静電気・振動</td><td>デバイス損傷、粒子の引き寄せ、精密な位置合わせや計測に関係する。</td></tr></tbody></table>
+<p>つまりクリーンルームは、空気中のホコリだけを減らす部屋ではありません。装置や材料からのアウトガス、プロセスガス中の微量な水分、金属・イオン・有機汚染、温湿度、静電気、振動などを、製品と工程に応じて管理する総合的な製造環境です。</p>
+<p class="source">化学汚染の出典：<a href="https://www.iso.org/standard/76890.html">ISO 14644-8:2022</a>、<a href="https://www.iso.org/standard/91616.html">ISO 14644-15:2026</a>。温湿度・静電気・振動についてもEpisode 066 Research Packの範囲に限定しています。</p>
+<div class="cta">ここまで読むと、「クリーンルーム＝ホコリのない部屋」ではなく、「異物や環境変動を欠陥へ変えないための運用システム」だと見えてきます。次は、その管理が良品の数とどうつながるかを見てみましょう。</div>
+<h2>歩留まりを守るとは、良品ダイを減らしにくくすること</h2>
+<p><strong>歩留まり</strong>とは、製造したもののうち、良品として使える割合を表す言葉です。ウェハ上には複数のダイが並び、検査後に良品ダイとして残ったものが、後の組立や製品に進みます。クリーンルームは歩留まりを直接「作る」装置ではありませんが、欠陥密度や工程の変動を低く保つ基礎インフラとして、良品を守る側に働きます。</p>
+<figure><img loading="lazy" decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/09/ep066-07-visual.jpg" width="720" height="1280" alt="検査後のウェハに多数の良品ダイが残り一部の欠陥領域が区別される自作説明素材"><figcaption>目標は、ウェハ全体を無条件に廃棄することではなく、欠陥の発生と広がりを抑えて良品ダイを守ることです。</figcaption></figure>
+<figure><img loading="lazy" decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/09/ep066-08-cause-chain.jpg" width="1200" height="720" alt="微細なパターンに異物や環境変動が入り欠陥を経て良品ダイと歩留まりへ影響する因果チェーン図"><figcaption>微細な製造対象、汚染、欠陥、良品ダイ、歩留まりのつながりを一枚で整理した自作図です。</figcaption></figure>
+<p>影響範囲は一様ではありません。局所的な粒子が重要でない位置にあれば、電気的な不良にならない可能性もあります。一方、重要な接点や原版に付いた異物、装置や工程の異常が繰り返される状態では、多くのダイやウェハへ同じ欠陥が広がることがあります。だから検査・計測・監視で、単発の欠陥と系統的な異常を切り分けることが重要になります。</p>
+<h2>先端半導体ほど汚染管理が重要になる</h2>
+<p>先端半導体では、微細なパターンだけでなく、薄い膜、複雑な界面、立体的な構造、細かな配線や接点を、多数の工程で積み重ねます。許容できる余白が狭くなると、以前は製品に影響しなかった粒子や化学汚染が、工程の結果に関係する場面が増える傾向があります。</p>
+<p>EUV露光では、原版に付いた微小粒子がウェハへパターン欠陥として写り、チップの失敗につながり得るため、ペリクルなどで原版を守ります。先端パッケージでも、ダイとダイをつなぐ接合面に粒子や残渣があれば、局所的な空洞や接続不良につながり得ます。汚染管理は前工程だけの話ではありません。</p>
+<p>ただし、先端化したからといって、特定の粒径が必ず不良になる、工程ごとのISO Classが世界共通になる、という意味ではありません。粒子の大きさ、位置、材質、工程、装置、製品設計によって、欠陥としての重要度は変わります。企業ごとの詳細な限界値を、公開資料だけで普遍的な数字として断定することもできません。</p>
+<p class="source">EUVの汚染管理の例：<a href="https://www.asml.com/news/stories/2022/the-euv-pellicle-indistinguishable-from-magic">ASML：EUV pellicle</a>。先端化・先端パッケージの説明はResearch Packの範囲に限定しています。</p>
+<h2>よくある疑問</h2>
+<details open><summary>Q. クリーンルームにはホコリが一切ないのですか？</summary><p>いいえ。粒径ごとの粒子濃度を非常に低く管理する空間です。ISO Classは粒子ゼロの宣言ではなく、粒径と単位体積あたりの濃度で清浄度を分類します。</p></details>
+<details open><summary>Q. 防塵服は作業員を守るためだけの服ですか？</summary><p>主な役割の一つは、人の皮膚や衣服から出る粒子を製品側へ移しにくくすることです。薬品や機械的危険から作業員を守る安全用PPEとは目的が異なります。</p></details>
+<details open><summary>Q. 粒子が1個付いたらウェハ全体が不良になりますか？</summary><p>必ずそうなるわけではありません。位置や工程によって局所的な影響にとどまることもありますが、原版や装置の異常が繰り返されると、多数のダイやウェハへ広がる可能性があります。</p></details>
+<details open><summary>Q. クリーンルームは真空ですか？</summary><p>通常、クリーンルーム自体は大気圧に近く、周囲との小さな差圧を管理します。真空は、エッチングや成膜などの装置内部で使う別の工程環境です。</p></details>
+<section class="mp1-section" id="maintenance-phase1-learning"><h2>クリーンルーム・フィルター・空調を、実務と学び直しにつなげる</h2><p>クリーンルームの知識は、装置周辺の清浄度だけでなく、フィルター、空調、温湿度、気流を管理する設備の仕事にもつながります。粒子数の変化と保守作業・環境の履歴を照合し、どこまで自分が点検したか整理しましょう。設備管理の基礎を学ぶ道に加え、工場インフラの求人で必要な資格が確認できた方は、その試験対策も比較できます。</p></section>
+<section class="mp1-section" id="maintenance-phase1-career"><h2>クリーンルーム・フィルター・空調の知識を活かす仕事と次の行動</h2><p>空調・設備管理、清浄度記録、保守作業の経験がある方は、「対象装置・現象・自分が行った確認・結果」を一組にして整理しましょう。担当設備、夜勤・出張、教育体制、応募条件を求人票と照合すると、活かせる経験と補う知識を分けられます。</p><aside class="semicon-cta mp1-card"><h3>仕事の全体像と、求人・学習の選び方を確認する</h3><p>設備保全Hubでは、点検・異常対応の仕事と経験の整理、求人・基礎学習・資格対策をまとめて確認できます。装置担当や顧客対応の範囲を比べたい方は、関連する職種記事も参照してください。</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/" class="semicon-btn mp1-button" data-maintenance-phase1-hub="277" data-cta="maintenance_hub" data-cta-type="maintenance_hub" data-cta-stage="career" data-cta-id="maintenance_873_hub277_end" data-cta-route="maintenance_873_hub277_end">設備保全Hubで仕事内容・求人・学習を確認する</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/" class="semicon-btn mp1-button" data-maintenance-phase1-hub="237" data-cta="equipment_hub" data-cta-type="equipment_hub" data-cta-stage="career" data-cta-id="maintenance_873_hub237_end" data-cta-route="maintenance_873_hub237_end">装置エンジニアの担当範囲・求人・学習を見る</a></div></aside></section>
+
+<h2>まとめ：クリーンルームは歩留まりを守る製造環境</h2>
+<div class="recap">クリーンルームは、ただ掃除された部屋ではなく、粒子・化学汚染・空気の流れなどを管理する空間です。<br>微粒子は、パターン・膜・配線の欠陥へ変わり、良品ダイを減らす起点になり得ます。<br>先端化するほど、空気だけでなく人・装置・材料・温湿度・静電気・振動まで含めた管理が重要になります。</div>
+<figure data-media-role="summary-infographic"><img loading="lazy" decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/09/ep066-10-summary.jpg" width="1200" height="720" alt="微細な製造対象を粒子や空気や人や装置などの環境管理で守り欠陥と歩留まりへの影響を抑える半導体クリーンルームのまとめ図"><figcaption>「掃除された部屋」ではなく、製造環境を運用する仕組みとしてのクリーンルームをまとめました。</figcaption></figure>
+<h2>次に読む記事</h2>
+<p>微粒子が工程の欠陥へ変わる背景をさらに知りたい方は、<a href="https://semicon-campus.com/what-is-lithography-semiconductor-process/">リソグラフィとは何か</a>で模様を写す工程を復習できます。</p>
+<p>汚染を取り除く洗浄の役割を知りたい方は、<a href="https://semicon-campus.com/why-semiconductor-fab-uses-ultrapure-water/">半導体工場で超純水が使われる理由</a>へ進んでください。</p>
+<p class="source">制作根拠：Episode 066 Research Pack「半導体工場のクリーンルームはなぜ必要なのか」（調査基準日2026年9月7日）。画像はEpisode 066用の自作・AI生成説明素材、または記事用に作成した自作図です。企業ごとの工程別限界値や歩留まり低下率は扱っていません。</p>
+</article>

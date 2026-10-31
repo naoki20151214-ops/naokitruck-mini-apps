@@ -1,0 +1,205 @@
+<!--KEEP:0-->
+<div class="semicon-article" id="semicon-top">
+<div class="semicon-level">
+<div class="semicon-level-top"><span class="semicon-level-label">学習レベル</span><strong class="semicon-stars" aria-label="初級（5段階中の1）"><span class="on">★</span><span class="off">☆☆☆☆</span><span>初級</span></strong></div>
+</div>
+<div class="semicon-lead">
+<p>スマホを、使わずに置いておいただけなのに、気づくと、電池が少し減っている。そんな経験はありませんか。</p>
+<p>画面が消えていても、スマホの中のチップでは、ほんの少しだけ、電気が使われ続けています。その原因のひとつが、「リーク電流」です。スイッチを切っても、少しだけ流れ続けてしまう電気のことです。この記事では、チップが小さくなるほど、なぜリーク電流が問題になるのかを、「水門」のたとえで説明します。</p>
+</div>
+<div class="semicon-note">
+<p>水門のたとえが当てはまるのは、「流れ始める基準の高さがある」「少しのすき間でも漏れる」という考え方の部分だけです。実際のトランジスタの中で、水が流れているわけではありません。</p>
+</div>
+<div class="semicon-map">
+<h3>この記事でわかること</h3>
+<ol>
+<li><strong>この記事の目的：</strong>小さくするほど、速さと待機中の電気が引き換えになる理由を、つかむこと</li>
+<li><strong>前半：</strong>リーク電流とは何か、昔は問題にならなかった理由</li>
+<li><strong>後半：</strong>水門のたとえで見る、しきい電圧と、板ばさみの正体</li>
+</ol>
+</div>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep116-blog-ep116-04-phone.jpg" alt="暗めの部屋の木の机の上に、画面を下にしてスマホが置かれているイメージ"><figcaption>机の上に置かれたスマホのイメージ。実際の場面ではありません。 EP116 記事用画像（AI生成）。生成画像を縮小し、JPEGに最適化。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>使っていないスマホ</li>
+<li>画面は消えている</li>
+<li>それでも電池が、少しずつ減る</li>
+</ul>
+</div>
+<div class="semicon-chat-row naoki">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">助手</div>
+</div>
+<div class="semicon-bubble">
+<p>博士、スマホを使っていないのに、どうして電池が減るんですか？</p>
+</div>
+</div>
+<div class="semicon-chat-row teacher">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">博士</div>
+</div>
+<div class="semicon-bubble">
+<p>チップの中のスイッチから、電気が少しずつ漏れておるんじゃ。これを、リーク電流という。</p>
+</div>
+</div>
+<div class="semicon-chat-row naoki">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">助手</div>
+</div>
+<div class="semicon-bubble">
+<p>スイッチを切ったら、止まるはずですよね？</p>
+</div>
+</div>
+<div class="semicon-chat-row teacher">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">博士</div>
+</div>
+<div class="semicon-bubble">
+<p>そこが、今回のおもしろいところじゃ。水門のたとえで、順に見ていこう。</p>
+</div>
+</div>
+<h2 class="wp-block-heading" data-fact-ids="C01">使っていないのに、電気が減る</h2>
+<p>半導体の中には、「トランジスタ」という、とても小さなスイッチが、たくさん入っています。トランジスタは、電気を流したり、止めたりして、0と1の信号をつくります。ところが、スイッチを切ったはずなのに、少しだけ電気が流れ続けることがあります。EE Times Japanの解説では、この切っているときの電流が、オフ電流、またはサブスレッショルドリーク電流と呼ばれ、増えると、待機中の消費電力が増えるとされています。<strong class="semicon-key">リーク電流とは、スイッチを切っても、少しだけ流れ続ける電気のことです。</strong></p>
+<details class="semicon-quiz">
+<summary>確認クイズ：リーク電流とは、どんな電気でしょう？</summary>
+<p>答え：スイッチを切っても、少しだけ流れ続ける電気です。</p>
+</details>
+<h2 class="wp-block-heading" data-fact-ids="C02">昔は、小さくするだけでよかった</h2>
+<p>半導体は、トランジスタを小さくするほど、性能が上がってきました。1970年代から1990年代までは、「デナード・スケーリング」という法則に沿って、小さくするだけで、回路が速くなり、消費電力もほとんど増えませんでした。この法則は、1974年に、IBMのデナード氏らが発表したものです。NVIDIAのBill Dally氏の講演を紹介した記事では、寸法を0.7倍にすると、同じ面積に入るトランジスタの数が2倍になり、速さは1.4倍になる、と説明されています。電圧も0.7倍に下げることで、消費電力は、ほとんど変わらずに済んだのです。</p>
+<p>さらに、このころは、スイッチを切っているときの電力が、無視できるほど小さいものでした。そのため、リーク電流を、気にする必要がほとんどありませんでした。</p>
+<h2 class="wp-block-heading" data-fact-ids="C03">1990年代の後半から、漏れが増え始める</h2>
+<p>ところが、1990年代の後半から、様子が変わります。小さくするにつれて、リーク電流が、急に増え始めたのです。その背景には、速さを保つための、ある事情がありました。次の章から、その事情を、水門にたとえて見ていきます。</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep116-blog-01-leak.png" alt="スイッチを切っても、少しだけ電気が流れ続けるリーク電流を示した概念図"><figcaption>スイッチを切っても、少しだけ流れ続けるリーク電流を表した模式図。説明用の図です。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>スイッチを切っている</li>
+<li>それでも少し流れる</li>
+<li>これが、リーク電流</li>
+</ul>
+</div>
+<details class="semicon-quiz">
+<summary>確認クイズ：リーク電流が急に増え始めたのは、いつごろでしょう？</summary>
+<p>答え：1990年代の後半からです。</p>
+</details>
+<h2 class="wp-block-heading" data-fact-ids="C04">スイッチを、水門にたとえる</h2>
+<p>トランジスタを、川の水門だと考えてみてください。水門を持ち上げると、水が流れます。ただし、少し持ち上げただけでは、水は流れません。決まった高さを超えてから、はじめて流れ始めます。この、流れ始める高さが、「しきい電圧」です。そして、水門を持ち上げる力が、チップに加える電圧にあたります。</p>
+<p>記事によると、流れる電流の大きさは、加える電圧と、しきい電圧の差で決まります。差が大きいほど、たくさん流れます。水門でいえば、基準の高さより、さらに高く持ち上げるほど、水が勢いよく流れる、ということです。</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep116-blog-ep116-05-sluice.jpg" alt="川の水門が少し持ち上げられ、その下から水が流れているイメージ"><figcaption>水門のたとえに使う、水門のイメージ。実際のトランジスタではありません。 EP116 記事用画像（AI生成）。生成画像を縮小し、JPEGに最適化。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>水門を持ち上げると</li>
+<li>水が流れる</li>
+<li>スイッチを、水門にたとえる</li>
+</ul>
+</div>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep116-blog-02-gate.png" alt="しきい電圧を、水門の基準の高さにたとえ、基準を超えて持ち上げると水が流れる様子を示した概念図"><figcaption>しきい電圧と加える電圧の関係を、水門にたとえた模式図。説明用の図です。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>流れ始める基準の高さ</li>
+<li>これが、しきい電圧</li>
+<li>超えた分だけ、水が流れる</li>
+</ul>
+</div>
+<details class="semicon-quiz">
+<summary>確認クイズ：水門のたとえで、「基準の高さ」にあたるものは何でしょう？</summary>
+<p>答え：しきい電圧です。</p>
+</details>
+<h2 class="wp-block-heading" data-fact-ids="C05">電圧を下げると、なぜ遅くなるのか</h2>
+<p>チップは、電気を節約するために、加える電圧を、小さくするたびに、下げてきました。ところが、しきい電圧は、小さくしても、あまり変わりません。すると、持ち上げる高さが、基準の高さに近づきます。つまり、加える電圧としきい電圧の差が縮まり、流れる電気が、減ってしまいます。EE Times Japanの記事では、流れる電流が、この差の2乗に比例すると説明されています。そのため、差が小さくなると、電流は、差の縮まり方以上に、大きく減ってしまうのです。</p>
+<p>電気が減ると、次のスイッチが動き出すまでに、時間がかかります。回路の速さは、前のスイッチから流れる電気が、次のスイッチを動かすまでの時間に、大きく左右されるためです。だから、電圧を下げただけでは、チップが速くなりません。</p>
+<details class="semicon-quiz">
+<summary>確認クイズ：電圧を下げると、流れる電気が減るのは、なぜでしょう？</summary>
+<p>答え：加える電圧としきい電圧の差が、縮まるからです。</p>
+</details>
+<h2 class="wp-block-heading" data-fact-ids="C06">基準を低くすると、今度は漏れる</h2>
+<p>そこで考えられた方法が、しきい電圧を、下げることでした。基準の高さを低くすれば、少し持ち上げるだけで、水がしっかり流れるので、速さを保てます。電子情報通信学会の講演抄録でも、微細化に伴って、しきい電圧を下げながら、電源電圧を下げてきたことが、紹介されています。</p>
+<p>ところが、基準が低いと、わずかなすき間からでも、水が通ってしまいます。閉じたはずの水門から、水がじわじわ漏れるのです。これが、リーク電流です。<strong class="semicon-key">しきい電圧を下げるほど、切っているときに漏れる電気が、増えてしまいます。</strong>使っていないときも、電気が減っていくのは、このためです。</p>
+<details class="semicon-quiz">
+<summary>確認クイズ：しきい電圧を下げると、何が増えるでしょう？</summary>
+<p>答え：切っているときに漏れる電気、つまりリーク電流です。</p>
+</details>
+<h2 class="wp-block-heading" data-fact-ids="C07">下げなければ、動いているときの電気が増える</h2>
+<p>では、しきい電圧を、下げなければ、どうでしょう。漏れは増えません。でも今度は、加える電圧を下げられなくなります。電流を確保するには、電圧の差を保つ必要があるためです。すると、チップが動いているときの電気が、大きく増えてしまいます。</p>
+<h2 class="wp-block-heading" data-fact-ids="C08">速さと待機中の電気は、引き換えになる</h2>
+<p>つまり、速さを取れば、待機中に漏れる。漏れを抑えれば、動いているときに電気を使う。チップは、この板ばさみになりました。EE Times Japanの記事では、この状況が、かつてのデナード・スケーリングの終わりとして説明されています。</p>
+<p>この板ばさみから抜け出すために、トランジスタの形や、材料が、変えられてきました。電子情報通信学会の抄録でも、歪みシリコンや、Fin-FETなどが、性能を上げる方法として挙げられています。次回以降の記事で、その方法を、ひとつずつ見ていきます。</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep116-blog-03-trade.png" alt="しきい電圧を下げた場合と下げない場合の、板ばさみの関係を示した概念図"><figcaption>しきい電圧を下げた場合と下げない場合の、板ばさみの関係を表した模式図。説明用の図です。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>下げると、速さは保てる</li>
+<li>でも待機中に漏れる</li>
+<li>下げないと、動作中の電気が増える</li>
+</ul>
+</div>
+<details class="semicon-quiz">
+<summary>確認クイズ：チップが「板ばさみ」になった、とは、どういうことでしょう？</summary>
+<p>答え：速さを取ると、待機中に漏れる電気が増え、漏れを抑えると、動いているときの電気が増える、ということです。</p>
+</details>
+<div class="semicon-cta">
+<h3>工程を担当する仕事を、知る</h3>
+<p>この工程を担当する仕事を知りたい方は、こちらの記事も読んでみてください。</p>
+<div class="semicon-btnrow"><a class="semicon-btn" href="https://semicon-campus.com/semiconductor-career-map/">半導体製造の仕事を工程別に見てみる</a></div>
+</div>
+<p>製造の全体像は、<a href="https://semicon-campus.com/semiconductor-manufacturing-overview/">半導体の製造工程の全体像</a>で紹介しています。</p>
+<h2 class="wp-block-heading">ことばのおさらい</h2>
+<ul>
+<li><strong>トランジスタ：</strong>電気を流したり、止めたりする、とても小さなスイッチです。</li>
+<li><strong>リーク電流：</strong>スイッチを切っても、少しだけ流れ続ける電気です。</li>
+<li><strong>しきい電圧：</strong>スイッチが入り始める電圧です。水門でいえば、流れ始める基準の高さです。</li>
+<li><strong>待機中：</strong>チップが、何も処理をしていない状態です。</li>
+<li><strong>電源電圧：</strong>チップに加える電圧のことです。水門でいえば、持ち上げる力にあたります。</li>
+<li><strong>微細化：</strong>トランジスタを、小さく作ることです。</li>
+</ul>
+<h2 class="wp-block-heading">よくある誤解</h2>
+<h3>Q. リーク電流は、スイッチが壊れているから起こるのですか？</h3>
+<p>いいえ。正常に動くトランジスタでも、切っているときに、少しだけ電気が流れます。しきい電圧を低くするほど、増えます。</p>
+<h3>Q. 電圧を下げれば、必ず速くなりますか？</h3>
+<p>いいえ。電圧を下げると、流れる電気が減って、かえって速さが上がらなくなります。</p>
+<h3>Q. しきい電圧を下げれば、問題は解決しますか？</h3>
+<p>いいえ。速さは保てますが、切っているときの漏れが増えて、待機中の電気が、増えてしまいます。しきい電圧を下げるかどうかは、速さと待機中の電気の、どちらを重くみるかという、引き換えの問題です。</p>
+<h2 class="wp-block-heading">まとめ</h2>
+<div class="semicon-lead">
+<p>リーク電流は、スイッチを切っても、少しだけ流れ続ける電気で、1990年代の後半から、急に増え始めました。<br />速さを保つために、しきい電圧を下げると、切っているときに、漏れる電気が増えます。<br />しきい電圧を下げなければ、電圧を下げられず、動いているときの電気が増えるため、チップは、板ばさみになりました。</p>
+</div>
+<div class="semicon-note">
+<p>この記事の図解は、Instagram（semicon_campus）にも、まとめて投稿しています。保存して、見返してください。</p>
+</div>
+<div class="semicon-cta">
+<h3>YouTubeでも、半導体をやさしく解説しています</h3>
+<p>図解で復習したい人向けに、YouTubeでも半導体製造を短く解説しています。</p>
+<div class="semicon-btnrow"><a rel="noopener" class="semicon-btn secondary" href="https://www.youtube.com/@semicon-campus" target="_blank">YouTubeで図解動画を見る</a></div>
+</div>
+<h2 class="wp-block-heading">参考にした公式情報</h2>
+<ul class="semicon-sources">
+<li data-source-id="S01"><a href="https://eetimes.itmedia.co.jp/ee/articles/1701/13/news025.html">EE Times Japan 福田昭「NVIDIAがMOSFETの比例縮小則（デナード則）を解説（前編）」（2017年）</a></li>
+<li data-source-id="S02"><a href="https://ken.ieice.org/ken/paper/20070126yArf/">電子情報通信学会 研究会 講演抄録 木村紳一郎「高速・低電力シリコンデバイスの現状と将来」（2007年）</a></li>
+</ul>
+<section class="semicon-correction-form">
+<h2>質問・訂正フォーム</h2>
+<p>この記事の内容に誤りや、分かりにくい点があれば、下のフォームからお知らせください。確認して、記事を直します。</p>
+<div class="semicon-form-shortcode">
+<div class="wpcf7 no-js" id="wpcf7-f2045-o1" lang="ja" dir="ltr" data-wpcf7-id="2045">
+<div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
+<form action="/?rest_route=%2Fwp%2Fv2%2Fposts&#038;per_page=100&#038;page=1&#038;context=view#wpcf7-f2045-o1" method="post" class="wpcf7-form init" aria-label="コンタクトフォーム" novalidate="novalidate" data-status="init">
+<fieldset class="hidden-fields-container"><input type="hidden" name="_wpcf7" value="2045" /><input type="hidden" name="_wpcf7_version" value="6.1.6" /><input type="hidden" name="_wpcf7_locale" value="ja" /><input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f2045-o1" /><input type="hidden" name="_wpcf7_container_post" value="0" /><input type="hidden" name="_wpcf7_posted_data_hash" value="" />
+</fieldset>
+<p>お名前・電話番号・住所の入力は不要です。工場名や社外秘の情報は記載しないでください。
+</p>
+<p><label>報告の種類（必須） <span class="wpcf7-form-control-wrap" data-name="report-type"><select class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required" aria-required="true" aria-invalid="false" name="report-type"><option value="誤りと思われる点">誤りと思われる点</option><option value="分かりにくい箇所">分かりにくい箇所</option><option value="追加してほしい説明・質問">追加してほしい説明・質問</option></select></span></label><br />
+<label>該当する見出し・文章（任意） <span class="wpcf7-form-control-wrap" data-name="report-section"><input size="40" maxlength="200" class="wpcf7-form-control wpcf7-text" aria-invalid="false" value="" type="text" name="report-section" /></span></label><br />
+<label>内容（必須） <span class="wpcf7-form-control-wrap" data-name="report-message"><textarea cols="40" rows="10" maxlength="3000" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" aria-required="true" aria-invalid="false" name="report-message"></textarea></span></label><br />
+<label>返信用メールアドレス（返信をご希望の場合のみ・任意） <span class="wpcf7-form-control-wrap" data-name="report-email"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-email wpcf7-text wpcf7-validates-as-email" autocomplete="email" aria-invalid="false" value="" type="email" name="report-email" /></span></label>
+</p>
+<p>ご意見は記事の確認・改善のために利用します。<a href="https://semicon-campus.com/privacy-policy/">個人情報の取り扱い</a>をご確認ください。
+</p>
+<p><input class="wpcf7-form-control wpcf7-submit has-spinner" type="submit" value="ご意見・訂正報告を送信" />
+</p><div class="wpcf7-response-output" aria-hidden="true"></div>
+</form>
+</div>
+</div>
+</section>
+</div>

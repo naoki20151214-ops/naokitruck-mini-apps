@@ -1,0 +1,20 @@
+{
+ "id": 1966,
+ "type": "post",
+ "slug": "daily-news-37bd988c2f380ea1734b",
+ "link": "https://semicon-campus.com/daily-news-37bd988c2f380ea1734b/",
+ "date": "2026-10-13T17:00:00",
+ "modified": "2026-10-27T20:03:22",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  20
+ ],
+ "tags": [
+  19
+ ],
+ "featured_media": 2763,
+ "title": "QualcommのWi-Fi 8家庭用AIゲートウェイ、何が変わる？",
+ "excerpt": "Qualcommが発表したWi-Fi 8対応AIゲートウェイを初心者向けに解説。NPUの役割、20Gbpsの意味、規格の未完成、今後の課題を整理します。"
+}

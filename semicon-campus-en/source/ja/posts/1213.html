@@ -1,0 +1,33 @@
+
+<!--KEEP:0-->
+
+<p>Coherentは2026年9月21日、AIデータセンター向けの統合光学プラットフォーム「PhotonLink」を発表しました。8月25日の情報は9月21日にECOCで発表するという予告であり、正式なローンチ発表日とは異なります。今回確認できるのは、対応する技術領域、会社が示す案件数、製造能力の拡張計画、売上の見通しです。具体的な顧客名、契約金額、出荷数量、量産時の性能測定値が公開されたわけではありません。<a href="https://www.coherent.com/news/press-releases/launches-photonlink-integrated-optics-platform-ai-infrastructure">Coherentの正式発表</a>、<a href="https://www.coherent.com/news/press-releases/unveil-photonlink-platform-at-ecoc-2026">事前告知</a></p>
+
+<h2>PhotonLinkは何を統合するのか</h2>
+<p>AIデータセンターでは、GPU、CPU、ネットワークスイッチの間を大量のデータが移動します。計算チップの性能が高まるほど、チップ同士をつなぐ通信も高速化しなければなりません。電気配線は距離が長くなると信号損失が増えやすく、高速化では消費電力や配線密度も課題になります。</p>
+<p>光接続では、レーザーで光を作り、光にデータを載せて導波路や光ファイバーで送り、受信側の検出器で電気信号へ戻します。CoherentはPhotonLinkを、この一連の光路を複数の部品・材料・工程で支える基盤と説明しています。<a href="https://www.coherent.com/networking/photonlink">同社の製品説明</a>では、機能を次の4段階に整理しています。</p>
+<ul><li><strong>Generate（生成）</strong>：InPレーザーやGaAs VCSELアレイで光を作る。</li><li><strong>Shape（整形）</strong>：変調、光の結合、反射の抑制などを行う。シリコンフォトニクス、マイクロ光学部品、アイソレーターなどが関わる。</li><li><strong>Guide（導波）</strong>：特殊ファイバー、偏波保持ファイバー、ファイバーガイドなどで光を導く。</li><li><strong>Receive（受信）</strong>：フォトディテクターで光を受け、電気信号へ変換する。</li></ul>
+<p>したがって、PhotonLinkはレーザー単体の新製品ではありません。Coherentは、外部レーザー光源、精密ファイバーアセンブリー、光モジュールなどを、組立・試験も含めて提供する構想を示しています。</p>
+<h2>CPOとNPOの違いは何か</h2>
+<p><strong>CPO（Co-Packaged Optics）</strong>は、光エンジンをスイッチや演算チップと<strong>同じパッケージ内に組み込む</strong>方式です。光エンジンとは、レーザー、変調器、光結合部品、受光器など、電気信号と光信号を変換する部分をまとめたものです。チップのすぐ外側まで延びる高速電気配線を短くできるため、信号損失や電力を抑えられる可能性があります。</p>
+<p>一方、<strong>NPO（Near-Packaged Optics）</strong>は、光エンジンをチップと同じパッケージへ組み込まず、チップの近くに置く方式です。CPOより配置の自由度や交換性を確保しやすい一方、チップと光エンジンの間には一定の電気接続が残ります。つまり、CPOは「同一パッケージへの組込み」、NPOは「近接配置」という違いで整理できます。</p>
+<p>PhotonLinkは、CPO、NPO、さらに新しいチップ間光接続を対象にすると説明されています。ただし、これは両方式が一つの完成品として量産済みという意味ではありません。複数のアーキテクチャに対応する技術、部品、組立、試験を一つの供給体系として提案したものです。査読論文でも、CPOは帯域拡張の候補とされる一方、熱、密な配線、電気インターフェース、パッケージングなどが課題とされています。<a href="https://opg.optica.org/jlt/abstract.cfm?uri=jlt-41-4-1152">Optica Publishing Groupの論文</a></p>
+<h2>今回の発表で分かったこと</h2>
+<p>Coherentによれば、PhotonLinkに関する顧客エンゲージメントは、CPOが10件超、NPOが10件超、チップ間接続が5件超です。また、CPOとNPOではアンカー顧客および長期契約を確保したとしています。ただし、顧客名、契約金額、対象製品、量産開始時期、出荷数量は発表資料に記載されていません。「エンゲージメント」は評価や設計協議などを含む可能性があり、受注数、出荷数、売上高と同じ意味ではありません。</p>
+<p>製造面では、Coherentは既存のデータセンター向け基盤でInPレーザーを3億個超、InPとGaAsのフォトディテクターを合計10億個超出荷したと説明しています。さらに、PhotonLinkの立ち上げに向けて、6インチInPと特殊ファイバーの製造能力を拡張するとしています。これらは会社発表に基づく自己申告であり、今回確認した資料だけでは独立検証された数値とはいえません。</p>
+<p>売上については、PhotonLinkの売上が2026年暦年第4四半期から立ち上がり始めるとCoherentが見込んでいます。これは会社の計画・見通しであり、すでに認識された売上実績ではありません。実際の売上計上と規模は、今後の決算資料で確認する必要があります。</p>
+
+<section class="mp4-section" id="revenue-phase4-learning"><h2>光接続のニュースを、実装・評価の仕事へ</h2><p>PhotonLinkを理解したら、光源、接続、冷却、交換時の確認を別々の仕事として整理します。部品を一体化した発表だけで、設置や保守が不要になるとは判断できません。配線・検査・設備点検の経験を、対象と確認方法で説明し、電気・計測の基礎学習と技術職相談へ進めます。英文の公開資料は、翻訳後も構成図と数値の条件を原文で確認しましょう。</p></section>
+
+<h2>期待される効果と限界</h2>
+<p>光の生成から受信までに関わる部品や工程を一つの供給・設計体系にまとめれば、顧客は部品選定、設計認定、複数サプライヤー間の調整を簡素化できる可能性があります。これはPhotonLinkの構成から導ける利点ですが、今回の発表で実証された効果ではありません。</p>
+<p>発表だけから、コスト削減、消費電力の削減、通信遅延の改善、量産歩留まり、他社に対する優位性を断定することはできません。CPOでは光エンジンをチップへ近づけるほど、熱の管理、細かな光結合、電気接続、故障時の交換や修理、製造試験を同時に考える必要があります。AIデータセンターで本格採用されるには、部品性能だけでなく、パッケージ全体の信頼性と長期運用も重要です。</p>
+<h2>これから注目したいポイント</h2>
+<p>まず確認したいのは、2026年第4四半期にPhotonLink関連の売上が実際に計上されたか、また規模がどの程度だったかです。次に、10件超とされる案件のうち、評価段階から量産契約へ進む案件がどれだけあるかが焦点になります。顧客名、製品世代、出荷時期が明らかになれば、研究開発向けの提案なのか、実際のデータセンター導入に近いのかを判断しやすくなります。</p>
+<p>さらに、光エンジンの消費電力、伝送速度、到達距離、熱特性、量産歩留まり、修理性といった具体的な仕様も重要です。PhotonLinkはAIインフラ向けの統合基盤という大きな方向性を示しましたが、現時点では計画と会社の説明が中心です。将来の決算、顧客による採用発表、独立した性能評価によって、構想がどこまで量産製品として実証されるかを見極める必要があります。</p>
+
+<section class="mp4-section" id="revenue-phase4-career"><h2>この記事の知識を、次の仕事・学習へつなげる</h2><p>配線・接続確認、実装検査、冷却設備点検の経験を、対象・作業・確認した結果で整理します。担当範囲と必要経験、勤務地、勤務・出張、教育体制を比較すると、次に補う知識も具体的になります。</p><aside class="semicon-cta mp4-card"><h3>関連する職種の仕事内容・求人・学習を見る</h3><p>記事で学んだ技術が、点検・復旧、装置立上げ、顧客対応、実装・工程改善のどの仕事で使われるか確認できます。職種記事の求人・学習の選び方へ進みましょう。</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/" class="semicon-btn mp4-button" data-revenue-phase4-hub="237" data-cta="equipment_hub" data-cta-type="equipment_hub" data-cta-stage="career" data-cta-id="phase4_1213_hub237_end" data-cta-route="phase4_1213_hub237_end">装置エンジニアの担当範囲・求人・学習を見る</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-field-service-engineer/" class="semicon-btn mp4-button" data-revenue-phase4-hub="270" data-cta="fse_hub" data-cta-type="fse_hub" data-cta-stage="career" data-cta-id="phase4_1213_hub270_end" data-cta-route="phase4_1213_hub270_end">FSEの復旧・顧客対応と求人・学習を見る</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/advanced-packaging-jobs-career/" class="semicon-btn mp4-button" data-revenue-phase4-hub="651" data-cta="packaging_hub" data-cta-type="packaging_hub" data-cta-stage="career" data-cta-id="phase4_1213_hub651_end" data-cta-route="phase4_1213_hub651_end">先端パッケージの仕事・求人・学習の選び方を見る</a></div></aside></section>
+
+
+<h2>使用した情報源</h2>
+<ul><li><a href="https://www.coherent.com/news/press-releases/launches-photonlink-integrated-optics-platform-ai-infrastructure">Coherent「Coherent Launches PhotonLink Integrated Optics Platform for AI Infrastructure」</a></li><li><a href="https://www.coherent.com/networking/photonlink">Coherent「PhotonLink」</a></li><li><a href="https://opg.optica.org/jlt/abstract.cfm?uri=jlt-41-4-1152">Optica Publishing Group「Beyond CPO: A Motivation and Approach for Bringing Optics Onto the Silicon Interposer」</a></li><li><a href="https://www.coherent.com/news/press-releases/unveil-photonlink-platform-at-ecoc-2026">Coherent「COHERENT CORP. TO UNVEIL PHOTONLINK PLATFORM AT ECOC ON SEPTEMBER 21, 2026」</a></li></ul>

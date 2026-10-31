@@ -1,0 +1,18 @@
+{
+ "id": 1203,
+ "type": "post",
+ "slug": "load-lock-wafer-exchange",
+ "link": "https://semicon-campus.com/load-lock-wafer-exchange/",
+ "date": "2026-09-27T18:00:00",
+ "modified": "2026-10-30T21:32:36",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  21
+ ],
+ "tags": [],
+ "featured_media": 2817,
+ "title": "ロードロック室とは？真空室を開けずにウェハを交換する仕組み",
+ "excerpt": "真空室を開けずにウェハ交換、ロードロックの役割 この記事でわかること ウェハ交換のたびに真空プロセス室全体を大気へ戻すと、再排気と表面状態の負荷が増えます。結論から言えば、ロードロックという小さな前室だけを大気と真空の間 […]"
+}

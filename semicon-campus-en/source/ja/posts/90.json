@@ -1,0 +1,19 @@
+{
+ "id": 90,
+ "type": "post",
+ "slug": "what-is-cmp-semiconductor-process",
+ "link": "https://semicon-campus.com/what-is-cmp-semiconductor-process/",
+ "date": "2026-09-19T18:00:00",
+ "modified": "2026-10-30T21:22:53",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  7,
+  5
+ ],
+ "tags": [],
+ "featured_media": 1120,
+ "title": "CMPとは何か ― なぜ半導体は何度も表面を平らにするのか",
+ "excerpt": "CMPとは、ウェハ上の膜や配線を化学作用と機械的な研磨で平坦化する工程です。パッド・スラリー・圧力の役割、成膜・洗浄・計測との関係、削りすぎや傷、装置・材料企業と仕事を実物写真とともに解説します。"
+}

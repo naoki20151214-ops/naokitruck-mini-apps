@@ -1,0 +1,18 @@
+{
+ "id": 2256,
+ "type": "post",
+ "slug": "semiconductor-root-cause-analysis",
+ "link": "https://semicon-campus.com/semiconductor-root-cause-analysis/",
+ "date": "2026-10-24T17:59:00",
+ "modified": "2026-10-30T21:15:42",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  9
+ ],
+ "tags": [],
+ "featured_media": 2747,
+ "title": "半導体製造の根本原因解析（RCA）と8Dレポート・ロット絞り込み手法",
+ "excerpt": "半導体の不良の本当の原因はどう探すのか。不良のウェハが通った装置の共通点、装置の記録、ウェハの不良の分布から原因を絞り込む根本原因解析（RCA）を、特許や一次資料をもとに、初心者向けにやさしく解説します。"
+}

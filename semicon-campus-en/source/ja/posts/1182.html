@@ -1,0 +1,303 @@
+
+<!--KEEP:0-->
+
+
+<!--KEEP:1-->
+
+
+<!--KEEP:2-->
+
+
+
+<article class="semicon-article" data-episode="080" data-slug="semiconductor-test-wafer-final" data-target="new_post">
+<h1>半導体テストとは？ウェハテストから最終テストまで良品・不良品を判定する仕組み</h1>
+<div class="semicon-lead">
+<p>見た目がきれいな半導体でも、スマートフォンや車の中で正しく動くとは限りません。</p>
+<p>完成に近づいたチップへ実際に電気信号を与え、返ってくる応答を確かめて、初めて回路としての良否を判定できます。</p>
+<p><strong>半導体テストとは、ウェハ上とパッケージ後の複数段階で電気的な動作を測り、仕様を満たす製品だけを選び出す工程です。</strong></p>
+</div>
+
+<figure class="semicon-hero" data-media-role="explanatory-image-01" data-visual-kind="stock" data-subject="半導体テスト" data-purpose="hero-overview" data-composition="equipment-wide" data-concrete-object="true" data-selection-reason="記事冒頭で抽象図より先に、ウェハと試験設備が同時に見える実機写真を提示するため。" data-photo-assessment="実機のウェハプローバ、チャック、ステージが明瞭で、装置環境の導入写真として十分に読める。" data-provenance="articles/images/episode080/visual-policy-v1/provenance/01-prober.md"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/09/ep080-01-01-prober.webp" alt="半導体テストに使われるウェハプローバの実機とウェハ保持部"><figcaption>半導体テストを行うウェハプローバの実機。保守用にカバー等を外した構成で、量産稼働中の状態そのものではありません。<small>Credit: Ixnayonthetimmay / Wikimedia Commons／変更: resized and converted to WebP／License: <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>／<a href="https://commons.wikimedia.org/wiki/File:Wafer_prober_service_configuration.jpg">Source</a></small></figcaption></figure>
+
+
+<h2>この記事でわかること</h2>
+<ul>
+<li>ウェハテストで不良ダイを早く見つける理由</li>
+<li>ウェハで合格しても、パッケージ後に最終テストを行う理由</li>
+<li>DFT、Binning、Test Escape、Overkillが量産品質にどう関わるか</li>
+</ul>
+
+<h2>結論：良否は「電気を与えた結果」で判定する</h2>
+<p data-fact-ids="F001">半導体テストでは、試験装置から電圧、電流、クロックやデジタル信号などを半導体へ与え、返ってくる応答を測ります。その応答を、あらかじめ決めた期待値や規格の範囲と比較して、PassかFailかを判断します。単に外観が整っているかを見るのではなく、回路として意図した動作をするか、電気特性が仕様内にあるかを確かめるのが中心です。</p>
+<p>試験に使う自動試験装置はATE（Automated Test Equipment）と呼ばれます。ATEは、何でも自動的に理解して答えを出す箱ではありません。製品に必要な電気的な刺激を与え、測定結果を比較できる環境を作る装置です。この記事では装置の機種ではなく、ウェハからパッケージ後まで、判定がどのように連なるかに焦点を絞ります。</p>
+<div class="semicon-note"><strong>検査とテストの境界：</strong>製造途中の欠陥検査や計測は、異物・パターン・寸法などの物理的な状態を調べます。ここで扱う半導体テストは、主に電気信号への応答や電気特性を使って製品の動作を判定する工程です。両者は品質を守るために補い合いますが、見ている対象は同じではありません。</div>
+
+<figure class="semicon-figure" data-media-role="explanatory-image-02" data-visual-kind="stock" data-subject="半導体テスト" data-purpose="stage-transition-evidence" data-composition="macro-die" data-concrete-object="true" data-selection-reason="ウェハ上のダイから外部接続を持つパッケージへ対象が移ることを、開封ICの実物で示すため。" data-photo-assessment="ダイとボンディング線が接写で明瞭だが、開封観察用の状態なので通常製品外観とは区別して説明する。" data-provenance="articles/images/episode080/visual-policy-v1/provenance/02-wire-bonding.md"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/09/ep080-02-02-wire-bonding.webp" alt="半導体テストの対象となるダイとボンディング線を見せた開封IC"><figcaption>半導体テストの対象は、ウェハ上のダイから組立後のパッケージへ移ります。写真は内部観察用に開封されたICで、通常の出荷外観ではありません。<small>Credit: Mister rf / Wikimedia Commons／変更: resized and converted to WebP／License: <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>／<a href="https://commons.wikimedia.org/wiki/File:Integrated_circuit_wire_bonding.jpg">Source</a></small></figcaption></figure>
+
+<h2>半導体テストの基本は3つの動作でできている</h2>
+<p>第一は、試験したい半導体へ電気的な刺激を与えることです。第二は、その結果として返ってくる信号や電気特性を測ることです。第三は、測定結果を期待値または規格の範囲と比較することです。この三つを必要な順番で繰り返し、結果を記録して判定へつなぎます。</p>
+<p>ここで大切なのは、「電源が入ったから良品」とは限らないことです。ある動作はできても、別の動作で期待した応答にならない場合があります。逆に、外観からは違いが分からなくても、電気を与えたときの応答で差が現れます。半導体テストは、こうした回路としての差を量産の判定に使います。</p>
+
+<figure class="semicon-figure" data-media-role="explanatory-image-03" data-visual-kind="stock" data-subject="半導体テスト" data-purpose="measurement-environment" data-composition="lab-station" data-concrete-object="true" data-selection-reason="刺激・測定・比較という本文の説明を、プローブ操作と計測器を備えた具体的な測定環境へ結びつけるため。" data-photo-assessment="半自動プローブステーションの実機が明瞭で、解析用設備としての外観をスマホでも把握できる。" data-provenance="articles/images/episode080/visual-policy-v1/provenance/03-probe-station.md"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/09/ep080-03-03-probe-station.webp" alt="半導体テストで電気刺激と応答測定に使う半自動プローブステーション"><figcaption>半導体テストで刺激を与え、応答を測るための半自動プローブステーションの例。量産ATEそのものではなく、解析・測定用設備の一例です。<small>Credit: Rgarrigan / Wikimedia Commons／変更: resized and converted to WebP／License: <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>／<a href="https://commons.wikimedia.org/wiki/File:Micromanipulator_Semiautomatic_Probe_Station.jpg">Source</a></small></figcaption></figure>
+
+<h2>ウェハテストでは、切り分ける前のダイを調べる</h2>
+<p>ウェハには、同じ設計の回路が多数並んでいます。一つ一つの回路部分をダイと呼びます。ウェハテストでは、この段階で各ダイへ電気的に接続し、必要な試験を行います。</p>
+<p data-fact-ids="F003">その接続を担うのがProbe Card（プローブカード）です。プローブカードの微小な接点を、ウェハ表面にあるパッドやバンプへ一時的に当て、ダイとATEを電気的につなぎます。「チップ内部へ針を刺す」のではありません。回路の外部接続点へ触れ、試験に必要な信号の入口と出口を作ります。</p>
+<p>接続できたダイにATEから信号を送り、応答を読み取ります。判定結果はダイごとに記録され、後で切り分けるときに、どのダイを次の工程へ送るかを判断する材料になります。ウェハ上の位置とテスト結果を結びつけておくことで、良否の分布も確認できます。</p>
+
+<figure class="semicon-figure" data-media-role="explanatory-image-04" data-visual-kind="stock" data-subject="プローブカード" data-purpose="interface-object" data-composition="object-top-view" data-concrete-object="true" data-selection-reason="接触概念だけの模式図ではなく、ウェハとATEの間に置かれるプローブカード実物を優先して見せるため。" data-photo-assessment="円形基板と中央の接触部が視認でき、微細接点の個々の形よりも装置全体の具体物理解に適する。" data-provenance="articles/images/episode080/visual-policy-v1/provenance/04-probe-card.md"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/09/ep080-04-04-probe-card.webp" alt="ウェハとATEを電気的につなぐプローブカードの実物"><figcaption>プローブカードの実物。中央の微細接触部を介してウェハ上の電極と試験装置をつなぎます。<small>Credit: Ajoones / Wikimedia Commons／変更: resized and converted to WebP／License: <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>／<a href="https://commons.wikimedia.org/wiki/File:Probe_card.JPG">Source</a></small></figcaption></figure>
+
+<h2>なぜウェハの状態で一度テストするのか</h2>
+<p data-fact-ids="F002">大きな理由の一つは、明らかな不良ダイをパッケージへ組み立てる前に見つけるためです。ウェハを切断し、ダイを取り出し、接続し、パッケージへ組み立てる後工程にも、設備、材料、時間が必要です。ウェハ段階で不良と分かったダイを先に除外できれば、そのダイへ不要な後工程を重ねることを減らせます。</p>
+<p>これは、ウェハテストだけで製品の全品質が確定するという意味ではありません。ウェハテストの役割は、後工程へ進める候補を早い段階で選び、次の工程で使う判定情報を作ることです。早く見つけることと、最後まで品質を確認することは、別の目的として両立させます。</p>
+
+<figure class="semicon-figure" data-media-role="explanatory-image-05" data-visual-kind="stock" data-subject="ウェハテスト" data-purpose="wafer-object" data-composition="wafer-close-up" data-concrete-object="true" data-selection-reason="早期選別の対象である多数のダイが並ぶウェハそのものを示し、後工程前という位置づけを具体化するため。" data-photo-assessment="ダイパターンが面全体に明瞭で、ウェハ上に多数の回路が並ぶことをスマホ表示でも確認できる。" data-provenance="articles/images/episode080/visual-policy-v1/provenance/05-silicon-wafer.md"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/09/ep080-05-05-silicon-wafer.webp" alt="ウェハテスト前の多数のダイパターンが並ぶシリコンウェハ"><figcaption>ウェハテストでは、切断・組立前のウェハ上で各ダイを調べ、後工程へ送る候補を早期に選びます。<small>Credit: 2&#215;910 / Wikimedia Commons／変更: resized and converted to WebP／License: <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>／<a href="https://commons.wikimedia.org/wiki/File:Si_wafer.jpg">Source</a></small></figcaption></figure>
+
+<h2>ウェハでPassしても、パッケージ後にもう一度確かめる</h2>
+<p data-fact-ids="F004 F005">ウェハテストでPassしたダイでも、出荷できる製品になったとは限りません。切断後のダイはパッケージへ組み立てられ、外部端子と電気的につながる形になります。パッケージ工程では接続、熱、機械的な応力などが加わり、その途中で新しい故障が生じる場合があります。そのため、完成したパッケージの状態で最終テストを行い、もう一度動作を確認します。</p>
+<p>ウェハテストと最終テストは、同じ作業を二度繰り返すだけではありません。ウェハ段階では早期に不良ダイを選別する意味があり、最終テストでは組立後の製品として電気的に動くかを確かめます。試験項目に重なる部分があっても、対象の物理的な状態と品質判断の時点が異なります。</p>
+<p>したがって「ウェハで合格したのだから、もう検査は不要」という理解は正しくありません。ウェハで見つけられる問題と、パッケージ後に確認すべき問題を分担していると考えると、二段階の意味が分かります。</p>
+
+<figure class="semicon-figure" data-media-role="explanatory-image-06" data-visual-kind="stock" data-subject="最終テスト" data-purpose="packaged-device-object" data-composition="product-group" data-concrete-object="true" data-selection-reason="ウェハ段階との違いを、外部端子を備えた複数のパッケージIC実物で直接示すため。" data-photo-assessment="複数形状のパッケージと端子が明瞭で、組立後に確認する物理的な対象を誤解なく示せる。" data-provenance="articles/images/episode080/visual-policy-v1/provenance/06-packaged-ics.md"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/09/ep080-06-06-packaged-ics.webp" alt="最終テストの対象となる外部端子付きパッケージICの実物"><figcaption>最終テストは、外部端子を備えた組立後のパッケージICを対象に行います。写真は製品形状の例であり、合否状態を表すものではありません。<small>Credit: Viswesr / Wikimedia Commons／変更: resized and converted to WebP／License: <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>／<a href="https://commons.wikimedia.org/wiki/File:ARM_Cortex-M0_and_M3_ICs_in_SMD_Packages.jpg">Source</a></small></figcaption></figure>
+
+<h2>巨大な回路を効率良く調べるDFT</h2>
+<p data-fact-ids="F006">現代の複雑な半導体を、内部のトランジスタへ一本ずつ直接触れて検査するわけではありません。Scan、ATPG、BISTなど、回路内部の故障を効率良く見つけるための仕組みを、設計段階から組み込みます。この考え方がDFT（Design for Test、またはDesign for Testability）です。</p>
+<p>Scanは内部状態を試験しやすい形で扱うための構造、ATPGは狙った故障を検出する試験パターンを作る考え方、BISTは回路側に自己試験の仕組みを持たせる考え方です。ここで重要なのは、製造が終わってから試験装置だけで全てを解決するのではなく、試験しやすさそのものを設計へ入れておく点です。</p>
+<p>使える端子と時間が限られる中で、必要な故障を見つけやすくする。DFTは、半導体テストが設計、製造、試験の共同作業であることを示しています。</p>
+
+<figure class="semicon-figure" data-media-role="explanatory-image-07" data-visual-kind="diagram" data-subject="DFT" data-purpose="dft-relation" data-composition="vertical-stack" data-concrete-object="false" data-selection-reason="Scan、ATPG、BISTの異なる役割と設計段階での包含関係を、一つの構造として比較するため。" data-photo-assessment="実物写真では設計内部の三手法と役割分担を同時に確認できず、関係性の説明には不足する。" data-diagram-justification="実写や写真ではScan、ATPG、BISTという設計内部の役割と包含関係を同時に示せないため、縦の関係図が必要。" data-provenance="articles/images/episode080/visual-policy-v1/provenance/07-dft-testability.md"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1100" role="img" aria-labelledby="t d" role="img" aria-label="DFTに含まれるScan、ATPG、BISTの役割を縦に整理した関係図" style="width:100%;height:auto;display:block;">
+  <title id="t">DFTをチップへ組み込む</title>
+  <desc id="d">チップ内部へScan、ATPG、BISTを組み込み、テスト信号から故障を見つけやすくするインフォグラフィック</desc>
+  <rect width="800" height="1100" fill="#f6f9fc"/>
+  <circle cx="100" cy="90" r="48" fill="#dbeafe"/>
+  <path d="M70 90h18l10-22 18 44 12-22h22" fill="none" stroke="#2563eb" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="170" y="82" font-size="44" font-weight="700" fill="#10233f">テストしやすさを</text>
+  <text x="170" y="134" font-size="44" font-weight="700" fill="#10233f">チップに組み込む</text>
+
+  <g stroke="#64748b" stroke-width="12" stroke-linecap="round">
+    <path d="M155 286h-58M155 366h-58M155 446h-58M155 526h-58M155 606h-58M155 686h-58M155 766h-58"/>
+    <path d="M645 286h58M645 366h58M645 446h58M645 526h58M645 606h58M645 686h58M645 766h58"/>
+  </g>
+  <rect x="145" y="215" width="510" height="640" rx="52" fill="#10233f"/>
+  <rect x="180" y="250" width="440" height="570" rx="36" fill="#ffffff"/>
+  <text x="400" y="318" text-anchor="middle" font-size="46" font-weight="700" fill="#7c3aed">DFT</text>
+
+  <path d="M245 388h310" stroke="#dbe3ee" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="270" cy="388" r="62" fill="#dbeafe" stroke="#2563eb" stroke-width="7"/>
+  <g fill="none" stroke="#2563eb" stroke-width="8">
+    <circle cx="246" cy="388" r="13"/><circle cx="270" cy="388" r="13"/><circle cx="294" cy="388" r="13"/>
+    <path d="M259 388h-1M283 388h-1"/>
+  </g>
+  <text x="360" y="382" font-size="39" font-weight="700" fill="#10233f">Scan</text>
+  <text x="360" y="428" font-size="34" fill="#526071">内部をつなぐ</text>
+
+  <path d="M245 558h310" stroke="#dbe3ee" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="270" cy="558" r="62" fill="#fef3c7" stroke="#f59e0b" stroke-width="7"/>
+  <path d="M282 494l-48 70h34l-16 58 54-78h-36z" fill="#f59e0b" stroke="#b45309" stroke-width="4" stroke-linejoin="round"/>
+  <text x="360" y="552" font-size="39" font-weight="700" fill="#10233f">ATPG</text>
+  <text x="360" y="598" font-size="34" fill="#526071">故障を狙う</text>
+
+  <path d="M245 728h310" stroke="#dbe3ee" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="270" cy="728" r="62" fill="#dcfce7" stroke="#16a34a" stroke-width="7"/>
+  <path d="M270 674l42 17v35c0 36-25 60-42 68-17-8-42-32-42-68v-35z" fill="#16a34a"/>
+  <path d="M247 727l16 16 31-35" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="360" y="722" font-size="39" font-weight="700" fill="#10233f">BIST</text>
+  <text x="360" y="768" font-size="34" fill="#526071">自分で確かめる</text>
+
+  <path d="M62 925h208" stroke="#2563eb" stroke-width="14" stroke-linecap="round"/>
+  <path d="M246 898l31 27-31 27" fill="none" stroke="#2563eb" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="70" y="894" font-size="34" font-weight="700" fill="#2563eb">TEST信号</text>
+  <path d="M530 925h208" stroke="#16a34a" stroke-width="14" stroke-linecap="round"/>
+  <path d="M714 898l31 27-31 27" fill="none" stroke="#16a34a" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="545" y="894" font-size="34" font-weight="700" fill="#16803a">故障を発見</text>
+  <text x="400" y="1040" text-anchor="middle" font-size="37" font-weight="700" fill="#10233f">設計段階から、測れる回路へ</text>
+</svg>
+<figcaption>DFTは、Scan、ATPG、BISTなどを通じて「作った後にどう測るか」を設計時点から考えます。<small>制作: Semicon Campus編集部／変更: mobile縦構成版</small></figcaption></figure>
+
+<h2>判定を厳しくすれば品質が上がる、とは限らない</h2>
+<p data-fact-ids="F007">テスト判定には二方向の誤りがあります。Test Escapeは、本来Failにすべき不良品をPassさせることです。Overkillは、本来使える良品をFailさせることです。不良を流出させないことは重要ですが、良品まで過剰に落とせば、使える製品と製造コストを失います。</p>
+<p data-fact-ids="F010">量産テストでは、不良を見つけるための十分なカバレッジと、短い試験時間、低いコスト、低いOverkillを同時に成立させる必要があります。項目を増やし、判定を厳しくすれば自動的に最適になるわけではありません。必要な故障を見つけながら、量産として続けられる時間とコストに収めることが求められます。</p>
+<p>このバランスが難しい理由は、品質だけ、速度だけ、コストだけを単独で最大化できないからです。試験時間が長くなれば処理できる個数へ影響し、判定の境界を変えればPassとFailの数へ影響します。何を確かめるかと、どこで判定するかを一つの仕組みとして考えます。</p>
+
+<figure class="semicon-figure" data-media-role="explanatory-image-08" data-visual-kind="diagram" data-subject="Test Escape" data-purpose="error-tradeoff" data-composition="opposed-outcomes" data-concrete-object="false" data-selection-reason="同じ判定境界から生じる二方向の誤りを対比し、片側だけを減らせばよいわけではないと示すため。" data-photo-assessment="実物写真では不良品のPassと良品のFailという判定結果の逆方向性を同一画面で表現できない。" data-diagram-justification="写真や実写ではTest EscapeとOverkillという見た目に現れない二方向の判定誤りを同時に示せないため、比較図が必要。" data-provenance="articles/images/episode080/visual-policy-v1/provenance/08-escape-overkill-balance.md"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1040" role="img" aria-labelledby="t d" role="img" aria-label="Test EscapeとOverkillという二方向の判定誤りを比較した図" style="width:100%;height:auto;display:block;">
+  <title id="t">判定ミスは二方向</title>
+  <desc id="d">不良品をPassさせるTest Escapeと、良品をFailさせるOverkillを実物状態と誤判定の対比で示すインフォグラフィック</desc>
+  <rect width="800" height="1040" fill="#f6f9fc"/>
+  <text x="400" y="76" text-anchor="middle" font-size="46" font-weight="700" fill="#10233f">判定ミスは2方向</text>
+  <text x="400" y="126" text-anchor="middle" font-size="34" fill="#526071">本当の状態と、テスト結果のズレ</text>
+
+  <rect x="45" y="180" width="340" height="780" rx="38" fill="#fff" stroke="#fecaca" stroke-width="6"/>
+  <rect x="415" y="180" width="340" height="780" rx="38" fill="#fff" stroke="#fde68a" stroke-width="6"/>
+  <text x="215" y="244" text-anchor="middle" font-size="36" font-weight="700" fill="#b91c1c">Test Escape</text>
+  <text x="585" y="244" text-anchor="middle" font-size="36" font-weight="700" fill="#b45309">Overkill</text>
+
+  <text x="215" y="304" text-anchor="middle" font-size="34" fill="#526071">本当は不良</text>
+  <circle cx="215" cy="410" r="82" fill="#fee2e2" stroke="#dc2626" stroke-width="7"/>
+  <g stroke="#dc2626" stroke-width="8" fill="#fff" stroke-linejoin="round">
+    <rect x="161" y="356" width="108" height="108" rx="16"/>
+    <path d="M181 356v-24M215 356v-24M249 356v-24M181 488v-24M215 488v-24M249 488v-24M161 376h-24M161 410h-24M161 444h-24M293 376h-24M293 410h-24M293 444h-24"/>
+    <path d="M197 370l20 33-20 22 26 29" fill="none"/>
+  </g>
+  <path d="M215 510v86" stroke="#94a3b8" stroke-width="12" stroke-linecap="round"/>
+  <path d="M190 573l25 28 25-28" fill="none" stroke="#94a3b8" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="215" cy="680" r="78" fill="#dcfce7" stroke="#16a34a" stroke-width="7"/>
+  <path d="M177 681l25 25 52-58" fill="none" stroke="#16a34a" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="215" y="804" text-anchor="middle" font-size="42" font-weight="700" fill="#16803a">PASS</text>
+  <path d="M126 845l178 78M304 845l-178 78" stroke="#dc2626" stroke-width="12" stroke-linecap="round"/>
+  <text x="215" y="944" text-anchor="middle" font-size="34" font-weight="700" fill="#b91c1c">不良を見逃す</text>
+
+  <text x="585" y="304" text-anchor="middle" font-size="34" fill="#526071">本当は良品</text>
+  <circle cx="585" cy="410" r="82" fill="#dcfce7" stroke="#16a34a" stroke-width="7"/>
+  <g stroke="#16a34a" stroke-width="8" fill="#fff" stroke-linejoin="round">
+    <rect x="531" y="356" width="108" height="108" rx="16"/>
+    <path d="M551 356v-24M585 356v-24M619 356v-24M551 488v-24M585 488v-24M619 488v-24M531 376h-24M531 410h-24M531 444h-24M663 376h-24M663 410h-24M663 444h-24"/>
+    <path d="M553 410l22 22 42-47" fill="none"/>
+  </g>
+  <path d="M585 510v86" stroke="#94a3b8" stroke-width="12" stroke-linecap="round"/>
+  <path d="M560 573l25 28 25-28" fill="none" stroke="#94a3b8" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="585" cy="680" r="78" fill="#fee2e2" stroke="#dc2626" stroke-width="7"/>
+  <path d="M548 643l74 74M622 643l-74 74" stroke="#dc2626" stroke-width="13" stroke-linecap="round"/>
+  <text x="585" y="804" text-anchor="middle" font-size="42" font-weight="700" fill="#b91c1c">FAIL</text>
+  <path d="M496 845l178 78M674 845l-178 78" stroke="#f59e0b" stroke-width="12" stroke-linecap="round"/>
+  <text x="585" y="944" text-anchor="middle" font-size="34" font-weight="700" fill="#b45309">良品を落とす</text>
+  <text x="400" y="1012" text-anchor="middle" font-size="35" font-weight="700" fill="#10233f">両方を減らす判定設計</text>
+</svg>
+<figcaption>Test Escapeを抑えるだけでなく、良品を落とすOverkillを増やしすぎない判定設計が必要です。<small>制作: Semicon Campus編集部／変更: mobile縦構成版</small></figcaption></figure>
+
+<div class="semicon-mid-cta"><strong>工程全体とのつながりを確認する：</strong>テスト結果と良品率の関係を整理したい方は、<a href="https://semicon-campus.com/what-is-semiconductor-yield/">半導体の歩留まりとは？</a>を先に読むと、なぜ良品を誤って落とすことも問題なのかがつながります。</div>
+
+<h2>Binningは○×の先にある「分類」</h2>
+<p data-fact-ids="F008">テスト結果は、単純なPassとFailだけに使われるとは限りません。Binningは、試験結果に基づいて、合否、故障の分類、性能の分類などへ分けることです。どのBinへ入ったかを記録することで、出荷できる製品を選ぶだけでなく、どの種類のFailが多いかを後から調べる材料にもなります。</p>
+<p>ここでも、分類は製品ごとの試験結果に基づきます。Binningという言葉だけで、全ての製品が同じ基準や同じ数の分類を持つと考えることはできません。共通するのは、測定した結果を次の扱いへ結びつけるという役割です。</p>
+
+<figure class="semicon-figure" data-media-role="explanatory-image-09" data-visual-kind="stock" data-subject="Binning" data-purpose="post-test-handling" data-composition="tray-array" data-concrete-object="true" data-selection-reason="抽象的な分類箱ではなく、テスト後に製品単位で取り扱われる複数のICとトレー実物を見せるため。" data-photo-assessment="ICがトレー内に個別配置され、分類後の物理的な取扱いを連想できるが、写真自体は特定Binを示さない。" data-provenance="articles/images/episode080/visual-policy-v1/provenance/09-ic-chips-tray.md"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/09/ep080-09-09-ic-chips-tray.webp" alt="Binning後に製品単位で扱われるトレー内のICパッケージ"><figcaption>Binningは測定結果に基づく分類です。写真はトレー内のICパッケージ例であり、特定の合否や性能Binを示すものではありません。<small>Credit: BrokenSphere / Wikimedia Commons／変更: resized and converted to WebP／License: <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>／<a href="https://commons.wikimedia.org/wiki/File:Panasonic_chips_in_tray.JPG">Source</a></small></figcaption></figure>
+
+<h2>テストデータは、出荷判定だけで終わらない</h2>
+<p data-fact-ids="F009">ダイやパッケージごとのテスト結果は、出荷するかどうかを決めるだけでなく、歩留まりを学び、原因を調べるためにも使われます。どの位置で、どの種類のFailが、どのように増えたかを確認すれば、工程側で調べるべき範囲を狭める手掛かりになります。</p>
+<p>テストそのものが不良を修理するわけではありません。しかし、測定結果を記録し、分布や傾向として見られる形にすれば、次の製造判断につながります。出荷判定と工程改善の両方へデータを使うことで、テストは製造の最後に○×を付けるだけの工程ではなくなります。</p>
+<p>半導体の品質は、最終テスト一回だけで作られるものでもありません。設計時のDFT、ウェハ段階の選別、パッケージ後の確認、結果の分類、工程へのフィードバックが連なり、必要な品質と量産性を支えます。</p>
+
+<figure class="semicon-figure" data-media-role="explanatory-image-10" data-visual-kind="diagram" data-subject="テストデータ" data-purpose="data-feedback-loop" data-composition="branch-and-loop" data-concrete-object="false" data-selection-reason="一つの測定結果が出荷判定と原因調査へ分かれ、工程改善から次の測定へ戻る情報経路を示すため。" data-photo-assessment="実物写真ではテスト結果が複数用途へ分岐して製造判断へ戻る時間的な情報の流れを表示できない。" data-diagram-justification="写真や実写ではテストデータが出荷判定と原因調査へ分岐し、工程改善から戻る情報の循環を示せないため、流れ図が必要。" data-provenance="articles/images/episode080/visual-policy-v1/provenance/10-test-data-feedback.md"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1080" role="img" aria-labelledby="t d" role="img" aria-label="テストデータを出荷判定と原因調査から工程改善へ戻す流れ図" style="width:100%;height:auto;display:block;">
+  <title id="t">テストデータが工程改善へ戻る</title>
+  <desc id="d">テスト結果、故障解析、工程改善が循環し、製造へフィードバックされることを三つのアイコンと循環矢印で示すインフォグラフィック</desc>
+  <rect width="800" height="1080" fill="#f6f9fc"/>
+  <text x="400" y="78" text-anchor="middle" font-size="46" font-weight="700" fill="#10233f">データが工程へ戻る</text>
+  <text x="400" y="128" text-anchor="middle" font-size="34" fill="#526071">テストは選別で終わらない</text>
+
+  <path d="M322 274C186 318 128 444 150 570" fill="none" stroke="#2563eb" stroke-width="18" stroke-linecap="round"/>
+  <path d="M124 536l27 40 29-38" fill="#2563eb"/>
+  <path d="M212 722c92 120 270 148 392 53" fill="none" stroke="#f59e0b" stroke-width="18" stroke-linecap="round"/>
+  <path d="M564 770l47 1-18 43" fill="#f59e0b"/>
+  <path d="M646 618c31-151-52-293-186-345" fill="none" stroke="#7c3aed" stroke-width="18" stroke-linecap="round"/>
+  <path d="M491 248l-42 21 37 30" fill="#7c3aed"/>
+
+  <circle cx="400" cy="292" r="126" fill="#dbeafe" stroke="#2563eb" stroke-width="8"/>
+  <rect x="325" y="222" width="150" height="110" rx="18" fill="#fff" stroke="#2563eb" stroke-width="7"/>
+  <path d="M350 305v-34M390 305v-60M430 305v-84" stroke="#2563eb" stroke-width="18" stroke-linecap="round"/>
+  <path d="M325 350h150" stroke="#2563eb" stroke-width="9" stroke-linecap="round"/>
+  <circle cx="365" cy="350" r="13" fill="#16a34a"/>
+  <circle cx="435" cy="350" r="13" fill="#dc2626"/>
+  <text x="400" y="458" text-anchor="middle" font-size="38" font-weight="700" fill="#10233f">テスト結果</text>
+
+  <circle cx="205" cy="690" r="126" fill="#ede9fe" stroke="#7c3aed" stroke-width="8"/>
+  <rect x="139" y="628" width="104" height="104" rx="16" fill="#fff" stroke="#7c3aed" stroke-width="7"/>
+  <path d="M158 628v-23M191 628v-23M224 628v-23M158 755v-23M191 755v-23M224 755v-23" stroke="#7c3aed" stroke-width="7"/>
+  <circle cx="239" cy="666" r="45" fill="none" stroke="#7c3aed" stroke-width="10"/>
+  <path d="M271 698l48 48" stroke="#7c3aed" stroke-width="14" stroke-linecap="round"/>
+  <text x="205" y="866" text-anchor="middle" font-size="38" font-weight="700" fill="#10233f">故障解析</text>
+
+  <circle cx="595" cy="690" r="126" fill="#fef3c7" stroke="#f59e0b" stroke-width="8"/>
+  <path d="M518 738V662l58 34v-34l65 38v38z" fill="#fff" stroke="#b45309" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M530 738v-118h38v76M626 700v-94" fill="none" stroke="#b45309" stroke-width="7"/>
+  <circle cx="626" cy="606" r="28" fill="#f59e0b"/>
+  <path d="M626 588v36M608 606h36" stroke="#fff" stroke-width="8" stroke-linecap="round"/>
+  <text x="595" y="866" text-anchor="middle" font-size="38" font-weight="700" fill="#10233f">工程改善</text>
+
+  <circle cx="400" cy="650" r="72" fill="#10233f"/>
+  <text x="400" y="640" text-anchor="middle" font-size="35" font-weight="700" fill="#fff">DATA</text>
+  <path d="M370 680h60" stroke="#38bdf8" stroke-width="9" stroke-linecap="round"/>
+  <circle cx="375" cy="680" r="10" fill="#16a34a"/><circle cx="400" cy="680" r="10" fill="#f59e0b"/><circle cx="425" cy="680" r="10" fill="#dc2626"/>
+  <rect x="110" y="936" width="580" height="86" rx="43" fill="#10233f"/>
+  <path d="M168 980h100" stroke="#38bdf8" stroke-width="9" stroke-linecap="round"/>
+  <path d="M245 958l26 22-26 22" fill="none" stroke="#38bdf8" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="320" y="993" font-size="35" font-weight="700" fill="#fff">次の製造へ反映</text>
+</svg>
+<figcaption>テストデータは、製品の選別だけでなく、原因調査と次の工程改善へも使われます。<small>制作: Semicon Campus編集部／変更: mobile縦構成版</small></figcaption></figure>
+
+<section class="mp1-section" id="maintenance-phase1-learning"><h2>ATE・プローブ接触・テスト異常を、実務と学び直しにつなげる</h2><p>テスト結果の変化を扱うときは、製品の不良と、接続や測定条件に由来する変化を分けて考えることが装置保全との接点になります。プローブカードとATEの役割を押さえ、どの試験条件で変化したか、確認済みのことと未確認事項を記録しましょう。電気・計測・品質の基礎を補うとともに、テスト装置の点検や技術サポートを含む求人条件と経験を照合できます。</p></section>
+<h2>よくある誤解（FAQ）</h2>
+<h3>Q. 顕微鏡で欠陥が見つからなければ良品ですか？</h3>
+<p>A. いいえ。外観やパターンに異常が見えなくても、回路の応答や電気特性が仕様外になる場合があります。物理的な検査・計測と、電気的なテストは補い合う関係です。</p>
+<h3>Q. Probe Cardはチップ内部へ針を刺しますか？</h3>
+<p>A. いいえ。主にウェハ表面のパッドやバンプへ一時接触し、ダイとATEを電気的につなぎます。</p>
+<h3>Q. ウェハテストでPassすれば、最終テストは不要ですか？</h3>
+<p>A. いいえ。パッケージ工程で新しい故障が生じる場合があるため、組立後の状態でも確認が必要になります。</p>
+<h3>Q. 判定を厳しくすれば、不良流出はなくなりますか？</h3>
+<p>A. 厳しくするだけでは十分ではありません。良品をFailにするOverkillも増え得るため、必要な不良検出と判定の再現性、時間、コストを一緒に考えます。</p>
+
+<h2>まとめ：ウェハとパッケージ後で役割を分ける</h2>
+<figure class="semicon-figure" data-media-role="summary-infographic" data-visual-kind="diagram" data-subject="半導体テスト" data-purpose="end-summary" data-composition="vertical-process-summary" data-concrete-object="false" data-selection-reason="記事で説明した四段階と最後の品質・時間・コストの論点を、読了時に一画面で復習できるようにするため。" data-photo-assessment="単一の実写写真ではウェハ、組立、最終確認、分類という異なる時点と役割の全体順序を表現できない。" data-diagram-justification="写真や実写では半導体テストのウェハ段階から分類・データ活用までの複数工程と順序を一枚で示せないため、まとめ図が必要。" data-provenance="articles/images/episode080/visual-policy-v1/provenance/11-summary-infographic.md"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1380" role="img" aria-labelledby="t d" role="img" aria-label="半導体テストをウェハ、パッケージ、最終確認、分類と活用の順に整理したまとめ図" style="width:100%;height:auto;display:block;">
+  <title id="t">半導体テストの四段階</title>
+  <desc id="d">ウェハテスト、パッケージ、最終テスト、Binningを、ウェハ、チップ、テスター、分類トレーのイラストで示す縦型インフォグラフィック</desc>
+  <rect width="800" height="1380" fill="#10233f"/>
+  <text x="400" y="78" text-anchor="middle" font-size="46" font-weight="700" fill="#fff">良否判定は1回ではない</text>
+  <text x="400" y="128" text-anchor="middle" font-size="34" fill="#cbd5e1">ウェハから分類まで、4つの段階</text>
+  <path d="M400 220v930" stroke="#475569" stroke-width="16" stroke-linecap="round"/>
+  <path d="M374 416l26 28 26-28M374 696l26 28 26-28M374 976l26 28 26-28" fill="none" stroke="#fff" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <circle cx="400" cy="300" r="118" fill="#dbeafe" stroke="#38bdf8" stroke-width="9"/>
+  <circle cx="400" cy="300" r="76" fill="#93c5fd" stroke="#2563eb" stroke-width="8"/>
+  <g fill="#2563eb">
+    <rect x="355" y="255" width="25" height="25" rx="5"/><rect x="389" y="255" width="25" height="25" rx="5"/><rect x="423" y="255" width="25" height="25" rx="5"/>
+    <rect x="355" y="289" width="25" height="25" rx="5"/><rect x="389" y="289" width="25" height="25" rx="5"/><rect x="423" y="289" width="25" height="25" rx="5"/>
+    <rect x="355" y="323" width="25" height="25" rx="5"/><rect x="389" y="323" width="25" height="25" rx="5"/><rect x="423" y="323" width="25" height="25" rx="5"/>
+  </g>
+  <path d="M310 245l-42-30M490 245l42-30" stroke="#fff" stroke-width="9" stroke-linecap="round"/>
+  <circle cx="264" cy="212" r="13" fill="#f59e0b"/><circle cx="536" cy="212" r="13" fill="#f59e0b"/>
+  <text x="400" y="486" text-anchor="middle" font-size="42" font-weight="700" fill="#38bdf8">1 ウェハテスト</text>
+
+  <circle cx="400" cy="600" r="118" fill="#fef3c7" stroke="#f59e0b" stroke-width="9"/>
+  <rect x="330" y="530" width="140" height="140" rx="22" fill="#fff" stroke="#b45309" stroke-width="9"/>
+  <rect x="363" y="563" width="74" height="74" rx="10" fill="#f59e0b"/>
+  <g stroke="#b45309" stroke-width="9" stroke-linecap="round">
+    <path d="M350 530v-30M382 530v-30M418 530v-30M450 530v-30M350 700v-30M382 700v-30M418 700v-30M450 700v-30"/>
+    <path d="M330 550h-30M330 582h-30M330 618h-30M330 650h-30M500 550h-30M500 582h-30M500 618h-30M500 650h-30"/>
+  </g>
+  <text x="400" y="766" text-anchor="middle" font-size="42" font-weight="700" fill="#fbbf24">2 パッケージ</text>
+
+  <circle cx="400" cy="900" r="118" fill="#dcfce7" stroke="#16a34a" stroke-width="9"/>
+  <rect x="312" y="830" width="176" height="116" rx="20" fill="#fff" stroke="#16803a" stroke-width="8"/>
+  <rect x="338" y="854" width="124" height="50" rx="10" fill="#dbeafe"/>
+  <path d="M350 882h18l10-18 18 36 14-18h38" fill="none" stroke="#2563eb" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="350" cy="928" r="10" fill="#16a34a"/><circle cx="382" cy="928" r="10" fill="#f59e0b"/><circle cx="414" cy="928" r="10" fill="#dc2626"/>
+  <path d="M462 928h35" stroke="#16803a" stroke-width="9" stroke-linecap="round"/>
+  <text x="400" y="1066" text-anchor="middle" font-size="42" font-weight="700" fill="#4ade80">3 最終テスト</text>
+
+  <circle cx="400" cy="1200" r="118" fill="#ede9fe" stroke="#a78bfa" stroke-width="9"/>
+  <rect x="318" y="1133" width="164" height="134" rx="18" fill="#fff" stroke="#7c3aed" stroke-width="8"/>
+  <path d="M318 1178h164M373 1133v134M428 1133v134" stroke="#7c3aed" stroke-width="7"/>
+  <circle cx="346" cy="1156" r="13" fill="#16a34a"/><circle cx="400" cy="1156" r="13" fill="#38bdf8"/><circle cx="455" cy="1156" r="13" fill="#dc2626"/>
+  <path d="M338 1225l15 15 25-30" fill="none" stroke="#16a34a" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M445 1214l22 22M467 1214l-22 22" stroke="#dc2626" stroke-width="8" stroke-linecap="round"/>
+  <text x="400" y="1344" text-anchor="middle" font-size="42" font-weight="700" fill="#c4b5fd">4 Binning・分類</text>
+</svg>
+<figcaption>まとめ：半導体テストは、早期選別、組立後確認、分類、工程改善を分担しながら良否を判定します。<small>制作: Semicon Campus編集部／変更: mobile縦構成版</small></figcaption></figure>
+<div class="semicon-recap semicon-three-line-recap"><p>半導体テストは、電気信号への応答を期待値や規格と比較して良否を判定します。</p><p>ウェハテストで不良ダイを早く見つけ、パッケージ後の最終テストで組立後の状態を確かめます。</p><p>DFT、Binning、テストデータを組み合わせ、品質・時間・コスト・Overkillのバランスを取ります。</p></div>
+
+<div class="semicon-links"><div class="semicon-linkbox next"><h3>次に読む記事</h3><p><a href="https://semicon-campus.com/what-is-semiconductor-defect-inspection/">半導体の欠陥検査とは？</a><br>電気テストとは別に、製造途中の異物やパターン異常をどう見つけるかを確認できます。</p></div><div class="semicon-linkbox"><h3>この記事の位置づけ</h3><p>製造工程の超入門から、量産で良否を判定する仕組みへ進む記事です。次はテスト装置の機種ではなく、欠陥検査との役割分担を学ぶと全体像がつながります。</p></div></div>
+
+<section class="mp1-section" id="maintenance-phase1-career"><h2>ATE・プローブ接触・テスト異常の知識を活かす仕事と次の行動</h2><p>テスト条件の確認、電気測定、装置点検の経験がある方は、「対象装置・現象・自分が行った確認・結果」を一組にして整理しましょう。担当設備、夜勤・出張、教育体制、応募条件を求人票と照合すると、活かせる経験と補う知識を分けられます。</p><aside class="semicon-cta mp1-card"><h3>仕事の全体像と、求人・学習の選び方を確認する</h3><p>設備保全Hubでは、点検・異常対応の仕事と経験の整理、求人・基礎学習・資格対策をまとめて確認できます。装置担当や顧客対応の範囲を比べたい方は、関連する職種記事も参照してください。</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/" class="semicon-btn mp1-button" data-maintenance-phase1-hub="277" data-cta="maintenance_hub" data-cta-type="maintenance_hub" data-cta-stage="career" data-cta-id="maintenance_1182_hub277_end" data-cta-route="maintenance_1182_hub277_end">設備保全Hubで仕事内容・求人・学習を確認する</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/" class="semicon-btn mp1-button" data-maintenance-phase1-hub="237" data-cta="equipment_hub" data-cta-type="equipment_hub" data-cta-stage="career" data-cta-id="maintenance_1182_hub237_end" data-cta-route="maintenance_1182_hub237_end">装置エンジニアの担当範囲・求人・学習を見る</a></div></aside></section>
+
+<h2>参考にした公式情報</h2>
+<ul class="semicon-sources">
+<li data-source-id="S01"><a rel="noopener" href="https://www.advantest.com/en/semiconductor-basics/automated-test-equipment/" target="_blank">Advantest｜What Is ATE (Automated Test Equipment)?</a></li>
+<li data-source-id="S03"><a rel="noopener" href="https://www.teradyne.com/2022/01/24/site-to-site-variation-in-parallel-test/" target="_blank">Teradyne｜Site to Site Variation in Parallel Test</a></li>
+<li data-source-id="S04"><a rel="noopener" href="https://www.teradyne.com/2023/01/03/emerging-technologies-drive-system-level-test-adoption/" target="_blank">Teradyne｜Emerging Technologies Are Driving System Level Test Adoption</a></li>
+<li data-source-id="S08"><a rel="noopener" href="https://www.technoprobe.com/" target="_blank">Technoprobe｜Probe Card Technology Information</a></li>
+<li data-source-id="S14"><a rel="noopener" href="https://www.pdf.com/" target="_blank">PDF Solutions｜Semiconductor Manufacturing Analytics</a></li>
+<li data-source-id="S21"><a rel="noopener" href="https://www.semi.org/sites/semi.org/files/2020-02/CompilationTerms1218_0.pdf" target="_blank">SEMI｜International Standards: Compilation of Terms</a></li>
+</ul>
+
+<div class="semicon-editorial-note"><strong>編集・ショート抽出メモ</strong><br><strong>audience_question:</strong> 完成した半導体は、どの段階で、どうやって良品・不良品を判定するのか。<br><strong>causal_chain:</strong> 電気信号と応答の比較 → ウェハ段階で早期選別 → パッケージ工程 → 最終テスト → Binningと工程改善。<br><strong>factual_limits:</strong> ウェハテストのPassを永久保証としない。Probe Cardをチップ内部へ刺すと表現しない。DFTを全故障の完全検出と表現しない。判定を厳しくすれば品質問題が解消すると表現しない。<br><strong>candidate_section_45_60s:</strong> ウェハテストで不良ダイを早期除外し、パッケージ後に再テストする理由。<br><strong>series_position:</strong> 製造工程の超入門から、量産テストの仕組みへ進む橋渡し。<br><strong>media_policy:</strong> 11点すべてEP080 Research Packから作成した自作説明SVG。外部画像、報道写真、企業画像、既存EP080動画素材は使用していない。<br><strong>publication_status:</strong> ARTICLE_HUMAN_REVIEW_ONLY。WordPress、YouTube、Driveへの送信・予約・公開は実施していない。</div>
+</article>
+

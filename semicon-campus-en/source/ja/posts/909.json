@@ -1,0 +1,20 @@
+{
+ "id": 909,
+ "type": "post",
+ "slug": "daily-news-091d680fc98967e9c97a",
+ "link": "https://semicon-campus.com/daily-news-091d680fc98967e9c97a/",
+ "date": "2026-09-12T10:00:00",
+ "modified": "2026-10-27T20:05:23",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  20
+ ],
+ "tags": [
+  19
+ ],
+ "featured_media": 2873,
+ "title": "PDF SolutionsがExensio Aurora発表、半導体製造データ分析の大規模化へ",
+ "excerpt": "PDF Solutionsが2026年9月9日に発表したExensio Aurora。ペタバイト規模の製造データ分析を目指す背景、約25倍という性能目標の読み方、限定ベータと公開デモの予定を初心者向けに解説します。"
+}

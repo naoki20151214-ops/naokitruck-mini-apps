@@ -1,0 +1,67 @@
+
+<!--KEEP:0-->
+
+
+<!--KEEP:1-->
+
+<!--KEEP:2-->
+<div class="semicon-article" id="semicon-top">
+<p class="semicon-lead">チップレットは、一枚の巨大なチップですべてを作る代わりに、役割を持つ複数の小さなダイを一つのパッケージ内でつなぎ、一つのシステムとして動かす考え方です。たとえるなら、家を一枚岩で作るのではなく、目的に合う部屋を組み合わせる設計です。</p>
+
+<figure class="semicon-figure"><img src="https://semicon-campus.com/wp-content/uploads/2026/07/chiplet-featured.png" alt="複数の計算用ダイと入出力用ダイを一つの先端パッケージ上で短い配線により接続したチップレット構成" width="1536" height="864" decoding="async" fetchpriority="high"><figcaption>チップレットは、小さなダイをただ並べる技術ではありません。接続・電力・熱・検査まで含め、全体を一つのシステムとして成立させます。</figcaption></figure>
+
+<div class="semicon-note"><strong>30秒で要点</strong><ol><li>モノリシックは主要機能を一枚のダイへ集積する</li><li>チップレットは複数のダイを一つのパッケージ内で組み合わせる</li><li>役割ごとに適した製造技術を選べる場合がある</li><li>一方で、ダイ間接続・電力・熱・検査・全体歩留まりが難しくなる</li></ol></div>
+
+<div class="semicon-career"><strong>この技術に関わる仕事を知りたい方へ</strong><p>設計、製造、装置、検査、品質など、自分の経験に近い入口を10問で整理できます。</p><a class="semicon-career-button" href="https://semicon-campus.com/semiconductor-career-advisor/?utm_source=technical_article&amp;utm_medium=blog_cta&amp;utm_campaign=chiplet_career_advisor_top&amp;utm_content=chiplet_career_advisor_top" data-cta-position="top">10問仕事ナビβを試す</a></div>
+
+
+<h2>チップレットとは？</h2>
+<p>半導体の製造工程では、ウェハ上に回路を作り、最後に切り分けた一片を<strong>ダイ</strong>と呼びます。チップレットは一般に、ほかのダイと組み合わせてシステムを構成することを前提に設計されたダイや、その設計手法を指します。ただし業界全体で用語の使い方が完全に一つへ統一されているわけではないため、「ダイ」と「チップレット」を常に同義とは考えません。</p>
+<p>構成は一種類ではありません。計算用、入出力用、キャッシュ用など異なる役割を組み合わせる例もあれば、同じ計算用ダイを複数並べる例もあります。大切なのは、複数のダイがパッケージ内の短い接続を通じて協調することです。</p>
+
+<h2>モノリシックとの違い</h2>
+<figure class="semicon-figure"><img src="https://semicon-campus.com/wp-content/uploads/2026/07/chiplet-vs-monolithic.png" alt="一枚の大きなダイで構成するモノリシックと複数の小さなダイを一つのパッケージで接続するチップレットの比較" width="1536" height="864" loading="lazy" decoding="async"><figcaption>左は主要機能を一枚へ集めるモノリシック、右は複数ダイを組み合わせるチップレットの概念図です。</figcaption></figure>
+<div class="semicon-table-wrap"><table class="semicon-table"><thead><tr><th>観点</th><th>モノリシック</th><th>チップレット</th></tr></thead><tbody><tr><td>構造</td><td>主要機能を一枚のダイへ集積</td><td>複数のダイを一つのパッケージで接続</td></tr><tr><td>通信</td><td>同一ダイ内の配線</td><td>ダイ間インターフェースとパッケージ配線が必要</td></tr><tr><td>製造技術</td><td>原則として一枚のダイ全体で共通</td><td>役割ごとに異なるプロセスを選べる場合がある</td></tr><tr><td>設計上の難所</td><td>大面積ダイの設計・製造</td><td>接続、電力、熱、検査、組立を含む協調設計</td></tr></tbody></table></div>
+<p>どちらが常に優れているわけでもありません。小規模な製品では一枚にまとめた方が単純な場合があり、チップレットではパッケージや接続の追加コストが生じます。製品規模、性能、消費電力、供給、開発期間などを合わせて選びます。</p>
+
+<h2>チップレットの利点</h2>
+<div class="semicon-grid"><div class="semicon-card"><b>役割に合う製造技術</b><span>計算回路には先端プロセス、入出力には別の実績あるプロセスというように選べる場合があります。</span></div><div class="semicon-card"><b>構成の再利用</b><span>検証済みのダイを複数製品で活用し、数や組み合わせを変える設計が可能になります。</span></div><div class="semicon-card"><b>大規模化の選択肢</b><span>一枚の巨大ダイだけに頼らず、複数ダイを協調させて計算資源などを増やせます。</span></div><div class="semicon-card"><b>異種機能の統合</b><span>CPU、アクセラレーター、I/O、キャッシュなど性格の違う機能を近くに配置できます。</span></div></div>
+<figure class="semicon-figure"><img src="https://semicon-campus.com/wp-content/uploads/2026/07/chiplet-heterogeneous-dies.png" alt="計算用、入出力用、キャッシュ用など異なる内部構造のダイを一つの基板上で接続したチップレット" width="1536" height="864" loading="lazy" decoding="async"><figcaption>異なる役割を異なる製造技術で作れることがあります。ただし、必ず安く、高性能、高歩留まりになるという意味ではありません。</figcaption></figure>
+<div class="semicon-warning"><strong>「小さく分ければ歩留まりが必ず上がる」は不正確です。</strong> 小さいダイは欠陥の影響を受ける面積を抑えやすい一方、必要なダイがすべて良品であること、組立と接続が成功することも最終製品には必要です。ダイ単体だけでなく、パッケージ全体の歩留まりとコストで評価します。</div>
+
+<h2>難しさは「境界」に集まる</h2>
+<figure class="semicon-figure"><img src="https://semicon-campus.com/wp-content/uploads/2026/07/chiplet-engineering-challenges.png" alt="チップレットのダイ間接続、電力供給、放熱、ダイごとの検査という四つの設計課題" width="1536" height="864" loading="lazy" decoding="async"><figcaption>ダイを分割すると、その境界を越える信号、電力、熱、検査方法を新たに設計する必要があります。</figcaption></figure>
+<div class="semicon-grid"><div class="semicon-card"><b>ダイ間接続</b><span>帯域を確保しつつ、遅延と接続に使う電力を抑えます。</span></div><div class="semicon-card"><b>電力供給</b><span>複数ダイへ安定した電圧を届け、ノイズや電圧降下を管理します。</span></div><div class="semicon-card"><b>熱設計</b><span>発熱密度やダイごとの温度差を見て、ヒートスプレッダまで熱を逃がします。</span></div><div class="semicon-card"><b>検査と歩留まり</b><span>組立前の良品ダイ判定、組立後の接続・機能検査、故障箇所の切り分けが必要です。</span></div></div>
+
+<h2>ダイ同士をどうつなぐ？ UCIeとパッケージ</h2>
+<p>ダイ同士の接続には、電気的な信号方式だけでなく、パッケージ上の配線、接続点の間隔、テストや管理の仕組みが関わります。インターポーザ、シリコンブリッジ、有機基板、2.5D・3D実装など、製品に応じたパッケージ技術が使われます。基礎は<a href="https://semicon-campus.com/what-is-advanced-packaging-gpu-hbm/">GPUとHBMを近くでつなぐ先端パッケージ</a>で確認できます。</p>
+<p><strong>UCIe（Universal Chiplet Interconnect Express）</strong>は、パッケージ内のダイ間接続を標準化し、相互接続しやすくすることを目指す仕様です。物理層、プロトコル、ソフトウェアモデル、適合試験などを扱います。ただしUCIeはチップレットそのものではなく、ダイ間をつなぐための共通仕様の一つです。また、仕様に対応した部品なら無条件に組み合わせられるという意味でもありません。次回はUCIeをもう一段詳しく見ます。</p>
+
+<h2>どんな製品で使われる？</h2>
+<p>代表例は、サーバー・PC向けCPU、高性能計算、AIアクセラレーターなどです。計算ダイを増やす、入出力機能を分ける、大容量キャッシュを追加する、といった設計に使われます。今後は自動車、ネットワーク、通信などでも検討・採用が広がる可能性がありますが、製品ごとにコスト、信頼性、供給体制の条件が異なります。</p>
+
+<section class="mp2-section" id="revenue-phase2-learning"><h2>チップレットと実装・検査の連携を、実務と学び直しにつなげる</h2><p>チップレットを支える仕事は回路設計だけではありません。実装、接続の検査、装置の立上げ、工程品質の確認など、ダイを組み合わせて製品にする担当も関わります。自分が扱った装置、測定、組立、不良切り分けを整理すれば、製造や品質の経験との接点を探せます。機械・電気・品質の基礎を補いながら、実装側の職種と装置側の職種を比較してみましょう。</p></section>
+<h2>チップレットに関わる仕事</h2>
+<div class="semicon-grid"><div class="semicon-card"><b>アーキテクチャ・論理設計</b><span>どの機能をどのダイへ分け、全体性能をどう成立させるか決めます。</span></div><div class="semicon-card"><b>ダイ間I/O・SI/PI</b><span>高速リンク、信号品質、電源品質、クロックを設計・解析します。</span></div><div class="semicon-card"><b>パッケージ・熱・機械設計</b><span>配置、配線、反り、応力、放熱、組立可能性を同時に調整します。</span></div><div class="semicon-card"><b>組立・検査・歩留まり</b><span>接合条件、良品ダイ選別、完成後テスト、不良解析、量産改善を担当します。</span></div></div>
+<p>企業によって職種名は異なります。実際の分担は<a href="https://semicon-campus.com/advanced-packaging-jobs-career/">先端パッケージを支える仕事</a>、求人の見方は<a href="https://semicon-campus.com/how-to-read-semiconductor-job-description/">半導体求人票の読み方</a>へ進むと整理できます。</p>
+
+<div class="semicon-career"><strong>自分に近い入口を整理する</strong><p>回路、機械、材料、製造、検査、データのどこから関われそうか、10問で確認できます。</p><a class="semicon-career-button" href="https://semicon-campus.com/semiconductor-career-advisor/?utm_source=technical_article&amp;utm_medium=blog_cta&amp;utm_campaign=chiplet_career_advisor_bottom&amp;utm_content=chiplet_career_advisor_bottom" data-cta-position="bottom">10問仕事ナビβを試す</a></div>
+
+<h2>よくある質問</h2>
+<h3>Q. チップレットは小さなチップの呼び名ですか？</h3><p>大きさだけでは決まりません。ほかのダイと組み合わせ、パッケージ内でシステムを構成することを前提にした設計が重要です。</p>
+<h3>Q. チップレットなら必ず安くなりますか？</h3><p>いいえ。ダイ再利用やプロセス選択が有利になる場合はありますが、パッケージ、接続、検査、設計の費用も増えます。</p>
+<h3>Q. UCIe対応なら他社のダイと自由に接続できますか？</h3><p>標準化は相互運用性を高めるための重要な条件ですが、性能、電力、熱、機械寸法、実装、検証、供給契約なども合う必要があります。</p>
+<h3>Q. チップレットと先端パッケージは同じですか？</h3><p>同じではありません。チップレットは複数ダイでシステムを構成する設計の考え方、先端パッケージはそれらを高密度に配置・接続する実装技術を含む広い概念です。</p>
+
+<p><strong>次は、<a href="https://semicon-campus.com/what-is-ucie/">チップレット同士の会話をそろえるUCIe</a>を、PCIe・CXLとの関係から見ていきます。</strong></p>
+
+<h2>まとめ</h2>
+<div class="semicon-note"><ol><li>チップレットは複数のダイを一つのパッケージでつなぐシステム設計</li><li>役割別の製造技術や再利用が利点になり得るが、自動的な低コスト化ではない</li><li>難所はダイ間接続、電力、熱、検査、全体歩留まり</li><li>UCIeはチップレット間接続の標準化を目指す仕様で、チップレットそのものではない</li></ol></div>
+<div class="semicon-links"><div class="semicon-linkbox"><strong>前提を復習</strong><p><a href="https://semicon-campus.com/what-is-advanced-packaging-gpu-hbm/">GPUとHBMをつなぐ先端パッケージ</a></p><p><a href="https://semicon-campus.com/what-is-semiconductor-dicing/">ウェハをダイへ切り分けるダイシング</a></p></div><div class="semicon-linkbox"><strong>仕事へつなぐ</strong><p><a href="https://semicon-campus.com/advanced-packaging-jobs-career/">先端パッケージを支える仕事</a></p><p><a href="https://semicon-campus.com/semiconductor-beginner-roadmap/">初心者ロードマップへ戻る</a></p></div></div>
+
+<section class="mp2-section" id="revenue-phase2-career"><h2>チップレットと実装・検査の連携から、求人と職種を比較する</h2><p>実装・接続検査、装置立上げ、工程品質確認の経験は、対象設備・作業・確認した結果を一組にして整理しましょう。転職を考える場合は担当範囲、勤務地、勤務・出張、教育体制、応募条件を求人票と照合すると、今の経験と補う知識を分けられます。</p><aside class="semicon-cta mp2-card"><h3>職種の全体像と、求人・学習の選び方を見る</h3><p>技術を学んだ後は、点検・復旧、装置の立上げ、工程改善、顧客対応など、担当する仕事の範囲を比較しましょう。以下の職種記事では、仕事内容に加えて求人・学習の選択肢を確認できます。</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/" class="semicon-btn mp2-button" data-revenue-phase2-hub="237" data-cta="equipment_hub" data-cta-type="equipment_hub" data-cta-stage="career" data-cta-id="phase2_658_hub237_end" data-cta-route="phase2_658_hub237_end">装置エンジニアの担当範囲・求人・学習を見る</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-field-service-engineer/" class="semicon-btn mp2-button" data-revenue-phase2-hub="270" data-cta="fse_hub" data-cta-type="fse_hub" data-cta-stage="career" data-cta-id="phase2_658_hub270_end" data-cta-route="phase2_658_hub270_end">FSEの復旧・顧客対応と求人・学習を見る</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/advanced-packaging-jobs-career/" class="semicon-btn mp2-button" data-revenue-phase2-hub="651" data-cta="packaging_hub" data-cta-type="packaging_hub" data-cta-stage="career" data-cta-id="phase2_658_hub651_end" data-cta-route="phase2_658_hub651_end">先端パッケージの仕事・求人・学習の選び方を見る</a></div></aside></section>
+
+<h2>参考資料</h2>
+<ul class="semicon-sources"><li><a rel="noopener" href="https://www.uciexpress.org/specifications" target="_blank">UCIe Consortium: Specifications</a></li><li><a rel="noopener" href="https://www.amd.com/en/technologies/zen-core.html" target="_blank">AMD: Zen Core Architecture</a></li><li><a rel="noopener" href="https://www.intel.com/content/www/us/en/foundry/chiplets.html" target="_blank">Intel Foundry: Chiplets</a></li><li><a rel="noopener" href="https://www.intel.com/content/www/us/en/foundry/packaging.html" target="_blank">Intel Foundry: Advanced Packaging and Test Technologies</a></li></ul>
+<a class="semicon-backtop" href="#semicon-top" aria-label="ページ先頭へ戻る">↑</a>
+</div>

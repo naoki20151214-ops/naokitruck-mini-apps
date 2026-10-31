@@ -1,0 +1,28 @@
+<p>AI半導体では、演算器の数や計算速度を高めるだけでは、AIの処理全体が速くならないことがあります。計算に必要なデータをメモリーから十分な速さで届けられないと、演算器が待たされるためです。この制約は一般に「メモリーウォール」と呼ばれます。Credoは2026年10月13日、AMDと共同で、プログラマブルロジック系のAIアクセラレーターへ外部メモリーを拡張する仕組みを、OCP Global Summitで実演すると発表しました。ただし、公開資料から確認できるのは実演予定と、評価用のworking emulation platformを構築したという説明であり、会場での実演完了や量産性能の実測結果ではありません。<a href="https://investors.credosemi.com/news-events/news/news-details/2026/Credo-Breaks-the-Memory-Wall-Using-AMD-Programmable-Logic-Based-AI-Accelerators/default.aspx">Credo公式ニュースリリース</a></p>
+<h2>何が発表されたのか</h2>
+<p>発表の中心は、CredoのOmniConnect Weaverと、AMDのVersal AI Edge Series Gen 2評価ボードを組み合わせる構成です。Credoによれば、両社はWeaverによる「メモリー・ディスアグリゲーション」をVersal上で動かすエミュレーション・プラットフォームを構築し、OCP Global Summitで紹介する予定です。OCP Global Summitの開催期間は2026年10月12日から15日までですが、ニュースリリースの公開日は10月13日です。10月12日を発表日や実演完了日とみなすことはできません。<a href="https://investors.credosemi.com/news-events/news/news-details/2026/Credo-Breaks-the-Memory-Wall-Using-AMD-Programmable-Logic-Based-AI-Accelerators/default.aspx">Credo公式ニュースリリース</a> <a href="https://www.opencompute.org/events/ocp-summit/2026-ocp-global-summit/">OCP公式イベント情報</a></p>
+<p>Credoの説明では、LPDDRメモリーをVSRリンク経由でプログラマブルロジック系XPUへ接続し、テラバイト級の容量と帯域を提供します。標準的な有機基板を使い、シリコンインターポーザーを使わない構成とされます。また、拡張メモリーがコントローラーの上位から透過的に見えるため、アプリケーションソフトウェアを変更せずに動かせると主張しています。これらは企業による構成説明であり、すべてのソフトウェアやAIモデルで無条件に確認された事実ではありません。<a href="https://investors.credosemi.com/news-events/news/news-details/2026/Credo-Breaks-the-Memory-Wall-Using-AMD-Programmable-Logic-Based-AI-Accelerators/default.aspx">Credo公式ニュースリリース</a></p>
+<h2>メモリーウォールがAI推論で問題になる理由</h2>
+<h3>decodeとKVキャッシュ</h3>
+<p>生成AIの推論には、入力をまとめて処理する「prefill」と、出力トークンを一つずつ生成する「decode」があります。decodeでは、モデルの重みや、会話履歴などを保持するKVキャッシュを繰り返し読み出します。モデルが大型化し、コンテキストが長くなり、複数の利用者を同時に処理するほど、必要なメモリー容量と帯域は増えます。その結果、演算器のピーク性能よりも、データを供給するメモリー側が処理速度を決める場合があります。Credoも、こうした推論処理では計算能力だけでなくメモリーが制約になると説明しています。<a href="https://credosemi.com/blogs/breaking-the-memory-wall-how-omniconnect-decouples-memory-from-compute/">Credo技術ブログ</a></p>
+<h3>LPDDRとVSR</h3>
+<p>LPDDRは、スマートフォンなどにも使われる低消費電力型のDRAM規格です。Weaverは、LPDDR5X PHY、112G VSR SerDes、軽量フレーマー、テレメトリー機能などを組み合わせた「メモリー・ファンアウト・ギアボックス」と説明されています。VSRは、メモリーと計算部を高速なシリアルリンクで結ぶための接続技術としてCredoが示す名称です。メモリーを演算ダイのすぐ隣に固定せず、システム側で分離して配置できれば、容量や基板設計の選択肢を広げられる可能性があります。<a href="https://credosemi.com/wp-content/uploads/Credo-OmniConnect-Weaver.pdf">Credo製品ブリーフ</a> <a href="https://credosemi.com/products/omniconnect/weaver/">Credo製品ページ</a></p>
+<h2>AMDのVersalと公称スペックの読み方</h2>
+<p>AMDのVersal AI Edge Series Gen 2は、プログラマブルロジック、統合CPU、AI Engine、メモリーコントローラーなどを組み合わせたadaptive SoCです。固定機能だけのチップと異なり、用途に応じて回路の一部を柔軟に構成できます。AMDは、LPDDR5X 8533対応と、デバイス構成に応じた最大170GB/sのメモリー帯域を掲載しています。データシートでは、LPDDR5X単一ランク部品の最大物理インターフェース速度を8533Mb/s、デュアルランク部品を7500Mb/sとしています。実際の性能は、設計、基板、電気解析、特性評価などに依存します。<a href="https://www.amd.com/en/products/adaptive-socs-and-fpgas/versal/gen2/ai-edge-series.html">AMD製品ページ</a> <a href="https://docs.amd.com/r/en-US/ds1021-versal-ai-edge-gen2/DDR5-and-LPDDR5-Memory-Interface-Controller">AMD公式データシート</a></p>
+<p>一方、CredoはWeaverについて、最大6.4TBのメモリー容量、最大16TB/sの帯域、40nsのラウンドトリップ遅延、250mmのリーチを公称しています。ここで、AMDの最大170GB/sとCredoの最大16TB/sを足し合わせてはいけません。前者はVersal側のメモリーインターフェースに関する公称値で、後者はWeaver製品についての公称値です。対象範囲と条件が異なり、今回の評価ボードで両方の最大値が同時に実測されたことを示す資料もありません。<a href="https://credosemi.com/products/omniconnect/weaver/">Credo製品ページ</a> <a href="https://credosemi.com/wp-content/uploads/Credo-OmniConnect-Weaver.pdf">Credo製品ブリーフ</a></p>
+<h2>今回の発表をどう評価するか</h2>
+<p>現時点では、今回の発表は量産AIアクセラレーターのベンチマークというより、プログラマブルロジック系の評価プラットフォームに、外部メモリー拡張アーキテクチャを統合できることを示す計画・実装デモとして見るのが適切です。評価用プラットフォームの構築は確認できますが、発表資料からは、実演の完了、具体的なVersal型番、接続したLPDDRチップ数、実測容量、持続帯域、実測レイテンシー、推論スループット、消費電力を確認できません。量産出荷や顧客システムへの採用時期も示されていません。<a href="https://investors.credosemi.com/news-events/news/news-details/2026/Credo-Breaks-the-Memory-Wall-Using-AMD-Programmable-Logic-Based-AI-Accelerators/default.aspx">Credo公式ニュースリリース</a></p>
+<p>外部メモリーを高速リンクで接続すれば容量を増やしやすくなる一方、配線距離、リンクの混雑、プロトコル処理、エラー訂正、レイテンシー、電力、熱、基板の信号品質が新たな課題になります。特にAI推論では、平均帯域だけでなく、アクセスが集中したときの持続性能や、KVキャッシュを扱う際の遅延が重要です。「アプリケーションソフトウェアの変更不要」という主張も、今回想定された構成での説明であり、OS、ランタイム、モデル、メモリーアクセスパターンを問わず成立することを意味しません。</p>
+<h2>これから注目したい点</h2>
+<p>今後は、まず実演が実際に行われたか、その構成と測定条件が公開されるかを確認したいところです。そのうえで、具体的なAIモデルによる推論スループット、長時間稼働時の持続帯域、実効レイテンシー、電力と冷却条件、エラー処理、ソフトウェア互換性を分けて評価する必要があります。さらに、量産時期、価格、顧客採用、信頼性試験が明らかになって初めて、研究用の実装デモから製品技術へ進んだと判断できます。</p>
+<p>2026年10月15日時点で、確認したCredo、AMD、OCPの公式資料には、対象ニュースリリースの訂正や撤回を示す記載は見当たりません。ただし、OCP会期中または会期後にデモの詳細や資料が更新される可能性は残ります。発表された計画、企業の公称値、独立した実測結果を分けて追うことが、このニュースを正しく理解するポイントです。<a href="https://investors.credosemi.com/news-events/news/news-details/2026/Credo-Breaks-the-Memory-Wall-Using-AMD-Programmable-Logic-Based-AI-Accelerators/default.aspx">Credo公式ニュースリリース</a></p>
+<h2>出典</h2>
+<ul>
+<li><a href="https://investors.credosemi.com/news-events/news/news-details/2026/Credo-Breaks-the-Memory-Wall-Using-AMD-Programmable-Logic-Based-AI-Accelerators/default.aspx">Credo公式ニュースリリース</a></li>
+<li><a href="https://www.amd.com/en/products/adaptive-socs-and-fpgas/versal/gen2/ai-edge-series.html">AMD Versal AI Edge Series Gen 2</a></li>
+<li><a href="https://docs.amd.com/r/en-US/ds1021-versal-ai-edge-gen2/DDR5-and-LPDDR5-Memory-Interface-Controller">AMD Versal AI Edge Gen 2公式データシート</a></li>
+<li><a href="https://credosemi.com/wp-content/uploads/Credo-OmniConnect-Weaver.pdf">Credo OmniConnect Weaver製品ブリーフ</a></li>
+<li><a href="https://credosemi.com/products/omniconnect/weaver/">Credo Weaver製品ページ</a></li>
+<li><a href="https://credosemi.com/blogs/breaking-the-memory-wall-how-omniconnect-decouples-memory-from-compute/">Credo技術ブログ</a></li>
+<li><a href="https://www.opencompute.org/events/ocp-summit/2026-ocp-global-summit/">Open Compute Project公式イベント情報</a></li>
+</ul>

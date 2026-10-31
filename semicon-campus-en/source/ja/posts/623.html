@@ -1,0 +1,94 @@
+
+<!--KEEP:0-->
+
+
+<!--KEEP:1-->
+
+
+<!--KEEP:2-->
+<div class="semicon-article" id="semicon-top">
+
+<div class="semicon-level"><span class="semicon-level-label">学習レベル</span> <strong>初級</strong><p>第29話で、CUDAはGPUを汎用計算へ使いやすくするソフトウェア基盤だと学びました。今回は、そのGPUの中で行列計算を効率よく進めるTensor Coreを見ます。数式を追わなくても読めます。</p></div>
+
+<p class="semicon-lead"><strong>Tensor Core（テンソルコア）</strong>は、対応するNVIDIA GPUの中にある<strong>行列の積和演算を効率よく実行する専用演算器</strong>です。GPUそのものではなく、AIだけに使う万能回路でも、CUDA Coreを単純に置き換える回路でもありません。対応する計算とデータ型を、ライブラリやフレームワークが適切な経路へ載せたときに強みを発揮します。</p>
+
+<figure class="semicon-figure"><img src="https://semicon-campus.com/wp-content/uploads/2026/07/tensor-core-featured.png" alt="GPU内で一般的な演算を担う多数の演算器と行列の積和演算を担う専用演算器が共存し、入力行列から結果行列を作る様子" width="1672" height="941" loading="eager" decoding="async"><figcaption>Tensor CoreはGPU全体の別名ではありません。GPU内でCUDA Coreなどと共存し、条件が合う行列演算を担当する専用演算器です。</figcaption></figure>
+
+<div class="semicon-map"><h3>先に3つの誤解をほどく</h3><div class="semicon-three"><div class="semicon-card"><b>GPUそのものではない</b><span>対応GPUの内部に組み込まれた演算器の一種です。</span></div><div class="semicon-card"><b>AI専用とは限らない</b><span>AIで多用されますが、行列計算を使う科学技術計算などにも利用できます。</span></div><div class="semicon-card"><b>CUDA Coreの代替ではない</b><span>一般的な処理と専用の行列処理を、それぞれ得意な演算器が分担します。</span></div></div></div>
+
+
+<h2>Tensor Coreは何を高速化する？</h2>
+
+<p>中心となる仕事は、複数の数を掛け合わせて足し、その結果を既存の値へ加える<strong>行列の積和演算</strong>です。NVIDIAの資料では、行列AとBを掛け、その結果を行列Cへ足して行列Dを得る処理として説明されています。機械学習の学習や推論では、ニューラルネットワークの各層でこのような計算を大量に繰り返します。</p>
+
+<figure class="semicon-figure"><img src="https://semicon-campus.com/wp-content/uploads/2026/07/tensor-core-matrix-multiply-accumulate.png" alt="一方の行列の行ともう一方の行列の列から対応する値を掛け、複数の積を合計して既存値へ加え、結果行列の一要素を作る積和演算" width="1672" height="941" loading="lazy" decoding="async"><figcaption>行と列の組み合わせごとに「掛けて足す」を繰り返し、結果行列を作ります。Tensor Coreは、このまとまった行列の積和演算を高い処理量で進める設計です。</figcaption></figure>
+
+<p>ただし、AIの処理がすべて行列積だけでできているわけではありません。データの準備、条件分岐、メモリアクセス、活性化関数など、別の演算やデータ移動も含まれます。Tensor Coreが速くても、処理全体が同じ倍率で速くなるとは限りません。</p>
+
+<p class="semicon-one-line">Tensor Coreが直接速くするのは、対応する形式の行列積和など。アプリ全体を無条件に速くする回路ではありません。</p>
+
+<h2>混合精度とは？ 速さと計算の確かさを両立する考え方</h2>
+
+<p>数値をコンピューターで表す細かさを<strong>精度</strong>と呼びます。一般に、細かさを抑えた形式は一度に多く扱いやすく、メモリ量や転送量も減らせます。一方、すべてを低い精度にすると、丸め誤差や値が表現範囲を外れる問題が起こりやすくなります。</p>
+
+<p><strong>混合精度</strong>は、入力や大量の演算には比較的軽い形式を使い、積み上げる結果や精度が重要な部分にはより広い形式を使う考え方です。初期のTensor Coreでは、たとえばFP16の入力を掛け、FP32で累積する使い方が代表例でした。現在使える形式はGPUの世代とソフトウェアによって異なり、FP16、BF16、TF32、INT8などに対応する製品があります。後の世代にはFP64を扱うものもあります。</p>
+
+<figure class="semicon-figure"><img src="https://semicon-campus.com/wp-content/uploads/2026/07/tensor-core-mixed-precision.png" alt="比較的軽い精度の複数の入力を専用演算器へ送り、より細かい精度の累積領域で結果を積み上げて出力する混合精度計算" width="1672" height="941" loading="lazy" decoding="async"><figcaption>混合精度は「全部を粗くする」ことではありません。軽い入力形式と、結果を安定して積み上げる形式を役割に応じて組み合わせます。</figcaption></figure>
+
+<div class="semicon-note"><p><strong>データ型は世代ごとに確認する</strong></p><p>「Tensor Coreなら、すべてのデータ型が同じ速度で使える」とは言えません。対応形式、演算性能、入力サイズの条件はGPUアーキテクチャやライブラリの版で変わります。製品選定や性能見積もりでは、対象GPUの公式仕様を確認します。</p></div>
+
+<h2>CUDA Coreとどう分担する？</h2>
+
+<div class="semicon-compare"><table><thead><tr><th>項目</th><th>主な役割</th><th>初心者が押さえる点</th></tr></thead><tbody><tr><td>Tensor Core</td><td>対応する行列の積和などを高い処理量で実行</td><td>専用演算器。条件に合う計算だけを担当する</td></tr><tr><td>CUDA Core</td><td>より一般的な数値演算や各種処理を実行</td><td>Tensor Coreがあっても不要にはならない</td></tr><tr><td>CUDA</td><td>GPUの演算器やメモリをソフトウェアから利用する基盤</td><td>演算器そのものではない</td></tr></tbody></table></div>
+
+<p>GPUの仕事には、行列積和へきれいにまとめられる部分と、そうでない部分があります。Tensor CoreとCUDA Coreは競争相手というより、GPU内部で異なる仕事を分担する関係です。前回説明した<a href="https://semicon-campus.com/what-is-cuda-gpu-computing/">CUDAがGPUを汎用計算へ開いた仕組み</a>の上で、対応する行列演算を専用経路へ流せるようになった、と捉えるとつながります。</p>
+
+<h2>ハードウェアがあれば自動で速くなる？</h2>
+
+<p>Tensor Coreを使うには、計算が対応する演算とデータ型で表現され、ソフトウェアが利用経路を選ぶ必要があります。開発者はcuBLASやcuDNNなどのライブラリ、深層学習フレームワーク、またはWMMA APIなどを通じて利用します。対応ライブラリは、条件が合う計算をTensor Coreへ振り分けられます。</p>
+
+<figure class="semicon-figure"><img src="https://semicon-campus.com/wp-content/uploads/2026/07/tensor-core-software-hardware-path.png" alt="AIフレームワークの処理がライブラリ層を通り、対応する行列演算はGPU内のTensor Coreへ、その他の処理はCUDA Coreなどへ振り分けられる流れ" width="1672" height="941" loading="lazy" decoding="async"><figcaption>フレームワークやライブラリが計算を整理し、対応する行列演算だけをTensor Coreへ送ります。ハードウェア、データ型、計算形状、ソフトウェアの組み合わせが重要です。</figcaption></figure>
+
+<div class="semicon-three"><div class="semicon-card"><b>計算の形</b><span>十分な大きさの行列や、効率よく分割できる寸法ほど演算器を埋めやすい。</span></div><div class="semicon-card"><b>データの供給</b><span>演算器へ入力を届ける速度が足りなければ、待ち時間が増える。</span></div><div class="semicon-card"><b>処理全体の構成</b><span>Tensor Coreを使わない部分が長ければ、アプリ全体の短縮率は小さくなる。</span></div></div>
+
+<h2>なぜ次はHBMとメモリ帯域なのか</h2>
+
+<p>演算器が一度に処理できる量が増えるほど、入力データを絶えず届け、結果を受け取る必要があります。計算量に対してデータ移動が多い処理では、Tensor Coreの待ち時間が増え、メモリ側が性能の上限になることがあります。</p>
+
+<p>そこで重要になるのが、GPUの近くで大量データを広い経路から供給する<a href="https://semicon-campus.com/what-is-hbm-high-bandwidth-memory/">HBMとメモリ帯域の仕組み</a>です。次回は「演算器を速くするだけでは足りない」という視点から、AI向けGPUでHBMが注目される理由を見ます。</p>
+
+<h2>Tensor Coreに関わる仕事</h2>
+
+<p>Tensor Coreの性能は、回路設計だけで決まりません。GPUアーキテクチャ、数値計算ライブラリ、AIフレームワーク、コンパイラ、パッケージ、HBM、基板、冷却、データセンター運用まで、多くの仕事がつながっています。</p>
+
+<div class="semicon-cta"><p><strong>自分に近い半導体の仕事を探す</strong></p><p>ハードウェア、ソフトウェア、製造、装置、品質など、どこから学ぶか迷う場合は、匿名・回答非保存の<a href="https://semicon-campus.com/semiconductor-career-advisor/">10問仕事ナビ</a>で興味の方向を整理できます。診断結果は適性を断定するものではなく、次の学習テーマを選ぶ目安です。</p></div>
+
+
+<section class="mp5-section" id="revenue-phase5-learning"><h2>Tensor Coreから、小さな演習とPC要件へ</h2><p>行列計算の役割を理解したら、演習で使うライブラリー、数値精度、GPUの対応条件を先に確認します。専用演算器があっても、すべての処理が自動で速くなるわけではありません。公開の小さな例を読むためのPython学習と、一般の生成AI活用を学ぶ講座は目的が異なります。PC更新を考える場合は必要なGPUとメモリを照合し、無料の環境で試せる範囲から学習対象と購入候補を絞りましょう。</p><p>比較前の確認メモ：ライブラリーのGPU対応、必要VRAM、メモリ、対応OS。今の環境で試せる範囲と、更新が必要な箇所を分けてから候補を選びましょう。</p></section>
+
+<h2 id="tensor-core-faq">Tensor Coreについてよくある質問</h2>
+
+<h3>Tensor CoreはAI専用ですか？</h3><p>いいえ。AIで行列演算を大量に使うため重要ですが、対応する行列計算を使う科学技術計算などにも利用できます。</p>
+
+<h3>Tensor CoreがあればCUDA Coreは不要ですか？</h3><p>不要にはなりません。Tensor Coreは対応する行列演算を担当し、それ以外の多くの処理はCUDA Coreなどが担います。</p>
+
+<h3>混合精度は計算を不正確にする方法ですか？</h3><p>単純にすべての精度を下げる方法ではありません。軽い形式を使える部分と、より高い精度が必要な部分を分け、速度と数値の安定性を両立させる考え方です。用途に応じた検証は必要です。</p>
+
+<h3>Tensor Core搭載GPUなら、どのAIも同じだけ速くなりますか？</h3><p>いいえ。対応データ型、行列の大きさや形、ソフトウェア、メモリ帯域、Tensor Coreを使わない処理の割合によって効果は変わります。</p>
+
+<h2 id="tensor-core-summary">まとめ</h2>
+
+<div class="semicon-note"><ol><li>Tensor Coreは対応GPU内にある行列積和向けの専用演算器</li><li>GPUそのものでも、AIだけの万能回路でも、CUDA Coreの代替でもない</li><li>混合精度は軽い入力形式と精度が必要な累積などを組み合わせる考え方</li><li>ライブラリやフレームワークが対応計算を専用経路へ載せて初めて活用できる</li><li>性能には計算形状だけでなく、データを届けるメモリ帯域も影響する</li></ol></div>
+
+<div class="semicon-links"><div class="semicon-linkbox"><h3>さらに基礎へ戻る</h3><p><a href="https://semicon-campus.com/what-is-gpu-ai-parallel-processing/">GPUがゲームからAIへ広がった流れ</a></p></div><div class="semicon-linkbox next"><h3>動画の順番で学ぶ</h3><p><a href="https://semicon-campus.com/semiconductor-beginner-roadmap/">半導体初心者ロードマップへ戻る</a></p></div></div>
+
+
+<section class="mp5-section" id="revenue-phase5-career"><h2>理解した内容から、次の学習と比較へ</h2><p>公開コードの動作確認、演習条件の整理を、対象・条件・出典の三つで整理しましょう。関連する基礎記事、学習の入口、PCの要件を目的別に確認すると、無料で試せる範囲と有料の選択肢を分けて検討できます。</p><aside class="semicon-cta mp5-card"><h3>目的に合う関連記事から、次の行動を選ぶ</h3><p>仕事内容を知りたい方は職種記事へ、基礎を広げたい方は学習記事へ、自宅環境を見直す方はPC・メモリの解説へ進めます。各記事の求人・学習・機材の選び方も比較できます。</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/cpu-memory-storage-difference/" class="semicon-btn mp5-button" data-revenue-phase5-hub="479" data-cta="pc_guide" data-cta-type="pc_guide" data-cta-stage="career" data-cta-id="phase5_623_hub479_end" data-cta-route="phase5_623_hub479_end">PCの遅さをCPU・メモリ・保存容量から切り分ける</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/dram-nand-difference/" class="semicon-btn mp5-button" data-revenue-phase5-hub="486" data-cta="memory_guide" data-cta-type="memory_guide" data-cta-stage="career" data-cta-id="phase5_623_hub486_end" data-cta-route="phase5_623_hub486_end">DRAM・NANDの違いとPCの増設・更新を確認する</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/semiconductor-beginner-roadmap/" class="semicon-btn mp5-button" data-revenue-phase5-hub="391" data-cta="learning_hub" data-cta-type="learning_hub" data-cta-stage="career" data-cta-id="phase5_623_hub391_end" data-cta-route="phase5_623_hub391_end">半導体学習Hubで基礎・仕事・学び方を確認する</a></div></aside></section>
+
+
+<h2>参考資料</h2>
+<ul><li><a rel="noopener" href="https://developer.nvidia.com/blog/tensor-cores-mixed-precision-scientific-computing/" target="_blank">NVIDIA Technical Blog: Tensor Cores and Mixed-Precision Scientific Computing</a></li><li><a rel="noopener" href="https://docs.nvidia.com/deeplearning/performance/mixed-precision-training/index.html" target="_blank">NVIDIA Deep Learning Performance Guide: Mixed Precision</a></li><li><a rel="noopener" href="https://developer.nvidia.com/blog/programming-tensor-cores-cuda-9/" target="_blank">NVIDIA Technical Blog: Programming Tensor Cores in CUDA 9</a></li><li><a rel="noopener" href="https://docs.nvidia.com/deeplearning/performance/dl-performance-matrix-multiplication/index.html" target="_blank">NVIDIA Deep Learning Performance Guide: Matrix Multiplication</a></li><li><a rel="noopener" href="https://docs.nvidia.com/cuda/archive/11.0/cublas/index.html" target="_blank">NVIDIA cuBLAS Library Documentation</a></li></ul>
+
+<a class="semicon-backtop" href="#semicon-top">↑ 先頭</a>
+</div>
+

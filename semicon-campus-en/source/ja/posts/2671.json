@@ -1,0 +1,18 @@
+{
+ "id": 2671,
+ "type": "post",
+ "slug": "semiconductor-leakage-current",
+ "link": "https://semicon-campus.com/semiconductor-leakage-current/",
+ "date": "2026-10-31T10:00:00",
+ "modified": "2026-10-27T23:26:40",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  5
+ ],
+ "tags": [],
+ "featured_media": 0,
+ "title": "半導体のリーク電流とは？切っても漏れる電気の正体",
+ "excerpt": "半導体のリーク電流とは何か。スイッチを切っても漏れる電気の正体と、しきい電圧を下げると漏れが増える理由、小さくするほど速さと待機中の電気が引き換えになる仕組みを、水門のたとえで初心者向けに解説します。"
+}

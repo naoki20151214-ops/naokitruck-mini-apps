@@ -1,0 +1,18 @@
+{
+ "id": 2946,
+ "type": "post",
+ "slug": "txrf-total-reflection-xray-fluorescence-basics",
+ "link": "https://semicon-campus.com/txrf-total-reflection-xray-fluorescence-basics/",
+ "date": "2026-10-29T22:17:08",
+ "modified": "2026-10-30T21:23:14",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  5
+ ],
+ "tags": [],
+ "featured_media": 0,
+ "title": "TXRFの仕組み：全反射で、ウェハ表面の金属を測る【洗浄3級・第5講 補講】",
+ "excerpt": "TXRF（全反射蛍光X線分析）の仕組みを解説。全反射でウェハ表面だけを見て金属汚染を測る方法と、どのくらい少ない汚れまで見つけられるかの目安を、洗浄コース3級・第5講の補講で学べます。ことばのおさらいとよくある誤解も確認できます。"
+}

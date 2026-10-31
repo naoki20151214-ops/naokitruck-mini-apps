@@ -1,0 +1,20 @@
+{
+ "id": 642,
+ "type": "post",
+ "slug": "what-is-advanced-packaging-gpu-hbm",
+ "link": "https://semicon-campus.com/what-is-advanced-packaging-gpu-hbm/",
+ "date": "2026-07-21T07:56:06",
+ "modified": "2026-10-30T21:22:56",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  4,
+  2,
+  10
+ ],
+ "tags": [],
+ "featured_media": 638,
+ "title": "先端パッケージとは？ GPUとHBMを近くでつなぐCoWoS・2.5Dの仕組み",
+ "excerpt": "先端パッケージは外箱だけではありません。GPUとHBMを近くで結ぶ2.5D、インターポーザ、基板、CoWoSの関係と、熱・歩留まり・仕事を初心者向けに図解します。"
+}

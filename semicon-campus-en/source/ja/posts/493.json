@@ -1,0 +1,20 @@
+{
+ "id": 493,
+ "type": "post",
+ "slug": "what-is-hbm-high-bandwidth-memory",
+ "link": "https://semicon-campus.com/what-is-hbm-high-bandwidth-memory/",
+ "date": "2026-07-13T12:36:09",
+ "modified": "2026-10-30T21:22:56",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  4,
+  2,
+  10
+ ],
+ "tags": [],
+ "featured_media": 492,
+ "title": "HBMとは何か？AI・GPUを支える高帯域メモリを文系向けにやさしく解説",
+ "excerpt": "HBMはAIの計算をするGPUへ大量のデータを一度に届けるDRAM系の作業用メモリです。メモリ帯域、積層DRAM、TSV、先端パッケージ、熱・歩留まりの課題まで文系向けに図解します。"
+}

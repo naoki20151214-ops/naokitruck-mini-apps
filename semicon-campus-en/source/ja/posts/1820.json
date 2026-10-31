@@ -1,0 +1,18 @@
+{
+ "id": 1820,
+ "type": "post",
+ "slug": "sensor-interlock",
+ "link": "https://semicon-campus.com/sensor-interlock/",
+ "date": "2026-10-05T00:23:41",
+ "modified": "2026-10-30T21:29:57",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  5
+ ],
+ "tags": [],
+ "featured_media": 2788,
+ "title": "半導体装置のセンサとインターロックとは？「危ない」を判断して止める仕組み",
+ "excerpt": "半導体装置のセンサーとインターロックを、実際の状態から信号、I/O、制御判断、停止動作までつなげて解説。警報が出たときに設備・センサー・配線・制御・機械位置をどう切り分けるかを学びます。"
+}

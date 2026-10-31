@@ -1,0 +1,20 @@
+{
+ "id": 2073,
+ "type": "post",
+ "slug": "daily-news-b24ec09c8d3862fd296e",
+ "link": "https://semicon-campus.com/daily-news-b24ec09c8d3862fd296e/",
+ "date": "2026-10-15T15:00:00",
+ "modified": "2026-10-27T20:03:16",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  20
+ ],
+ "tags": [
+  19
+ ],
+ "featured_media": 2756,
+ "title": "Microchipの耐放射線GaN電源、宇宙コンピューティングを支える",
+ "excerpt": "Microchipが発表した耐放射線GaN POLコンバーターを解説。20A出力、TIDとSEEの意味、宇宙用電源の役割、量産供給の限界と今後の確認点を初心者向けに整理します。"
+}

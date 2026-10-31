@@ -1,0 +1,19 @@
+{
+ "id": 1809,
+ "type": "post",
+ "slug": "vacuum-gate-valve",
+ "link": "https://semicon-campus.com/vacuum-gate-valve/",
+ "date": "2026-10-08T18:00:00",
+ "modified": "2026-10-30T21:32:34",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  5,
+  21
+ ],
+ "tags": [],
+ "featured_media": 2779,
+ "title": "真空バルブ・ゲートバルブは何を守る？半導体装置の仕組みと異常の切り分け",
+ "excerpt": "半導体装置の真空バルブ・ゲートバルブが、チャンバー、ロードロック、ポンプをどう隔離・接続するかを解説。差圧とコンダクタンス、空圧駆動、位置センサー、インターロックをつなげ、Valve Alarmの原因を設備保全の視点で切り分けます。"
+}

@@ -1,0 +1,100 @@
+
+<!--KEEP:0-->
+
+
+<!--KEEP:1-->
+
+<article class="semicon-article" data-episode="081" data-status="scheduled" data-slug="electrostatic-chuck-wafer-temperature" data-target="new_post">
+<!--KEEP:2-->
+<h1>半導体のウェハはなぜ装置に吸着する？静電チャックと温度制御の役割</h1>
+<p class="hook">スマートフォンや車に入る半導体は、薄い円盤のウェハを何度も装置へ出し入れして作られます。<br>そのウェハを真空の中で動かさず、加工中の熱も整える役が必要です。<br>答えは、電気の力で保持し、背面ガスと温度制御を組み合わせる静電チャックです。</p>
+
+<p>この記事では、装置の中でウェハを支える<strong>静電チャック（ESC）</strong>を扱います。ESCは、完成したチップの内部に入る部品ではありません。回路を作る前のウェハを、エッチングや成膜などの処理装置内で支える<strong>工程側の部品</strong>です。ウェハは回路が並ぶ薄い基板、チップは後で切り分けられる一つひとつの領域、と位置を分けて考えると仕組みが追いやすくなります。</p>
+
+<h2>この記事でわかること</h2>
+<ul><li>ESCが機械的な爪ではなく、電気の力でウェハを保持する理由</li><li>真空中で背面ガスとチャックが熱を伝える仕組み</li><li>粒子や表面状態まで含めて、ESCを設備・保全の接点として見る方法</li></ul>
+
+<p class="visual-context">ここで見る具体物は「ウェハと静電チャック」です。</p><figure class="semicon-figure" data-media-role="explanatory-image-01" data-visual-kind="photoreal" data-subject="ウェハと静電チャック" data-purpose="intro-object" data-composition="wafer-on-chuck" data-concrete-object="true" data-selection-reason="記事の主役であるウェハとESCを、抽象的な模式図ではなく装置内の具体物として最初に示すため。" data-photo-assessment="ウェハの円盤形状とチャックの円形面が明瞭で、通常表示幅でも対象を識別できる。" data-provenance="articles/images/episode081/provenance/01-wafer-esc.md"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/09/ep081-01-01-wafer-esc-72bf3bacf133.webp" alt="半導体装置内のセラミック静電チャックに載ったシリコンウェハ（ウェハと静電チャック）"><figcaption>記事の主役は、装置内でウェハを支える静電チャックです。AI生成画像（OpenAI image generation）（対象: ウェハと静電チャック）／変更: resized and converted to WebP。</figcaption></figure>
+
+<h2>ウェハはどこでESCに載るのか</h2>
+<p data-fact-ids="F001 F006">ウェハは、シリコンの円盤に回路を作り込んでいく途中の基板です。装置の中では、搬送ロボットがウェハを処理室へ運び、円形のステージへ載せます。処理室が真空になると、空気の流れで支えることはできません。しかもウェハは薄く、処理中に位置がずれたり、面が傾いたりすると、その後の加工結果に影響します。</p>
+<p>ここで使われるのがESCです。電極と誘電体を組み込んだチャックに電圧をかけると、ウェハとの間に静電的な引力が生まれ、面で保持できます。メーカーや工程によって構造は異なりますが、共通する役割は「処理のあいだ、ウェハを決めた位置と姿勢に保つ」ことです。</p>
+
+<p class="visual-context">ここで見る具体物は「半導体プロセスチャンバー」です。</p><figure class="semicon-figure" data-media-role="explanatory-image-02" data-visual-kind="photoreal" data-subject="半導体プロセスチャンバー" data-purpose="tool-location" data-composition="open-chamber" data-concrete-object="true" data-selection-reason="ESCが単体の電子部品ではなく、ウェハ処理チャンバーに組み込まれる工程部品であることを実物の配置で示すため。" data-photo-assessment="チャンバーの開口、ステージ、周辺の金属構造が区別でき、装置内の位置を把握しやすい。" data-provenance="articles/images/episode081/provenance/02-process-chamber.md"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/09/ep081-02-02-process-chamber-0651ab2b701a.webp" alt="ウェハステージが見える半導体プロセスチャンバー"><figcaption>ESCは、ウェハを処理するチャンバーの中に組み込まれます。AI生成画像（OpenAI image generation）（対象: 半導体プロセスチャンバー）／変更: resized and converted to WebP。</figcaption></figure>
+
+<h2>機械的に挟まず、面で保持する理由</h2>
+<p data-fact-ids="F001 F002">機械クランプでウェハの縁を押さえる方法は、力が接触点に集中しやすく、薄い基板のたわみや接触状態のばらつきにつながることがあります。機械部品がこすれれば、摩耗や粒子の原因にもなり得ます。もちろん、すべての装置が同じ方式を採るわけではなく、工程に応じて別の保持方法もあります。</p>
+<p>ESCは、ウェハの表面をつかむのではなく、裏側から広い面で支えます。たとえるなら、数枚のクリップで端を押さえるより、平らな台にそっと密着させる考え方です。ただし、これは理解のための比喩です。実際には、電極、誘電体、表面の微細な形状、ウェハの状態が組み合わさって保持力が決まります。</p>
+
+<p class="visual-context">ここで見る具体物は「静電チャックのセラミック表面」です。</p><figure class="semicon-figure" data-media-role="explanatory-image-03" data-visual-kind="photoreal" data-subject="静電チャックのセラミック表面" data-purpose="surface-contact" data-composition="macro-surface" data-concrete-object="true" data-selection-reason="面でウェハを支える接触面を、断面図ではなくESC表面の具体的な質感で伝えるため。" data-photo-assessment="セラミック面の微細なパターンとウェハの縁が視認でき、表面状態という観点に対応する。" data-provenance="articles/images/episode081/provenance/03-chuck-surface.md"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/09/ep081-03-03-chuck-surface-9dc55672d43a.webp" alt="ウェハを支える静電チャックのセラミック表面の接写"><figcaption>ESCの表面状態は、保持と熱の接点になります。AI生成画像（OpenAI image generation）（対象: 静電チャックのセラミック表面）／変更: resized and converted to WebP。</figcaption></figure>
+
+<h2>ウェハを置くだけでなく、温度も支える</h2>
+<p data-fact-ids="F003 F004">ESCの重要な役割は、ウェハを動かさないことだけではありません。エッチングや成膜では、ウェハ表面で反応が進みます。イオン注入のように基板へエネルギーを与える工程もあります。ウェハが受け取る熱を適切に逃がしたり、必要な温度へ近づけたりしないと、面の場所によって加工結果が変わる可能性があります。</p>
+<p>真空中では、空気を使った対流が熱の通り道になりません。そこで、ウェハの裏面とチャックの間へ背面ガスを供給する方法があります。HORIBA STECは、ESCで固定したウェハの背面をヘリウムやアルゴンで冷却し、ガスの流量や圧力を制御する装置を紹介しています。背面ガスはウェハとチャックの間の熱移動を助け、チャック側の冷却板やヒーターと組み合わされます。</p>
+<p>ここで大切なのは、背面ガスを入れれば自動的に温度が同じになる、という意味ではないことです。ウェハの反り、接触面、ガスの流れ、シール、チャック材料、冷却機構などが関係します。具体的な圧力や温度は装置・材料・工程ごとに異なるため、一般的な設定値として断定できません。</p>
+
+<p class="visual-context">ここで見る具体物は「ウェハ搬送ロボットとESC」です。</p><figure class="semicon-figure" data-media-role="explanatory-image-04" data-visual-kind="photoreal" data-subject="ウェハ搬送ロボットとESC" data-purpose="handling-stage" data-composition="robot-and-stage" data-concrete-object="true" data-selection-reason="搬送からESCへの受け渡しが工程の一部であることを、ロボットとステージの実物関係で示すため。" data-photo-assessment="ロボットアーム、ウェハ、円形ステージが離れて見え、処理前の受け渡しとして理解できる。" data-provenance="articles/images/episode081/provenance/04-wafer-handling.md"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/09/ep081-04-04-wafer-handling-a22dac9de72e.webp" alt="静電チャックへウェハを置く半導体搬送ロボット（ウェハ搬送ロボットとESC）"><figcaption>ウェハは搬送され、処理ステージ上のESCへ受け渡されます。AI生成画像（OpenAI image generation）（対象: ウェハ搬送ロボットとESC）／変更: resized and converted to WebP。</figcaption></figure>
+
+<p class="visual-context">ここで見る具体物は「背面ガス制御系」です。</p><figure class="semicon-figure" data-media-role="explanatory-image-05" data-visual-kind="photoreal" data-subject="背面ガス制御系" data-purpose="thermal-path" data-composition="manifold-and-chuck" data-concrete-object="true" data-selection-reason="背面ガスが抽象的な言葉ではなく、配管と制御機器を通じて供給される設備要素であることを具体化するため。" data-photo-assessment="ガス配管と制御マニホールドが見分けられ、数値や企業仕様を示さず熱経路の設備として読める。" data-provenance="articles/images/episode081/provenance/05-backside-gas.md"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/09/ep081-05-05-backside-gas-2e38b447942f.webp" alt="ウェハ背面冷却に使われるガス制御マニホールドと配管（背面ガス制御系）"><figcaption>背面ガスは、供給系と制御系を含む設備の一部です。AI生成画像（OpenAI image generation）（対象: 背面ガス制御系）／変更: resized and converted to WebP。</figcaption></figure>
+
+<h2>ESCは工程の結果の均一性に関係する</h2>
+<p data-fact-ids="F002 F004 F006">ウェハの上には、多数のチップになる領域が並んでいます。処理中にウェハの中心と端で温度や接触が異なれば、膜の成長や材料の削れ方などが面内で揃わなくなる可能性があります。Applied MaterialsやNGKは、ESCの保持面、熱伝導、冷却・加熱が膜質や処理の均一性に関係する装置要素だと説明しています。</p>
+<p>つまりESCは、搬送時にウェハを落とさないための受け皿ではありません。電気的な保持、ウェハの平坦性、裏面からの熱の移動、チャンバー内の処理条件をつなぐ境界にあります。完成したチップの性能をESCだけで決めるわけではありませんが、工程の再現性を下支えする部品の一つです。</p>
+
+<p class="visual-context">ここで見る具体物は「温度制御ペデスタル」です。</p><figure class="semicon-figure" data-media-role="explanatory-image-06" data-visual-kind="photoreal" data-subject="温度制御ペデスタル" data-purpose="thermal-hardware" data-composition="disassembled-pedestal" data-concrete-object="true" data-selection-reason="ESCの下側にある熱の経路を、セラミック板と金属ベースという具体的な部材の組み合わせで示すため。" data-photo-assessment="分解された円形部材が識別できるが、寸法・温度など未確認の仕様は示していない。" data-provenance="articles/images/episode081/provenance/06-thermal-base.md"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/09/ep081-06-06-thermal-base-5cec6d1fe438.webp" alt="セラミックチャック板と金属ベースからなる温度制御ペデスタル"><figcaption>チャック側の材料やベースも、ウェハから熱を逃がす経路を構成します。AI生成画像（OpenAI image generation）（対象: 温度制御ペデスタル）／変更: resized and converted to WebP。</figcaption></figure>
+
+<p class="visual-context">ここで見る具体物は「プラズマ処理中のウェハ」です。</p><figure class="semicon-figure" data-media-role="explanatory-image-07" data-visual-kind="photoreal" data-subject="プラズマ処理中のウェハ" data-purpose="process-context" data-composition="plasma-chamber" data-concrete-object="true" data-selection-reason="ESCがプラズマ処理の熱や電気的条件と接するプロセス部品であることを、チャンバー内の実物情景で示すため。" data-photo-assessment="ウェハ、ステージ、プラズマ発光の位置関係が明瞭だが、具体的な処理結果や計測値は表現していない。" data-provenance="articles/images/episode081/provenance/07-plasma-wafer.md"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/09/ep081-07-07-plasma-wafer-4cd9e8f3e5cc.webp" alt="静電チャック上のウェハを処理するプラズマチャンバー（プラズマ処理中のウェハ）"><figcaption>プラズマ処理では、ウェハの保持と熱の管理が同じチャンバー内で関係します。AI生成画像（OpenAI image generation）（対象: プラズマ処理中のウェハ）／変更: resized and converted to WebP。</figcaption></figure>
+
+<div class="semicon-mid-cta"><strong>装置の役割をもう一段深く知りたい方へ</strong><br>ESCは、装置エンジニアが見る「保持・熱・清浄度」の交点です。まずは<a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/">半導体製造装置エンジニアの仕事</a>と照らし合わせると、部品の状態が工程全体へ戻る流れをつかみやすくなります。</div>
+
+<h2>なぜ保全の対象にもなるのか</h2>
+<p data-fact-ids="F005 F007">ESCの表面に粒子が増えたり、ウェハ裏面との接触状態が変わったり、背面ガスの状態がいつもと違ったりすると、保持や熱移動の再現性に影響する可能性があります。Entegrisは、平坦な保持面、均一な熱特性、ガス冷却、粒子・金属の発生、クランプとデクランプの一貫性をESCの性能要素として示し、コーティングやリファービッシュも扱っています。</p>
+<p>現場で見るべきなのは、ウェハが一度載ったかどうかだけではありません。保持の一貫性、ウェハ裏面の状態、粒子の増加、温度の履歴、背面ガスの流れ、チャック表面の摩耗などを、工程結果と一緒に見ます。異常が出たときは、対象装置の安全手順や保全手順に従って原因を切り分けます。この記事では、作業の順番や交換基準を示しません。</p>
+
+<p class="visual-context">ここで見る具体物は「ESCとウェハの清浄度確認」です。</p><figure class="semicon-figure" data-media-role="explanatory-image-08" data-visual-kind="photoreal" data-subject="ESCとウェハの清浄度確認" data-purpose="inspection-context" data-composition="technician-inspection" data-concrete-object="true" data-selection-reason="設備保全では表面状態も重要だと伝えるため、清浄な作業環境で部材を確認する具体的な場面を使うため。" data-photo-assessment="作業者と円形部材が明確で、手順そのものではなく状態確認の文脈として読める。" data-provenance="articles/images/episode081/provenance/08-cleanroom-inspection.md"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/09/ep081-08-08-cleanroom-inspection-d11674ba0878.webp" alt="クリーンルームで静電チャックとウェハ表面を確認する作業者（ESCとウェハの清浄度確認）"><figcaption>表面状態や汚染の確認は、保持と再現性を考える設備視点の一部です。AI生成画像（OpenAI image generation）（対象: ESCとウェハの清浄度確認）／変更: resized and converted to WebP。</figcaption></figure>
+
+<p class="visual-context">ここで見る具体物は「表面・粒子の検査環境」です。</p><figure class="semicon-figure" data-media-role="explanatory-image-09" data-visual-kind="photoreal" data-subject="表面・粒子の検査環境" data-purpose="particle-control" data-composition="microscope-bench" data-concrete-object="true" data-selection-reason="粒子や表面状態を工程結果と切り分ける視点を、顕微鏡とESC部材という現実の検査物で示すため。" data-photo-assessment="顕微鏡と円形セラミック部材が識別でき、架空の測定値や合否判定は入れていない。" data-provenance="articles/images/episode081/provenance/09-particle-control.md"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/09/ep081-09-09-particle-control-6f2de9b83e26.webp" alt="静電チャック部材と表面検査用顕微鏡のあるクリーンベンチ（表面・粒子の検査環境）"><figcaption>粒子や表面の変化は、設備状態を考えるときの確認対象になります。AI生成画像（OpenAI image generation）（対象: 表面・粒子の検査環境）／変更: resized and converted to WebP。</figcaption></figure>
+
+<h2>ウェハを外すときも保持の反対側を管理する</h2>
+<p data-fact-ids="F005 F006">処理が終わると、ウェハはESCから解除され、次の搬送へ移ります。保持する動作と解除する動作は表裏の関係にあり、どちらも装置の再現性に関係します。Entegrisがクランプとデクランプの一貫性を要素として挙げるのは、載せる瞬間だけでなく、工程後に安定して受け渡せることも重要だからです。</p>
+<p>ここでも、電源を切れば必ず同じように外れる、という単純な話にはできません。電極方式、ウェハ状態、表面の清浄度、装置の構成などで挙動が変わります。具体的な解除操作や安全確認は装置の手順書に従う領域です。</p>
+
+<p class="visual-context">ここで見る具体物は「ESCからのウェハ解除」です。</p><figure class="semicon-figure" data-media-role="explanatory-image-10" data-visual-kind="photoreal" data-subject="ESCからのウェハ解除" data-purpose="release-stage" data-composition="lift-pin-release" data-concrete-object="true" data-selection-reason="保持だけでなく解除と受け渡しも装置の一連の動作であることを、処理後の具体物で示すため。" data-photo-assessment="ウェハ、円形ステージ、リフトピンの位置関係が見えるが、操作手順や安全基準は表現していない。" data-provenance="articles/images/episode081/provenance/10-release-handling.md"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/09/ep081-10-10-release-handling-556519a16df9.webp" alt="静電チャックからリフトピンで持ち上げられる半導体ウェハ（ESCからのウェハ解除）"><figcaption>処理後の解除と受け渡しも、保持の一貫性とつながっています。AI生成画像（OpenAI image generation）（対象: ESCからのウェハ解除）／変更: resized and converted to WebP。</figcaption></figure>
+
+<section class="mp1-section" id="maintenance-phase1-learning"><h2>静電チャック・背面ガス・温度を、実務と学び直しにつなげる</h2><p>ESCの保全につながるのは、吸着の成否だけでなく、保持・解除、背面ガス、温度、粒子の履歴を工程結果と合わせて読む力です。交換や清掃の前後で何を確認したか、どの異常を専門担当へ渡したかを記録しておくと、担当範囲を説明しやすくなります。電気と熱の関係が苦手なら、電気・制御や機械の基礎から学び直せます。</p></section>
+<h2>よくある誤解</h2>
+<h3>Q. ESCは磁石のようにウェハを引き寄せるのですか？</h3>
+<p>A. 磁石ではありません。電極と誘電体を使った静電力で保持します。ウェハを平らに支える部材ですが、表面状態や工程条件の影響を受けます。</p>
+<h3>Q. 背面ガスを入れれば、ウェハ全体が同じ温度になりますか？</h3>
+<p>A. そうとは限りません。ガスの流れだけでなく、接触、シール、材料、冷却・加熱機構などが関係します。記事で扱ったのは考え方で、特定装置の設定値ではありません。</p>
+<h3>Q. ESCがあれば、エッチングや成膜のばらつきはなくなりますか？</h3>
+<p>A. なくなりません。ESCは保持と熱の均一性を支える部品の一つで、工程条件、材料、チャンバー状態、計測なども結果に関係します。</p>
+<h3>Q. ESCはウェハ搬送だけに使う部品ですか？</h3>
+<p>A. いいえ。エッチング、成膜、イオン注入などの処理中にも、保持・熱・プラズマとの接点として使われる例があります。ただし、具体的な構成は工程と装置で異なります。</p>
+
+<p>設備を部品単体でなく、保持・熱・清浄度が連続する一つの系として見ると、ウェハの小さな変化を工程の結果と結び付けて考えられます。これがESCを学ぶときの実務的な入口です。</p>
+<h2>まとめ</h2>
+<div class="semicon-three-line-recap"><p>静電チャックは、電気の力でウェハを面として保持します。<br>背面ガスとチャックの冷却・加熱が、加工中の熱の通り道を支えます。<br>表面、粒子、ガス、保持の一貫性まで見ると、ESCは工程と保全をつなぐ部品です。</p></div>
+<p class="visual-context">ここで見る具体物は「静電チャックの保持・背面ガス・温度・保全の因果」です。</p><figure class="semicon-figure" data-media-role="summary-infographic" data-visual-kind="diagram" data-subject="静電チャックの保持・背面ガス・温度・保全の因果" data-purpose="end-summary" data-composition="horizontal-process-summary" data-concrete-object="false" data-selection-reason="記事末で、保持から熱、工程結果、保全へつながる複数の関係を一枚で復習するため。" data-photo-assessment="実写一枚では、電気的保持、背面ガス、面内温度、設備保全という異なる関係を同時に示せない。" data-diagram-justification="実在するESCやウェハの写真は各物体を示せるが、保持・背面ガス・温度均一性・保全へ戻る因果関係を一枚で表現できないため、要約に限って自作の関係図を採用する。" data-provenance="articles/images/episode081/provenance/11-summary-infographic.md"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/09/ep081-11-summary-infographic-9d963216fe5e.png" alt="ウェハを静電力で保持し背面ガスと温度制御を経て設備保全へつながる静電チャックのまとめ図（静電チャックの保持・背面ガス・温度・保全の因果）"><figcaption>まとめ図：ESCは、ウェハの保持、背面ガスによる熱移動、温度均一性、設備・保全を一つの因果でつなぎます。Credit: 自作まとめ図（対象: 静電チャックの保持・背面ガス・温度・保全の因果）／変更: original SVG composition。</figcaption></figure>
+
+<p>次に工程側の装置を学ぶなら、<a href="https://semicon-campus.com/what-is-etching-semiconductor-process/">エッチング工程の基礎</a>を読むと、ESCが支える処理の一例へ進めます。</p>
+
+<section class="mp1-section" id="maintenance-phase1-career"><h2>静電チャック・背面ガス・温度の知識を活かす仕事と次の行動</h2><p>保持・搬送・温度の点検、保全後の確認の経験がある方は、「対象装置・現象・自分が行った確認・結果」を一組にして整理しましょう。担当設備、夜勤・出張、教育体制、応募条件を求人票と照合すると、活かせる経験と補う知識を分けられます。</p><aside class="semicon-cta mp1-card"><h3>仕事の全体像と、求人・学習の選び方を確認する</h3><p>設備保全Hubでは、点検・異常対応の仕事と経験の整理、求人・基礎学習・資格対策をまとめて確認できます。装置担当や顧客対応の範囲を比べたい方は、関連する職種記事も参照してください。</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/" class="semicon-btn mp1-button" data-maintenance-phase1-hub="277" data-cta="maintenance_hub" data-cta-type="maintenance_hub" data-cta-stage="career" data-cta-id="maintenance_1200_hub277_end" data-cta-route="maintenance_1200_hub277_end">設備保全Hubで仕事内容・求人・学習を確認する</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/" class="semicon-btn mp1-button" data-maintenance-phase1-hub="237" data-cta="equipment_hub" data-cta-type="equipment_hub" data-cta-stage="career" data-cta-id="maintenance_1200_hub237_end" data-cta-route="maintenance_1200_hub237_end">装置エンジニアの担当範囲・求人・学習を見る</a></div></aside></section>
+
+<h2>参考にした公式情報</h2>
+<ul class="semicon-sources">
+<li data-source-id="S01"><a href="https://www.appliedmaterials.com/us/en/newsroom/blogs/implant-innovation-enables-the-compound-semiconductor-roadmap.html">Applied Materials: Implant Innovation Enables the Compound Semiconductor Roadmap</a>（ESC、背面ガス、平坦性）</li>
+<li data-source-id="S02"><a href="https://www.horiba.com/gbr/semiconductor/products/detail/action/show/Product/gr-300-series-713/">HORIBA STEC: Wafer Back Side Cooling System GR-300</a>（背面ガス制御）</li>
+<li data-source-id="S03"><a href="https://www.entegris.com/shop/en/USD/products/wafer-handling/wafer-processing/chucks/Electrostatic-Chucks/p/ElectrostaticChucks">Entegris: Electrostatic Chucks</a>（保持面、熱、粒子、保全）</li>
+<li data-source-id="S04"><a href="https://www.ngk-global.com/product/sc-chack.html">NGK Corporation: Electrostatic chucks</a>（平坦性、熱伝導、冷却・加熱）</li>
+<li data-source-id="S05"><a href="https://newsroom.lamresearch.com/etch-breakthrough-advanced-packaging">Lam Research: Etch Breakthrough Enables Advanced Packaging</a>（ESCの工程実装例）</li>
+<li data-source-id="S06"><a href="https://www.iof.fraunhofer.de/en/competences/design-and-simulation/mechanical-design/electrostatic-chucks.html">Fraunhofer IOF: Electrostatic chucks</a>（真空中の保持と機械クランプの比較）</li>
+<li data-source-id="S07"><a href="https://www.appliedmaterials.com/tw/zh_tw/semiconductor/products/create/dielectrics-deposition/centura-ultima-hdp-cvd.html">Applied Materials: Centura Ultima HDP CVD</a>（ESCと膜質・均一性）</li>
+<li data-source-id="S08"><a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/">Semicon Campus: 半導体製造装置エンジニアとは何か</a>（関連記事・周辺領域）</li>
+<li data-source-id="S09"><a href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/">Semicon Campus: 半導体メンテナンス技術者とは何か</a>（関連記事・周辺領域）</li>
+</ul>
+
+
+</article>
+
+<p class="pillar-link">装置の主要部品の全体像は、<a href="/semiconductor-equipment-components-map/">半導体製造装置の構造・主要部品マップ</a>で確認できます。</p>

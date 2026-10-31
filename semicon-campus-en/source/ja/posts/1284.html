@@ -1,0 +1,48 @@
+
+<!--KEEP:0-->
+
+<p>EdgeCortixは2026年9月24日、フィジカルAI（物理AI）向けのAIチップレットプラットフォーム「RAIDEN」を発表しました。フィジカルAIとは、ロボットや車両、産業機器などがセンサーから得た情報を処理し、現実の環境へ判断や制御を返すAIです。今回の発表は、量産済み半導体の出荷実績ではなく、複数の半導体ダイを組み合わせて規模を変えられる新プラットフォームと、今後の顧客サンプル・量産計画を示したものです。<a href="https://www.edgecortix.com/en/press-releases/edgecortix-unveils-raiden-a-scalable-energy-efficient-ai-chiplet-platform-purpose-built-for-physical-ai">EdgeCortix公式発表</a></p>
+
+
+<h2>何が発表されたのか</h2>
+<p>RAIDENは、単一ダイのX1、2ダイのX2、4ダイのX4へ拡張する設計です。共通のDNA-XアクセラレータアーキテクチャとMERAソフトウェアスタックを使うため、会社の説明どおりなら、用途や規模が変わってもソフトウェア資産を継続利用しやすい構成を目指しています。ただし、X1とX2の詳細仕様は今後段階的に発表される予定です。<a href="https://www.edgecortix.com/en/press-releases/edgecortix-unveils-raiden-a-scalable-energy-efficient-ai-chiplet-platform-purpose-built-for-physical-ai">発表資料</a></p>
+<p>最上位のRAIDEN-X4について、EdgeCortixが示した最大値はFP4 AI演算3.36PFLOPS、メモリー256GB、メモリー帯域548GB/s、ダイ間帯域1.54TB/sです。外部チップ間接続は、プレスリリースでは最大6.4Tb/s、製品ページでは最大800GB/sの双方向接続と表記されています。1バイトは8ビットなので、800GB/sをビット換算すると6.4Tb/sとなり、単位表記は整合します。<a href="https://www.edgecortix.com/en/products/raiden">RAIDEN製品技術ページ</a></p>
+
+<h2>初心者向けに分かるチップレットとUCIe</h2>
+<h3>チップレットとは</h3>
+<p>チップレットとは、複数の小さな半導体ダイをパッケージ内で接続し、一つのシステムとして動かす設計手法です。演算、メモリー、入出力などを一枚の巨大なダイにすべて集積する方式と比べ、機能を分けて組み合わせやすい点が特徴です。演算部分を増やしたり、用途に応じてメモリーや接続を選んだりできる可能性があります。</p>
+<p>一方で、ダイをつなげば自動的に高性能になるわけではありません。ダイ間通信の遅延や消費電力、信号の同期、発熱、検査、製造歩留まり、ソフトウェアの整合性が課題になります。RAIDENの製品ページでは、4つの演算ダイを統合し、LPDDR5X、共有メモリーファブリック、オンパッケージ64ビットRISC-Vコアなどを組み合わせる構成が説明されています。<a href="https://www.edgecortix.com/en/products/raiden">EdgeCortixの技術説明</a></p>
+<h3>UCIeとは</h3>
+<p>UCIeは、パッケージ内にあるチップレット同士を接続するためのオープン仕様です。初心者向けに言えば、異なるダイが通信するための共通ルールです。UCIe Consortiumは、ダイ間I/Oの物理層、通信プロトコル、ソフトウェアスタック、相互運用性を標準化の対象と説明しています。複数企業のチップレットを組み合わせやすくすることが狙いです。<a href="https://www.uciexpress.org/why-choose-us">UCIe Consortiumの概要</a> <a href="https://www.uciexpress.org/specifications">UCIe仕様</a></p>
+<p>RAIDENはUCIeファブリックで4つの演算ダイを統合すると説明されています。ただし、今回確認できる資料だけでは、RAIDENがUCIeのどのバージョンに準拠するのか、認証を取得したのか、他社製チップレットとの相互接続を実機で実証したのかは分かりません。「UCIeを使う設計」と「標準に基づく相互運用を確認済み」は同じ意味ではありません。</p>
+
+<h3>FP4とPFLOPSの意味</h3>
+<p>FP4は、4ビットの浮動小数点形式を使う演算方式です。数値表現のビット数を少なくすることで、多くの計算を効率よく処理できる可能性がありますが、モデルや処理内容によっては精度とのバランスが必要です。PFLOPSは、1秒あたりに何千兆回の浮動小数点演算ができるかを示す指標です。</p>
+<p>そのため、3.36PFLOPSは大きな数字でも、一般のアプリケーションが必ずその速度で動くことを意味しません。これはFP4を前提にした会社公表の最大設計値です。実際の性能は、AIモデル、データの流れ、メモリーアクセス、ソフトウェア最適化、消費電力、温度によって変わります。製品ページにはスパース演算や2:4スパース性への言及もあるため、密な行列演算の数値と単純比較する際には注意が必要です。<a href="https://www.edgecortix.com/en/products/raiden">製品仕様</a></p>
+
+<h2>なぜ物理AI向けなのか</h2>
+<p>クラウド上の生成AIでは、巨大なモデルをデータセンターで処理することが多くあります。一方、ロボット、車両、産業機器、航空宇宙機器では、センサー情報を現場で処理し、短時間で判断して制御へ戻す必要があります。すべてのデータを通信回線へ送ると、遅延、通信費、プライバシー、接続断への弱さが問題になる場合があります。そのため、現場に近い場所で推論するエッジAIでは、演算性能だけでなく、メモリー容量や帯域、接続、消費電力も重要です。</p>
+<p>RAIDENはAI演算に加え、センサー処理やアプリケーション処理を含む連続的な処理ループを、一つの拡張可能な基盤で扱う方向性を示しています。ただし、どのAIモデルを何ワットで動かせるのか、長時間運転時の安定性や遅延がどの程度なのかは、今回の資料だけでは判断できません。</p>
+<p>EdgeCortixは、Kawasaki Heavy Industriesが次世代AI搭載の航空宇宙・防衛製品向けRAIDENベースのソリューションを選択し、UnigenがRAIDENベースのサーバープラットフォームを開発していると説明しています。これはEdgeCortixによる顧客プログラムの発表です。契約金額、具体的な製品型番、出荷時期、顧客側の独立した性能評価まで確認されたという意味ではありません。<a href="https://www.edgecortix.com/en/press-releases/edgecortix-unveils-raiden-a-scalable-energy-efficient-ai-chiplet-platform-purpose-built-for-physical-ai">公式発表</a></p>
+
+<h2>日本の半導体開発との関係</h2>
+<p>EdgeCortixは、RAIDENがNEDOの「ポスト5G情報通信システム基盤強化研究開発事業（JPNP20017）」の成果を活用すると説明しています。NEDOはこの事業を、ポスト5G向けの中核技術や半導体の設計、パッケージング、製造技術など、国内基盤の強化を含む研究開発事業と位置づけています。公的研究開発の成果を、ファブレス企業が製品プラットフォームへつなげる事例として見ることができます。<a href="https://www.nedo.go.jp/english/activities/activities_ZZJP_100172.html">NEDOの事業説明</a></p>
+<p>ただし、NEDO事業との関係があることだけで、RAIDENの量産成功や市場シェアが保証されるわけではありません。チップレット製品では、設計完成後も、パッケージ製造、テスト、供給網、ソフトウェア対応、顧客機器への組み込みをそろえる必要があります。</p>
+
+
+<section class="mp4-section" id="revenue-phase4-learning"><h2>物理AIから、公開資料と演習環境へ</h2><p>RAIDENの発表を読んだら、処理内容、消費電力、通信と評価条件を分けて比較表を作ります。公開英文資料の読み直しと、自宅で小さな画像処理を試すことは理解を深める別の入口です。演習PCは使うソフトの要件から選び、一般のPCを専用チップレットの代用品とは扱いません。公開情報の整理に生成AIを使う場合も、出力の数値と出典を確かめましょう。</p><p>比較前の確認メモ：画像処理ソフトの対応GPU・VRAM、CPU・主メモリ、OSと予算。今の環境で試せる範囲と、更新が必要な箇所を分けてから候補を選びましょう。</p></section>
+
+<h2>発表と実績を分けて見る</h2>
+<p>今回のニュースの中心は、量産済み製品の実績ではなく、顧客プログラムを伴う新しいプラットフォームと供給計画です。EdgeCortixは、顧客向けサンプルを2027年初頭、量産を2027年後半に予定しています。これは将来計画であり、サンプル出荷や量産が完了した事実を示すものではありません。<a href="https://prtimes.jp/main/html/rd/p/000000041.000053504.html">日本語配信リリース</a></p>
+<p>また、3.36PFLOPS、256GB、1.54TB/sといった数値は会社公表の仕様値です。独立機関によるベンチマーク、電力効率、熱設計電力、製造歩留まり、量産品の性能は、今回の資料からは確認できません。評価する際は、ピーク性能だけでなく、実際のAIモデルによる遅延、1ワットあたりの処理量、長時間運転時の安定性を見る必要があります。</p>
+
+<h2>これから注目したい点</h2>
+<ul><li>2027年初頭に予定される顧客向けサンプルが実際に出荷されるか。</li><li>2027年後半の量産計画が維持され、量産品の歩留まりや供給能力が示されるか。</li><li>FP4の最大値ではなく、物理AIモデルによる性能、遅延、消費電力が公表されるか。</li><li>RAIDENのUCIe対応バージョン、認証状況、他社チップレットとの相互接続が確認されるか。</li><li>Kawasaki Heavy IndustriesやUnigenの側から、採用製品、出荷時期、用途の詳細が発表されるか。</li></ul>
+<p>RAIDENは、演算性能だけでなく、チップレット、メモリー、接続、ソフトウェアを一体で拡張しようとする設計を示しました。日本発のファブレス企業が、現場で判断する物理AI向けにこの方向性を打ち出した点は注目できます。一方で、現段階では発表と計画が中心です。今後は、実機サンプル、独立ベンチマーク、量産実績、顧客側の確認を順番に見ていくことが大切です。</p>
+
+
+<section class="mp4-section" id="revenue-phase4-career"><h2>この記事の知識を、次の仕事・学習へつなげる</h2><p>測定・検査、設備点検、品質記録の経験を、対象・作業・確認した結果で整理します。担当範囲と必要経験、勤務地、勤務・出張、教育体制を比較すると、次に補う知識も具体的になります。</p><aside class="semicon-cta mp4-card"><h3>関連する職種の仕事内容・求人・学習を見る</h3><p>記事で学んだ技術が、点検・復旧、装置立上げ、顧客対応、実装・工程改善のどの仕事で使われるか確認できます。職種記事の求人・学習の選び方へ進みましょう。</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/cpu-memory-storage-difference/" class="semicon-btn mp4-button" data-revenue-phase4-hub="479" data-cta="pc_guide" data-cta-type="pc_guide" data-cta-stage="career" data-cta-id="phase4_1284_hub479_end" data-cta-route="phase4_1284_hub479_end">PCの遅さをCPU・メモリ・保存容量から切り分ける</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/semiconductor-beginner-roadmap/" class="semicon-btn mp4-button" data-revenue-phase4-hub="391" data-cta="learning_hub" data-cta-type="learning_hub" data-cta-stage="career" data-cta-id="phase4_1284_hub391_end" data-cta-route="phase4_1284_hub391_end">半導体学習Hubで基礎・仕事・学び方を確認する</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/" class="semicon-btn mp4-button" data-revenue-phase4-hub="237" data-cta="equipment_hub" data-cta-type="equipment_hub" data-cta-stage="career" data-cta-id="phase4_1284_hub237_end" data-cta-route="phase4_1284_hub237_end">装置エンジニアの担当範囲・求人・学習を見る</a></div></aside></section>
+
+
+<h2>参考文献</h2>
+<ul><li><a href="https://www.edgecortix.com/en/press-releases/edgecortix-unveils-raiden-a-scalable-energy-efficient-ai-chiplet-platform-purpose-built-for-physical-ai">EdgeCortix公式発表「RAIDEN」</a></li><li><a href="https://www.edgecortix.com/en/products/raiden">EdgeCortix RAIDEN製品技術ページ</a></li><li><a href="https://www.uciexpress.org/why-choose-us">UCIe Consortium「About UCIe」</a></li><li><a href="https://www.uciexpress.org/specifications">UCIe Consortium「Specifications」</a></li><li><a href="https://www.nedo.go.jp/english/activities/activities_ZZJP_100172.html">NEDO ポスト5G情報通信システム基盤強化研究開発事業</a></li><li><a href="https://prtimes.jp/main/html/rd/p/000000041.000053504.html">EdgeCortix日本語配信リリース</a></li></ul>

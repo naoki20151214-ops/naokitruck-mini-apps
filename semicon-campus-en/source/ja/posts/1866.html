@@ -1,0 +1,35 @@
+<p>Keysightは2026年10月6日、RF（無線周波数）回路の設計ソフトウェア「ADS 2027」に、AIエージェントを接続して設計作業を自動化する機能を発表しました。自然言語による依頼を起点に、ADS内で回路設計や設定、シミュレーションを進め、結果を解析して確認する流れを想定しています。<a href="https://www.keysight.com/in/en/about/newsroom/catalog/news-release.2026.1006_pr26-095-keysight-advances-its-design-software-with-agentic-ai.html">Keysightの発表</a>によると、対象機能はADS 2027とRF Circuit Simulation Professionalで利用可能です。</p>
+<p>ただし、ここで注意したいのは日付の意味です。ADS 2027そのものの製品リリース日は2026年8月4日で、10月6日の発表は新製品の初回提供日というより、AI機能の構成と用途を対外的に説明したニュース発表です。したがって、「10月6日にAI半導体設計ソフトが初めて完成した」と読むのは正確ではありません。<a href="https://www.keysight.com/ca/ca/lib/resources/software-releases/ads-2027-product-release.html">ADS 2027の製品リリース情報</a>と<a href="https://www.keysight.com/us/en/lib/software-detail/computer-software/pathwave-advanced-design-system-ads-software-2212036.html?jmpid=zzfindeesof-ads-latest-downloads">製品一覧</a>では、8月4日のリリース記録が確認できます。</p>
+<h2>何が発表されたのか</h2>
+<p>今回の中心は、ADSとAIエージェントの間に「MCPサーバー」を置く構成です。MCPはModel Context Protocolの略で、AIモデルと外部ソフトウェアをつなぐための共通的な仕組みです。公式仕様では、MCPサーバーはAIに対して、説明文であるプロンプト、参照可能な情報であるリソース、実行可能な操作であるツールを提供します。AIが単に文章を返すだけでなく、許可された機能を呼び出せる点が特徴です。<a href="https://modelcontextprotocol.io/specification/draft/server/index">MCP公式仕様</a>では、ツールはモデルが制御する実行可能な関数として説明されています。</p>
+<p>Keysightの説明では、MCPサーバーがRF設計向けに文書化されたスキルやツールをエージェントへ提供します。エージェントがADSの機能を呼び出して設計操作を行った後、ADSのシミュレーションを実行し、生成した設計の出力を検証する流れです。つまり、AIにEDAソフトの画面を自由に操作させるのではなく、EDA側の機能を定義された入口から利用させる考え方です。<a href="https://www.keysight.com/in/en/about/newsroom/catalog/news-release.2026.1006_pr26-095-keysight-advances-its-design-software-with-agentic-ai.html">発表資料</a>では、MCPサーバーに加えて、マクロ記録、グラフィカルな設計のコード化、Pythonスクリプト生成も示されています。</p>
+<h2>初心者向けに分かる技術用語</h2>
+<h3>EDAとは何か</h3>
+<p>EDAはElectronic Design Automation、つまり電子設計自動化のことです。半導体や無線機器の回路をコンピューター上で設計し、実際に試作する前に電気的な動作を調べるソフトウェア群を指します。RF回路では、回路図を作るだけでなく、信号の周波数特性、電磁界の影響、熱による変化なども確認しなければなりません。</p>
+<p>ADSはこのRF設計を扱うEDAソフトウェアです。ADS 2027の製品情報には、回路、電磁界、電熱、高速デジタル、量子、フォトニック、電力系などの解析領域に加え、Python自動化とMCP対応のAIワークフローが含まれています。<a href="https://www.keysight.com/ca/ca/lib/resources/software-releases/ads-2027-product-release.html">製品リリース情報</a>と<a href="https://www.keysight.com/us/en/lib/software-detail/computer-software/pathwave-advanced-design-system-ads-software-2212036.html?jmpid=zzfindeesof-ads-latest-downloads">製品一覧</a>が示すように、今回のAI機能は単独のチャット機能ではなく、既存の解析環境に組み込まれる拡張です。</p>
+<h3>AIエージェントと生成AIの違い</h3>
+<p>生成AIが質問への回答やコードの作成を主な役割とするのに対し、AIエージェントは目的に向けて複数の手順を組み立て、外部ツールを呼び出し、結果を次の処理へつなげます。例えば「ある周波数帯で特性が改善する回路候補を調べて」と依頼した場合、エージェントは設計条件を設定し、回路を作成し、シミュレーションを実行し、結果を比較するという流れを組み立てられます。</p>
+<p>今回の発表では、熟練設計者の操作をマクロとして記録し、同僚やエージェントが再利用する機能も示されています。マクロとは、複数の操作を記録して繰り返し実行できる手順です。さらに、グラフィカルな設計をAIが扱いやすいコードへ変換し、Pythonスクリプトを生成することで、条件を変えた反復計算や設計データの処理を自動化しやすくします。<a href="https://www.keysight.com/in/en/about/newsroom/catalog/news-release.2026.1006_pr26-095-keysight-advances-its-design-software-with-agentic-ai.html">Keysightのニュースリリース</a>は、これらをRF設計作業の再利用と自動化に結び付けています。</p>
+<h2>なぜ半導体設計で重要なのか</h2>
+<p>RF設計は、回路図やレイアウトを作成し、回路シミュレーションや電磁界解析で特性を確認し、条件を少し変えて再計算する作業を繰り返します。設計者が毎回同じ設定を入力すると時間がかかる一方、単純な自動化だけでは、結果を見て次の条件を判断する作業まで扱いにくいことがあります。</p>
+<p>AIエージェントをEDAに接続すると、自然言語で与えた目的を、設計操作、解析、結果確認という一連の手順へ変換できる可能性があります。Keysightは、反復的な設定やシミュレーションをエージェントが担えば、同じ開発時間でより多くの設計候補を評価できると説明しています。ただし、これは会社が示す期待効果であり、今回確認できる資料には、独立した比較試験による時間短縮率、回路性能の改善率、量産実績はありません。<a href="https://www.keysight.com/in/en/about/newsroom/catalog/news-release.2026.1006_pr26-095-keysight-advances-its-design-software-with-agentic-ai.html">発表資料</a>の効果説明と、独立した実証結果は分けて考える必要があります。</p>
+<h2>できることと、まだ分からないこと</h2>
+<p>発表から確認できるのは、AIエージェントがMCP経由で文書化されたRF向けツールを呼び出し、マクロやPythonを使いながらADSのシミュレーションで出力を検証する製品構成です。一方、AIが生成した回路をそのまま工場へ送り、製造品質まで保証する機能が発表されたわけではありません。シミュレーションは重要な設計検証ですが、実チップの製造ばらつき、部品の寄生成分、測定環境、信頼性試験まで自動的に置き換えるものではありません。</p>
+<p>また、確認した一次資料だけでは、MCPで利用できる具体的なツール一覧、対応する外部LLM、認証方式、権限管理、オンプレミス運用の条件、設計データが外部へ送信されるかどうかは確定できません。MCPは操作を可能にする仕組みであるため、実運用では、誰がどのツールを呼び出せるか、入力値をどう検証するか、設計ルールに違反していないかを管理する必要があります。最終判断には、シミュレーション条件の確認と専門家の承認も欠かせません。</p>
+<h2>今後の注目点</h2>
+<p>今後は、実際にどのRF作業が自動化対象になるのか、エージェントが作成した設計をどの範囲まで再現できるのかを確認する必要があります。特に注目したいのは、次の点です。</p>
+<ul>
+<li>対応するMCPツール、外部LLM、認証・権限管理の具体的な仕様</li>
+<li>設計データの保存場所と、外部サービスへの送信条件</li>
+<li>人間が確認すべき承認段階や、失敗したシミュレーションの扱い</li>
+<li>従来の設計フローと比べた時間、候補数、性能の独立検証</li>
+<li>試作・測定結果や量産設計での利用実績</li>
+</ul>
+<p>今回のニュースは、AIが半導体を自動で完成させたという話ではありません。RF設計者が使うEDAの操作を、MCP、マクロ、Python、シミュレーションでつなぎ、反復作業をエージェントに任せる製品構想が具体化したニュースです。AIの提案を設計候補として効率よく評価できるか、そしてシミュレーションから実測・量産までの品質管理をどう組み合わせるかが、実用化を判断する鍵になります。</p>
+<h2>出典</h2>
+<ul>
+<li><a href="https://www.keysight.com/in/en/about/newsroom/catalog/news-release.2026.1006_pr26-095-keysight-advances-its-design-software-with-agentic-ai.html">Keysight Technologies「Keysight Advances its Design Software with Agentic AI」</a></li>
+<li><a href="https://www.keysight.com/ca/ca/lib/resources/software-releases/ads-2027-product-release.html">Keysight Technologies「ADS 2027 Product Release」</a></li>
+<li><a href="https://www.keysight.com/us/en/lib/software-detail/computer-software/pathwave-advanced-design-system-ads-software-2212036.html?jmpid=zzfindeesof-ads-latest-downloads">Keysight Technologies「Advanced Design System (ADS) Software」</a></li>
+<li><a href="https://modelcontextprotocol.io/specification/draft/server/index">Model Context Protocol「Overview &#8211; Model Context Protocol」</a></li>
+</ul>

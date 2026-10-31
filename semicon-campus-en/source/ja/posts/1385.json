@@ -1,0 +1,20 @@
+{
+ "id": 1385,
+ "type": "post",
+ "slug": "daily-news-8fac3ce4d39c6ea954ac",
+ "link": "https://semicon-campus.com/daily-news-8fac3ce4d39c6ea954ac/",
+ "date": "2026-10-01T11:00:00",
+ "modified": "2026-10-27T20:04:13",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  20
+ ],
+ "tags": [
+  19
+ ],
+ "featured_media": 2805,
+ "title": "SynopsysとOpenAIのGPT-Synopsys、半導体設計をどう変えるか",
+ "excerpt": "SynopsysとOpenAIが発表したGPT-Synopsysを解説。EDA、PPA、検証自動化の仕組み、技術的背景、未確認事項と今後の注目点を整理します。"
+}

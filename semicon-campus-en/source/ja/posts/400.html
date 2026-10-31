@@ -1,0 +1,250 @@
+
+<!--KEEP:0-->
+
+
+<!--KEEP:1-->
+
+<!--KEEP:2-->
+
+<article class="semicon-article" id="top">
+<div class="semicon-level">
+  <div class="semicon-level-badge">初級 → 中級</div>
+  <div>
+    <strong>この記事のレベル</strong><br>
+    リソグラフィや膜厚測定を少し読んだ人向けです。数式ではなく、「層と層の位置ずれを測る」ところから説明します。
+  </div>
+</div>
+
+<p class="semicon-lead">オーバーレイ計測とは、半導体製造で前に作った層と、次に露光して作る層が、正しい位置に重なっているかを測る技術です。半導体は一枚のウェハの上に何層もの回路を積み重ねて作るため、わずかな位置ずれでも配線やコンタクトがつながらず、歩留まり低下につながります。</p>
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/overlay-metrology-featured.png" alt="オーバーレイ計測とは前の層と次の層の位置ずれを測ることを示す図解">
+  <figcaption>オーバーレイ計測は、層と層の重なり具合を見る測定です。理想はぴったり重なること。ずれると、回路がつながらない原因になります。</figcaption>
+</figure>
+
+<div class="semicon-map">
+  <strong>この記事でわかること</strong>
+  <ul>
+    <li>オーバーレイ計測とは何を測る技術なのか</li>
+    <li>なぜ露光の位置ずれが歩留まりに効くのか</li>
+    <li>CD-SEMや膜厚測定との違い</li>
+    <li>求人票で見るオーバーレイ、アライメント、リソ計測の意味</li>
+    <li>リソグラフィ、計測、歩留まり改善の仕事へのつながり</li>
+  </ul>
+</div>
+
+
+<h2>オーバーレイ計測とは何か</h2>
+
+<p>オーバーレイを一言でいうと、<strong>前の層と次の層がどれくらい正しい位置に重なっているか</strong>です。</p>
+
+<p>半導体製造では、ウェハの上に回路を一気に作るわけではありません。成膜し、レジストを塗り、露光し、エッチングし、洗浄し、また次の層を作る。このように、何度も工程を重ねながら立体的な回路を作ります。</p>
+
+<p>ここで問題になるのが、次の層を写す位置です。前に作った配線の上に、次の接続穴や配線を正しく重ねないと、電気的につながるはずの場所がずれてしまいます。</p>
+
+<div class="semicon-mobile-summary">スマホで読むなら、まずここだけ覚えてください。オーバーレイ計測は「重ね合わせのズレ」を測る技術です。線幅や膜厚ではなく、層と層の位置関係を見ます。</div>
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/overlay-metrology-concept.png" alt="オーバーレイは半導体の層と層の重なり精度であることを示す図解">
+  <figcaption>半導体は一層ずつ作るため、前に作った層を基準にして次の層を正しい位置へ重ねます。この重ね合わせ精度を見るのがオーバーレイ計測です。</figcaption>
+</figure>
+
+<h2>なぜ位置ずれが問題になるのか</h2>
+
+<p>半導体の回路は、ただ線を引けばよいわけではありません。線と線、配線とコンタクト、トランジスタと配線が、決められた位置でつながる必要があります。</p>
+
+<p>たとえば、前の層に配線があり、次の層でその配線へ穴を開けて接続するとします。この穴の位置が少し横へずれると、配線の中心から外れてしまいます。すると、抵抗が増えたり、接続が不安定になったり、最悪の場合は電気的につながらない不良になります。</p>
+
+<p>微細化が進むほど、許されるズレは小さくなります。昔なら問題にならなかったわずかな位置ずれが、先端プロセスでは歩留まりを大きく左右します。だからオーバーレイ計測は、リソグラフィ工程の結果を確認するだけでなく、量産ラインを安定させるための重要な計測になります。</p>
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/overlay-metrology-bad-patterns.png" alt="横ずれ、縦ずれ、回転ずれによって半導体の配線や接続部がずれる例">
+  <figcaption>位置ずれには横ずれ、縦ずれ、回転ずれなどがあります。どれも配線や接続部のズレにつながり、歩留まり低下の原因になります。</figcaption>
+</figure>
+
+<h2>オーバーレイ計測はリソグラフィの後で効く</h2>
+
+<p>オーバーレイ計測は、リソグラフィと強くつながります。リソグラフィは、光でウェハ上に回路パターンを写す工程です。このとき、露光装置は前の層の基準マークを読み取り、次のパターンを正しい位置へ合わせます。</p>
+
+<p>しかし、ウェハのわずかな変形、装置の状態、レジストやプロセス条件、温度変化などによって、実際の位置は少しずれます。そこで露光後にオーバーレイを測り、「どの方向に、どれくらいずれているか」を確認します。</p>
+
+<p>重要なのは、測って終わりではないことです。オーバーレイ計測の結果は、露光装置や工程条件へフィードバックされます。つまり、オーバーレイ計測は検査のようでいて、実際には工程改善の入口でもあります。</p>
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/overlay-metrology-flow.png" alt="前の層、露光、測定、補正、量産安定へ進むオーバーレイ計測の流れ">
+  <figcaption>露光して、測って、ずれを見つけ、次の露光条件へ戻す。このフィードバックが、リソグラフィ工程の安定に効きます。</figcaption>
+</figure>
+
+<div class="semicon-note">
+  <strong>初心者向けの言い換え</strong><br>
+  リソグラフィが「版画を正しい場所に押す工程」だとすると、オーバーレイ計測は「前に押した絵と、次に押した絵がズレていないかを確認する作業」です。半導体では、このズレがナノメートル単位で問題になります。
+</div>
+
+<h2>CD-SEM・膜厚測定との違い</h2>
+
+<p>検査・計測の記事を読んでいると、CD-SEM、膜厚測定、欠陥検査、オーバーレイ計測など、似た言葉がたくさん出てきます。初心者はここで混乱しやすいので、役割を分けておくと理解しやすくなります。</p>
+
+<div class="semicon-table-wrap">
+  <table class="semicon-table">
+    <thead>
+      <tr><th>測定</th><th>見るもの</th><th>初心者向けの言い方</th><th>関係する工程</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>CD-SEM</strong></td><td>線幅、穴の寸法、パターン形状</td><td>線や穴の太さを測る</td><td>リソグラフィ、エッチング</td></tr>
+      <tr><td><strong>膜厚測定</strong></td><td>薄膜の厚さ、均一性</td><td>膜が狙い通りの厚さかを見る</td><td>成膜、CMP、洗浄後評価</td></tr>
+      <tr><td><strong>欠陥検査</strong></td><td>粒子、傷、パターン異常</td><td>異物やおかしな点を見つける</td><td>全工程</td></tr>
+      <tr><td><strong>オーバーレイ計測</strong></td><td>層と層の位置ずれ</td><td>前の層と次の層の重なりを見る</td><td>リソグラフィ、計測、歩留まり改善</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<p>ざっくり言えば、CD-SEMは「幅」、膜厚測定は「厚さ」、欠陥検査は「異常点」、オーバーレイ計測は「位置関係」を見ます。どれも歩留まりを守る測定ですが、見ている対象が違います。</p>
+
+<h3>最先端ではDBOやSEMオーバーレイも使われる</h3>
+
+<p>ここまでの説明では、初心者がイメージしやすいように「前の層と次の層のマークを見て、位置ずれを測る」と説明しました。ただ、EUV露光を使うような先端半導体では、パターンが非常に小さくなり、単純に画像として見て測るだけでは足りない場面があります。</p>
+
+<p>そこで重要になるのが、<strong>DBO</strong>や<strong>SEMオーバーレイ</strong>のような、より高度な計測です。</p>
+
+<div class="semicon-grid">
+  <div class="semicon-card"><b>DBO</b><span>Diffraction-Based Overlayの略です。細かな回折格子パターンに光を当て、反射や回折の情報から位置ずれを推定します。</span></div>
+  <div class="semicon-card"><b>SEMオーバーレイ</b><span>電子線を使って、より細かなパターンや実デバイスに近い構造の位置ずれを確認する考え方です。</span></div>
+  <div class="semicon-card"><b>工程へ戻す</b><span>測定結果は、露光条件、アライメント、補正モデルへ戻され、次のロットや次のウェハの安定化に使われます。</span></div>
+</div>
+
+<p>初心者は、最初からDBOの計算式まで理解する必要はありません。まずは「オーバーレイ計測には、画像で見る方法だけでなく、光の回折や電子線を使う高度な方法もある」と覚えれば十分です。ここまで知っておくと、KLAやASMLなどの計測装置・露光装置メーカーの記事や求人票を読んだときに、言葉のつながりが見えやすくなります。</p>
+
+<section class="mp1-section" id="maintenance-phase1-learning"><h2>オーバーレイ・位置ずれ・計測装置を、実務と学び直しにつなげる</h2><p>位置ずれを調べる仕事では、計測値と装置・温度・工程の履歴をつなげ、装置側と工程側のどちらを追加確認するか整理します。計測装置の保守と測定条件の設定は担当範囲が異なるため、自分が行った確認と他担当の判断を分けて記録しましょう。機械・制御・計測の基礎を補う道と、経験を技術職の相談へつなぐ道の両方があります。</p></section>
+<h2>オーバーレイ計測がわかる人の市場価値</h2>
+
+<p>オーバーレイ計測は、単なる測定作業ではありません。測定値を見て、露光条件、アライメント、ウェハ内の傾向、工程変化へつなげて考える必要があります。</p>
+
+<p>そのため、オーバーレイを理解している人は、リソグラフィ、検査・計測、プロセス改善、歩留まり改善の仕事と相性がよくなります。特に、先端半導体では重ね合わせ精度が製品性能や歩留まりに直結するため、計測データを工程へ戻せる人材は重要です。</p>
+
+<div class="semicon-grid">
+  <div class="semicon-card"><b>リソグラフィ</b><span>露光条件、アライメント、スキャナー条件を見ます。</span></div>
+  <div class="semicon-card"><b>検査・計測</b><span>オーバーレイ、CD、膜厚、欠陥データを扱います。</span></div>
+  <div class="semicon-card"><b>歩留まり改善</b><span>位置ずれの傾向から、不良原因を工程へ戻します。</span></div>
+</div>
+
+<p>KLA、ASML、Onto Innovation、Applied Materialsなどは、リソグラフィや計測・検査、パターン制御に関わる装置やソリューションを展開しています。企業研究をするときも、「この会社はどの工程を支えているのか」「計測結果をどう工程改善へつなげているのか」を見ると理解が深まります。</p>
+
+<h3>外資系装置メーカーや技術職求人へつながる理由</h3>
+
+<p>オーバーレイ計測は、ASMLの露光装置、KLAなどの計測・検査装置、そして量産ラインの歩留まり改善と強くつながります。つまり、単なる用語ではなく、装置メーカー、デバイスメーカー、ファウンドリの技術職で評価されやすい知識です。</p>
+
+<p>特に外資系装置メーカーでは、装置の立ち上げ、顧客サポート、プロセスデータの解析、アプリケーション支援など、技術理解と現場対応の両方を求める求人があります。こうした職種は、英語、出張対応、顧客対応、装置知識が求められる分、待遇面でも高めのレンジになることがあります。</p>
+
+<p>ただし、いきなり「オーバーレイがわかるから高年収」と考えるのは危険です。実際には、リソグラフィ経験、計測データの扱い、装置保全、品質管理、プロセス改善、英語対応など、どの経験を組み合わせられるかで評価が変わります。だからこそ、求人票では会社名だけでなく、仕事内容にある「アライメント」「メトロロジー」「オーバーレイ」「プロセス制御」「顧客サポート」という言葉を確認することが大切です。</p>
+
+<div class="semicon-cta">
+  <h3>外資系・技術職求人を狙う前に整理すること</h3>
+  <p>KLA、ASML、Applied Materialsのような装置メーカーに興味がある人は、まず自分の経験を「装置」「計測」「品質」「データ」「顧客対応」のどこに寄せられるか整理しましょう。半導体求人に強い転職サービスを使うと、公開求人だけでは見えにくい職種名や必要経験を確認しやすくなります。</p>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn" href="https://semicon-campus.com/semiconductor-career-service-selection-guide/">半導体求人に強い転職サービスの選び方を見る</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/what-is-semiconductor-field-service-engineer/">FSEとは何かを見る</a>
+  </div>
+</div>
+
+<h2>求人票ではどんな言葉で出てくるか</h2>
+
+<p>求人票でオーバーレイ計測がそのまま出てくることもありますが、別の言葉で書かれることも多いです。特に、リソグラフィ、アライメント、メトロロジー、計測、歩留まり改善、プロセス改善という言葉は近い領域です。</p>
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/overlay-metrology-career-keywords.png" alt="求人票で見るオーバーレイ計測関連キーワード。オーバーレイ、アライメント、リソ計測、CD、歩留まり改善">
+  <figcaption>求人票では、オーバーレイだけでなく、アライメント、リソ計測、歩留まり改善などの言葉で出ることがあります。</figcaption>
+</figure>
+
+<p>未経験からいきなり「オーバーレイ計測の専門家」を目指す必要はありません。まずは求人票で、どの工程の仕事なのか、どの装置や測定データを扱うのか、改善まで関われるのかを見ることが大切です。</p>
+
+<p>理系・メーカー経験、品質管理、測定、データ分析、装置保全の経験がある人は、オーバーレイ計測の考え方を知っておくと、半導体求人の読み取り精度が上がります。面談でも「リソグラフィと計測が歩留まりにどう効くか」を自分の言葉で話しやすくなります。</p>
+
+<div class="semicon-cta">
+  <h3>リソグラフィ・計測職を求人票で見るなら</h3>
+  <p>オーバーレイ計測に興味が出たら、次は求人票の言葉へつなげてみましょう。技術名を知るだけでなく、「どんな職種で出るのか」「自分の経験とどこが近いのか」まで見ると、転職導線として強くなります。</p>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn" href="https://semicon-campus.com/%e5%8d%8a%e5%b0%8e%e4%bd%93%e6%b1%82%e4%ba%ba%e3%82%ad%e3%83%bc%e3%83%af%e3%83%bc%e3%83%89%e4%b8%80%e8%a6%a7%ef%bd%9c%e6%9c%aa%e7%b5%8c%e9%a8%93%e8%80%85%e3%81%8c%e6%b1%82%e4%ba%ba%e7%a5%a8%e3%81%a7/">求人キーワード一覧を見る</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/semiconductor-career-map/">職種マップを見る</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/semiconductor-career-service-selection-guide/">転職サービス選びを見る</a>
+  </div>
+</div>
+
+<h2>まとめ：オーバーレイ計測は重ね合わせを守る技術</h2>
+
+<p>オーバーレイ計測とは、前の層と次の層が正しい位置に重なっているかを測る技術です。半導体は何層もの回路を重ねて作るため、わずかな位置ずれでも配線や接続部の不良につながります。</p>
+
+<p>CD-SEMが線幅を見て、膜厚測定が薄膜の厚さを見て、欠陥検査が異常点を見つけるのに対し、オーバーレイ計測は層と層の位置関係を見ます。リソグラフィ、計測、歩留まり改善をつなぐ重要なテーマです。</p>
+
+<p>求人票でオーバーレイ、アライメント、リソ計測、メトロロジー、歩留まり改善という言葉を見つけたら、この記事の内容とつながる仕事だと考えてみてください。</p>
+
+<div class="semicon-cta">
+  <h3>次回予告</h3>
+  <p>次回記事として「歩留まり解析とは何か？」を公開しました。オーバーレイや膜厚、欠陥検査で得た測定結果を、どう良品率低下の原因探しへつなげるのかを整理します。</p>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn" href="https://semicon-campus.com/what-is-semiconductor-yield-analysis/">歩留まり解析とは何かを読む</a>
+  </div>
+</div>
+
+<div class="semicon-cta">
+  <h3>YouTubeでも半導体をやさしく学べます</h3>
+  <p>記事で半導体の流れをつかんだら、動画でも復習できます。短い動画向けには「位置ずれが歩留まりを下げる理由」「CD-SEM・膜厚・オーバーレイの違い」などに分けて発信していきます。</p>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn" href="https://www.youtube.com/@semicon-campus">YouTubeチャンネルを見る</a>
+  </div>
+</div>
+
+<h2>次に読む記事</h2>
+<div class="semicon-links">
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/what-is-semiconductor-yield/">歩留まりとは何か？半導体製造の良品率・不良・改善を初心者向けに解説</a></strong>
+    <p>オーバーレイや膜厚、欠陥検査の結果が、どう良品率や工場の利益につながるのかを理解できます。</p>
+  </div>
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/%e5%8d%8a%e5%b0%8e%e4%bd%93%e6%b1%82%e4%ba%ba%e3%82%ad%e3%83%bc%e3%83%af%e3%83%bc%e3%83%89%e4%b8%80%e8%a6%a7%ef%bd%9c%e6%9c%aa%e7%b5%8c%e9%a8%93%e8%80%85%e3%81%8c%e6%b1%82%e4%ba%ba%e7%a5%a8%e3%81%a7/">半導体求人キーワード一覧</a></strong>
+    <p>オーバーレイ、メトロロジー、歩留まり改善など、求人票で見る言葉を職種別に整理しています。</p>
+  </div>
+</div>
+
+<h2>関連記事</h2>
+<div class="semicon-links">
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/what-is-lithography-semiconductor-process/">リソグラフィとは何か？</a></strong>
+    <p>オーバーレイ計測と最も関係が深い露光工程を先に理解できます。</p>
+  </div>
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/what-is-cd-sem-sem-review/">CD-SEM・SEMレビューとは何か？</a></strong>
+    <p>線幅やパターン寸法を測る計測技術を理解できます。</p>
+  </div>
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/what-is-film-thickness-measurement/">膜厚測定とは何か？</a></strong>
+    <p>薄膜の厚さを測る技術と、オーバーレイ計測との違いが見えやすくなります。</p>
+  </div>
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/what-is-semiconductor-inspection-quality-control/">検査・品質評価とは何か？</a></strong>
+    <p>半導体工場で測る仕事、品質を見る仕事の全体像を学べます。</p>
+  </div>
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/what-is-semiconductor-defect-inspection/">欠陥検査とは何か？</a></strong>
+    <p>ウェハ上の異物やパターン異常をどう見つけるのかを学べます。</p>
+  </div>
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/what-is-spc-semiconductor-process-control/">SPCとは何か？</a></strong>
+    <p>測定値を使って工程異常を早く見つける考え方を学べます。</p>
+  </div>
+</div>
+
+<section class="mp1-section" id="maintenance-phase1-career"><h2>オーバーレイ・位置ずれ・計測装置の知識を活かす仕事と次の行動</h2><p>位置合わせ、計測評価、装置保守、技術サポートの経験がある方は、「対象装置・現象・自分が行った確認・結果」を一組にして整理しましょう。担当設備、夜勤・出張、教育体制、応募条件を求人票と照合すると、活かせる経験と補う知識を分けられます。</p><aside class="semicon-cta mp1-card"><h3>仕事の全体像と、求人・学習の選び方を確認する</h3><p>設備保全Hubでは、点検・異常対応の仕事と経験の整理、求人・基礎学習・資格対策をまとめて確認できます。装置担当や顧客対応の範囲を比べたい方は、関連する職種記事も参照してください。</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/" class="semicon-btn mp1-button" data-maintenance-phase1-hub="277" data-cta="maintenance_hub" data-cta-type="maintenance_hub" data-cta-stage="career" data-cta-id="maintenance_400_hub277_end" data-cta-route="maintenance_400_hub277_end">設備保全Hubで仕事内容・求人・学習を確認する</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-field-service-engineer/" class="semicon-btn mp1-button" data-maintenance-phase1-hub="270" data-cta="fse_hub" data-cta-type="fse_hub" data-cta-stage="career" data-cta-id="maintenance_400_hub270_end" data-cta-route="maintenance_400_hub270_end">FSEの復旧・顧客対応と求人・学習を見る</a></div></aside></section>
+
+<h2>参考資料</h2>
+<ul>
+  <li><a href="https://www.kla.com/products/chip-manufacturing/metrology">KLA: Metrology products</a></li>
+  <li><a href="https://www.asml.com/products/metrology-and-inspection-systems">ASML: Metrology and inspection systems</a></li>
+  <li><a href="https://www.asml.com/products/metrology-and-inspection-systems/yieldstar-500">ASML: YieldStar 500</a></li>
+  <li><a href="https://www.asml.com/technology/lithography-principles/measuring-accuracy">ASML: Measuring accuracy</a></li>
+  <li><a href="https://www.kla.com/esl10-ebeam-inspection">KLA: eSL10 e-Beam Defect Inspection</a></li>
+  <li><a href="https://ontoinnovation.com/product-categories/metrology/">Onto Innovation: Metrology products</a></li>
+  <li><a href="https://www.appliedmaterials.com/us/en/semiconductor/products/analyze/patterning-control.html">Applied Materials: Patterning Control</a></li>
+</ul>
+
+<a class="semicon-backtop" href="#top" aria-label="ページ先頭へ戻る">↑</a>
+</article>

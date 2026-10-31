@@ -1,0 +1,18 @@
+{
+ "id": 1985,
+ "type": "post",
+ "slug": "equipment-recovery-qualification",
+ "link": "https://semicon-campus.com/equipment-recovery-qualification/",
+ "date": "2026-10-14T18:00:00",
+ "modified": "2026-10-30T21:29:57",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  2
+ ],
+ "tags": [],
+ "featured_media": 2760,
+ "title": "半導体装置の復旧確認と工程Qual（クオリフィケーション）｜修理後すぐ量産してはいけない理由",
+ "excerpt": "装置は直った。それなのに、なぜすぐ製品を作ってはいけないのか？｜復旧確認と工程Qual 半導体製造装置の保全で、本当に難しいのは「動かすこと」だけではありません。元どおりの品質で作れると確かめることです。 清掃を終えた半 […]"
+}

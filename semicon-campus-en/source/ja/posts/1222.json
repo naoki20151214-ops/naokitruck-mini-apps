@@ -1,0 +1,20 @@
+{
+ "id": 1222,
+ "type": "post",
+ "slug": "daily-news-c28e2ffe686118d9c269",
+ "link": "https://semicon-campus.com/daily-news-c28e2ffe686118d9c269/",
+ "date": "2026-09-24T16:00:00",
+ "modified": "2026-10-27T20:04:48",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  20
+ ],
+ "tags": [
+  19
+ ],
+ "featured_media": 2833,
+ "title": "Supermicro、NVIDIA Vera Rubin NVL72ラックの出荷を開始　液冷AI基盤の導入段階へ",
+ "excerpt": "Supermicroが2026年9月23日に発表したVera Rubin NVL72ラックの出荷開始を解説。液冷、HBM4、電力、量産計画の意味と確認点を整理します。"
+}

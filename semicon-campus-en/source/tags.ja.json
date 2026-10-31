@@ -1,0 +1,16 @@
+[
+ {
+  "id": 18,
+  "name": "YouTube深揼り",
+  "slug": "youtube-deep-dive",
+  "parent": 0,
+  "description": ""
+ },
+ {
+  "id": 19,
+  "name": "半導体ニュース",
+  "slug": "semiconductor-news",
+  "parent": 0,
+  "description": "X投稿の受け皿になる半導体の最新ニュース記事。"
+ }
+]

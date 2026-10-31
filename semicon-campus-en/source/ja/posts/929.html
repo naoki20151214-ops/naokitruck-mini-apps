@@ -1,0 +1,135 @@
+<div class="scm-pos" style="background:#f3f7fc;border:1px solid #1a5fb4;border-radius:8px;padding:10px;margin:0 0 16px;box-sizing:border-box;max-width:100%;overflow-wrap:anywhere;line-height:1.7;font-size:.92em;color:#0b2a5b">学習レベル: ★★☆☆☆(中級) ｜ 第5章 トランジスタと微細化 5-5 ｜ 先に読む: 5-1 <a href="https://semicon-campus.com/how-transistors-create-zero-and-one/">トランジスタはどうやって0と1を作るのか?</a> ｜ <a href="https://semicon-campus.com/chapter-5-transistor-scaling/">第5章の一覧</a></div>
+
+<!--KEEP:0-->
+
+
+<!--KEEP:1-->
+
+
+<!--KEEP:2-->
+
+
+
+<article class="semicon-article" data-episode="071" data-research-pack="rp-process-node-2nm">
+<h1>半導体の2nmとは何を意味するのか？数字の正体と微細化の歴史</h1>
+<div class="semicon-lead">
+<p>スマートフォンやAI用チップの説明で、「2nm」という数字を目にすることがあります。</p>
+<p>でも、2nmはトランジスタのどこか一か所が、必ず2nmになったという意味ではありません。</p>
+<p><strong>2nmとは、トランジスタ、配線、設計ルール、露光、材料、検査などをまとめた先端製造技術の世代名です。</strong></p>
+</div>
+
+<figure class="semicon-hero"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/09/01-what-2nm-means.png" alt="2nmは特定部位の寸法ではなく、複数の要素を統合した製造技術世代名であることを示す自作図"><figcaption>「2nm＝どこか一か所の線幅」と決めつけず、技術プラットフォーム全体の名前として読むのが出発点です。</figcaption></figure>
+
+
+<h2>この記事でわかること</h2>
+<ul>
+<li>2nmというノード名と、ゲート長・配線ピッチなどの実寸法の違い</li>
+<li>Planar、FinFET、GAAへ構造が変わってきた理由</li>
+<li>2nm級で性能だけでなく、配線・熱・ばらつき・歩留まりまで重要になる理由</li>
+</ul>
+
+<h2>結論：2nmは「一つの定規」ではなく、製造技術の世代名</h2>
+<p>プロセスノードとは、ウェハ上にロジックICを作る製造技術の世代を区別する名前です。現代の先端ロジックでは、トランジスタの構造だけを指しません。トランジスタと配線をつなぐコンタクト、複数層の金属配線、設計ルール、標準セル、SRAM、リソグラフィ、材料、信頼性確認、量産条件まで含めた技術プラットフォームとして扱われます。</p>
+<p>そのため、TSMCの<strong>N2</strong>、Samsungの<strong>SF2</strong>、Intelの<strong>18A</strong>は、似た世代を示す言葉に見えても、同じ寸法を測った共通規格ではありません。IRDS（IEEEのInternational Roadmap for Devices and Systems）も、先端ノードの命名についてfoundryやIDMの間にコンセンサスがないと整理しています。</p>
+<div class="semicon-note"><strong>最初に覚える一文：</strong>「2nm」は、特定のトランジスタ部位が2nmであることを表す絶対的な寸法値ではなく、複数の技術を統合した世代名です。</div>
+
+<h2>「2nm＝何かの幅2nm」ではない理由</h2>
+<p>半導体の中には、測る場所の違う寸法がいくつもあります。ゲート長は、ゲートがソースとドレインの間のチャネルを制御する方向の長さです。ゲートピッチは隣接するゲート構造の繰り返し間隔、メタルピッチは隣り合う金属配線の中心間隔を表します。GAA nanosheetなら、ナノシートの幅や厚さ、積層間隔も別の寸法です。</p>
+<p>これらは互いに関係しますが、一つの数字ではありません。さらに、ロジック密度、SRAM密度、電力、性能、面積は寸法そのものではなく、設計や回路の条件を含む評価指標です。だから「2nmのトランジスタ幅は何nmか」と聞かれても、ノード名だけから一つの答えを出すことはできません。</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/09/02-dimensions.png" alt="プロセスノードとゲート長、ゲートピッチ、メタルピッチを別の指標として分けて示す自作図"><figcaption>ノード名、ゲート長、ゲートピッチ、メタルピッチ、密度は、役割の異なる指標です。</figcaption></figure>
+<p>昔の世代では、ノード名と最小線幅やゲート長との対応が、現在よりも強く見える時期がありました。しかし1990年代以降、ゲート、配線、セルなどが同じ速度では縮まらなくなり、単一の寸法が技術世代全体を代表しにくくなりました。ノード名の意味が「測定値」から「世代のラベル」へ移った、と考えると理解しやすくなります。</p>
+
+<h2>2nmはチップのどこに関係するのか：FEOL・MOL・BEOL</h2>
+<p>2nmは一つの装置や一回の工程の名前ではありません。ウェハの上で、トランジスタを作り、接続し、信号と電源を運ぶまでの工程を統合した呼び方です。</p>
+<div class="semicon-flow"><strong>ロジックICの大きな層</strong><div class="semicon-flow-grid"><div class="semicon-flow-step"><strong>FEOL</strong><span>トランジスタを形成</span></div><div class="semicon-flow-step"><strong>MOL</strong><span>コンタクトで接続</span></div><div class="semicon-flow-step"><strong>BEOL</strong><span>金属配線とビア</span></div><div class="semicon-flow-step"><strong>計測・検査</strong><span>量産条件を確認</span></div></div></div>
+<p>FEOLはFront End of Lineの略で、トランジスタそのものを作る領域です。MOLはMiddle of Lineで、トランジスタと上の配線をつなぐコンタクトやローカル配線を扱います。BEOLはBack End of Lineで、金属配線と、それらを層の間でつなぐビアを形成します。</p>
+<p>この各領域で、リソグラフィ、成膜、エッチング、洗浄、CMP、熱処理、イオン注入、計測・検査が何度も繰り返されます。したがって「2nmプロセスを立ち上げる」とは、2nm幅の線を一本作れるようにすることではなく、位置合わせ、膜厚、エッチ形状、コンタクト抵抗、配線抵抗、欠陥、信頼性などを組み合わせて、工程全体の能力を成立させることです。</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/09/03-platform-layers.png" alt="FEOL、MOL、BEOLと計測検査が2nmの製造技術プラットフォームに含まれることを示す自作図"><figcaption>トランジスタだけでなく、接続・配線・検査まで含めて初めて量産できる技術世代になります。</figcaption></figure>
+
+<h2>歴史：なぜ数字だけでは進歩を表せなくなったのか</h2>
+<p>微細化の歴史は、同じ形をひたすら縮めた歴史ではありません。小さくするたびに、それまでの材料、トランジスタ構造、露光方法、配線、設計方法では解決できない問題が現れ、その問題に合わせて技術が更新されてきました。</p>
+<p>1965年にGordon Mooreが示した考え方も、「トランジスタの長さが毎年小さくなる」という寸法の法則ではありません。集積回路に載る部品数と、コストを含む集積の進歩についての予測です。寸法の縮小は、より多くの機能を同じ面積へ入れるための手段の一つでした。</p>
+<p>ところが、ゲート長だけ、配線だけ、あるいは最小線幅だけを縮めても、他の部分が追いつかなければチップ全体の価値にはつながりません。そこで各社や研究機関は、複数の指標と技術を組み合わせて「世代」を作るようになりました。</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/09/04-history-node.png" alt="古い世代ではノード名と寸法の関係が強く、現代では複数指標をまとめて世代名で表す流れを示す自作図"><figcaption>ノード名と寸法の関係は、技術の進み方が分かれるにつれて一対一ではなくなりました。</figcaption></figure>
+
+<h2>限界と試行錯誤：小さくするほど電気を制御しにくくなる</h2>
+<p>微細化の最大の難しさは、数字が小さくなることそのものよりも、電気・寸法・製造の余裕が減ることです。</p>
+<p>トランジスタのソースとドレインの間にある電流の通り道をチャネルと呼びます。チャネルが短くなると、ゲート以外の電界がチャネルへ影響しやすくなり、OFFにしたいときの制御が難しくなります。これがShort Channel Effect（短チャネル効果）です。OFF時にも電流が流れるリークも問題になります。</p>
+<p>この問題に対して、まずPlanar MOSFETの平面構造をそのまま縮めるだけではなく、チャネルをfin状に立てたFinFETへ移行しました。ゲートがチャネルの複数の面を制御できるため、短いチャネルでの電気的な制御を強められます。さらにGAA（Gate-All-Around）では、ゲートがチャネルをより全面的に囲む方向へ進みます。</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/09/05-planar-finfet-gaa.png" alt="PlanarからFinFET、GAAへ、短チャネルを制御するためにゲートの囲み方が変わったことを示す自作図"><figcaption>Planar→FinFET→GAAは、単なる形状変更ではなく、短くなったチャネルを制御し続けるための構造進化です。</figcaption></figure>
+<p>この流れを一行で言えば、<strong>「チャネルが短くなるほど、ゲートはチャネルをより強く囲まなければならなくなった」</strong>となります。材料の工夫も同じです。strained siliconは移動度の改善、high-k絶縁膜とmetal gateはゲート容量とリークの両立に関わります。一つの技術で全てを解決したのではなく、問題ごとに材料と構造が追加されてきました。</p>
+
+<h2>露光：EUVは2nmを一発で描く装置ではない</h2>
+<p>リソグラフィは、回路パターンの情報を光へ載せ、光学系で縮小し、フォトレジストへ転写する工程です。EUV（極端紫外線）は、短い波長を使って微細なパターン形成を支える技術ですが、「EUV装置を使えば2nmの線がそのまま描ける」という意味ではありません。</p>
+<p>より長い波長のDUVで狭いピッチを作る場合、一つの模様を複数回の露光とエッチングへ分けるmultiple patterningが必要になることがあります。分割数が増えると、工程数、マスク、位置合わせ、欠陥が増える機会も増えます。EUVの価値の一つは、短波長によって一部のパターン分割を減らす余地を作ることです。</p>
+<p>ただし、EUVでも光学近接効果補正（OPC）、レジスト、エッチング、オーバーレイ、計測、検査が必要です。High-NA EUVはさらに開口数を高めて解像力を広げる次世代技術ですが、現行の2nm世代にHigh-NAが必須だと説明するのは不正確です。TSMCの報告でも、N2の量産支援とHigh-NA技術開発は別の項目として扱われています。</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/09/06-euv-patterning.png" alt="DUVのmultiple patterningとEUVの役割を比較し、EUVもOPCや検査と組み合わせることを示す自作図"><figcaption>EUVは工程全体の一部です。短波長は重要ですが、2nmを単独で成立させる装置ではありません。</figcaption></figure>
+
+<h2>量産の難しさ：平均値ではなく、ばらつきと欠陥を管理する</h2>
+<p>研究室で狙った構造が一度できたことと、工場で多数のウェハへ安定して作れることは別です。微細化が進むほど、CD（寸法）、膜厚、エッチング形状、オーバーレイ、コンタクト抵抗などのわずかな変動が、回路の性能や良否へ占める割合を増やします。</p>
+<p>たとえば、設計上の許容範囲が狭いとき、平均値が目標に合っているだけでは不十分です。ウェハ内、ウェハ間、装置間でどれくらい散らばるか、その分布の端が許容範囲から外れないかまで確認する必要があります。形状のばらつき、材料のばらつき、ラインエッジの揺らぎ、局所的な工程変動は、電気特性のばらつきへつながります。</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/09/07-margin-variation.png" alt="微細化で分布の端まで設計マージン内に収める必要があることを示す自作図"><figcaption>先端ノードでは、平均を合わせるだけでなく、分布の端まで工程能力の中に収める必要があります。</figcaption></figure>
+<p>欠陥も同じです。平均的なCDが合っていても、局所的な欠けやブリッジが一つのチップを不良にする可能性があります。TSMCのN2開発で、EUVスキャナーの効率だけでなく、オーバーレイ誤差や材料欠陥の低減が挙げられているのは、装置の解像力だけでは量産品質にならないからです。</p>
+
+<h2>トランジスタの次に立ちはだかる配線：R×Cと熱</h2>
+<p>トランジスタを改善すれば、チップ全体も同じ割合で速くなるとは限りません。回路から回路へ信号を運ぶ配線には抵抗Rと容量Cがあり、その積が信号の遅延に関係します。配線が長い、細い、接続点が多い、といった条件では、トランジスタの性能向上が配線側で打ち消されることがあります。</p>
+<p>金属配線を細くすると断面積が減り、抵抗が上がりやすくなります。表面や界面での散乱、バリアやライナーの占める割合、ビアの断面積低下も、抵抗と信頼性の課題になります。コンタクトはトランジスタと配線をつなぐ部分なので、ここで抵抗が大きいと電圧や性能を失います。</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/09/08-interconnect-rc.png" alt="トランジスタの性能向上だけでなく配線の抵抗Rと容量Cが信号遅延を決めることを示す自作図"><figcaption>先端ノードでは、トランジスタ、コンタクト、配線、電源供給を一つのシステムとして見る必要があります。</figcaption></figure>
+<p>さらに、トランジスタ数を増やしても電源電圧を同じ割合で下げられるとは限りません。単位面積あたりの発熱や熱の逃がし方が重要になり、GAAや将来の積層デバイスでは熱設計も大きな課題になります。2nmの意味を考えるときは、トランジスタの寸法だけでなく、配線と熱まで含む理由がここにあります。</p>
+
+<h2>性能・密度・歩留まり・コストを同時に見る</h2>
+<p>新しいノードで一般に期待される方向は、より高い集積密度、性能向上、電力低減、面積効率、機能統合です。ただし、これらは自動的に同じ割合で改善する保証ではありません。電圧、回路設計、標準セル、メモリ比率、配線長などの条件によって結果が変わります。</p>
+<p>特にSRAMは、ロジックのトランジスタと同じ比率で縮むとは限りません。安定性、ばらつき、補助回路、配線の制約があるため、ロジック密度とSRAM密度は分けて見る必要があります。TSMCがN2についてSRAMの指標を別に報告しているのも、この違いを示します。</p>
+<p>コストも「微細化すれば必ず下がる」とは言えません。小さいダイなら一枚のウェハから取れる個数を増やせる可能性がありますが、先端露光装置、工程数、マスク、計測・検査、材料、研究開発、設備の減価償却などは重くなります。最終的な良品コストには歩留まりが強く関係するため、試作直後と量産が成熟した後では条件も異なります。</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/09/09-ppac-yield-cost.png" alt="2nm世代を性能・電力・面積、歩留まり、コストの複数軸で評価することを示す自作図"><figcaption>先端ノードはPPAだけでなく、SRAM、歩留まり、設備費を含めた複数軸で評価します。</figcaption></figure>
+<p>新ノードは、リスク生産、テストチップ、信頼性確認、歩留まり改善を経て量産へ近づきます。企業の実際の量産歩留まりは重要な非公開情報なので、根拠のない「何％」という数字を当てはめることはできません。公表された試験チップの結果を、ノード全体や全製品の歩留まりと混同しないことも大切です。</p>
+
+<h2>中間メモ：製造業の経験から見る2nm</h2>
+<p>半導体以外の製造業を知っている人にとって、2nmの考え方には共通点があります。公差を厳しくすれば、加工機だけでなく、治具、温度、測定器、材料のばらつき、作業条件まで見直す必要があります。半導体では、その管理対象がナノメートル領域になり、電気特性、表面化学、真空、プラズマ、薄膜、装置の校正まで工程能力へ直結します。</p>
+<p>対応する考え方を並べると、寸法公差はCDやピッチ、工程能力はプロセスウィンドウ、設備精度はスキャナーの位置精度や成膜・エッチングの均一性、品質管理は欠陥密度や信頼性確認に近い関係があります。新製品立ち上げの経験は、リスク生産から認定、歩留まり改善、量産へ進む流れを理解する助けになります。</p>
+<p>ただし、これは「半導体の専門知識が不要」という意味ではありません。リソグラフィ、プラズマエッチング、真空、薄膜形成、表面・界面、デバイス物理、電気特性評価は、半導体固有の学習領域です。共通するのは製造の考え方であり、物理の細部まで同じということではありません。</p>
+<p>この視点に立つと、2nmは製品図面に書かれた一つの公差ではなく、工場全体の加工能力、設備能力、品質能力が一段上がった「製造世代」の名前に近い、と捉えられます。</p>
+<div class="semicon-note"><strong>もっと工程の位置関係を学ぶなら：</strong>次に、露光が「模様を写す工程」としてどのように働くかを見ると、EUVと微細化の関係がつながります。</div>
+
+<h2>企業ごとに見る2nm級：名前が同じでも比較条件は違う</h2>
+<p>調査基準日で確認できる公表情報を、ノード名だけでなく、構造・比較対象・量産状況に分けて読むと違いが見えます。</p>
+<table class="semicon-table"><thead><tr><th>企業</th><th>世代名と構造</th><th>公表情報の読み方</th></tr></thead><tbody>
+<tr><td><strong>TSMC</strong></td><td>N2<br>GAA nanosheet</td><td>N3比で約15％の速度向上、または約30％の電力低減、1.15倍超のchip densityを公表。2025年Q4のvolume production開始を公表。</td></tr>
+<tr><td><strong>Samsung</strong></td><td>SF2<br>第2世代MBCFET（GAA）</td><td>SF3比でperformance +12％、power efficiency +25％、area -5％を公表。Q4 2025の2nm GAA量産ランプ方針を公表。</td></tr>
+<tr><td><strong>Intel</strong></td><td>18A<br>RibbonFET GAA + PowerVia</td><td>Intel 3比で最大約15％のperformance/W、約30％のchip density improvementを公表。2025年のproduction入りを公表。</td></tr>
+</tbody></table>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/09/10-company-comparison.png" alt="TSMC N2、Samsung SF2、Intel 18Aが異なる構造と比較基準を持つことを示す自作図"><figcaption>各社の公表値は、それぞれの旧世代を基準にした値です。数字だけを横に並べて優劣を断定しないようにします。</figcaption></figure>
+<p>TSMCではN3までのFinFETからN2のGAA nanosheetへの切り替えが大きな転換点です。Samsungは3nm世代ですでにGAAを採用しているため、SF2は第2世代MBCFETの改良として位置づけられます。Intel 18AはnmではなくÅngström eraの命名を使い、RibbonFETとPowerViaを組み合わせます。</p>
+<p>つまり「3nmより2nmなら必ず高性能」「同じ2nmなら同じトランジスタ」という読み方はできません。何と比較した公表値なのか、どの構造なのか、どの用途を想定した技術なのかを確認する必要があります。</p>
+
+
+<section class="mp5-section" id="revenue-phase5-learning"><h2>2nmの読み方を、工程の仕事と学び直しへ</h2><p>2nmという世代名を理解したら、トランジスタ、配線、検査のどの条件が比較されているかを整理します。寸法の数字だけで工程全体の性能を判断せず、ばらつき、歩留まり、測定方法を合わせて見ましょう。製造・検査・保全の経験を、対象と確認した結果で説明すると職種との接点が見えてきます。電気・機械・品質の基礎学習と、プロセスや装置の仕事内容・求人条件の確認を併用できます。</p></section>
+
+<h2>よくある誤解（FAQ）</h2>
+<h3>Q. 2nmのチップには、必ず2nmの部分がありますか？</h3>
+<p>A. 2nmという名前だけから、特定の部位を2nmと決めることはできません。チップ内にはゲート長、各種ピッチ、ナノシート、配線など複数の寸法があります。</p>
+<h3>Q. 2nmは完全なマーケティング用語ですか？</h3>
+<p>A. 数字が共通の定規ではないという意味ではブランド名の側面がありますが、完全に中身がないわけではありません。GAAなどのトランジスタ構造、配線、設計ルール、密度、電力、信頼性、量産条件を含む実際の技術世代です。</p>
+<h3>Q. 2nmなら、3nmより必ずチップ全体が速くなりますか？</h3>
+<p>A. 必ずではありません。設計条件、電圧、メモリ比率、配線負荷、熱などで結果が変わります。各社の公表値も、通常は自社の旧世代との比較です。</p>
+<h3>Q. EUVやGAAだけあれば2nmを作れますか？</h3>
+<p>A. いいえ。EUVやGAAは重要な要素ですが、成膜、エッチング、コンタクト、配線、計測、検査、設計、信頼性、歩留まり管理まで含む統合が必要です。</p>
+
+<h2>まとめ：2nmを読むための3行</h2>
+<figure class="semicon-figure" data-media-role="summary-infographic"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/09/11-summary-infographic.png" alt="2nmの意味、PlanarからGAAへの歴史、微細化の限界、現在の各社世代を一枚で整理したまとめインフォグラフィック"><figcaption>まとめ図：2nmは単一寸法ではなく、構造・工程・配線・量産条件を含む技術世代です。</figcaption></figure>
+<div class="semicon-recap"><p>2nmは、特定の部位が2nmという意味ではなく、先端ロジック製造技術の世代名です。</p><p>微細化は、PlanarからFinFET、GAAへ構造を変え、露光・材料・配線・検査も更新してきた歴史です。</p><p>評価するときは、PPAだけでなく、ばらつき、配線、熱、歩留まり、コスト、各社の比較条件まで見ます。</p></div>
+
+<div class="semicon-links"><div class="semicon-linkbox next"><h3>次に読む記事</h3><p><a href="https://semicon-campus.com/what-is-lithography-semiconductor-process/">リソグラフィとは何か？</a><br>回路パターンを「写す」工程から、露光と微細化の関係を学べます。</p></div><div class="semicon-linkbox"><h3>関連記事</h3><p><a href="https://semicon-campus.com/semiconductor-cleanroom-why-needed/">半導体工場のクリーンルームはなぜ必要？</a><br>微細化を支える環境管理と欠陥の関係を整理します。</p></div></div>
+
+
+<section class="mp5-section" id="revenue-phase5-career"><h2>この記事の知識を、次の仕事・学習へつなげる</h2><p>工程測定、検査、ばらつき確認、設備保全の経験を、対象・作業・確認した結果で整理します。担当範囲と必要経験、勤務地、勤務・出張、教育体制を比較すると、次に補う知識も具体的になります。</p><aside class="semicon-cta mp5-card"><h3>目的に合う関連記事から、次の行動を選ぶ</h3><p>仕事内容を知りたい方は職種記事へ、基礎を広げたい方は学習記事へ、自宅環境を見直す方はPC・メモリの解説へ進めます。各記事の求人・学習・機材の選び方も比較できます。</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-process-engineer/" class="semicon-btn mp5-button" data-revenue-phase5-hub="230" data-cta="process_hub" data-cta-type="process_hub" data-cta-stage="career" data-cta-id="phase5_929_hub230_end" data-cta-route="phase5_929_hub230_end">プロセスエンジニアの担当範囲・求人・学習を見る</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/" class="semicon-btn mp5-button" data-revenue-phase5-hub="237" data-cta="equipment_hub" data-cta-type="equipment_hub" data-cta-stage="career" data-cta-id="phase5_929_hub237_end" data-cta-route="phase5_929_hub237_end">装置エンジニアの担当範囲・求人・学習を見る</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/" class="semicon-btn mp5-button" data-revenue-phase5-hub="277" data-cta="maintenance_hub" data-cta-type="maintenance_hub" data-cta-stage="career" data-cta-id="phase5_929_hub277_end" data-cta-route="phase5_929_hub277_end">設備保全Hubで仕事内容・求人・学習を確認する</a></div></aside></section>
+
+
+<h2>参考にした公式情報</h2>
+<ul class="semicon-sources"><li><a rel="noopener" href="https://irds.ieee.org/images/files/pdf/2024/2024IRDS_MM.pdf" target="_blank">IEEE / IRDS：2024 IRDS More Moore</a></li><li><a rel="noopener" href="https://irds.ieee.org/images/files/pdf/2017/2017IRDS_LITH.pdf" target="_blank">IEEE / IRDS：2017 IRDS Lithography</a></li><li><a rel="noopener" href="https://spectrum.ieee.org/a-better-way-to-measure-progress-in-semiconductors" target="_blank">IEEE Spectrum：A Better Way to Measure Progress in Semiconductors</a></li><li><a rel="noopener" href="https://download.intel.com/newsroom/2023/manufacturing/moores-law-electronics.pdf" target="_blank">Intel archive：Gordon E. Moore, Cramming More Components onto Integrated Circuits</a></li><li><a rel="noopener" href="https://research.tsmc.com/english/research/logic/transistor-structure/publish-time-1.html" target="_blank">TSMC Research：Logic / Transistor Structure</a></li><li><a rel="noopener" href="https://investor.tsmc.com/sites/ir/annual-report/2025/2025%20TSMC%20Annual%20Report.E.pdf" target="_blank">TSMC：2025 Annual Report</a></li><li><a rel="noopener" href="https://semiconductor.samsung.com/foundry/process-technology/logic-node/" target="_blank">Samsung Semiconductor：Process Technology / Logic Node</a></li><li><a rel="noopener" href="https://news.samsung.com/global/samsung-electronics-announces-third-quarter-2025-results" target="_blank">Samsung Electronics：Third Quarter 2025 Results</a></li><li><a rel="noopener" href="https://www.intel.com/content/www/us/en/newsroom/news/intel-18a-process-technology-simply-explained.html" target="_blank">Intel：Intel 18A Process Technology Simply Explained</a></li><li><a rel="noopener" href="https://www.intel.com/content/www/us/en/newsroom/news/corporate/intel-foundry-details-process-milestones-future-innovation-at-vlsi-symposium.html" target="_blank">Intel：Process Milestones at VLSI Symposium</a></li><li><a rel="noopener" href="https://www.asml.com/en/technology/lithography-principles" target="_blank">ASML：Lithography Principles</a></li></ul>
+
+</article>
+
+
+<div class="scm-nav" style="background:#f3f7fc;border:1px solid #1a5fb4;border-radius:8px;padding:10px;margin:0 0 16px;box-sizing:border-box;max-width:100%;overflow-wrap:anywhere;line-height:1.7;font-size:.92em;color:#0b2a5b;margin:24px 0 0"><div style="font-weight:700;margin:0 0 8px">第5章 トランジスタと微細化 の 5-5 を読み終えました(全8本)</div><div style="display:flex;flex-wrap:wrap;gap:8px;margin:0 0 8px"><div style="flex:1 1 220px;min-width:0;background:#fff;border:1px solid #d4e2f4;border-radius:8px;padding:8px 10px;box-sizing:border-box;overflow-wrap:anywhere"><small style="color:#5d6d7e">← 前</small><br><span style="color:#8a949e">5-4 FinFET:平面から立体へ(公開予定)</span></div><div style="flex:1 1 220px;min-width:0;background:#fff;border:1px solid #d4e2f4;border-radius:8px;padding:8px 10px;box-sizing:border-box;overflow-wrap:anywhere"><small style="color:#5d6d7e">次 →</small><br><span style="color:#8a949e">5-6 GAA・ナノシート(公開予定)</span></div></div><div><a href="https://semicon-campus.com/chapter-5-transistor-scaling/">第5章の一覧へ</a> ｜ <a href="https://semicon-campus.com/learning-map/">学習マップへ</a></div></div>
+<aside class="related-spokes"><h2>あわせて読みたい</h2><ul><li><a href="/backside-power-delivery-why-power-moves-to-the-back/">Backside Power Deliveryとは？電源配線をチップの裏側へ移す理由</a></li><li><a href="/asml-history-euv/">ASMLとは？雨漏りする小屋から、EUV装置までの40年</a></li></ul></aside>

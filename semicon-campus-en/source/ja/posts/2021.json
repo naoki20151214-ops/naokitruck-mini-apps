@@ -1,0 +1,20 @@
+{
+ "id": 2021,
+ "type": "post",
+ "slug": "daily-news-7a5cbcb16e98f5a35425",
+ "link": "https://semicon-campus.com/daily-news-7a5cbcb16e98f5a35425/",
+ "date": "2026-10-14T09:00:00",
+ "modified": "2026-10-27T20:03:21",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  20
+ ],
+ "tags": [
+  19
+ ],
+ "featured_media": 2762,
+ "title": "NavitasとNVIDIAの24kW GaN電源ボード、800VDC化の意味",
+ "excerpt": "NavitasとNVIDIAが発表した800VDCから12VDCへ一段変換する24kW供給能力のGaN電源ボードを、技術背景、目標性能、量産との違い、今後の確認点から初心者向けに解説します。"
+}

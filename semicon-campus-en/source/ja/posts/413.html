@@ -1,0 +1,258 @@
+
+<!--KEEP:0-->
+
+
+<!--KEEP:1-->
+
+<!--KEEP:2-->
+
+<article class="semicon-article" id="top">
+<div class="semicon-level">
+  <div class="semicon-level-badge">中級</div>
+  <div>
+    <strong>この記事のレベル</strong><br>
+    歩留まり、欠陥検査、SPC、膜厚測定、オーバーレイ計測が少し見えてきた人向けです。数式ではなく、工場で「なぜ良品率が下がったのか」をデータで追う流れを説明します。
+  </div>
+</div>
+
+<p class="semicon-lead">歩留まり解析とは、半導体工場で良品率が下がったときに、欠陥マップ、測定値、工程履歴、装置データなどを重ねて、不良原因の候補を絞っていく仕事です。単に「不良が何個あったか」を見るのではなく、「どこで、いつから、どの条件で増えたのか」を追い、工程改善へ戻すことが目的です。</p>
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/yield-analysis-featured.png" alt="歩留まり解析とは欠陥マップと工程データで不良原因を追うことを示す図解">
+  <figcaption>歩留まり解析は、欠陥マップや工程データを重ねて原因候補をしぼる仕事です。検査して終わりではなく、工程改善へ戻します。</figcaption>
+</figure>
+
+<div class="semicon-map">
+  <strong>この記事でわかること</strong>
+  <ul>
+    <li>歩留まり解析とは何をする仕事なのか</li>
+    <li>欠陥マップ、工程データ、装置履歴をどう見るのか</li>
+    <li>歩留まり改善、不良解析、SPCとの違い</li>
+    <li>求人票で見る歩留まり解析・工程データ解析の意味</li>
+    <li>製造、品質、検査、データ分析経験を半導体求人へつなげる考え方</li>
+  </ul>
+</div>
+
+
+<h2>歩留まり解析とは何か</h2>
+
+<p>歩留まりとは、作ったチップのうち、良品として使える割合のことです。歩留まりが下がると、同じウェハ、同じ装置、同じ材料を使っても、売れるチップが減ります。つまり歩留まりは、半導体工場の利益に直結する数字です。</p>
+
+<p>ただし、歩留まりが下がったときに「不良が増えました」と言うだけでは、現場は何も改善できません。大事なのは、なぜ増えたのかを探すことです。</p>
+
+<p>歩留まり解析では、不良の場所、発生タイミング、通過した装置、測定値の変化、材料ロット、作業条件などを見比べます。いきなり犯人を決めるのではなく、複数の証拠を重ねて、怪しい原因候補を少しずつ減らしていきます。</p>
+
+<div class="semicon-mobile-summary">スマホで読むなら、まずここだけで十分です。歩留まり解析は「良品率が下がった理由を、データを重ねて探す仕事」です。検査、品質、プロセス、データ分析が交わる領域です。</div>
+
+<h2>欠陥マップは不良の出方を見る地図</h2>
+
+<p>歩留まり解析でよく使われる見方のひとつが、欠陥マップやウェハマップです。ウェハ上のどこに不良や欠陥が多いのかを、地図のように見ます。</p>
+
+<p>同じ不良率でも、欠陥がランダムに散っているのか、端に集中しているのか、中心に多いのか、筋のように出ているのかで、疑う原因は変わります。</p>
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/yield-analysis-wafer-patterns.png" alt="欠陥マップで端に多い、中心に多い、筋状に出る不良パターンを比較する図解">
+  <figcaption>欠陥の場所や形を見ると、薬液、乾燥、搬送、膜厚、温度、装置、傷など、疑う原因候補が変わります。</figcaption>
+</figure>
+
+<div class="semicon-grid">
+  <div class="semicon-card"><b>端に多い</b><span>ウェハ端の乾燥、薬液の回り込み、搬送、エッジ付近の処理条件を疑います。</span></div>
+  <div class="semicon-card"><b>中心に多い</b><span>膜厚、温度、プラズマ分布、回転条件など、工程条件の偏りを見ることがあります。</span></div>
+  <div class="semicon-card"><b>筋状に出る</b><span>搬送時の傷、装置内の流れ、特定部品の影響など、方向性のある原因を疑います。</span></div>
+</div>
+
+<h2>歩留まり解析はデータを重ねる仕事</h2>
+
+<p>欠陥マップだけを見ても、原因はまだ決まりません。場所の傾向は見えても、それがどの工程で起きたのか、どの装置で増えたのか、いつから始まったのかは別のデータを見ないとわからないからです。</p>
+
+<p>そこで、歩留まり解析では複数のデータを重ねます。欠陥検査の結果、CD-SEMの線幅、膜厚測定、オーバーレイ計測、SPCの管理図、装置ログ、材料ロット、工程履歴などをつなげて見ます。</p>
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/yield-analysis-data-flow.png" alt="歩留まり解析で欠陥、測定値、工程履歴、原因候補をつなげる流れ">
+  <figcaption>1つのデータだけで決めつけず、欠陥、測定値、工程履歴、装置履歴を重ねて原因候補を減らします。</figcaption>
+</figure>
+
+<p>たとえば、あるロットで欠陥が増えたとします。欠陥マップを見ると端に多い。膜厚データを見ると端だけ少し薄い。装置履歴を見ると、そのロットは特定の成膜装置を通っている。ここまで重なると、成膜条件や装置状態が怪しいかもしれない、と仮説を立てられます。</p>
+
+<h3>歩留まり解析の2大アプローチ</h3>
+
+<p>実際の半導体工場では、さらに細かいデータを使って原因を追います。初心者が最初に知っておくとよいのは、<strong>ビットマップ相関</strong>と<strong>FDC</strong>です。</p>
+
+<div class="semicon-grid two">
+  <div class="semicon-card"><b>ビットマップ相関</b><span>電気テストで不良になった場所と、ウェハ上の物理的な位置を重ねます。メモリの不良パターンやテスト結果と、欠陥検査の座標を見比べる考え方です。</span></div>
+  <div class="semicon-card"><b>FDC</b><span>Fault Detection and Classificationの略です。装置の温度、圧力、ガス流量、処理時間などのセンサーデータを見て、いつもと違う装置状態を探します。</span></div>
+</div>
+
+<p>たとえば、電気テストでは特定のチップだけが不良になっている。欠陥検査では、その近くにパターン異常がある。さらにFDCを見ると、そのロットを処理したときだけ装置の圧力が少しずれていた。こうした情報が重なると、単なる偶然ではなく、工程や装置の異常として追いやすくなります。</p>
+
+<p>ここで大切なのは、難しいシステム名を暗記することではありません。歩留まり解析では、<strong>電気的な結果、物理的な欠陥、装置の状態</strong>をつなげて見る、という考え方を持つことです。</p>
+
+<div class="semicon-note">
+  <strong>初心者向けの言い換え</strong><br>
+  歩留まり解析は、ミステリーの犯人探しに少し似ています。ただし、勘だけでは動きません。欠陥の場所、測定値、装置履歴、材料ロットなどの証拠を重ねて、「一番怪しい条件」を探します。
+</div>
+
+<h2>原因候補は工程・装置・材料に分ける</h2>
+
+<p>歩留まり解析で大切なのは、いきなり原因を決めつけないことです。半導体工場では、同じ不良でも、工程、装置、材料、環境、人の作業など、いろいろな原因があり得ます。</p>
+
+<p>そのため、まずは原因候補を分けます。「露光後に増えたのか」「洗浄後に増えたのか」「装置Aだけで多いのか」「材料ロットで差があるのか」「メンテナンス後に変わったのか」。こうした切り口で、データを比較します。</p>
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/yield-analysis-root-cause.png" alt="歩留まり解析で原因候補を工程、装置、材料、環境に分ける図解">
+  <figcaption>歩留まり解析は、現場の経験とデータ分析をつなぐ仕事です。工程、装置、材料、環境に分けて原因候補を整理します。</figcaption>
+</figure>
+
+<div class="semicon-table-wrap">
+  <table class="semicon-table">
+    <thead>
+      <tr><th>見る切り口</th><th>確認すること</th><th>関係しやすい職種</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>工程</strong></td><td>どの工程の後から不良が増えたか</td><td>プロセスエンジニア、品質、歩留まり改善</td></tr>
+      <tr><td><strong>装置</strong></td><td>特定装置、チャンバー、メンテナンス後で差があるか</td><td>装置エンジニア、FSE、保全</td></tr>
+      <tr><td><strong>材料</strong></td><td>薬液、ガス、ウェハ、レジスト、スラリーのロット差</td><td>材料、品質保証、プロセス</td></tr>
+      <tr><td><strong>データ</strong></td><td>SPC、測定値、欠陥分類、テスト結果の傾向</td><td>データ解析、歩留まり解析、品質データ解析</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>歩留まり改善・不良解析・SPCとの違い</h2>
+
+<p>歩留まり解析は、似た言葉と一緒に出てきます。初心者はここで混乱しやすいので、ざっくり分けておきましょう。</p>
+
+<div class="semicon-table-wrap">
+  <table class="semicon-table">
+    <thead>
+      <tr><th>言葉</th><th>主な意味</th><th>歩留まり解析との関係</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>歩留まり改善</strong></td><td>良品率を上げる活動全体</td><td>歩留まり解析は改善の前段で、原因候補を探す</td></tr>
+      <tr><td><strong>不良解析</strong></td><td>個別不良の原因を観察や分析で深掘りする</td><td>歩留まり解析で怪しい不良を見つけ、不良解析へ渡すことがある</td></tr>
+      <tr><td><strong>SPC</strong></td><td>測定値の変化から工程異常を早く見つける</td><td>歩留まり低下の前兆や、いつから変化したかを見る</td></tr>
+      <tr><td><strong>工程データ解析</strong></td><td>装置、条件、ロット、測定値を比較する</td><td>歩留まり解析の中心になるデータの見方</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<p>つまり、歩留まり解析は「データで原因候補を絞る仕事」です。SPCで変化に気づき、欠陥検査で場所を見て、不良解析で深掘りし、プロセス改善へ戻す。この流れの中にあります。</p>
+
+<section class="mp1-section" id="maintenance-phase1-learning"><h2>歩留まり解析・装置ログ・FDCを、実務と学び直しにつなげる</h2><p>装置ログと不良データを結び付けるには、いつ・どの装置・どのロットで変化したかをそろえることが出発点です。保全履歴と欠陥マップや測定値を照合し、装置原因とまだ断定できない候補を分けた経験は、工程改善との接点になります。品質管理・統計の基礎を学ぶ道と、製造・保全・品質経験を活かせる技術職へ進む道を比較できます。</p></section>
+<h2>歩留まり解析がわかる人の市場価値</h2>
+
+<p>歩留まり解析は、製造現場の知識とデータを見る力の両方が必要です。データだけ見ても、工程や装置の意味がわからなければ原因候補は絞りにくいです。一方で、現場経験だけでも、ロットや装置差を広く比較するには限界があります。</p>
+
+<p>だからこそ、製造、検査、品質、装置保全、データ分析の経験がある人は、歩留まり解析へ経験をつなげやすいです。Excelで不良率をまとめた経験、品質トラブルの原因を追った経験、装置の異常対応をした経験、測定値を見て条件を調整した経験は、半導体求人で言語化しやすい材料になります。</p>
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/yield-analysis-career-keywords.png" alt="求人票で見る歩留まり解析関連キーワード。歩留まり解析、工程データ解析、SPC、欠陥マップ、品質改善">
+  <figcaption>求人票では、歩留まり解析、工程データ解析、SPC、欠陥マップ、品質改善などの言葉で出てきます。</figcaption>
+</figure>
+
+<div class="semicon-grid">
+  <div class="semicon-card"><b>製造経験</b><span>不良、作業条件、ロット、装置差を現場目線で理解しやすいです。</span></div>
+  <div class="semicon-card"><b>品質経験</b><span>不良率、再発防止、原因調査、報告書作成の経験が活きます。</span></div>
+  <div class="semicon-card"><b>データ経験</b><span>Excel、Python、統計、グラフ化、異常値確認の経験が活きます。</span></div>
+</div>
+
+<h3>他業界のQC・品質改善経験は強い武器になる</h3>
+
+<p>半導体業界が未経験でも、自動車、電子部品、精密機器、化学、食品、医薬品などで品質管理や品質保証に関わった経験は、歩留まり解析とかなり相性があります。</p>
+
+<p>理由は、品質改善の基本が業界をまたいで共通しているからです。不良率を見る、発生場所を分ける、ロット差を見る、装置や条件の変化を確認する、なぜなぜ分析で原因候補をしぼる、再発防止へつなげる。この流れは、半導体でも同じです。</p>
+
+<p>もちろん、半導体特有の工程名や装置名は学ぶ必要があります。ただ、QCストーリー、FMEA、管理図、実験計画法、工程改善、トラブルシューティングの経験がある人は、求人票の「歩留まり改善」「品質データ解析」「工程データ解析」「不良解析」という言葉を、自分の経験に変換しやすくなります。</p>
+
+<div class="semicon-note">
+  <strong>転職導線としての見方</strong><br>
+  年収アップを断定することはできませんが、半導体業界は装置、品質、データ、量産改善の人材需要が強い領域です。他製造業で品質改善や不良原因調査をしてきた人は、自分の経験を半導体求人向けに言語化できるか、一度確認する価値があります。
+</div>
+
+<div class="semicon-cta">
+  <h3>歩留まり解析の求人を見る前に整理すること</h3>
+  <p>求人票で歩留まり解析、工程データ解析、品質データ解析、量産立ち上げ、不良解析という言葉を見つけたら、自分の経験を「現場」「品質」「装置」「データ」のどこに寄せられるか整理しましょう。特に他業界でQC、品質保証、品質管理、工程改善を経験した人は、半導体求人でどう評価されるかを確認しておくと、応募先の選び方が変わります。</p>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn" href="https://semicon-campus.com/semiconductor-career-service-selection-guide/">半導体求人に強い転職サービスの選び方を見る</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/how-to-read-semiconductor-job-description/">求人票の読み方を見る</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/semiconductor-career-map/">職種マップを見る</a>
+  </div>
+</div>
+
+<h2>まとめ：歩留まり解析は工場の利益を守るデータ仕事</h2>
+
+<p>歩留まり解析とは、良品率が下がった理由を、欠陥マップ、測定値、工程履歴、装置データなどから追う仕事です。不良数を数えるだけではなく、どこで、いつから、どの条件で増えたのかを見て、原因候補を絞ります。</p>
+
+<p>欠陥検査、CD-SEM、膜厚測定、オーバーレイ計測、SPCで得られるデータは、歩留まり解析の材料になります。測定して終わりではなく、工程、装置、材料、環境へ戻して改善するところまでが重要です。</p>
+
+<p>求人票で歩留まり解析、工程データ解析、品質データ解析、SPC、不良解析、量産立ち上げという言葉を見つけたら、この記事の内容とつながる仕事だと考えてみてください。</p>
+
+<div class="semicon-cta">
+  <h3>次回予告</h3>
+  <p>次回は、検査・計測と歩留まり解析の知識を職種に変換する「検査・計測エンジニアとは何か？」へ進みます。測る仕事が、どんな求人やキャリアにつながるのかを整理します。</p>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn" href="https://semicon-campus.com/semiconductor-career-map/">先に職種マップを見る</a>
+  </div>
+</div>
+
+<div class="semicon-cta">
+  <h3>YouTubeでも半導体をやさしく学べます</h3>
+  <p>動画向けには「欠陥マップを見ると原因が見える」「歩留まり解析は半導体工場の探偵仕事」「品質経験が半導体求人につながる理由」などに分けて発信できます。</p>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn" href="https://www.youtube.com/@semicon-campus">YouTubeチャンネルを見る</a>
+  </div>
+</div>
+
+<h2>次に読む記事</h2>
+<div class="semicon-links">
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/semiconductor-career-map/">半導体業界の職種マップ</a></strong>
+    <p>歩留まり解析が、プロセス、品質、検査、データ解析のどの職種につながるのかを整理できます。</p>
+  </div>
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/how-to-read-semiconductor-job-description/">半導体求人票の読み方</a></strong>
+    <p>求人票に出る歩留まり改善、品質データ解析、SPCなどの言葉を読み解けます。</p>
+  </div>
+</div>
+
+<h2>関連記事</h2>
+<div class="semicon-links">
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/what-is-semiconductor-yield/">歩留まりとは何か？</a></strong>
+    <p>歩留まり解析の前提になる、良品率と工場利益の関係を学べます。</p>
+  </div>
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/what-is-semiconductor-defect-inspection/">欠陥検査とは何か？</a></strong>
+    <p>欠陥マップや検査データが、歩留まり解析へどうつながるかを理解できます。</p>
+  </div>
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/what-is-spc-semiconductor-process-control/">SPCとは何か？</a></strong>
+    <p>測定値の変化から工程異常を見つける考え方を学べます。</p>
+  </div>
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/what-is-semiconductor-failure-analysis/">不良解析とは何か？</a></strong>
+    <p>歩留まり解析で見つけた原因候補を、観察や分析で深掘りする考え方を学べます。</p>
+  </div>
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/what-is-overlay-metrology/">オーバーレイ計測とは何か？</a></strong>
+    <p>リソグラフィの位置ずれデータが歩留まりにどう効くかを理解できます。</p>
+  </div>
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/what-is-film-thickness-measurement/">膜厚測定とは何か？</a></strong>
+    <p>膜厚データが工程差や不良原因の切り分けにどう使われるかを理解できます。</p>
+  </div>
+</div>
+
+<section class="mp1-section" id="maintenance-phase1-career"><h2>歩留まり解析・装置ログ・FDCの知識を活かす仕事と次の行動</h2><p>装置ログの確認、品質データ解析、原因切り分けの経験がある方は、「対象装置・現象・自分が行った確認・結果」を一組にして整理しましょう。担当設備、夜勤・出張、教育体制、応募条件を求人票と照合すると、活かせる経験と補う知識を分けられます。</p><aside class="semicon-cta mp1-card"><h3>仕事の全体像と、求人・学習の選び方を確認する</h3><p>設備保全Hubでは、点検・異常対応の仕事と経験の整理、求人・基礎学習・資格対策をまとめて確認できます。装置担当や顧客対応の範囲を比べたい方は、関連する職種記事も参照してください。</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/" class="semicon-btn mp1-button" data-maintenance-phase1-hub="277" data-cta="maintenance_hub" data-cta-type="maintenance_hub" data-cta-stage="career" data-cta-id="maintenance_413_hub277_end" data-cta-route="maintenance_413_hub277_end">設備保全Hubで仕事内容・求人・学習を確認する</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/" class="semicon-btn mp1-button" data-maintenance-phase1-hub="237" data-cta="equipment_hub" data-cta-type="equipment_hub" data-cta-stage="career" data-cta-id="maintenance_413_hub237_end" data-cta-route="maintenance_413_hub237_end">装置エンジニアの担当範囲・求人・学習を見る</a></div></aside></section>
+
+<h2>参考資料</h2>
+<ul>
+  <li><a href="https://www.kla.com/products/wafer-manufacturing/wafer-defect-inspection-review">KLA: Defect Inspection and Review</a></li>
+  <li><a href="https://www.kla.com/products/software-solutions/semiconductor">KLA: Semiconductor Software Solutions</a></li>
+  <li><a href="https://www.siemens.com/en-us/products/ic/tessent/yield-learning/">Siemens: Tessent Yield Learning</a></li>
+  <li><a href="https://www.synopsys.com/content/dam/synopsys/silicon/datasheets/yield-manager-ds.pdf">Synopsys: YieldManager Datasheet</a></li>
+</ul>
+
+<a class="semicon-backtop" href="#top" aria-label="ページ先頭へ戻る">↑</a>
+</article>
+
+<aside class="related-spokes"><h2>あわせて読みたい</h2><ul><li><a href="/wafer-map-defect-pattern/">不良は「どこ」に出た？ ウェハマップから原因の手掛かりを探す技術</a></li><li><a href="/semiconductor-yield-improvement/">半導体の歩留まり改善とは？イールドラーニング・ポアソンモデル・欠陥密度D0の考え方</a></li></ul></aside>

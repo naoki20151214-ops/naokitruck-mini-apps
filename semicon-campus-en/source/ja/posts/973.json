@@ -1,0 +1,20 @@
+{
+ "id": 973,
+ "type": "post",
+ "slug": "daily-news-ee2669e2eb34a1bc3c8e",
+ "link": "https://semicon-campus.com/daily-news-ee2669e2eb34a1bc3c8e/",
+ "date": "2026-09-16T16:00:00",
+ "modified": "2026-10-27T20:05:18",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  20
+ ],
+ "tags": [
+  19
+ ],
+ "featured_media": 2865,
+ "title": "InfineonとSolarEdge、800V直流の半導体遮断器で協業拡大",
+ "excerpt": "InfineonとSolarEdgeが2026年9月9日、AIデータセンターの800V直流配電を守る半導体遮断器で協業拡大を発表。SiC JFETの役割と直流遮断の難しさ、開発段階で未確認の性能や量産時期を解説します。"
+}

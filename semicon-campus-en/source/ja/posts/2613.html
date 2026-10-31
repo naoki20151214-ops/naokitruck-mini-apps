@@ -1,0 +1,219 @@
+<!--KEEP:0-->
+<div class="semicon-article" id="semicon-top">
+<div class="semicon-level">
+<div class="semicon-level-top"><span class="semicon-level-label">学習レベル</span><strong class="semicon-stars" aria-label="初級（5段階中の1）"><span class="on">★</span><span class="off">☆☆☆☆</span><span>初級</span></strong></div>
+</div>
+<div class="semicon-lead">
+<p>製氷皿で氷を作るとき、氷を削って形を作る人はいません。先に型（くぼみ）があって、そこに水を流し込み、あふれた分をならして、固めます。</p>
+<p>半導体の中の銅の線も、これと似た作り方をします。銅は削って形にしにくいので、先に絶縁膜に溝を掘り、そこへ銅を埋めて、余分な銅を磨いて取ります。この方法が「ダマシン法」で、磨く工程が「CMP」です。</p>
+</div>
+<div class="semicon-note">
+<p>製氷皿の例が当てはまるのは、「先に型を作り、あとから埋める」という順番だけです。氷と銅では、材料も工程も、まったく違います。</p>
+</div>
+<div class="semicon-map">
+<h3>この記事でわかること</h3>
+<ol>
+<li><strong>この記事の目的：</strong>銅の配線が、なぜ「溝を掘って埋める」方法で作られるのかを、つかむこと</li>
+<li><strong>前半：</strong>配線の役割と、アルミから銅に変わった理由、銅が削れない理由</li>
+<li><strong>後半：</strong>ダマシン法とCMPの流れ、デュアルダマシン、銅の強みと弱点</li>
+</ol>
+</div>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep112-blog-01-compare.png" alt="アルミは全面に膜を作って削り、銅は先に溝を掘って埋めるという、作り方の違いを示した概念図"><figcaption>アルミと銅の作り方の違いを表した模式図。銅は削らず、先に溝を作って埋めます。説明用の流れで、特定の工場の工程ではありません。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>アルミは、全面に膜を作って削る</li>
+<li>銅は、先に溝を掘って埋める</li>
+<li>どちらも、最後は線になる</li>
+</ul>
+</div>
+<div class="semicon-chat-row naoki">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">助手</div>
+</div>
+<div class="semicon-bubble">
+<p>博士、銅の配線は、削らずに作るって、本当ですか？</p>
+</div>
+</div>
+<div class="semicon-chat-row teacher">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">博士</div>
+</div>
+<div class="semicon-bubble">
+<p>本当じゃ。銅は削りにくいから、先に溝を掘って、あとから銅を埋めるんじゃ。</p>
+</div>
+</div>
+<div class="semicon-chat-row naoki">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">助手</div>
+</div>
+<div class="semicon-bubble">
+<p>埋めたあとは、どうするんですか？</p>
+</div>
+</div>
+<div class="semicon-chat-row teacher">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">博士</div>
+</div>
+<div class="semicon-bubble">
+<p>あふれた分を、磨いて取るんじゃ。順に、見ていこう。</p>
+</div>
+</div>
+<h2 class="wp-block-heading" data-fact-ids="C01">配線は、チップの中の「電気の通り道」</h2>
+<p>半導体のチップの中では、トランジスタ同士が、細い金属の線でつながっています。この線が「配線」です。配線は、一層ではなく、何層にも重ねて作られます。下の層から順に、M1、M2と呼ばれます。IBMの技術者らが2009年に発表した論文では、銅の配線は、アルミより抵抗が低く、信頼性も高いため、広く使われるようになったと述べられています。<strong class="semicon-key">いま、配線の主役は、アルミから銅に変わっています。</strong>最初は、高性能なロジック回路だけで使われていましたが、いまでは、メモリ（DRAM）や高周波の回路、イメージセンサーなど、幅広い半導体で使われています。</p>
+<details class="semicon-quiz">
+<summary>確認クイズ：配線は、何をするものでしょう？</summary>
+<p>答え：トランジスタ同士をつなぐ、電気の通り道です。</p>
+</details>
+<h2 class="wp-block-heading" data-fact-ids="C02 C03">銅は、削って形にしにくい</h2>
+<p>アルミの配線は、まず全面に金属の膜を作り、マスクで守った部分だけを残して、いらない部分を削り落として作ります。アイオワ州立大学の講義資料でも、アルミはこの方法でパターンが作られると説明されています。</p>
+<p>ところが、銅では、この方法が使えません。IBMの論文では、銅の塩化物やフッ化物が気体になりにくく、削るための反応性イオンエッチングでは、うまく加工できないと述べられています。削るときに銅が反応しても、気体にならず、ウェハから出ていかないのです。<strong class="semicon-key">銅は、削るのに向いていない金属</strong>だと言えます。講義資料でも、銅が、まわりの材料の中に広がっていく性質も持っていると指摘されています。そのため、銅の周りには、広がりを防ぐ壁も必要になります。</p>
+<details class="semicon-quiz">
+<summary>確認クイズ：銅を削りにくいのは、なぜでしょう？</summary>
+<p>答え：削るときに銅が反応しても、気体になりにくく、ウェハから出ていかないからです。</p>
+</details>
+<h2 class="wp-block-heading" data-fact-ids="C04 C05">発想を逆にした「ダマシン法」</h2>
+<p>そこで使われるのが、ダマシン法です。流れは、次のとおりです。</p>
+<ol>
+<li>絶縁膜に、先に配線の形の溝を掘る。</li>
+<li>溝の中に、バリアと呼ぶ薄い金属の膜を張る。</li>
+<li>銅のもとになる薄い膜（シード層）を作り、電気めっきで溝を銅で埋める。</li>
+<li>あふれた銅を、CMPで磨いて取る。</li>
+</ol>
+<p>バリアを張るのは、銅の原子が、まわりの絶縁膜に入りこむのを防ぐためです。IBMの論文では、このバリアに、タンタル系の金属（TaN／Ta）が使われています。バリアと銅のシード層は、スパッタと呼ばれる方法で、薄く付けられます。EE Times Japanの解説では、銅は、スパッタリングやCVDでも、高い品質の膜を実用的な厚さに作るのが難しかった、と述べられています。そのため、溝に電解めっきで銅を埋め込む方法が使われています。ダマシン法では、マスクの隙間の幅が、そのまま配線の幅になります。<strong class="semicon-key">先に溝を作って、あとから埋める。</strong>これが、削れない銅を配線にする、基本の発想です。</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep112-blog-ep112-05-plating.jpg" alt="ウェハを電気めっきの装置にかけ、銅色の液体の上で処理しているイメージ"><figcaption>電気めっきの装置のイメージ。実際の装置や工場ではありません。 EP112 記事用画像（AI生成）。生成画像を縮小し、JPEGに最適化。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>溝を、銅で埋める工程</li>
+<li>電気めっきで、銅をつける</li>
+<li>あふれた分は、あとで磨く</li>
+</ul>
+</div>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep112-blog-02-flow.png" alt="溝を掘り、バリアを張り、銅で埋め、CMPで磨くという、ダマシン法の流れの概念図"><figcaption>ダマシン法の流れを表した模式図。四つの段階を順に示します。説明用の流れで、特定の装置の構造ではありません。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>溝を掘る</li>
+<li>バリアを張って、銅で埋める</li>
+<li>CMPで磨いて、平らにする</li>
+</ul>
+</div>
+<details class="semicon-quiz">
+<summary>確認クイズ：ダマシン法で、先にするのはどちらでしょう？ ①溝を掘る　②銅を埋める</summary>
+<p>答え：①の、溝を掘ることです。そのあとで、銅を埋めます。</p>
+</details>
+<h2 class="wp-block-heading" data-fact-ids="C06">CMPで、余分な銅を磨いて取る</h2>
+<p>電気めっきで埋めると、溝からあふれた銅が、ウェハの表面全体に残ります。これを取りのぞくのが、CMP（化学機械研磨）です。講義資料によると、研磨パッドとウェハを回転させ、砥粒と薬品の働きで、表面を薄くして平らにします。深さと平らさが、とても大切です。磨いて形を整えるため、IBMの論文では、銅の配線では、パターンの密度に、より多くの制約があると述べられています。磨き終わると、溝の中の銅だけが残り、配線ができあがります。EE Times Japanの解説によると、CMPは1990年代前半に実用化が始まり、それまで主流だったエッチバックより、はるかに高い平らさを実現しました。</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep112-blog-ep112-06-cmp.jpg" alt="大きな回転する研磨パッドとウェハを持つ、CMPの研磨装置のイメージ"><figcaption>CMPの研磨装置のイメージ。実際の装置や工場ではありません。パッドとウェハを回転させて磨きます。 EP112 記事用画像（AI生成）。生成画像を縮小し、JPEGに最適化。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>パッドとウェハを回転させる</li>
+<li>薬品と砥粒で、表面を整える</li>
+<li>銅の線だけが残る</li>
+</ul>
+</div>
+<details class="semicon-quiz">
+<summary>確認クイズ：CMPは、何をする工程でしょう？</summary>
+<p>答え：薬品と研磨の力で、あふれた銅を取りのぞき、表面を平らにする工程です。</p>
+</details>
+<h2 class="wp-block-heading" data-fact-ids="C07">デュアルダマシン：溝と穴を、いっぺんに</h2>
+<p>配線の層と層をつなぐ「穴（ビア）」も、銅で埋める必要があります。溝と穴を別々に埋める方法もありますが、両方を掘ってから、一度に銅を埋める方法が「デュアルダマシン」です。IBMの論文でも、銅の配線は、このデュアルダマシンで作られると述べられています。その手順は、先に穴を開け、次に溝を作り、そのあとバリアとシード層、めっき、CMPの順です。講義資料によると、どちらの方法でも、できあがる構造は同じです。</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep112-blog-03-dual.png" alt="溝と穴を別々に埋める方法と、両方を掘って一度に埋めるデュアルダマシンの違いを示した概念図"><figcaption>デュアルダマシンの考え方を表した模式図。溝と穴を一度に埋めます。説明用の図で、実際の断面ではありません。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>溝と穴を、両方掘る</li>
+<li>銅を、一度に埋める</li>
+<li>手順を、まとめられる</li>
+</ul>
+</div>
+<details class="semicon-quiz">
+<summary>確認クイズ：デュアルダマシンでは、何を一度に埋めるでしょう？</summary>
+<p>答え：配線の溝と、層をつなぐ穴の、両方です。</p>
+</details>
+<h2 class="wp-block-heading" data-fact-ids="C08">ふたをして、層の数だけ繰り返す</h2>
+<p>銅は、酸化しやすい金属です。IBMの論文によると、磨いたあとに、SiCNという保護の膜でふたをして、銅を酸化から守ります。この一連の工程は、配線の層ごとに、繰り返されます。最後の層ができたあとは、厚い保護の絶縁膜をつけ、外部とつなぐ端子（ボンドパッド）への穴を開けます。また、銅は磨いて形を作るため、チップの中の線の密度に差が出ないよう、ダミーの金属パターンを入れる必要があります。さらに、このふたの膜は、まわりの絶縁膜より誘電率が高いため、全体の誘電率は、おおむね10％高くなると、論文では述べられています。</p>
+<details class="semicon-quiz">
+<summary>確認クイズ：磨いたあと、銅の表面を保護の膜でふさぐのは、なぜでしょう？</summary>
+<p>答え：銅が酸化するのを防ぐためです。</p>
+</details>
+<h2 class="wp-block-heading" data-fact-ids="C09">銅の強みと、細くなったときの弱点</h2>
+<p>銅の強みは、電気を通しやすいことだけではありません。電流が流れると、金属の原子が少しずつ動いて、線が切れることがあります。この現象を、エレクトロマイグレーションといいます。IBMの論文では、銅の寿命が、アルミの100倍以上だと報告されています。さらに、線が短ければ、原子が動く向きと逆向きの力がはたらいて、線が切れにくいことも説明されています。</p>
+<p>一方、弱点もあります。配線が細くなると、銅でも、抵抗が上がります。論文では、その理由として、表面での散乱、結晶の粒の境目での散乱、そして、バリアの膜が占める割合の増加が挙げられています。<strong class="semicon-key">配線が細いほど、バリアの割合が増え、抵抗が上がります。</strong></p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep112-blog-04-shrink.png" alt="配線が細くなると、表面や結晶の粒の境目での衝突とバリアの割合の増加によって、銅の抵抗が上がることを示した概念図"><figcaption>配線が細くなると抵抗が上がる理由を表した模式図。三つの理由を並べています。説明用の図で、実測データではありません。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>表面で、電子がぶつかる</li>
+<li>結晶の粒の境目でも、ぶつかる</li>
+<li>バリアの割合も増える</li>
+</ul>
+</div>
+<details class="semicon-quiz">
+<summary>確認クイズ：配線を細くすると、銅の抵抗はどうなるでしょう？</summary>
+<p>答え：上がります。表面や結晶の粒の境目で電子がぶつかり、バリアの割合も増えるからです。</p>
+</details>
+<div class="semicon-cta">
+<h3>工程を担当する仕事を、知る</h3>
+<p>この工程を担当する仕事を知りたい方は、こちらの記事も読んでみてください。</p>
+<div class="semicon-btnrow"><a class="semicon-btn" href="https://semicon-campus.com/semiconductor-career-map/">半導体製造の仕事を工程別に見てみる</a></div>
+</div>
+<p>製造の全体像は、<a href="https://semicon-campus.com/semiconductor-manufacturing-overview/">半導体の製造工程の全体像</a>で紹介しています。なお、設備の調整や復旧は、所属する工場やメーカーの正式な手順と、権限のある人の判断のもとで行います。この記事は、考え方の紹介で、設備の操作を指示するものではありません。</p>
+<h2 class="wp-block-heading">ことばのおさらい</h2>
+<ul>
+<li><strong>配線：</strong>トランジスタ同士をつなぐ、チップの中の金属の線です。</li>
+<li><strong>ダマシン法：</strong>先に溝を掘り、銅を埋めて、余分を磨いて取る方法です。</li>
+<li><strong>バリア：</strong>銅の原子が絶縁膜に入るのを防ぐ、薄い金属の膜です。</li>
+<li><strong>CMP：</strong>薬品と研磨で、表面を平らにする工程です。</li>
+<li><strong>デュアルダマシン：</strong>溝と穴を、一度に埋める方法です。</li>
+<li><strong>エレクトロマイグレーション：</strong>電流で金属の原子が動き、線が切れる現象です。</li>
+</ul>
+<h2 class="wp-block-heading">よくある誤解</h2>
+<h3>Q. 銅は、削れないから使えないのですか？</h3>
+<p>いいえ。削る代わりに、先に溝を掘って埋めるダマシン法で、配線にしています。</p>
+<h3>Q. 銅の配線は、細くしても、抵抗は変わりませんか？</h3>
+<p>変わります。配線が細くなると、銅でも、抵抗が上がります。</p>
+<h3>Q. バリアは、なぜ必要ですか？</h3>
+<p>銅の原子が、まわりの絶縁膜へ入りこむのを防ぐためです。バリアがないと、銅が広がってしまいます。</p>
+<h3>Q. CMPは、ただ削るだけの工程ですか？</h3>
+<p>いいえ。砥粒による研磨と、薬品の働きを、組み合わせます。パッドとウェハを回転させて、表面を平らに整えます。</p>
+<h2 class="wp-block-heading">まとめ</h2>
+<div class="semicon-lead">
+<p>銅は削って形にしにくいので、先に溝を掘り、銅を埋めて、余分をCMPで磨く、ダマシン法で配線にします。<br />溝と穴を一度に埋めるのが、デュアルダマシンで、磨いたあとは、保護の膜でふたをします。<br />銅は、アルミより信頼性が高い一方、細くなると抵抗が上がります。</p>
+</div>
+<div class="semicon-cta">
+<h3>YouTubeでも、半導体をやさしく解説しています</h3>
+<p>図解で復習したい人向けに、YouTubeでも半導体製造を短く解説しています。</p>
+<div class="semicon-btnrow"><a rel="noopener" class="semicon-btn secondary" href="https://www.youtube.com/@semicon-campus" target="_blank">YouTubeで図解動画を見る</a></div>
+</div>
+<h2 class="wp-block-heading">参考にした公式情報</h2>
+<ul class="semicon-sources">
+<li data-source-id="S01"><a href="https://ewh.ieee.org/r5/denver/sscs/References/2009_09_Gambino.pdf">Jeff Gambino ほか「Copper Interconnect Technology for the 32 nm Node and Beyond」（IBM、IEEE CICC 2009）</a></li>
+<li data-source-id="S02"><a href="https://class.ece.iastate.edu/ee330/lectures/EE%20330%20Lect%2011%20Fall%202023.pdf">アイオワ州立大学 EE 330 Lecture 11「Copper Interconnects」（講義資料）</a></li>
+<li data-source-id="S03"><a href="https://eetimes.itmedia.co.jp/ee/articles/2011/25/news025_2.html">EE Times Japan 福田昭「銅配線の微細化限界を左右するダマシン技術」</a></li>
+</ul>
+<section class="semicon-correction-form">
+<h2>質問・訂正フォーム</h2>
+<p>この記事の内容に誤りや、分かりにくい点があれば、下のフォームからお知らせください。確認して、記事を直します。</p>
+<div class="semicon-form-shortcode">
+<div class="wpcf7 no-js" id="wpcf7-f2045-o5" lang="ja" dir="ltr" data-wpcf7-id="2045">
+<div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
+<form action="/?rest_route=%2Fwp%2Fv2%2Fposts&#038;per_page=100&#038;page=1&#038;context=view#wpcf7-f2045-o5" method="post" class="wpcf7-form init" aria-label="コンタクトフォーム" novalidate="novalidate" data-status="init">
+<fieldset class="hidden-fields-container"><input type="hidden" name="_wpcf7" value="2045" /><input type="hidden" name="_wpcf7_version" value="6.1.6" /><input type="hidden" name="_wpcf7_locale" value="ja" /><input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f2045-o5" /><input type="hidden" name="_wpcf7_container_post" value="0" /><input type="hidden" name="_wpcf7_posted_data_hash" value="" />
+</fieldset>
+<p>お名前・電話番号・住所の入力は不要です。工場名や社外秘の情報は記載しないでください。
+</p>
+<p><label>報告の種類（必須） <span class="wpcf7-form-control-wrap" data-name="report-type"><select class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required" aria-required="true" aria-invalid="false" name="report-type"><option value="誤りと思われる点">誤りと思われる点</option><option value="分かりにくい箇所">分かりにくい箇所</option><option value="追加してほしい説明・質問">追加してほしい説明・質問</option></select></span></label><br />
+<label>該当する見出し・文章（任意） <span class="wpcf7-form-control-wrap" data-name="report-section"><input size="40" maxlength="200" class="wpcf7-form-control wpcf7-text" aria-invalid="false" value="" type="text" name="report-section" /></span></label><br />
+<label>内容（必須） <span class="wpcf7-form-control-wrap" data-name="report-message"><textarea cols="40" rows="10" maxlength="3000" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" aria-required="true" aria-invalid="false" name="report-message"></textarea></span></label><br />
+<label>返信用メールアドレス（返信をご希望の場合のみ・任意） <span class="wpcf7-form-control-wrap" data-name="report-email"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-email wpcf7-text wpcf7-validates-as-email" autocomplete="email" aria-invalid="false" value="" type="email" name="report-email" /></span></label>
+</p>
+<p>ご意見は記事の確認・改善のために利用します。<a href="https://semicon-campus.com/privacy-policy/">個人情報の取り扱い</a>をご確認ください。
+</p>
+<p><input class="wpcf7-form-control wpcf7-submit has-spinner" type="submit" value="ご意見・訂正報告を送信" />
+</p><div class="wpcf7-response-output" aria-hidden="true"></div>
+</form>
+</div>
+</div>
+</section>
+</div>

@@ -1,0 +1,20 @@
+{
+ "id": 63,
+ "type": "post",
+ "slug": "what-is-thin-film-deposition",
+ "link": "https://semicon-campus.com/what-is-thin-film-deposition/",
+ "date": "2026-09-18T18:00:00",
+ "modified": "2026-10-30T21:10:13",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  6,
+  7,
+  5
+ ],
+ "tags": [],
+ "featured_media": 336,
+ "title": "成膜とは何か？ウェハの上に薄い膜を作る半導体製造の積み上げ工程をやさしく解説",
+ "excerpt": "成膜とは、ウェハの上に絶縁膜・金属膜・保護膜などの薄い層を作る工程です。CVD、PVD、ALDの違いと、リソグラフィやエッチングとのつながりを初心者向けに解説します。"
+}

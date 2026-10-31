@@ -1,0 +1,346 @@
+
+<!--KEEP:0-->
+
+
+<!--KEEP:1-->
+
+
+<!--KEEP:2-->
+<div class="semicon-article" id="semicon-top">
+
+
+
+<div class="semicon-level">
+  <div class="semicon-level-top"><span class="semicon-level-label">学習レベル</span><strong>初級 → 中級</strong></div>
+  <p>欠陥検査、CD-SEM、歩留まりの基本が少し見えてきた人向けです。統計の数式よりも、測定値をどう工程管理や仕事に使うかを中心に説明します。</p>
+  <p>このサイトのレベル表示は「読まなくてよい記事」を分けるためではありません。今の記事を読むと、次の段階へ進める目安として置いています。</p>
+</div>
+
+
+
+<p class="semicon-lead wp-block-paragraph">SPCとは、Statistical Process Controlの略で、日本語では統計的工程管理と呼ばれます。半導体製造では、CD-SEMで測った線幅、成膜後の膜厚、欠陥検査で出た欠陥数などを見て、工程がいつも通りに動いているかを判断するために使われます。この記事では、SPCを数式ではなく「測定値のばらつきから工程異常を早く見つける考え方」として、初心者向けに解説します。求人票でSPCを見かけた人、品質評価・プロセス・不良解析の仕事に興味がある人は、この記事を読むと「何を求められている仕事なのか」「自分の経験をどう半導体求人へつなげるのか」がかなり見えやすくなります。</p>
+
+
+
+<div class="semicon-map">
+  <h3>この記事でわかること</h3>
+  <ol>
+    <li>SPCとは何をする考え方か</li>
+    <li>管理図の中心線・管理限界・外れ値の見方</li>
+    <li>半導体でSPCに使う代表的な測定データ</li>
+    <li>歩留まり改善や品質評価とのつながり</li>
+    <li>求人票で見る「SPC」「工程管理」「品質データ解析」の意味</li>
+    <li>SPCを理解すると、どんな職種・キャリアに広がるか</li>
+  </ol>
+</div>
+
+
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/spc-semiconductor-featured.png" alt="SPCの全体像。測る、見る、動くという流れで工程異常を早く見つける">
+  <figcaption>SPCは、測定値を集めて終わりではありません。管理図で「いつも通りか」を見て、異常なら工程へ戻すための仕組みです。</figcaption>
+</figure>
+<div class="semicon-mobile-summary">
+  <b>図の要点</b>
+  <ul>
+    <li>測る: CD-SEM、膜厚、欠陥数などを取る</li>
+    <li>見る: 管理図でいつも通りかを確認する</li>
+    <li>動く: 異常なら工程や装置へ戻す</li>
+  </ul>
+</div>
+
+
+
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>求人票で「SPC」「工程管理」って見たんですけど、未経験でも知っておいた方がいい言葉ですか？</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>知っておくと強い言葉じゃよ。最初から統計の数式を理解しようとしなくてよい。まずは「測定値を見て、工程がいつも通りか確認する仕組み」と考えれば十分じゃ。</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>なるほど。つまり、数字を眺めるだけではなくて、いつもと違う動きに気づくためのものなんですね。</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>その通りじゃ。半導体工場では、小さなズレが不良の増加につながることがある。だから、測定値の変化から工程・装置・材料のどこを確認すべきか考えられる人は、現場でもキャリア面でも評価されやすいんじゃ。</p></div></div>
+
+
+
+
+<h2 class="wp-block-heading">SPCとは何か</h2>
+
+
+
+<p class="wp-block-paragraph">SPCは、測定値のばらつきを統計的に見て、工程が安定しているかを確認する考え方です。半導体に限らず、製造業や品質管理で広く使われます。NIST/SEMATECHの統計ハンドブックでも、工程や製品を監視し、必要な是正処置の合図を出すための手法として工程管理が説明されています。</p>
+
+
+
+<p class="wp-block-paragraph">半導体製造では、同じ条件で作っているつもりでも、測定値は毎回少しずつ変わります。線幅が少し太くなる、膜厚が少し厚くなる、欠陥数が少し増える。こうした小さな変化が、ただの自然なばらつきなのか、装置や工程に何か異常が起きている合図なのかを見分けるのがSPCです。</p>
+
+
+
+<div class="semicon-note">
+  <p><strong>初心者向けに言うと、SPCは「測定値の健康診断」です。</strong></p>
+  <p>1回の測定値だけで判断するのではなく、時間、ロット、装置ごとの変化を見て、いつもと違う動きを早く見つけます。</p>
+</div>
+
+
+
+<h2 class="wp-block-heading">SPCは測定値を工程管理へつなげる</h2>
+
+
+
+<p class="wp-block-paragraph">CD-SEMや膜厚測定、欠陥検査では、たくさんの測定値が出ます。しかし、データを保存するだけでは歩留まりは上がりません。重要なのは、そのデータを見て「今の工程は安定しているか」「何か変化が始まっていないか」を判断することです。</p>
+
+
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/spc-data-to-process-flow.png" alt="SPCが測定、記録、管理図、判断、改善という流れで工程管理へつながる図">
+  <figcaption>SPCの本質は、データをためることではなく、異常を早く見つけて工程へ戻すことです。</figcaption>
+</figure>
+<div class="semicon-mobile-summary">
+  <b>図の要点</b>
+  <ul>
+    <li>測定値を取る</li>
+    <li>ロットや装置条件と一緒に記録する</li>
+    <li>管理図でいつも通りかを見る</li>
+    <li>異常なら工程・装置・材料へ戻す</li>
+  </ul>
+</div>
+
+
+
+<p class="wp-block-paragraph">たとえば、CD-SEMで測った線幅が少しずつ細くなっているとします。まだ規格内なので製品としては合格かもしれません。しかし、同じ方向へじわじわ動いているなら、露光条件、エッチング条件、装置状態に変化がある可能性があります。SPCは、この「まだ規格外ではないけれど、いつもと違うかもしれない」を見つけるために使われます。</p>
+
+
+
+<h2 class="wp-block-heading">管理図とは何か</h2>
+
+
+
+<p class="wp-block-paragraph">SPCでよく使う道具が管理図です。管理図は、測定値を時間順に並べ、中心線と管理限界を置いたグラフです。中心線は平均的な状態、管理限界は「いつものばらつきの範囲」を見る目安です。</p>
+
+
+
+<p class="wp-block-paragraph">大切なのは、管理限界と製品規格は同じではないことです。規格は「製品として合格か」を見る線です。管理限界は「工程がいつも通りか」を見る線です。規格内でも、管理図で見ると工程が中心からずれていることがあります。</p>
+
+
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/spc-control-chart-4patterns.png" alt="管理図で見る4つのサイン。中心線、管理限界、外れ値、連続した偏りを別々の例で示す">
+  <figcaption>管理図では、中心線の周りのばらつき、管理限界との距離、1点だけの外れ値、同じ方向へ続く偏りを分けて見ます。</figcaption>
+</figure>
+<div class="semicon-mobile-summary">
+  <b>図の要点</b>
+  <ul>
+    <li>中心線: 平均的な状態</li>
+    <li>管理限界: いつものばらつきの範囲</li>
+    <li>外れ値: 調査の合図</li>
+    <li>連続した偏り: 条件変化の可能性</li>
+  </ul>
+</div>
+
+
+
+<div class="semicon-compare">
+<table>
+  <thead>
+    <tr><th>見るもの</th><th>意味</th><th>半導体での例</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>中心線</strong></td><td>工程の平均的な状態</td><td>いつもの線幅、いつもの膜厚</td></tr>
+    <tr><td><strong>管理限界</strong></td><td>通常のばらつきとして見られる範囲</td><td>装置や材料が安定しているときの変動幅</td></tr>
+    <tr><td><strong>外れ値</strong></td><td>通常の範囲から外れた測定値</td><td>特定ロットだけ欠陥数が急増する</td></tr>
+    <tr><td><strong>連続した偏り</strong></td><td>少しずつ同じ方向へずれる傾向</td><td>膜厚が日ごとに厚くなる、線幅がじわじわ細くなる</td></tr>
+  </tbody>
+</table>
+</div>
+
+
+<section class="mp1-section" id="maintenance-phase1-learning"><h2>SPC・トレンド監視を、実務と学び直しにつなげる</h2><p>SPCを保全で使う接点は、管理図の変化と装置の点検・部品交換・条件変更の履歴を同じ時間軸で照合することです。管理限界と製品規格を区別し、どの変化を調査の合図として報告したかを整理しましょう。グラフを作る操作だけでなく、ばらつきや原因候補を説明する力を補いたいなら、品質管理・統計の基礎学習が次の一歩です。</p></section>
+
+<h2 class="wp-block-heading">なぜSPCがわかる人は市場価値が高いのか</h2>
+
+
+
+<p class="wp-block-paragraph">SPCがわかる人の価値が高い理由は、単にグラフを読めるからではありません。測定値の変化を見て、「これは自然なばらつきなのか」「装置条件が変わったのか」「材料ロットが違うのか」「工程条件を戻すべきなのか」を考えられるからです。</p>
+
+
+
+<p class="wp-block-paragraph">データを表示するだけならシステムでもできます。しかし、管理図の異常から現場の装置、工程、材料、メンテナンス履歴へ仮説を立てられる人は、簡単には替えが効きません。半導体工場では、歩留まりが少し下がるだけでも影響が大きいため、SPCを工程改善へつなげられる人材は、品質評価、プロセスエンジニア、不良解析、データ解析の求人で評価されやすくなります。</p>
+
+
+
+<div class="semicon-cta">
+  <h3>SPCは「統計」ではなく、現場で価値が出るスキル</h3>
+  <p>求人票でSPC、工程管理、歩留まり改善、品質データ解析が出てきたら、それは「測定値を見て、工程を守る仕事」です。半導体業界で年収アップや職種転換を狙うなら、この言葉をただ暗記するのではなく、どの工程の何を見て、異常時にどこへ戻すのかまで話せると強くなります。</p>
+</div>
+
+
+
+<h2 class="wp-block-heading">半導体ではどんなデータをSPCで見るのか</h2>
+
+
+
+<p class="wp-block-paragraph">半導体工場では、あらゆる工程で測定値が出ます。SPCでは、その測定値を工程ごと、装置ごと、ロットごとに見て、いつもと違う動きがないかを確認します。</p>
+
+
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/spc-semiconductor-data-examples.png" alt="半導体でSPCに使う代表データ。CD、線幅、膜厚、欠陥数、電気特性">
+  <figcaption>SPCでは、ひとつの測定値だけでなく、時間・ロット・装置ごとの変化を見ます。</figcaption>
+</figure>
+<div class="semicon-mobile-summary">
+  <b>図の要点</b>
+  <ul>
+    <li>CD / 線幅: リソグラフィやエッチングのずれを見る</li>
+    <li>膜厚: 成膜やCMPのばらつきを見る</li>
+    <li>欠陥数: 洗浄や搬送で粒子・傷の増加を見る</li>
+    <li>電気特性: テストや工程確認で性能変化を見る</li>
+  </ul>
+</div>
+
+
+
+<div class="semicon-grid">
+  <div class="semicon-card"><b>リソグラフィ</b><span>線幅、重ね合わせ、露光条件の変化を見ます。</span></div>
+  <div class="semicon-card"><b>エッチング</b><span>CD、深さ、形状、残り膜のばらつきを見ます。</span></div>
+  <div class="semicon-card"><b>成膜</b><span>膜厚、膜質、均一性、装置ごとの差を見ます。</span></div>
+  <div class="semicon-card"><b>洗浄</b><span>欠陥数、粒子、薬液条件、乾燥ムラを見ます。</span></div>
+  <div class="semicon-card"><b>CMP</b><span>研磨量、平坦性、スクラッチ、パッド状態を見ます。</span></div>
+  <div class="semicon-card"><b>検査・品質</b><span>ロット傾向、不良率、再発防止の効果を見ます。</span></div>
+</div>
+
+
+
+<h2 class="wp-block-heading">SPCが歩留まり改善に効く理由</h2>
+
+
+
+<p class="wp-block-paragraph">SPCが歩留まり改善に効く理由は、不良が大きく増える前に変化へ気づけるからです。歩留まりが大きく下がってから原因を探すと、すでに多くのロットに影響が出ているかもしれません。SPCで変化の兆候を早く見つけられれば、装置条件、材料ロット、作業条件、環境の変化を早い段階で確認できます。</p>
+
+
+
+<p class="wp-block-paragraph">ただし、SPCは「グラフを見れば原因が自動でわかる道具」ではありません。管理図はあくまで合図です。合図が出たら、現場の装置履歴、工程条件、材料、洗浄状態、メンテナンス履歴などと合わせて原因候補を絞ります。</p>
+
+
+
+<div class="semicon-note">
+  <p><strong>SPCで大切なのは、過剰反応しすぎないことです。</strong></p>
+  <p>測定値には自然なばらつきがあります。1点だけを見てすぐ条件を変えると、かえって工程が不安定になることもあります。だからこそ、管理図で「いつものばらつき」と「調査すべき変化」を分ける必要があります。</p>
+</div>
+
+
+
+<h2 class="wp-block-heading">【市場価値は？】SPCスキルを活かせる職種と求人の見極め方</h2>
+
+
+
+<p class="wp-block-paragraph">SPCは、求人票ではかなり重要なキーワードです。特に、品質評価、品質管理、プロセスエンジニア、不良解析、歩留まり改善、データ解析の求人で出てきます。ここで「SPCと書いてあるから難しそう」と閉じてしまうのは、かなりもったいないです。むしろ、求人票にSPCが出てきたら、半導体工場の中でも工程改善や品質改善に近い仕事であり、経験を積むほど市場価値を説明しやすい領域だと考えてみてください。</p>
+
+
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/spc-career-keywords.png" alt="求人票で見るSPC関連キーワード。SPC、管理図、工程管理、歩留まり改善、品質データ解析、異常対応">
+  <figcaption>SPCは、品質評価・プロセスエンジニア・不良解析・データ解析の求人に出やすい言葉です。</figcaption>
+</figure>
+<div class="semicon-mobile-summary">
+  <b>図の要点</b>
+  <ul>
+    <li>SPC / 管理図: 測定値のばらつきを監視する</li>
+    <li>工程管理: 量産ラインが安定しているかを見る</li>
+    <li>歩留まり改善: 不良の増減から原因を探す</li>
+    <li>品質データ解析: 測定値・欠陥・ロット傾向を見る</li>
+    <li>異常対応: 装置・工程・材料へ切り分ける</li>
+  </ul>
+</div>
+
+
+
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>SPCって、統計が得意な人だけの仕事ですか？</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>高度な解析職では統計の深い理解が必要になることもある。ただ、現場ではまず「測定値を見て、いつもと違う変化に気づく力」が大切じゃ。</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>それなら、検査や品質評価の仕事から入って、少しずつデータの見方を覚える道もありそうですね。</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>その通り。求人票でSPC、工程管理、品質データ解析、歩留まり改善という言葉を見つけたら、技術と仕事が近いところにある合図じゃよ。</p></div></div>
+
+
+
+<div class="semicon-cta">
+  <h3>SPCを理解したら、求人票で見る言葉が変わる</h3>
+  <p>SPCは、単なる統計用語ではありません。半導体工場で「測定値をどう使って工程を守るか」を表す言葉です。求人票でSPC、工程管理、歩留まり改善、品質データ解析、不良解析が出てきたら、検査・計測データを工程改善へつなげる仕事だと考えてみてください。</p>
+  <p>未経験から狙う場合は、いきなり高度なデータサイエンス職だけを見るのではなく、検査・品質評価、装置オペレーション、設備保全、プロセス補助などから入口を探すと現実的です。一方で、すでに製造・品質・設備保全の経験がある人なら、SPCや工程管理の言葉を使って経験を言語化できると、半導体求人での見え方が変わります。</p>
+  <p>企業によって、SPCに求める深さは違います。管理図を見られればよい求人もあれば、異常原因の切り分けや改善提案まで求める求人もあります。自分の経験がどのレベルに合うか迷う場合は、半導体業界に詳しい転職サービスで求人票の見方を相談する方が早いです。</p>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn" href="https://semicon-campus.com/%e5%8d%8a%e5%b0%8e%e4%bd%93%e6%b1%82%e4%ba%ba%e3%82%ad%e3%83%bc%e3%83%af%e3%83%bc%e3%83%89%e4%b8%80%e8%a6%a7%ef%bd%9c%e6%9c%aa%e7%b5%8c%e9%a8%93%e8%80%85%e3%81%8c%e6%b1%82%e4%ba%ba%e7%a5%a8%e3%81%a7/">求人キーワード一覧を見る</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/how-to-read-semiconductor-job-description/">求人票の読み方を見る</a>
+  </div>
+</div>
+
+
+
+<h2 class="wp-block-heading">まとめ</h2>
+
+
+
+<p class="wp-block-paragraph">SPCとは、測定値のばらつきを見て、工程がいつも通りに動いているかを確認する考え方です。半導体では、CD、膜厚、欠陥数、電気特性などのデータを使い、管理図で異常の兆候を見つけます。</p>
+
+
+
+<p class="wp-block-paragraph">初心者は、まず「SPCは工程の健康診断」と覚えると十分です。データをためるだけでなく、いつもと違う変化に気づき、工程・装置・材料へ原因候補を戻す。この流れを理解すると、品質評価、プロセスエンジニア、不良解析、歩留まり改善の仕事が見えやすくなります。</p>
+
+
+
+<div class="semicon-cta">
+  <h3>SPCを武器にできる求人を探すなら、まずここから</h3>
+  <p>求人票で「SPC」「工程管理」「歩留まり改善」「品質データ解析」と検索してみてください。仕事内容に、測定値、管理図、ロット傾向、異常対応、原因解析といった言葉があれば、この記事の内容とつながる仕事です。</p>
+  <p>ただし、求人票の言葉だけでは、実際に求められるレベルまでは読み切れません。半導体業界で年収アップや職種転換を狙うなら、まずは半導体求人に強い転職サービスの選び方を確認し、自分の経験をどう見せるか整理しておきましょう。</p>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn" href="https://semicon-campus.com/semiconductor-career-service-selection-guide/">半導体求人に強い転職サービスの選び方を見る</a>
+  </div>
+</div>
+
+<div class="semicon-cta secondary-cta">
+  <h3>面談前に準備したい人へ</h3>
+  <p>すでに求人相談を考えている人は、経験・興味・条件・不安を整理しておくと、半導体求人を紹介してもらいやすくなります。</p>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/semiconductor-agent-interview-checklist/">面談前チェックリストを見る</a>
+  </div>
+</div>
+
+<div class="semicon-cta secondary-cta">
+  <h3>次回予告</h3>
+  <p>SPCとセットで求人票に出やすい「不良解析とは何か？」を公開しました。欠陥や測定値から、なぜ不良が出たのかをどう切り分けるのか、初心者向けに整理しています。</p>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/what-is-semiconductor-failure-analysis/">不良解析とは何か？を読む</a>
+  </div>
+</div>
+
+<div class="semicon-cta secondary-cta">
+  <h3>YouTubeでも半導体をやさしく解説しています</h3>
+  <p>図解で復習したい人向けに、YouTubeでも半導体製造や工程の考え方を短く解説しています。</p>
+  <div class="semicon-btnrow">
+    <a rel="noopener" class="semicon-btn" href="https://www.youtube.com/@semicon-campus" target="_blank">YouTubeで図解動画を見る</a>
+  </div>
+</div>
+
+<div class="semicon-links">
+  <div class="semicon-linkbox next">
+    <h3>次に読む記事</h3>
+    <p><a href="https://semicon-campus.com/what-is-cd-sem-sem-review/">CD-SEM・SEMレビューとは何か？寸法を測り欠陥を詳しく見る半導体検査・計測をやさしく解説</a></p>
+    <p><a href="https://semicon-campus.com/what-is-semiconductor-defect-inspection/">欠陥検査とは？ウェハ上の小さな不良を見つける半導体検査工程をやさしく解説</a></p>
+    <p><a href="https://semicon-campus.com/what-is-semiconductor-yield/">歩留まりとは何か？半導体製造の良品率・不良・改善を初心者向けに解説</a></p>
+  </div>
+  <div class="semicon-linkbox">
+    <h3>関連記事</h3>
+    <p><a href="https://semicon-campus.com/what-is-semiconductor-inspection-quality-control/">半導体検査・品質評価とは？</a></p>
+    <p><a href="https://semicon-campus.com/what-is-semiconductor-process-engineer/">プロセスエンジニアとは？</a></p>
+    <p><a href="https://semicon-campus.com/how-to-read-semiconductor-job-description/">半導体求人票の読み方</a></p>
+    <p><a href="https://semicon-campus.com/%e5%8d%8a%e5%b0%8e%e4%bd%93%e6%b1%82%e4%ba%ba%e3%82%ad%e3%83%bc%e3%83%af%e3%83%bc%e3%83%89%e4%b8%80%e8%a6%a7%ef%bd%9c%e6%9c%aa%e7%b5%8c%e9%a8%93%e8%80%85%e3%81%8c%e6%b1%82%e4%ba%ba%e7%a5%a8%e3%81%a7/">半導体求人キーワード一覧</a></p>
+  </div>
+</div>
+
+<section class="mp1-section" id="maintenance-phase1-career"><h2>SPC・トレンド監視の知識を活かす仕事と次の行動</h2><p>工程監視、品質管理、保全履歴とデータの照合の経験がある方は、「対象装置・現象・自分が行った確認・結果」を一組にして整理しましょう。担当設備、夜勤・出張、教育体制、応募条件を求人票と照合すると、活かせる経験と補う知識を分けられます。</p><aside class="semicon-cta mp1-card"><h3>仕事の全体像と、求人・学習の選び方を確認する</h3><p>設備保全Hubでは、点検・異常対応の仕事と経験の整理、求人・基礎学習・資格対策をまとめて確認できます。装置担当や顧客対応の範囲を比べたい方は、関連する職種記事も参照してください。</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/" class="semicon-btn mp1-button" data-maintenance-phase1-hub="277" data-cta="maintenance_hub" data-cta-type="maintenance_hub" data-cta-stage="career" data-cta-id="maintenance_351_hub277_end" data-cta-route="maintenance_351_hub277_end">設備保全Hubで仕事内容・求人・学習を確認する</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/" class="semicon-btn mp1-button" data-maintenance-phase1-hub="237" data-cta="equipment_hub" data-cta-type="equipment_hub" data-cta-stage="career" data-cta-id="maintenance_351_hub237_end" data-cta-route="maintenance_351_hub237_end">装置エンジニアの担当範囲・求人・学習を見る</a></div></aside></section>
+
+<h2>参考資料</h2>
+<ul class="semicon-sources">
+  <li><a rel="noopener" href="https://www.itl.nist.gov/div898/handbook/pmc/pmc.htm" target="_blank">NIST/SEMATECH e-Handbook of Statistical Methods: Process or Product Monitoring and Control</a></li>
+  <li><a rel="noopener" href="https://www.itl.nist.gov/div898/handbook/pmc/section1/pmc12.htm" target="_blank">NIST/SEMATECH e-Handbook: What are Process Control Techniques?</a></li>
+  <li><a rel="noopener" href="https://www.itl.nist.gov/div898/handbook/pmc/section3/pmc31.htm" target="_blank">NIST/SEMATECH e-Handbook: What are Control Charts?</a></li>
+  <li><a rel="noopener" href="https://digital.ahrq.gov/health-it-tools-and-resources/evaluation-resources/workflow-assessment-health-it-toolkit/all-workflow-tools/statistical-process-control" target="_blank">AHRQ: Statistical Process Control</a></li>
+</ul>
+<a class="semicon-backtop" href="#semicon-top">↑ 先頭</a>
+</div>
+
+
+<aside class="related-spokes"><h2>あわせて読みたい</h2><ul><li><a href="/semiconductor-spc-control-chart/">半導体工程の管理図（Xbar-R管理図・ウェスタンエレクトリックルール・3シグマ）の読み方</a></li><li><a href="/semiconductor-fdc-equipment-data/">装置の中で何が起きている？FDCと装置データ解析で、異常の兆しを見つける</a></li></ul></aside>

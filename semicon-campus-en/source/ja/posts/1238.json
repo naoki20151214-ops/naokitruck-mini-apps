@@ -1,0 +1,20 @@
+{
+ "id": 1238,
+ "type": "post",
+ "slug": "daily-news-c338444e25e8e1ba6618",
+ "link": "https://semicon-campus.com/daily-news-c338444e25e8e1ba6618/",
+ "date": "2026-09-25T09:00:00",
+ "modified": "2026-10-27T20:04:43",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  20
+ ],
+ "tags": [
+  19
+ ],
+ "featured_media": 2828,
+ "title": "三菱電機のChip-to-Grid設計で見るAIデータセンターの電力と冷却",
+ "excerpt": "三菱電機が2026年9月24日に公開したNVIDIA Vera Rubin対応設計を解説。800VDC、蓄電、液冷の意味と、計画と実導入の違いを整理します。"
+}

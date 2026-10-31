@@ -1,0 +1,20 @@
+{
+ "id": 2075,
+ "type": "post",
+ "slug": "daily-news-1000b4053b08e6ab96a5",
+ "link": "https://semicon-campus.com/daily-news-1000b4053b08e6ab96a5/",
+ "date": "2026-10-15T17:00:00",
+ "modified": "2026-10-27T20:03:17",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  20
+ ],
+ "tags": [
+  19
+ ],
+ "featured_media": 2757,
+ "title": "Rambus、LPDDR6 SOCAMM2向けPMICをサンプル出荷",
+ "excerpt": "Rambusが発表したLPDDR6 SOCAMM2向けPMICを初心者向けに解説。AIサーバーで電源管理が重要な理由、サンプル出荷と量産の違い、今後の確認点を整理します。"
+}

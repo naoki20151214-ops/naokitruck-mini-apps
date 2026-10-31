@@ -1,0 +1,286 @@
+
+<!--KEEP:0-->
+
+
+<!--KEEP:1-->
+
+<!--KEEP:2-->
+
+<article class="semicon-article" id="top">
+<p class="semicon-lead">完成まで何週間もかけたウェハでも、最後の切断でチップの端が欠けたり、回路の近くに割れが入ったりすれば良品として使えません。ダイシングは「ただ切る作業」ではなく、完成間近の価値を壊さずに1個ずつのチップへ分ける工程です。</p>
+
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>丸いウェハを四角いチップに切るだけなのに、どうして欠けたり割れたりするんですか？</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>薄いウェハへ刃やレーザーの力を加えるからです。切る位置が少しずれたり、力や熱が強すぎたりすると、完成した回路まで傷めることがあります。</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>切る速さだけでなく、位置や力、切った後の汚れまで管理する必要があるんですね。</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>その通りです。固定、位置合わせ、切断条件、洗浄まで整えて、前工程で作った良品を次工程へ渡します。</p></div></div>
+
+<div class="semicon-mobile-summary">この記事では「丸いウェハが四角いチップになる」という全体像より一歩進み、<strong>切る瞬間の欠け・精度・歩留まり</strong>に集中します。</div>
+
+<div class="semicon-level">
+  <div class="semicon-level-badge">初級</div>
+  <div>
+    <strong>この記事のレベル</strong><br>
+    半導体の後工程を初めて学ぶ人向けです。数式は使わず、ウェハを1個ずつのチップへ切り分ける流れ、ブレード・レーザーの違い、欠けや割れが起きる理由までつなげて解説します。
+  </div>
+</div>
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/dicing-flow.png" alt="ダイシングの基本フロー。テープに貼る、位置合わせ、切断、洗浄乾燥、ピックアップの順に進む">
+  <figcaption>ダイシングは「切断」だけではありません。ウェハを固定し、位置を合わせ、切りくずを落とし、良品チップを次工程へ渡すところまで含めて品質を守ります。</figcaption>
+</figure>
+
+<div class="semicon-map">
+  <strong>切る瞬間に守る4つのこと</strong>
+  <ul>
+    <li><strong>欠け:</strong> チップの端を崩さない</li>
+    <li><strong>割れ:</strong> 小さなクラックを残さない</li>
+    <li><strong>位置:</strong> 回路を避け、決められた道を正確に切る</li>
+    <li><strong>清浄:</strong> 切りくずや水分を次工程へ持ち込まない</li>
+  </ul>
+</div>
+
+<div class="semicon-map">
+  <strong>この記事でわかること</strong>
+  <ul>
+    <li>ダイシングとは何か、後工程のどこにあるのか</li>
+    <li>ブレードダイシングとレーザーダイシングの違い</li>
+    <li>欠け、割れ、異物、位置ずれなど品質で見るポイント</li>
+    <li>装置や管理項目を見るときの入口</li>
+    <li>求人・法人調査・学習目的ごとの次の読み方</li>
+  </ul>
+</div>
+
+
+<h2>ダイシングはなぜ必要なのか</h2>
+
+<p>前工程では、シリコンウェハの上にたくさんの同じ回路を作ります。ウェハは円盤のままなので、このままではスマートフォンや車、サーバーに入る部品として使えません。そこで後工程の最初のほうで、ウェハをチップ単位に切り分けます。この切り分ける工程がダイシングです。</p>
+
+<p>イメージとしては、大きな板チョコを小さな一片に分ける作業に近いです。ただし半導体の場合、1つのチップの中には細かい回路が入っています。切る道が少しずれたり、端が欠けたり、汚れが残ったりすると、その後の接続、封止、検査で問題になることがあります。</p>
+
+<p>つまりダイシングは、見た目はシンプルでも、品質と歩留まりに効く工程です。前工程で時間をかけて作った回路を、最後まで良品として残すための大事な橋渡しだと考えるとわかりやすいです。DISCOも、ブレードダイシングではウェハをテープに固定し、ブレードで切断し、切り分けたチップを扱う一連の流れとして説明しています。</p>
+
+
+
+<h2>後工程のどこにあるのか</h2>
+
+<p>後工程は、前工程で作った回路を実際の製品として使える形へ変える工程です。大まかには、ダイシングでチップを切り分け、ダイボンディングで基板やリードフレームへ固定し、ワイヤボンディングやバンプで電気的につなぎ、モールドで保護し、最後に検査します。</p>
+
+<p>ダイシングは、この流れの入口です。ここでチップに欠けや割れが発生すると、後の工程でいくら丁寧に組み立てても不良になる可能性があります。だから後工程では、最初に「きれいに分ける」ことが重要になります。</p>
+
+<div class="semicon-grid two">
+  <div class="semicon-card"><b>前工程</b><span>ウェハ上に回路を作る。成膜、リソグラフィ、エッチング、CMP、検査などが中心。</span></div>
+  <div class="semicon-card"><b>後工程</b><span>ウェハ上の回路を、切って、固定し、つなぎ、守り、検査して製品にする。</span></div>
+</div>
+
+
+<!-- semicon-a8-top30-top30-24-1:start -->
+
+
+<!-- semicon-a8-top30-top30-24-1:end -->
+<h2>ダイシングの基本フロー</h2>
+
+<p>ダイシングの細かい流れは、製品や装置によって変わります。ただし初心者が最初に理解するなら、次の5ステップで見ると整理しやすいです。</p>
+
+<h3>1. テープに貼ってウェハを固定する</h3>
+<p>ウェハをそのまま切ると、切断中に動いたり、切り終わったチップがばらばらになったりします。そこで専用のテープにウェハを貼り、フレームに固定します。求人票で「ウェハセット」「材料セット」「段取り」と書かれている場合、このような準備作業が含まれることがあります。</p>
+
+<h3>2. 位置を合わせる</h3>
+<p>ウェハ上には、チップとチップの間に切るための道があります。装置はカメラなどで位置を確認し、その道に合わせて切断します。ここがずれると、チップの端を削ってしまう可能性があります。位置合わせは、ダイシング品質を左右する大事なポイントです。</p>
+
+<h3>3. ブレードやレーザーで切る</h3>
+<p>代表的なのは、薄いブレードを高速回転させて切るブレードダイシングです。ほかに、レーザーを使う方法や、プラズマを使う方法もあります。どの方法でも、目的は「必要な形に、できるだけダメージを少なく切ること」です。</p>
+
+<figure class="semicon-figure">
+  <img src="https://semicon-campus.com/wp-content/uploads/2026/07/dicing-blade-street.png" alt="ブレードダイシングの上面と断面。ブレードはチップ間のストリート中央を進み、冷却水を使ってウェハを切る。下のテープがチップを保持する" loading="lazy" decoding="async" width="2400" height="1280">
+  <figcaption>上から見ると、ブレードはチップとチップの間にあるストリートを進みます。断面ではウェハを切りながら、下のダイシングテープを残してチップの位置を保ちます。</figcaption>
+</figure>
+
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>「切る道に合わせる」とは、ブレードをストリートの中央へ通すことなんですね。</p></div></div>
+
+<h3>4. 洗浄・乾燥する</h3>
+<p>切断すると、切りくずや細かい汚れが出ます。これがチップやテープ上に残ると、外観不良や後工程トラブルの原因になります。そのため、切断後には洗浄や乾燥を行い、次工程へ渡せる状態に整えます。</p>
+
+<h3>5. 良品チップをピックアップする</h3>
+<p>切り分けたチップは、次のダイボンディング工程などへ送られます。チップを拾い上げるときにも、割れや欠けを起こさないように扱う必要があります。後工程では、切る前後の扱いまで含めて品質が決まります。</p>
+
+<figure class="semicon-figure">
+  <img src="https://semicon-campus.com/wp-content/uploads/2026/07/dicing-tape-pickup.png" alt="切断後のチップをピックアップする仕組み。チップはテープ上に並んだまま保持され、吸着ノズルと下側の突き上げピンで1個ずつ取り出される" loading="lazy" decoding="async" width="2400" height="1280">
+  <figcaption>切断後も、チップはテープ上に並んだ状態です。一般的なピックアップでは、下から突き上げピンで補助しながら、上の吸着ノズルで良品チップを1個ずつ取り出します。</figcaption>
+</figure>
+
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>テープは切断中の固定だけでなく、切断後のチップを整列させたまま次工程へ渡す役目もあります。</p></div></div>
+
+<h2>ブレードダイシングとレーザーダイシング</h2>
+
+<p>ダイシングにはいくつかの方法があります。初心者は、まず「刃物で切る方法」と「光を使う方法」がある、と大きく分けて理解すれば十分です。浜松ホトニクスは、レーザーを使ったステルスダイシングを、ウェハ内部に改質層を作って分割する方法として説明しています。KLAは、プラズマダイシングを、従来の機械的な切断とは異なる分離方法として紹介しています。</p>
+
+<div class="semicon-table-wrap">
+  <table class="semicon-table">
+    <thead>
+      <tr><th>方法</th><th>ざっくりした仕組み</th><th>初心者が見るポイント</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>ブレードダイシング</td><td>薄いブレードを高速回転させ、ウェハを物理的に切ります。</td><td>ブレードの状態、切断条件、冷却や洗浄が品質に効きます。</td></tr>
+      <tr><td>レーザーダイシング</td><td>レーザーで切る、または割れやすい起点を作って分離します。</td><td>薄いウェハや割れやすい材料などで使われることがあります。</td></tr>
+      <tr><td>プラズマダイシング</td><td>プラズマエッチングの考え方を使い、ウェハをチップ単位に分けます。</td><td>チップ間隔を小さくしたい場合や、ダメージを抑えたい場合に注目されます。</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<p>求人票では、方法名が細かく書かれず「ダイシング装置」「切断装置」「ウェハ加工」とだけ出ることもあります。もしブレード交換、レーザー加工、条件出し、切断品質、外観検査などの言葉があれば、ダイシングにかなり近い仕事だと考えられます。</p>
+
+<h2>ダイシングで見る品質ポイント</h2>
+
+<p>ダイシングで大切なのは、切った後のチップが次工程で使える状態かどうかです。特に初心者が押さえたい品質ポイントは、欠け、割れ、異物、位置ずれの4つです。</p>
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/dicing-quality.png" alt="ダイシングで見る品質ポイント。欠け、割れ、異物、位置ずれを抑える">
+  <figcaption>求人票で「外観検査」「切断品質」「ブレード交換」「条件調整」などが出てきたら、こうした品質ポイントを見ている可能性があります。</figcaption>
+</figure>
+
+<h3>欠け</h3>
+<p>チップの端が小さく欠けることです。欠けが大きいと、後の工程で割れが広がったり、信頼性に影響したりします。ブレードの状態、切断速度、冷却水、ウェハや膜の状態などが関係します。</p>
+
+<h3>割れ</h3>
+<p>チップにクラックが入ることです。目で見える割れだけでなく、後から問題になる微小な割れもあります。割れは製品の信頼性に直結するため、後工程では非常に重要な確認項目です。</p>
+
+<h3>異物</h3>
+<p>切りくずや汚れが残ることです。半導体では小さな異物でも不良につながることがあります。切断後の洗浄や乾燥、装置内の清浄度、作業手順が重要になります。</p>
+
+<h3>位置ずれ</h3>
+<p>本来切るべき道からずれてしまうことです。位置ずれが大きいと、チップの回路に近い部分を傷つける可能性があります。装置のアライメント、カメラ認識、レシピ設定などが関係します。</p>
+
+<div class="semicon-note">
+  <strong>歩留まりとのつながり</strong><br>
+  ダイシングの不良は、後工程の歩留まりに直結します。前工程で良品だったチップでも、切断で欠けたり割れたりすれば、出荷できない製品になる可能性があります。だからダイシングは、製造オペレーター、検査、品質、装置保全、工程改善の仕事とつながります。
+</div>
+
+<section class="mp1-section" id="maintenance-phase1-learning"><h2>ダイシング・消耗部品・切断異常を、実務と学び直しにつなげる</h2><p>欠けや位置ずれが増えたとき、ブレードの状態だけで原因を決めず、切断条件、冷却・洗浄、位置合わせの履歴を重ねるのが装置保全との接点です。消耗品交換の前後で品質がどう変わったかを記録し、自分が点検した範囲を整理しましょう。機械・保全・品質の基礎を学び直すことと、その経験を技術職の相談で伝えることを並行して進められます。</p></section>
+<h2>ダイシングは仕事にもつながる工程</h2>
+
+<p>ダイシングは、完全未経験から半導体工場へ入る人にも、機械・電気・品質経験を活かしたい人にも接点があります。最初は装置操作や検査から入り、慣れてくると条件確認、ブレード交換、異常対応、改善活動へ広がる場合があります。</p>
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/dicing-jobs.png" alt="ダイシングが装置オペレーター、検査品質、装置保全、工程改善の仕事につながることを示す図">
+  <figcaption>ダイシングは、装置を動かす仕事だけでなく、検査・品質、装置保全、工程改善にもつながります。求人票では仕事内容の範囲を確認しましょう。</figcaption>
+</figure>
+
+<div class="semicon-table-wrap">
+  <table class="semicon-table">
+    <thead>
+      <tr><th>近い職種</th><th>見る仕事</th><th>求人票で出やすい言葉</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>製造オペレーター</td><td>ウェハセット、レシピ選択、装置操作、作業記録</td><td>ダイシング、ウェハ加工、装置オペレーター、クリーンルーム</td></tr>
+      <tr><td>検査・品質</td><td>切断後の外観、欠け、割れ、汚れ、位置ずれを確認</td><td>外観検査、品質確認、切断品質、不良記録</td></tr>
+      <tr><td>装置保全</td><td>ブレード交換、洗浄、装置点検、トラブル対応</td><td>ブレード交換、保守、メンテナンス、設備保全</td></tr>
+      <tr><td>工程改善</td><td>切断条件、歩留まり、不良原因の改善</td><td>条件出し、歩留まり改善、工程改善、不良解析</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="semicon-cta">
+  <h3>求人票で「ダイシング」を見た方へ</h3>
+  <p>「ダイシング」と書かれていても、仕事の中身は会社によって違います。装置操作が中心なのか、検査や記録まで含むのか、ブレード交換や条件調整まで担当するのかで、身につく経験が変わります。まだ仕事内容を整理したい人は求人票の読み方へ、すでに求人を探している人は経験別の転職サービス選びへ進みましょう。</p>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn" href="https://semicon-campus.com/how-to-read-semiconductor-job-description/">仕事内容を確認したい人</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/semiconductor-career-service-selection-guide/">経験別に半導体転職サービスを比較する</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/%e5%8d%8a%e5%b0%8e%e4%bd%93%e6%b1%82%e4%ba%ba%e3%82%ad%e3%83%bc%e3%83%af%e3%83%bc%e3%83%89%e4%b8%80%e8%a6%a7%ef%bd%9c%e6%9c%aa%e7%b5%8c%e9%a8%93%e8%80%85%e3%81%8c%e6%b1%82%e4%ba%ba%e7%a5%a8%e3%81%a7/">関連する求人キーワードを見る</a>
+  </div>
+</div>
+
+<h2>関わる企業・装置メーカー</h2>
+
+<p>ダイシングで代表的な装置メーカーとしてよく知られているのがDISCOです。ブレードダイシング、レーザー加工、研削・研磨など、ウェハを薄くしたり切り分けたりする領域に強い企業です。企業研究をするときは、会社名だけを見るのではなく「どの工程に関わる会社なのか」を見ると理解しやすくなります。</p>
+
+<p>また、後工程にはOSATと呼ばれる組立・テスト受託企業、半導体メーカーの後工程部門、検査装置・搬送装置・材料メーカーなど多くの企業が関わります。ダイシングを理解すると、後工程の求人や企業マップが少し読みやすくなります。</p>
+
+<div class="semicon-cta">
+  <h3>加工方式や装置企業を調べている方へ</h3>
+  <p>ダイシングは、後工程企業、装置メーカー、加工受託企業、検査・品質の接点になる工程です。企業を見るときは「ブレード」「レーザー」「プラズマ」「外観検査」「洗浄」「ピックアップ」のどこに関わる会社かを分けると理解しやすくなります。</p>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn" href="https://semicon-campus.com/semiconductor-company-map-by-process/">工程別企業マップを見る</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/what-is-backend-semiconductor-process/">後工程全体を確認する</a>
+  </div>
+</div>
+
+<h2>まとめ</h2>
+
+<p>ダイシングとは、前工程が終わったウェハを1個ずつの半導体チップに切り分ける後工程です。ブレードやレーザーで切るだけでなく、固定、位置合わせ、洗浄、乾燥、ピックアップまで含めて、次工程へ良い状態で渡すことが大切です。</p>
+
+<p>初心者が求人票を見るなら、「ダイシング」「ウェハ切断」「ブレード交換」「外観検査」「装置オペレーター」「保全」「工程改善」といった言葉に注目しましょう。技術の流れを理解してから求人票を読むと、単なる作業名ではなく、どの職種に近い仕事なのかが見えやすくなります。</p>
+
+<div class="semicon-cta">
+  <h3>あなたの目的に合わせて次へ進む</h3>
+  <p>このページは、ダイシングを知るための入口です。ここから先は、読んでいる目的によって進む先を分ける方が迷いにくくなります。</p>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn" href="https://semicon-campus.com/how-to-read-semiconductor-job-description/">求人票で見た人</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/semiconductor-career-service-selection-guide/">自分の経験に合う求人の探し方を見る</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/semiconductor-company-map-by-process/">企業・装置を調べたい人</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/what-is-backend-semiconductor-process/">後工程を学びたい人</a>
+  </div>
+</div>
+
+<h2>次回予告</h2>
+
+<p>次に読むなら、切り分けたチップを基板やリードフレームへ固定する <a href="https://semicon-campus.com/what-is-semiconductor-die-bonding/">ダイボンディングとは何か？</a> がおすすめです。ダイシングで分けたチップが、どのようにパッケージの中へ組み込まれていくのかを、初心者向けに整理しています。次回は、固定したチップと外部端子を細い金線などでつなぐ「ワイヤーボンディング」を取り上げます。</p>
+
+<div class="semicon-note">
+  <strong>YouTubeでも半導体をわかりやすく解説しています</strong><br>
+  ショート動画や図解で半導体製造を学びたい方は、YouTubeチャンネル <a href="https://www.youtube.com/@semicon-campus">AI時代の半導体教室</a> もあわせてご覧ください。
+</div>
+
+<h2>次に読む記事</h2>
+
+<div class="semicon-links">
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/what-is-backend-semiconductor-process/">後工程とは何か？</a></strong>
+    <p>ダイシング、ダイボンディング、接続、封止、検査まで、後工程全体をつかむ親記事です。</p>
+  </div>
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/how-to-read-semiconductor-job-description/">半導体求人票の読み方</a></strong>
+    <p>仕事内容、応募条件、勤務形態、教育体制を分けて求人票を読むための記事です。</p>
+  </div>
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/semiconductor-company-map-by-process/">工程別企業マップ</a></strong>
+    <p>どの企業がどの工程に関わるかを、工程別に整理します。</p>
+  </div>
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/semiconductor-career-map/">半導体業界の職種マップ</a></strong>
+    <p>ダイシングに関わる製造、検査・品質、装置保全、工程改善の位置づけを確認できます。</p>
+  </div>
+</div>
+
+<h2>関連記事</h2>
+
+<div class="semicon-links">
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/what-is-semiconductor-inspection-quality-control/">半導体検査・品質評価とは？</a></strong>
+    <p>切断後の外観や品質確認から、検査・品質職へのつながりを理解できます。</p>
+  </div>
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/">半導体保全・メンテナンス職とは？</a></strong>
+    <p>装置点検、部品交換、トラブル対応に興味がある人向けの記事です。</p>
+  </div>
+</div>
+
+<section class="mp1-section" id="maintenance-phase1-career"><h2>ダイシング・消耗部品・切断異常の知識を活かす仕事と次の行動</h2><p>消耗品交換、切断品質の確認、装置点検の経験がある方は、「対象装置・現象・自分が行った確認・結果」を一組にして整理しましょう。担当設備、夜勤・出張、教育体制、応募条件を求人票と照合すると、活かせる経験と補う知識を分けられます。</p><aside class="semicon-cta mp1-card"><h3>仕事の全体像と、求人・学習の選び方を確認する</h3><p>設備保全Hubでは、点検・異常対応の仕事と経験の整理、求人・基礎学習・資格対策をまとめて確認できます。装置担当や顧客対応の範囲を比べたい方は、関連する職種記事も参照してください。</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/" class="semicon-btn mp1-button" data-maintenance-phase1-hub="277" data-cta="maintenance_hub" data-cta-type="maintenance_hub" data-cta-stage="career" data-cta-id="maintenance_430_hub277_end" data-cta-route="maintenance_430_hub277_end">設備保全Hubで仕事内容・求人・学習を確認する</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/" class="semicon-btn mp1-button" data-maintenance-phase1-hub="237" data-cta="equipment_hub" data-cta-type="equipment_hub" data-cta-stage="career" data-cta-id="maintenance_430_hub237_end" data-cta-route="maintenance_430_hub237_end">装置エンジニアの担当範囲・求人・学習を見る</a></div></aside></section>
+
+<h2>参考資料</h2>
+
+<div class="semicon-note">
+  <ul>
+    <li><a href="https://www.disco.co.jp/eg/solution/library/dicing/basic.html">DISCO: Basic Processes Using Blade Dicing Saws</a></li>
+    <li><a href="https://www.disco.co.jp/eg/solution/library/index.html">DISCO: Solutions Library</a></li>
+    <li><a href="https://www.hamamatsu.com/jp/en/applications/semiconductor/wafer_dicing.html">Hamamatsu Photonics: Wafer dicing</a></li>
+    <li><a href="https://www.kla.com/advance/innovation/plasma-dicing-101-the-basics">KLA: Plasma Dicing 101</a></li>
+  </ul>
+</div>
+
+<div class="semicon-note">
+  <strong>この記事の調査方針</strong><br>
+  この記事は、初心者が工程の全体像をつかめるように、装置メーカーや技術企業が公開している基礎資料を確認し、専門用語をかみ砕いて整理しています。最終確認日: 2026年7月11日。
+</div>
+
+<a class="semicon-backtop" href="#top" aria-label="ページ先頭へ戻る">↑</a>
+</article>

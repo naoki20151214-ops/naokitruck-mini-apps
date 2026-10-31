@@ -1,0 +1,182 @@
+<p><!doctype html><br />
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>膜厚がそろわないのはなぜ？ 同じウェハの上で厚さが変わる理由と、装置保全の仕事</title></p>
+<!--KEEP:0-->
+<p></head><body></p>
+<article class="semicon-template-v2" data-episode="104" data-slug="film-thickness-uniformity" data-target="new_post">
+<h1>膜厚がそろわないのはなぜ？ 同じウェハの上で厚さが変わる理由と、装置保全の仕事</h1>
+<h2 data-fact-ids="F001 F003 F004 F007 F008 F009 F010">同じ日に、同じ装置で作ったのに</h2>
+<p>ここで、架空の工場の検査場面を想像してみてください。膜厚の検査結果に、気になる数字が出ました。</p>
+<p>ウェハの真ん中では、狙った厚さに仕上がっています。ところが、外側では少し薄い。処理時間は同じ、設定したガス流量も同じ。装置は止まっていません。</p>
+<p>「同じ円盤の上に、同じ時間だけ膜を作ったのに。どうして厚さが違うのだろう？」</p>
+<p>不思議ですが、これは半導体の成膜を理解するうえで大切な疑問です。</p>
+<p><strong>最初に答えを言うと、膜の厚さを決めるのは、時間だけではありません。ウェハ上の各場所に材料がどう届き、どんな反応条件になったかも関わるからです。</strong> 実際のPECVD研究では、同じレシピでガス分配板の構成を変え、ウェハ上の成膜速度分布が変わることを確かめています。<sup class="semicon-citation"><a href="#source-S05" aria-label="参考資料8">[8]</a></sup> 別のALD研究では、ガスの流れや温度分布を原因候補として検討しています。<sup class="semicon-citation"><a href="#source-S28" aria-label="参考資料1">[1]</a><a href="#source-S29" aria-label="参考資料2">[2]</a></sup> ただし、これらは<strong>異なる装置・膜種の研究</strong>で、PECVD実験が面内温度差を直接測定したという意味ではありません。冒頭は架空の検査場面であり、故障原因を確定した説明ではありません。</p>
+<p>さらに、測った数字の違いが、膜そのものではなく計測方法から生まれることもあります。膜厚の分布を見たらすぐに部品を交換する、という判断ではありません。<sup class="semicon-citation"><a href="#source-S02" aria-label="参考資料5">[5]</a><a href="#source-S03" aria-label="参考資料6">[6]</a><a href="#source-S05" aria-label="参考資料8">[8]</a></sup></p>
+<figure data-media-role="VIS01" data-visual-kind="photoreal" data-subject="ウェハ" data-purpose="VIS01でウェハの具体像と記事の説明対象を対応させる。" data-composition="hands-wafer" data-concrete-object="true" data-selection-reason="承認済みの既存画像を再利用し、ウェハを具体物として理解できる範囲に用途を限定する。" data-photo-assessment="本タスクでは既存の承認対象画像を保持し、権利不明な外部写真への変更や新たな画像生成は行わない。" data-provenance="short-video-local/episodes/104/review/generation-evidence-recovery-r1.6-v7/provenance/VIS01.md" data-media-readback="short-video-local/episodes/104/review/formal-html-adapter-r1.6-v6/VIS01-media-readback.json" data-media-readback-sha256="03ff18e5223b0fd217bc5ba064141e610d6e5f08b9cc69205f49f070a84a0218"><img fetchpriority="high" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep104-blog-vis01-generated-768x432.png" alt="白いクリーンルーム用手袋の作業者が、虹色の薄膜を持つ円形ウェハを両手で掲げている。 ウェハの教育用生成画像。" width="768" height="432" loading="eager" decoding="async"><figcaption>1枚のウェハでも、各場所がまったく同じ環境で処理されるとは限りません。生成イメージ。実機・実測データではありません。 ウェハの教育用イメージ。AI生成。制作：Semicon Campus（Codex・image_gen）。WordPress既存縮小版（原本変更なし）。</figcaption></figure>
+<p>この記事では、膜ができる仕組みから、むらが出る理由、測り方、原因を確かめる順序まで追いかけます。最後には、この問題を設備保全や生産技術の担当者がどう扱うのかもつながります。</p>
+<h2 data-fact-ids="F005 F006 F015">今回の薄膜は、表面でどう作られているのか</h2>
+<p>半導体の中には、電気を通す金属膜、電気を通さない絶縁膜、表面を守る膜など、役割の違う薄い層が何枚もあります。</p>
+<p>壁をペンキで塗るとき、ローラーを通したのに端だけ薄くなった経験を思い浮かべてください。ペンキが届く量や塗り方が場所で違うと、仕上がりも変わります。</p>
+<p>ただし、ここからが重要です。<strong>半導体の膜はペンキと違い、原子・分子の輸送や化学反応、プラズマなどを使って作られます。</strong> ローラーを動かすわけではありません。比喩は「場所ごとに条件が異なる」という部分だけです。</p>
+<p>膜を作る工程は「成膜」と呼びます。CVD、PVD、ALDなどがあり、それぞれ膜の生まれ方が違います。まずは <a href="https://semicon-campus.com/%E6%88%90%E8%86%9C%E3%81%A8%E3%81%AF%E4%BD%95%E3%81%8B%EF%BC%9F%E3%82%A6%E3%82%A7%E3%83%8F%E3%81%AE%E4%B8%8A%E3%81%AB%E8%96%84%E3%81%84%E8%86%9C%E3%82%92%E4%BD%9C%E3%82%8B%E5%8D%8A%E5%B0%8E%E4%BD%93/">成膜とは何か</a> の入門記事も役立ちます。</p>
+<figure data-media-role="VIS02" data-visual-kind="photoreal" data-subject="装置" data-purpose="VIS02で装置の具体像と記事の説明対象を対応させる。" data-composition="closed-chamber" data-concrete-object="true" data-selection-reason="承認済みの既存画像を再利用し、装置を具体物として理解できる範囲に用途を限定する。" data-photo-assessment="本タスクでは既存の承認対象画像を保持し、権利不明な外部写真への変更や新たな画像生成は行わない。" data-provenance="short-video-local/episodes/104/review/generation-evidence-recovery-r1.6-v7/provenance/VIS02.md" data-media-readback="short-video-local/episodes/104/review/formal-html-adapter-r1.6-v6/VIS02-media-readback.json" data-media-readback-sha256="d38f7b9d948dcdd2438c2ad66636615f1e051ddce3eab2d5b42785c7c22710e0"><img src="https://semicon-campus.com/wp-content/uploads/2026/10/ep104-blog-vis02-generated-768x512.png" alt="明るいクリーンルームに設置された、大型の閉じた金属製真空チャンバー。 装置の教育用生成画像。" width="768" height="512" loading="eager" decoding="async"><figcaption>真空・ガス・温度など、装置がつくる環境の中で薄膜が成長します。生成イメージ。実機・実測データではありません。 装置の教育用イメージ。AI生成。制作：Semicon Campus（Codex・image_gen）。WordPress既存縮小版（原本変更なし）。</figcaption></figure>
+<h2 data-fact-ids="F002">どこまでそろえば、「均一」と言えるのか</h2>
+<p>膜厚とは、膜の厚さのことです。たとえば同じ膜について、ある場所は98ナノメートル、別の場所は102ナノメートルだったとします。<strong>平均が100ナノメートルでも、全面が100ナノメートルとは限りません。</strong></p>
+<p>この1枚の中でのばらつきを見るのが、面内均一性（Within-Wafer、WIW）です。それに対し、複数枚のウェハどうしの違いは面間均一性（Wafer-to-Wafer、WTW）として区別します。成膜分野では面内・ウェハ間・バッチ間を別々に扱います。<sup class="semicon-citation"><a href="#source-S20" aria-label="参考資料11">[11]</a></sup> なお、SEMI-NETのWIW個別解説<sup class="semicon-citation"><a href="#source-S19" aria-label="参考資料10">[10]</a></sup>はCMP（研磨）量の説明であり、成膜の膜厚の計算方法を直接定める文書ではありません。</p>
+<ul>
+<li><strong>面内</strong>：1枚のウェハの中で、場所による違いがあるか。</li>
+<li><strong>ウェハ間</strong>：同じ工程で処理した複数枚のウェハが、同じように仕上がるか。</li>
+<li><strong>時間の変化</strong>：朝と夜、保全の前後、数日後で値が変化していないか。</li>
+</ul>
+<p>実務では、厚みの平均値と、厚みのばらつきを別々に確認します。平均値だけが正しくても、外周だけ規格から外れる場合があるからです。</p>
+<h3>「均一性2%」には、計算式を添える</h3>
+<p>たとえば教育用に、5か所で98、99、100、101、102ナノメートルと測ったとします。</p>
+<p>平均は100。最大と最小の差は4。最大と最小の差を平均の2倍で割る「半レンジ法」の定義なら、(102−98)÷(2×100)×100＝<strong>2%</strong>です。これはALD薄膜の公開研究で実際に使われた定義の一つですが、すべての装置・膜種に共通する唯一の計算式ではありません。<sup class="semicon-citation"><a href="#source-S28" aria-label="参考資料1">[1]</a></sup></p>
+<p>ところが、同じデータでも最大と最小の差をそのまま平均で割れば4%です。標準偏差を使えばまた別の値になります。標準偏差を平均膜厚で割り、100倍した「相対標準偏差（1σ/平均）」も別の比較方法です。薄膜の研究でもこの定義が使われています。<sup class="semicon-citation"><a href="#source-S30" aria-label="参考資料3">[3]</a></sup> ただし、半レンジ法と同じ数値にはなりません。CMPの用語集<sup class="semicon-citation"><a href="#source-S19" aria-label="参考資料10">[10]</a></sup>は成膜式の根拠には使いません。</p>
+<p><strong>したがって、「均一性が2%になった」という数字だけでは、良くなったかどうか比較できません。</strong> 計算式、測る位置、点数、外周をどこまで除いたかまでそろえて初めて意味を持ちます。</p>
+<figure data-media-role="VIS03" data-visual-kind="photoreal" data-subject="ウェハ" data-purpose="VIS03でウェハの具体像と記事の説明対象を対応させる。" data-composition="wafer-stage" data-concrete-object="true" data-selection-reason="承認済みの既存画像を再利用し、ウェハを具体物として理解できる範囲に用途を限定する。" data-photo-assessment="本タスクでは既存の承認対象画像を保持し、権利不明な外部写真への変更や新たな画像生成は行わない。" data-provenance="short-video-local/episodes/104/review/generation-evidence-recovery-r1.6-v7/provenance/VIS03.md" data-media-readback="short-video-local/episodes/104/review/formal-html-adapter-r1.6-v6/VIS03-media-readback.json" data-media-readback-sha256="886a7157593dff233daa2662d21b2e0390d9f740d30246b30f401cd705722b97"><img src="https://semicon-campus.com/wp-content/uploads/2026/10/ep104-blog-vis03-generated-768x512.png" alt="光学測定器の対物部の下に、虹色の円形ウェハがステージ上に置かれている。 ウェハの教育用生成画像。" width="768" height="512" loading="lazy" decoding="async"><figcaption>測定点の位置と数が変わると、得られる均一性の数値も変わり得ます。生成イメージ。実機・実測データではありません。 ウェハの教育用イメージ。AI生成。制作：Semicon Campus（Codex・image_gen）。WordPress既存縮小版（原本変更なし）。</figcaption></figure>
+<h2>なぜ同じウェハなのに厚さが変わるのか</h2>
+<p>ポイントは、装置の画面に出る設定値と、<strong>ウェハの表面で実際に起きる現象</strong>は同じではないことです。</p>
+<p>たとえば装置に「ガスをこの流量で供給する」と設定しても、そのガスがウェハのすべての場所に同じ濃さ・同じタイミングで届くとは限りません。中心と外周では、流れや排気に対する位置関係も違います。</p>
+<p>温度にも差が生じる可能性があります。ウェハを支える部分との熱の伝わり方、外周からの放熱、温度制御の状態は場所によって異なり得ます。成膜方式によっては温度や供給条件が成膜挙動に影響することがあります。<sup class="semicon-citation"><a href="#source-S28" aria-label="参考資料1">[1]</a><a href="#source-S29" aria-label="参考資料2">[2]</a></sup> ただし、この段落は<strong>原因候補の解説</strong>です。先ほどのPECVD比較実験<sup class="semicon-citation"><a href="#source-S05" aria-label="参考資料8">[8]</a></sup>がウェハ上の温度差を測定・立証したわけではなく、膜や反応条件で違うため「熱いところは必ず厚い」とも言えません。</p>
+<p>では、方式ごとに何が特に難しいのでしょうか。</p>
+<h3>CVD：ガスを入れても、均等に反応するとは限らない</h3>
+<p>CVDは、ガス状の材料を使って表面で膜を作る方式です。加熱による反応を利用する方法のほか、プラズマの助けを借りるPECVDもあります。</p>
+<p>注目したいのは<strong>ガスの届き方</strong>です。ガスを広く配るシャワーヘッドという部品があっても、穴の位置や形、ガスの流れなどによってウェハ上の条件は異なり得ます。PECVDではプラズマに関わる条件も成膜へ影響し得ます。<sup class="semicon-citation"><a href="#source-S05" aria-label="参考資料8">[8]</a></sup></p>
+<p>実際の公開研究では、300ミリメートルのPECVD装置で、同じレシピを使いながらシャワーヘッドの穴の構造などを変えて比較しました。その結果、窒化シリコン膜の成膜速度の分布や膜の組成に関わる指標が変わることが報告されています。<sup class="semicon-citation"><a href="#source-S05" aria-label="参考資料8">[8]</a></sup></p>
+<p><strong>「同じ設定」で処理しても、装置内部の構造が違えば、ウェハ上の各場所で同じ反応が起きるとは限らない。</strong> これが研究の教えるポイントです。</p>
+<figure data-media-role="VIS04" data-visual-kind="photoreal" data-subject="ガス" data-purpose="VIS04でガスの具体像と記事の説明対象を対応させる。" data-composition="perforated-component" data-concrete-object="true" data-selection-reason="承認済みの既存画像を再利用し、ガスを具体物として理解できる範囲に用途を限定する。" data-photo-assessment="本タスクでは既存の承認対象画像を保持し、権利不明な外部写真への変更や新たな画像生成は行わない。" data-provenance="short-video-local/episodes/104/review/generation-evidence-recovery-r1.6-v7/provenance/VIS04.md" data-media-readback="short-video-local/episodes/104/review/formal-html-adapter-r1.6-v6/VIS04-media-readback.json" data-media-readback-sha256="47c3ed9d4b2005d9bbcae53a585a84a953e2c70fea910c9cacbe6ef4070870d8"><img src="https://semicon-campus.com/wp-content/uploads/2026/10/ep104-blog-vis04-generated-768x512.png" alt="多数の穴が並ぶ円形の金属製ガス分配プレートを作業台上から見た様子。 ガスの教育用生成画像。" width="768" height="512" loading="lazy" decoding="async"><figcaption>成膜の仕上がりはガス分配にも影響されます。生成イメージ。実機・実測データではありません。 ガスの教育用イメージ。AI生成。制作：Semicon Campus（Codex・image_gen）。WordPress既存縮小版（原本変更なし）。</figcaption></figure>
+<h3>PVD：材料が飛んでくる向きまで関係する</h3>
+<p>PVDの代表的な方法であるスパッタでは、ターゲットと呼ぶ材料から原子などを飛ばし、ウェハに付着させて膜を作ります。</p>
+<p>今度はガスの反応だけでなく、飛んでくる粒子の<strong>方向や分布</strong>が問題になります。ターゲットとウェハの距離、位置、圧力による散乱、ウェハの回転などが、厚みの分布を左右し得ます。回転・公転と狙った厚み分布の関係は曲面光学基板の実験で検証されています。<sup class="semicon-citation"><a href="#source-S07" aria-label="参考資料9">[9]</a></sup></p>
+<p>2021年の論文では、ターゲットに対して基板を回転・公転させる仕組みを用い、膜厚の場所による分布を予測し、測定で確かめています。ただしこれは特殊な曲面光学基板の研究で、あらゆる半導体ウェハで同じ結果になるという話ではありません。<sup class="semicon-citation"><a href="#source-S07" aria-label="参考資料9">[9]</a></sup></p>
+<p>ここで分かるのは、ばらつきがただの「偶然」ではなく、装置の幾何学的条件から生まれることがあるという点です。</p>
+<h3>ALD：1層ずつ作るのに、なぜ完全にはそろわない？</h3>
+<p>ALDは、材料を交互に送り、表面の反応が飽和する性質を利用しながら薄膜を成長させる方式です。厚さや複雑な形への被覆を細かく制御しやすい方法として使われます。<sup class="semicon-citation"><a href="#source-S01" aria-label="参考資料4">[4]</a></sup></p>
+<p>しかし、表面で反応が止まる仕組みがあるからといって、<strong>すべての場所に反応に必要な材料が十分届くことまで保証されるわけではありません。</strong> 供給時間、パージ、反応する表面の状態、材料の輸送などが関係します。<sup class="semicon-citation"><a href="#source-S01" aria-label="参考資料4">[4]</a><a href="#source-S28" aria-label="参考資料1">[1]</a><a href="#source-S29" aria-label="参考資料2">[2]</a></sup></p>
+<p>2017年の公開ALD研究では、200ミリメートルウェハの膜厚分布を調べ、成膜途中に基板の向きを変えた試験でばらつきが変わることを報告しています。著者は装置内の流れや温度の影響を<strong>可能性として</strong>挙げていますが、特定の故障を確定したわけではありません。<sup class="semicon-citation"><a href="#source-S28" aria-label="参考資料1">[1]</a></sup> また2025年の別研究では、ガス導入部の構成を変えるとALD膜の厚さのばらつきが変わることを、流体解析と実験で検討しています。<sup class="semicon-citation"><a href="#source-S29" aria-label="参考資料2">[2]</a></sup></p>
+<figure data-media-role="VIS05" data-visual-kind="photoreal" data-subject="ALD" data-purpose="VIS05でALDの具体像と記事の説明対象を対応させる。" data-composition="enclosed-tool" data-concrete-object="true" data-selection-reason="承認済みの既存画像を再利用し、ALDを具体物として理解できる範囲に用途を限定する。" data-photo-assessment="本タスクでは既存の承認対象画像を保持し、権利不明な外部写真への変更や新たな画像生成は行わない。" data-provenance="short-video-local/episodes/104/review/generation-evidence-recovery-r1.6-v7/provenance/VIS05.md" data-media-readback="short-video-local/episodes/104/review/formal-html-adapter-r1.6-v6/VIS05-media-readback.json" data-media-readback-sha256="772e086d6d3f4e7f846c55f5a3891bd23265b7180bbce7cce3b287c44e4b7962"><img src="https://semicon-campus.com/wp-content/uploads/2026/10/ep104-blog-vis05-generated-768x512.png" alt="配管と複数の供給容器を備えた、閉じた金属製の薄膜成膜装置。 ALDの教育用生成画像。" width="768" height="512" loading="lazy" decoding="async"><figcaption>膜の薄さを制御しやすいALDでも、供給と表面条件の管理が必要です。生成イメージ。実機・実測データではありません。 ALDの教育用イメージ。AI生成。制作：Semicon Campus（Codex・image_gen）。WordPress既存縮小版（原本変更なし）。</figcaption></figure>
+<h2 data-fact-ids="F012 F013">厚みが違うと、何が困るのか</h2>
+<p>ここまでの話は、単に見た目をそろえるためではありません。膜には仕事があるからです。</p>
+<p>たとえば絶縁膜は、電気が通ってほしくない場所を隔てます。膜厚が異なると、条件によっては電界や容量、電気の漏れやすさが変わり、電気的な余裕に影響し得ます。金属膜なら、膜の形状と抵抗率などの条件により、電気抵抗へ影響する場合があります。</p>
+<p>ただし、<strong>厚みが違っただけで、直ちに不良と決まるわけではありません。</strong> 膜の材料、組成、欠陥、どの回路で使うか、設計上の許容差によって影響は変わります。特に<strong>リーク電流の増減は膜厚だけでは断定できず</strong>、構造に応じた電気測定が必要です。</p>
+<p>重要なのは、膜厚のばらつきが製品ごとの規格に対してどう位置するか。そこから電気検査の結果や後工程の影響へ結び付けることです。</p>
+<h2 data-fact-ids="F014">膜厚マップは「答え」ではなく、「次の質問」を教える</h2>
+<p>膜厚の測定結果をウェハの位置に重ねたものを、膜厚マップと呼びます。数値を色分けすると、中心が厚い、外周が薄い、片側だけ違う、といった分布が見えます。</p>
+<p>しかし、たとえば外周が薄い図を見ただけで「ヒーターの故障だ」と言い切れるでしょうか。</p>
+<p>できません。熱の差かもしれませんし、ガスの分布、材料の飛ぶ方向、基板の置かれ方、計測条件など、複数の可能性があります。</p>
+<p><strong>同じような形のマップでも、原因は一つとは限りません。</strong> マップの価値は、原因を断定することではなく、調べる順番を決められることです。<sup class="semicon-citation"><a href="#source-S02" aria-label="参考資料5">[5]</a><a href="#source-S05" aria-label="参考資料8">[8]</a><a href="#source-S29" aria-label="参考資料2">[2]</a></sup></p>
+<figure data-media-role="VIS06" data-visual-kind="photoreal" data-subject="膜厚マップ" data-purpose="VIS06で膜厚マップの具体像と記事の説明対象を対応させる。" data-composition="engineer-monitor" data-concrete-object="true" data-selection-reason="承認済みの既存画像を再利用し、膜厚マップを具体物として理解できる範囲に用途を限定する。" data-photo-assessment="本タスクでは既存の承認対象画像を保持し、権利不明な外部写真への変更や新たな画像生成は行わない。" data-provenance="short-video-local/episodes/104/review/generation-evidence-recovery-r1.6-v7/provenance/VIS06.md" data-media-readback="short-video-local/episodes/104/review/formal-html-adapter-r1.6-v6/VIS06-media-readback.json" data-media-readback-sha256="a21c187cb92ba3ed7df6b9bc78581dbbf8df22e87f0408c7476abca89a90558f"><img src="https://semicon-campus.com/wp-content/uploads/2026/10/ep104-blog-vis06-generated-768x512.png" alt="クリーンルーム作業者が、数値や凡例のない架空の円形色分布を表示したモニターを確認している。 膜厚マップの教育用生成画像。" width="768" height="512" loading="lazy" decoding="async"><figcaption>説明用の架空表示。分布だけでは原因は確定しません。生成イメージ。実測データではありません。 膜厚マップの教育用イメージ。AI生成。制作：Semicon Campus（Codex・image_gen）。WordPress既存縮小版（原本変更なし）。</figcaption></figure>
+<h3>まず測定そのものを疑う理由</h3>
+<p>薄い膜の厚さは、光の反射や偏光の変化を使って求めることがあります。代表例が分光エリプソメトリーです。</p>
+<p>ただし、装置が直接「物差しで測った厚さ」を表示するわけではありません。光がどう反射するかを測り、膜の光学的な性質などを仮定したモデルで厚さを推定します。膜の屈折率や下地膜の条件が想定とずれると、求めた厚さにも影響します。<sup class="semicon-citation"><a href="#source-S02" aria-label="参考資料5">[5]</a><a href="#source-S13" aria-label="参考資料15">[15]</a></sup></p>
+<p>米国の計量研究機関NISTは、測定方法や解析モデルの違いが結果に影響することを研究してきました。さらに、エリプソメトリーとX線反射率測定（XRR）を組み合わせて、ウェハ上の薄膜の状態を確認する取り組みを進めています。<sup class="semicon-citation"><a href="#source-S03" aria-label="参考資料6">[6]</a></sup></p>
+<p>「測った値が違う」という事実と、「実際の膜が違う」という事実は、分けて考える必要があります。</p>
+<figure data-media-role="VIS07" data-visual-kind="photoreal" data-subject="計測" data-purpose="VIS07で計測の具体像と記事の説明対象を対応させる。" data-composition="optical-instrument" data-concrete-object="true" data-selection-reason="承認済みの既存画像を再利用し、計測を具体物として理解できる範囲に用途を限定する。" data-photo-assessment="本タスクでは既存の承認対象画像を保持し、権利不明な外部写真への変更や新たな画像生成は行わない。" data-provenance="short-video-local/episodes/104/review/generation-evidence-recovery-r1.6-v7/provenance/VIS07.md" data-media-readback="short-video-local/episodes/104/review/formal-html-adapter-r1.6-v6/VIS07-media-readback.json" data-media-readback-sha256="e7162e1c62bfa93881d0f420f73154acde4203ac696968ff3b2862412173486b"><img src="https://semicon-campus.com/wp-content/uploads/2026/10/ep104-blog-vis07-generated-768x512.png" alt="光学測定器の下に格子状パターンが見える円形ウェハが載っている生成イメージ。格子や色は実測結果ではありません。 計測の教育用生成画像。" width="768" height="512" loading="lazy" decoding="async"><figcaption>まず測定が再現するかを確かめ、それから工程を疑います。生成イメージ。実機・実測データではありません。 計測の教育用イメージ。AI生成。制作：Semicon Campus（Codex・image_gen）。WordPress既存縮小版（原本変更なし）。</figcaption></figure>
+<h2 data-fact-ids="F011">設備保全と生産技術は、どの順番で原因を追う？</h2>
+<p>現場で働く技術者は、グラフを見た瞬間に部品交換を決めるわけではありません。</p>
+<p><strong>第一に、現象が本物かを確認します。</strong> 同じウェハを同じ条件で測り直して、同じ分布が出るか。測る位置、除外している外周幅、計算式、前の測定との違いをそろえます。</p>
+<p><strong>第二に、どこまで影響しているかを調べます。</strong> 1枚だけか、同じロット全体か、特定のチャンバーだけか。異常が初めて現れた日時はいつか。生産品の扱いは各工場の品質手順と権限者判断に従います。</p>
+<p><strong>第三に、装置の記録と突き合わせます。</strong> ガス供給、温度、圧力、プラズマ、部品の交換、清掃、保全後の立ち上がり。正常範囲内の値でも、以前と比べて少しずつ変わっていないでしょうか。</p>
+<p>ここでは、膜厚やばらつきの推移を追うSPC（統計的工程管理）と、装置のセンサー時系列などを確認するFDC（故障検知・分類）の考え方が役立ちます。NISTはSPCの管理図とEWMAによる工程監視を説明しており、STMicroelectronicsは実際の製造設備でセンサー信号をFDCに取り込む事例を公開しています。<sup class="semicon-citation"><a href="#source-S04" aria-label="参考資料7">[7]</a><a href="#source-S10" aria-label="参考資料14">[14]</a><a href="#source-S21" aria-label="参考資料13">[13]</a></sup> これは実在する監視方法の説明ですが、この架空の膜厚異常をFDCで診断したという意味ではありません。また、FDCにもSPCの手法を使うため、両者を完全に独立した仕組みとみなすのは正確ではありません。管理図の変化だけで原因が自動的に確定するわけでもありません。</p>
+<p><strong>第四に、仮説を検証します。</strong> 特定のガス経路が原因だと考えるなら、それに合う記録や測定結果はあるか。別チャンバーではどうか。必要な確認は、安全手順と承認のもとで進めます。</p>
+<p>最後は、<strong>適切な承認のもとで装置の機能を確認し、必要なモニターウェハや製品特性の計測によって工程が要求品質へ戻ったかを確かめます。</strong> これが保全後のQual（再適格性確認）の考え方です。Applied MaterialsはCVD装置の薄膜計測が保全後の再Qualに役立つと説明しています。<sup class="semicon-citation"><a href="#source-S24" aria-label="参考資料12">[12]</a></sup> ただし、何枚測るか、何を合格基準にするかは対象装置・膜種・変更内容と工場の正式手順で決まります。アラームが消えたことだけで量産再開を承認する、という意味ではありません。</p>
+<h2>この問題を直すのは、どんな仕事の人？</h2>
+<p>設備保全は、装置を安定した状態で動かすために、点検、修理、部品交換、保全履歴の管理や復旧確認に関わります。生産技術・プロセス技術は、作られた膜が求める品質を満たすか、どんな条件で安定するかを検証します。計測や品質の担当者も、測定が信頼できるか、影響がどこまで広がったかを確認します。実際の役割分担は工場によって異なります。</p>
+<p>製造業で身に付けた「設備の変化に気づく」「作業記録を残す」「不良の再現を確認する」「関係部署と原因を絞る」という経験は、こうした仕事を考える土台になります。ただし、半導体では危険なプロセスガス、真空、高電圧、プラズマなど固有の安全知識と、薄膜の計測知識を新しく学ぶ必要があります。</p>
+<section class="semicon-career-card" aria-label="半導体製造の仕事を知る">
+<figure data-media-role="VIS08" data-visual-kind="photoreal" data-subject="仕事" data-purpose="VIS08で仕事の具体像と記事の説明対象を対応させる。" data-composition="engineer-tablet" data-concrete-object="true" data-selection-reason="承認済みの既存画像を再利用し、仕事を具体物として理解できる範囲に用途を限定する。" data-photo-assessment="本タスクでは既存の承認対象画像を保持し、権利不明な外部写真への変更や新たな画像生成は行わない。" data-provenance="short-video-local/episodes/104/review/generation-evidence-recovery-r1.6-v7/provenance/VIS08.md" data-media-readback="short-video-local/episodes/104/review/formal-html-adapter-r1.6-v6/VIS08-media-readback.json" data-media-readback-sha256="58c9d56ccf920cc08c864dd6fe51608371b7a4dc4f77b98959af9e854159eb97"><img src="https://semicon-campus.com/wp-content/uploads/2026/10/ep104-blog-vis08-generated-768x512.png" alt="閉じた成膜装置の前でタブレットを確認する、クリーンルーム用防護服を着た技術者。 仕事の教育用生成画像。" width="768" height="512" loading="lazy" decoding="async"><figcaption>膜厚がなぜ変化したかを探る現場の仕事。生成イメージ。実機・実測データではありません。 仕事の教育用イメージ。AI生成。制作：Semicon Campus（Codex・image_gen）。WordPress既存縮小版（原本変更なし）。</figcaption></figure>
+<p>見ているのは、装置の故障だけではありません。製品が狙った品質に仕上がるかです。</p>
+<p><a href="https://semicon-campus.com/semiconductor-career-map/">半導体製造の仕事を工程別に見てみる</a></p>
+<p>※まずは職種理解のための無料コンテンツです。応募・登録は必要ありません。</p>
+</section>
+<h2>まとめ：膜厚のむらは、装置の中で起きたことを考える入口</h2>
+<p>同じ時間に同じ膜を作っても、ウェハのどの場所でも同じ条件が実現しているとは限りません。</p>
+<p>ガスは届き方が違うことがあります。熱は伝わり方が違います。材料が飛んでくる方向、反応が飽和するかどうか、装置の経年変化も関係します。測定した数値が本当の膜厚を表しているかも確かめなければなりません。</p>
+<p>大切なのは、<strong>厚さの分布から仮説を立て、記録と追加の計測で確かめ、保全後に品質が回復したことまで検証する</strong>という流れです。</p>
+<p>そしてこれは、装置を直すことが目的ではなく、次のウェハにも同じ品質を作り続けるための仕事です。</p>
+<hr>
+<h2>出典・参考資料</h2>
+<ul class="semicon-sources">
+<li data-source-id="S28"><span id="source-S28"></span>
+<p>[S28] Pfeiffer et al. (2017), Antireflection Coatings for Strongly Curved Glass Lenses by Atomic Layer Deposition, Coatings 7(8), 118: <a href="https://www.mdpi.com/2079-6412/7/8/118">https://www.mdpi.com/2079-6412/7/8/118</a></p>
+</li>
+<li data-source-id="S29"><span id="source-S29"></span>
+<p>[S29] Jang et al. (2025), Effect of Gas Velocity on Thickness Uniformity of TiNxOy Thin Film in Atomic Layer Deposition Process, Coatings 15(6), 707: <a href="https://www.mdpi.com/2079-6412/15/6/707">https://www.mdpi.com/2079-6412/15/6/707</a></p>
+</li>
+<li data-source-id="S30"><span id="source-S30"></span>
+<p>[S30] Kalliomäki et al. (2024), Conformal Low-Temperature Molecular Layer Deposited Coatings as Interface Modifications to Support Ceramic Protective Films on Macroscopic Flexible Devices: <a href="https://advanced.onlinelibrary.wiley.com/doi/10.1002/adem.202302257">https://advanced.onlinelibrary.wiley.com/doi/10.1002/adem.202302257</a></p>
+</li>
+<li data-source-id="S01"><span id="source-S01"></span>
+<p>[S01] ASM, <em>Atomic Layer Deposition</em>, 発行年未記載・2026年閲覧.: <a href="https://www.asm.com/our-technology-products/ald">https://www.asm.com/our-technology-products/ald</a></p>
+</li>
+<li data-source-id="S02"><span id="source-S02"></span>
+<p>[S02] P. Durgapal, J.R. Ehrstein, N.V. Nguyen, <em>Thin-Film Ellipsometry Metrology</em>, NIST, 1998.: <a href="https://www.nist.gov/publications/thin-film-ellipsometry-metrology">https://www.nist.gov/publications/thin-film-ellipsometry-metrology</a></p>
+</li>
+<li data-source-id="S03"><span id="source-S03"></span>
+<p>[S03] NIST, <em>Thin Film RGTMs</em>, created 2026-03-10, 2026年中に改訂（閲覧先によって更新日表示に差があるため最終更新日を固定しない）.: <a href="https://www.nist.gov/programs-projects/thin-film-rgtms">https://www.nist.gov/programs-projects/thin-film-rgtms</a></p>
+</li>
+<li data-source-id="S04"><span id="source-S04"></span>
+<p>[S04] J. Prins / NIST-SEMATECH, <em>Engineering Statistics Handbook Ch.6</em>, 2003.: <a href="https://itl.nist.gov/div898/handbook/pmc/pmc.htm">https://itl.nist.gov/div898/handbook/pmc/pmc.htm</a></p>
+</li>
+<li data-source-id="S05"><span id="source-S05"></span>
+<p>[S05] Huanxiong Xia, Dong Xiang, Peng Mou, Wang Yang, <em>Experimental study of the effects of showerhead configuration on large-area silicon-nitride thin film by PECVD</em>, <em>Thin Solid Films</em>, 2017.: <a href="https://www.sciencedirect.com/science/article/abs/pii/S0040609017305370">https://www.sciencedirect.com/science/article/abs/pii/S0040609017305370</a></p>
+</li>
+<li data-source-id="S07"><span id="source-S07"></span>
+<p>[S07] Handan Huang, Li Jiang, Yiyun Yao, Zhong Zhang, Zhanshan Wang, Runze Qi, <em>Controlling Film Thickness Distribution by Magnetron Sputtering with Rotation and Revolution</em>, <em>Coatings</em> 11(5):599, 2021.: <a href="https://www.mdpi.com/2079-6412/11/5/599">https://www.mdpi.com/2079-6412/11/5/599</a></p>
+</li>
+<li data-source-id="S19"><span id="source-S19"></span>
+<p>[S19] SEMI-NET, <em>面内均一性 WIW</em>、発行年記載なし.: <a href="https://semi-net.com/word/%E9%9D%A2%E5%86%85%E5%9D%87%E4%B8%80%E6%80%A7%E3%80%80wiw">https://semi-net.com/word/%E9%9D%A2%E5%86%85%E5%9D%87%E4%B8%80%E6%80%A7%E3%80%80wiw</a></p>
+</li>
+<li data-source-id="S20"><span id="source-S20"></span>
+<p>[S20] SEMI-NET, <em>成膜均一性</em>、発行年記載なし.: <a href="https://semi-net.com/word/%E6%88%90%E8%86%9C%E5%9D%87%E4%B8%80%E6%80%A7">https://semi-net.com/word/%E6%88%90%E8%86%9C%E5%9D%87%E4%B8%80%E6%80%A7</a></p>
+</li>
+<li data-source-id="S24"><span id="source-S24"></span>
+<p>[S24] Applied Materials, <em>Applied Materials Introduces Integrated Metrology on High Productivity Producer CVD System</em>, 1999-08-19.: <a href="https://ir.appliedmaterials.com/news-releases/news-release-details/applied-materials-introduces-integrated-metrology-high">https://ir.appliedmaterials.com/news-releases/news-release-details/applied-materials-introduces-integrated-metrology-high</a></p>
+</li>
+<li data-source-id="S21"><span id="source-S21"></span>
+<p>[S21] Jean-Marc Philippe / STMicroelectronics, <em>Smart Manufacturing Technology Gives New Life to Aging Chipmaking Equipment</em>, SEMI, 2020-11-10.: <a href="https://www.semi.org/en/blogs/technology-trends/smart-manufacturing-technology-gives-aging-chip-manufacturing-equipment-new-life">https://www.semi.org/en/blogs/technology-trends/smart-manufacturing-technology-gives-aging-chip-manufacturing-equipment-new-life</a></p>
+</li>
+<li data-source-id="S10"><span id="source-S10"></span>
+<p>[S10] NIST, <em>EWMA Control Charts</em>, 年未記載.: <a href="https://www.itl.nist.gov/div898/handbook/pmc/section3/pmc314.htm">https://www.itl.nist.gov/div898/handbook/pmc/section3/pmc314.htm</a></p>
+</li>
+<li data-source-id="S13"><span id="source-S13"></span>
+<p>[S13] Barbara J. Belzer et al., <em>Semiconductor Measurement Technology: Thin Film Reference Materials Development</em>, NIST SP 400-100, 1998.: <a href="https://www.nist.gov/publications/semiconductor-measurement-technology-thin-film-reference-materials-development-final">https://www.nist.gov/publications/semiconductor-measurement-technology-thin-film-reference-materials-development-final</a></p>
+</li>
+<li data-source-id="S22"><span id="source-S22"></span>
+<p>[S22] Kim, N.; Choi, H.; Chun, J.; Jeong, J., <em>Introduction of Equipment Level FDC System for Semiconductor Wet-Cleaning Equipment Optimization And Real-Time Fault Detection</em>, SEMI ASMC 2022.: <a href="https://pure.skku.edu/en/publications/introduction-of-equipment-level-fdc-system-for-semiconductor-wet-/">https://pure.skku.edu/en/publications/introduction-of-equipment-level-fdc-system-for-semiconductor-wet-/</a></p>
+</li>
+<li data-source-id="S25"><span id="source-S25"></span>
+<p>[S25] OpenStax University Physics Volume 2 §8.1 (ideal capacitance and electric field): <a href="https://openstax.org/books/university-physics-volume-2/pages/8-1-capacitors-and-capacitance">https://openstax.org/books/university-physics-volume-2/pages/8-1-capacitors-and-capacitance</a></p>
+</li>
+<li data-source-id="S26"><span id="source-S26"></span>
+<p>[S26] OpenStax Physics §18.5 (dielectric capacitance): <a href="https://openstax.org/books/physics/pages/18-5-capacitors-and-dielectrics">https://openstax.org/books/physics/pages/18-5-capacitors-and-dielectrics</a></p>
+</li>
+<li data-source-id="S27"><span id="source-S27"></span>
+<p>[S27] OpenStax University Physics Volume 2 §9.3 (resistivity and resistance): <a href="https://openstax.org/books/university-physics-volume-2/pages/9-3-resistivity-and-resistance">https://openstax.org/books/university-physics-volume-2/pages/9-3-resistivity-and-resistance</a></p>
+</li>
+</ul>
+<section class="semicon-correction-form">
+<h2>質問・訂正フォーム</h2>
+<div class="semicon-form-shortcode">
+<div class="wpcf7 no-js" id="wpcf7-f2045-o14" lang="ja" dir="ltr" data-wpcf7-id="2045">
+<div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
+<form action="/?rest_route=%2Fwp%2Fv2%2Fposts&#038;per_page=100&#038;page=1&#038;context=view#wpcf7-f2045-o14" method="post" class="wpcf7-form init" aria-label="コンタクトフォーム" novalidate="novalidate" data-status="init">
+<fieldset class="hidden-fields-container"><input type="hidden" name="_wpcf7" value="2045" /><input type="hidden" name="_wpcf7_version" value="6.1.6" /><input type="hidden" name="_wpcf7_locale" value="ja" /><input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f2045-o14" /><input type="hidden" name="_wpcf7_container_post" value="0" /><input type="hidden" name="_wpcf7_posted_data_hash" value="" />
+</fieldset>
+<p>お名前・電話番号・住所の入力は不要です。工場名や社外秘の情報は記載しないでください。
+</p>
+<p><label>報告の種類（必須） <span class="wpcf7-form-control-wrap" data-name="report-type"><select class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required" aria-required="true" aria-invalid="false" name="report-type"><option value="誤りと思われる点">誤りと思われる点</option><option value="分かりにくい箇所">分かりにくい箇所</option><option value="追加してほしい説明・質問">追加してほしい説明・質問</option></select></span></label><br />
+<label>該当する見出し・文章（任意） <span class="wpcf7-form-control-wrap" data-name="report-section"><input size="40" maxlength="200" class="wpcf7-form-control wpcf7-text" aria-invalid="false" value="" type="text" name="report-section" /></span></label><br />
+<label>内容（必須） <span class="wpcf7-form-control-wrap" data-name="report-message"><textarea cols="40" rows="10" maxlength="3000" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" aria-required="true" aria-invalid="false" name="report-message"></textarea></span></label><br />
+<label>返信用メールアドレス（返信をご希望の場合のみ・任意） <span class="wpcf7-form-control-wrap" data-name="report-email"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-email wpcf7-text wpcf7-validates-as-email" autocomplete="email" aria-invalid="false" value="" type="email" name="report-email" /></span></label>
+</p>
+<p>ご意見は記事の確認・改善のために利用します。<a href="https://semicon-campus.com/privacy-policy/">個人情報の取り扱い</a>をご確認ください。
+</p>
+<p><input class="wpcf7-form-control wpcf7-submit has-spinner" type="submit" value="ご意見・訂正報告を送信" />
+</p><div class="wpcf7-response-output" aria-hidden="true"></div>
+</form>
+</div>
+</div>
+</section>
+</article>
+<p></body></html></p>

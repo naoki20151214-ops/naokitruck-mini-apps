@@ -1,0 +1,18 @@
+{
+ "id": 963,
+ "type": "post",
+ "slug": "semiconductor-inspection-metrology",
+ "link": "https://semicon-campus.com/semiconductor-inspection-metrology/",
+ "date": "2026-09-20T18:00:00",
+ "modified": "2026-10-30T21:15:41",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  2
+ ],
+ "tags": [],
+ "featured_media": 229,
+ "title": "半導体の検査（Inspection）と計測（Metrology）の違い｜明視野・暗視野・電子線検査の使い分け",
+ "excerpt": "半導体の欠陥を見つけるInspection、Defect Review、Metrologyの役割を分け、製造途中のウェハをどう検査・計測するかを初心者向けに解説します。"
+}

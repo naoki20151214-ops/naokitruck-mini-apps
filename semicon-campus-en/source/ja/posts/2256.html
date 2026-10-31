@@ -1,0 +1,193 @@
+<!--KEEP:0-->
+<div class="semicon-article" id="semicon-top">
+<div class="semicon-level">
+<div class="semicon-level-top"><span class="semicon-level-label">学習レベル</span><strong class="semicon-stars" aria-label="初級（5段階中の1）"><span class="on">★</span><span class="off">☆☆☆☆</span><span>初級</span></strong></div>
+</div>
+<div class="semicon-lead">
+<p>同じ日に、お腹をこわした人が何人もいる。聞いてみると、全員が同じお店のお弁当を食べていた。だったら、怪しいのはそのお店です。<strong class="semicon-key">原因探しでは、「共通点」が大きな手がかりになります。</strong></p>
+<p>半導体の工場も、考え方は同じです。ウェハ（半導体を作る、丸い板）に不良が見つかったら、不良のウェハが共通して通った装置や工程を探します。ウェハのどこに不良が多いかという「分布」も、見逃せません。こうして、問題を引き起こした「いちばん根っこの原因」、つまり「根本原因」に近づいていきます。</p>
+</div>
+<div class="semicon-note">
+<p>お弁当の例が当てはまるのは、「共通点を探す」という点だけです。お弁当と半導体の工場は、別のものですから。</p>
+</div>
+<div class="semicon-map">
+<h3>この記事でわかること</h3>
+<ol>
+<li><strong>この記事の目的：</strong>不良が見つかってから、原因を取り除くまでの4つの段階を、つかむこと</li>
+<li><strong>段階1・2：</strong>異常を見つけて、影響を受けたロットを囲い込む</li>
+<li><strong>段階3：</strong>不良ウェハが通った装置の共通点と、不良の分布の形で、原因を絞り込む</li>
+<li><strong>段階4：</strong>根本原因を取り除き、同じ不良が出ないことを確かめる。<strong class="semicon-key">共通点は手がかりで、決めつけない</strong></li>
+</ol>
+</div>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep109-blog-ep109-04-wafermap-5.jpg" alt="モニターに映った丸いウェハの図で、不良を表す赤い点が端のほうに集まっている、不良の分布のイメージ"><figcaption>ウェハ上の不良の分布を、モニターで見ている様子のイメージ。実際の装置や測定結果ではありません。 EP109 記事用画像（AI生成）。生成画像を縮小し、JPEGに最適化。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>丸い図は、ウェハを上から見たイメージ</li>
+<li>赤い点が、不良の場所</li>
+<li>偏りかたが、原因の手がかりになる</li>
+</ul>
+</div>
+<div class="semicon-chat-row naoki">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">助手</div>
+</div>
+<div class="semicon-bubble">
+<p>博士、根本原因って、何ですか？</p>
+</div>
+</div>
+<div class="semicon-chat-row teacher">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">博士</div>
+</div>
+<div class="semicon-bubble">
+<p>問題を引き起こした、いちばん根っこの原因のことじゃ。見えている結果だけ直しても、また起きてしまうんじゃよ。</p>
+</div>
+</div>
+<div class="semicon-chat-row naoki">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">助手</div>
+</div>
+<div class="semicon-bubble">
+<p>根っこは、どうやって探すのですか？</p>
+</div>
+</div>
+<div class="semicon-chat-row teacher">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">博士</div>
+</div>
+<div class="semicon-bubble">
+<p>不良のウェハに共通する装置を探したり、不良の分布を調べたりするんじゃ。順に、見ていこう。</p>
+</div>
+</div>
+<h2 class="wp-block-heading" data-fact-ids="C01 C02">根本原因とは、いちばん根っこの原因のこと</h2>
+<p>米国品質協会（ASQ）の用語集では、根本原因を「決めた基準を満たさない状態を引き起こした要因で、工程の改善によって、恒久的に取り除くべきもの」と説明しています。原因と結果の連鎖を動かし始めた、いちばん上の原因、というわけです。</p>
+<p>この根本原因を探す方法や道具をまとめて、「根本原因解析（RCA）」と呼びます。ただ、原因が分かっただけでは成果になりません。<strong class="semicon-key">取り除いて、はじめて意味があります。</strong></p>
+<p>なぜ、そこまで根っこにこだわるのでしょうか。表面の原因だけを直しても、別の形で、同じ不良が戻ってくることがあるからです。モグラたたきのように、出てきた不良を一つずつ直すだけでは、いつまでも終わりません。</p>
+<h2 class="wp-block-heading" data-fact-ids="C03 C10">段階1・2：見つけて、囲い込む</h2>
+<p>半導体の製造では、決まった結果から外れることを「エクスカーション」と呼びます。特許の記述によれば、その大半は装置が関係しています。しかも、ウェハは何百もの工程を通り、一つの工程に複数の装置があるのが普通です。だから、どの装置が原因かを見つけるのは、思った以上に大変です。</p>
+<p>では、異常に気づいたら、まず何をするのか。<strong class="semicon-key">答えは「囲い込む」ことです。</strong>検査装置メーカーKLAの解説によると、影響を受けたウェハを隔離（クォランティン）して、全数を高感度で検査し、出荷、廃棄、格下げのどれにするかを決めます。検査の回数が多いほど異常が早く見つかるので、巻き込まれるロットも、原因の候補も、少なくなります。</p>
+<p>身近なものにたとえると、スーパーで「この日に入荷した商品に問題がありそうだ」と分かったとき、まずその日の商品を棚から外すのに似ています。原因を調べるのは、そのあとです。先に囲い込んでおけば、調べているあいだに、被害が広がらずにすみます。</p>
+<h2 class="wp-block-heading" data-fact-ids="C04 C05">段階3：不良ウェハの共通点から、装置を絞り込む</h2>
+<p>ここから、原因探しの本番です。代表的な方法が「共通性分析」で、不良のウェハが共通して通った装置を探します。工場は「どの装置が、どのウェハを、いつ処理したか」をすべて記録しているので、この分析ができるのです。ウェハは約25枚ずつ「ロット」という入れ物にまとめて運ばれるため、記録もロット単位で残ります。</p>
+<p>見分け方のポイントは、大きく二つあります。</p>
+<ul>
+<li><strong class="semicon-key">不良のロットが、すべて一台の装置から出ているか。</strong>複数の装置が同時にずれる可能性は低いので、一台にそろっているほど怪しくなります。</li>
+<li><strong class="semicon-key">不良が、短い期間にまとまっているか。</strong>ずれた装置の影響は、その装置の工程のあたりに集まるからです。</li>
+</ul>
+<p>この二つを確かめるだけで、調べる装置の数は、ぐっと減らせます。何百もの工程と装置の中から、数台まで絞り込めれば、あとは、その装置の記録を、じっくり調べられるわけです。</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep109-blog-01-common-4.png" alt="不良のウェハが通った割合を装置A、B、Cで比べ、装置Aに多く集中している様子の概念図"><figcaption>不良のウェハが通った割合を、装置ごとに比べた模式図。割合は説明用の例で、実測データではありません。装置の違いに注目します。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>装置ごとに、不良ウェハが通った割合を比べる</li>
+<li>装置Aに、不良が集中している</li>
+<li>集中した装置が、怪しい（決めつけない）</li>
+</ul>
+</div>
+<p>図は、不良ウェハが通った割合を、装置ごとに比べたイメージです。装置Aだけ、不良ウェハがほとんど通っています。この場合、装置Aから調べ始めるのが自然でしょう。</p>
+<p>ところが、話はそう単純ではありません。一台ずつ見ると問題がないのに、<strong class="semicon-key">二つの装置の組み合わせで、つまり続けて通ったウェハだけ、不良が増える場合があるのです。</strong>特許にも、この例が出てきます。<strong class="semicon-key">だから共通点は、答えではなく手がかりとして扱います。</strong></p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep109-blog-02-combo-4.png" alt="装置Aだけ、装置Bだけでは不良が少ないが、AからBへ続けて通ると不良が多くなる組み合わせの概念図"><figcaption>二つの装置の組み合わせで不良が増える場合を表した模式図。結果は説明用の例です。組み合わせに注目します。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>装置Aだけ、装置Bだけでは、不良は少ない</li>
+<li>AからBへ続けて通ると、不良が多い</li>
+<li>組み合わせも、調べる</li>
+</ul>
+</div>
+<p>組み合わせまで見るために、調べる範囲は、一台ずつから、二台ずつへ広がります。手間は増えますが、「一台ずつは正常なのに不良が出る」という、つかみにくい原因にも手が届きます。</p>
+<h2 class="wp-block-heading" data-fact-ids="C06 C11">不良の「形」からも、原因をたどれる</h2>
+<p>ウェハの上で、不良が集まる形にも注目します。査読つきの論文によれば、異常が起きると、不良のチップは決まった形に集まります。そのため、形から原因をたどれるのです。たとえば、中心に集まれば研磨のムラや液の圧力の異常、輪の形なら焼きなましの温度管理の異常が疑われます。</p>
+<p>ここで使うのが「ウェハマップ」です。電気を流して調べる検査（プローブ検査）で、動かなかったチップを、ウェハの図の上に印にしたものを指します。表の数字を目で追うより、図で見たほうが、偏りに気づきやすくなります。傷のような線状の形なら、ウェハを運んだり切ったりする工程の異常が疑われる、と論文は紹介しています。</p>
+<p>もちろん、形だけで原因が決まるわけではありません。同じ形でも、原因が複数ある場合があるからです。形は、調べる順番を決めるための手がかりと考えると、使いやすくなります。</p>
+<p>さらに、層ごとの測定データの分布と、最終的な不良の分布を比べる方法もあります。似ている層が見つかれば、その手前の工程が怪しいことになります。層iは似ていなくて、次の層i+1が似ているなら、問題は、その間で始まった可能性が高い、というわけです。</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep109-blog-03-layers-5.png" alt="層1と層2は不良の分布に似ておらず、層3と層4は似ているため、問題は層2と層3の間と絞り込む概念図"><figcaption>層ごとのデータと不良の分布を比べて、問題の始まりを絞り込む考え方の模式図。層の数や結果は説明用の例です。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>層ごとに、不良の分布と比べる</li>
+<li>似ている最初の層が、手がかり</li>
+<li>似ていない層と似ている層の間が、始まりの候補</li>
+</ul>
+</div>
+<h2 class="wp-block-heading" data-fact-ids="C07 C09">段階4：直して、確かめる</h2>
+<p>原因が見えたら、取り除きます。異常を検知し、集めたデータと故障の症状を突き合わせて、最もありそうな原因を決めて直す。この流れは、ある特許にも示されています。PDF Solutionsの事例では、装置の記録と電気試験の結果を組み合わせて、メンテナンスの直後に指標がずれていたことを突き止めました。対策は、保全の手順の見直し、慣らし運転の追加、そして、装置を生産に戻す前に信号の安定を確かめること。<strong class="semicon-key">直して終わりではなく、確かめるところまでが一続きです。</strong></p>
+<p>この事例のように、「最近、何が変わったか」に注目する方法もあります。ASQの解説では「変更分析」と呼ばれ、性能が大きく変わったときに、人、設備、情報などに起きた変更を調べます。メンテナンスは、装置にとって大きな変更です。そのため、メンテナンスの前後で記録を比べると、ずれの始まりが見えてきます。</p>
+<p>もう一つ、「障壁分析」という方法もあります。問題を防いだり、見つけたりするための管理が、なぜ働かなかったのかを調べる方法です。「どうして異常に気づけなかったのか」まで掘り下げれば、再発防止の手が増えます。</p>
+<h2 class="wp-block-heading" data-fact-ids="C02">原因探しは、チームで行う</h2>
+<p>ASQによれば、道具の多くは一人でも使えますが、複数人で取り組むほうが、結果は一般に良くなります。しかも、根本原因を取り除く責任のある人を、中心メンバーに入れることが勧められています。</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep109-blog-ep109-05-team-5.jpg" alt="クリーンルーム用の服を着た3人の技術者が、ノートパソコンと印刷したウェハの図を囲んで話し合うチームの様子"><figcaption>チームで原因を話し合う様子のイメージ。実際の工場や人物ではありません。 EP109 記事用画像（AI生成）。生成画像を縮小し、JPEGに最適化。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>一人より、チームで</li>
+<li>取り除く責任のある人も入る</li>
+<li>原因を取り除くまでが仕事</li>
+</ul>
+</div>
+<div class="semicon-cta">
+<h3>原因を探す仕事を、知る</h3>
+<p>原因を探す仕事に興味がある方は、こちらの記事も読んでみてください。</p>
+<div class="semicon-btnrow"><a class="semicon-btn" href="https://semicon-campus.com/semiconductor-career-map/">半導体製造の仕事を工程別に見てみる</a></div>
+</div>
+<p>数字の変化に気づく方法は、<a href="https://semicon-campus.com/what-is-spc-semiconductor-process-control/">SPC（統計的工程管理）とは何か</a>で紹介しています。なお、設備の調整や復旧は、所属する工場やメーカーの正式な手順と、権限のある人の判断のもとで行います。この記事は考え方の紹介で、設備の操作を指示するものではありません。</p>
+<h2 class="wp-block-heading">ことばのおさらい</h2>
+<ul>
+<li><strong>ウェハ：</strong>半導体を作る、丸い板です。</li>
+<li><strong>根本原因：</strong>問題を引き起こした、いちばん根っこの原因です。</li>
+<li><strong>エクスカーション：</strong>工程の結果が、期待から外れることです。</li>
+<li><strong>ロット：</strong>ウェハをまとめて運ぶ、約25枚入りの入れ物です。</li>
+<li><strong>隔離（クォランティン）：</strong>影響を受けたロットを、先へ進めないことです。</li>
+<li><strong>共通性分析：</strong>不良ウェハが共通して通った装置を探す方法です。</li>
+<li><strong>分布：</strong>どこに、どれくらい多いかの、広がりです。</li>
+</ul>
+<h2 class="wp-block-heading">よくある誤解</h2>
+<h3>Q. 不良が見つかった場所を直せば、それで解決ですか？</h3>
+<p>いいえ。見つかった場所は、結果にすぎないことがあります。根っこが残っていれば、同じ不良がまた起きます。</p>
+<h3>Q. 不良ウェハが通った装置が分かれば、その装置が原因ですか？</h3>
+<p>決めつけは禁物です。一台ずつは正常でも、二つの装置の組み合わせで不良が増える場合があります。</p>
+<h2 class="wp-block-heading">まとめ</h2>
+<div class="semicon-lead">
+<p>不良の原因探しは、見つける、囲い込む、絞り込む、直して確かめる、の4段階です。<br />絞り込みでは、不良ウェハが通った装置の共通点と、不良の分布の形が、大きな手がかりになります。<br />共通点は答えではなく手がかりなので、確かめながら、根っこの原因を取り除きます。</p>
+</div>
+<div class="semicon-cta">
+<h3>YouTubeでも、半導体をやさしく解説しています</h3>
+<p>図解で復習したい人向けに、YouTubeでも半導体製造を短く解説しています。</p>
+<div class="semicon-btnrow"><a rel="noopener" class="semicon-btn secondary" href="https://www.youtube.com/@semicon-campus" target="_blank">YouTubeで図解動画を見る</a></div>
+</div>
+<h2 class="wp-block-heading">参考にした公式情報</h2>
+<ul class="semicon-sources">
+<li data-source-id="S01"><a href="https://asq.org/quality-resources/root-cause-analysis">ASQ「What is Root Cause Analysis (RCA)?」</a></li>
+<li data-source-id="S04"><a href="https://patents.google.com/patent/US11803127B2/en">ASML特許 US 11,803,127 B2「Method for determining root cause affecting yield in a semiconductor manufacturing process」</a></li>
+<li data-source-id="S05"><a href="https://patents.google.com/patent/US7363098B2/en">特許 US 7,363,098 B2「Method to identify machines causing excursion in semiconductor manufacturing」</a></li>
+<li data-source-id="S06"><a href="https://patents.google.com/patent/US6580960B1/en">特許 US 6,580,960 B1「System and method for finding an operation/tool combination that causes integrated failure in a semiconductor fabrication facility」</a></li>
+<li data-source-id="S07"><a href="https://www.pdf.com/analysis-ready-fdc-in-the-age-of-ai-and-big-data-semiconductor-manufacturing/">PDF Solutions「Analysis‑Ready FDC in the Age of AI and Big‑Data Semiconductor Manufacturing」</a></li>
+<li data-source-id="S08"><a href="https://patents.google.com/patent/US11029359B2/en">PDF Solutions特許 US 11,029,359 B2「Failure detection and classification using sensor data and/or measurement data」</a></li>
+<li data-source-id="S09"><a href="https://sst.semiconductor-digest.com/2020/02/monitoring-for-excursions-in-automotive-fabs/">KLA「Monitoring for excursions in automotive fabs」（Semiconductor Digest、2020年）</a></li>
+<li data-source-id="S10"><a href="https://www.mdpi.com/2075-1702/10/2/146">「Improved Wafer Map Inspection Using Attention Mechanism and Cosine Normalization」（Machines、2022年）</a></li>
+</ul>
+<section class="semicon-correction-form">
+<h2>質問・訂正フォーム</h2>
+<p>この記事の内容に誤りや、分かりにくい点があれば、下のフォームからお知らせください。確認して、記事を直します。</p>
+<div class="semicon-form-shortcode">
+<div class="wpcf7 no-js" id="wpcf7-f2045-o9" lang="ja" dir="ltr" data-wpcf7-id="2045">
+<div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
+<form action="/?rest_route=%2Fwp%2Fv2%2Fposts&#038;per_page=100&#038;page=1&#038;context=view#wpcf7-f2045-o9" method="post" class="wpcf7-form init" aria-label="コンタクトフォーム" novalidate="novalidate" data-status="init">
+<fieldset class="hidden-fields-container"><input type="hidden" name="_wpcf7" value="2045" /><input type="hidden" name="_wpcf7_version" value="6.1.6" /><input type="hidden" name="_wpcf7_locale" value="ja" /><input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f2045-o9" /><input type="hidden" name="_wpcf7_container_post" value="0" /><input type="hidden" name="_wpcf7_posted_data_hash" value="" />
+</fieldset>
+<p>お名前・電話番号・住所の入力は不要です。工場名や社外秘の情報は記載しないでください。
+</p>
+<p><label>報告の種類（必須） <span class="wpcf7-form-control-wrap" data-name="report-type"><select class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required" aria-required="true" aria-invalid="false" name="report-type"><option value="誤りと思われる点">誤りと思われる点</option><option value="分かりにくい箇所">分かりにくい箇所</option><option value="追加してほしい説明・質問">追加してほしい説明・質問</option></select></span></label><br />
+<label>該当する見出し・文章（任意） <span class="wpcf7-form-control-wrap" data-name="report-section"><input size="40" maxlength="200" class="wpcf7-form-control wpcf7-text" aria-invalid="false" value="" type="text" name="report-section" /></span></label><br />
+<label>内容（必須） <span class="wpcf7-form-control-wrap" data-name="report-message"><textarea cols="40" rows="10" maxlength="3000" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" aria-required="true" aria-invalid="false" name="report-message"></textarea></span></label><br />
+<label>返信用メールアドレス（返信をご希望の場合のみ・任意） <span class="wpcf7-form-control-wrap" data-name="report-email"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-email wpcf7-text wpcf7-validates-as-email" autocomplete="email" aria-invalid="false" value="" type="email" name="report-email" /></span></label>
+</p>
+<p>ご意見は記事の確認・改善のために利用します。<a href="https://semicon-campus.com/privacy-policy/">個人情報の取り扱い</a>をご確認ください。
+</p>
+<p><input class="wpcf7-form-control wpcf7-submit has-spinner" type="submit" value="ご意見・訂正報告を送信" />
+</p><div class="wpcf7-response-output" aria-hidden="true"></div>
+</form>
+</div>
+</div>
+</section>
+</div>

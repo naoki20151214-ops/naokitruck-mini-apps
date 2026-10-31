@@ -1,0 +1,125 @@
+
+<!--KEEP:0-->
+
+
+<!--KEEP:1-->
+
+<article class="semicon-article" data-episode="083" data-status="draft-only" data-slug="mass-flow-controller-mfc" data-target="new_post">
+<!--KEEP:2-->
+<h1>ガスを毎回同じ量に保つ、マスフローコントローラの役割</h1>
+<p class="hook">半導体の成膜やエッチングでは、見えないガスの流れがウェハの結果を左右します。<br>表示された流量だけを読んでも、短い工程の途中で何が起きたかは分かりません。<br>答えは、ガスを測るセンサーと制御弁を閉ループで動かすマスフローコントローラ、MFCです。</p>
+
+<p>この記事の主役は、ガス配管の途中に取り付けられる<strong>マスフローコントローラ（MFC）</strong>です。MFCは完成したチップの内部にある回路ではなく、ウェハへ成膜やエッチングを行うプロセス装置側の計測制御機器です。ガスを「出すだけ」の蛇口ではなく、設定値と測定値を比べながら弁を調整し、工程へ入る条件を再現しようとする設備として見ていきます。</p>
+
+<h2>この記事でわかること</h2>
+<ul><li>MFCがセンサー、制御回路、弁を組み合わせて流量を戻す仕組み</li><li>熱式MFCでガス種や校正条件を確認する必要がある理由</li><li>成膜・エッチングで最終値だけでなく過渡応答を見る理由</li><li>Flow NGをMFC単体の故障と決めつけず、供給系から排気まで切り分ける視点</li></ul>
+
+<p class="visual-context">ここで見る具体物は「ガス供給ラックとMFC」です。</p>
+<figure class="semicon-figure" data-media-role="explanatory-image-01" data-visual-kind="photoreal" data-subject="ガス供給ラックとMFC" data-purpose="intro-system" data-composition="equipment-wide" data-concrete-object="true" data-selection-reason="MFCを単体の部品ではなく、ガス配管とプロセス装置をつなぐ設備の一部として最初に示すため。" data-photo-assessment="ガス配管、供給ラック、MFCの位置関係が明瞭で、通常表示幅でも対象を区別できる。" data-provenance="articles/images/episode083/provenance/01-intro-system.md"><img loading="lazy" decoding="async" src="images/episode083/optimized/01-V001.webp" alt="半導体製造装置のガス供給ラックとマスフローコントローラ（ガス供給ラックとMFC）" width="540" height="960"><figcaption>ガス供給ラックとMFCは、プロセスへ入るガス条件の入口です。ガス種や配管を含めて読むための導入写真です。AI生成画像（OpenAI ImageGen）／変更: resized and converted to WebP from episode-local v2 PNG。</figcaption></figure>
+
+<h2>なぜガスの流量が工程条件になるのか</h2>
+<p data-fact-ids="F001 F002 F005">成膜では、複数の前駆体ガスを決めた比率でチャンバーへ送り、表面で反応させて膜を作ります。エッチングでは、材料を削る反応種、側壁を保護する種、希釈や物理的な衝撃に関わるガスの組み合わせが、加工形状やエッチ速度に影響し得ます。ガスの流量は、レシピ画面の数字というより、ウェハの表面で起きる反応の入口です。</p>
+<p>MFCが守るのは表示値だけではありません。複数のMFCが作るガス比、総流量、チャンバー圧力、反応種の濃度、生成物を排出する条件が、同時にウェハへ効きます。流量の変化が結果へ影響することはありますが、MFCの誤差から膜厚や寸法の変化量を一律に換算する普遍式はありません。装置、材料、圧力、電力、ステップ時間、チャンバー状態が組み合わさって結果を決めるからです。</p>
+<p>この境界を押さえると、MFCを「表示が合えば工程も同じ」と読む誤りを避けられます。MFCはプロセス条件を支える重要な部品ですが、成膜やエッチングの結果を単独で決める部品ではありません。</p>
+
+<p class="visual-context">ここで見る具体物は「マスフローコントローラ本体」です。</p>
+<figure class="semicon-figure" data-media-role="explanatory-image-02" data-visual-kind="photoreal" data-subject="マスフローコントローラ本体" data-purpose="device-object" data-composition="device-closeup" data-concrete-object="true" data-selection-reason="MFCという名称を抽象的な機能ではなく、配管の途中に置かれる具体的な計測制御部品として理解するため。" data-photo-assessment="金属製のMFC本体と接続配管が識別でき、表示値や企業固有仕様は示していない。" data-provenance="articles/images/episode083/provenance/02-device-object.md"><img loading="lazy" decoding="async" src="images/episode083/optimized/02-V002.webp" alt="ステンレス配管に接続されたマスフローコントローラ本体（マスフローコントローラ本体）" width="540" height="960"><figcaption>マスフローコントローラ本体は、ガス配管に接続される計測制御部品です。機器の外観だけで性能値を断定せず、本文の役割理解に使います。AI生成画像（OpenAI ImageGen）／変更: resized and converted to WebP from episode-local v2 PNG。</figcaption></figure>
+
+<h2>MFCの中で起きていること</h2>
+<p data-fact-ids="F001 F003">代表的な熱式MFCでは、流れるガスの一部を細いセンサー流路へ分け、残りをバイパス流路へ通します。センサー流路にはヒーターや温度センサーがあり、流れが運ぶ熱の変化を信号として読みます。その信号をガスの物性、ガス設定、校正情報と照らし合わせ、流量として扱います。</p>
+<p>ここで「mass」という名前を、天秤で質量を直接量る意味だと理解してはいけません。熱の移動を測り、ガスの熱容量などの特性と校正モデルを通して流量を推定する方式です。温度や圧力で気体の状態が変わり、ガス種が変われば熱の伝わり方も変わります。同じセンサー出力を、どのガスでも同じ流量と読めるとは限りません。</p>
+<p>熱式以外に、圧力センサーや既知の流路特性を使う圧力式MFCもあります。熱式が常に優れ、圧力式が常に劣るという話ではありません。対象ガス、圧力領域、必要な流量レンジ、応答特性、校正方法など、設備の条件に合わせて方式が選ばれます。</p>
+
+<p class="visual-context">ここで見る具体物は「MFCの制御弁とガス流路」です。</p>
+<figure class="semicon-figure" data-media-role="explanatory-image-03" data-visual-kind="photoreal" data-subject="MFCの制御弁とガス流路" data-purpose="control-valve" data-composition="valve-macro" data-concrete-object="true" data-selection-reason="設定値との差を小さくする調整要素を、制御弁とステンレス流路の具体的な接続として示すため。" data-photo-assessment="弁本体とステンレス流路の接続が明瞭で、内部寸法やメーカー固有の仕様は示していない。" data-provenance="articles/images/episode083/provenance/04-control-valve.md"><img loading="lazy" decoding="async" src="images/episode083/optimized/04-V004.webp" alt="マスフローコントローラの制御弁とガス流路（MFCの制御弁とガス流路）" width="540" height="960"><figcaption>MFCの制御弁とガス流路は、測定した流量と設定値の差を小さくする方向へ動きます。AI生成画像（OpenAI ImageGen）／変更: resized and converted to WebP from episode-local v2 PNG。</figcaption></figure>
+
+<h2>閉ループで設定値へ戻す</h2>
+<p data-fact-ids="F002 F006">MFCを制御の流れとして見ると、役割が分かります。装置から設定流量が入力され、センサーが実際の流量を測り、設定値との差が制御回路へ返されます。流量が足りなければ弁を開く方向へ、流れ過ぎれば閉じる方向へ調整します。このように、測定結果を次の操作へ戻す仕組みを<strong>閉ループ制御</strong>と呼びます。</p>
+<p>閉ループは、上流圧力の揺らぎや配管条件の変化があっても設定値へ近づけるための仕組みです。ただし、弁を動かした瞬間に理想値になるわけではありません。センサーの遅れ、弁の応答、配管の容積、入口圧力、下流側のチャンバーや排気の状態が重なります。MFCの画面だけでなく、周辺設備を同じ時間軸で見る必要があります。</p>
+
+<p class="visual-context">ここで見る具体物は「MFCの設定値確認」です。</p>
+<figure class="semicon-figure" data-media-role="explanatory-image-04" data-visual-kind="photoreal" data-subject="MFCの設定値確認" data-purpose="setpoint-measurement" data-composition="operator-and-display" data-concrete-object="true" data-selection-reason="設定値と測定値を比較して制御するという閉ループの入口を、作業者とMFCの実物関係で具体化するため。" data-photo-assessment="作業者、MFC、制御画面が見えるが、画面内に意味のある数値や企業固有の文字は含まれない。" data-provenance="articles/images/episode083/provenance/03-setpoint-measurement.md"><img loading="lazy" decoding="async" src="images/episode083/optimized/03-V003.webp" alt="作業者がMFCの設定値と測定画面を確認する様子（MFCの設定値確認）" width="540" height="960"><figcaption>MFCの設定値確認では、設定値と測定値を比べる視点は、MFCを単なる表示器と区別する入口です。AI生成画像（OpenAI ImageGen）／変更: resized and converted to WebP from episode-local v2 PNG。</figcaption></figure>
+
+<h2>最終値だけでなく、途中の波形を見る</h2>
+<p data-fact-ids="F004">レシピを切り替えたあと、流量が最終的に100 sccmへ落ち着いたとします。それでも、50から始まって一度大きく跳ねてから戻ったのか、滑らかに近づいたのかでは、短いステップ中にチャンバーへ入ったガスの総量が変わる可能性があります。最終表示値が同じでも、工程が経験した時間波形は同じとは限りません。</p>
+<p>そこでMFCの評価では、定常時の精度と過渡特性を分けます。dead timeは入力を変えてから応答が始まるまで、step responseは入力変化に対する応答、settling timeは所定範囲へ落ち着くまで、overshootは目標を一時的に超える動きです。repeatabilityやzero offsetも、同じ条件を繰り返したときの読み方に関係します。SEMI E17やNISTの資料が過渡特性を扱うのは、数字一つでは波形を表せないからです。</p>
+<p>入口圧力の変動、周囲温度、暖機、汚染や凝縮、前後の遮断弁のシーケンスも確認します。特定の装置では、前後の弁を開閉するタイミングがオーバーシュートに関係する場合があります。これはメーカー共通の保証値を意味せず、実機の条件で波形を確認する領域です。</p>
+
+<p class="visual-context">ここで見る具体物は「熱式MFCのセンサー流路」です。</p>
+<figure class="semicon-figure" data-media-role="explanatory-image-05" data-visual-kind="photoreal" data-subject="熱式MFCのセンサー流路" data-purpose="thermal-sensor-bypass" data-composition="cutaway-macro" data-concrete-object="true" data-selection-reason="熱式MFCのセンサー流路とバイパスという説明を、具体的な内部部品の見え方へつなげるため。" data-photo-assessment="MFC内部のセンサー部品を具体物として示すが、実機断面や寸法の保証として扱わない。" data-provenance="articles/images/episode083/provenance/05-thermal-sensor-bypass.md"><img loading="lazy" decoding="async" src="images/episode083/optimized/05-V005.webp" alt="熱式マスフローコントローラのセンサー流路とバイパス部品（熱式MFCのセンサー流路）" width="540" height="960"><figcaption>熱式MFCのセンサー流路では、分流したガスの熱移動から流量を推定します。AI生成画像（OpenAI ImageGen）／変更: resized and converted to WebP from episode-local v2 PNG。</figcaption></figure>
+
+<p class="visual-context">ここで見る具体物は「流量トレンド監視画面」です。</p>
+<figure class="semicon-figure" data-media-role="explanatory-image-06" data-visual-kind="photoreal" data-subject="流量トレンド監視画面" data-purpose="transient-trend" data-composition="control-room" data-concrete-object="true" data-selection-reason="最終値ではなく立上がり、settling、overshootを波形として見る必要を、監視環境の具体物で示すため。" data-photo-assessment="トレンド画面と監視環境が見えるが、画面は抽象表示で実測値や合否を主張しない。" data-provenance="articles/images/episode083/provenance/07-transient-trend.md"><img loading="lazy" decoding="async" src="images/episode083/optimized/07-V007.webp" alt="半導体設備の流量トレンド監視画面と制御室（流量トレンド監視画面）" width="540" height="960"><figcaption>流量トレンド監視画面で、途中の波形を監視する場面です。画面は概念的な表示で、特定レシピの測定結果を示すものではありません。AI生成画像（OpenAI ImageGen）／変更: resized and converted to WebP from episode-local v2 PNG。</figcaption></figure>
+
+<h2>成膜とエッチングへどうつながるか</h2>
+<p data-fact-ids="F005">成膜では、前駆体の供給比が膜の成長速度、組成、膜厚、応力、表面状態などと関係します。エッチングでは、ガス比によって反応種と側壁保護のバランスが変わり、形状やエッチ速度に影響し得ます。研究でSF6とO2の比率や、別のエッチング条件の総流量が結果へ影響したと報告されていても、それは材料、チャンバー、圧力、電力などの条件と一緒に読まなければなりません。</p>
+<p>したがって「MFCの表示が少しずれたから膜厚も同じ割合でずれる」とは言えません。MFCは、ガス条件を再現するための入力を整える機器です。結果への影響は、工程の評価データ、チャンバー状態、他のガスとの比率、ステップの長さを含めて判断します。数字の因果を急いで一本化しないことが、初心者にも設備担当者にも大切です。</p>
+
+<p class="visual-context">ここで見る具体物は「MFCと圧力計の設備系」です。</p>
+<figure class="semicon-figure" data-media-role="explanatory-image-07" data-visual-kind="photoreal" data-subject="MFCと圧力計の設備系" data-purpose="pressure-context" data-composition="instrument-closeup" data-concrete-object="true" data-selection-reason="流量の解釈に入口圧力と周辺のガス設備が関係することを、MFC、圧力計、流路の同時配置で示すため。" data-photo-assessment="MFC、圧力計、流路が同時に見えるが、圧力値や機種仕様は読み取れない。" data-provenance="articles/images/episode083/provenance/08-pressure-context.md"><img loading="lazy" decoding="async" src="images/episode083/optimized/08-V008.webp" alt="MFCと圧力計が接続された半導体ガス設備（MFCと圧力計の設備系）" width="540" height="960"><figcaption>MFCと圧力計の設備系では、流量だけでなく入口圧力や周辺の流れを同時に見ます。AI生成画像（OpenAI ImageGen）／変更: resized and converted to WebP from episode-local v2 PNG。</figcaption></figure>
+
+<div class="semicon-mid-cta"><strong>装置の部品を工程の言葉で読みたい方へ</strong><br>MFCを「数値を出す箱」として終わらせず、ガス供給、チャンバー、排気、工程結果の間に置いて読むと理解しやすくなります。まずは<a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/">半導体製造装置エンジニアの仕事</a>と照らし合わせ、部品の状態が工程全体へ戻る流れを追ってみてください。</div>
+
+<h2>設備保全ではどこまで切り分けるか</h2>
+<p data-fact-ids="F006 F007">流量が設定値に合わないとき、最初からMFCを交換すると原因を見誤ることがあります。まず、装置が指定しているガス種、ガス補正、ゼロ点、校正条件が合っているかを見ます。次に入口と出口の圧力、レギュレータ、共通供給系、前後の弁、配管、接続部を確認します。圧力式と熱式では見るべき前提も異なるため、方式を確認せずに比較しないことが必要です。</p>
+<p>定常値が合っていても、立ち上がりが遅くなったり、オーバーシュートが増えたりする場合があります。短いステップでは、最終値だけを記録すると異常を取り逃がします。流量トレンド、圧力、温度、弁の動作、警報、レシピの切替時刻を重ね、いつから波形が変わったのかを確認します。</p>
+<p>MFCの後段には、混合・分配系、プロセスチャンバー、圧力制御、排気系があります。チャンバー圧力や排気の状態が変われば、MFC単体を見ても全体像はつかめません。Flow NGはMFC単体の故障名ではなく、ガス供給からチャンバー、排気までを含む制御系で起きている現象として切り分けます。具体的な交換手順や安全操作は装置の正式な手順書に従う領域です。</p>
+
+<p class="visual-context">ここで見る具体物は「MFCのガス設定と校正確認」です。</p>
+<figure class="semicon-figure" data-media-role="explanatory-image-08" data-visual-kind="photoreal" data-subject="MFCのガス設定と校正確認" data-purpose="calibration-context" data-composition="operator-and-rack" data-concrete-object="true" data-selection-reason="ガス種、補正、校正条件を設備側で確認するという保全の視点を、作業者とガスラックの具体的な場面で示すため。" data-photo-assessment="作業者とガス設備が識別でき、未確認の校正値や保全手順は表示していない。" data-provenance="articles/images/episode083/provenance/06-calibration-context.md"><img loading="lazy" decoding="async" src="images/episode083/optimized/06-V006.webp" alt="ガスラックでMFCの設定と校正条件を確認する作業者（MFCのガス設定と校正確認）" width="540" height="960"><figcaption>MFCのガス設定と校正確認は、Flow NGを切り分ける入口です。画像は作業手順や特定の設定値を示しません。AI生成画像（OpenAI ImageGen）／変更: resized and converted to WebP from episode-local v2 PNG。</figcaption></figure>
+
+<p class="visual-context">ここで見る具体物は「複数MFCのガスボックス」です。</p>
+<figure class="semicon-figure" data-media-role="explanatory-image-09" data-visual-kind="photoreal" data-subject="複数MFCのガスボックス" data-purpose="gas-distribution" data-composition="gas-box-wide" data-concrete-object="true" data-selection-reason="複数ガスの比率と総流量が一つのMFCだけで決まらないことを、ガス配管と複数機器の設備構成で示すため。" data-photo-assessment="複数の配管とMFCが見えるが、特定メーカーや配管仕様を示さず、設備構成の理解に限定している。" data-provenance="articles/images/episode083/provenance/09-gas-distribution.md"><img loading="lazy" decoding="async" src="images/episode083/optimized/09-V009.webp" alt="複数のMFCとステンレス配管が並ぶ半導体ガスボックス（複数MFCのガスボックス）" width="540" height="960"><figcaption>複数MFCのガスボックスでは、複数のMFCが分担してガス比と総流量を作ります。配管や機器を一続きの制御系として見るための写真です。AI生成画像（OpenAI ImageGen）／変更: resized and converted to WebP from episode-local v2 PNG。</figcaption></figure>
+
+<section class="maintenance-route-section" id="maintenance-related-learning"><h2>指令値・測定値・制御動作を分ける基礎を補う</h2><p>MFCの表示だけを見て交換を決めるのではなく、設定値、測定値、供給圧、校正条件を分けて記録することが保全の仕事につながります。信号や閉ループ制御の説明が難しいなら、電気・計測・制御の基礎で不足している項目を書き出しましょう。</p></section>
+<h2>よくある誤解</h2>
+<h3>Q. MFCはガスの質量を天秤のように直接量りますか？</h3>
+<p>A. 代表的な熱式MFCは、ガスの流れが運ぶ熱の変化を測り、物性や校正を通して流量を推定します。方式は熱式だけではなく、すべてのMFCを一つの原理で説明することはできません。</p>
+<h3>Q. 表示された設定流量が合えば、工程結果も必ず同じですか？</h3>
+<p>A. いいえ。過渡応答、圧力、ガス比、チャンバー、排気、材料などが関係します。最終値が同じでも、短い工程の途中の波形が違えば、入ったガスの条件が変わる可能性があります。</p>
+<h3>Q. Flow NGならMFCを交換すればよいですか？</h3>
+<p>A. まずガス設定、校正、入口圧力、前後弁、配管、チャンバー、排気までを同じ時間軸で切り分けます。原因をMFC本体へ限定するには、設備全体の情報が必要です。</p>
+
+<p class="visual-context">ここで見る具体物は「ウェハとプロセス監視」です。</p>
+<figure class="semicon-figure" data-media-role="explanatory-image-10" data-visual-kind="photoreal" data-subject="ウェハとプロセス監視" data-purpose="process-outcome" data-composition="engineer-and-wafer" data-concrete-object="true" data-selection-reason="MFCが支えるガス条件を、ウェハ上の工程と監視へつなげて理解するための具体的な場面を示すため。" data-photo-assessment="作業者、ウェハ、監視設備が読めるが、特定の膜厚や加工結果を画像から主張しない。" data-provenance="articles/images/episode083/provenance/10-process-outcome.md"><img loading="lazy" decoding="async" src="images/episode083/optimized/10-V010.webp" alt="ウェハとプロセス監視設備を確認する半導体エンジニア（ウェハとプロセス監視）" width="540" height="960"><figcaption>ウェハとプロセス監視では、ガス条件の再現性をウェハを処理する工程側で評価します。画像から特定の膜厚や加工結果を読み取るものではありません。AI生成画像（OpenAI ImageGen）／変更: resized and converted to WebP from episode-local v2 PNG。</figcaption></figure>
+
+<h2>まとめ</h2>
+<div class="semicon-three-line-recap"><p>MFCは、センサーと制御弁を閉ループで動かし、ガス条件を設定値へ戻します。<br>ガス種、校正、圧力、立上がり、settling、overshootまでが流量の読み方に関係します。<br>供給系、チャンバー、排気を一つの制御系として見ると、工程の再現性を考えやすくなります。</p></div>
+<p class="visual-context">ここで見る具体物は「MFCの測定・フィードバック制御・工程再現性の因果」です。</p>
+<figure class="semicon-figure" data-media-role="summary-infographic" data-visual-kind="diagram" data-subject="MFCの測定・フィードバック制御・工程再現性の因果" data-purpose="end-summary" data-composition="three-panel-flow-summary" data-concrete-object="false" data-selection-reason="記事末で、MFCのセンサー、制御弁、工程条件という複数の関係を一枚で復習するため。" data-photo-assessment="実写写真は個別のMFCや監視画面は示せるが、測る・調整する・工程条件を再現する因果を同時には示せない。" data-diagram-justification="個別の写真はセンサー、弁、監視画面という物体は示せますが、測る→調整する→工程条件を再現するという因果関係を一枚で示せないため、まとめに限って自作の関係図を採用しました。" data-provenance="articles/images/episode083/provenance/11-summary-infographic.md"><img loading="lazy" decoding="async" src="images/episode083/optimized/11-summary-infographic.webp" alt="センサーで流量を測り制御弁を調整して工程のガス条件を再現するMFCの因果まとめ図（MFCの測定・フィードバック制御・工程再現性の因果）" width="1200" height="720"><figcaption>MFCの測定・フィードバック制御・工程再現性の因果をまとめた図：センサーで測る、制御弁を調整する、その結果として工程へ入るガス条件を再現するという因果を一枚に整理しました。自作まとめ図（AI生成画像3点を素材として使用）／変更: composed three episode-local v2 images with arrows and explanatory labels, then converted to WebP。</figcaption></figure>
+
+<p>次に設備側の役割を深掘りするなら、<a href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/">半導体メンテナンス技術者の仕事</a>と合わせて読むと、部品の波形を工程の状態へ戻して考える練習になります。</p>
+
+<section class="maintenance-route-section" id="maintenance-related-hub"><h2>ガス制御の切り分けは、保全でどう使う？</h2><p>異常の記録や原因の切り分けを、設備保全の担当範囲と結び付けてみましょう。設備保全Hubでは、製造経験をどう説明するか、求人条件と不足スキルをどう照合するかを整理しています。</p><aside class="semicon-cta maintenance-route-card" aria-label="設備保全Hubへの案内"><h3>設備保全Hubで、仕事・求人・学習をまとめて確認</h3><div class="semicon-btnrow"><a class="semicon-btn maintenance-route-button" href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/" data-maintenance-hub="277" data-cta="maintenance_hub" data-cta-type="maintenance_hub" data-cta-stage="career" data-cta-id="maintenance_1204_hub277_end" data-cta-route="maintenance_1204_hub277_end">ガス制御の理解を保全経験・求人条件の整理へつなげる</a></div></aside></section>
+
+<h2>参考にした公式情報</h2>
+<ul class="semicon-sources">
+<li data-source-id="S01"><a href="https://www.horiba.com/jpn/semiconductor/about-us/stec/key-technologies/element-technology/thermal-mass-flow-controller/">HORIBA「熱式マスフローコントローラとは？」</a>（熱式の測定原理）</li>
+<li data-source-id="S02"><a href="https://www.horiba.com/int/semiconductor/products/mass-flow-controller-and-module/">HORIBA「Mass Flow Controller and Module」</a>（MFCの構成と制御）</li>
+<li data-source-id="S03"><a href="https://static.horiba.com/fileadmin/Horiba/Semiconductor/Resources/Manual_Downloads/N100/I031221600B.pdf">HORIBA「SEC(F)-N112/122 Instruction Manual」</a>（周辺条件と運用上の確認項目）</li>
+<li data-source-id="S04"><a href="https://static.horiba.com/fileadmin/Horiba/Semiconductor/Resources/Manual_Downloads/N100/I031174600B.pdf">HORIBA「SEC(F)-N174R Instruction Manual」</a>（弁シーケンスと確認項目）</li>
+<li data-source-id="S05"><a href="https://api.p1.mks.com/mam/celum/celum_assets/mks/resources/MassFlowTechnology-TechNote.pdf">MKS Instruments, <em>Mass Flow Technology</em></a>（MFC技術の概説）</li>
+<li data-source-id="S06"><a href="https://store-us.semi.org/products/e01700-semi-e17-guide-for-mass-flow-controller-transient-characteristics-tests">SEMI E17</a>（過渡特性試験の考え方）</li>
+<li data-source-id="S07"><a href="https://ws680.nist.gov/publication/get_pdf.cfm?pub_id=830707">NIST, <em>Mass flow control for the semiconductor industry</em></a>（半導体向け流量制御）</li>
+<li data-source-id="S08"><a href="https://pubs.aip.org/avs/jva/article/35/3/031307/245560/Experimental-investigation-of-SF6-O2-plasma-for">JVST A「SF6/O2 plasma for silicon etching」</a>（ガス比とエッチング）</li>
+<li data-source-id="S09"><a href="https://www.pure.ed.ac.uk/ws/files/8697602/Inductively_coupled_plasma_etching.pdf">J. Appl. Phys.「Inductively coupled plasma etching of SiC」</a>（総流量とエッチング）</li>
+<li data-source-id="S10"><a href="https://pubs.aip.org/avs/jva/article/21/3/728/243711/Physical-and-electrical-properties-of-low">JVST A「Physical and electrical properties of low-temperature SiO2」</a>（成膜条件と膜特性）</li>
+<li data-source-id="S11"><a href="https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir6538.pdf">NIST「Mass flow control and gas correction factors」</a>（ガス補正と物性）</li>
+<li data-source-id="S12"><a href="https://www.brooksinstrument.com/company/news/brooks-instrument-introduces-pressure-based-mass-flow-controller-for-semiconductor-manufacturing">Brooks Instrument「GP200 pressure-based MFC」</a>（圧力式MFCの例）</li>
+<li data-source-id="S13"><a href="https://sales.brooksinstrument.com/hubfs/Data-Sheet-GF100-EtherCAT-EN.pdf?hsLang=en">Brooks Instrument「GF100 EtherCAT Data Sheet」</a>（MFC方式と仕様の読み方）</li>
+</ul>
+
+<div class="semicon-editorial-note"><strong>編集メモ（公開不要）</strong><br>短抽出：視聴者の疑問＝「MFCはガスをどう測り、どう同じ条件へ戻すのか」。残す因果＝センサーで測る→設定との差を制御弁へ返す→ガス比・圧力・反応条件の再現性を支える。科学的境界＝MFCの誤差から膜厚やCDへ普遍換算しない、熱式だけに限定しない、保全操作手順を断定しない。45〜60秒候補＝最終流量が同じでも過渡波形が違う例から、センサー・弁・周辺圧力へ着地。画像はEP083 v2のAI生成具体物10点と、V005・V004・V007を素材にした自作まとめ図1点。WordPress既存予約postの本文 correction対象。</div>
+</article>
+
+
+
+
+
+
+
+
+
+
+
+<p class="pillar-link">装置の主要部品の全体像は、<a href="/semiconductor-equipment-components-map/">半導体製造装置の構造・主要部品マップ</a>で確認できます。</p>

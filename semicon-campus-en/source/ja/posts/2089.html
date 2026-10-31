@@ -1,0 +1,31 @@
+<p>2026年10月12日、Lumentum、Astera Labs、Corningの3社は、AIサーバーを収めるラック内でPCIe信号を光で伝送する「PCIe over Optics」の共同実演を発表しました。発表された展示期間は10月12日から15日までで、Astera LabsのブースB34で紹介される計画でした。ここで重要なのは、3社が光接続の構成と実演を発表したことであり、量産製品の発売や、すでに広く導入されたことを意味しない点です。<a href="https://investor.lumentum.com/financial-news-releases/news-details/2026/Lumentum-Astera-Labs-and-Corning-to-Demonstrate-1060-nm-VCSEL-Based-PCIe-over-Optics-for-AI-Rack-Scale-Connectivity-at-the-2026-OCP-Global-Summit/default.aspx">Lumentumの発表</a></p>
+<h2>何が発表されたのか</h2>
+<p>発表されたシステムは、Astera LabsのScorpio Smart Fabric Switch、Lumentumの1060nm VCSELベースの光インターコネクト、Corningのマルチモードファイバーを組み合わせます。VCSELは、電気信号をレーザー光に変換して送る半導体レーザーです。反対側ではフォトディテクターが光を受け、再び電気信号に戻します。つまり、CPUやAIアクセラレーターなどが扱うPCIeの通信規格を保ったまま、途中の伝送媒体を電気ケーブルから光ファイバーへ置き換える考え方です。<a href="https://investor.lumentum.com/financial-news-releases/news-details/2026/Lumentum-Astera-Labs-and-Corning-to-Demonstrate-1060-nm-VCSEL-Based-PCIe-over-Optics-for-AI-Rack-Scale-Connectivity-at-the-2026-OCP-Global-Summit/default.aspx">共同発表の構成説明</a></p>
+<p>3社の発表では、複数の32Gb/s NRZ光チャネルを使い、エラーフリーのPCIe 5リンクを示す設計とされています。Lumentumは、VCSELとフォトディテクターを高密度の2次元アレイに配置し、裏面レンズ技術を含む先進パッケージを使うと説明しています。ただし、発表資料だけでは、実際の光チャネル総数、リンク距離、試験時間、エラー判定条件までは確認できません。「エラーフリー」は共同発表で示された実演上の説明であり、独立機関が同じ結果を再現したという意味ではありません。<a href="https://investor.lumentum.com/financial-news-releases/news-details/2026/Lumentum-Astera-Labs-and-Corning-to-Demonstrate-1060-nm-VCSEL-Based-PCIe-over-Optics-for-AI-Rack-Scale-Connectivity-at-the-2026-OCP-Global-Summit/default.aspx">Lumentumの発表</a></p>
+<h2>PCIe 5.0と光接続の基礎</h2>
+<p>PCIeは、CPU、GPUやAIアクセラレーター、ストレージなどを接続する高速I/O規格です。PCI-SIGによると、PCIe 5.0は1レーン当たり32.0GT/sに対応し、32レーンでは各方向128GB/sの有効raw帯域と説明されています。PCIe 5.0仕様の公開日は2019年5月22日です。世代が進むほど同じ時間に運ぶデータ量が増えるため、ケーブルや基板上で信号が弱くなったり、反射やノイズの影響を受けたりしやすくなります。<a href="https://pcisig.com/faq?field_category_value%5B%5D=pci_express_5.0">PCI-SIG公式FAQ</a></p>
+<p>ここでいう「レーン」は、PCIeでデータを送受信する最小単位です。複数レーンを束ねることで、x16やx32のような広い接続になります。一方、「NRZ」は、1回の信号変化で0または1の二つの値を表す変調方式です。今回の発表では、32Gb/sのNRZ光チャネルを複数並列に使う構成が示されました。1本だけで全帯域を運ぶのではなく、複数の光チャネルに分けて高帯域接続を組み立てるイメージです。<a href="https://investor.lumentum.com/financial-news-releases/news-details/2026/Lumentum-Astera-Labs-and-Corning-to-Demonstrate-1060-nm-VCSEL-Based-PCIe-over-Optics-for-AI-Rack-Scale-Connectivity-at-the-2026-OCP-Global-Summit/default.aspx">光チャネルに関する発表</a></p>
+<h2>なぜAIラックで光が注目されるのか</h2>
+<p>AI処理では、多数のアクセラレーターやメモリー、スイッチを高速に接続します。ラックが大規模になると、接続距離、ケーブル本数、信号品質、電力、熱設計が同時に問題になり得ます。電気配線を長くすると信号損失やノイズへの対策が必要になり、ケーブルが増えると配線作業や冷却の設計も難しくなります。光ファイバーは電気信号そのものを長い導体に流さないため、こうした場所で別の接続手段になり得ます。今回の実演は、PCIeのプロトコルを大きく変えずに、ラック内の媒体を光にする実装例を示した点に意義があります。<a href="https://investor.lumentum.com/financial-news-releases/news-details/2026/Lumentum-Astera-Labs-and-Corning-to-Demonstrate-1060-nm-VCSEL-Based-PCIe-over-Optics-for-AI-Rack-Scale-Connectivity-at-the-2026-OCP-Global-Summit/default.aspx">Lumentumの課題説明</a></p>
+<p>ただし、光にすれば必ず消費電力や発熱が減るとは限りません。送信器、受光器、スイッチ、パッケージ、電源回路が必要で、光変換のための部品も増えます。今回の発表には、銅線構成との消費電力比較、遅延比較、ラック全体の熱削減量、価格、量産時期は示されていません。したがって、「銅線より高性能・低消費電力であることが証明された」とまでは言えません。</p>
+<h2>ファイバー側で確認すべきこと</h2>
+<p>Corningは、マルチモードファイバーをデータセンター内の短距離・高データレート伝送向けに説明し、OM2、OM3、OM4などを850nm VCSELベースで最大100m級の用途向けとして紹介しています。マルチモードとは、ファイバーの中を複数の光の通り道で伝送する方式です。短距離の施設内接続で使いやすい一方、波長、ファイバーの規格、損失、コネクター、曲げ条件を組み合わせて評価する必要があります。Corningのこの資料は主に850nm構成の一般的な背景であり、今回の1060nm構成の到達距離や損失を直接証明する資料ではありません。<a href="https://www.corning.com/optical-communications/in/en/home/products/fiber/optical-fiber-products/clearcurve-multimode-fiber.html">Corningのマルチモードファイバー説明</a></p>
+<h2>今回の発表をどう評価するか</h2>
+<p>Scorpio Smart Fabric Switchは、Astera Labsの公式製品ページでAIスケールアップ向けのファブリックスイッチとして説明され、PCIe 5対応の64レーン構成も掲載されています。今回の実演では、このようなスイッチを含む接続システムに光インターコネクトを組み込む方向が示されました。これは、光接続が研究室だけの部品ではなく、PCIeベースのラック設計に組み込む対象になっていることを示す一例です。ただし、実演の発表と、長期運用できる量産システムの完成は別の段階です。<a href="https://www.asteralabs.com/products/scorpio-smart-fabric-switch/">Astera LabsのScorpio製品ページ</a></p>
+<p>また、Astera Labsは10月8日、PCIe 7向けに銅線・光インターコネクトを含むAries 7信号調整製品群を発表しました。これは同社が将来世代で光接続も視野に入れていることを示すロードマップ上の材料ですが、今回のPCIe 5実演の性能結果ではありません。サンプリングや提供計画も会社発表として扱う必要があり、確定した量産開始日と混同できません。<a href="https://ir.asteralabs.com/node/9336/pdf">Astera LabsのAries 7発表</a></p>
+<h2>これから注目したい点</h2>
+<ul>
+<li>1060nm構成での実リンク距離、光チャネル数、試験時間、ビットエラー率が公開されるか。</li>
+<li>銅線構成と比べた消費電力、遅延、熱、ケーブル密度の実測値が示されるか。</li>
+<li>1060nm VCSELと使用ファイバー、コネクターの規格適合性や相互接続性が確認されるか。</li>
+<li>展示実演から、量産製品、価格、保守方法、AIサーバーへの標準採用へ進むか。</li>
+</ul>
+<p>今回のニュースは、AIラックの接続課題に対して、PCIeを維持しながら光を取り入れる具体的な方向を示したものです。一方で、確認できるのは企業が発表した実演構成と設計意図までです。商用化、性能優位、コスト削減、ラック全体の熱削減を判断するには、独立測定と量産後の運用データを待つ必要があります。</p>
+<h2>出典</h2>
+<ul>
+<li><a href="https://investor.lumentum.com/financial-news-releases/news-details/2026/Lumentum-Astera-Labs-and-Corning-to-Demonstrate-1060-nm-VCSEL-Based-PCIe-over-Optics-for-AI-Rack-Scale-Connectivity-at-the-2026-OCP-Global-Summit/default.aspx">Lumentum：1060nm VCSELによるPCIe over Optics共同実演の発表</a></li>
+<li><a href="https://pcisig.com/faq?field_category_value%5B%5D=pci_express_5.0">PCI-SIG：PCI Express 5.0公式FAQ</a></li>
+<li><a href="https://www.corning.com/optical-communications/in/en/home/products/fiber/optical-fiber-products/clearcurve-multimode-fiber.html">Corning：ClearCurve Multimode Fiber</a></li>
+<li><a href="https://www.asteralabs.com/products/scorpio-smart-fabric-switch/">Astera Labs：Scorpio Smart Fabric Switch</a></li>
+<li><a href="https://ir.asteralabs.com/node/9336/pdf">Astera Labs：Aries 7発表資料</a></li>
+</ul>

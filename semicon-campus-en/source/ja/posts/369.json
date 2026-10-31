@@ -1,0 +1,20 @@
+{
+ "id": 369,
+ "type": "post",
+ "slug": "what-is-semiconductor-failure-analysis",
+ "link": "https://semicon-campus.com/what-is-semiconductor-failure-analysis/",
+ "date": "2026-07-06T22:10:13",
+ "modified": "2026-10-30T21:22:55",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  5,
+  9,
+  12
+ ],
+ "tags": [],
+ "featured_media": 364,
+ "title": "不良解析とは何か？欠陥・測定値から原因を切り分ける半導体の仕事をやさしく解説",
+ "excerpt": "半導体の不良解析とは、欠陥や測定値の異常から原因候補を切り分け、工程改善や歩留まり改善へつなげる仕事です。SEM、FIB、EDS/EDX、品質データ解析、求人票での見方まで初心者向けに解説します。"
+}

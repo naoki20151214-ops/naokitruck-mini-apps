@@ -1,0 +1,20 @@
+{
+ "id": 1245,
+ "type": "post",
+ "slug": "daily-news-f89e7a03257fa1367806",
+ "link": "https://semicon-campus.com/daily-news-f89e7a03257fa1367806/",
+ "date": "2026-09-25T16:00:00",
+ "modified": "2026-10-27T20:04:41",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  20
+ ],
+ "tags": [
+  19
+ ],
+ "featured_media": 2825,
+ "title": "SEALSQ VaultIC408のFIPS 140-3 Level 3認証が示す意味",
+ "excerpt": "SEALSQのVaultIC408が取得したFIPS 140-3 Level 3 validationについて、認証の意味、技術的背景、ポスト量子暗号との違い、商用展開の可能性と限界を初心者向けに解説します。"
+}

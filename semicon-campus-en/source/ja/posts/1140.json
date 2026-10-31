@@ -1,0 +1,20 @@
+{
+ "id": 1140,
+ "type": "post",
+ "slug": "daily-news-71d5859a9d46582e4beb",
+ "link": "https://semicon-campus.com/daily-news-71d5859a9d46582e4beb/",
+ "date": "2026-09-22T11:00:00",
+ "modified": "2026-10-27T20:04:57",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  20
+ ],
+ "tags": [
+  19
+ ],
+ "featured_media": 2844,
+ "title": "TeradyneのIris 100発表、microLED量産検査がAI光接続を支える理由",
+ "excerpt": "Teradyneが発表したIris 100を題材に、microLEDの画素単位検査、AIデータセンターの光インターコネクトとの関係、量産化の課題と今後の確認点を初心者向けに解説します。"
+}

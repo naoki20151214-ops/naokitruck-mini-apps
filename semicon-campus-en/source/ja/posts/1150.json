@@ -1,0 +1,20 @@
+{
+ "id": 1150,
+ "type": "post",
+ "slug": "daily-news-7c2086ce38699a19163f",
+ "link": "https://semicon-campus.com/daily-news-7c2086ce38699a19163f/",
+ "date": "2026-09-23T09:00:00",
+ "modified": "2026-10-27T20:04:52",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  20
+ ],
+ "tags": [
+  19
+ ],
+ "featured_media": 2839,
+ "title": "Marvellの2nm光DSP、400G/laneと1.6T接続を実演へ",
+ "excerpt": "MarvellがECOC 2026で実演予定の2nm光DSPを解説。400G/lane PAM4、800G・1.6T接続、coherent-liteの仕組みと、計画と実証を見分けるポイントを紹介します。"
+}

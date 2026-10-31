@@ -1,0 +1,20 @@
+{
+ "id": 1284,
+ "type": "post",
+ "slug": "daily-news-0c19d2a19d4c4dbf7fd7",
+ "link": "https://semicon-campus.com/daily-news-0c19d2a19d4c4dbf7fd7/",
+ "date": "2026-09-27T11:00:00",
+ "modified": "2026-10-27T20:04:32",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  20
+ ],
+ "tags": [
+  19
+ ],
+ "featured_media": 2820,
+ "title": "EdgeCortix RAIDEN発表を解説：物理AI向けチップレットの実力と課題",
+ "excerpt": "EdgeCortixが2026年9月24日に発表したRAIDENを題材に、チップレット、UCIe、FP4演算の意味と、性能・顧客採用・量産計画を読む注意点を初心者向けに解説します。"
+}

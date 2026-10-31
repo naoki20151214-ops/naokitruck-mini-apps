@@ -1,0 +1,39 @@
+<p>Navitas SemiconductorとMicrochip Technologyは2026年10月5日、AIデータセンターのラック電源向けに、800Vの直流（DC）を6V DCへ直接変換する基準設計を共同発表しました。これは量産製品の出荷開始ではなく、顧客や設計者が評価・開発の出発点として利用する設計例です。AI向けGPUやアクセラレーターの電力が増えるなか、どの電圧で電気を配り、どこで変換するかが重要になっています。<a href="https://www.globenewswire.com/news-release/2026/10/05/3374545/0/en/navitas-and-microchip-collaborate-to-deliver-800v-reference-design-for-next-generation-ai-data-centers.html">両社の共同発表</a></p>
+<h2>何が発表されたのか</h2>
+<p>今回の中心は、800V DCから6V DCへ一段で変換する20kW級の基準設計です。Microchipの公開ページによると、128:1のフルブリッジLLC方式を採用し、10kWの変換モジュールを2個、入力側は直列、出力側は並列に接続します。800V側の高電圧を、サーバーやアクセラレーターが使う低電圧へ変換する電源回路です。<a href="https://www.microchip.com/en-us/tools-resources/reference-designs/800v-to-6v-hvdc-for-ai-data-center-racks-reference-design">Microchipの基準設計ページ</a></p>
+<p>両社の発表では、Navitasの650V・17mΩのGaN FETを16個使い、1MHzでスイッチングする構成が示されています。最大96%のピーク効率と2,100W/in³の電力密度も掲げられていますが、これらは企業が示した設計目標・性能主張です。第三者による独立測定、量産条件での保証値、データセンター全体の効率を意味するものではありません。<a href="https://www.globenewswire.com/news-release/2026/10/05/3374545/0/en/navitas-and-microchip-collaborate-to-deliver-800v-reference-design-for-next-generation-ai-data-centers.html">発表資料の仕様説明</a></p>
+<h2>なぜ800V直流が注目されるのか</h2>
+<p>電力はおおむね「電圧×電流」で表せます。同じ電力を運ぶ場合、電圧を高くすれば必要な電流を小さくできます。電線の抵抗損失は電流の二乗に関係するため、電流を下げると配線損失を抑えやすくなり、バスバーやケーブルの規模を小さくできる可能性があります。</p>
+<p>AIデータセンターでは、GPUを多数搭載したラックの電力密度が上昇しています。従来の54Vラック構成のまま電力を増やすと、大電流に対応する銅配線、コネクター、冷却、保護機器が課題になります。NVIDIAは800V DCについて、54V構成などと比べ、電流、銅使用量、ケーブル量、変換段数を減らし得るアーキテクチャとして説明しています。<a href="https://www.nvidia.com/en-eu/data-center/technologies/800-vdc-architecture/">NVIDIAの800V DC技術説明</a></p>
+<p>今回の設計が狙うのは、従来の「800Vから50V、50Vから6V」という複数段の変換を、800Vから6Vへ直接変換する構成にまとめることです。変換段数が減れば、部品点数や変換損失を抑えられる可能性があります。ただし効果は、入力電圧、負荷率、冷却方式、配線、施設側の変換設備を含むシステム条件で変わります。</p>
+<h2>初心者向けに分かる技術用語</h2>
+<h3>GaNパワー半導体</h3>
+<p>GaNは窒化ガリウムを使うワイドバンドギャップ半導体の一種です。電源では、電気を高速にオン・オフするスイッチとして働きます。シリコン製スイッチより高い周波数で動作させやすく、スイッチング損失を抑えたり、変圧器などの磁性部品を小型化したりできる可能性があります。</p>
+<p>ただし、GaNを採用すれば必ず高効率になるわけではありません。磁性部品、配線の寄生インダクタンス、制御アルゴリズム、負荷、入力電圧、冷却条件を含めた設計全体が性能を左右します。</p>
+<h3>LLC共振コンバーター</h3>
+<p>LLC共振コンバーターは、スイッチング回路とコイル・コンデンサーの共振現象を組み合わせて電圧を変換する方式です。共振に合わせてスイッチを切り替えることで、スイッチング時の損失やノイズを抑え、高周波動作を狙えます。一方で、入力電圧や負荷の変化に合わせた制御、絶縁、発熱、磁性部品の設計は簡単ではありません。</p>
+<h3>デジタル制御とハードウェアセキュリティ</h3>
+<p>Microchipの構成では、dsPIC33AKデジタルシグナルコントローラーが共振制御、テレメトリー、熱保護、PMBus、SPDM通信、ライブファームウェア更新を扱います。TA100セキュリティデバイス、セキュアブート、認証済み更新、root of trustも組み込まれています。root of trustとは、機器が正規の部品やソフトウェアを判定する際の信頼の基準点です。<a href="https://www.microchip.com/en-us/tools-resources/reference-designs/800v-to-6v-hvdc-for-ai-data-center-racks-reference-design">制御・セキュリティ構成</a></p>
+<p>電源装置がネットワーク経由で監視・更新される環境では、不正なファームウェアや制御ノードを受け入れない仕組みが重要です。ただし、部品側のセキュリティ機能だけでシステム全体が安全になるわけではなく、鍵管理、ネットワーク分離、更新手順、運用監視も必要です。</p>
+<h2>技術と標準化の背景</h2>
+<p>800V DC配電は、今回初めて登場した考え方ではありません。施設側で交流を直流へ変換し、データセンター内を800V DCで配電し、ラックやサーバーの近くで低電圧へ落とす構成が検討されています。ただし、高電圧化には絶縁、アーク放電、保護協調、コネクター、保守時の安全性、冷却を一体で設計する必要があります。</p>
+<p>IEEEでは、300Vから1500VまでのDC配電を対象にしたP3710.1の標準化プロジェクトが進んでいます。ページ上では2026年3月26日にPARとして承認され、現在もActive PARとされています。これは高電圧DC配電が設計指針の議論対象になっていることを示しますが、800V DCがすでに業界標準として広く確立したことや、今回の設計がIEEE認証を取得したことを意味しません。<a href="https://standards.ieee.org/ieee/3710.1/12521/">IEEE P3710.1の情報</a></p>
+<h2>まだ分からないことと今後の注目点</h2>
+<p>公開資料から確認できるのは、両社が基準設計を発表し、20kW級の変換方式、GaNデバイス、デジタル制御、セキュリティ機能、効率と電力密度の目標を示したことです。共同開発の開始日、試作完了日、量産製品として出荷できる状態かどうかは確認できません。</p>
+<p>96%という数値もピーク効率です。実際のデータセンターでは、負荷率が変動し、冷却、配線、待機電力、保護回路が加わります。今後は、実機の効率曲線、熱設計、絶縁・安全対策、長期信頼性、障害時の冗長性、システム全体の消費電力を確認する必要があります。</p>
+<p>両社は、この設計を2026年10月12日から15日に開催されるMicrochipのOCPイベントで展示する予定だと発表しています。これは将来の企業計画であり、2026年10月6日時点では展示実施後の成果、顧客評価、量産採用を示すものではありません。<a href="https://www.globenewswire.com/news-release/2026/10/05/3374545/0/en/navitas-and-microchip-collaborate-to-deliver-800v-reference-design-for-next-generation-ai-data-centers.html">展示予定を含む共同発表</a></p>
+<ul>
+<li>展示で実機の測定条件や効率曲線が公開されるか</li>
+<li>800V DCの安全規格、保守手順、コネクターが実装面でどう整理されるか</li>
+<li>今回の設計が顧客の試験導入や量産製品に採用されるか</li>
+<li>IEEEなどの標準化が共通仕様や安全指針につながるか</li>
+<li>電源単体ではなく、AC入力からGPUまでの総合効率とコストが改善するか</li>
+</ul>
+<p>今回の発表は、AIデータセンターの高電力化に対し、配電電圧を上げ、GaNとデジタル制御を組み合わせる方向を具体化したものです。800V直流がすぐに業界標準になると断定する段階ではありませんが、電力をどこで変換し、どう安全に管理するかを考えるうえで注目すべき基準設計です。</p>
+<h2>参考情報</h2>
+<ul>
+<li><a href="https://www.globenewswire.com/news-release/2026/10/05/3374545/0/en/navitas-and-microchip-collaborate-to-deliver-800v-reference-design-for-next-generation-ai-data-centers.html">Navitas and Microchip Collaborate to Deliver 800V Reference Design for Next-Generation AI Data Centers</a></li>
+<li><a href="https://www.microchip.com/en-us/tools-resources/reference-designs/800v-to-6v-hvdc-for-ai-data-center-racks-reference-design">800V-to-6V HVDC for AI Data Center Racks Reference Design</a></li>
+<li><a href="https://www.nvidia.com/en-eu/data-center/technologies/800-vdc-architecture/">NVIDIA 800 VDC Architecture</a></li>
+<li><a href="https://standards.ieee.org/ieee/3710.1/12521/">IEEE P3710.1 Recommended Practice</a></li>
+</ul>

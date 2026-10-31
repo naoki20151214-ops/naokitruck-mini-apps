@@ -1,0 +1,19 @@
+{
+ "id": 596,
+ "type": "post",
+ "slug": "what-is-cuda-gpu-computing",
+ "link": "https://semicon-campus.com/what-is-cuda-gpu-computing/",
+ "date": "2026-07-20T21:12:59",
+ "modified": "2026-10-22T13:56:41",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  4,
+  2
+ ],
+ "tags": [],
+ "featured_media": 592,
+ "title": "CUDAとは？ GPUを画像処理から汎用計算へ開いた仕組み",
+ "excerpt": "CUDAはGPUそのものでもAI専用言語でもありません。CPUとGPUの協力、グリッド・ブロック・スレッド、ライブラリまで、何が変わったのかを初心者向けに図解します。"
+}

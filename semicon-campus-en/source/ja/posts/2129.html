@@ -1,0 +1,25 @@
+<p>SK hynixは2026年10月16日、米国サンノゼで10月12日から15日まで開催されたOCP Global Summit 2026について、CXLを軸にAIラックを「メモリー中心」へ再設計する方向性を示しました。これは完成した量産ラックの導入発表ではなく、CXL 3.2対応メモリー、ラック規模のメモリープール、KVキャッシュ共有、計算メモリーなどを組み合わせた展示・システムデモの紹介です。イベントの日程はOCP公式情報でも確認できます。<a href="https://news.skhynix.com/en/ocp-global-summit-2026/">SK hynix公式発表</a> <a href="https://www.opencompute.org/events/ocp-summit/2026-ocp-global-summit/">OCP公式イベント情報</a></p>
+<h2>何が発表されたのか</h2>
+<p>SK hynixは、複数のサーバーやGPUから利用できるCXLプールメモリーを使い、AIエージェント処理でKVキャッシュを転送・再利用するデモを示したと説明しています。KVキャッシュとは、大規模言語モデル（LLM）が文章を生成するとき、すでに読んだ入力について計算した結果を一時保存するデータです。会話が長くなったり、同じ情報を複数の処理で使ったりすると、必要な容量が増えます。</p>
+<p>同社は第2世代CMM-DDR5について、256GBの容量、前世代比で2倍を超える帯域幅、約30％のエネルギー効率改善を説明しています。公式記事では帯域幅を80GB/sとしています。ただし、これらはSK hynixによる製品・デモの説明であり、今回の資料だけで独立試験済みの業界共通値と判断することはできません。<a href="https://news.skhynix.com/en/ocp-global-summit-2026/">SK hynix公式発表</a></p>
+<p>別のデモでは、AMD、Penguin、Xcena、Arceeとともに、CXLメモリーとSSDを組み合わせたハイブリッドメモリーを示したとしています。SK hynixによれば、会話やタスクの履歴から必要なKVキャッシュを予測し、DRAMへ先読みする構成です。これも展示・実証の説明であり、量産仕様や一般提供の確定発表ではありません。<a href="https://news.skhynix.com/en/ocp-global-summit-2026/">SK hynix公式発表</a></p>
+<h2>CXLとメモリープールをやさしく理解する</h2>
+<p>CXLは、PCI Expressを基盤に、CPU、GPU、アクセラレーター、メモリー装置などを接続する標準規格です。通常のサーバーでは、メモリーを各サーバーやGPUの近くに固定的に搭載します。一方、CXLを使うと、計算装置からメモリーをある程度分離し、外部のメモリー資源として扱う構成を目指せます。<a href="https://computeexpresslink.org/wp-content/uploads/2023/12/CXL_3.0_white-paper_FINAL.pdf">CXL ConsortiumのCXL 3.0技術白書</a></p>
+<p>メモリープーリングは、複数のサーバーが共有のメモリー資源から必要な容量を割り当て、不要になれば返す考え方です。あるサーバーのメモリーが余る一方、別のサーバーが不足するという偏りを抑えられる可能性があります。</p>
+<p>ただし、「プーリング」と「共有」は同じ意味ではありません。プーリングは容量を必要な装置へ割り当て直す仕組みです。メモリー共有は、複数のホストが同じメモリー領域を参照・更新し、データの整合性を保つことを指します。CXL 3.0の白書は、複数ホストからのコヒーレントなアクセスやファブリック機能を説明しており、SK hynixが示すラック規模の資源共有を支える技術的背景と整合します。<a href="https://computeexpresslink.org/wp-content/uploads/2023/12/CXL_3.0_white-paper_FINAL.pdf">CXL ConsortiumのCXL 3.0技術白書</a></p>
+<h2>AI時代にメモリー中心設計が重要な理由</h2>
+<p>AIの性能は、演算器の数だけで決まりません。モデルの重み、入力データ、長い会話履歴、KVキャッシュをどこに置き、どの経路で読み出すかも重要です。各GPUやサーバーにKVキャッシュを複製すると、容量とデータ移動の負担が増えます。共有またはプールされたメモリーへ保存し、別の推論処理が再利用できれば、コピー回数を減らせる可能性があります。</p>
+<p>ただし、実際の効果は、CXLスイッチの構成、ソフトウェア、アクセス競合、キャッシュの局所性、ネットワーク方式との比較条件に左右されます。SK hynixはネットワーク通信に依存する方式との比較デモを説明していますが、公式記事には具体的な遅延、スループット、消費電力、測定条件が十分に示されていません。したがって、「性能が改善した」という説明は、同社のデモ結果として扱う必要があります。<a href="https://news.skhynix.com/en/ocp-global-summit-2026/">SK hynix公式発表</a></p>
+<p>CMM-Axのような計算メモリーは、データをCPUやGPUへ運んでから処理する代わりに、メモリー側で一部の計算を実行する考え方です。データ移動が多い処理では、移動量を減らして時間や電力を抑えられる可能性があります。一方で、対応できる演算、計算精度、プログラミングモデル、既存AIフレームワークとの互換性が実用化の条件になります。SK hynixは電力・コスト負担を低減できると説明していますが、一般的な削減効果が証明されたわけではありません。<a href="https://news.skhynix.com/en/ocp-global-summit-2026/">SK hynix公式発表</a></p>
+<h2>標準規格と製品世代を混同しない</h2>
+<p>今回のニュースでは、CXL 3.2とCXL 4.0を区別することが重要です。SK hynixが紹介したCMM-DDR5はCXL 3.2対応として説明されています。一方、CXL Consortiumは2025年11月18日にCXL 4.0仕様の公開を発表し、最大128GT/sのリンク速度、バンドルドポート、メモリーRASの強化などを追加したと説明しています。CXL 4.0が新しい標準だからといって、今回のCMM-DDR5がCXL 4.0対応製品という意味ではありません。<a href="https://computeexpresslink.org/wp-content/uploads/2025/11/CXL_4.0-Specification-Release_FINAL_Website-Copy.pdf">CXL ConsortiumのCXL 4.0発表資料</a> <a href="https://news.skhynix.com/en/ocp-global-summit-2026/">SK hynix公式発表</a></p>
+<h2>量産化に向けた限界と今後の注目点</h2>
+<p>今回確認できるのは、SK hynixが展示会で実システムのデモやPoCの内容を紹介した段階です。量産開始日、価格、採用顧客、一般提供範囲、ラック全体の運用コストは、公式発表から確認できません。256GB、80GB/s、約30％改善という数値も、独立試験による確認ではなく同社の説明です。</p>
+<p>今後は、第一にCXLメモリーとAIソフトウェアが実運用でどの程度対応するか、第二にKVキャッシュ共有による遅延・電力の改善が第三者測定で確認されるか、第三にCMM-Axの対応演算と既存LLMフレームワークの接続方法が注目されます。メモリー中心AIラックは有力な設計方向ですが、デモから量産システムへ進むには、標準、ソフトウェア、信頼性、費用の検証が必要です。</p>
+<h2>出典</h2>
+<ul>
+<li><a href="https://news.skhynix.com/en/ocp-global-summit-2026/">SK hynix「Memory-Centric Server Systems Are the Future」</a></li>
+<li><a href="https://www.opencompute.org/events/ocp-summit/2026-ocp-global-summit/">Open Compute Project「2026 OCP Global Summit」</a></li>
+<li><a href="https://computeexpresslink.org/wp-content/uploads/2023/12/CXL_3.0_white-paper_FINAL.pdf">Compute Express Link Consortium「CXL 3.0 Specification White Paper」</a></li>
+<li><a href="https://computeexpresslink.org/wp-content/uploads/2025/11/CXL_4.0-Specification-Release_FINAL_Website-Copy.pdf">Compute Express Link Consortium「CXL 4.0 Specification Release」</a></li>
+</ul>

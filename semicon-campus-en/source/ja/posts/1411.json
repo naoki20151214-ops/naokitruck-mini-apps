@@ -1,0 +1,19 @@
+{
+ "id": 1411,
+ "type": "post",
+ "slug": "vacuum-gauge",
+ "link": "https://semicon-campus.com/vacuum-gauge/",
+ "date": "2026-10-06T18:00:00",
+ "modified": "2026-10-30T21:32:34",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  9,
+  21
+ ],
+ "tags": [],
+ "featured_media": 2781,
+ "title": "半導体装置の真空計とは？圧力の測り方と読み方",
+ "excerpt": "真空なのに圧力をどう測る？半導体装置で複数の真空計を使う理由を、熱・膜の変形・電離から解説。排気やガス導入の流れ、設備保全で表示値から原因候補を考える視点まで初心者向けに学べます。"
+}

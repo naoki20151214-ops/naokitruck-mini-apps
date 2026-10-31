@@ -1,0 +1,219 @@
+
+<!--KEEP:0-->
+
+<!--KEEP:1-->
+
+<div class="semicon-article">
+
+<p class="semicon-level">完全初心者向け</p>
+
+<div class="semicon-symptom-hook">
+  <strong>こんな「遅い」に心当たりはありませんか？</strong>
+  <div class="semicon-symptom-list">
+    <div class="semicon-symptom-item">タブやアプリを増やすと重い</div>
+    <div class="semicon-symptom-item">起動やファイル読込みが遅い</div>
+    <div class="semicon-symptom-item">動画の書出しや計算に時間がかかる</div>
+  </div>
+  <p>どれも「PCが遅い」状態ですが、関係しやすい部品は同じではありません。</p>
+</div>
+
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>全部まとめて「古いPCだから遅い」と思っていました。症状によって原因が違うんですか？</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>違うぞ。作業場所が足りないのか、保存場所からの読出しが遅いのか、処理そのものに時間がかかるのかで、見るべき部品が変わるんじゃ。</p></div></div>
+
+<p class="semicon-section-heading" role="heading" aria-level="2">30秒でわかるCPU・メモリ・ストレージの違い</p>
+
+<div class="semicon-quick">
+  <p class="semicon-quick-title">最初の結論は、この3つです</p>
+  <div class="semicon-role-grid">
+    <div class="semicon-role"><b>CPU = 処理する</b><span>命令を実行し、計算や制御を進める</span></div>
+    <div class="semicon-role"><b>メモリ = 作業中</b><span>いま使っているデータを一時的に置く</span></div>
+    <div class="semicon-role"><b>ストレージ = 保存する</b><span>電源を切った後もデータを残す</span></div>
+  </div>
+  <div class="semicon-relation" aria-label="ストレージからメモリへデータを読み出し、CPUが処理する関係">
+    <span>ストレージ</span><span class="semicon-arrow">→</span><span>メモリ</span><span class="semicon-arrow">→</span><span>CPU</span>
+  </div>
+</div>
+
+<p class="semicon-lead">アプリやファイルはストレージに保存されています。使うときはメモリへ読み出され、CPUがそのデータを処理します。どれか1つだけでは、パソコンの仕事は進みません。</p>
+
+
+
+
+<h2>なぜ3つに役割を分ける必要があるのか</h2>
+
+<p>「全部をCPUの中へ入れれば速いのでは」と思うかもしれません。しかし、記憶装置は速さだけでなく、容量、価格、電源を切っても残せるかという条件があります。</p>
+
+<div class="semicon-reason-grid">
+  <div class="semicon-card"><strong>CPUは処理が得意</strong><p>複雑な命令を実行できますが、大量の写真やアプリを長期保存する場所ではありません。</p></div>
+  <div class="semicon-card"><strong>メモリは素早い受け渡しが得意</strong><p>CPUが使うデータをすぐ渡せますが、一般的なメインメモリは電源を切ると内容が消えます。</p></div>
+  <div class="semicon-card"><strong>ストレージは保存が得意</strong><p>大容量のデータを残せますが、CPUが直接使う作業場所としてはメモリより遅くなります。</p></div>
+</div>
+
+<p>速い処理、素早い作業場所、大容量の保存場所を分担することで、速度と容量と価格のバランスを取っています。</p>
+
+<h2>机のたとえで3つの役割をつかむ</h2>
+
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>役割は分かりました。でも、3つが一緒に動く場面をまだ想像できません。</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>作業者、机、本棚に置き換えると見えやすいぞ。</p></div></div>
+
+<div class="semicon-analogy-grid">
+  <div class="semicon-card"><strong>作業者 = CPU</strong><p>資料を読んで、計算や判断を進めます。</p></div>
+  <div class="semicon-card"><strong>机 = メモリ</strong><p>いま使う資料を広げておく作業場所です。</p></div>
+  <div class="semicon-card"><strong>本棚 = ストレージ</strong><p>使い終わった資料を長く保管します。</p></div>
+</div>
+
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>机が狭いと資料を入れ替える回数が増える。これがメモリ不足で重くなる感覚なんですね。</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>その理解でよい。ただし、たとえは役割をつかむ入口じゃ。実際には電気信号としてデータを読み書きしている。</p></div></div>
+
+<div class="semicon-real-note">
+  <strong>たとえと実際の仕組みを分けよう</strong>
+  <p>CPUが人のように考えたり、メモリが本物の机だったりするわけではありません。CPUは命令を実行する回路、メモリとストレージはデータを保持する半導体です。</p>
+</div>
+
+<h2>アプリを開くと3つはどう連携するのか</h2>
+
+<div class="semicon-flow">
+  <div class="semicon-flow-step"><strong>1. ストレージ</strong><span>保存していたアプリやファイルを読み出す</span></div>
+  <div class="semicon-flow-arrow">→</div>
+  <div class="semicon-flow-step"><strong>2. メモリ</strong><span>作業中に必要なデータを置く</span></div>
+  <div class="semicon-flow-arrow">→</div>
+  <div class="semicon-flow-step"><strong>3. CPU</strong><span>命令を実行して処理を進める</span></div>
+</div>
+
+<p>例えば写真編集アプリを開くと、プログラムや画像はSSDからメモリへ読み出されます。CPUはメモリにあるデータを使って、画面表示や編集処理を進めます。</p>
+
+<p>メモリが足りないと、OSはストレージの一部も一時的な退避先として使います。ストレージはメインメモリより遅いため、アプリの切り替えや操作が重くなりやすくなります。</p>
+
+<div class="semicon-basic-complete">ここまででCPU・メモリ・ストレージの基本は理解できました。</div>
+<div class="semicon-deep-break"><strong>ここから先は任意の深掘りです</strong><p>CPUの近くにあるキャッシュ、メインメモリのDRAM、SSDに使われるNANDまで知りたい人だけ進んでください。最後には、PCのどこを見直すかを判断する表があります。</p></div>
+
+
+
+<h2>ここから深掘り：キャッシュ・DRAM・NAND</h2>
+
+<h3>CPUの中にもある「キャッシュ」とは</h3>
+
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>「CPUの中にもメモリがある」と聞きました。パソコンの16GBメモリと同じですか？</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>同じではない。CPUがすぐ使うデータを手元へ置く、小さく高速なキャッシュの話であることが多いぞ。</p></div></div>
+
+<p>CPUが必要なデータを毎回メインメモリまで取りに行くと、待ち時間が増えます。そこで、よく使うデータをCPUの中や近くへ置くのがキャッシュです。</p>
+
+<p>CPU内部にはレジスタもありますが、この記事ではパソコンの「メモリ容量」と混同されやすいキャッシュを中心に扱います。</p>
+
+<h3>メインメモリのDRAMとは</h3>
+
+<p>パソコンの仕様にある「メモリ16GB」「メモリ32GB」は、主にDRAMを使ったメインメモリです。ブラウザ、文書、動画など、現在使っているデータを置きます。</p>
+
+<p>ここでいうメインメモリ（DRAM）は、基本的に電源を切ると内容が消えます。その代わり、CPUとのデータの受け渡しを比較的高速に行えます。</p>
+
+<h3>ストレージを支えるNANDとは</h3>
+
+<p>NANDフラッシュメモリは、電源を切ってもデータを保持できる不揮発性メモリです。SSD、USBメモリ、スマートフォンの保存領域などに使われます。</p>
+
+<p>SSDはNANDだけで動くわけではありません。保存場所の管理、書き込みの分散、誤り訂正などを行うSSDコントローラと組み合わせて使います。</p>
+
+<div class="semicon-memory-layers">
+  <div class="semicon-memory-layer"><b>キャッシュ</b><span>CPUのすぐ近く。小容量で高速</span></div>
+  <div class="semicon-memory-layer"><b>DRAM</b><span>作業中のデータ。電源OFFで基本的に消える</span></div>
+  <div class="semicon-memory-layer"><b>NAND</b><span>長期保存。電源OFFでも残る</span></div>
+</div>
+
+<h3>半導体として見ると何が違うのか</h3>
+
+<p>CPUは、計算や制御を行うロジック半導体です。一方、DRAMやNANDは、データの保持に重点を置くメモリ半導体です。</p>
+
+<div class="semicon-table-wrap">
+  <table>
+    <thead><tr><th>半導体の種類</th><th>代表例</th><th>主な役割</th><th>関係する分野</th></tr></thead>
+    <tbody>
+      <tr><td>ロジック半導体</td><td>CPU、GPU、AIチップ</td><td>計算、制御、判断</td><td>設計、プロセス、EDA、先端製造</td></tr>
+      <tr><td>メモリ半導体</td><td>DRAM、NAND、HBM</td><td>一時保持、保存、データ供給</td><td>メモリ製造、材料、装置、品質、歩留まり改善</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<p>同じ半導体でも目的が違えば、構造や製造工程、検査で重視する点も変わります。CPU・DRAM・NANDの違いは、企業や職種の違いにもつながります。</p>
+
+<h3>AI時代はメモリの速さも重要になる</h3>
+
+<p>AIでは、大量のデータを繰り返し読み書きします。GPUが速く計算できても、必要なデータが届かなければ待ち時間が生まれます。</p>
+
+<p>そのため、AI半導体では計算チップだけでなく、メモリとの距離や一度に運べるデータ量も重要です。HBMについては、<a href="https://semicon-campus.com/what-is-hbm-high-bandwidth-memory/">AI・GPUを支えるHBMの仕組み</a>で深掘りできます。</p>
+
+
+<section class="mp3-section" id="revenue-phase3-learning"><h2>CPU・メモリ・保存容量から見直す</h2><p>PCの遅さを感じたときは、この記事の症状別の表と使用率を照合し、CPU、メモリ、ストレージのどこが不足しているか確認します。部品を増設できる機種なら対応規格から候補を絞り、増設できない場合や複数箇所が不足する場合は本体更新と比較します。速さだけでなく、必要なソフト、データ保存、予算を一組にして考えると、学習環境の選択が具体的になります。</p><p>比較前の確認メモ：CPU・メモリ・ディスクの使用率、増設可否、必要ソフトと予算。今の環境で試せる範囲と、更新が必要な箇所を分けてから候補を選びましょう。</p></section>
+
+<h2>症状から実際に原因を切り分ける</h2>
+
+<p>冒頭で当てはまった症状を、ここでは「関係しやすい部品」「最初の確認」「見直し候補」の順で切り分けます。症状だけで断定はできませんが、確認する場所は絞れます。</p>
+
+<div class="semicon-table-wrap semicon-decision-table">
+  <table class="semicon-decision">
+    <thead><tr><th>困っていること</th><th>関係しやすい部品</th><th>最初に確認すること</th><th>見直しの候補</th></tr></thead>
+    <tbody>
+      <tr><td>ブラウザのタブやアプリを増やすと重い</td><td>メモリ</td><td>使用量が上限近くまで増えていないか</td><td>メモリ増設。ただし機種が対応するか確認</td></tr>
+      <tr><td>動画の書き出しや計算に時間がかかる</td><td>CPU</td><td>CPU使用率が長時間高いか</td><td>CPUまたはPC本体の更新。ソフトやGPUの影響も確認</td></tr>
+      <tr><td>起動やファイル読み込みが遅い</td><td>ストレージ</td><td>HDDかSSDか、空き容量や健康状態は十分か</td><td>SSDへの移行・交換、容量整理</td></tr>
+      <tr><td>保存場所が足りない</td><td>ストレージ</td><td>空き容量と不要ファイル</td><td>大容量SSDや外部ストレージ</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="semicon-decision-cards" aria-label="PCの困りごと別の確認ポイント">
+  <div class="semicon-decision-card"><strong>ブラウザのタブやアプリを増やすと重い</strong><dl><dt>関係しやすい部品</dt><dd>メモリ</dd><dt>確認</dt><dd>使用量が上限近くまで増えていないか</dd><dt>候補</dt><dd>メモリ増設。ただし機種が対応するか確認</dd></dl></div>
+  <div class="semicon-decision-card"><strong>動画の書き出しや計算に時間がかかる</strong><dl><dt>関係しやすい部品</dt><dd>CPU</dd><dt>確認</dt><dd>CPU使用率が長時間高いか</dd><dt>候補</dt><dd>CPUまたはPC本体の更新。ソフトやGPUの影響も確認</dd></dl></div>
+  <div class="semicon-decision-card"><strong>起動やファイル読み込みが遅い</strong><dl><dt>関係しやすい部品</dt><dd>ストレージ</dd><dt>確認</dt><dd>HDDかSSDか、空き容量や健康状態は十分か</dd><dt>候補</dt><dd>SSDへの移行・交換、容量整理</dd></dl></div>
+  <div class="semicon-decision-card"><strong>保存場所が足りない</strong><dl><dt>関係しやすい部品</dt><dd>ストレージ</dd><dt>確認</dt><dd>空き容量と不要ファイル</dd><dt>候補</dt><dd>大容量SSDや外部ストレージ</dd></dl></div>
+</div>
+
+<div class="semicon-caution">
+  <strong>注意</strong>
+  <p>パソコンが遅い原因には、GPU、通信回線、発熱、電源設定、OSやアプリの不具合もあります。部品を買う前に、タスクマネージャーなどでCPU・メモリ・ストレージの使用状況を確認してください。</p>
+</div>
+
+<h2>まとめと次に学ぶ記事</h2>
+
+<div class="semicon-summary">
+  <ul>
+    <li>CPUは命令を実行し、計算や制御を進める</li>
+    <li>メモリは、いま使うデータを置く作業場所</li>
+    <li>ストレージは、電源を切った後もデータを残す保存場所</li>
+    <li>キャッシュ、DRAM、NANDはCPUとの距離、速さ、容量、データ保持の役割が違う</li>
+    <li>PCが遅いときは、症状と使用率を見てから部品を判断する</li>
+  </ul>
+</div>
+
+<h3>次に学ぶなら</h3>
+
+<div class="semicon-next-actions">
+  <div class="semicon-next-card">
+    <h4>DRAMとNANDを深掘りする</h4>
+    <p>作業用メモリと保存用メモリの構造や、電源を切ったときの違いを学べます。</p>
+    <p><a href="https://semicon-campus.com/dram-nand-difference/">DRAMとNANDの違いを詳しく読む</a></p>
+  </div>
+  <div class="semicon-next-card">
+    <h4>順番に学ぶ</h4>
+    <p>CPUやメモリから半導体製造まで、初心者向けの順番で進めます。</p>
+    <p><a href="https://semicon-campus.com/semiconductor-beginner-roadmap/">半導体初心者ロードマップを見る</a></p>
+  </div>
+  <div class="semicon-next-card">
+    <h4>企業・仕事へつなげる</h4>
+    <p><a href="https://semicon-campus.com/semiconductor-company-map-by-process/">工程別の半導体企業を見る</a><br><a href="https://semicon-campus.com/semiconductor-career-map/">半導体業界の職種を見る</a></p>
+  </div>
+</div>
+
+
+<section class="mp3-section" id="revenue-phase3-career"><h2>この記事の知識を、次の仕事・学習へつなげる</h2><p>PCの構成確認、使用率の切り分けの経験を、対象・作業・確認した結果で整理します。担当範囲と必要経験、勤務地、勤務・出張、教育体制を比較すると、次に補う知識も具体的になります。</p><aside class="semicon-cta mp3-card"><h3>関連する職種の仕事内容・求人・学習を見る</h3><p>記事で学んだ技術が、点検・復旧、装置立上げ、顧客対応、実装・工程改善のどの仕事で使われるか確認できます。職種記事の求人・学習の選び方へ進みましょう。</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/" class="semicon-btn mp3-button" data-revenue-phase3-hub="237" data-cta="equipment_hub" data-cta-type="equipment_hub" data-cta-stage="career" data-cta-id="phase3_479_hub237_end" data-cta-route="phase3_479_hub237_end">装置エンジニアの担当範囲・求人・学習を見る</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/" class="semicon-btn mp3-button" data-revenue-phase3-hub="277" data-cta="maintenance_hub" data-cta-type="maintenance_hub" data-cta-stage="career" data-cta-id="phase3_479_hub277_end" data-cta-route="phase3_479_hub277_end">設備保全Hubで仕事内容・求人・学習を確認する</a></div></aside></section>
+
+
+<h2>参考にした一次情報</h2>
+
+<ul>
+  <li><a href="https://www.intel.com/content/www/us/en/support/articles/000027820/processors/intel-xeon-processors.html">Intel: CPU cache hierarchy information</a></li>
+  <li><a href="https://www.micron.com/products/memory/dram-components">Micron: DRAM components</a></li>
+  <li><a href="https://www.kioxia.com/en-jp/rd/technology/nand-flash.html">KIOXIA: What is NAND Flash Memory?</a></li>
+</ul>
+
+</div>
+
+<aside class="related-spokes"><h2>あわせて読みたい</h2><ul><li><a href="/cpu-gpu-difference-ai/">CPUとGPUは何が違うのか？AIでGPUが使われる理由を初心者向けに解説</a></li></ul></aside>

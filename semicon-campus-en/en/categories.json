@@ -1,0 +1,107 @@
+[
+ {
+  "id": 4,
+  "name": "AI Chips & GPUs",
+  "slug": "ai-semiconductor-gpu",
+  "parent": 0,
+  "description": "GPUs, AI chips, NVIDIA, HBM, chiplets, and more."
+ },
+ {
+  "id": 8,
+  "name": "MOL & BEOL",
+  "slug": "mol-beol",
+  "parent": 0,
+  "description": "Contacts, vias, copper interconnects, low-k, multilevel wiring, RC delay."
+ },
+ {
+  "id": 1,
+  "name": "Announcements",
+  "slug": "news",
+  "parent": 0,
+  "description": "Site updates and notices from the editor."
+ },
+ {
+  "id": 6,
+  "name": "Wafers & Materials",
+  "slug": "wafer-materials",
+  "parent": 0,
+  "description": "High-purity silicon, single crystals, wafer processing, materials makers."
+ },
+ {
+  "id": 11,
+  "name": "Companies & Supply Chain",
+  "slug": "companies-supply-chain",
+  "parent": 0,
+  "description": "TSMC, ASML, Tokyo Electron, SCREEN, Shin-Etsu Chemical, SUMCO, and more."
+ },
+ {
+  "id": 7,
+  "name": "Front-End Process (FEOL)",
+  "slug": "feol",
+  "parent": 0,
+  "description": "Oxidation, deposition, lithography, etching, ion implantation, cleaning, CMP."
+ },
+ {
+  "id": 2,
+  "name": "Semiconductor Basics",
+  "slug": "semiconductor-basics",
+  "parent": 0,
+  "description": "What a semiconductor is, silicon, PN junctions, MOSFETs, and other fundamentals."
+ },
+ {
+  "id": 3,
+  "name": "History & Scaling",
+  "slug": "history-scaling",
+  "parent": 0,
+  "description": "Vacuum tubes, transistors, ICs, Moore's law, EUV, FinFET, GAA."
+ },
+ {
+  "id": 20,
+  "name": "Semiconductor News",
+  "slug": "semiconductor-news",
+  "parent": 0,
+  "description": "The latest semiconductor news and trends in companies and technology."
+ },
+ {
+  "id": 5,
+  "name": "Manufacturing Process",
+  "slug": "manufacturing-process",
+  "parent": 0,
+  "description": "The big picture from sand and quartz to wafers, front end, back end, and finished products."
+ },
+ {
+  "id": 10,
+  "name": "Back-End & Advanced Packaging",
+  "slug": "packaging",
+  "parent": 0,
+  "description": "Dicing, bonding, 2.5D/3D, TSV, HBM, CoWoS."
+ },
+ {
+  "id": 9,
+  "name": "Inspection, Metrology & Yield",
+  "slug": "inspection-yield",
+  "parent": 0,
+  "description": "CD-SEM, defect inspection, film thickness, overlay, yield analysis."
+ },
+ {
+  "id": 13,
+  "name": "Glossary",
+  "slug": "glossary",
+  "parent": 0,
+  "description": "Short explanations of semiconductor, AI chip, and manufacturing terms."
+ },
+ {
+  "id": 12,
+  "name": "Jobs & Careers",
+  "slug": "careers",
+  "parent": 0,
+  "description": "Process, equipment, materials, inspection, quality, yield, field service, and more."
+ },
+ {
+  "id": 21,
+  "name": "Equipment, Maintenance & Vacuum",
+  "slug": "equipment-maintenance-vacuum",
+  "parent": 0,
+  "description": "Articles on semiconductor equipment parts (vacuum, gas, plasma, handling, temperature control) and equipment maintenance."
+ }
+]

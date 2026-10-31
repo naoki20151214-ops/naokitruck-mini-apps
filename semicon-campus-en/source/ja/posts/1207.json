@@ -1,0 +1,18 @@
+{
+ "id": 1207,
+ "type": "post",
+ "slug": "chiller-temperature-control",
+ "link": "https://semicon-campus.com/chiller-temperature-control/",
+ "date": "2026-10-01T18:00:00",
+ "modified": "2026-10-30T21:32:35",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  21
+ ],
+ "tags": [],
+ "featured_media": 2802,
+ "title": "半導体装置のチラー（温度制御）とは？必要な理由と熱の流れ",
+ "excerpt": "チラーはなぜ必要？ 半導体装置の温度を守る熱の経路 この記事でわかること チラーは、水を冷やして終わる箱ではありません。半導体製造装置のチャックやチャンバーで受け取った熱を循環流体で運び、熱交換器を通して外へ捨て、必要な […]"
+}

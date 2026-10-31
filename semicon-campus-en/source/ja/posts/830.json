@@ -1,0 +1,18 @@
+{
+ "id": 830,
+ "type": "post",
+ "slug": "why-semiconductors-use-silicon",
+ "link": "https://semicon-campus.com/why-semiconductors-use-silicon/",
+ "date": "2026-09-09T19:30:00",
+ "modified": "2026-10-30T21:29:56",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  2
+ ],
+ "tags": [],
+ "featured_media": 2881,
+ "title": "半導体にシリコンが使われる理由とは？酸化膜・ウェハ・量産の観点で解説",
+ "excerpt": "半導体でシリコンが主流になった理由を、室温で扱いやすい物性、熱酸化で作れるSiO2、MOS・プレーナ技術、高純度単結晶ウェハ、量産エコシステムのつながりから初心者向けに解説します。"
+}

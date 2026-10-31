@@ -1,0 +1,38 @@
+
+<!--KEEP:0-->
+
+<p>OMNIVISIONは2026年9月21日、車両の外部カメラを使った常時監視向けAIコンパニオンASIC「OAX7700」を発表しました。駐車中も周囲を監視し、人や物体などのイベントを検知したときだけ車両の中央コンピューターを詳しく動かす用途を想定しています。サンプルはすでに提供中ですが、量産は2027年第1四半期の予定であり、量産開始や車種への搭載が完了したというニュースではありません。<a href="https://www.ovt.com/press-releases/omnivision-introduces-lowest-power-oax7700-ai-companion-processor-for-always-on-vehicle-security-systems">OMNIVISIONの発表</a></p>
+
+<h2>何が発表されたのか</h2>
+<p>OAX7700は、車載外部カメラの映像を近くで処理する専用チップです。公式説明では、人物の存在検知、人物・物体検出、距離測定などのAI処理を想定しています。常時監視中は低消費電力で動作し、イベントが起きると通常モードへ切り替え、5〜10秒の「プリロール」映像を記録して、車両のECUがそのイベントを検証できるとされています。</p>
+<p>プリロールとは、検知が起きる直前から保存しておく映像のことです。検知後だけ録画すると、接近や衝突の直前に何があったか分からない場合があります。前後の映像を残すことで、人物や物体が近づいた経過を確認しやすくします。ただし、実際の録画時間や保存方法は車両側の設計にも左右されます。</p>
+<p>製品ページでは、積層PSRAMとフラッシュを備えた60ピンBGAパッケージ、最大720p、動作温度マイナス40〜プラス125℃などが示されています。パッケージ寸法は5.5mm×3.5mmです。顧客独自のAIアルゴリズムをNPU上で実行し、OTA更新にも対応するとOMNIVISIONは説明しています。<a href="https://www.ovt.com/products/oax7700/">OAX7700製品ページ</a></p>
+<h2>なぜ省電力化が重要なのか</h2>
+<p>駐車中の車両でカメラ映像を常に高性能な中央ECUへ送り、中央側でAI推論や録画を続けると、プロセッサ、メモリ、映像通信、ストレージが継続的に動作します。補機バッテリーを使う車では電力消費が駐車可能時間に関わり、電気自動車でも車両全体の待機電力を抑えることは重要です。</p>
+<p>そこで使われる考え方が「エッジAI」です。エッジAIは、データを遠くのサーバーや大きな中央プロセッサへ送る前に、カメラの近くに置いたチップで解析する方式です。OAX7700のような低消費電力チップが人物や物体を先に判定すれば、何も起きていない時間に中央ECUを常時起動させずに済む可能性があります。Lattice Semiconductorの車載監視資料でも、エッジ側でイベントを確認し、脅威が確認されたときだけ中央プロセッサを起動する設計が説明されています。これは一般的な技術背景であり、同資料の数値や構成がOAX7700の性能を証明するものではありません。<a href="https://www.latticesemi.com/-/media/LatticeSemi/Documents/WhitePapers/NZ/SB005-Power-efficient-Always-on-Vehicle-Video-Security-Multi-day-Protection-with-No-Compromise.ashx?document_id=54890">Latticeのソリューションブリーフ</a></p>
+<h2>97％低消費電力という数字の読み方</h2>
+<p>OMNIVISIONは、OAX7700を使う駐車監視システムについて、既存の市場ソリューションより97％少ない消費電力になると主張しています。これは注目すべき数字ですが、現時点では会社による比較主張として読む必要があります。</p>
+<p>公式発表からは、比較対象の製品、カメラの台数、解像度やフレームレート、待機状態とイベント状態の時間比率、中央ECUやセンサーを含むかどうか、測定方法が確認できません。そのため、この97％を車両全体の消費電力削減率、バッテリー寿命の延長率、またはすべての駐車監視システムに適用できる数字とみなすことはできません。絶対的な消費電力、AIモデルの精度、誤検知率も公式発表だけでは分かりません。</p>
+
+
+<h2>SDVとの関係と技術的な背景</h2>
+<p>OAX7700のもう一つのポイントは、専用チップでありながら顧客独自のAIアルゴリズムとOTA更新を想定していることです。OTAは「Over the Air」の略で、通信経由でソフトウェアを更新する仕組みです。車両を購入した後でも、検知ルールや対応機能を更新できる可能性があります。ただし、具体的な更新手順、セキュリティ認証、更新可能な範囲は明らかにされていません。</p>
+<p>この方向性は、ソフトウェア定義車両、つまりSDVと呼ばれる考え方につながります。SDVでは、車両の機能を固定された機械部品だけでなく、ソフトウェアと車載コンピューターの更新によって拡張します。NXPも、SDVの背景としてエッジAI、NPU、低電力モード、OTA更新などを挙げています。ただし、OAX7700が特定のSDV基盤や量産車に採用されたことを示す発表ではありません。<a href="https://www.nxp.com/products/S32N7">NXPのS32N7製品ページ</a></p>
+
+<section class="mp3-section" id="revenue-phase3-learning"><h2>車載エッジAIから自分の学習課題へ</h2><p>省電力AIのニュースを読んだ後は、処理をどこで行い、何を測って比較したのかを自分の言葉で説明してみます。公開の英文資料を読み直す道と、小規模な画像処理を自宅で学ぶ道があります。演習用PCは使うソフトの動作要件から選び、車載ASICの性能を家庭用GPUへ置き換えないことが大切です。検査・製造経験がある人は、評価や装置を支える仕事との接点も整理できます。</p><p>比較前の確認メモ：画像処理演習のソフト対応、GPUメモリ、PC全体の消費電力。今の環境で試せる範囲と、更新が必要な箇所を分けてから候補を選びましょう。</p></section>
+
+
+<h2>発表済みの計画と、まだ分からないこと</h2>
+<p>今回確認できる事実と計画を分けると、次のようになります。</p>
+<ul><li>事実：2026年9月21日にOAX7700が公式発表された。</li><li>事実：NPU、積層PSRAM・フラッシュ、最大720p、5〜10秒のプリロールなどが公式資料に記載されている。</li><li>事実：サンプルは提供中とされている。</li><li>会社の主張：既存ソリューション比97％低消費電力。</li><li>会社の計画：2027年第1四半期に量産予定。</li><li>未確認：量産開始日、採用顧客、量産車への搭載、車載認証、実際のバッテリー効果。</li></ul>
+<p>特に、入力データにある2027年1月1日は第1四半期の開始日として推定された日付であり、量産開始の確定日ではありません。量産予定は、製造実績や販売開始を意味しない点にも注意が必要です。</p>
+<h2>これから注目したい点</h2>
+<p>今後は、第一に具体的な量産開始日と採用車種、第二に絶対消費電力と測定条件、第三に人物・物体検出の精度や誤検知率、第四に車載認証とOTA更新の安全対策を確認したいところです。実車環境では、夜間、雨、逆光、雪、汚れたレンズなどへの対応も重要になります。</p>
+<p>OAX7700は、カメラ映像を中央ECUへ常時送り続けるのではなく、カメラの近くでAI判定を行い、必要なときだけ車両の大きな計算資源を起こすという、車載エッジAIの方向性を示す製品です。省電力化の可能性はありますが、97％という数値や量産予定を、独立した実測結果や搭載実績と混同しないことが大切です。</p>
+
+
+<section class="mp3-section" id="revenue-phase3-career"><h2>この記事の知識を、次の仕事・学習へつなげる</h2><p>検査、電力・性能の評価記録、製造支援の経験を、対象・作業・確認した結果で整理します。担当範囲と必要経験、勤務地、勤務・出張、教育体制を比較すると、次に補う知識も具体的になります。</p><aside class="semicon-cta mp3-card"><h3>関連する職種の仕事内容・求人・学習を見る</h3><p>記事で学んだ技術が、点検・復旧、装置立上げ、顧客対応、実装・工程改善のどの仕事で使われるか確認できます。職種記事の求人・学習の選び方へ進みましょう。</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/" class="semicon-btn mp3-button" data-revenue-phase3-hub="237" data-cta="equipment_hub" data-cta-type="equipment_hub" data-cta-stage="career" data-cta-id="phase3_1151_hub237_end" data-cta-route="phase3_1151_hub237_end">装置エンジニアの担当範囲・求人・学習を見る</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-field-service-engineer/" class="semicon-btn mp3-button" data-revenue-phase3-hub="270" data-cta="fse_hub" data-cta-type="fse_hub" data-cta-stage="career" data-cta-id="phase3_1151_hub270_end" data-cta-route="phase3_1151_hub270_end">FSEの復旧・顧客対応と求人・学習を見る</a></div></aside></section>
+
+
+<h2>出典</h2>
+<ul><li><a href="https://www.ovt.com/press-releases/omnivision-introduces-lowest-power-oax7700-ai-companion-processor-for-always-on-vehicle-security-systems">OMNIVISION「OMNIVISION Introduces Lowest-Power OAX7700 AI Companion Processor for Always-On Vehicle Security Systems」</a></li><li><a href="https://www.ovt.com/products/oax7700/">OMNIVISION「OAX7700 Product Page」</a></li><li><a href="https://www.latticesemi.com/-/media/LatticeSemi/Documents/WhitePapers/NZ/SB005-Power-efficient-Always-on-Vehicle-Video-Security-Multi-day-Protection-with-No-Compromise.ashx?document_id=54890">Lattice Semiconductor「Power-Efficient, Always-On Vehicle Video Security—Multi-Day Protection with No Compromise」</a></li><li><a href="https://www.nxp.com/products/S32N7">NXP Semiconductors「S32N7 Super-Integration Processor for Software-Defined Vehicles」</a></li></ul>

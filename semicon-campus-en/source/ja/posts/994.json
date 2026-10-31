@@ -1,0 +1,20 @@
+{
+ "id": 994,
+ "type": "post",
+ "slug": "daily-news-856e25806ef9c8eca4ac",
+ "link": "https://semicon-campus.com/daily-news-856e25806ef9c8eca4ac/",
+ "date": "2026-09-17T15:00:00",
+ "modified": "2026-10-27T20:05:08",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  20
+ ],
+ "tags": [
+  19
+ ],
+ "featured_media": 2858,
+ "title": "Lambda、同じ電力枠でAI処理量24％増を報告　電力配分で何が変わる？",
+ "excerpt": "LambdaがBlackwell環境で、16ノード相当の電力枠で19ノードを動かしたと発表。処理量24％増と電力当たり性能23％増の違い、動的電力配分の仕組み、検証の限界を初心者向けに解説します。"
+}

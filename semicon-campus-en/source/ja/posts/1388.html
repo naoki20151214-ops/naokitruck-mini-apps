@@ -1,0 +1,39 @@
+
+<!--KEEP:0-->
+
+<p>2026年9月29日、Everspin TechnologiesはSNIA Developer Conference 2026で、MRAMをCXL経由でサーバーに接続するプラットフォームを実演したと発表しました。今回のニュースは、DRAMとNAND SSDの間に、電源を切ってもデータを保持できる「永続メモリー」の層を置く構想を、実際のシステム構成で示した点に意味があります。<a href="https://everspin.gcs-web.com/news-releases/news-release-details/everspin-demonstrates-worlds-first-cxl-connected-mram-snia">Everspin公式発表</a></p>
+
+
+<h2>何が実演されたのか</h2>
+<p>発表によると、実演システムはEverspinのPERSYST MRAM、WolleyのCXLコントローラー、AMD Alveo U250 FPGA、Supermicro AS-1116CS-TNサーバー、AMD EPYC 9355の32コアプロセッサー、1GBのDDR4 MRAM UDIMMで構成されていました。EverspinとWolleyは、CXLインターフェースを通じてMRAMを読み書きする実働プラットフォームを公開したと説明しています。<a href="https://everspin.gcs-web.com/news-releases/news-release-details/everspin-demonstrates-worlds-first-cxl-connected-mram-snia">実演構成の詳細</a></p>
+<p>ここで注意したいのは、「実演」と「量産製品の出荷」は別だということです。今回確認できるのは会議で動作するシステムの発表であり、AIサーバー向けの大容量製品の価格、出荷時期、対応OSやミドルウェア、顧客による採用実績が発表されたわけではありません。</p>
+
+<h2>MRAMとCXLを初心者向けに理解する</h2>
+<h3>MRAMとは</h3>
+<p>MRAMは、電気の状態ではなく磁気の状態を利用してデータを保存するメモリーです。DRAMは電源が切れると内容を失う揮発性メモリーですが、MRAMは電源断後もデータを保持できる不揮発性メモリーです。そのため、再起動時にデータをSSDから読み戻したり、バッテリーでDRAMの内容を守ったりする処理を減らせる可能性があります。Everspinも、MRAMが電源断やシステム再起動後にデータを保持し、DRAMからSSDへ事前にデータを退避する処理への依存を減らせると説明しています。<a href="https://everspin.gcs-web.com/news-releases/news-release-details/everspin-demonstrates-worlds-first-cxl-connected-mram-snia">MRAMの用途説明</a></p>
+<h3>CXLとは</h3>
+<p>CXLは、CPUとメモリー、アクセラレーター、I/O機器などを接続する標準インターコネクトです。単にデータを送るだけでなく、接続されたメモリーをCPUや装置が扱いやすい形で共有する「メモリーセマンティクス」と、データの整合性を保つ「コヒーレンシー」を備えています。簡単にいえば、遠くにあるメモリーを、システムのメモリー階層に組み込みやすくする仕組みです。<a href="https://computeexpresslink.org/wp-content/uploads/2024/01/CXL_2.0-Press-Release_FINAL.pdf">CXL Consortiumの説明</a></p>
+<p>CXL 2.0では、複数の機器をつなぐスイッチング、複数ホストでメモリーを共有するメモリープーリング、永続メモリーへの対応、DDRメモリーとの同時運用などが示されています。これにより、メモリーを特定のCPUソケットに固定せず、必要なワークロードへ割り当てる設計が可能になります。<a href="https://computeexpresslink.org/wp-content/uploads/2024/01/CXL_2.0-Press-Release_FINAL.pdf">CXL 2.0の機能</a></p>
+
+<h2>なぜAI時代に重要なのか</h2>
+<p>一般的なサーバーでは、DRAMがCPUに近い高速な作業領域を担い、NAND SSDが大容量の永続ストレージを担います。DRAMは速い一方で電源断に弱く、SSDはデータを保持できる一方、メモリーとして直接使うにはアクセス遅延やI/O処理の負担があります。CXL接続MRAMは、この二つの間に、永続性とメモリーに近いアクセスを兼ね備えた層を置こうとする考え方です。</p>
+<p>AIでは、学習途中の状態を保存するチェックポイントや、推論で使う過去の情報を保持するKVキャッシュが候補になります。チェックポイントを高速に保存できれば、障害や再起動後に学習を再開するまでの時間を短縮できる可能性があります。KVキャッシュを永続化できれば、推論サーバーの再起動後にすべてを作り直す負担を減らせる可能性もあります。ただし、これはEverspinが示した用途提案であり、個別のAIワークロードでどれだけ性能やコストが改善するかは、まだ確認されていません。<a href="https://everspin.gcs-web.com/news-releases/news-release-details/everspin-demonstrates-worlds-first-cxl-connected-mram-snia">提案されたAI用途</a></p>
+
+
+<section class="mp6-section" id="revenue-phase6-learning"><h2>CXLとMRAMから、用途別のメモリ比較へ</h2><p>CXL接続MRAMの実演を読んだら、揮発性、接続方式、遅延、用途を分けてメモにします。実演した構成と自宅PCの増設は異なる話です。個人の学習環境では、使うソフトのメモリ使用量と保存容量を先に確認しましょう。SSD・メモリの比較と小型PCの更新を目的別に選び、PCの対応規格や増設可否を照合します。一般向けの購入先に記事の専用MRAMがあるとは考えません。</p><p>比較前の確認メモ：対応DDR世代、SSD接続方式、増設可否、必要OS。今の環境で試せる範囲と、更新が必要な箇所を分けてから候補を選びましょう。</p></section>
+
+<h2>性能の見方と今回の限界</h2>
+<p>Everspinは、このプラットフォームについて、キャッシュライン単位のナノ秒級アクセスを提供し、NANDベースSSDより書き込みが最大100倍高速だと説明しています。しかし、この数値は会社による発表上の主張です。公式リリースには、比較したSSDの種類、アクセス単位、キュー深度、ソフトウェア構成、電力条件、測定結果の詳細や第三者による独立検証は示されていません。したがって、「どのAIサーバーでも100倍速くなる」と読むことはできません。<a href="https://everspin.gcs-web.com/news-releases/news-release-details/everspin-demonstrates-worlds-first-cxl-connected-mram-snia">性能に関する会社発表</a></p>
+<p>また、今回の実演では1GBのDDR4 MRAM UDIMMが使われています。大規模AIでは、チェックポイントやキャッシュにさらに大きな容量が必要になるため、容量密度、価格、消費電力、書き換え耐久性、歩留まりが実用化の壁になります。CXLコントローラーやファブリックを通ることで生じる遅延、OSやAIランタイムが永続メモリーを正しく扱えるか、電源障害時にデータをどの順序で確定するかも検証が必要です。</p>
+<p>さらに、「世界初」という表現はEverspinの発表表現であり、第三者による全市場調査や独立認定まで確認されたものではありません。今回のニュースは技術の方向性を示す重要な実演ですが、量産出荷や広範な顧客採用を証明するものではない点を押さえておく必要があります。</p>
+
+<h2>これから注目したいポイント</h2>
+<ul><li>1GBを超える容量へ拡張できる製品やロードマップが示されるか。</li><li>実際のAI学習・推論で、チェックポイント保存時間や再起動時間がどれだけ短縮されるか。</li><li>同じ条件で測った独立ベンチマークが公開されるか。</li><li>Linux、ハイパーバイザー、AIフレームワークがCXL接続MRAMを永続メモリーとして扱えるか。</li><li>DRAMやSSDと比べた価格、消費電力、耐久性、供給量が現実的な水準になるか。</li></ul>
+<p>今回のCXL接続MRAMは、DRAMを置き換える完成品というより、AIサーバーのメモリー階層を増やす方向を示す実演です。MRAMの不揮発性とCXLの共有・拡張機能が組み合わさることで、データを何度も移動させる負担を減らせる可能性があります。今後は、実演から量産製品へ進める容量、価格、ソフトウェア、独立評価の四点を確認することが重要です。</p>
+
+
+<section class="mp6-section" id="revenue-phase6-career"><h2>理解した内容から、次の学習と比較へ</h2><p>容量・接続方式・用途の整理を、対象・条件・出典の三つで整理しましょう。関連する基礎記事、学習の入口、PCの要件を目的別に確認すると、無料で試せる範囲と有料の選択肢を分けて検討できます。</p><aside class="semicon-cta mp6-card"><h3>目的に合う関連記事から、次の行動を選ぶ</h3><p>仕事内容を知りたい方は職種記事へ、基礎を広げたい方は学習記事へ、自宅環境を見直す方はPC・メモリの解説へ進めます。各記事の求人・学習・機材の選び方も比較できます。</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/dram-nand-difference/" class="semicon-btn mp6-button" data-revenue-phase6-hub="486" data-cta="memory_guide" data-cta-type="memory_guide" data-cta-stage="career" data-cta-id="phase6_1388_hub486_end" data-cta-route="phase6_1388_hub486_end">DRAM・NANDの違いとPCの増設・更新を確認する</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/cpu-memory-storage-difference/" class="semicon-btn mp6-button" data-revenue-phase6-hub="479" data-cta="pc_guide" data-cta-type="pc_guide" data-cta-stage="career" data-cta-id="phase6_1388_hub479_end" data-cta-route="phase6_1388_hub479_end">PCの遅さをCPU・メモリ・保存容量から切り分ける</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-ssd-controller/" class="semicon-btn mp6-button" data-revenue-phase6-hub="501" data-cta="storage_guide" data-cta-type="storage_guide" data-cta-stage="career" data-cta-id="phase6_1388_hub501_end" data-cta-route="phase6_1388_hub501_end">SSDコントローラーの働きとストレージの選び方を見る</a></div></aside></section>
+
+
+<h2>出典</h2>
+<ul><li><a href="https://everspin.gcs-web.com/news-releases/news-release-details/everspin-demonstrates-worlds-first-cxl-connected-mram-snia">Everspin Technologies：Everspin Demonstrates World’s First CXL-Connected MRAM at SNIA Developer Conference 2026</a></li><li><a href="https://computeexpresslink.org/wp-content/uploads/2024/01/CXL_2.0-Press-Release_FINAL.pdf">Compute Express Link Consortium：CXL 2.0 Specificationに関する公式リリース</a></li></ul>

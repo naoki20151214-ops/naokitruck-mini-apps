@@ -1,0 +1,20 @@
+{
+ "id": 1832,
+ "type": "post",
+ "slug": "daily-news-6ff6fecf7818ab6bc179",
+ "link": "https://semicon-campus.com/daily-news-6ff6fecf7818ab6bc179/",
+ "date": "2026-10-06T09:00:00",
+ "modified": "2026-10-27T20:03:48",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  20
+ ],
+ "tags": [
+  19
+ ],
+ "featured_media": 2784,
+ "title": "Rapidus CORE始動、2nm量産を支える設計エコシステムとは",
+ "excerpt": "Rapidusが17社と始めたRapidus COREを解説。2nm半導体に必要なGAA、EDA、IP、PDKの役割と、発表の意義、未確認の課題、今後の注目点を初心者向けに整理します。"
+}

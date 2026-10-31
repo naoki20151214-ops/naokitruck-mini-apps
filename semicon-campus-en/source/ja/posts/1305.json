@@ -1,0 +1,20 @@
+{
+ "id": 1305,
+ "type": "post",
+ "slug": "daily-news-0235062afc32a38f01c8",
+ "link": "https://semicon-campus.com/daily-news-0235062afc32a38f01c8/",
+ "date": "2026-09-29T12:00:00",
+ "modified": "2026-10-27T20:04:18",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  20
+ ],
+ "tags": [
+  19
+ ],
+ "featured_media": 2811,
+ "title": "FraunhoferのRISC-VセキュアエレメントIP化、その意味と課題",
+ "excerpt": "FraunhoferがOpenTitan系RISC-Vセキュアエレメントの機能検証を完了し、SoC・ASIC・チップレット向けIPとして移転へ。技術の意味と限界を初心者向けに解説します。"
+}

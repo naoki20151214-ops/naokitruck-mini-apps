@@ -1,0 +1,59 @@
+
+<!--KEEP:0-->
+
+<p>Teradyneは2026年9月29日、AIや高性能コンピューティングで使われる次世代メモリーの試験を想定した高速メモリーテスター「Magnum E2」を発表しました。対象としてLPDDR6、DDR6、GDDR7、NAND flashインターフェースを挙げ、メモリー試験とロジック試験を一つの基盤で扱えると説明しています。<a href="https://investors.teradyne.com/news-events/press-releases/detail/451/teradyne-announces-magnum-e2-to-address-next-generation-memory-test-demands-driven-by-ai-and-high-performance-computing">Teradyneの発表</a></p>
+
+<p>今回のニュースを一言で表すと、AI向けメモリーの高速化・複雑化に合わせて、製造ラインで品質を確認するテスターも対応範囲を広げようとしている、という製品発表です。ただし、発表されたことと、すでに量産出荷され、顧客工場で効果が実証されたことは別です。今回の資料には、出荷開始日、顧客名、価格、実測スループット、歩留まり改善率は記載されていません。</p>
+
+
+<h2>Magnum E2は何を発表したのか</h2>
+
+<p>Magnum E2は、DRAMやNAND flashのインターフェースを電気的に動かし、正しくデータを読み書きできるかを調べる装置です。Teradyneの製品ページでは、最大64テストサイト、24.5Kの高速I/Oピン、量産向けとエンジニアリング向けの構成が示されています。ここでいうテストサイトとは、複数のメモリーデバイスを並列に測定できる単位です。サイト数が多いほど、条件が同じなら一度に多くのデバイスを検査できます。<a href="https://www.teradyne.com/products/magnum-E2/">Magnum E2製品ページ</a></p>
+
+<p>Teradyneは、Magnum E2について次のような機能を説明しています。</p>
+<ul><li>LPDDR6、DDR6、GDDR7、NAND flashインターフェースへの対応</li><li>NRZ、PAM3、PAM4という複数の高速信号方式への対応</li><li>プログラム可能なアルゴリズミック・パターン・ジェネレーター（APG）</li><li>メモリー試験とロジック試験を同じプラットフォームで実行</li><li>評価・認定から高量産まで、共通のハードウェアとソフトウェアを利用</li></ul>
+
+<h2>初心者向けに分かる二つの重要用語</h2>
+
+<h3>NRZとPAM3・PAM4</h3>
+<p>NRZは、信号を基本的に二つの電圧レベルで表す方式です。デジタルの「0」と「1」に近い考え方で、仕組みを理解しやすい一方、高速化すると一つの信号線で運べる情報量に限界があります。</p>
+
+<p>PAMは、複数の電圧レベルを使って情報を送る方式です。PAM3は三つ、PAM4は四つのレベルを使います。同じ時間でより多くの状態を表せる可能性がありますが、電圧の間隔が狭くなり、ノイズや波形の乱れの影響を受けやすくなります。そのため、テスターには信号を正確に発生させ、受け取った波形を細かく判定する能力が必要です。Magnum E2はNRZ、PAM3、PAM4を共通ハードウェア上で扱うとTeradyneは説明しています。<a href="https://investors.teradyne.com/news-events/press-releases/detail/451/teradyne-announces-magnum-e2-to-address-next-generation-memory-test-demands-driven-by-ai-and-high-performance-computing">Teradyneの発表</a></p>
+
+<h3>Near-DUT Test（NDT）</h3>
+<p>DUTは「被試験デバイス」を意味します。Near-DUT Testは、デジタル計測器を測定対象のメモリーチップの近くに置く設計思想です。装置とチップをつなぐ配線が長いと、信号の反射や損失、タイミングのずれが生じやすくなります。計測器を近づければ、こうした影響を抑え、高速信号を扱いやすくすることが期待できます。</p>
+
+<p>TeradyneはNDTによって高速試験時の信号品質を高め、性能やデバイス歩留まりを支援できると説明しています。ただし、これはメーカーによる製品上の主張です。独立した測定による歩留まり改善率や、特定の顧客工場での実績が公開されたわけではありません。<a href="https://www.teradyne.com/products/magnum-E2/">Teradyneの製品ページ</a></p>
+
+<h2>なぜAI時代にメモリーテスターが重要なのか</h2>
+
+<p>AIアクセラレーターは大量のデータを短時間で処理します。その性能を引き出すには、計算を担当するチップだけでなく、データを供給するメモリーの帯域、遅延、電力効率も重要です。メモリーのインターフェースが高速になるほど、製造段階で信号のタイミングや電圧を厳しく確認する必要があります。</p>
+
+<p>標準化の面では、JEDECが2025年7月9日にLPDDR6標準JESD209-6の公開を発表しました。LPDDR6はモバイルやAI用途を含む高速・低消費電力のメモリー標準として説明され、dual sub-channel構成や32バイトのアクセス粒度にも触れています。<a href="https://markets.financialcontent.com/streetinsider/article/bizwire-2025-7-9-jedec-releases-new-lpddr6-standard-to-enhance-mobile-and-ai-memory-performance">JEDECのLPDDR6発表</a></p>
+
+<p>また、JEDECは2024年3月5日にGDDR7標準JESD239の公開を発表しました。GDDR7はグラフィックス、ゲーム、コンピュート、ネットワーキング、AI向けの標準として説明され、PAMインターフェースを採用しています。こうした標準や信号方式の広がりが、複数の世代・方式を扱えるテスターへの需要につながります。<a href="https://markets.financialcontent.com/pennwell.hydroworld/article/bizwire-2024-3-5-jedec-publishes-gddr7-graphics-memory-standard">JEDECのGDDR7発表</a></p>
+
+
+<section class="mp7-section" id="revenue-phase7-learning"><h2>メモリテスターから、計測と品質の仕事へ</h2><p>高速メモリの試験を理解したら、規格対応、測定条件、試験結果、装置保守を分けて整理します。製品発表だけで現場の改善効果を確定しないことが大切です。電気・計測・品質の基礎を補う学習と、検査や装置サポートの仕事の理解を併用できます。測定や保全の経験者は、対象、条件、切り分けた原因をまとめて求人相談へ進めます。製造・検査の入口は別に条件を比較し、紹介可能な職種は求人ごとに確認しましょう。</p></section>
+
+<h2>発表から読み取れること、読み取れないこと</h2>
+
+<p>Magnum E2の発表から読み取れるのは、メモリー試験装置が「高速信号への対応」「多数デバイスの並列測定」「評価から量産までの共通化」「メモリーとロジックの統合」を重視する方向に進んでいることです。テスター側の対応が遅れると、新しいメモリーを設計できても、量産前の検査や不良原因の切り分けが難しくなるためです。</p>
+
+<p>一方、次の点は今回の資料だけでは確認できません。</p>
+<ul><li>Magnum E2の量産出荷がすでに始まったか</li><li>どの顧客が採用・認定したか</li><li>実際のテスト速度や処理能力がどの程度か</li><li>歩留まりが何％改善したか</li><li>売上や利益にいつ寄与するか</li><li>DDR6の標準化や市場投入が完了しているか</li></ul>
+
+<p>特に、TeradyneがDDR6を対応対象に挙げていることは、DDR6の標準化完了や製品投入時期を証明するものではありません。今回確認されたJEDECの背景資料はLPDDR6とGDDR7に関するものであり、DDR6について同じ結論を広げることはできません。</p>
+
+<h2>これから注目したいポイント</h2>
+
+<p>TeradyneはMagnum E2を2026年10月13日から15日までのSEMICON Westで展示する計画を発表しています。ただし、これは将来の展示予定であり、量産出荷日や顧客採用日ではありません。<a href="https://investors.teradyne.com/news-events/press-releases/detail/451/teradyne-announces-magnum-e2-to-address-next-generation-memory-test-demands-driven-by-ai-and-high-performance-computing">Teradyneの発表</a></p>
+
+<p>今後は、実際の出荷開始、顧客の認定、対応するメモリー製品、独立した性能データに注目するとよいでしょう。最大64サイトや24.5K高速I/Oピンという仕様が、実際の量産ラインでどのようなスループットと検査品質につながるのかも重要です。AIメモリーの需要が強くても、テスターの発表だけで量産能力の増加や歩留まり改善を断定することはできません。</p>
+
+
+<section class="mp7-section" id="revenue-phase7-career"><h2>この記事の知識を、次の仕事・学習へつなげる</h2><p>試験条件の確認、測定、装置サポートの経験を、対象・作業・確認した結果で整理します。担当範囲と必要経験、勤務地、勤務・出張、教育体制を比較すると、次に補う知識も具体的になります。</p><aside class="semicon-cta mp7-card"><h3>目的に合う関連記事から、次の行動を選ぶ</h3><p>仕事内容を知りたい方は職種記事へ、基礎を広げたい方は学習記事へ、自宅環境を見直す方はPC・メモリの解説へ進めます。各記事の求人・学習・機材の選び方も比較できます。</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-field-service-engineer/" class="semicon-btn mp7-button" data-revenue-phase7-hub="270" data-cta="fse_hub" data-cta-type="fse_hub" data-cta-stage="career" data-cta-id="phase7_1334_hub270_end" data-cta-route="phase7_1334_hub270_end">FSEの復旧・顧客対応と求人・学習を見る</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-process-engineer/" class="semicon-btn mp7-button" data-revenue-phase7-hub="230" data-cta="process_hub" data-cta-type="process_hub" data-cta-stage="career" data-cta-id="phase7_1334_hub230_end" data-cta-route="phase7_1334_hub230_end">プロセスエンジニアの担当範囲・求人・学習を見る</a></div></aside></section>
+
+
+<h2>出典</h2>
+<ul><li><a href="https://investors.teradyne.com/news-events/press-releases/detail/451/teradyne-announces-magnum-e2-to-address-next-generation-memory-test-demands-driven-by-ai-and-high-performance-computing">Teradyne Announces Magnum E2 to Address Next-Generation Memory Test Demands Driven by AI and High-Performance Computing</a></li><li><a href="https://www.teradyne.com/products/magnum-E2/">Teradyne Magnum E2製品ページ</a></li><li><a href="https://markets.financialcontent.com/streetinsider/article/bizwire-2025-7-9-jedec-releases-new-lpddr6-standard-to-enhance-mobile-and-ai-memory-performance">JEDEC Releases New LPDDR6 Standard to Enhance Mobile and AI Memory Performance</a></li><li><a href="https://markets.financialcontent.com/pennwell.hydroworld/article/bizwire-2024-3-5-jedec-publishes-gddr7-graphics-memory-standard">JEDEC Publishes GDDR7 Graphics Memory Standard</a></li></ul>

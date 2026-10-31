@@ -1,0 +1,18 @@
+{
+ "id": 2604,
+ "type": "post",
+ "slug": "semiconductor-ion-implantation",
+ "link": "https://semicon-campus.com/semiconductor-ion-implantation/",
+ "date": "2026-10-26T17:59:00",
+ "modified": "2026-10-27T20:03:01",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  5
+ ],
+ "tags": [],
+ "featured_media": 2744,
+ "title": "半導体のイオン注入とは？原子を打ち込む理由と、アニールで傷を直す工程",
+ "excerpt": "半導体のイオン注入とは何か。ボロンや砒素などの原子を打ち込む理由、装置の仕組み、深さと量の決め方、結晶の傷、アニールで傷を直す工程までを、一次資料をもとに初心者向けに解説します。"
+}

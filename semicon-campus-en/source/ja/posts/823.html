@@ -1,0 +1,163 @@
+
+<!--KEEP:0-->
+
+
+<!--KEEP:1-->
+
+<!--
+Episode: 057
+Research Pack: episode-057-airbag-mems-20260815
+Article title: 車のエアバッグはどうやって衝突を検知する？MEMS加速度センサーとECUの仕組み
+Slug: how-airbags-detect-crashes-mems-sensor
+Meta description: 車のエアバッグが急ブレーキや段差と衝突をどう見分けるのか。MEMS加速度センサーの測定原理、ECUの判定、点火から展開までを初心者向けに解説します。
+Primary category: 半導体の基礎
+Tags: YouTube深掘り
+Status: final
+-->
+
+
+<!--KEEP:2-->
+<article class="s57b" data-episode="057" data-research-pack="episode-057-airbag-mems-20260815" data-status="final" data-image-policy="lightweight-v1">
+
+
+
+<p class="wp-block-paragraph">急ブレーキでは普通は開かないのに、重大な衝突ではエアバッグが一瞬で動き始めます。<br>その違いは、単純な「衝撃の強さ」だけで決めているわけではありません。<br><strong>車の動きをMEMS加速度センサーが測り、その時間的な変化をECUが評価して、必要な拘束装置を選ぶ</strong>のが基本です。</p>
+
+
+
+<div class="s57b-answer"><span class="s57b-kicker">最初に答えると</span><br><strong>エアバッグは「一定のGを超えたら開くスイッチ」ではありません。センサーは車体の動きを電気信号へ変え、ECUという判断コンピューターが方向、立ち上がり、続いた時間、波形、推定される速度変化、周辺センサーとの整合性などを見て、展開が必要かを判断します。</strong></div>
+<div class="s57b-points"><div class="s57b-card"><b>MEMSの役割</b>チップ内の微小なおもりで、車体の動きの変化を測ります。</div><div class="s57b-card"><b>ECUの役割</b>測定値の時間波形を評価し、衝突の方向や重大度を判断します。</div><div class="s57b-card"><b>大切な境界</b>車種・年式でセンサー構成や判定方法は異なり、固定の展開値は公開されていません。</div></div>
+<figure class="s57b-media" data-media-role="explanatory-image-01"><svg viewBox="0 0 760 360" role="img" aria-label="車体の速度変化からMEMS、ECU、点火、エアバッグ展開へ進む全体の因果関係"><rect width="760" height="360" fill="#eef8fc"/><text x="380" y="45" text-anchor="middle" font-size="27" font-weight="700" fill="#172635">衝突検知からエアバッグ展開まで</text><defs><marker id="a1" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0v6l9-3z" fill="#176b9e"/></marker></defs><g font-size="17" text-anchor="middle" fill="#172635"><rect x="25" y="120" width="120" height="100" rx="14" fill="#fff3e7" stroke="#e8893a" stroke-width="3"/><text x="85" y="155">車体の</text><text x="85" y="182">速度変化</text><rect x="175" y="120" width="120" height="100" rx="14" fill="#eaf6fd" stroke="#176b9e" stroke-width="3"/><text x="235" y="155">MEMSが</text><text x="235" y="182">動きを測る</text><rect x="325" y="120" width="120" height="100" rx="14" fill="#eaf7f1" stroke="#2b7a5b" stroke-width="3"/><text x="385" y="155">ECUが</text><text x="385" y="182">波形を判断</text><rect x="475" y="120" width="120" height="100" rx="14" fill="#fff3e7" stroke="#e8893a" stroke-width="3"/><text x="535" y="155">対象回路を</text><text x="535" y="182">点火</text><rect x="625" y="120" width="110" height="100" rx="14" fill="#eaf6fd" stroke="#176b9e" stroke-width="3"/><text x="680" y="155">必要な袋を</text><text x="680" y="182">展開</text></g><g stroke="#176b9e" stroke-width="6" marker-end="url(#a1)"><path d="M145 170h27"/><path d="M295 170h27"/><path d="M445 170h27"/><path d="M595 170h27"/></g><text x="380" y="290" text-anchor="middle" font-size="19" fill="#596b78">測定する部品と、事故を判断する部品は別の役割</text></svg><figcaption>全体の中心は「測定→判断→点火」です。MEMS加速度センサーが単独でエアバッグを開くわけではありません。</figcaption></figure>
+
+
+
+
+<h2 class="wp-block-heading">車の中では、衝突の瞬間に何が起きているのか</h2>
+
+
+
+<p class="wp-block-paragraph">前へ進んでいる車が物体へ衝突すると、車体の速度は短時間で大きく変わります。この「速度が時間とともにどれだけ変わったか」を表す量が<strong>加速度</strong>です。日常会話では「強い衝撃」とまとめがちですが、制御装置に届くのは一発の感覚ではなく、時刻ごとに並んだ加速度の値です。グラフにすると山や谷が連なる形になり、これをここでは<strong>時間波形</strong>と呼びます。</p>
+<p>車体の各部に伝わる波形は同じではありません。車の前部に近いセンサーは変形が始まった場所の信号を早く受けやすく、客室付近の中央センサーは車体全体に近い動きを捉えやすいという特徴があります。側面衝突では横方向の加速度を使い、一部の車種ではドア内部の圧力変化も利用します。横転を扱う車種では回転の情報も関係します。</p>
+<p>ただし、すべての車に同じ数・同じ種類のセンサーが付いているわけではありません。配置、測る軸、使う情報、点火対象は車種や年式で変わります。大切なのは、車内の一か所にある「衝撃ボタン」が押されるという理解ではなく、<strong>複数の場所や物理量から得た時系列の信号を使える構成がある</strong>と捉えることです。</p>
+
+
+
+<figure class="s57b-media" data-media-role="explanatory-image-02"><svg viewBox="0 0 760 380" role="img" aria-label="車両前部、客室中央、側面に置かれる衝突センサーの一般的な位置関係"><rect width="760" height="380" fill="#f8fbfd"/><text x="380" y="42" text-anchor="middle" font-size="26" font-weight="700" fill="#172635">センサーの位置と役割（一般化した例）</text><path d="M110 245h500l55-70-85-70H220l-65 55-70 20z" fill="#dcebf2" stroke="#38576a" stroke-width="5"/><circle cx="210" cy="255" r="48" fill="#fff" stroke="#38576a" stroke-width="6"/><circle cx="565" cy="255" r="48" fill="#fff" stroke="#38576a" stroke-width="6"/><circle cx="610" cy="165" r="17" fill="#e8893a"/><circle cx="390" cy="185" r="19" fill="#176b9e"/><circle cx="275" cy="165" r="17" fill="#2b7a5b"/><text x="610" y="115" text-anchor="middle" font-size="17" fill="#8d4b19">前部の周辺センサー</text><text x="390" y="335" text-anchor="middle" font-size="17" fill="#176b9e">中央センサー／ECU付近</text><text x="220" y="115" text-anchor="middle" font-size="17" fill="#2b7a5b">側面の周辺センサー</text><text x="380" y="365" text-anchor="middle" font-size="15" fill="#596b78">実際の数・位置・種類は車種ごとに異なります</text></svg><figcaption>周辺センサーは衝突場所に近い信号を早く捉え、中央側は車体全体に近い波形を捉える構成があります。図は特定車種の配置図ではありません。</figcaption></figure>
+
+
+
+<h2 class="wp-block-heading">MEMS加速度センサーとは「チップの中の超小型機械」</h2>
+
+
+
+<p class="wp-block-paragraph"><strong>MEMS</strong>は、半導体の加工技術を使って作る微小な機械やセンサーです。エアバッグ用の代表的な容量型MEMS加速度センサーには、シリコンで作られた微小なおもり、細いばね、動く電極、固定された電極があります。見た目は電子部品でも、その内部には本当にわずかに動く機械構造があります。</p>
+<p>車体とセンサーの外箱が急に動きを変えると、中のおもりは慣性によって、その動きへすぐには追従しません。急減速する車内で荷物が前へ動こうとするのと似ています。ただし、これは理解のための比喩です。実際にはチップ内のおもりがばねで支えられ、筐体に対してごくわずかに相対変位します。</p>
+<p>おもりにつながる可動電極が動くと、片側の固定電極とのすき間は狭くなり、反対側は広くなります。電極間に電気を蓄える性質を<strong>静電容量</strong>といい、すき間が変わると容量も変わります。左右の変化を比べる差動方式により、おもりがどちらへどれだけずれたかを電気的に読み取れます。</p>
+<p>ここでMEMSが知っているのは「車体の動きがどう変わったか」です。前面衝突なのか、縁石なのか、展開が必要な重大度なのかを、センサー自身が理解しているわけではありません。この役割分担を押さえると、「センサーが衝撃を感じたから直接開いた」という誤解を避けられます。</p>
+
+
+
+<figure class="s57b-media" data-media-role="explanatory-image-03"><svg viewBox="0 0 760 390" role="img" aria-label="ばね、微小なおもり、可動電極、固定電極で構成される容量型MEMS加速度センサー"><rect width="760" height="390" fill="#eef8fc"/><text x="380" y="43" text-anchor="middle" font-size="26" font-weight="700" fill="#172635">MEMS加速度センサーの中身</text><rect x="55" y="80" width="650" height="245" rx="20" fill="#fff" stroke="#8fb7ca" stroke-width="4"/><path d="M75 200h60l15-25 25 50 25-50 25 50 15-25h45" fill="none" stroke="#2b7a5b" stroke-width="7"/><rect x="285" y="135" width="190" height="130" rx="14" fill="#b9dcea" stroke="#176b9e" stroke-width="5"/><text x="380" y="208" text-anchor="middle" font-size="23" font-weight="700" fill="#172635">微小なおもり</text><path d="M475 155h50v90h-50M525 150v100M555 150v100M585 150v100M615 150v100" stroke="#e8893a" stroke-width="8"/><text x="560" y="292" text-anchor="middle" font-size="17" fill="#8d4b19">可動電極と固定電極</text><text x="165" y="292" text-anchor="middle" font-size="17" fill="#2b7a5b">細いばね</text><path d="M325 105h110" stroke="#176b9e" stroke-width="6"/><path d="M325 105l18-12v24zM435 105l-18-12v24z" fill="#176b9e"/><text x="380" y="92" text-anchor="middle" font-size="17" fill="#176b9e">わずかに動ける</text><text x="380" y="360" text-anchor="middle" font-size="16" fill="#596b78">機械構造と信号処理回路を小さな部品内にまとめる</text></svg><figcaption>代表的な容量型MEMSの概念図です。形状や軸数は製品で異なりますが、微小質量の変位を電気信号へ変える点が核心です。</figcaption></figure>
+<figure class="s57b-media" data-media-role="explanatory-image-04"><svg viewBox="0 0 760 350" role="img" aria-label="微小なおもりが右へずれると左右の電極間距離と静電容量が逆方向に変化する図"><rect width="760" height="350" fill="#fffaf4"/><text x="380" y="42" text-anchor="middle" font-size="26" font-weight="700" fill="#172635">すき間の変化を電気で読む</text><g stroke="#38576a" stroke-width="9"><path d="M145 95v160M615 95v160"/></g><rect x="315" y="115" width="190" height="120" rx="15" fill="#b9dcea" stroke="#176b9e" stroke-width="5"/><path d="M265 175h40" stroke="#2b7a5b" stroke-width="7"/><path d="M515 175h90" stroke="#e8893a" stroke-width="7"/><text x="205" y="294" text-anchor="middle" font-size="18" fill="#2b7a5b">広いすき間</text><text x="560" y="294" text-anchor="middle" font-size="18" fill="#8d4b19">狭いすき間</text><text x="410" y="180" text-anchor="middle" font-size="21" font-weight="700" fill="#172635">動いたおもり</text><path d="M335 80h130" stroke="#176b9e" stroke-width="6" marker-end="url(#a4)"/><defs><marker id="a4" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0v6l9-3z" fill="#176b9e"/></marker></defs><text x="400" y="68" text-anchor="middle" font-size="17" fill="#176b9e">相対変位</text><text x="380" y="330" text-anchor="middle" font-size="16" fill="#596b78">左右の静電容量は逆方向に変わるため、その差から変位を読み取れる</text></svg><figcaption>電極のすき間が片側で狭まり、反対側で広がる変化を比べます。センサー軸の正負は製品の定義に依存します。</figcaption></figure>
+<figure class="s57b-media" data-media-role="explanatory-image-05"><svg viewBox="0 0 760 330" role="img" aria-label="MEMSの容量変化が増幅、フィルタリング、デジタル化を経て加速度値になる流れ"><rect width="760" height="330" fill="#f6fbfd"/><text x="380" y="42" text-anchor="middle" font-size="26" font-weight="700" fill="#172635">機械の動きを加速度データへ</text><defs><marker id="a5" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0v6l9-3z" fill="#176b9e"/></marker></defs><g text-anchor="middle" font-size="17" fill="#172635"><rect x="30" y="112" width="125" height="90" rx="13" fill="#fff3e7"/><text x="92" y="148">容量の差</text><text x="92" y="176">が変化</text><rect x="185" y="112" width="125" height="90" rx="13" fill="#eaf6fd"/><text x="247" y="148">電圧へ変換</text><text x="247" y="176">して増幅</text><rect x="340" y="112" width="125" height="90" rx="13" fill="#eaf7f1"/><text x="402" y="148">不要な振動</text><text x="402" y="176">を整える</text><rect x="495" y="112" width="105" height="90" rx="13" fill="#eaf6fd"/><text x="547" y="148">数字へ</text><text x="547" y="176">変換</text><rect x="630" y="112" width="105" height="90" rx="13" fill="#fff3e7"/><text x="682" y="148">加速度</text><text x="682" y="176">データ</text></g><g stroke="#176b9e" stroke-width="6" marker-end="url(#a5)"><path d="M155 157h27"/><path d="M310 157h27"/><path d="M465 157h27"/><path d="M600 157h27"/></g><text x="380" y="270" text-anchor="middle" font-size="18" fill="#596b78">補正や自己診断なども組み合わせ、ECUが扱える信号にする</text></svg><figcaption>容量変化はそのままECUへ届くのではなく、センサー内の半導体回路で増幅・補正・フィルタリング・デジタル化されます。</figcaption></figure>
+
+
+
+<h2 class="wp-block-heading">衝突はどう見分ける？「最大値」より時間波形が重要</h2>
+
+
+
+<p class="wp-block-paragraph">エアバッグの判断を「何Gを超えたら開く」と説明すると簡単ですが、それでは急ブレーキ、段差、局所的な打撃、前面衝突の違いを表せません。<strong>G</strong>は、標準重力加速度を基準にして加速度の大きさを表す言い方です。ECUは、その大きさだけでなく、どの方向から始まり、どのくらい速く立ち上がり、どのくらい続き、どんな形で変化したかを評価します。</p>
+<p>同じ高さのピークを持つ二つの波形を考えてみましょう。一つは針のように短く、もう一つは少し幅を持って続きます。最大値だけなら同じでも、時間を含めて見れば別の出来事です。加速度を時間方向に積み上げると、衝突中に車の速度がどれだけ変わったかを表す<strong>ΔV（デルタ・ブイ）</strong>を推定できる場合があります。短い大きな入力と、より長く続く入力では、同じピークでも推定される速度変化が異なり得ます。</p>
+<p>ただし、ΔVだけが唯一の判断材料という意味でもありません。公開資料から一般に説明できるのは、方向、波形、推定速度変化、周辺センサーとの整合性などを利用する考え方です。どの特徴をどの重みで使い、どの値で点火するかは、車両メーカーが車種ごとに校正する非公開情報です。</p>
+
+
+
+<figure class="s57b-media" data-media-role="explanatory-image-06"><svg viewBox="0 0 760 390" role="img" aria-label="ピークの高さは同じだが幅の異なる二つの加速度波形を比較する図"><rect width="760" height="390" fill="#fffdf8"/><text x="380" y="42" text-anchor="middle" font-size="26" font-weight="700" fill="#172635">同じピークでも、続く時間が違う</text><g stroke="#7b8b96" stroke-width="3"><path d="M70 300V90M70 300H345M415 300V90M415 300H690"/></g><path d="M95 295C180 295 185 105 205 105S230 295 320 295" fill="none" stroke="#e8893a" stroke-width="8"/><path d="M440 295C500 295 505 105 535 105S570 105 600 295C625 295 650 295 665 295" fill="none" stroke="#176b9e" stroke-width="8"/><path d="M205 105H535" stroke="#596b78" stroke-width="3" stroke-dasharray="8 7"/><text x="207" y="345" text-anchor="middle" font-size="19" fill="#8d4b19">短い鋭い波形</text><text x="552" y="345" text-anchor="middle" font-size="19" fill="#176b9e">幅を持つ波形</text><text x="380" y="88" text-anchor="middle" font-size="17" fill="#596b78">ピークの高さは同じ</text><text x="28" y="195" transform="rotate(-90 28 195)" text-anchor="middle" font-size="16" fill="#596b78">加速度</text><text x="380" y="378" text-anchor="middle" font-size="15" fill="#596b78">横軸は時間。波形の面積に対応する速度変化は異なり得ます</text></svg><figcaption>最大Gだけを見る説明では足りない理由です。実車の判定はこの図より複雑で、具体的な閾値や計算方法は車種固有です。</figcaption></figure>
+<figure class="s57b-media" data-media-role="explanatory-image-07"><svg viewBox="0 0 760 390" role="img" aria-label="急ブレーキ、段差、前面衝突で加速度波形の方向や長さや形が異なることを示す比較図"><rect width="760" height="390" fill="#eef8fc"/><text x="380" y="42" text-anchor="middle" font-size="26" font-weight="700" fill="#172635">似た「衝撃」でも、信号の姿は違う</text><g text-anchor="middle"><rect x="35" y="85" width="210" height="235" rx="15" fill="#fff" stroke="#b8d0dc"/><rect x="275" y="85" width="210" height="235" rx="15" fill="#fff" stroke="#b8d0dc"/><rect x="515" y="85" width="210" height="235" rx="15" fill="#fff" stroke="#b8d0dc"/><text x="140" y="120" font-size="21" font-weight="700" fill="#172635">急ブレーキ</text><text x="380" y="120" font-size="21" font-weight="700" fill="#172635">段差・局所入力</text><text x="620" y="120" font-size="21" font-weight="700" fill="#172635">前面衝突</text><path d="M60 250c35 0 45-70 80-70s50 70 80 70" fill="none" stroke="#2b7a5b" stroke-width="7"/><path d="M300 250h55l12-95 16 95h77" fill="none" stroke="#e8893a" stroke-width="7"/><path d="M540 250c25 0 30-100 70-100s60 100 90 100" fill="none" stroke="#176b9e" stroke-width="7"/><text x="140" y="290" font-size="16" fill="#596b78">比較的なだらか</text><text x="380" y="290" font-size="16" fill="#596b78">短く高周波が多い</text><text x="620" y="290" font-size="16" fill="#596b78">車体構造に応じた波形</text></g><text x="380" y="360" text-anchor="middle" font-size="16" fill="#596b78">方向・長さ・形・他センサーとの関係を合わせて評価する</text></svg><figcaption>特徴は一般化した概念図です。「段差なら絶対に開かない」「低速なら必ず開かない」といった断定はできません。</figcaption></figure>
+
+
+
+<h2 class="wp-block-heading">ECUは何を判断しているのか</h2>
+
+
+
+<p class="wp-block-paragraph"><strong>ECU</strong>は、Electronic Control Unitの略で、ここではエアバッグの判断と点火を担う小型コンピューターです。MEMS加速度センサーが「測定役」なら、ECUは「判断役」です。入力された信号から不要な高周波成分やゼロ点のずれを扱い、衝突候補が始まった時点、方向、波形の特徴、重大度を評価します。</p>
+<p>中央の加速度だけでなく、前部や側面の周辺センサー、採用されている車両では圧力や回転の情報も利用できます。ECUは、それらが物理的に矛盾していないかを確認しながら判断します。ただし「必ず二つの独立センサーが同時に一致しなければ開かない」という固定ルールではありません。使うセンサーと安全確認の方式には車種差があります。</p>
+<p>もう一つ重要なのが、衝突を認識した後の<strong>選択</strong>です。前面、側面、カーテンなどのエアバッグは、守る方向が異なります。車種によっては、座席の着座状態、乗員分類、シート位置、シートベルトのバックル状態なども使い、どの装置を作動させるか、どの段階で膨らませるかを選びます。そのため、同じ事故で全エアバッグが一斉に開くとは限りません。</p>
+<p>ECUには、誤点火を避けるための別の安全確認、自己診断、通信診断、点火回路の断線・短絡監視、電源監視などが組み込まれる例があります。さらに、衝突で車両の主電源や配線が損なわれても短時間の処理や点火を続けられるよう、コンデンサにエネルギーを蓄える構成もあります。これは「エアバッグに独立した専用電池が入っている」という意味ではありません。</p>
+
+
+
+<figure class="s57b-media" data-media-role="explanatory-image-08"><svg viewBox="0 0 760 410" role="img" aria-label="ECUが加速度、圧力、回転、座席、シートベルトなどの入力を評価して拘束装置を選ぶ図"><rect width="760" height="410" fill="#f8fbfd"/><text x="380" y="42" text-anchor="middle" font-size="26" font-weight="700" fill="#172635">ECUは入力を組み合わせ、必要な装置を選ぶ</text><rect x="285" y="125" width="190" height="150" rx="20" fill="#172635"/><text x="380" y="180" text-anchor="middle" font-size="26" font-weight="700" fill="#fff">エアバッグECU</text><text x="380" y="215" text-anchor="middle" font-size="17" fill="#cbeeff">波形・方向・継続時間</text><text x="380" y="243" text-anchor="middle" font-size="17" fill="#cbeeff">重大度・整合性を評価</text><g font-size="16" text-anchor="middle" fill="#172635"><rect x="35" y="88" width="160" height="60" rx="12" fill="#eaf6fd"/><text x="115" y="125">中央・周辺の加速度</text><rect x="35" y="180" width="160" height="60" rx="12" fill="#eaf7f1"/><text x="115" y="217">圧力・回転（採用車）</text><rect x="35" y="272" width="160" height="60" rx="12" fill="#fff3e7"/><text x="115" y="309">座席・ベルト情報</text><rect x="565" y="88" width="160" height="60" rx="12" fill="#fff3e7"/><text x="645" y="125">前面エアバッグ</text><rect x="565" y="180" width="160" height="60" rx="12" fill="#eaf6fd"/><text x="645" y="217">側面・カーテン</text><rect x="565" y="272" width="160" height="60" rx="12" fill="#eaf7f1"/><text x="645" y="309">プリテンショナー</text></g><g stroke="#176b9e" stroke-width="5"><path d="M195 118l90 42M195 210h90M195 302l90-42M475 160l90-42M475 210h90M475 260l90 42"/></g><text x="380" y="382" text-anchor="middle" font-size="15" fill="#596b78">すべての入力・出力を全車が備えるわけではありません</text></svg><figcaption>ECUは事故の方向や重大度に応じて拘束装置を選びます。入力の種類、点火対象、判断ロジックは車種・年式で異なります。</figcaption></figure>
+<figure class="s57b-media" data-media-role="explanatory-image-09"><svg viewBox="0 0 760 350" role="img" aria-label="ECUの主判定に自己診断、電源監視、安全確認が重なって誤点火を防ぐ考え方"><rect width="760" height="350" fill="#fffaf4"/><text x="380" y="42" text-anchor="middle" font-size="26" font-weight="700" fill="#172635">点火前に重ねる安全確認</text><rect x="265" y="105" width="230" height="125" rx="20" fill="#eaf6fd" stroke="#176b9e" stroke-width="4"/><text x="380" y="155" text-anchor="middle" font-size="24" font-weight="700" fill="#172635">衝突の主判定</text><text x="380" y="192" text-anchor="middle" font-size="17" fill="#596b78">方向・波形・重大度</text><g text-anchor="middle" font-size="17" fill="#172635"><rect x="40" y="115" width="170" height="85" rx="14" fill="#eaf7f1"/><text x="125" y="150">信号の整合性</text><text x="125" y="178">安全確認</text><rect x="550" y="115" width="170" height="85" rx="14" fill="#fff3e7"/><text x="635" y="150">電源・通信</text><text x="635" y="178">点火回路の診断</text><rect x="270" y="260" width="220" height="60" rx="14" fill="#172635"/><text x="380" y="298" fill="#fff">条件が成立した対象だけ点火</text></g><path d="M210 157h55M495 157h55M380 230v30" stroke="#176b9e" stroke-width="6"/><text x="380" y="338" text-anchor="middle" font-size="15" fill="#596b78">方式の独立度や条件は製品・車種により異なります</text></svg><figcaption>主判定とは別の安全確認や診断を用意する設計例があります。ただし、すべての車に同じ二重判定があるとは限りません。</figcaption></figure>
+
+
+
+<h2 class="wp-block-heading">エアバッグ展開までの流れ</h2>
+
+
+
+<p class="wp-block-paragraph">ECUが展開を必要と判断し、安全条件も成立すると、対象の点火回路へ電流を流します。点火器は、バッグを膨らませる<strong>インフレーター</strong>を始動します。火工式では固体のガス発生剤が制御された速度で反応してガスを作り、貯蔵ガス式では高圧で蓄えたガスを制御して放出します。両方を組み合わせるハイブリッド式もあります。</p>
+<p>生じたガスが折りたたまれた袋へ入り、カバーを押し開けてエアバッグが展開します。展開したバッグは、乗員と車内構造物の直接衝突を和らげます。前面、側面、カーテンなどで守る方向や袋の形が異なるため、すべてを同じ動きとして説明することはできません。</p>
+<p>同じ判定でシートベルトの<strong>プリテンショナー</strong>を作動させる構成では、ベルトのたるみを素早く取り、乗員を座席へ早く結び付けます。エアバッグとベルトは別々の競争相手ではなく、役割を分けて乗員を受け止める補助拘束システムです。</p>
+
+
+
+<figure class="s57b-media" data-media-role="explanatory-image-10"><svg viewBox="0 0 760 380" role="img" aria-label="ECUの判断から点火器、インフレーター、バッグ展開、乗員減速までの流れ"><rect width="760" height="380" fill="#eef8fc"/><text x="380" y="42" text-anchor="middle" font-size="26" font-weight="700" fill="#172635">判断後は、対象の拘束装置だけを作動</text><defs><marker id="a10" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0v6l9-3z" fill="#176b9e"/></marker></defs><g text-anchor="middle" font-size="17" fill="#172635"><circle cx="90" cy="175" r="55" fill="#172635"/><text x="90" y="170" fill="#fff">ECU</text><text x="90" y="195" fill="#cbeeff">点火命令</text><circle cx="235" cy="175" r="55" fill="#fff3e7" stroke="#e8893a" stroke-width="4"/><text x="235" y="170">点火器</text><text x="235" y="195">を始動</text><circle cx="380" cy="175" r="55" fill="#eaf7f1" stroke="#2b7a5b" stroke-width="4"/><text x="380" y="170">ガスを</text><text x="380" y="195">発生・放出</text><circle cx="525" cy="175" r="55" fill="#eaf6fd" stroke="#176b9e" stroke-width="4"/><text x="525" y="170">バッグが</text><text x="525" y="195">展開</text><circle cx="670" cy="175" r="55" fill="#fff3e7" stroke="#e8893a" stroke-width="4"/><text x="670" y="170">乗員を</text><text x="670" y="195">減速</text></g><g stroke="#176b9e" stroke-width="6" marker-end="url(#a10)"><path d="M145 175h32M290 175h32M435 175h32M580 175h32"/></g><path d="M270 295h220" stroke="#2b7a5b" stroke-width="8"/><text x="380" y="285" text-anchor="middle" font-size="18" fill="#2b7a5b">同時にプリテンショナーを作動させる構成もある</text><text x="380" y="345" text-anchor="middle" font-size="15" fill="#596b78">方式・作動対象・段階は衝突モードと車種により異なります</text></svg><figcaption>火工式、貯蔵ガス式、ハイブリッド式など、インフレーターには複数の方式があります。「小さな爆弾」という説明は不正確です。</figcaption></figure>
+<div class="s57b-cta"><strong>ここまで分かれば、エアバッグの「測る→判断する→作動させる」がつながりました。</strong><br>半導体が車の中でどんな役割を持つかを順番に学びたい方は、<a href="https://semicon-campus.com/semiconductor-beginner-roadmap/">半導体初心者ロードマップ</a>もあわせてご覧ください。</div>
+
+
+
+<h2 class="wp-block-heading">誤解しやすい点を整理する</h2>
+
+
+
+<section class="s57b-faq"><details><summary>Q1. 一定のGを超えると必ず開く？</summary><p>いいえ。加速度の大きさだけでなく、方向、立ち上がり、継続時間、時間波形、推定速度変化、周辺センサーとの整合性などを評価します。具体的な判定値は車種ごとの非公開校正情報です。</p></details><details><summary>Q2. 急ブレーキや段差では絶対に開かない？</summary><p>「絶対」とは言えません。急ブレーキ、段差、局所的な打撃、衝突では一般に信号の方向や形が異なり、ECUは時間波形などを使って見分けます。事故条件と車両設計により結果は変わります。</p></details><details><summary>Q3. 加速度センサーが事故を判断して直接点火する？</summary><p>いいえ。MEMS加速度センサーは車体の動きを電気信号へ変える測定役です。事故の種類や重大度を判断し、点火対象を選ぶ主体はECUです。</p></details><details><summary>Q4. 事故なら全部のエアバッグが開く？</summary><p>いいえ。前面、側面、カーテンなどは守る方向が異なります。ECUは衝突モードや重大度を評価し、車種によっては乗員・座席・ベルトの情報も使って、必要な装置を選びます。</p></details><details><summary>Q5. エアバッグがあればシートベルトは不要？</summary><p>いいえ。エアバッグはSRS、つまりシートベルトを助ける補助拘束装置です。正しく座り、シートベルトを着用して初めて、互いの役割を生かせます。</p></details></section>
+
+
+
+<h2 class="wp-block-heading">安全上、知っておきたいこと</h2>
+
+
+
+<p class="wp-block-paragraph">エアバッグは非常に速く展開するため、ハンドルやダッシュボードへ必要以上に近づかず、車両の取扱説明書に従って座席とシートベルトを調整することが重要です。助手席エアバッグとチャイルドシートの扱いも、車種の説明書と公的な安全案内に従ってください。</p>
+<p>SRS警告灯が点灯した、衝突後にエアバッグが開いた、または衝突後のシステム状態が分からない場合は、自分で分解・通電試験をせず、メーカー指定の販売店や整備事業者へ相談してください。点火器やインフレーターを個人で取り外したり、バンパーを叩いて試したりするのは危険です。</p>
+<p>また、エアバッグが開かなかったことだけで「故障」または「衝突が軽かった」とは判断できません。展開の必要性は、外観の壊れ方、走行速度、最大Gの一つだけでは決まりません。衝突方向、車体構造、乗員条件などを含む車両固有の判定が関係するため、事故後の判断は専門家に任せる必要があります。</p>
+
+
+
+<section class="mp4-section" id="revenue-phase4-learning"><h2>MEMSの理解を、センサー・品質の学習へ</h2><p>衝突を検知する仕組みが分かったら、測る物理量、信号処理、判定、作動確認を分けて説明してみます。この記事を車両の修理や安全装置の変更手順として使わず、電気・計測の基礎を学ぶ入口にしましょう。センサーの製造や検査、評価記録の経験がある人は、品質・装置の仕事との接点を整理できます。仕事内容は担当製品や確認項目、必要経験を求人票で比較します。</p></section>
+
+
+<h2 class="wp-block-heading">まとめ：センサーは測り、ECUが判断する</h2>
+
+
+
+<figure class="s57b-media" data-media-role="summary-infographic"><svg viewBox="0 0 760 470" role="img" aria-label="エアバッグ衝突検知の要点をMEMSの測定、ECUの判断、安全確認、選択展開、シートベルト補助の五段階でまとめた図"><rect width="760" height="470" rx="18" fill="#172635"/><text x="380" y="52" text-anchor="middle" font-size="29" font-weight="700" fill="#fff">エアバッグ衝突検知：5つの要点</text><defs><marker id="as" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0v6l9-3z" fill="#fff"/></marker></defs><g text-anchor="middle"><g><circle cx="92" cy="185" r="48" fill="#b9dcea"/><text x="92" y="180" font-size="18" font-weight="700" fill="#172635">MEMS</text><text x="92" y="204" font-size="15" fill="#172635">動きを測る</text></g><g><circle cx="235" cy="185" r="48" fill="#f4c68f"/><text x="235" y="180" font-size="18" font-weight="700" fill="#172635">時間波形</text><text x="235" y="204" font-size="15" fill="#172635">形まで見る</text></g><g><circle cx="380" cy="185" r="48" fill="#a9d6bd"/><text x="380" y="180" font-size="18" font-weight="700" fill="#172635">ECU</text><text x="380" y="204" font-size="15" fill="#172635">重大度を判断</text></g><g><circle cx="525" cy="185" r="48" fill="#b9dcea"/><text x="525" y="180" font-size="18" font-weight="700" fill="#172635">安全確認</text><text x="525" y="204" font-size="15" fill="#172635">診断を重ねる</text></g><g><circle cx="668" cy="185" r="48" fill="#f4c68f"/><text x="668" y="180" font-size="18" font-weight="700" fill="#172635">選択展開</text><text x="668" y="204" font-size="15" fill="#172635">必要な装置だけ</text></g></g><g stroke="#fff" stroke-width="5" marker-end="url(#as)"><path d="M140 185h42"/><path d="M283 185h44"/><path d="M428 185h44"/><path d="M573 185h42"/></g><rect x="105" y="300" width="550" height="95" rx="18" fill="#21394c" stroke="#a9d6bd" stroke-width="3"/><text x="380" y="338" text-anchor="middle" font-size="22" font-weight="700" fill="#fff">エアバッグはシートベルトの代わりではない</text><text x="380" y="372" text-anchor="middle" font-size="18" fill="#cbeeff">SRS＝シートベルトを助ける補助拘束装置</text><text x="380" y="440" text-anchor="middle" font-size="16" fill="#cbdce6">固定Gの単純スイッチではなく、測定・判断・作動の連鎖</text></svg><figcaption>この記事の要点。MEMSは車体の動きを測り、ECUが時間波形や安全条件を評価し、必要な拘束装置を選びます。</figcaption></figure>
+<div class="s57b-summary">MEMS加速度センサーは、チップ内のおもりの変位を加速度信号へ変えます。<br>ECUは最大Gだけでなく方向・継続時間・波形・推定速度変化などを評価します。<br>必要な装置を選んで作動させますが、エアバッグはシートベルトを助ける装置です。</div>
+
+
+
+<h2 class="wp-block-heading">次に読む</h2>
+
+
+
+<p class="wp-block-paragraph">半導体が材料から製品になる全体像を先に押さえたい方は、<a href="https://semicon-campus.com/semiconductor-manufacturing-overview/">半導体製造の全体像</a>へ進んでください。Episode 057のショート動画は、<a href="https://www.youtube.com/shorts/BjQX1V4Qxio">エアバッグの衝突判定を60秒で見る</a>から確認できます（2026年9月11日19:30 JST公開予定）。</p>
+
+
+
+<section class="mp4-section" id="revenue-phase4-career"><h2>この記事の知識を、次の仕事・学習へつなげる</h2><p>センサー製造・検査、測定、評価・品質記録の経験を、対象・作業・確認した結果で整理します。担当範囲と必要経験、勤務地、勤務・出張、教育体制を比較すると、次に補う知識も具体的になります。</p><aside class="semicon-cta mp4-card"><h3>関連する職種の仕事内容・求人・学習を見る</h3><p>記事で学んだ技術が、点検・復旧、装置立上げ、顧客対応、実装・工程改善のどの仕事で使われるか確認できます。職種記事の求人・学習の選び方へ進みましょう。</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/" class="semicon-btn mp4-button" data-revenue-phase4-hub="237" data-cta="equipment_hub" data-cta-type="equipment_hub" data-cta-stage="career" data-cta-id="phase4_823_hub237_end" data-cta-route="phase4_823_hub237_end">装置エンジニアの担当範囲・求人・学習を見る</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-process-engineer/" class="semicon-btn mp4-button" data-revenue-phase4-hub="230" data-cta="process_hub" data-cta-type="process_hub" data-cta-stage="career" data-cta-id="phase4_823_hub230_end" data-cta-route="phase4_823_hub230_end">プロセスエンジニアの担当範囲・求人・学習を見る</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/semiconductor-beginner-roadmap/" class="semicon-btn mp4-button" data-revenue-phase4-hub="391" data-cta="learning_hub" data-cta-type="learning_hub" data-cta-stage="career" data-cta-id="phase4_823_hub391_end" data-cta-route="phase4_823_hub391_end">半導体学習Hubで基礎・仕事・学び方を確認する</a></div></aside></section>
+
+
+
+<h2 class="wp-block-heading">参考資料</h2>
+
+
+
+<ol class="s57b-refs"><li>Bosch Mobility, <a rel="noopener" href="https://www.bosch-mobility.com/en/solutions/sensors/peripheral-acceleration-sensor/" target="_blank">Peripheral acceleration sensor</a>（MEMSのばね・質量・電極、容量変化からデジタル信号まで）。</li><li>Bosch Mobility, <a rel="noopener" href="https://www.bosch-mobility.com/en/solutions/control-units/airbag-control-unit/" target="_blank">Airbag control unit</a>（加速度・圧力センサーの評価と拘束装置制御）。</li><li>Bosch Mobility, <a rel="noopener" href="https://www.bosch-mobility.com/en/company/current-news/groundbreaking-passenger-protection/" target="_blank">Groundbreaking passenger protection</a>（急制動・縁石・衝突などを識別する制御の説明）。</li><li>NHTSA, <a rel="noopener" href="https://www.nhtsa.gov/vehicle-safety/air-bags" target="_blank">Vehicle Air Bags and Injury Prevention</a>（全衝突で展開するわけではないこと、シートベルトとの協調、安全上の注意）。</li><li>国土交通省, <a rel="noopener" href="https://www.mlit.go.jp/jidosha/carinf/rcl/carsafety_sub/carsafety006.html" target="_blank">エアバッグの効果は、シートベルトを着用してこそ</a>（エアバッグは補助装置でありシートベルトが不可欠）。</li><li>Autoliv, <a rel="noopener" href="https://www.autoliv.com/safety-solutions/inflators-initiators" target="_blank">Airbag Inflators &amp; Initiators</a>（火工式・貯蔵ガス式・ハイブリッド式と点火器）。</li><li>NXP Semiconductors, <a rel="noopener" href="https://www.nxp.com/products/power-management/pmics-and-sbcs/system-basis-chips/airbag-power-supply-and-psi5-sensor-interface%3AMC33789" target="_blank">MC33789 Airbag System Basis Chip</a>（電源、センサー通信、診断、セーフィングの製品例）。</li></ol>
+
+
+
+</article>
+

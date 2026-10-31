@@ -1,0 +1,33 @@
+<p>2026年10月12日、Navitas SemiconductorはNVIDIAとの協業で開発した、AIデータセンター向けの24kW電源ボードを発表しました。発表では、800VDCを12VDCへ一段で変換し、従来の50V中間バスを省く設計が説明されています。AIサーバーの高電力化で電源配線や冷却が課題になるなか、800VDC AIデータセンター電源を具体的なボードとして示した点が今回のニュースです。ただし、これは発表と将来の展示予定であり、量産開始や出荷開始を意味しません。<a href="https://www.globenewswire.com/news-release/2026/10/12/3379241/0/en/navitas-collaborates-with-nvidia-on-800-v-to-12-v-power-delivery-board-for-next-generation-ai-infrastructure.html">Navitasの発表</a></p>
+<h2>何が発表されたのか</h2>
+<p>Navitasが示したボードは、800VDCを入力し、12VDCを出力するDC-DC電源です。発表資料では、24kWを供給できる構成、400mm×60mmのフォームファクター、計算基板上でxPUに近接配置する想定が説明されています。主電源側には650V・18mΩのNV6034 GaNFast FETを16個使い、スタック型ハーフブリッジとデュアル冷却のDFN 8×8パッケージを採用するとされています。ここでいう24kWは今回発表された供給能力であり、量産製品の保証定格や、すでに顧客環境で長期確認された仕様と同じ意味ではありません。<a href="https://www.globenewswire.com/news-release/2026/10/12/3379241/0/en/navitas-collaborates-with-nvidia-on-800-v-to-12-v-power-delivery-board-for-next-generation-ai-infrastructure.html">発表資料の仕様説明</a></p>
+<p>Navitasが掲げる性能は、全負荷時97%の<strong>目標効率</strong>と、2,000W/in³を超える<strong>目標電力密度</strong>です。これらは会社が発表した目標値であり、今回の資料だけから、量産品の保証値、実運用での測定値、第三者による独立検証済みの数値とはいえません。入力電圧、温度、負荷変動、冷却方式などの測定条件も、今後確認が必要です。</p>
+<h2>なぜ800VDCが注目されるのか</h2>
+<p>電力が同じなら、電圧を高くするほど流れる電流を小さくできます。電線の抵抗による損失は、おおむね電流の二乗に比例するため、高電圧で電力を配ると、配線の損失や発熱を抑えやすくなります。導体に必要な銅の量、バスバーやケーブルの負担を減らせる可能性もあります。</p>
+<p>NVIDIAは、従来の54V系配電ではAI計算機の高電力化に伴って大電流、銅使用量、ケーブル量、電力密度が制約になりやすいと説明し、800VDCを次世代AIファクトリー向けの配電アーキテクチャとして示しています。800VDCは施設側からラックや計算ノードへ電力を分配する電圧であり、GPUの内部回路がそのまま800Vで動くという意味ではありません。<a href="https://www.nvidia.com/en-au/data-center/technologies/800-vdc-architecture/">NVIDIAの800VDC技術説明</a></p>
+<h2>「単段変換」はどこまでを指すのか</h2>
+<p>今回の<strong>単段変換</strong>とは、電源ボードの入力である800VDCから、出力の12VDCまでを一つの変換段で処理することです。従来の構成では、800VDCをいったん54Vまたは50V程度へ下げ、そこから12Vへ変換する<strong>中間バスコンバーター（IBC）</strong>を置く考え方がありました。今回の設計は、この50V中間バスを省く方向です。Navitasは2025年の説明でも、800VDCから54Vまたは12Vへ変換し、その後にGPU向け電圧へ変換する電力経路を説明していました。<a href="https://ir.navitassemi.com/news-releases/news-release-details/navitas-supports-800-vdc-power-architecture-nvidias-next">2025年10月のNavitas発表</a></p>
+<p>ただし、12VはxPUのコア電圧ではありません。12Vの後段には、<strong>VRM（Voltage Regulator Module）</strong>と呼ばれる電圧レギュレーターがあり、プロセッサーが必要とする、さらに低い電圧へ変換します。したがって、「800VからGPUのコア電圧まで完全に一段で給電する」と理解するのは誤りです。</p>
+<p>中間段を減らし、電源をxPUの近くに置けば、変換器や配線の距離、基板上の占有面積を減らせる可能性があります。一方で、総合効率や信頼性がどれだけ改善するかは、GaN FETだけで決まるものではありません。磁性部品、絶縁、制御回路、保護回路、VRM、配線、熱設計、実際の負荷条件を含めたシステム評価が必要です。</p>
+<h2>GaNを使う理由と技術的な背景</h2>
+<p><strong>GaN（窒化ガリウム）</strong>は、電源のスイッチとして高速動作に適した半導体材料です。スイッチングを高速化できると、電源回路に使う磁性部品を小型化しやすく、限られた体積に大きな電力を詰め込む電力密度の向上につながる可能性があります。今回のボードがGaNFast FETを採用するのも、800V系の変換回路を小型・高密度にまとめる狙いと考えられます。</p>
+<p>ただし、高速スイッチングには、電磁ノイズ、絶縁、寄生インダクタンス、発熱、制御の安定性などの課題があります。高い電力密度を実現しても、冷却装置を含めたシステムが大きくなれば、データセンター全体の省スペース効果は限定的です。97%という目標効率でも、24kWを供給する場合には、残りの損失が熱として発生するため、冷却設計は重要になります。</p>
+<h2>発表と量産を混同しないために</h2>
+<p>Navitasは、このボードをOCP Global Summit 2026のNVIDIA AI Factory MGX Wallパートナー展示エリアで展示する予定だと説明しています。これは将来の展示計画です。2026年10月14日時点で、量産開始日、価格、出荷数量、一般販売時期、NVIDIA MGXへの量産採用が確定したとは発表されていません。展示されたことと、製品がデータセンターで長期運用されたことも別の事実です。<a href="https://www.globenewswire.com/news-release/2026/10/12/3379241/0/en/navitas-collaborates-with-nvidia-on-800-v-to-12-v-power-delivery-board-for-next-generation-ai-infrastructure.html">展示予定に関する発表</a></p>
+<p>今回の発表は、NVIDIAが進める800VDC構想と、Navitasが2025年に説明した協業の延長線上にあります。2025年5月の発表では、54V配電に伴う電流や銅量の制約、800V HVDCへの移行方針が説明されました。今回の24kW電源ボードは、その構想をより具体的な電源実装へ進めたものと位置付けられますが、既報からNVIDIAの量産採用が確定したと推測することはできません。<a href="https://ir.navitassemi.com/news-releases/news-release-details/nvidia-selects-navitas-collaborate-next-generation-800-v-hvdc">2025年5月の協業発表</a></p>
+<h2>これから確認したいポイント</h2>
+<ul>
+<li>OCP Global Summit 2026で実際に展示されるか。</li>
+<li>97%効率と2,000W/in³超の値が、どの入力電圧、温度、負荷、冷却条件で測定されたものか。</li>
+<li>展示試作から量産仕様へ移行する時期、価格、供給数量が示されるか。</li>
+<li>VRMやラック全体を含めた実効効率、熱設計、長期信頼性が第三者または顧客環境で確認されるか。</li>
+<li>800VDCを扱う安全規格、絶縁、保守手順がデータセンターに適用できるか。</li>
+</ul>
+<p>2026年10月14日時点で、今回の主要数値を訂正・撤回する新しい一次情報は確認されていません。ただし、今後の展示、技術資料、顧客採用発表によって仕様や計画が更新される可能性があります。今回のニュースは、AI半導体の性能競争がチップ単体だけでなく、電力を安全かつ高密度に届けるインフラへ広がっていることを示す一例です。</p>
+<h2>参考資料</h2>
+<ul>
+<li><a href="https://www.globenewswire.com/news-release/2026/10/12/3379241/0/en/navitas-collaborates-with-nvidia-on-800-v-to-12-v-power-delivery-board-for-next-generation-ai-infrastructure.html">Navitas Semiconductor / GlobeNewswire：800VDCから12VDCへの24kW電源ボード発表</a></li>
+<li><a href="https://www.nvidia.com/en-au/data-center/technologies/800-vdc-architecture/">NVIDIA：800 VDC Architecture for AI Data Centers</a></li>
+<li><a href="https://ir.navitassemi.com/news-releases/news-release-details/navitas-supports-800-vdc-power-architecture-nvidias-next">Navitas：800VDC電源アーキテクチャに関する2025年10月発表</a></li>
+<li><a href="https://ir.navitassemi.com/news-releases/news-release-details/nvidia-selects-navitas-collaborate-next-generation-800-v-hvdc">Navitas：次世代800V HVDCアーキテクチャに関する2025年5月発表</a></li>
+</ul>

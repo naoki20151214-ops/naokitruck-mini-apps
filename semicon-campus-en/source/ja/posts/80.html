@@ -1,0 +1,469 @@
+
+<!--KEEP:0-->
+
+
+<!--KEEP:1-->
+
+
+<!--KEEP:2-->
+<div class="semicon-article">
+
+<p class="wp-block-paragraph">リソグラフィで模様を写しただけでは、まだ膜そのものは削れていません。</p>
+
+
+
+<p class="wp-block-paragraph">スマートフォンやAIサーバーに使われる半導体の微細な構造は、目印を作っただけでは完成しません。膜を必要な形に加工して、はじめて次の工程へ進めます。</p>
+
+
+
+<p class="wp-block-paragraph">その役割を担うのがエッチングです。では、なぜ狙った材料だけを、狙った方向に、ウェハ全面で揃えて削る必要があるのでしょうか。この記事では、材料の選択、形状、Wet / Dry、3D NANDとGAAの違い、検査・洗浄・保全までを一つの流れで見ていきます。</p>
+
+
+<figure class="semicon-hero">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/06/etching-dry-chamber-hero-bright.png" alt="半導体工場のドライエッチング装置とウェハ処理チャンバーのイメージ">
+  <figcaption>図の見方：ドライエッチング装置とウェハ処理チャンバーのイメージです。エッチングは、リソグラフィで作った模様を実際の膜へ転写する工程で、現代の先端半導体ではプラズマを使う方式が重要な役割を持ちます。</figcaption>
+</figure>
+
+<figure class="semicon-hero">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/etching-lithography-to-etch-flow-fixed.png" alt="成膜、リソグラフィ、エッチング、レジスト除去で膜に形ができる流れ">
+  <figcaption>図の見方：成膜→リソグラフィ→エッチング→レジスト除去の順に、膜に形ができる流れを示しています。リソグラフィは「目印を作る工程」、エッチングは「その目印に沿って膜を削る工程」です。</figcaption>
+</figure>
+
+
+
+<h2 class="wp-block-heading">エッチングとは、模様を「膜の形」に変える工程</h2>
+
+
+
+<p class="wp-block-paragraph">エッチングとは、ウェハ上にある膜のうち、不要な部分を取り除く工程です。</p>
+
+
+
+<p class="wp-block-paragraph">半導体製造では、まずウェハの上に酸化膜、窒化膜、シリコン膜、金属膜などを作ります。ところが、加工対象となる膜を全面に残したままでは、回路として必要な線、溝、開口、絶縁領域にはなりません。</p>
+
+
+
+<p class="wp-block-paragraph">そこで膜の上にフォトレジストなどのマスクを置きます。マスクで覆われた場所は守り、開いている場所の膜を取り除く。これがエッチングの基本です。</p>
+
+
+
+<h3 class="wp-block-heading">成膜・リソグラフィ・エッチングの位置関係</h3>
+
+
+
+<p class="wp-block-paragraph">役割を一度に見ると、次のようになります。</p>
+
+
+
+<ul class="wp-block-list">
+<li>成膜：ウェハ上に、必要な性質を持つ膜を作る</li>
+<li>リソグラフィ：その膜のどこを残し、どこを加工するかの模様を作る</li>
+<li>エッチング：模様を目印に、露出した膜を取り除く</li>
+<li>洗浄・除去：残渣やマスクの残りを減らし、次工程へ渡す</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">リソグラフィは、回路そのものを削る工程ではありません。一般的なフォトリソグラフィでは、フォトレジストに模様を作り、次の加工で守る場所を決めます。</p>
+
+
+
+<p class="wp-block-paragraph">目印の元になるレジストパターンを作る工程が、<a href="https://semicon-campus.com/what-is-lithography-semiconductor-process/">リソグラフィ</a>です。</p>
+
+
+
+<h3 class="wp-block-heading">エッチングがなければ、模様を膜へ転写できない</h3>
+
+
+
+<p class="wp-block-paragraph">膜を加工する工程では、リソグラフィで作った模様をエッチングで下の膜へ転写します。たとえば絶縁膜をウェハ全面に作り、その上に細い線のレジスト模様を作ったとします。この時点では、絶縁膜はまだ全面に残っています。</p>
+
+
+
+<p class="wp-block-paragraph">エッチングによってレジストで守られていない絶縁膜を取り除くと、膜に溝や開口などの形が現れます。つまり、リソグラフィが「どこを加工するかを指定する」なら、この範囲のエッチングはその指定を膜へ転写する工程です。リソグラフィの模様が使われる工程すべてを、エッチングだけで説明する必要はありません。</p>
+
+
+
+<p class="wp-block-paragraph">比喩で言えば、リソグラフィは下書き、エッチングは下書きに沿った本番加工です。ただし、実際にはカッターで削るのではありません。薬液、反応性ガス、プラズマなどを使い、材料ごとの反応しやすさと削れ方を制御します。</p>
+
+
+
+<h2 class="wp-block-heading">なぜ材料を選んで削る必要がある？</h2>
+
+
+
+<p class="wp-block-paragraph">エッチングで難しいのは、材料を取り除くことだけではありません。削りたい膜を除去しながら、下地、マスク、隣接する材料はできるだけ残す必要があります。</p>
+
+
+
+<h3 class="wp-block-heading">選択性とは、エッチレートの比を見る考え方</h3>
+
+
+
+<p class="wp-block-paragraph">選択性とは、削りたい材料のエッチレートが、残したい材料のエッチレートに対してどれだけ大きいかを見る考え方です。エッチレートは、単位時間あたりに材料が削れる速さです。言い換えると、削りたい膜は速く、下地やマスクはできるだけ遅く削る、という関係を目指します。</p>
+
+
+
+<p class="wp-block-paragraph">たとえば酸化膜を削りたいのに、その下のシリコンまで大きく削れてしまえば、狙った構造から外れます。逆に、マスクが早く消耗すれば、加工の途中で守る場所が露出します。高い選択性がいつでも最適というより、どの材料を残し、どの形を作るかに応じて必要な選択性を決めます。</p>
+
+
+
+<p class="wp-block-paragraph">必要な選択性は工程によって変わります。酸化膜、窒化膜、シリコン、金属膜など、対象が変われば適した薬液・ガス・プラズマ条件・マスクも変わります。</p>
+
+
+
+<p class="wp-block-paragraph">削る対象の膜を用意する<a href="https://semicon-campus.com/%E6%88%90%E8%86%9C%E3%81%A8%E3%81%AF%E4%BD%95%E3%81%8B%EF%BC%9F%E3%82%A6%E3%82%A7%E3%83%8F%E3%81%AE%E4%B8%8A%E3%81%AB%E8%96%84%E3%81%84%E8%86%9C%E3%82%92%E4%BD%9C%E3%82%8B%E5%8D%8A%E5%B0%8E%E4%BD%93/">成膜</a>も、エッチングとセットで見ると流れがつながります。</p>
+
+
+
+<p class="wp-block-paragraph">削る対象が最初からウェハの上にあるわけではありません。膜を作る成膜も含めて見ると、エッチングは「足す・写す・削る」をつなぐ工程だとわかります。</p>
+
+
+
+<h2 class="wp-block-heading">横に削れたら何が起きる？</h2>
+
+
+
+<p class="wp-block-paragraph">マスクの開口から下へ削り進むとき、横方向にも削れが広がると、設計した線幅や開口の寸法、側壁の形が変わります。</p>
+
+
+
+<h3 class="wp-block-heading">異方性と等方性を形状で見る</h3>
+
+
+
+<p class="wp-block-paragraph">方向によって削れ方が異なる性質を異方性と呼びます。半導体の微細構造では、横方向への広がりを抑え、狙った深さと形状を作りたい場面があります。</p>
+
+
+
+<p class="wp-block-paragraph">一方、すべての工程で「真下にまっすぐ」が正解とは限りません。材料、構造、後工程とのつながりによって、横方向の除去や選択的な横エッチが必要な場合もあります。重要なのは、設計した形に対して、どの方向へどの程度削るかを制御できることです。</p>
+
+
+
+<p class="wp-block-paragraph">横方向の削れが大きければ、狙った線幅から外れたり、開口が広がったり、隣接する構造との間隔が変わったりします。そこで、エッチング後には寸法と形状を測り、設計値や工程の基準と照らし合わせます。</p>
+
+
+
+<h2 class="wp-block-heading">WetとDryはどう使い分ける？</h2>
+
+
+
+<p class="wp-block-paragraph">エッチングには、薬液を使うウェットエッチングと、反応性ガスやプラズマを使うドライエッチングがあります。どちらが常に優れているという関係ではなく、材料、構造、求める方向性、選択性、処理目的で使い分けます。</p>
+
+
+<figure class="semicon-hero">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/etching-isotropic-vs-anisotropic-fixed.png" alt="ウェットエッチングとドライエッチングの違い、等方性と異方性の削れ方">
+  <figcaption>図の見方：左はウェット、右はドライでの削れ方の違いです。初心者の段階では、ウェットは横方向にも回り込みやすく、ドライは縦方向の形を作りやすい、とまず理解するとつかみやすいです。実際の工程では材料や条件によって使い分けられます。</figcaption>
+</figure>
+
+
+<h3 class="wp-block-heading">ウェットエッチングは等方的な反応による形状変化に注意する</h3>
+
+
+
+<p class="wp-block-paragraph">ウェットエッチングは、薬液との化学反応で材料を取り除く方法です。等方的なエッチングでは、露出した表面に対する反応が縦方向だけでなく横方向にも進みます。そのため、開口の底面だけでなく側面にも反応が進み、マスクの下へアンダーカットが生じることがあります。</p>
+
+
+
+<p class="wp-block-paragraph">これは「液体が横方向へ回り込むから」とだけ説明する現象ではありません。反応が露出表面に対して方向を選ばず進み得る、という等方性と、材料・マスク・薬液条件の組み合わせで形状が決まります。横方向の除去が必要な工程もあるため、アンダーカットが常に失敗とは限りません。</p>
+
+
+
+<h3 class="wp-block-heading">ドライエッチングは反応性ガス・プラズマを使う</h3>
+
+
+
+<p class="wp-block-paragraph">ドライエッチングでは、真空中の反応性ガスやプラズマを用います。プラズマ中の反応種が材料と反応し、生成物として排出される一方、イオンが表面へ作用することで、化学的作用と物理的作用が組み合わさります。</p>
+
+
+<figure class="semicon-hero">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/etching-plasma-mechanism-fixed.png" alt="ドライエッチングで反応性ガスをプラズマにして露出した膜を取り除く仕組み">
+  <figcaption>図の見方：反応性ガスをプラズマにし、レジストで守られていない膜を取り除く概念図です。ドライエッチングは、単なる物理的な削り取りではなく、化学反応とイオンの方向性を組み合わせます。</figcaption>
+</figure>
+
+<figure class="semicon-hero">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/06/etching-plasma-closeup-bright.png" alt="プラズマエッチングでウェハ表面を処理するイメージ">
+  <figcaption>図の見方：プラズマでウェハ表面を処理するイメージです。削る材料、残す材料、レジスト、ガス、圧力、電力などを組み合わせて条件を作ることが、プロセスエンジニアの重要な仕事になります。</figcaption>
+</figure>
+
+
+<h3 class="wp-block-heading">RIEは化学作用とイオンの方向性を組み合わせる</h3>
+
+
+
+<p class="wp-block-paragraph">反応性イオンエッチング（RIE）は、プラズマ中の反応種とイオンの作用を使い、形状の方向性を制御する代表的な考え方です。ただし、実際のプロファイルは材料、ガス、圧力、電力、温度、マスクなどの組み合わせで変わります。「ウェットからドライへ一直線に進化した」と覚えるより、求める形状と材料に合わせて作用を選ぶと捉える方が安全です。</p>
+
+
+
+<!-- semicon-a8-top30-top30-16-1:start -->
+
+
+<!-- semicon-a8-top30-top30-16-1:end -->
+
+
+
+<h2 class="wp-block-heading">なぜ深く細い構造ほど難しくなる？（3D NAND）</h2>
+
+
+
+<p class="wp-block-paragraph">3D NANDでは、積層構造に深い穴や溝を形成するHigh Aspect Ratio Etch（高アスペクト比エッチ）が重要な課題になります。ここでの難しさは、GAAのような選択的な材料除去とは別です。</p>
+
+
+
+<h3 class="wp-block-heading">High Aspect Ratio Etchは深さと開口幅の比で考える</h3>
+
+
+
+<p class="wp-block-paragraph">構造の深さを開口幅で割った値をアスペクト比と呼びます。深くて開口が狭いほど、上部と底部で同じように加工することが難しくなります。</p>
+
+
+
+<h3 class="wp-block-heading">反応種の輸送と生成物の排出が深部で難しくなる</h3>
+
+
+
+<p class="wp-block-paragraph">深い穴や溝では、反応に関わる種が底まで届きにくくなり、加工で生じた生成物も上部へ戻りにくくなります。その結果、上部と底部でエッチレートやプロファイルが変わることがあります。マスクの消耗も加わるため、深さだけを見ていればよいわけではありません。</p>
+
+
+
+<h3 class="wp-block-heading">CD・プロファイル・方向性・マスク消耗を同時に見る</h3>
+
+
+
+<p class="wp-block-paragraph">3D NANDの加工では、狙ったCDを保ちながら深く進められるか、側壁のプロファイルが崩れていないか、イオンの方向性が保たれているか、マスクが途中で持つかを同時に見ます。プラズマ密度、イオンの方向性、ガスの反応性、圧力、温度、電力、処理時間などの組み合わせは、材料・装置・構造によって変わります。</p>
+
+
+
+<h2 class="wp-block-heading">「深く削る」だけではない――GAAでは選んで削る</h2>
+
+
+
+<p class="wp-block-paragraph">GAA（Gate-All-Around）では、深い穴をまっすぐ掘ることとは別に、周囲の材料を残しながら特定の材料を取り除く難しさがあります。</p>
+
+
+
+<h3 class="wp-block-heading">選択エッチングは周囲の材料を残して対象を除去する</h3>
+
+
+
+<p class="wp-block-paragraph">選択エッチングでは、除去したい材料のエッチレートを高くし、残したい周囲材料のエッチレートを低くすることが重要です。形状の方向性だけでなく、材料同士の反応差を管理する工程です。</p>
+
+
+
+<h3 class="wp-block-heading">SiGeなどの犠牲層を周囲材料から選択して取り除く</h3>
+
+
+
+<p class="wp-block-paragraph">GAAの形成では、SiGeなどの犠牲層を、周囲に残す材料から選択して除去する工程が使われる場合があります。犠牲層がなくなった空間は、後のゲート形成など別の工程へつながります。ここで大切なのは、周囲の構造を壊さずに対象層だけを取り除くことです。</p>
+
+
+
+<h3 class="wp-block-heading">等方的な除去が必要になるケースもある</h3>
+
+
+
+<p class="wp-block-paragraph">犠牲層を周囲から外すには、開口から見える上面だけでなく、構造の周囲へ反応を進める等方的な除去が必要になるケースもあります。したがって、エッチングはいつでも真下へ削る技術ではありません。3D NANDでは深部の輸送と方向性、GAAでは選択性と必要な横方向の除去という、別の課題として考えます。</p>
+
+
+
+<h2 class="wp-block-heading">ウェハ全面で揃わないとどうなる？</h2>
+
+
+
+<p class="wp-block-paragraph">エッチングを含む<a href="https://semicon-campus.com/what-is-feol-semiconductor-process/">洗浄・成膜・リソグラフィ・CMP・検査の反復</a>は、前工程全体の流れで見ると理解しやすくなります。</p>
+
+
+
+<p class="wp-block-paragraph">半導体の量産では、ウェハの一部だけがきれいに加工できても十分ではありません。中心と端、ウェハとウェハの間、さらにロットや装置の違いで、エッチレート、線幅、深さ、側壁形状などの分布を確認します。</p>
+
+
+
+<h3 class="wp-block-heading">均一性は「同じ速さ」だけではなく、形の分布を見る</h3>
+
+
+
+<p class="wp-block-paragraph">均一性とは、ウェハ上の場所が変わっても、狙った仕上がりに近づけられることです。例えば300mmウェハでも、中心では深く削れたのに端では浅い、中心では線幅が合うのに端では広がる、といった差が大きければ、同じ設計から異なる仕上がりが生まれます。</p>
+
+
+
+<p class="wp-block-paragraph">その差が次工程で補正できない場合、構造の電気的な働き、接続、絶縁、後工程との適合に影響する可能性があります。ここで「必ず不良になる」とは言えませんが、ばらつきが広がるほど、管理すべき異常候補が増えます。</p>
+
+
+
+<h3 class="wp-block-heading">不足エッチと過剰エッチは同じようには扱えない</h3>
+
+
+
+<p class="wp-block-paragraph">エッチングは、材料を取り除く不可逆加工です。不足エッチで追加処理が可能な工程もありますが、過剰に削った材料を元へ戻すことはできません。だからこそ、エッチレート、終点、時間、形状、ウェハ内分布を確認し、工程条件を厳密に管理します。</p>
+
+
+
+<p class="wp-block-paragraph">条件がずれると、残渣が増える、マスクが想定より早く消耗する、下地を削りすぎる、開口の寸法がずれる、といった問題が起こり得ます。次の工程で追加の確認や処置が必要になることはあっても、「条件がずれたら再処理すればよい」と単純化はできません。</p>
+
+
+
+<p class="wp-block-paragraph">分布・装置履歴・測定値を重ねて、良品率が下がった原因候補を絞るのが<a href="https://semicon-campus.com/what-is-semiconductor-yield-analysis/">歩留まり解析</a>です。</p>
+
+
+
+<h2 class="wp-block-heading">仕上がりをどう確かめる？検査・計測・工程制御</h2>
+
+
+
+<p class="wp-block-paragraph">エッチングは、装置を動かして終わりではありません。できた形が狙いどおりかを確認し、結果を次の条件へ戻します。</p>
+
+
+
+<h3 class="wp-block-heading">Inspectionは異常候補の場所を探す</h3>
+
+
+
+<p class="wp-block-paragraph">検査は、ウェハ上の広い面積を調べ、通常と違う信号が出た場所を欠陥候補として絞ります。粒子だけでなく、残渣、傷、パターンの欠け、線同士のつながり、形状の変化などが対象になり得ます。</p>
+
+
+
+<h3 class="wp-block-heading">MetrologyはCD・深さ・膜厚・形状を数字にする</h3>
+
+
+
+<p class="wp-block-paragraph">計測は、線幅や穴の寸法であるCD、深さ、膜厚、側壁の形、層と層の位置関係などを数値にします。検査が「どこがおかしいか」を探すなら、計測は「どの程度ずれているか」を表します。</p>
+
+
+
+<p class="wp-block-paragraph">高倍率のレビューで欠陥候補の正体を確認し、CDや深さの分布と、装置・チャンバー・レシピ・ロット履歴を照らし合わせることもあります。測定値は、SPC、レシピ補正、装置の点検、歩留まり解析へ戻されます。</p>
+
+
+
+<p class="wp-block-paragraph">異常の場所を探す<a href="https://semicon-campus.com/semiconductor-inspection-metrology/">検査</a>と、CD・深さ・膜厚・形状を数字にする計測を分けて考えます。</p>
+
+
+
+<h2 class="wp-block-heading">削ったあとに何が残る？なぜ洗浄が必要？</h2>
+
+
+
+<p class="wp-block-paragraph">エッチング後の表面には、反応生成物、レジストの残り、マスク由来の残渣、微小な粒子などが残る可能性があります。これらを次工程へ持ち込むと、膜の密着、追加の加工、計測、欠陥管理に影響することがあります。</p>
+
+
+
+<h3 class="wp-block-heading">反応生成物・レジスト・残渣が次工程へ影響する</h3>
+
+
+
+<p class="wp-block-paragraph">エッチングは膜を取り除く反応なので、取り除かれた材料や反応によって生じた物質が、表面や装置内に残ることがあります。残渣の種類や量は材料、薬液、ガス、プラズマ、マスク、処理条件によって変わるため、エッチングの結果と一緒に確認します。</p>
+
+
+
+<h3 class="wp-block-heading">洗浄・除去で表面を次の工程へ渡せる状態に整える</h3>
+
+
+
+<p class="wp-block-paragraph">洗浄・除去は、残った物質を減らし、次の成膜、リソグラフィ、接続、検査へ進める表面状態を整える工程です。エッチングと洗浄を別々の作業として切り離すのではなく、「削った結果、何が残り、それをどう次へ渡すか」という因果で見ると役割が分かります。</p>
+
+
+
+<h3 class="wp-block-heading">超純水は何を守るために使われるのか</h3>
+
+
+
+<p class="wp-block-paragraph">洗浄に使う水や薬液の清浄度は、表面へ新たな粒子や不純物を持ち込まないために重要です。ここから、なぜ半導体工場で超純水が使われるのかという疑問が生まれます。詳しい水質管理は、既存の超純水の記事へつなぎます。</p>
+
+
+
+<p class="wp-block-paragraph">エッチング後に残る反応生成物・レジスト・残渣を減らし、次工程へ渡せる状態に整えるのが<a href="https://semicon-campus.com/why-semiconductor-fab-uses-ultrapure-water/">洗浄・除去</a>です。</p>
+
+
+<section class="mp2-section" id="revenue-phase2-learning"><h2>エッチング装置と工程の再現性を、実務と学び直しにつなげる</h2><p>エッチングの仕上がりが変わったとき、工程条件だけでなくチャンバー、ガス、温度、真空、消耗部品の履歴も手掛かりになります。条件を自分で調整した経験と、装置状態を点検して工程担当へ引き継いだ経験を区別して書きましょう。機械・電気・品質の基礎を補いながら、プロセス、装置、保全のどの担当範囲が自分の経験に近いかを比較できます。</p></section>
+
+<h2 class="wp-block-heading">エッチングを支える装置・材料・計測・保全の仕事</h2>
+
+
+
+<p class="wp-block-paragraph">エッチング工程は、一つの装置だけで完結しません。条件、材料、チャンバー、計測、データ、保全がつながって初めて、同じ形を繰り返し作れます。</p>
+
+
+
+<h3 class="wp-block-heading">プロセスエンジニアは条件と結果をつなぐ</h3>
+
+
+
+<p class="wp-block-paragraph"><a href="https://semicon-campus.com/what-is-semiconductor-process-engineer/">プロセスエンジニア</a>は、材料・構造・レシピ・測定結果を見ながら、どの条件で狙った形になるかを詰めます。CDがずれた、深さが足りない、残渣が増えた、ウェハ端だけ傾向が違う、といった問題から原因候補を分けていきます。</p>
+
+
+
+<h3 class="wp-block-heading">装置・保全はチャンバーと処理の再現性を支える</h3>
+
+
+
+<p class="wp-block-paragraph"><a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/">装置エンジニア</a>や<a href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/">保全担当</a>は、チャンバー、消耗部品、ガス供給、温度、真空、点検履歴などを通じて、処理が安定して続く状態を支えます。チャンバーの状態や部品の消耗がプラズマや反応条件を変えれば、エッチレート、プロファイル、残渣、ウェハ内分布も変わり得ます。そのため、保全は装置を動かし続けるだけでなく、仕上がりの変化を早く捉え、再現性を保つ仕事です。</p>
+
+
+
+<h3 class="wp-block-heading">材料・ガス・計測は選択性・形状・異常の情報を支える</h3>
+
+
+
+<p class="wp-block-paragraph">材料・ガスの担当は反応性や選択性に関わり、計測・検査の担当は形状と異常を画像・数値へ変換します。企業名や職種名から覚えるのではなく、「どの工程の、どの問題を支えるか」で見ると、役割を整理しやすくなります。 <a href="https://semicon-campus.com/what-is-tokyo-electron-semiconductor-equipment/">東京エレクトロンのエッチング装置</a>のように、企業名は工程上の役割とセットで確認します。</p>
+
+
+
+<p class="wp-block-paragraph">会社名を暗記するより、エッチング・成膜・洗浄・計測のどの問題を支えるかで見ると整理できます。詳しくは<a href="https://semicon-campus.com/semiconductor-company-map-by-process/">半導体企業マップ</a>で確認できます。</p>
+
+
+
+<p class="wp-block-paragraph">工程名ではなく、条件、装置、材料、計測、歩留まりのどの問題を解くかで職種を見ます。次は<a href="https://semicon-campus.com/semiconductor-career-map/">半導体職種マップ</a>へ進むと、役割の違いを整理できます。</p>
+
+
+
+<h2 class="wp-block-heading">まとめ：エッチングは「模様を、揃った形で膜へ転写する」工程</h2>
+
+
+
+<p class="wp-block-paragraph">エッチングは、膜を加工する工程で、リソグラフィの模様を下の膜へ転写します。</p>
+
+
+
+<p class="wp-block-paragraph">材料の選択性、横方向の削れ、3D NANDの深部加工、GAAの選択除去、ウェハ全面のばらつきを管理します。</p>
+
+
+
+<p class="wp-block-paragraph">検査・計測・洗浄・保全で結果を次工程へつなぎ、条件を工程へ戻します。</p>
+
+
+
+<h3 class="wp-block-heading">参照した技術資料</h3>
+
+
+
+<ul class="wp-block-list">
+<li>Lam Research, Etch: https://www.lamresearch.com/products/our-processes/etch/</li>
+<li>Lam Research, Etch Essentials: https://newsroom.lamresearch.com/etch-essentials-semiconductor-manufacturing</li>
+<li>Lam Research, Vantex Product Family: https://www.lamresearch.com/product/vantex/</li>
+<li>Tokyo Electron, Etch Tactras Series: https://www.tel.com/product/tactras.html</li>
+<li>Applied Materials, Etch: https://www.appliedmaterials.com/us/en/semiconductor/products/processes/etch.html</li>
+<li>Applied Materials, Selective Etch: https://www.appliedmaterials.com/us/en/semiconductor/products/shape/selective-etch.html</li>
+</ul>
+
+
+<!-- semicon-funnel-hub-v1 -->
+<div class="semicon-cta semicon-funnel-hub">
+  <section class="mp2-section" id="revenue-phase2-career"><h2>エッチング装置と工程の再現性から、求人と職種を比較する</h2><p>チャンバー点検、工程条件と測定結果の照合、消耗部品管理の経験は、対象設備・作業・確認した結果を一組にして整理しましょう。転職を考える場合は担当範囲、勤務地、勤務・出張、教育体制、応募条件を求人票と照合すると、今の経験と補う知識を分けられます。</p><aside class="semicon-cta mp2-card"><h3>職種の全体像と、求人・学習の選び方を見る</h3><p>技術を学んだ後は、点検・復旧、装置の立上げ、工程改善、顧客対応など、担当する仕事の範囲を比較しましょう。以下の職種記事では、仕事内容に加えて求人・学習の選択肢を確認できます。</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/" class="semicon-btn mp2-button" data-revenue-phase2-hub="277" data-cta="maintenance_hub" data-cta-type="maintenance_hub" data-cta-stage="career" data-cta-id="phase2_80_hub277_end" data-cta-route="phase2_80_hub277_end">設備保全Hubで仕事内容・求人・学習を確認する</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/" class="semicon-btn mp2-button" data-revenue-phase2-hub="237" data-cta="equipment_hub" data-cta-type="equipment_hub" data-cta-stage="career" data-cta-id="phase2_80_hub237_end" data-cta-route="phase2_80_hub237_end">装置エンジニアの担当範囲・求人・学習を見る</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-process-engineer/" class="semicon-btn mp2-button" data-revenue-phase2-hub="230" data-cta="process_hub" data-cta-type="process_hub" data-cta-stage="career" data-cta-id="phase2_80_hub230_end" data-cta-route="phase2_80_hub230_end">プロセスエンジニアの担当範囲・求人・学習を見る</a></div></aside></section>
+
+<h2>理解した内容を、仕事・求人票につなげる</h2>
+  <p>半導体は、工程を学ぶほど「どの職種が、どの会社で、どんな言葉で募集されるか」が見えやすくなります。今読んでいる記事（エッチング工程）を、次の順番で仕事理解へつなげてください。</p>
+  <ol>
+    <li><a href="https://semicon-campus.com/semiconductor-career-map/">職種マップで、工程ごとの仕事を知る</a></li>
+    <li><a href="https://semicon-campus.com/semiconductor-company-map-by-process/">工程別企業マップで、関係する会社を知る</a></li>
+    <li><a href="https://semicon-campus.com/%e5%8d%8a%e5%b0%8e%e4%bd%93%e6%b1%82%e4%ba%ba%e3%82%ad%e3%83%bc%e3%83%af%e3%83%bc%e3%83%89%e4%b8%80%e8%a6%a7%ef%bd%9c%e6%9c%aa%e7%b5%8c%e9%a8%93%e8%80%85%e3%81%8c%e6%b1%82%e4%ba%ba%e7%a5%a8%e3%81%a7/">求人キーワード一覧で、求人票に出る言葉へ変換する</a></li>
+    <li><a href="https://semicon-campus.com/how-to-read-semiconductor-job-description/">求人票の読み方で、仕事内容・条件・働き方を分ける</a></li>
+    <li><a href="https://semicon-campus.com/semiconductor-career-service-selection-guide/">経験別に半導体転職サービスを選ぶ</a></li>
+    <li><a href="https://semicon-campus.com/semiconductor-agent-interview-checklist/">面談前チェックリストで、相談前のメモを作る</a></li>
+  </ol>
+</div>
+
+
+
+</div>
+
+
+<aside class="related-spokes"><h2>あわせて読みたい</h2><ul><li><a href="/electrostatic-chuck-wafer-temperature/">半導体のウェハはなぜ装置に吸着する？静電チャックと温度制御の役割</a></li><li><a href="/rf-matching-network/">RFマッチングはなぜ必要？反射電力が増える理由</a></li><li><a href="/semiconductor-ion-implantation/">半導体のイオン注入とは？原子を打ち込む理由と、アニールで傷を直す工程</a></li><li><a href="/semiconductor-copper-damascene/">半導体の銅配線とは？ダマシン法で「溝を掘って埋める」理由</a></li><li><a href="/semiconductor-low-k-dielectric/">半導体のlow-k絶縁膜とは？配線のあいだをスカスカにする理由</a></li></ul></aside>

@@ -1,0 +1,178 @@
+
+<!--KEEP:0-->
+
+
+<!--KEEP:1-->
+
+<!--
+Episode: 059
+Research Pack: episode-059-led-efficiency-deep-research-20260816
+Article title: LED電球はなぜ白熱電球より省エネ？発光の仕組みとlm/Wを解説
+Slug: why-led-bulbs-use-less-energy-than-incandescent
+Meta description: LED電球が白熱電球より少ない電力で明るくできる理由を、フィラメントの熱放射と半導体の再結合、ルーメン・ワット・lm/W、放熱設計の違いから初心者向けに解説します。
+Primary category: 半導体の基礎
+Tags: YouTube深掘り
+Status: final
+-->
+
+
+<!--KEEP:2-->
+<article class="s59b" data-episode="059" data-research-pack="episode-059-led-efficiency-deep-research-20260816" data-status="final" data-image-policy="inline-svg-v1">
+
+
+
+<p class="wp-block-paragraph">同じくらい部屋を明るくするのに、LED電球は白熱電球より少ない電力で済みます。<br>違いは、電球の形ではなく「電気から光を作る道筋」にあります。<br><strong>白熱電球は金属線を高温にして広い波長の光を出し、LEDは半導体で目に見える光に近い光を作りやすい</strong>ためです。</p>
+
+
+
+<div class="s59b-answer"><span class="s59b-kicker">最初に答えると</span><br><strong>白熱電球は、フィラメントという細い金属線を非常に高温にし、そこから出る熱放射のうち目に見える部分を照明に使います。LEDは、化合物半導体の中で電子と正孔が再結合するときに光子を作ります。LEDにも損失と発熱はありますが、同じ光束を得るための入力電力を小さくしやすいのです。</strong></div>
+<div class="s59b-points"><div class="s59b-card"><b>白熱電球</b>高温フィラメントの広い波長の放射を利用します。</div><div class="s59b-card"><b>LED電球</b>半導体で光を作り、蛍光体などで白色にします。</div><div class="s59b-card"><b>比べる物差し</b>明るさは主にlm、消費電力はW、効率はlm/Wで見ます。</div></div>
+<figure class="s59b-media" data-media-role="explanatory-image-01"><svg viewBox="0 0 760 390" role="img" aria-label="白熱電球とLED電球で電気から照明光へ至る経路を左右に比較した図"><rect width="760" height="390" fill="#f8fbfd"/><text x="380" y="45" text-anchor="middle" font-size="28" font-weight="700" fill="#172635">省エネ差は「光を作る道筋」の差</text><rect x="45" y="85" width="310" height="250" rx="18" fill="#fff3e4" stroke="#e8892f" stroke-width="4"/><rect x="405" y="85" width="310" height="250" rx="18" fill="#e9f6fd" stroke="#126ca2" stroke-width="4"/><text x="200" y="125" text-anchor="middle" font-size="24" font-weight="700" fill="#8a4b16">白熱電球</text><text x="560" y="125" text-anchor="middle" font-size="24" font-weight="700" fill="#075d91">LED電球</text><g font-size="18" text-anchor="middle" fill="#172635"><text x="200" y="175">電気 → フィラメントを高温に</text><text x="200" y="215">→ 広い波長の熱放射</text><text x="200" y="255">→ 可視光＋多くの赤外放射</text><text x="560" y="175">電気 → 電流を制御</text><text x="560" y="215">→ 半導体で光子を作る</text><text x="560" y="255">→ 白色化して照明へ</text></g><text x="200" y="308" text-anchor="middle" font-size="18" font-weight="700" fill="#b84c3f">可視光以外へ回りやすい</text><text x="560" y="308" text-anchor="middle" font-size="18" font-weight="700" fill="#277859">可視光へ振り分けやすい</text><text x="380" y="370" text-anchor="middle" font-size="16" fill="#596b78">LEDも損失熱は出ます。違いは「熱がゼロ」ではありません。</text></svg><figcaption>同じ電球形でも、白熱電球とLED電球では発光原理が異なります。LEDの利点は、照明として役立つ可視光へ入力電力を振り分けやすいことです。</figcaption></figure>
+
+
+
+
+<h2 class="wp-block-heading">白熱電球は、フィラメントを高温にして光る</h2>
+
+
+
+<p class="wp-block-paragraph">白熱電球の中には、タングステンでできた細い<strong>フィラメント</strong>があります。タングステンは融点が高く、高温に耐えやすい金属です。ここへ電流が流れると、電気抵抗によって電気エネルギーが内部エネルギーへ変わり、フィラメントの温度が上がります。この現象がジュール加熱です。</p>
+<p>大切なのは、白熱電球では高温になることが単なる脇役ではなく、発光原理そのものだという点です。温度を持つ物体は電磁放射を出します。フィラメントを非常に高温にすると、その熱放射の一部が人の目に見える波長へ入り、暖かみのある光として見えます。</p>
+<p>ただし、熱放射は人に見える範囲だけへ都合よく集まりません。白熱電球の温度では、可視光より波長が長い<strong>赤外領域</strong>にも大きく広がります。さらに、支持部やリード線への熱伝導、内部のガスやガラス球を通じた熱移動もあります。つまり、部屋を照らすために役立つ光以外にも入力エネルギーが分かれていきます。</p>
+
+
+
+<figure class="s59b-media" data-media-role="explanatory-image-02"><svg viewBox="0 0 760 390" role="img" aria-label="白熱電球で電流がフィラメントを加熱し熱放射が生じる流れを示した図"><rect width="760" height="390" fill="#fff8ee"/><text x="380" y="43" text-anchor="middle" font-size="27" font-weight="700" fill="#172635">白熱電球：高温にすることが発光原理</text><defs><marker id="s59a2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0v6l9-3z" fill="#b46a22"/></marker></defs><g text-anchor="middle" fill="#172635"><rect x="35" y="130" width="145" height="100" rx="14" fill="#fff" stroke="#e8892f" stroke-width="3"/><text x="108" y="172" font-size="19">電流</text><text x="108" y="198" font-size="15">電気入力</text><rect x="225" y="130" width="145" height="100" rx="14" fill="#ffe5c5" stroke="#e8892f" stroke-width="3"/><text x="298" y="165" font-size="19">電気抵抗</text><text x="298" y="195" font-size="17">ジュール加熱</text><rect x="415" y="130" width="145" height="100" rx="14" fill="#ffd4ad" stroke="#e8892f" stroke-width="3"/><text x="488" y="165" font-size="19">フィラメント</text><text x="488" y="195" font-size="17">非常に高温</text><rect x="605" y="130" width="120" height="100" rx="14" fill="#fff" stroke="#e8892f" stroke-width="3"/><text x="665" y="165" font-size="19">熱放射</text><text x="665" y="195" font-size="16">可視＋赤外</text></g><g stroke="#b46a22" stroke-width="6" marker-end="url(#s59a2)"><path d="M180 180h42"/><path d="M370 180h42"/><path d="M560 180h42"/></g><path d="M300 290c55-65 105 65 160 0s105 65 160 0" fill="none" stroke="#e8892f" stroke-width="7"/><text x="380" y="350" text-anchor="middle" font-size="17" fill="#596b78">温度が上がるほど放射量と波長分布が変わります</text></svg><figcaption>白熱電球は、電気抵抗でフィラメントを高温にし、その熱放射を利用する光源です。</figcaption></figure>
+<figure class="s59b-media" data-media-role="explanatory-image-03"><svg viewBox="0 0 760 400" role="img" aria-label="白熱電球の熱放射が可視光だけでなく赤外領域へ大きく広がることを示す模式スペクトル図"><rect width="760" height="400" fill="#f8fbfd"/><text x="380" y="43" text-anchor="middle" font-size="27" font-weight="700" fill="#172635">白熱電球の放射は可視光だけではない</text><rect x="105" y="95" width="250" height="235" fill="#eef7fc"/><rect x="355" y="95" width="300" height="235" fill="#fff0e3"/><text x="230" y="123" text-anchor="middle" font-size="18" fill="#126ca2">人の目に見える領域</text><text x="505" y="123" text-anchor="middle" font-size="18" fill="#b84c3f">赤外領域</text><path d="M105 310 C180 300 270 270 355 225 C430 185 535 125 655 245" fill="none" stroke="#e8892f" stroke-width="9"/><path d="M105 330h550" stroke="#172635" stroke-width="3"/><text x="230" y="365" text-anchor="middle" font-size="17" fill="#596b78">短い波長側</text><text x="530" y="365" text-anchor="middle" font-size="17" fill="#596b78">長い波長側</text><text x="380" y="390" text-anchor="middle" font-size="14" fill="#596b78">割合を示す定量グラフではなく、広帯域に分かれることを示す模式図です</text></svg><figcaption>白熱電球の熱放射は広い波長帯へ及びます。照明に使える可視光と同時に、目に見えない赤外放射にもエネルギーが出ます。</figcaption></figure>
+
+
+
+<h2 class="wp-block-heading">LEDは、半導体の中で光子を作る</h2>
+
+
+
+<p class="wp-block-paragraph"><strong>LED</strong>はLight Emitting Diode、つまり発光ダイオードです。発光部には複数の元素からなる化合物半導体が使われます。そこには、電流を運ぶ電子が比較的多いn型側と、電子の空席に相当する<strong>正孔</strong>が比較的多いp型側があります。</p>
+<p>順方向へ電圧を加えると、電子と正孔が発光する薄い領域へ注入されます。電子が高いエネルギーの状態から低い状態へ移って正孔を埋める現象が<strong>再結合</strong>です。このときエネルギーが光として放出される場合、その一単位を光子と呼びます。</p>
+<p>この説明は「電子と正孔が激突する」という意味ではありません。また、すべての再結合が光になるわけでもありません。結晶の欠陥や格子振動などへエネルギーが渡り、熱になる過程もあります。それでも、発光体全体を白熱する温度まで上げる方式ではないため、可視域に近い光を選択的に作りやすいのがLEDの強みです。</p>
+
+
+
+<figure class="s59b-media" data-media-role="explanatory-image-04"><svg viewBox="0 0 760 420" role="img" aria-label="LEDのp型側とn型側から電子と正孔が発光層へ集まり再結合して光子を出す模式図"><rect width="760" height="420" fill="#eef8fc"/><text x="380" y="43" text-anchor="middle" font-size="27" font-weight="700" fill="#172635">LED：電子と正孔の再結合で光を作る</text><rect x="75" y="110" width="250" height="215" rx="18" fill="#dceef8" stroke="#126ca2" stroke-width="4"/><rect x="435" y="110" width="250" height="215" rx="18" fill="#ffe6cd" stroke="#e8892f" stroke-width="4"/><rect x="325" y="90" width="110" height="255" rx="16" fill="#e9f7f0" stroke="#277859" stroke-width="4"/><text x="200" y="145" text-anchor="middle" font-size="23" font-weight="700" fill="#075d91">n型側</text><text x="560" y="145" text-anchor="middle" font-size="23" font-weight="700" fill="#8a4b16">p型側</text><text x="380" y="375" text-anchor="middle" font-size="18" fill="#277859">発光する薄い領域</text><g fill="#126ca2"><circle cx="160" cy="210" r="20"/><circle cx="245" cy="255" r="20"/></g><g font-size="16" fill="#fff" text-anchor="middle"><text x="160" y="216">e−</text><text x="245" y="261">e−</text></g><g fill="#e8892f"><circle cx="520" cy="210" r="20"/><circle cx="610" cy="255" r="20"/></g><g font-size="17" fill="#fff" text-anchor="middle"><text x="520" y="216">○</text><text x="610" y="261">○</text></g><path d="M275 210h72M485 210h-72" stroke="#172635" stroke-width="5"/><circle cx="380" cy="210" r="22" fill="#fff" stroke="#277859" stroke-width="4"/><path d="M380 182v-40M355 190l-28-28M405 190l28-28" stroke="#ffd34d" stroke-width="9" stroke-linecap="round"/><text x="380" y="105" text-anchor="middle" font-size="18" font-weight="700" fill="#9b6f00">光子</text><text x="200" y="300" text-anchor="middle" font-size="16" fill="#596b78">電子</text><text x="560" y="300" text-anchor="middle" font-size="16" fill="#596b78">正孔（電子の空席）</text><text x="380" y="405" text-anchor="middle" font-size="14" fill="#596b78">色や大きさは理解のための模式表現です</text></svg><figcaption>LEDでは、電子と正孔が発光層で再結合するとき、エネルギーの一部が光子として放出されます。すべての再結合が光になるわけではありません。</figcaption></figure>
+
+
+
+<h2 class="wp-block-heading">白いLED光はどう作るのか</h2>
+
+
+
+<p class="wp-block-paragraph">家庭用の照明には白い光が必要ですが、多くの白色LEDは半導体だけから白色をそのまま出しているわけではありません。一般的な方式では、青色LEDの光の一部を<strong>蛍光体</strong>へ当てます。蛍光体は光を吸収し、より長い波長側の光として放出する材料です。</p>
+<p>変換されずに残った青色光と、蛍光体が出した緑・黄・赤などを含む光が混ざると、人の目には白く見えます。製品によっては複数の蛍光体を使って色の見え方を整えます。紫色に近いLEDと複数の蛍光体を組み合わせる方式や、赤・緑・青のLEDを混ぜる方式もあるため、「すべての白色LEDが同じ構造」とは限りません。</p>
+<p>蛍光体は光を増幅する魔法の材料ではありません。波長を変えるときのエネルギー差、再吸収、散乱、封止材やカバーによる吸収など、白色化にも損失があります。LEDが省エネだからといって、入力電力がそのまま全部照明光になるわけではないのです。</p>
+
+
+
+<figure class="s59b-media" data-media-role="explanatory-image-05"><svg viewBox="0 0 760 400" role="img" aria-label="青色LEDの光の一部を蛍光体が長波長側へ変換し残った青色と混ざって白色になる模式図"><rect width="760" height="400" fill="#f8fbfd"/><text x="380" y="43" text-anchor="middle" font-size="27" font-weight="700" fill="#172635">一般的な白色LED：青色光＋蛍光体</text><rect x="70" y="145" width="145" height="115" rx="18" fill="#dceeff" stroke="#126ca2" stroke-width="4"/><text x="143" y="190" text-anchor="middle" font-size="21" font-weight="700" fill="#075d91">青色LED</text><text x="143" y="220" text-anchor="middle" font-size="16" fill="#172635">青色光を出す</text><path d="M215 202h115" stroke="#2783d6" stroke-width="16"/><rect x="330" y="112" width="170" height="180" rx="18" fill="#fff4aa" stroke="#d6a900" stroke-width="4"/><text x="415" y="185" text-anchor="middle" font-size="22" font-weight="700" fill="#7d6500">蛍光体</text><text x="415" y="218" text-anchor="middle" font-size="16" fill="#172635">一部を波長変換</text><g stroke-width="11"><path d="M500 170h120" stroke="#2783d6"/><path d="M500 202h120" stroke="#58a65c"/><path d="M500 234h120" stroke="#e0b52e"/><path d="M500 266h120" stroke="#d85d4a"/></g><circle cx="660" cy="218" r="62" fill="#fff" stroke="#cbdce6" stroke-width="4"/><text x="660" y="213" text-anchor="middle" font-size="22" font-weight="700" fill="#172635">混ざって</text><text x="660" y="243" text-anchor="middle" font-size="22" font-weight="700" fill="#172635">白く見える</text><text x="380" y="360" text-anchor="middle" font-size="16" fill="#596b78">紫色励起やRGB混色など、別の白色化方式もあります</text></svg><figcaption>多くの白色LEDは、青色LEDと蛍光体を組み合わせます。蛍光体は塗料ではなく、光の波長を変換する材料です。</figcaption></figure>
+
+
+
+<h2 class="wp-block-heading">LED電球は、LEDチップだけではない</h2>
+
+
+
+<p class="wp-block-paragraph">ここで、発光する小さなLEDと、家庭のソケットへ差し込むLED電球を分けて考えましょう。LED電球は、LEDパッケージ、電流を整えるドライバ回路、LEDを載せる基板、光を広げるカバー、熱を逃がすケースや放熱部、口金などを組み合わせた製品です。</p>
+<p>家庭の電源は交流ですが、LEDは適切な方向・大きさの電流で動かす必要があります。そのためドライバが整流や電流制御を担います。ドライバの部品にも抵抗やスイッチングなどによる損失があり、発熱します。光がLED内部で生まれても、半導体と外部の境界で反射したり、蛍光体、封止材、拡散カバーで一部が吸収されたりします。</p>
+<p>したがって、高い効率を考えるときは、LEDチップだけでなく電球全体を見る必要があります。チップ単体の記録値を、そのまま市販電球の性能だと考えることはできません。さらに照明器具へ入れれば、器具のカバーや反射板、内部温度、配光の影響も加わります。</p>
+
+
+
+<figure class="s59b-media" data-media-role="explanatory-image-06"><svg viewBox="0 0 760 450" role="img" aria-label="LED電球を拡散カバー、LEDパッケージ、基板、ドライバ、放熱部、口金に分けた断面模式図"><rect width="760" height="450" fill="#eef8fc"/><text x="380" y="42" text-anchor="middle" font-size="27" font-weight="700" fill="#172635">LED電球は「小さなシステム」</text><path d="M260 95q120-90 240 0v85H260z" fill="#fff" stroke="#7897a8" stroke-width="4"/><text x="380" y="115" text-anchor="middle" font-size="18" fill="#596b78">拡散カバー</text><rect x="285" y="180" width="190" height="45" rx="10" fill="#fff1a8" stroke="#d6a900" stroke-width="3"/><text x="380" y="209" text-anchor="middle" font-size="17" fill="#172635">LEDパッケージ＋基板</text><path d="M285 225h190l-35 105H320z" fill="#dfe8ec" stroke="#7897a8" stroke-width="4"/><path d="M330 250l100 55M430 250l-100 55" stroke="#126ca2" stroke-width="5"/><text x="380" y="284" text-anchor="middle" font-size="17" font-weight="700" fill="#172635">ドライバ回路</text><path d="M320 330h120l-15 65h-90z" fill="#b9c6cc" stroke="#596b78" stroke-width="4"/><text x="380" y="362" text-anchor="middle" font-size="16" fill="#172635">放熱部</text><path d="M335 395h90v35h-90z" fill="#aeb8bd" stroke="#596b78" stroke-width="4"/><path d="M345 405h70M345 416h70" stroke="#596b78" stroke-width="3"/><text x="530" y="410" font-size="17" fill="#596b78">口金</text><g fill="#172635" font-size="16"><text x="545" y="155">光を広げる</text><text x="545" y="210">光を作る</text><text x="545" y="270">電流を整える</text><text x="545" y="335">熱を逃がす</text></g><g stroke="#7897a8" stroke-width="3"><path d="M475 145h55"/><path d="M475 203h55"/><path d="M455 265h75"/><path d="M440 328h90"/></g></svg><figcaption>LED電球には、発光部以外にも電源回路、光学部品、放熱部があります。構成や材料は製品によって異なります。</figcaption></figure>
+<figure class="s59b-media" data-media-role="explanatory-image-07"><svg viewBox="0 0 760 410" role="img" aria-label="コンセント入力からドライバ、LED、蛍光体、カバーを経て照明光になり各段で損失熱が出る流れ"><rect width="760" height="410" fill="#f8fbfd"/><text x="380" y="42" text-anchor="middle" font-size="27" font-weight="700" fill="#172635">LED電球にも損失はある</text><defs><marker id="s59a7" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0v6l9-3z" fill="#126ca2"/></marker></defs><g text-anchor="middle" fill="#172635" font-size="17"><rect x="28" y="115" width="120" height="85" rx="13" fill="#fff" stroke="#126ca2" stroke-width="3"/><text x="88" y="150">コンセント</text><text x="88" y="176">入力</text><rect x="180" y="115" width="120" height="85" rx="13" fill="#e9f6fd" stroke="#126ca2" stroke-width="3"/><text x="240" y="150">ドライバ</text><text x="240" y="176">電流制御</text><rect x="332" y="115" width="120" height="85" rx="13" fill="#e9f7f0" stroke="#277859" stroke-width="3"/><text x="392" y="150">半導体</text><text x="392" y="176">発光</text><rect x="484" y="115" width="120" height="85" rx="13" fill="#fff3e4" stroke="#e8892f" stroke-width="3"/><text x="544" y="150">蛍光体</text><text x="544" y="176">白色化</text><rect x="636" y="115" width="96" height="85" rx="13" fill="#fff" stroke="#126ca2" stroke-width="3"/><text x="684" y="150">カバー</text><text x="684" y="176">配光</text></g><g stroke="#126ca2" stroke-width="5" marker-end="url(#s59a7)"><path d="M148 158h29"/><path d="M300 158h29"/><path d="M452 158h29"/><path d="M604 158h29"/></g><g fill="#b84c3f" text-anchor="middle" font-size="15"><text x="240" y="275">回路損失</text><text x="392" y="275">光にならない再結合・抵抗</text><text x="544" y="275">波長変換・吸収</text><text x="684" y="275">散乱・吸収</text></g><g stroke="#b84c3f" stroke-width="4"><path d="M240 200v45"/><path d="M392 200v45"/><path d="M544 200v45"/><path d="M684 200v45"/></g><rect x="150" y="315" width="460" height="54" rx="14" fill="#fff0ee" stroke="#b84c3f" stroke-width="3"/><text x="380" y="349" text-anchor="middle" font-size="20" font-weight="700" fill="#8b352d">損失の多くは熱になり、放熱が必要</text></svg><figcaption>LED電球の効率は、半導体だけでなくドライバ、蛍光体、パッケージ、カバー、温度にも左右されます。</figcaption></figure>
+
+
+
+<h2 class="wp-block-heading">なぜ消費電力に差が出るのか</h2>
+
+
+
+<p class="wp-block-paragraph">両者の違いを一つの因果にまとめると、白熱電球は「高温にする→広い波長の熱放射が出る→その一部を可視光として使う」、LED電球は「電流を制御する→半導体で光子を作る→白色化して外へ出す」です。</p>
+<p>白熱電球では、照明に使いたい可視光だけでなく、赤外放射にも入力エネルギーが大きく分かれます。LEDでは、半導体材料や構造によって可視域に近い光を作りやすく、白色化に必要な波長へ変換できます。途中の損失は残りますが、同じ量の照明光を作るための入力を抑えやすくなります。</p>
+<p>ここで「LEDは電気を直接光へ変えるから無駄がない」と言い切るのは正しくありません。光にならない再結合、電極や配線の抵抗、ドライバの損失、蛍光体変換、内部反射、カバーの吸収があり、それぞれが電球全体の効率を下げます。省エネとは損失がゼロという意味ではなく、<strong>白熱電球より照明として有用な光へ配分しやすい</strong>という比較です。</p>
+
+
+
+<figure class="s59b-media" data-media-role="explanatory-image-08"><svg viewBox="0 0 760 420" role="img" aria-label="同じ光束を得る場合に白熱電球は入力が大きくLED電球は入力を小さくしやすい概念図"><rect width="760" height="420" fill="#eef8fc"/><text x="380" y="43" text-anchor="middle" font-size="27" font-weight="700" fill="#172635">同じ光束なら、必要な入力Wを比べる</text><g text-anchor="middle"><text x="215" y="90" font-size="22" font-weight="700" fill="#8a4b16">白熱電球</text><text x="545" y="90" font-size="22" font-weight="700" fill="#075d91">LED電球</text><rect x="100" y="120" width="230" height="215" rx="18" fill="#fff" stroke="#e8892f" stroke-width="4"/><rect x="430" y="120" width="230" height="215" rx="18" fill="#fff" stroke="#126ca2" stroke-width="4"/><rect x="125" y="155" width="55" height="145" fill="#b84c3f"/><rect x="185" y="250" width="120" height="50" fill="#f2c977"/><rect x="455" y="220" width="55" height="80" fill="#b84c3f"/><rect x="515" y="250" width="120" height="50" fill="#f2c977"/><text x="240" y="278" font-size="17" fill="#172635">同じ光束</text><text x="570" y="278" font-size="17" fill="#172635">同じ光束</text><text x="153" y="145" font-size="16" fill="#8b352d">入力W 大</text><text x="483" y="210" font-size="16" fill="#8b352d">入力W 小</text></g><text x="380" y="380" text-anchor="middle" font-size="17" fill="#596b78">定量値ではなく、比較の考え方を示す概念図です</text></svg><figcaption>省エネ比較では、同じくらいの光束を作るために何W必要かを見ます。配光や色の見え方などの条件もそろえる必要があります。</figcaption></figure>
+<div class="s59b-cta"><strong>ここまで分かれば、「LEDは熱を出さないから省エネ」という誤解を避けて説明できます。</strong><br>半導体が光・電気・熱をどう扱うかを基礎から学びたい方は、<a href="https://semicon-campus.com/semiconductor-beginner-roadmap/">半導体初心者ロードマップ</a>もあわせてご覧ください。</div>
+
+
+
+<h2 class="wp-block-heading">効率を見るなら、Wではなくlmとlm/Wを読む</h2>
+
+
+
+<p class="wp-block-paragraph"><strong>ワット（W）</strong>は電球が消費する有効電力を表します。白熱電球では長い間、W数が明るさの目安として使われてきたため、「Wが大きいほど明るい」と覚えている人も多いでしょう。しかし、発光原理が異なるLEDと比べるとき、Wだけでは明るさを表せません。</p>
+<p><strong>ルーメン（lm）</strong>は、人の目の波長ごとの感じ方を反映した、光源から出る光の総量です。電球どうしの明るさを比べるときの中心的な指標になります。一方、<strong>ルクス（lx）</strong>は机や床など、ある面に届いた光の密度です。同じlmでも、光が広く広がるか狭く集まるか、距離や角度がどうかによってlxは変わります。</p>
+<p><strong>lm/W</strong>は、入力電力1W当たりに何lmの光束を出せるかを示します。たとえば同じ光束なら、必要なWが小さいほどlm/Wは高くなります。ここで注意したいのは、lm/Wは百分率ではないことです。lmには人の視感度による重み付けが入るため、「100lm/Wだから電気の100％が光になった」とは言えません。</p>
+<p>また、lm/Wだけで電球の価値がすべて決まるわけではありません。光の広がり方、色温度、物の色の見え方、ちらつき、器具との適合、耐久性などは別の指標です。省エネを比べるなら、まず近いlm、近い配光と色の条件を選び、そのうえでWとlm/Wを見るのが安全です。</p>
+
+
+
+<figure class="s59b-media" data-media-role="explanatory-image-09"><svg viewBox="0 0 760 440" role="img" aria-label="Wは消費電力、lmは光の総量、lxは面の明るさ、lm/Wは入力当たりの光束であることを整理した図"><rect width="760" height="440" fill="#f8fbfd"/><text x="380" y="43" text-anchor="middle" font-size="27" font-weight="700" fill="#172635">電球選びの4つの物差し</text><g text-anchor="middle"><rect x="55" y="90" width="300" height="125" rx="16" fill="#fff3e4" stroke="#e8892f" stroke-width="3"/><text x="205" y="132" font-size="25" font-weight="700" fill="#8a4b16">W</text><text x="205" y="168" font-size="19" fill="#172635">電球が使う電力</text><text x="205" y="195" font-size="15" fill="#596b78">明るさそのものではない</text><rect x="405" y="90" width="300" height="125" rx="16" fill="#e9f6fd" stroke="#126ca2" stroke-width="3"/><text x="555" y="132" font-size="25" font-weight="700" fill="#075d91">lm</text><text x="555" y="168" font-size="19" fill="#172635">光源が出す光の総量</text><text x="555" y="195" font-size="15" fill="#596b78">明るさ比較の中心</text><rect x="55" y="250" width="300" height="125" rx="16" fill="#e9f7f0" stroke="#277859" stroke-width="3"/><text x="205" y="292" font-size="25" font-weight="700" fill="#206247">lx</text><text x="205" y="328" font-size="19" fill="#172635">面に届いた光の密度</text><text x="205" y="355" font-size="15" fill="#596b78">距離や配光で変わる</text><rect x="405" y="250" width="300" height="125" rx="16" fill="#fff" stroke="#596b78" stroke-width="3"/><text x="555" y="292" font-size="25" font-weight="700" fill="#172635">lm/W</text><text x="555" y="328" font-size="19" fill="#172635">入力1W当たりの光束</text><text x="555" y="355" font-size="15" fill="#596b78">百分率ではない</text></g><text x="380" y="420" text-anchor="middle" font-size="16" fill="#596b78">近い明るさ・配光・色の製品どうしで比べます</text></svg><figcaption>W、lm、lx、lm/Wは別の量です。LEDへの交換では、W数ではなく必要なlmを確認することが出発点です。</figcaption></figure>
+
+
+
+<h2 class="wp-block-heading">LEDにも熱設計が必要な理由</h2>
+
+
+
+<p class="wp-block-paragraph">LEDは発光部を白熱させませんが、熱を出さないわけではありません。光にならなかった再結合のエネルギー、半導体や電極の電気抵抗、ドライバ回路、蛍光体や光学部品の損失は、主に熱になります。</p>
+<p>白熱電球では、高温フィラメントから赤外放射が前方を含む周囲へ出て、ガラス球も熱くなりやすくなります。LEDでは、発光層で生じた熱を基板、放熱ケース、口金側へ伝えて外へ逃がす設計が中心です。そのため、発光面が白熱電球ほど高温でなくても、LED電球の根元が熱くなることがあります。これは必ずしも故障の証拠ではなく、熱の通り道が根元へ集まっているためでもあります。</p>
+<p>熱をうまく逃がせず半導体内部の温度が上がると、光束や効率が下がったり、色が変化したり、封止材、はんだ、接着材、ドライバ部品の劣化が進んだりする可能性があります。密閉器具では熱がこもりやすいので、「密閉器具対応」など製品の適合表示を確認する必要があります。</p>
+
+
+
+<figure class="s59b-media" data-media-role="explanatory-image-10"><svg viewBox="0 0 760 430" role="img" aria-label="白熱電球は高温フィラメントから周囲へ赤外放射が出てLEDは接合部の熱を基板と根元へ伝える違いを示した図"><rect width="760" height="430" fill="#f8fbfd"/><text x="380" y="43" text-anchor="middle" font-size="27" font-weight="700" fill="#172635">熱の出方と逃がし方が違う</text><rect x="45" y="80" width="315" height="300" rx="18" fill="#fff3e4" stroke="#e8892f" stroke-width="4"/><rect x="400" y="80" width="315" height="300" rx="18" fill="#e9f6fd" stroke="#126ca2" stroke-width="4"/><text x="203" y="120" text-anchor="middle" font-size="22" font-weight="700" fill="#8a4b16">白熱電球</text><text x="558" y="120" text-anchor="middle" font-size="22" font-weight="700" fill="#075d91">LED電球</text><circle cx="203" cy="215" r="36" fill="#ffcd75" stroke="#b84c3f" stroke-width="8"/><path d="M203 158v-30M203 302v-30M146 215h-30M290 215h-30M162 174l-25-25M244 174l25-25M162 256l-25 25M244 256l25 25" stroke="#b84c3f" stroke-width="8" stroke-linecap="round"/><text x="203" y="345" text-anchor="middle" font-size="17" fill="#172635">高温フィラメントから</text><text x="203" y="370" text-anchor="middle" font-size="17" fill="#172635">光・赤外放射が広がる</text><rect x="490" y="145" width="135" height="48" rx="10" fill="#fff1a8" stroke="#d6a900" stroke-width="3"/><text x="558" y="176" text-anchor="middle" font-size="17" fill="#172635">LED発光部</text><path d="M558 193v55M525 205l-30 65M591 205l30 65" stroke="#b84c3f" stroke-width="7"/><rect x="470" y="248" width="175" height="62" rx="10" fill="#dfe8ec" stroke="#596b78" stroke-width="3"/><text x="558" y="285" text-anchor="middle" font-size="18" fill="#172635">基板・放熱部</text><path d="M500 310v42M558 310v42M616 310v42" stroke="#126ca2" stroke-width="7"/><text x="558" y="378" text-anchor="middle" font-size="17" fill="#172635">熱を根元側へ伝えて逃がす</text></svg><figcaption>LEDの損失熱は、基板や放熱部を通って根元側へ移ります。LED電球の根元が熱くなるのは、放熱経路が集中するためでもあります。</figcaption></figure>
+
+
+
+<h2 class="wp-block-heading">誤解しやすい点を整理する</h2>
+
+
+
+<section class="s59b-faq"><details><summary>Q1. LEDは熱をまったく出さない？</summary><p>いいえ。半導体で光にならなかったエネルギー、抵抗、ドライバ、蛍光体、光学部品などの損失は主に熱になります。発光部を白熱させないことと、発熱がゼロであることは別です。</p></details><details><summary>Q2. 白熱電球は電力の決まった割合を必ず熱として捨てる？</summary><p>一つの固定割合で全製品を説明するのは適切ではありません。温度や製品条件、光と熱の区切り方で変わるため、「入力の多くが赤外放射や加熱へ回る」と捉えるのが安全です。</p></details><details><summary>Q3. 60形相当なら60Wを消費する？</summary><p>いいえ。「形相当」は置き換えの明るさ区分を示す目安で、消費電力そのものではありません。製品表示では、明るさを示すlmと消費電力Wを別々に確認します。</p></details><details><summary>Q4. lm/Wが高ければ、どの面でも優れた電球？</summary><p>そうとは限りません。lm/Wは入力電力当たりの光束です。配光、色温度、物の色の見え方、ちらつき、耐久性、器具への適合などは別に確認する必要があります。</p></details><details><summary>Q5. LED電球なら、どの器具にも交換できる？</summary><p>いいえ。口金と寸法だけでなく、密閉器具、調光器、断熱材施工器具、屋外や浴室などへの対応表示を確認してください。内部を分解して確かめるのは、商用電源と残留電荷による危険があるため避けます。</p></details></section>
+
+
+
+<section class="mp5-section" id="revenue-phase5-learning"><h2>LEDの効率から、電気と比較表の技能へ</h2><p>lm/Wを理解したら、明るさ、消費電力、色、使う時間を一組の条件として記録します。数値だけで取付け条件や放熱まで判断せず、器具の説明と用途を確認しましょう。電気・熱の基礎を学ぶ教材と、仕様を表に整理する技能を学ぶ講座は異なる入口です。まず手元の製品の公開仕様を無料の表計算で比べ、不足する知識と操作を具体化してから有料学習を選ぶと、目的がはっきりします。</p></section>
+
+
+<h2 class="wp-block-heading">まとめ：省エネの理由は、可視光への振り分け方</h2>
+
+
+
+<figure class="s59b-media" data-media-role="summary-infographic"><svg viewBox="0 0 760 500" role="img" aria-label="白熱電球とLED電球の発光原理、効率指標、放熱の違いを四段階でまとめた図"><rect width="760" height="500" rx="18" fill="#172635"/><text x="380" y="52" text-anchor="middle" font-size="29" font-weight="700" fill="#fff">LEDが省エネになる4つの要点</text><g text-anchor="middle"><rect x="55" y="95" width="300" height="125" rx="18" fill="#fff3e4"/><text x="205" y="135" font-size="21" font-weight="700" fill="#8a4b16">白熱電球</text><text x="205" y="170" font-size="17" fill="#172635">高温フィラメントの熱放射</text><text x="205" y="197" font-size="15" fill="#596b78">可視光と赤外へ広がる</text><rect x="405" y="95" width="300" height="125" rx="18" fill="#e9f6fd"/><text x="555" y="135" font-size="21" font-weight="700" fill="#075d91">LED電球</text><text x="555" y="170" font-size="17" fill="#172635">半導体の再結合で光子</text><text x="555" y="197" font-size="15" fill="#596b78">蛍光体などで白色化</text><rect x="55" y="255" width="300" height="125" rx="18" fill="#e9f7f0"/><text x="205" y="295" font-size="21" font-weight="700" fill="#206247">効率の見方</text><text x="205" y="330" font-size="17" fill="#172635">明るさはlm、電力はW</text><text x="205" y="357" font-size="15" fill="#596b78">入力当たりはlm/W</text><rect x="405" y="255" width="300" height="125" rx="18" fill="#fff0ee"/><text x="555" y="295" font-size="21" font-weight="700" fill="#8b352d">熱の境界</text><text x="555" y="330" font-size="17" fill="#172635">LEDにも損失熱がある</text><text x="555" y="357" font-size="15" fill="#596b78">基板・根元へ逃がす</text></g><rect x="105" y="415" width="550" height="55" rx="16" fill="#21394c" stroke="#a9d6bd" stroke-width="3"/><text x="380" y="450" text-anchor="middle" font-size="20" font-weight="700" fill="#fff">違いは「熱がゼロ」ではなく、可視光へ振り分けやすいこと</text></svg><figcaption>この記事の要点。白熱電球とLED電球は光を作る物理原理が異なり、同じ光束に必要な入力電力へ差が生まれます。</figcaption></figure>
+<div class="s59b-summary">白熱電球はフィラメントを高温にし、可視光とともに赤外領域へも広がる熱放射を使います。<br>LEDは半導体の再結合で光子を作り、照明に使う可視光へ電力を振り分けやすい光源です。<br>LEDにも損失熱があるため、lm/Wだけでなく放熱と器具への適合も大切です。</div>
+
+
+
+<h2 class="wp-block-heading">次に読む</h2>
+
+
+
+<p class="wp-block-paragraph">LEDを支える半導体の基本から順番に学びたい方は、<a href="https://semicon-campus.com/semiconductor-beginner-roadmap/">半導体初心者ロードマップ</a>へ進んでください。</p>
+
+
+
+<section class="mp5-section" id="revenue-phase5-career"><h2>理解した内容から、次の学習と比較へ</h2><p>明るさ・電力・使用時間の比較を、対象・条件・出典の三つで整理しましょう。関連する基礎記事、学習の入口、PCの要件を目的別に確認すると、無料で試せる範囲と有料の選択肢を分けて検討できます。</p><aside class="semicon-cta mp5-card"><h3>目的に合う関連記事から、次の行動を選ぶ</h3><p>仕事内容を知りたい方は職種記事へ、基礎を広げたい方は学習記事へ、自宅環境を見直す方はPC・メモリの解説へ進めます。各記事の求人・学習・機材の選び方も比較できます。</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/semiconductor-beginner-roadmap/" class="semicon-btn mp5-button" data-revenue-phase5-hub="391" data-cta="learning_hub" data-cta-type="learning_hub" data-cta-stage="career" data-cta-id="phase5_825_hub391_end" data-cta-route="phase5_825_hub391_end">半導体学習Hubで基礎・仕事・学び方を確認する</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/" class="semicon-btn mp5-button" data-revenue-phase5-hub="277" data-cta="maintenance_hub" data-cta-type="maintenance_hub" data-cta-stage="career" data-cta-id="phase5_825_hub277_end" data-cta-route="phase5_825_hub277_end">設備保全Hubで仕事内容・求人・学習を確認する</a></div></aside></section>
+
+
+
+<h2 class="wp-block-heading">参考資料</h2>
+
+
+
+<ol class="s59b-refs"><li>U.S. Department of Energy, <a rel="noopener" href="https://www1.eere.energy.gov/buildings/publications/pdfs/ssl/ee_lighting_vol2.pdf" target="_blank">U.S. Lighting Market Characterization Volume II</a>（白熱電球の熱放射、フィラメント温度、可視域と赤外域、歴史的な効率比較）。</li><li>Panasonic, <a rel="noopener" href="https://www2.panasonic.biz/jp/lighting/plam/manual/basic/lighting-basic/" target="_blank">LEDの基礎</a>（LEDのp-n接合、電子と正孔の再結合、白色LEDの方式）。</li><li>CIE, <a rel="noopener" href="https://cie.co.at/eilvterm/17-21-090" target="_blank">Luminous efficacy of radiation</a>（測光上のlm/Wと視感度の定義）。</li><li>Panasonic, <a rel="noopener" href="https://panasonic.jp/life/housework/100088.html" target="_blank">ルーメンとは？</a>（lm、lx、W、形相当の読み方）。</li><li>U.S. Department of Energy FEMP, <a rel="noopener" href="https://www.energy.gov/cmei/femp/purchasing-energy-efficient-light-bulbs" target="_blank">Purchasing Energy-Efficient Light Bulbs</a>（同程度の光束で消費電力を比較する考え方）。</li><li>日本照明工業会, <a rel="noopener" href="https://www.jlma.or.jp/chousa/koubai/2025chousa01.htm" target="_blank">2025年度 E26口金付き電球形LEDランプ試買調査</a>（LED電球の製品差と表示品質）。</li><li>資源エネルギー庁, <a rel="noopener" href="https://www.enecho.meti.go.jp/category/saving_and_new/saving/enterprise/equipment/toprunner/28_denkyu.html" target="_blank">電球に関するトップランナー制度</a>（全光束、消費電力、エネルギー消費効率の表示事項）。</li></ol>
+
+
+
+</article>
+

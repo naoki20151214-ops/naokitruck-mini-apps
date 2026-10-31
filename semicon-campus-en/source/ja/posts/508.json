@@ -1,0 +1,19 @@
+{
+ "id": 508,
+ "type": "post",
+ "slug": "what-is-gpu-ai-parallel-processing",
+ "link": "https://semicon-campus.com/what-is-gpu-ai-parallel-processing/",
+ "date": "2026-07-13T21:30:59",
+ "modified": "2026-10-30T21:22:56",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  4,
+  2
+ ],
+ "tags": [],
+ "featured_media": 505,
+ "title": "GPUとは何か？なぜAIで使われるのかを初心者向けに図解",
+ "excerpt": "学習レベル 初級 ショート動画でGPUを知った人が、CPUとの違いとAIで使われる理由をつかむための記事です。 GPU（Graphics Processing Unit）は、似た計算を同時に大量処理するのが得意な半導体で […]"
+}

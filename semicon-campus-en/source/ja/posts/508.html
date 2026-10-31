@@ -1,0 +1,123 @@
+
+<!--KEEP:0-->
+
+
+<!--KEEP:1-->
+
+
+<!--KEEP:2-->
+<div class="semicon-article" id="semicon-top">
+
+<div class="semicon-level"><span class="semicon-level-label">学習レベル</span> <strong>初級</strong><p>ショート動画でGPUを知った人が、CPUとの違いとAIで使われる理由をつかむための記事です。</p></div>
+
+<p class="semicon-lead"><strong>GPU（Graphics Processing Unit）</strong>は、似た計算を同時に大量処理するのが得意な半導体です。もともとは画面を描く計算のために発達しました。その並列処理の力が、現在は生成AIの大量計算にも生かされています。</p>
+
+<div class="semicon-overview" aria-label="GPUの全体像"><div class="semicon-overview-box"><b>CPU</b><span>判断・順序・全体制御が得意</span></div><div class="semicon-overview-box"><b>GPU</b><span>似た計算の大量処理が得意</span></div><div class="semicon-overview-box"><b>AI</b><span>両者の役割分担で動く</span></div></div>
+
+<p>CPU、メモリ、保存場所の関係から確認したい方は、先に<a href="https://semicon-campus.com/cpu-memory-storage-difference/">CPU・メモリ・ストレージの違い</a>を読むと理解しやすくなります。</p>
+
+<div class="semicon-map"><h3>この記事でわかること</h3><div class="semicon-scope-grid"><div class="semicon-scope-block"><b>まず理解する3項目</b><ol><li>GPUは何をする半導体か</li><li>なぜ画像処理からAIへ広がったか</li><li>CPUとGPUはどう協力するか</li></ol></div><div class="semicon-scope-block deep"><b>余裕があれば読む項目</b><ol><li>GPUが得意でない仕事</li><li>HBM・職種とのつながり</li></ol></div></div></div>
+
+<div class="semicon-note"><p><strong>最初に覚える一文</strong></p><p>GPUは、似た計算を同時に大量処理するのが得意だから、AIで使われます。</p></div>
+
+
+<h2>GPUとは何をする半導体？</h2>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>GPUって、ゲームの映像をきれいにする部品ではないんですか？</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>出発点は画像処理じゃ。画面を作るには、多数の画素へ似た計算を繰り返す必要がある。</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>同じ種類の仕事を、大勢で分担する工場のようなイメージですね。</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>そうじゃ。ただし工場は、並列度をつかむためのたとえ。実際には多数の処理単位が協調して計算する。</p></div></div>
+
+<figure class="semicon-figure"><img src="https://semicon-campus.com/wp-content/uploads/2026/07/gpu-parallel-processing-overview.png" alt="順番や判断が重要な処理とGPUが得意な大量の並列処理の違い" width="1536" height="864" loading="lazy" decoding="async"><figcaption>CPUとGPUは速さの単純な優劣ではなく、設計上の得意分野が違います。</figcaption></figure>
+
+<p>CPUも複数の処理を並行できます。GPUの特徴は、より多くの処理を同時に進め、全体の仕事量を大きくする方向へ設計されていることです。</p>
+<p class="semicon-one-line">ここまでの一言まとめ：GPUは、似た計算を大量に並列処理するのが得意です。</p>
+
+<h2>なぜ画像処理からAIへ広がったのか</h2>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>画面を描く計算と、生成AIの計算は別物に見えます。</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>目的は違うが、数字の組み合わせへ似た計算を何度も行う点では、GPUの並列処理を生かしやすい。</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>画像で育った大量計算の仕組みが、AIにも使われたんですね。</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>その理解でよい。ただしAIの処理すべてが同じ計算という意味ではなく、並列化しやすい部分をGPUへ任せる。</p></div></div>
+
+<div class="semicon-grid"><div class="semicon-card"><b>画像処理</b><span>多数の画素の色・明るさ・形を計算する。</span></div><div class="semicon-card"><b>AIの計算</b><span>大量の数値の組み合わせを繰り返し計算する。</span></div><div class="semicon-card"><b>共通する強み</b><span>並列に進めやすい仕事をまとめて処理できる。</span></div></div>
+
+<p class="semicon-one-line">ここまでの一言まとめ：画像処理で育った並列計算の強みが、AIの大量計算にも合いました。</p>
+
+<h2>GPUは、なぜゲーム用からAIの主役になったのか</h2>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>GPUは、最初からAIのために作られたんですか？</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>違うんじゃ。3Dゲームでは、多数の画素に似た計算を一斉に行う必要があった。その要求が、GPUの大量並列計算を育てたんじゃよ。</p></div></div>
+
+<p><strong>GPUを大きく育てたのは、AIではなく3Dグラフィックスの要求でした。</strong> 3Dの映像を滑らかに描くには、立体の形や画面を構成する多くの画素について、似た計算を短い時間で何度も進めなければなりません。その必要性に応える中で、GPUは大量の計算を並列に進める方向へ発達しました。</p>
+
+<figure class="semicon-figure"><img src="https://semicon-campus.com/wp-content/uploads/2026/07/gpu-game-parallel-ai-history.png" alt="3Dグラフィックスの多数の計算がGPUの並列処理を育て、その能力が後にAIの行列計算へ生かされた流れ" width="1672" height="941" loading="lazy" decoding="async"><figcaption>3DグラフィックスとAIは目的が違いますが、多数の計算を並列に進めるGPUの強みが、後のAI計算にも生かされました。</figcaption></figure>
+
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>でも、ゲーム用の部品を研究者がそのままAIの計算に使えたんですか？</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>最初は画像処理向けで、自由な計算には使いにくかった。そこでNVIDIAを率いるジェンスン・フアンらの時代にCUDAが登場し、一般的な並列計算へ使う入口が開いたんじゃ。</p></div></div>
+
+<p><strong>CUDAは、「絵を描く部品」を研究の計算へ開きました。</strong> GPUに計算能力があっても、研究者が扱いにくければ広く使われません。CUDAによって、GPUの並列性を科学や研究の計算へ生かしやすくなりました。</p>
+
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>入口ができただけで、AIにも向くと分かったんですか？</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>価値を具体的に示したのが、2012年のAlexNetじゃ。Alex Krizhevskyらは2枚のGeForce GTX 580を使い、大規模画像認識でGPUの有効性を成果として見せたんじゃよ。</p></div></div>
+
+<p><strong>AlexNetによって、ゲーム用に育った能力がAIにも使えると証明されました。</strong> NVIDIAが用意した計算の入口と、研究者による実証がつながったことで、GPUはAIの計算基盤へ広がっていきました。</p>
+<p class="semicon-one-line">GPUがAIのために生まれたのではありません。ゲームが育て、CUDAが扉を開き、AlexNetがAIで使えると証明したのです。</p>
+
+<h2>CPUとGPUはどう協力する？</h2>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>AI用のパソコンなら、CPUを外してGPUだけでも動きますか？</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>それはできん。CPUが全体を動かし、GPUへ向く計算を渡す。GPUは受け取った大量計算を進める。</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>CPUが指揮し、GPUが大量計算を担当する役割分担ですね。</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>さらにGPUへデータを届けるメモリと、両者を使うソフトウェアも欠かせない。</p></div></div>
+
+<figure class="semicon-figure"><img src="https://semicon-campus.com/wp-content/uploads/2026/07/cpu-gpu-hbm-role-map.png" alt="AIを支えるCPUの全体制御、GPUの並列計算、HBMのデータ供給の役割" width="1536" height="864" loading="lazy" decoding="async"><figcaption>AIの処理は、CPUの全体制御、GPUの並列計算、メモリからのデータ供給がつながって進みます。</figcaption></figure>
+
+<p>GPUを働かせ続けるには、計算に必要なデータを十分な速さで渡す必要があります。AI向けGPUでHBMが注目されるのは、広い帯域で大量のデータを届ける役割があるためです。</p>
+<p class="semicon-one-line">ここまでの一言まとめ：CPUとGPUは競争相手ではなく、得意な仕事を分担する仲間です。</p>
+
+<div class="semicon-basic-complete">ここまででGPUの基本は理解できました。</div>
+
+<div class="semicon-deep-break"><strong>ここから、もう一歩深く</strong><p>ここから先は、苦手な場面、メモリ、仕事とのつながりまで知りたい人向けです。基本だけ知りたい方は、<a href="#gpu-summary">まとめへ進んでも問題ありません</a>。</p></div>
+
+<h2>GPUなら何でも速くなるわけではない</h2>
+<p>GPUの強みを生かすには、仕事を並列に分けやすいこと、必要なデータを十分に供給できること、GPU向けにソフトウェアが作られていることが重要です。</p>
+
+<div class="semicon-compare"><table><thead><tr><th>仕事の特徴</th><th>向きやすい処理</th><th>理由</th></tr></thead><tbody><tr><td>判断や分岐が多く、順序が重要</td><td>CPU</td><td>複雑な制御と一つ一つの処理を速く進める設計が生きる</td></tr><tr><td>似た計算を大量に分けられる</td><td>GPU</td><td>多数の処理を同時に進め、全体の仕事量を増やしやすい</td></tr><tr><td>実際のAIシステム</td><td>CPU・GPU・メモリ</td><td>制御、計算、データ供給を組み合わせる必要がある</td></tr></tbody></table></div>
+
+<div class="semicon-note"><p><strong>注意：</strong> 実際の速さはGPUの有無だけで決まりません。処理内容、メモリ、ソフトウェア、消費電力など、システム全体で変わります。</p></div>
+
+<h2>GPUとHBMはなぜセットで語られる？</h2>
+<p>GPUが同時に多くの計算を進めるほど、材料となるデータも大量に必要になります。そこで重要になるのがメモリ帯域、つまり一定時間にどれだけのデータを運べるかです。</p>
+<p>HBMは、複数のDRAMダイを積層し、GPUなどの近くへ実装して広い帯域を得るメモリです。GPUとHBMの関係は、<a href="https://semicon-campus.com/what-is-hbm-high-bandwidth-memory/">HBMとは何か</a>で図解しています。</p>
+
+<h2>GPUを支える仕事は設計だけではない</h2>
+<div class="semicon-grid"><div class="semicon-card"><b>半導体設計・ソフトウェア</b><span>計算回路、制御回路、コンパイラやライブラリを作る。</span></div><div class="semicon-card"><b>製造・検査</b><span>微細なGPUチップを作り、欠陥や性能を確認する。</span></div><div class="semicon-card"><b>メモリ・先端パッケージ</b><span>HBMとGPUを短く高密度につなぎ、熱や歩留まりへ対応する。</span></div></div>
+<p>GPUという一つの製品の周りにも、装置、材料、製造、検査、実装、品質、ソフトウェアの仕事があります。まず業界全体の地図を見たい方は、<a href="https://semicon-campus.com/semiconductor-beginner-roadmap/">半導体初心者ロードマップ</a>へ戻ると、工程や職種へ順番に進めます。</p>
+
+
+<section class="mp3-section" id="revenue-phase3-learning"><h2>GPUの理解から演習環境と仕事へ</h2><p>GPUを学んだ後は、実際に動かしたい画像処理や小規模な計算を一つ決め、ソフトの対応GPU、メモリ、OSを確認します。必要条件を満たすPCを比べる道と、公開情報の整理に使う生成AIを学ぶ道があります。製造・検査・装置の経験がある人は、GPUを作り評価する工程との接点も整理できます。GPUを買うことと、生成AIの使い方や専門設計を学ぶことは分けて考えましょう。</p><p>比較前の確認メモ：使うソフトの対応GPU、VRAM、CPU・主メモリ、OSと電源。今の環境で試せる範囲と、更新が必要な箇所を分けてから候補を選びましょう。</p></section>
+
+<h2 id="gpu-summary">まとめ</h2>
+<div class="semicon-note"><p><strong>まず覚える3点</strong></p><ol><li>GPUは、似た計算を同時に大量処理するのが得意</li><li>画像処理で育った並列計算の力が、AIの大量計算にも合った</li><li>CPU・GPU・メモリ・ソフトウェアの役割分担でAIが動く</li></ol></div>
+
+<div class="semicon-links"><div class="semicon-linkbox next"><h3>次に読む</h3><p><a href="https://semicon-campus.com/what-is-cuda-gpu-computing/">GPUを画像処理以外へ広げたCUDAの仕組み</a></p></div><div class="semicon-linkbox"><h3>前提を確認する</h3><p><a href="https://semicon-campus.com/cpu-memory-storage-difference/">CPU・メモリ・ストレージの違い</a></p><p><a href="https://semicon-campus.com/semiconductor-beginner-roadmap/">初心者ロードマップへ戻る</a></p></div></div>
+
+<h2>GPUについてよくある質問</h2>
+<h3>GPUはAIのために発明されたのですか？</h3>
+<p>いいえ。GPUは3Dグラフィックスなどの画像処理で発達しました。そこで育った大量並列計算の能力が、CUDAなどによって一般の計算へ使いやすくなり、後にAIへ広がりました。</p>
+<h3>ゲーム用GPUとAI向けGPUは同じものですか？</h3>
+<p>基本となる並列処理の考え方には共通点がありますが、同一ではありません。AI向け製品では、AIで多用する演算、メモリ帯域、製品同士の接続、ソフトウェアなどが用途に合わせて強化されています。</p>
+<h3>GPUがあれば、どんな処理でも速くなりますか？</h3>
+<p>いいえ。似た計算を多くの仕事へ分けられるときに強みを発揮します。判断や分岐が多い処理、データ供給が追いつかない処理では、GPUを追加するだけで速くなるとは限りません。</p>
+
+<div class="semicon-note"><p><strong>次の一歩</strong></p><p>GPUへ計算データを届ける仕組みまで知りたい方は、<a href="https://semicon-campus.com/what-is-hbm-high-bandwidth-memory/">HBMの図解記事</a>へ進んでください。動画で見たテーマを順番に学びたい方は、<a href="https://semicon-campus.com/semiconductor-beginner-roadmap/">半導体初心者ロードマップ</a>から続けられます。</p></div>
+
+
+<section class="mp3-section" id="revenue-phase3-career"><h2>この記事の知識を、次の仕事・学習へつなげる</h2><p>製造・検査、装置点検、実装評価の経験を、対象・作業・確認した結果で整理します。担当範囲と必要経験、勤務地、勤務・出張、教育体制を比較すると、次に補う知識も具体的になります。</p><aside class="semicon-cta mp3-card"><h3>関連する職種の仕事内容・求人・学習を見る</h3><p>記事で学んだ技術が、点検・復旧、装置立上げ、顧客対応、実装・工程改善のどの仕事で使われるか確認できます。職種記事の求人・学習の選び方へ進みましょう。</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/" class="semicon-btn mp3-button" data-revenue-phase3-hub="237" data-cta="equipment_hub" data-cta-type="equipment_hub" data-cta-stage="career" data-cta-id="phase3_508_hub237_end" data-cta-route="phase3_508_hub237_end">装置エンジニアの担当範囲・求人・学習を見る</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/advanced-packaging-jobs-career/" class="semicon-btn mp3-button" data-revenue-phase3-hub="651" data-cta="packaging_hub" data-cta-type="packaging_hub" data-cta-stage="career" data-cta-id="phase3_508_hub651_end" data-cta-route="phase3_508_hub651_end">先端パッケージの仕事・求人・学習の選び方を見る</a></div></aside></section>
+
+
+<h2>参考資料</h2>
+<ul><li><a rel="noopener" href="https://www.nvidia.com/en-us/about-nvidia/corporate-timeline/" target="_blank">NVIDIA: Corporate Timeline</a></li><li><a rel="noopener" href="https://www.nvidia.com/en-us/about-nvidia/board-of-directors/jensen-huang/" target="_blank">NVIDIA: Jensen Huang</a></li><li><a rel="noopener" href="https://papers.nips.cc/paper_files/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html" target="_blank">Krizhevsky, Sutskever, Hinton: ImageNet Classification with Deep Convolutional Neural Networks</a></li><li><a rel="noopener" href="https://docs.nvidia.com/cuda/cuda-programming-guide/01-introduction/introduction.html" target="_blank">NVIDIA: CUDA Programming Guide &#8211; Introduction</a></li><li><a rel="noopener" href="https://www.intel.com/content/www/us/en/products/docs/processors/cpu-vs-gpu.html" target="_blank">Intel: CPU vs. GPU: What&#8217;s the Difference?</a></li></ul>
+
+<a class="semicon-backtop" href="#semicon-top">↑ 先頭</a>
+</div>
+
+
+<aside class="related-spokes"><h2>あわせて読みたい</h2><ul><li><a href="/what-is-npu-on-device-ai/">NPUとは？スマホのAI処理を支える専用プロセッサを文系向けに解説</a></li><li><a href="/cpu-gpu-difference-ai/">CPUとGPUは何が違うのか？AIでGPUが使われる理由を初心者向けに解説</a></li></ul></aside>

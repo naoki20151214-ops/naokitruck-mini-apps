@@ -1,0 +1,59 @@
+<p>Intelは2026年10月9日、機密計算に関するロードマップを公表しました。公式記事によると、コードネーム「Diamond Rapids」はSGXを搭載する最後の次世代Xeonプラットフォームとなり、その後の機密計算はTDXへ重点化される計画です。ただし、Diamond Rapidsの発売日や、SGXの具体的な終了年が発表されたわけではありません。これはSGX全体が直ちに使えなくなるというニュースではなく、IntelのXeon製品戦略における重点の移行を示す発表です。<a href="https://www.intel.com/content/www/us/en/newsroom/opinion/confidential-computing-growing-momentum-sharpened-focus.html">Intel公式発表</a></p>
+<h2>何が発表されたのか</h2>
+<p>今回の中心は、Intelが機密計算の保護単位を、アプリケーション中心のSGXから、仮想マシン中心のTDXへ移す方針を示したことです。Intelは、既存のSGX搭載プラットフォームについて、2030年代初頭までサポートとセキュリティ更新を続ける計画も説明しています。「2030年代初頭」は特定の終了年を意味しないため、いつまで更新されるかを具体的な年に置き換えることはできません。<a href="https://www.intel.com/content/www/us/en/newsroom/opinion/confidential-computing-growing-momentum-sharpened-focus.html">Intelのロードマップ説明</a></p>
+<p>ここでは、計画と実績を分けて考える必要があります。Diamond RapidsがSGX搭載最後のXeonになるという内容は、Intelが示したロードマップ上の計画です。発売後の実機で確認された事実ではありません。また、今回の発表は、TDXが業界全体で広く採用されたことを示す独立統計や、SGXとの性能・コスト比較を示したものでもありません。TDXのクラウド規模での展開容易性については、Intel自身の評価として読むべきです。<a href="https://www.intel.com/content/www/us/en/newsroom/opinion/confidential-computing-growing-momentum-sharpened-focus.html">Intel公式発表</a></p>
+<h2>SGXとTDXの違い</h2>
+<p>機密計算とは、保存中や通信中だけでなく、CPUなどで処理している最中のデータも保護しようとする考え方です。通常のクラウド環境では、OSやハイパーバイザーと呼ばれる仮想化ソフトウェアが高い権限を持ちます。機密計算では、こうした管理ソフトウェアとは別のハードウェア上の保護境界を設け、重要なデータや処理を守ることを目指します。</p>
+<p><strong>SGX</strong>は、アプリケーションの重要なコードとデータを「エンクレーブ」と呼ばれる保護領域に入れる方式です。エンクレーブは、アプリケーション全体ではなく、特に守りたい部分を小さな信頼境界として切り出す仕組みです。そのため、保護範囲を細かく設計しやすい一方、アプリケーションをSGX向けに対応させ、エンクレーブの内外でどのデータをやり取りするか管理する必要があります。<a href="https://www.intel.com/content/www/us/en/developer/articles/technical/tdx-performance-isolated-partitioned-vms.html">IntelのSGX・TDX技術解説</a></p>
+<p><strong>TDX</strong>は、ゲスト仮想マシン全体を「Trust Domain」として隔離する方式です。仮想マシンとは、1台の物理サーバー上で動く独立したコンピューター環境です。Intelの技術解説では、TDXは仮想マシンモニター、ハイパーバイザー、ホストOSなどの非TDソフトウェアからTrust Domainを隔離し、メモリーとCPU状態の機密性・完全性を守ることを目指します。<a href="https://www.intel.com/content/www/us/en/developer/articles/technical/tdx-performance-isolated-partitioned-vms.html">IntelのTDX技術解説</a></p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>SGX</th>
+<th>TDX</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>保護単位</td>
+<td>アプリケーション内のエンクレーブ</td>
+<td>仮想マシン全体のTrust Domain</td>
+</tr>
+<tr>
+<td>導入方法</td>
+<td>専用のアプリ設計が必要になり得る</td>
+<td>既存VMを大きく変更せず移行しやすい設計</td>
+</tr>
+<tr>
+<td>重視しやすい点</td>
+<td>小さな信頼境界</td>
+<td>クラウド運用との互換性と展開規模</td>
+</tr>
+</tbody>
+</table>
+<p>簡単に言えば、SGXは「アプリの一部を厳密に囲う」方式、TDXは「仮想マシンをまとめて保護する」方式です。TDXは既存のVMワークロードを導入しやすくする方向に向く一方、アプリ単位で信頼境界を小さくできるSGXの特徴がなくなるわけではありません。どちらが適切かは、ワークロードやソフトウェア構成によって変わります。<a href="https://www.intel.com/content/www/us/en/products/details/processors/xeon/features/trust-domain-extensions.html">IntelのTDX製品情報</a></p>
+<h2>AI時代にTDXが注目される理由</h2>
+<p>AIサービスでは、利用者の入力、企業の内部文書、学習データ、推論結果などをクラウド上で処理する場面があります。こうした情報を処理中にも保護できれば、機密性が求められるワークロードをクラウド環境で扱う選択肢を広げられる可能性があります。Intelは、TDXのクラウド規模での展開容易性や運用モデルを、広範な利用に適した特徴として説明していますが、これはIntelの評価であり、独立した市場統計ではありません。<a href="https://www.intel.com/content/www/us/en/newsroom/opinion/confidential-computing-growing-momentum-sharpened-focus.html">Intel公式発表</a></p>
+<p>IntelはTDXの拡張として、GPU、Smart NIC、ストレージなどの接続デバイスを含む機密計算を対象にするTDX Connectも挙げています。これは、CPU上のTrust Domainだけでなく、周辺デバイスとの信頼できるI/Oを検討する方向を示すものです。ただし、今回の発表だけで、特定のGPU製品での実装時期、対応構成、AI処理性能まで確定したとはいえません。<a href="https://www.intel.com/content/www/us/en/products/details/processors/xeon/features/trust-domain-extensions.html">IntelのTDX製品情報</a></p>
+<p>もう一つの重要語が<strong>リモートアテステーション</strong>です。これは、データを渡す側などが、TDX対応基盤上で所定のTrust Domainやソフトウェア状態が実行されているかを確認するための仕組みです。Intelの技術資料はTDXについて、保護されたワークロードの実行状態を検証できる機能を説明しています。ただし、アテステーションがあっても、アプリケーションの設計ミスや、正規の利用者による情報流出まで自動的に防ぐものではありません。<a href="https://www.intel.com/content/www/us/en/developer/articles/technical/tdx-performance-isolated-partitioned-vms.html">IntelのTDX技術解説</a></p>
+<h2>限界と、発表からは分からないこと</h2>
+<p>TDXは、あらゆる攻撃や実装不備をなくす仕組みではありません。実際の保護範囲は、CPUやメモリーだけでなく、仮想化基盤、ファームウェア、接続デバイス、クラウドの運用方法にも左右されます。SGXとTDXの性能、コスト、移行の難しさも、ワークロードやソフトウェア実装によって変わります。今回のIntel発表には、両者を同じ条件で比較したベンチマークや、AI処理に対する具体的な性能保証は含まれていません。</p>
+<p>Intelは、ポスト量子暗号やアテステーション強化も今後の投資項目として挙げています。TDX文書一覧では、2026年8月のCPU Architectural Extensions、同年9月のTDX Connect ABIなど、関連仕様の更新が確認できます。しかし、文書が更新されたことは、すべての製品で機能の実装や商用提供が完了したことを意味しません。<a href="https://www.intel.com/content/www/us/en/newsroom/opinion/confidential-computing-growing-momentum-sharpened-focus.html">Intel公式発表</a><a href="https://www.intel.com/content/www/us/en/developer/tools/trust-domain-extensions/documentation.html?DocID=787041">Intel TDX文書一覧</a></p>
+<h2>これから確認したいポイント</h2>
+<ol>
+<li>Diamond Rapidsの正式な発売時期と、実際のSGX搭載範囲。</li>
+<li>後継XeonでSGXの新規利用がいつ、どの条件で終了するのか。</li>
+<li>既存SGXプラットフォームへのサポートとセキュリティ更新が、具体的にどの製品まで及ぶのか。</li>
+<li>TDX ConnectがどのGPU、Smart NIC、ストレージ構成で利用できるのか。</li>
+<li>AIワークロードでの性能、運用コスト、クラウド事業者やソフトウェア各社の対応。</li>
+<li>リモートアテステーションやポスト量子暗号が、実際のサービスでどう実装されるのか。</li>
+</ol>
+<p>今回のニュースは、SGXの即時停止ではありません。Intelが、アプリケーション単位の細かな隔離から、既存VMをクラウド規模で保護し、接続デバイスも含めた機密計算へ開発の重心を移す計画を示したニュースです。今後は、ロードマップ上の方針が、実際の製品仕様、クラウド提供、AI向けの測定結果へどこまで進むかを見極める必要があります。</p>
+<h2>出典</h2>
+<ul>
+<li><a href="https://www.intel.com/content/www/us/en/newsroom/opinion/confidential-computing-growing-momentum-sharpened-focus.html">Intel Newsroom：Confidential Computing &#8211; Growing Momentum, Sharpened Focus</a></li>
+<li><a href="https://www.intel.com/content/www/us/en/developer/articles/technical/tdx-performance-isolated-partitioned-vms.html">Intel Developer：Performance Considerations of Hardware-Isolated Partitioned VMs with Intel TDX</a></li>
+<li><a href="https://www.intel.com/content/www/us/en/products/details/processors/xeon/features/trust-domain-extensions.html">Intel：Trust Domain Extensions product information</a></li>
+<li><a href="https://www.intel.com/content/www/us/en/developer/tools/trust-domain-extensions/documentation.html?DocID=787041">Intel Developer：Intel TDX documentation</a></li>
+</ul>

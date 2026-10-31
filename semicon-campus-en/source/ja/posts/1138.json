@@ -1,0 +1,20 @@
+{
+ "id": 1138,
+ "type": "post",
+ "slug": "daily-news-658a839ceef309a4e84b",
+ "link": "https://semicon-campus.com/daily-news-658a839ceef309a4e84b/",
+ "date": "2026-09-22T09:00:00",
+ "modified": "2026-10-27T20:04:58",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  20
+ ],
+ "tags": [
+  19
+ ],
+ "featured_media": 2845,
+ "title": "imec、300mmシリコンフォトニクスで100GHz APDを実証",
+ "excerpt": "imecが300mm基盤のGe/Si APDで100GHz帯域、5V動作、正味400Gbps光リンクを発表。AIデータセンターへの意味と課題を解説します。"
+}

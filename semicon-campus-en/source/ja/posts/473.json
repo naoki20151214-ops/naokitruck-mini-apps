@@ -1,0 +1,20 @@
+{
+ "id": 473,
+ "type": "post",
+ "slug": "what-is-semiconductor-wire-bonding",
+ "link": "https://semicon-campus.com/what-is-semiconductor-wire-bonding/",
+ "date": "2026-07-12T04:20:01",
+ "modified": "2026-10-22T13:56:44",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  5,
+  10,
+  12
+ ],
+ "tags": [],
+ "featured_media": 469,
+ "title": "ワイヤーボンディングとは？チップと基板を細い金属線でつなぐ後工程を初心者向けに解説",
+ "excerpt": "ワイヤーボンディングとは、半導体チップ上の電極パッドと基板やリードフレーム側の端子を、金・銅・アルミなどの細い金属線で電気的につなぐ後工程です。基本フロー、材料、断線・接合不良・ショートなどの品質ポイント、求人票で見る言葉まで初心者向けに解説します。"
+}

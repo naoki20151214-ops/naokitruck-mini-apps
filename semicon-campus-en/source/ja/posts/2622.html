@@ -1,0 +1,212 @@
+<!--KEEP:0-->
+<div class="semicon-article" id="semicon-top">
+<div class="semicon-level">
+<div class="semicon-level-top"><span class="semicon-level-label">学習レベル</span><strong class="semicon-stars" aria-label="初級（5段階中の1）"><span class="on">★</span><span class="off">☆☆☆☆</span><span>初級</span></strong></div>
+</div>
+<div class="semicon-lead">
+<p>スマホを使っていると、動きが重くなったり、本体が熱くなったり、電池がどんどん減ったりすることがあります。原因はいろいろですが、そのひとつが、半導体のチップの中の、配線のあいだにあります。</p>
+<p>チップの中には、細い金属の配線が、すき間なく並んでいます。配線のあいだには、電気を通さない材料が入っていて、この材料を「絶縁膜」と呼びます。実は、この絶縁膜を、わざと「スカスカ」にする工夫によって、チップの速さと省エネが支えられています。この記事では、その理由を、順に説明します。</p>
+</div>
+<div class="semicon-note">
+<p>スマホの重さや熱さの原因は、ほかにもたくさんあります。この記事は、そのうち、チップの中の配線に関係する部分だけを取り上げます。</p>
+</div>
+<div class="semicon-map">
+<h3>この記事でわかること</h3>
+<ol>
+<li><strong>この記事の目的：</strong>配線のあいだの絶縁膜を、なぜスカスカにするのかを、つかむこと</li>
+<li><strong>前半：</strong>配線が細く近づくと、何が困るのか(配線容量と比誘電率)</li>
+<li><strong>後半：</strong>low-k材料の進化、その弱点と対策、エアギャップ</li>
+</ol>
+</div>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep113-blog-ep113-05-chipwire.jpg" alt="チップの表面に、細い銅色の配線がびっしり並んでいる様子を拡大したイメージ"><figcaption>チップの配線を拡大したイメージ。実際のチップではありません。 EP113 記事用画像（AI生成）。生成画像を縮小し、JPEGに最適化。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>チップの中に、細い配線が並ぶ</li>
+<li>配線のあいだには、絶縁膜がある</li>
+<li>配線が近いほど、電気がたまりやすい</li>
+</ul>
+</div>
+<div class="semicon-chat-row naoki">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">助手</div>
+</div>
+<div class="semicon-bubble">
+<p>博士、スマホが熱くなるのは、チップの配線にも原因があるんですか？</p>
+</div>
+</div>
+<div class="semicon-chat-row teacher">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">博士</div>
+</div>
+<div class="semicon-bubble">
+<p>そうじゃ。配線のあいだに電気がたまると、遅くなって、電気も余分に使うんじゃ。</p>
+</div>
+</div>
+<div class="semicon-chat-row naoki">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">助手</div>
+</div>
+<div class="semicon-bubble">
+<p>どうすれば、電気がたまりにくくなりますか？</p>
+</div>
+</div>
+<div class="semicon-chat-row teacher">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">博士</div>
+</div>
+<div class="semicon-bubble">
+<p>配線のあいだの材料を、電気をためにくいものに変えるんじゃ。順に、見ていこう。</p>
+</div>
+</div>
+<h2 class="wp-block-heading" data-fact-ids="C01">困りごとの正体は、配線を伝わる信号の遅さ（RC遅延）</h2>
+<p>チップの中では、トランジスタ同士が、細い金属の配線でつながれています。トランジスタで計算が行われ、その結果は、配線を通して伝えられます。カリフォルニア大学サンタバーバラ校の講義資料では、チップの性能を決める大きな要因が、配線を信号が伝わるのにかかる時間になった、と説明されています。<strong class="semicon-key">チップが速く動けるかどうかは、トランジスタだけでなく、配線にも大きく左右されます。</strong></p>
+<p>しかも、チップが小さく、速くなるほど、配線は細くなり、おたがいに近づきます。EE Times Japanの記事でも、微細化が進むほど、配線のあいだに使われる低い比誘電率の材料が重要になる、と述べられています。</p>
+<details class="semicon-quiz">
+<summary>確認クイズ：チップの速さを左右するのは、トランジスタだけでしょうか？</summary>
+<p>答え：いいえ。配線を信号が伝わる速さにも、大きく左右されます。</p>
+</details>
+<h2 class="wp-block-heading" data-fact-ids="C02">配線のあいだに電気がたまる「配線容量」</h2>
+<p>配線どうしが近づくと、そのあいだに、電気が少しずつたまります。電気をためる部品を「コンデンサ」と呼びますが、近くにある2本の配線は、あいだに絶縁膜をはさんだ、小さなコンデンサのようなものになります。この、たまる電気の量を「配線容量」といいます。講義資料によると、コンデンサの容量は、向かい合う面積が大きいほど、距離が近いほど、そして間の材料が電気をためやすいほど、大きくなります。</p>
+<p>配線容量が増えると、信号が伝わるのに時間がかかるようになります。さらに、EE Times Japanの記事によると、消費電力も増えてしまいます。<strong class="semicon-key">配線容量が大きいと、信号が伝わるのに時間がかかり、電気も余分に使われます。</strong>電池が減る、熱くなる、という困りごとにつながるわけです。</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep113-blog-01-chain.png" alt="配線が細く近づくと配線容量が増え、信号が遅くなり、電気も余分に使うという流れの概念図"><figcaption>配線容量が増えると何が起きるかを表した模式図。説明用の流れで、実測データではありません。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>配線が細く、近づく</li>
+<li>配線容量が増える</li>
+<li>遅くなり、電気も余分に使う</li>
+</ul>
+</div>
+<details class="semicon-quiz">
+<summary>確認クイズ：配線が近づくと、増えるのは何でしょう？</summary>
+<p>答え：配線のあいだにたまる電気の量、つまり配線容量です。</p>
+</details>
+<h2 class="wp-block-heading" data-fact-ids="C03">絶縁膜と「比誘電率」</h2>
+<p>配線容量を小さくするには、配線を離せばいいのですが、チップを小さくするためには、離せません。そこで、配線のあいだの「絶縁膜」を、電気をためにくい材料に変える方法が使われます。講義資料のコンデンサの式では、容量は、間の材料の「比誘電率」に比例します。比誘電率は、材料の電気のためやすさを表す数字で、小さいほど、ためにくい材料です。</p>
+<p>配線の金属を、アルミから銅に変える方法もあります。講義資料によると、抵抗率は、アルミが2.65、銅が1.67（単位はμΩ·cm）で、抵抗が下がるのは、2倍にも届きません。そのため、抵抗と容量の両方を減らすことが大切だと説明されています。</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep113-blog-02-ladder.png" alt="ガラス、フッ素入りガラス、炭素入り材料、穴あき材料と、比誘電率が下がっていく様子の概念図"><figcaption>絶縁膜の比誘電率が下がってきた流れを表した模式図。数字は、IBMの論文に書かれた目安です。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>ガラスから、少しずつ数字を下げる</li>
+<li>フッ素、炭素、穴で、工夫を重ねる</li>
+<li>数字が小さいほど、ためにくい</li>
+</ul>
+</div>
+<details class="semicon-quiz">
+<summary>確認クイズ：比誘電率が小さい材料は、電気をためやすいでしょうか、ためにくいでしょうか？</summary>
+<p>答え：ためにくい材料です。配線容量を小さくできます。</p>
+</details>
+<h2 class="wp-block-heading" data-fact-ids="C04">ガラスから、low-k材料へ</h2>
+<p>IBMの論文によると、絶縁膜は、最初、二酸化ケイ素（ガラスの仲間）でした。熱にも薬品にも強く、硬くて、水分を通しにくく、きれいな膜を作りやすいという、使いやすい材料です。欠点は、比誘電率が高めなことでした。</p>
+<p>そこで、比誘電率の低い「low-k材料」が使われるようになります。まず、ガラスにフッ素を混ぜて、比誘電率を約3.5まで下げた材料が、130ナノメートルの世代で使われました。次に、炭素を混ぜた材料（SiCOHと呼ばれます）が登場し、穴のない状態で、比誘電率はおよそ2.7から3.0です。炭素を混ぜると、材料の密度が下がり、比誘電率も下がります。</p>
+<details class="semicon-quiz">
+<summary>確認クイズ：最初にlow-kとして使われた工夫は、ガラスに何を混ぜることでしょう？</summary>
+<p>答え：フッ素です。比誘電率は、約3.5まで下がりました。</p>
+</details>
+<h2 class="wp-block-heading" data-fact-ids="C05">すきまだらけにする「多孔質（ポーラス）low-k」で比誘電率を下げる</h2>
+<p>さらに下げるために、材料に小さな穴を開けて、すきまだらけの「多孔質」にします。IBMの論文では、穴を加えることで、比誘電率が2.2以下になる、と述べられています。45ナノメートル以下の世代で、多孔質の材料が使われています。</p>
+<p>穴の作り方の例は、EE Times Japanで紹介されています。アルバックの材料は、絶縁膜のもとになる成分に、界面活性剤を混ぜた溶液で、焼くと、界面活性剤が型となって穴ができ、すきまだらけのガラスになります。<strong class="semicon-key">穴が増えたぶんだけ、電気をためにくい材料になります。</strong>求められる比誘電率の値は、世代が進むほど低くなります。EE Times Japanの記事では、32ナノメートルの世代で2.2〜2.4、22ナノメートルの世代で2.0〜2.2、さらに先の世代では2.0以下が必要とされています。</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep113-blog-ep113-06-porous.jpg" alt="小さな穴がたくさん開いた、スポンジのような白い材料を拡大した、多孔質のイメージ"><figcaption>多孔質の材料のイメージ。スポンジに似た例で、実際の絶縁膜ではありません。 EP113 記事用画像（AI生成）。生成画像を縮小し、JPEGに最適化。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>小さな穴が、たくさん開いている</li>
+<li>穴のぶんだけ、ためにくくなる</li>
+<li>そのかわり、もろくなりやすい</li>
+</ul>
+</div>
+<details class="semicon-quiz">
+<summary>確認クイズ：多孔質の材料は、どうして比誘電率が低いのでしょう？</summary>
+<p>答え：小さな穴（すきま）が増えるぶんだけ、電気をためにくくなるからです。</p>
+</details>
+<h2 class="wp-block-heading" data-fact-ids="C06">もろさと水分：弱点と対策</h2>
+<p>ただし、すきまだらけの膜には、弱点があります。IBMの論文によると、弾性率（かたさの目安）がガラスよりずっと低く、もろいため、銅を磨く工程で、膜がはがれないようにする工夫が必要です。たとえば、ダミーの金属を置いたり、研磨の力を弱めたり、膜どうしの密着を高めたりします。最後の1〜2層だけは、強度のために、ガラスが使われます。</p>
+<p>もうひとつは、水分です。多孔質の膜は、水分が速く広がるので、銅の上に、ふたの膜を作り、チップの外周にも壁を作って、水分を防ぎます。熱の逃げにくさも、弱点のひとつです。EE Times Japanによると、配線を作るためのプラズマ処理で、比誘電率が0.5ほど上がってしまう問題もあり、傷みにくい材料が開発されました。</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep113-blog-03-weak.png" alt="すきまだらけの膜のもろさと水分という二つの弱点と、その対策を並べた概念図"><figcaption>すきまだらけの膜の弱点と対策を並べた模式図。説明用の図です。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>もろい：やさしく磨く</li>
+<li>水分に弱い：ふたと外周の壁</li>
+<li>弱点には、対策がある</li>
+</ul>
+</div>
+<details class="semicon-quiz">
+<summary>確認クイズ：すきまだらけの膜の弱点は、何でしょう？</summary>
+<p>答え：もろいこと、そして、水分が広がりやすいことです。</p>
+</details>
+<h2 class="wp-block-heading" data-fact-ids="C07">本物の空気を使う「エアギャップ」</h2>
+<p>もっと進んだ方法が、配線のあいだに、本物の空気のすきまを作る「エアギャップ」です。IBMの論文によると、空気のすきまを作る場所を、重要な部分だけに絞れば、ほかの場所の強度や熱の逃げやすさを保てます。65ナノメートルのプロセッサーで、比誘電率が2.0まで下がった例が示されています。ただし、すきまを作るための工程が増え、費用もかかります。</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep113-blog-04-airgap.png" alt="配線のあいだに本物の空気のすきまを作る、エアギャップの概念図"><figcaption>エアギャップの考え方を表した模式図。実際の断面ではありません。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>配線のあいだに、空気のすきま</li>
+<li>空気は、電気をためにくい</li>
+<li>工程と費用は、増える</li>
+</ul>
+</div>
+<details class="semicon-quiz">
+<summary>確認クイズ：エアギャップは、配線のあいだに何を作る方法でしょう？</summary>
+<p>答え：本物の空気のすきまです。</p>
+</details>
+<div class="semicon-cta">
+<h3>工程を担当する仕事を、知る</h3>
+<p>この工程を担当する仕事を知りたい方は、こちらの記事も読んでみてください。</p>
+<div class="semicon-btnrow"><a class="semicon-btn" href="https://semicon-campus.com/semiconductor-career-map/">半導体製造の仕事を工程別に見てみる</a></div>
+</div>
+<p>製造の全体像は、<a href="https://semicon-campus.com/semiconductor-manufacturing-overview/">半導体の製造工程の全体像</a>です。なお、設備の調整や復旧は、所属する工場やメーカーの正式な手順と、権限のある人の判断のもとで行います。この記事は、考え方の紹介で、設備の操作を指示するものではありません。</p>
+<h2 class="wp-block-heading">ことばのおさらい</h2>
+<ul>
+<li><strong>配線容量：</strong>近くにある配線のあいだに、たまる電気の量です。</li>
+<li><strong>絶縁膜：</strong>電気を通さない、配線のあいだに入る材料です。</li>
+<li><strong>比誘電率：</strong>材料の、電気のためやすさを表す数字です。小さいほど、ためにくい材料です。</li>
+<li><strong>low-k材料：</strong>比誘電率が低い、絶縁膜の材料です。</li>
+<li><strong>多孔質：</strong>小さな穴がたくさん開いた、すきまだらけの状態です。</li>
+<li><strong>エアギャップ：</strong>配線のあいだに作る、本物の空気のすきまです。</li>
+</ul>
+<h2 class="wp-block-heading">よくある誤解</h2>
+<h3>Q. SiCOHは、シリコンカーバイド(SiC)のことですか？</h3>
+<p>いいえ。SiCOHは、ガラス(二酸化ケイ素)に炭素などを混ぜた絶縁膜で、シリコンカーバイドとは別のものです。</p>
+<h3>Q. 比誘電率は、大きいほうがよい数字ですか？</h3>
+<p>配線のあいだの絶縁膜では、小さいほうが有利です。電気をためにくく、配線容量を小さくできるためです。</p>
+<h2 class="wp-block-heading">まとめ</h2>
+<div class="semicon-lead">
+<p>配線が細く近づくと、配線のあいだに電気がたまる配線容量が増え、信号が伝わるのに時間がかかり、電気も余分に使われます。<br />そこで、絶縁膜を、比誘電率の低いlow-k材料に変え、穴を開けて、すきまだらけにしてきました。<br />もろさや水分には対策が必要で、さらに進んだ方法が、本物の空気を使うエアギャップです。</p>
+</div>
+<div class="semicon-cta">
+<h3>YouTubeでも、半導体をやさしく解説しています</h3>
+<p>図解で復習したい人向けに、YouTubeでも半導体製造を短く解説しています。</p>
+<div class="semicon-btnrow"><a rel="noopener" class="semicon-btn secondary" href="https://www.youtube.com/@semicon-campus" target="_blank">YouTubeで図解動画を見る</a></div>
+</div>
+<h2 class="wp-block-heading">参考にした公式情報</h2>
+<ul class="semicon-sources">
+<li data-source-id="S01"><a href="https://ewh.ieee.org/r5/denver/sscs/References/2009_09_Gambino.pdf">Jeff Gambino ほか「Copper Interconnect Technology for the 32 nm Node and Beyond」（IBM、IEEE CICC 2009）</a></li>
+<li data-source-id="S02"><a href="https://www.ece.ucsb.edu/courses/ECE122/122_F14Banerjee/Slides/Lecture%2011.pdf">Kaustav Banerjee「ECE 122A VLSI Principles, Lecture 11」（カリフォルニア大学サンタバーバラ校 講義資料）</a></li>
+<li data-source-id="S03"><a href="https://eetimes.itmedia.co.jp/ee/articles/0912/18/news102.html">EE Times Japan 前川慎光「既存の量産製造プロセスでそのまま使える、比誘電率が2.0と低い層間絶縁膜材料」（2009年）</a></li>
+</ul>
+<section class="semicon-correction-form">
+<h2>質問・訂正フォーム</h2>
+<p>この記事の内容に誤りや、分かりにくい点があれば、下のフォームからお知らせください。確認して、記事を直します。</p>
+<div class="semicon-form-shortcode">
+<div class="wpcf7 no-js" id="wpcf7-f2045-o4" lang="ja" dir="ltr" data-wpcf7-id="2045">
+<div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
+<form action="/?rest_route=%2Fwp%2Fv2%2Fposts&#038;per_page=100&#038;page=1&#038;context=view#wpcf7-f2045-o4" method="post" class="wpcf7-form init" aria-label="コンタクトフォーム" novalidate="novalidate" data-status="init">
+<fieldset class="hidden-fields-container"><input type="hidden" name="_wpcf7" value="2045" /><input type="hidden" name="_wpcf7_version" value="6.1.6" /><input type="hidden" name="_wpcf7_locale" value="ja" /><input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f2045-o4" /><input type="hidden" name="_wpcf7_container_post" value="0" /><input type="hidden" name="_wpcf7_posted_data_hash" value="" />
+</fieldset>
+<p>お名前・電話番号・住所の入力は不要です。工場名や社外秘の情報は記載しないでください。
+</p>
+<p><label>報告の種類（必須） <span class="wpcf7-form-control-wrap" data-name="report-type"><select class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required" aria-required="true" aria-invalid="false" name="report-type"><option value="誤りと思われる点">誤りと思われる点</option><option value="分かりにくい箇所">分かりにくい箇所</option><option value="追加してほしい説明・質問">追加してほしい説明・質問</option></select></span></label><br />
+<label>該当する見出し・文章（任意） <span class="wpcf7-form-control-wrap" data-name="report-section"><input size="40" maxlength="200" class="wpcf7-form-control wpcf7-text" aria-invalid="false" value="" type="text" name="report-section" /></span></label><br />
+<label>内容（必須） <span class="wpcf7-form-control-wrap" data-name="report-message"><textarea cols="40" rows="10" maxlength="3000" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" aria-required="true" aria-invalid="false" name="report-message"></textarea></span></label><br />
+<label>返信用メールアドレス（返信をご希望の場合のみ・任意） <span class="wpcf7-form-control-wrap" data-name="report-email"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-email wpcf7-text wpcf7-validates-as-email" autocomplete="email" aria-invalid="false" value="" type="email" name="report-email" /></span></label>
+</p>
+<p>ご意見は記事の確認・改善のために利用します。<a href="https://semicon-campus.com/privacy-policy/">個人情報の取り扱い</a>をご確認ください。
+</p>
+<p><input class="wpcf7-form-control wpcf7-submit has-spinner" type="submit" value="ご意見・訂正報告を送信" />
+</p><div class="wpcf7-response-output" aria-hidden="true"></div>
+</form>
+</div>
+</div>
+</section>
+</div>

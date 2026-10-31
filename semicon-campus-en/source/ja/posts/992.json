@@ -1,0 +1,20 @@
+{
+ "id": 992,
+ "type": "post",
+ "slug": "daily-news-c60864f37894392f651b",
+ "link": "https://semicon-campus.com/daily-news-c60864f37894392f651b/",
+ "date": "2026-09-17T13:00:00",
+ "modified": "2026-10-27T20:05:10",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  20
+ ],
+ "tags": [
+  19
+ ],
+ "featured_media": 2861,
+ "title": "NVIDIA Vera Rubin、Qwen3-VLのスループットがGB300比最大3.7倍",
+ "excerpt": "NVIDIAがVera Rubin NVL72のプレビュー結果を発表。Qwen3-VLのスループットがGB300 NVL72比で最大3.7倍となった条件、技術背景、限界を解説します。"
+}

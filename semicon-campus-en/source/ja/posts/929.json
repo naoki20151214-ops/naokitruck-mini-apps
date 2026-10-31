@@ -1,0 +1,20 @@
+{
+ "id": 929,
+ "type": "post",
+ "slug": "process-node-2nm",
+ "link": "https://semicon-campus.com/process-node-2nm/",
+ "date": "2026-09-15T18:00:00",
+ "modified": "2026-10-30T21:22:57",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  2,
+  3,
+  5
+ ],
+ "tags": [],
+ "featured_media": 918,
+ "title": "半導体の2nmとは何を意味するのか？数字の正体と微細化の歴史",
+ "excerpt": "半導体の2nmは特定の部位が2nmという意味ではありません。ノード名と実寸法の違い、PlanarからFinFET・GAAへ進んだ理由、EUV・配線・歩留まり・コストまでを初心者向けに整理します。"
+}

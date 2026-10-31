@@ -1,0 +1,32 @@
+<p>Microchip Technologyは2026年10月14日、宇宙で使う高性能プロセッサー向けに、耐放射線GaNポイント・オブ・ロード（POL）コンバーター「POL-05-20S-T」を発表しました。最大20Aの連続出力に対応し、25gの表面実装パッケージで、量産数量で供給可能だと同社は説明しています。今回の発表は、衛星に搭載される計算機の性能向上を、電源の小型化と放射線対策から支える動きです。ただし、発表仕様は特定の衛星での飛行実績や、あらゆる軌道での動作保証を意味しません。<a href="https://www.microchip.com/en-us/about/news-releases/products/microchip-expands-space-power-portfolio-with-new-radiation-tolerant-gan-pol-converter">Microchip公式発表</a></p>
+<h2>何が発表されたのか</h2>
+<p>POLコンバーターは、衛星の電源バスから供給された電圧を、FPGA、ASIC、マイクロコントローラーなどの近くで必要な低電圧へ変換する電源部品です。プロセッサーは処理内容によって電流が短時間で変化するため、電圧を安定させながら急な負荷変動に対応する必要があります。負荷の近くで変換するPOLは、電源配線による損失や電圧変動を抑えやすい構成です。<a href="https://www.microchip.com/en-us/products/power-management/voltage-current-power-conversion/dc-dc-switching-converters-and-controllers/dc-dc-switching-converters-and-regulators/space-grade-dc-dc-converters">Microchipの宇宙用DC-DC解説</a></p>
+<p>POL-05-20S-TについてMicrochipが示した入力電圧範囲は4.75～13.2V、調整可能な出力電圧は0.7～5Vです。パッケージ寸法は1.51×1.51×0.45インチ、重量は25g、動作温度範囲はマイナス55～プラス100℃とされています。同期整流降圧方式、電流モード制御、遠隔センシング、低電圧・過電圧保護、ソフトスタート、イネーブル、パワーグッドなどの機能も挙げられています。小型・高電力密度によって衛星搭載プロセッサーのサイズや電力制約に対応するという点は、同社の設計意図です。衛星全体でどれだけ小型化・省電力化できるかを示す第三者測定は確認できません。</p>
+<h2>GaNとPOLが重要な理由</h2>
+<p><strong>GaN（窒化ガリウム）</strong>は、電力スイッチに使われる半導体材料です。高い周波数でスイッチングする電源設計と相性がよく、インダクターやコンデンサーなど周辺部品の小型化、高い電力密度を狙える場合があります。衛星は重量、体積、利用できる電力に限りがあるため、搭載計算機の性能を高めるほど、電源を小さくまとめる意味が大きくなります。</p>
+<p>ただし、GaNを採用しただけで効率、発熱、信頼性が決まるわけではありません。制御方式、スイッチング周波数、周辺部品、実装、放熱、電磁ノイズ、入力条件、負荷変動を一体で評価する必要があります。今回の公式発表には効率曲線やスイッチング周波数、実際の衛星での採用案件は記載されていません。「GaNだから必ず従来電源より優れる」と断定できる段階ではありません。</p>
+<h2>宇宙放射線の仕様をどう読むか</h2>
+<p>宇宙用半導体で重要な用語が<strong>総電離線量（TID）</strong>と<strong>単一事象効果（SEE）</strong>です。TIDは放射線を長期間受けることで半導体内部の状態が変化し、しきい値電圧やリーク電流などの特性が徐々に変わる現象です。時間とともに進む累積的な劣化と考えると理解しやすいでしょう。</p>
+<p>SEEは、重いイオンや高エネルギー粒子など、単一粒子が半導体を通過したときに起こる一時的または恒久的な異常です。軽い誤動作で済む場合もあれば、素子の破壊につながる場合もあります。NASAは宇宙放射線の影響を、TID、材料の変位損傷、SEEに大別しています。また、SEEには回復可能な故障から破壊的故障まで幅があると説明しています。<a href="https://lws-set.gsfc.nasa.gov/space_radiation.html">NASA Goddardの解説</a> <a href="https://ntrs.nasa.gov/citations/20210024100">NASA技術速報</a></p>
+<p>MicrochipはPOL-05-20S-Tについて、TID 50kradまで照射前後の電気特性を規定し、SEEを<strong>LET 43 MeV・cm2/mg</strong>まで特性評価したとしています。LETは、粒子が物質を通過するときに単位距離あたりどれだけエネルギーを与えるかを表す指標です。しかし、50kradやLET 43は、部品について確認された試験・評価の範囲を示す数値です。特定の軌道、遮蔽厚、ミッション期間で必ず故障しないことや、衛星全体の耐放射線性を保証する数値ではありません。</p>
+<h2>発表の意義と限界</h2>
+<p>今回の新しさは、GaNを使った高電流POL電源について、宇宙処理系を想定した放射線評価を付け、量産数量で供給可能だとMicrochipが表明した点です。高性能なFPGAやASICを衛星へ搭載するには、計算性能だけでなく、放射線、熱、電磁ノイズ、電力変換を同時に管理する必要があります。電源の小型化や高電流化は、その設計余地を広げる可能性があります。</p>
+<p>一方で、<strong>製品発表、供給計画、独立した実証結果は同じではありません</strong>。量産数量で供給可能という説明は販売計画や供給案内を示しますが、在庫量、納期、採用顧客、宇宙飛行実績までは確認できません。効率曲線、SEE試験の粒子条件、故障モード、サンプル数、試験機関、放射線照射後の具体的な電気特性値も、今回確認できた資料にはありません。</p>
+<p>NASAの設計知識ベースが示すように、放射線リスクは軌道や遮蔽から環境を見積もり、部品レベルのTID・SEE評価を回路、システム構成、ソフトウェアの故障対策へ反映して判断します。そのため、この製品の数値だけで衛星の寿命や信頼性を断定することはできません。<a href="https://s3vi.ndc.nasa.gov/ssri-kb/topics/21/">NASA Spacecraft Systems Resilience and Integrity Knowledge Base</a></p>
+<h2>今後の注目点</h2>
+<ul>
+<li>効率曲線、スイッチング周波数、負荷急変時の応答など、電源としての詳細データが公開されるか。</li>
+<li>SEE試験の粒子条件、試験サンプル数、故障モード、放射線後の性能変化が明らかになるか。</li>
+<li>実際の衛星や宇宙機での採用、飛行実績、ミッション期間が確認できるか。</li>
+<li>量産供給の表明が、実際の在庫、納期、認定プロセスにつながっているか。</li>
+<li>GaNの小型・高電力密度という利点が、熱設計やEMI対策を含むシステム全体で確認されるか。</li>
+</ul>
+<p>2026年10月15日時点で中心となる情報はMicrochip自身の製品発表です。したがって現段階では、「宇宙用の耐放射線GaN POLコンバーターを量産数量で供給開始するとMicrochipが発表した」と整理するのが適切です。今後、データシート、独立試験、採用実績が公開されれば、発表仕様から実際の宇宙機設計での価値をより具体的に評価できます。</p>
+<h2>出典</h2>
+<ul>
+<li><a href="https://www.microchip.com/en-us/about/news-releases/products/microchip-expands-space-power-portfolio-with-new-radiation-tolerant-gan-pol-converter">Microchip Technology「Microchip Expands Space Power Portfolio with New Radiation-Tolerant GaN Point-of-Load Converter」</a></li>
+<li><a href="https://ntrs.nasa.gov/citations/20210024100">NASA Engineering and Safety Center Technical Bulletin No. 19-01-1</a></li>
+<li><a href="https://lws-set.gsfc.nasa.gov/space_radiation.html">NASA Goddard Space Flight Center「What is Space Radiation?」</a></li>
+<li><a href="https://s3vi.ndc.nasa.gov/ssri-kb/topics/21/">NASA Spacecraft Systems Resilience and Integrity Knowledge Base「Radiation Analysis」</a></li>
+<li><a href="https://www.microchip.com/en-us/products/power-management/voltage-current-power-conversion/dc-dc-switching-converters-and-controllers/dc-dc-switching-converters-and-regulators/space-grade-dc-dc-converters">Microchip Technology「Space-Grade DC-DC Converters」</a></li>
+</ul>

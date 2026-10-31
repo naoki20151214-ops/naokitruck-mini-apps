@@ -1,0 +1,182 @@
+<!--KEEP:0-->
+<div class="semicon-article" id="semicon-top">
+<div class="semicon-level">
+<div class="semicon-level-top"><span class="semicon-level-label">学習レベル</span><strong class="semicon-stars" aria-label="初級（5段階中の1）"><span class="on">★</span><span class="off">☆☆☆☆</span><span>初級</span></strong></div>
+</div>
+<div class="semicon-lead">
+<p>運転中の車で、エンジンの音が、いつもと少し違う気がした。でも、警告灯はまだ点いていない。そんな経験はないでしょうか。車は、走っている間じゅう、速度や温度など、たくさんの数字を記録しています。警告灯が点く前の記録を見返せば、「いつ頃から、少しずつ変わっていたか」が分かるかもしれません。</p>
+<p>半導体の製造装置でも、同じことが行われています。装置は、ウェハを処理している間じゅう、圧力や温度などの数字を、休みなく記録しています。この記録を使って、装置の異常や、その兆しを見つける方法が「FDC」です。<strong class="semicon-key">先に答えを言うと、FDCは、装置の中を、数字の記録から見張る方法です。</strong></p>
+</div>
+<div class="semicon-note">
+<p>車の例が合っているのは、「警告が出る前の記録に、変化の手がかりがある」という点だけです。車と、半導体の製造装置は、別のものです。</p>
+</div>
+<div class="semicon-map">
+<h3>この記事でわかること</h3>
+<ol>
+<li><strong>この記事の目的：</strong>装置が記録する数字から、異常の兆しを見つけるFDCのしくみを、つかむこと</li>
+<li>FDC（装置の異常を見つけて分類する方法）と、装置のセンサー記録の意味</li>
+<li>記録から「指標」を作り、基準と比べて異常に気づくしくみ</li>
+<li>小さな変化が、歩留まりや電気の性能につながった事例</li>
+</ol>
+</div>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep108-blog-01-flow.png" alt="FDCの流れを、装置の処理、センサーの記録、指標へのまとめ、基準との比較、警報と原因調べの順に示した概念図"><figcaption>FDCの流れを表した模式図。説明用の流れで、特定の工場や装置の手順ではありません。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>装置が処理しながら、センサーが数字を記録する</li>
+<li>記録を指標にまとめて、基準と比べる</li>
+<li>基準から外れたら、警報と原因調べにつなげる</li>
+</ul>
+</div>
+<div class="semicon-chat-row naoki">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">助手</div>
+</div>
+<div class="semicon-bubble">
+<p>博士、FDCって、何をするものですか？</p>
+</div>
+</div>
+<div class="semicon-chat-row teacher">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">博士</div>
+</div>
+<div class="semicon-bubble">
+<p>装置が処理しながら記録した数字を使って、異常の兆しを見つけるんじゃ。</p>
+</div>
+</div>
+<div class="semicon-chat-row naoki">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">助手</div>
+</div>
+<div class="semicon-bubble">
+<p>警報が出てからでは、遅いのですか？</p>
+</div>
+</div>
+<div class="semicon-chat-row teacher">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">博士</div>
+</div>
+<div class="semicon-bubble">
+<p>警報の前の記録に、手がかりが残っていることがあるんじゃ。順に、見ていこう。</p>
+</div>
+</div>
+<h2 class="wp-block-heading" data-fact-ids="C01">装置は、処理しながら、数字を記録している</h2>
+<p>半導体のウェハは、装置の中で、薄い膜をつけたり、削ったりして、少しずつ加工されます。装置の内側は、ふつうは外から見えません。そこで、装置には、たくさんのセンサーがついています。センサーとは、温度や圧力などを、数字として測る部品のことです。</p>
+<p>PDF Solutions（半導体のデータ解析の会社）の解説によると、ウェハの処理中に、装置から集めた、時間の順に並んだセンサーの信号があります。圧力、温度、ガスの流量、RF電力（プラズマを作るための電気の力）、動き、タイミングなどです。この時間の順に並んだ数字の記録を、「トレース」と呼びます。</p>
+<p>トレースだけでは、どの装置の、どの場面の記録か分かりません。そこで、「どの装置か」「どの部屋（チャンバー）か」「どのレシピ（作り方の手順書）か」「どのステップか」という情報も、一緒に残します。この二つが合わさると、「工程が、実際にどう進んだか」の詳しい記録になります。</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep108-blog-02-trace.png" alt="センサーの数字を時間の順に並べた記録の波形と、決まった区間の平均を指標にまとめる概念図"><figcaption>センサーの記録（トレース）から、指標を作る様子の模式図。波形は説明用で、実測データではありません。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>横は時間、縦はセンサーの数字</li>
+<li>決まった区間の平均などを、指標にまとめる</li>
+<li>波形全体ではなく、指標で見張るのがふつう</li>
+</ul>
+</div>
+<h2 class="wp-block-heading" data-fact-ids="C03 C05">FDCは、基準と比べて、異常に気づく方法</h2>
+<p>FDCは、Fault Detection and Classificationの略です。日本語にすると、「故障の検出と分類」です。装置の動きを見張り、異常を見つけ、その種類を分けることを指します。</p>
+<p>ただし、波形を、毎回、すべて人の目で見るのは大変です。そこで、PDF Solutionsの解説によると、ふつうは、レシピの各ステップの中の、決まった時間の区間（ウィンドウ）から、「指標」を計算します。指標とは、波形を、少ない数字にまとめたものです。平均、最大、最小、ばらつき（標準偏差）、傾き、安定性などがあります。</p>
+<p>次に、その指標を、過去の基準線や管理限界と比べます。基準は、「正常なときの装置の動き」を表すものです。品質の良い製品が得られた運転で集めたデータを、「良い装置状態」のデータとして基準にして、あとから集めたデータを、その基準と比べる、という考え方があります。</p>
+<h2 class="wp-block-heading" data-fact-ids="C04">指標が限界を超えると、警報が出る</h2>
+<p>PDF Solutionsの解説は、従来のFDCが答える問いの例を挙げています。</p>
+<ul>
+<li>チャンバーの圧力は、想定の範囲に入っているか。</li>
+<li>RF電力は、ステップの間、安定しているか。</li>
+<li>ガスの流量は、想定どおりに立ち上がり、落ち着くか。</li>
+<li>温度の動きは、確認済みの条件と合っているか。</li>
+</ul>
+<p><strong class="semicon-key">指標が限界を超えると、警報が出ます。</strong>警報のあとは、そのウェハに印をつける、技術者に知らせる、チャンバーを止める、といった対応につながる場合があります。</p>
+<h2 class="wp-block-heading" data-fact-ids="C02">本当に怖いのは、ゆっくりした変化</h2>
+<p>歩留まり（良品の割合）や電気の性能の問題は、いきなり壊れて始まるとは限りません。PDF Solutionsの解説は、多くの場合、装置の動きの、小さく、ゆっくりした変化から始まる、と説明しています。たとえば、次のようなものです。</p>
+<ul>
+<li>少しずつずれていく「ドリフト」</li>
+<li>同じ種類のチャンバーどうしの動きの違い</li>
+<li>制御の反応が鈍くなること</li>
+<li>保全（メンテナンス）のあとに起きる変化</li>
+</ul>
+<p>こうしたずれは、警報にも、工程の途中の測定にも、長いあいだ見えないままのことがあります。<strong class="semicon-key">それでも、ずれは積み重なって、あとで歩留まりや電気の性能に出ます。</strong>装置のトレースは、これらの変化を、いちばん早く見つけられる場所であることが多い、と書かれています。</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep108-blog-03-drift.png" alt="保全のあとから、指標の点が少しずつ上にずれていくが、まだ上の線の内側にある様子の概念図"><figcaption>保全のあとに、指標が少しずつずれる様子の模式図。点の位置は説明用で、実測データではありません。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>保全のあと、点が少しずつ上にずれる</li>
+<li>まだ上の線の内側なので、警報は出ない</li>
+<li>でも、並びを見ると、ずれ始めに気づける</li>
+</ul>
+</div>
+<p>この図は、説明のための模式図です。指標の点は、保全のあとで、ゆっくり上向きにずれています。それでも、上の線の内側にあるうちは、警報は出ません。</p>
+<h2 class="wp-block-heading" data-fact-ids="C06">事例：保全のあとの小さなずれが、電気の性能とつながった</h2>
+<p>PDF Solutionsの解説には、ある顧客での事例が紹介されています。技術者たちは、FDCの指標と、電気試験の結果を組み合わせて、相関（一緒に動く関係）を並べて調べました。すると、トランジスタの「リーク電流」（流れてほしくない電流）と、スペーサーエッチという工程の特定のステップで測った「反射電力」の指標に、強い関係が見つかりました。</p>
+<p>その指標の動きを時間の順に見ると、定期の予防保全（PM）の直後から、上向きにずれていました。そこで、指標の傾向から、元になった生のトレースへ掘り下げ、保全の前後で、センサーの動きを比べています。</p>
+<p>この分析から、関連するセンサーの管理の規格を厳しくする、保全の手順を変える、慣らし運転（シーズニング）を足す、チャンバーを生産に戻す前にFDCの信号の安定を確かめる、といった対策がとられた、と書かれています。</p>
+<h2 class="wp-block-heading" data-fact-ids="C07 C08">測定と記録は、おたがいを補う</h2>
+<p>工程の途中で、できあがった寸法などを測る「工程内測定」は、人が決めた測定の手順に基づきます。そのため、工程の動きが変わっても、測定の結果は、安定したままのことがある、とPDF Solutionsは説明しています。測定の結果は、レシピが敏感に反応する部分を表すだけで、変化のすべてを映すとは限らないからです。</p>
+<p><strong class="semicon-key">だから、装置の記録を見るFDCと、できあがりを測る測定は、おたがいを補い合います。</strong></p>
+<p>なお、SPC（数字を管理図に並べて見張る方法）だけでは、重要な異常を見逃すことがあります。仕組みは<a href="https://semicon-campus.com/what-is-spc-semiconductor-process-control/">SPC（統計的工程管理）とは何か</a>で紹介しています。その効果は、記録を要約した数字（指標）の質に、大きく左右されます。</p>
+<p>PDF Solutionsの解説も、「指標の質は、モデルの複雑さより大切」と述べています。実際の工程の動きを反映していて、工程を理解した時間の区間で計算され、技術者が意味を読み取れる指標が必要、ということです。</p>
+<div class="semicon-cta">
+<h3>FDCを、仕事の面から</h3>
+<p>FDCのような見張りを担当する仕事を知りたい方は、こちらの記事を読んでみてください。</p>
+<div class="semicon-btnrow"><a class="semicon-btn" href="https://semicon-campus.com/semiconductor-career-map/">半導体製造の仕事を工程別に見てみる</a></div>
+</div>
+<p>設備の調整や復旧は、所属する工場やメーカーの正式な手順と、権限のある人の判断のもとで行います。この記事は、見方を紹介するもので、設備の操作を指示するものではありません。</p>
+<h2 class="wp-block-heading">ことばのおさらい</h2>
+<p>この記事に出てきた言葉を、やさしい言い方で、もう一度まとめます。むずかしく感じたら、この一覧に戻って、読み返してください。</p>
+<ul>
+<li><strong>FDC：</strong>装置の記録から、異常を見つけて、種類を分ける方法です。</li>
+<li><strong>センサー：</strong>温度や圧力などを、数字として測る部品です。</li>
+<li><strong>トレース：</strong>センサーの数字を、時間の順に並べた記録です。</li>
+<li><strong>レシピ：</strong>装置に、どう処理させるかを書いた、手順書です。</li>
+<li><strong>チャンバー：</strong>ウェハを処理する、装置の中の部屋です。</li>
+<li><strong>指標：</strong>波形を、平均などの少ない数字にまとめたものです。</li>
+<li><strong>ドリフト：</strong>数字が、ゆっくり、少しずつずれていくことです。</li>
+<li><strong>予防保全（PM）：</strong>故障する前に、決めた時期に行う、点検や部品交換です。</li>
+</ul>
+<h2 class="wp-block-heading">よくある誤解</h2>
+<h3>Q. 警報が出なければ、装置は正常ですか？</h3>
+<p>そうとは限りません。ゆっくりした変化は、警報にも、途中の測定にも、長いあいだ見えないことがあります。警報の前の記録に、手がかりが残っている場合があります。</p>
+<h3>Q. FDCは、センサーの波形を、すべて見ているのですか？</h3>
+<p>従来のFDCは、波形全体ではなく、ステップの中の決まった区間から計算した、平均などの指標を見るのがふつうです。波形そのものは、原因を調べるときに掘り下げて見ます。</p>
+<h3>Q. 測定をしていれば、FDCは要りませんか？</h3>
+<p>おたがいを補う関係です。測定の結果は、工程が変わっても、安定したままのことがあります。装置の記録は、その変化に気づく手がかりになります。</p>
+<h2 class="wp-block-heading">まとめ：FDCは、装置の記録から、異常の兆しを見つける</h2>
+<div class="semicon-lead">
+<p>FDCは、装置が処理中に記録するセンサーの数字から、異常を見つけて分ける方法です。<br />記録から作った指標を、正常なときの基準と比べて、ゆっくりした変化にも気づきます。<br />測定とおたがいに補い合い、原因を調べる手がかりになります。</p>
+</div>
+<div class="semicon-cta">
+<h3>YouTubeでも、半導体をやさしく解説しています</h3>
+<p>図解で復習したい人向けに、YouTubeでも半導体製造を短く解説しています。</p>
+<div class="semicon-btnrow"><a rel="noopener" class="semicon-btn secondary" href="https://www.youtube.com/@semicon-campus" target="_blank">YouTubeで図解動画を見る</a></div>
+</div>
+<h2 class="wp-block-heading">参考にした公式情報</h2>
+<ul class="semicon-sources">
+<li data-source-id="S01"><a href="https://www.pdf.com/analysis-ready-fdc-in-the-age-of-ai-and-big-data-semiconductor-manufacturing/">PDF Solutions「Analysis‑Ready FDC in the Age of AI and Big‑Data Semiconductor Manufacturing」</a></li>
+<li data-source-id="S02"><a href="https://patents.google.com/patent/US7477960B2/en">Tokyo Electron特許 US 7,477,960 B2「Fault detection and classification (FDC) using a run-to-run controller」</a></li>
+<li data-source-id="S03"><a href="https://patents.google.com/patent/US11609812B2/en">PDF Solutions特許 US 11,609,812 B2「Anomalous equipment trace detection and classification」</a></li>
+</ul>
+<section class="semicon-correction-form">
+<h2>質問・訂正フォーム</h2>
+<p>この記事の内容に誤りや、分かりにくい点があれば、下のフォームからお知らせください。確認して、記事を直します。</p>
+<div class="semicon-form-shortcode">
+<div class="wpcf7 no-js" id="wpcf7-f2045-o10" lang="ja" dir="ltr" data-wpcf7-id="2045">
+<div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
+<form action="/?rest_route=%2Fwp%2Fv2%2Fposts&#038;per_page=100&#038;page=1&#038;context=view#wpcf7-f2045-o10" method="post" class="wpcf7-form init" aria-label="コンタクトフォーム" novalidate="novalidate" data-status="init">
+<fieldset class="hidden-fields-container"><input type="hidden" name="_wpcf7" value="2045" /><input type="hidden" name="_wpcf7_version" value="6.1.6" /><input type="hidden" name="_wpcf7_locale" value="ja" /><input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f2045-o10" /><input type="hidden" name="_wpcf7_container_post" value="0" /><input type="hidden" name="_wpcf7_posted_data_hash" value="" />
+</fieldset>
+<p>お名前・電話番号・住所の入力は不要です。工場名や社外秘の情報は記載しないでください。
+</p>
+<p><label>報告の種類（必須） <span class="wpcf7-form-control-wrap" data-name="report-type"><select class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required" aria-required="true" aria-invalid="false" name="report-type"><option value="誤りと思われる点">誤りと思われる点</option><option value="分かりにくい箇所">分かりにくい箇所</option><option value="追加してほしい説明・質問">追加してほしい説明・質問</option></select></span></label><br />
+<label>該当する見出し・文章（任意） <span class="wpcf7-form-control-wrap" data-name="report-section"><input size="40" maxlength="200" class="wpcf7-form-control wpcf7-text" aria-invalid="false" value="" type="text" name="report-section" /></span></label><br />
+<label>内容（必須） <span class="wpcf7-form-control-wrap" data-name="report-message"><textarea cols="40" rows="10" maxlength="3000" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" aria-required="true" aria-invalid="false" name="report-message"></textarea></span></label><br />
+<label>返信用メールアドレス（返信をご希望の場合のみ・任意） <span class="wpcf7-form-control-wrap" data-name="report-email"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-email wpcf7-text wpcf7-validates-as-email" autocomplete="email" aria-invalid="false" value="" type="email" name="report-email" /></span></label>
+</p>
+<p>ご意見は記事の確認・改善のために利用します。<a href="https://semicon-campus.com/privacy-policy/">個人情報の取り扱い</a>をご確認ください。
+</p>
+<p><input class="wpcf7-form-control wpcf7-submit has-spinner" type="submit" value="ご意見・訂正報告を送信" />
+</p><div class="wpcf7-response-output" aria-hidden="true"></div>
+</form>
+</div>
+</div>
+</section>
+</div>

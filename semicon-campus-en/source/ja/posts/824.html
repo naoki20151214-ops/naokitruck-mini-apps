@@ -1,0 +1,160 @@
+
+<!--KEEP:0-->
+
+
+<!--KEEP:1-->
+
+<!--
+Episode: 058
+Research Pack: episode-058-dark-mode-power-saving-research-20260905
+Article title: ダークモードは本当にスマホの電池を節約できる？OLEDとLCDの違いを解説
+Slug: does-dark-mode-save-smartphone-battery
+Meta description: ダークモードはスマホの電池を節約できるのか。OLEDでは暗い画素の発光電流が減り、LCDではバックライトが点灯し続ける理由を、画面輝度や表示内容との関係とともに初心者向けに解説します。
+Primary category: 半導体の基礎
+Tags: YouTube深掘り
+Status: final
+Shorts video: xZL3GnemB10 / 2026-09-12 19:30 JST
+-->
+
+
+<!--KEEP:2-->
+<article class="s58b" data-episode="058" data-research-pack="episode-058-dark-mode-power-saving-research-20260905" data-status="final" data-image-policy="lightweight-v1">
+
+
+
+<p class="wp-block-paragraph">スマホの背景を黒くすると、電池は長持ちするのでしょうか。<br>答えは、画面がOLEDかLCDか、そしてどれだけ暗い部分が広いかで変わります。<br><strong>OLEDでは条件次第で節電になりますが、LCDでは効果が小さいことが多く、画面輝度やアプリの内容も大きく関係します。</strong></p>
+
+
+
+<div class="s58b-answer"><span class="s58b-kicker">先に結論</span><br><strong>OLEDは画素そのものが光るため、暗い画素の発光電流を減らせます。一般的なLCDは背面のバックライトで画面を照らし、液晶で光を遮って黒を作るため、黒背景に変えてもバックライトの電力は大きく減りにくい仕組みです。</strong><br>ただし、スマホ全体にはSoC、通信、タッチ回路などの電力もあるので、パネルの差がそのまま電池持ちの伸びになるわけではありません。</div>
+<div class="s58b-points"><div class="s58b-card"><b>OLED</b>画素ごとに光る。暗い表示では発光電流を抑えやすい。</div><div class="s58b-card"><b>LCD</b>後ろのバックライトが光る。黒は光を通しにくくして作る。</div><div class="s58b-card"><b>共通の注意</b>輝度、表示面積、動画、更新回数、端末負荷で結果が変わる。</div></div>
+<figure class="s58b-media" data-media-role="explanatory-image-01"><svg viewBox="0 0 760 340" role="img" aria-label="ダークモードの効果をOLEDとLCDで比較する因果図"><rect width="760" height="340" fill="#eef8fc"/><text x="380" y="42" text-anchor="middle" font-size="27" font-weight="700" fill="#172635">同じダークモードでも経路が違う</text><defs><marker id="s58a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0v6l9-3z" fill="#176b9e"/></marker></defs><g text-anchor="middle" font-size="18" fill="#172635"><rect x="28" y="105" width="205" height="100" rx="16" fill="#fff3e7" stroke="#e8893a" stroke-width="3"/><text x="130" y="145">ダークな配色</text><text x="130" y="177">暗い面積が増える</text><rect x="278" y="78" width="190" height="155" rx="16" fill="#eaf6fd" stroke="#176b9e" stroke-width="3"/><text x="373" y="120" font-weight="700">OLED</text><text x="373" y="153">暗い画素の</text><text x="373" y="182">発光電流が減る</text><rect x="278" y="250" width="190" height="55" rx="14" fill="#f8fafc" stroke="#596b78" stroke-width="2"/><text x="373" y="284" font-size="15">効果は条件付き</text><rect x="513" y="105" width="215" height="100" rx="16" fill="#eaf7f1" stroke="#2b7a5b" stroke-width="3"/><text x="620" y="145" font-weight="700">一般的なLCD</text><text x="620" y="177">バックライトは主に点灯</text></g><g stroke="#176b9e" stroke-width="6" marker-end="url(#s58a)"><path d="M233 155h38"/><path d="M468 155h38"/></g><text x="380" y="326" text-anchor="middle" font-size="16" fill="#596b78">画面方式が、節電の最初の分かれ道</text></svg><figcaption>ダークモードの効果は、配色の名前ではなく、画面の光り方によって決まります。</figcaption></figure>
+
+
+
+
+<h2 class="wp-block-heading">ダークモードとは、画面の配色を暗くする機能</h2>
+
+
+<p class="wp-block-paragraph">ダークモードは、明るい背景と暗い文字を中心にした画面を、暗い背景と明るい文字を中心にした配色へ切り替える機能です。スマホの設定、アプリ、Webサイトがそれぞれ対応している場合に使えます。ただし、「ダーク」と呼ばれていても、背景がすべてRGB 0,0,0の完全な黒になるとは限りません。濃い灰色を使うデザインもあります。</p>
+<p>ここで大切なのは、ダークモードをONにしただけでは、画面に表示される光の量までは決まらないことです。文章の背景は暗くなっても、写真や動画、広告、アイコンの面積は変わらない場合があります。アプリがOSのテーマに対応していなければ、画面の一部だけが明るいままのこともあります。</p>
+<figure class="s58b-media" data-media-role="explanatory-image-02"><svg viewBox="0 0 760 330" role="img" aria-label="ライトモードとダークモードで背景、文字、写真の表示が変わる模式図"><rect width="760" height="330" fill="#f8fbfd"/><text x="380" y="38" text-anchor="middle" font-size="25" font-weight="700" fill="#172635">「暗いテーマ」と「完全な黒」は同じではない</text><rect x="55" y="75" width="285" height="185" rx="14" fill="#fff" stroke="#cbdce6" stroke-width="3"/><rect x="55" y="75" width="285" height="38" rx="14" fill="#e8edf1"/><text x="197" y="101" text-anchor="middle" font-size="17" fill="#172635">ライトモード</text><text x="85" y="145" font-size="17" fill="#172635">明るい背景</text><rect x="85" y="162" width="165" height="18" rx="8" fill="#d7e8f1"/><rect x="85" y="192" width="210" height="18" rx="8" fill="#e8893a"/><circle cx="285" cy="145" r="30" fill="#95c8df"/><rect x="420" y="75" width="285" height="185" rx="14" fill="#253745" stroke="#176b9e" stroke-width="3"/><rect x="420" y="75" width="285" height="38" rx="14" fill="#344c5d"/><text x="562" y="101" text-anchor="middle" font-size="17" fill="#fff">ダークテーマの一例</text><text x="450" y="145" font-size="17" fill="#fff">暗い灰色の背景</text><rect x="450" y="162" width="165" height="18" rx="8" fill="#4b6475"/><rect x="450" y="192" width="210" height="18" rx="8" fill="#f4c68f"/><circle cx="650" cy="145" r="30" fill="#8fc1d8"/><text x="380" y="306" text-anchor="middle" font-size="15" fill="#596b78">写真・動画・広告が暗くなるとは限らない</text></svg><figcaption>ダークモードは配色テーマです。暗い部分の広さや、完全な黒と濃い灰色の割合はアプリごとに異なります。</figcaption></figure>
+
+
+
+<h2 class="wp-block-heading">OLEDは画素が自分で光るので、暗い表示で電力が変わる</h2>
+
+
+<p class="wp-block-paragraph">OLEDは有機ELとも呼ばれる、自発光型のディスプレイです。液晶のように画面全体を後ろから照らすのではなく、赤・緑・青のサブピクセルにある発光素子が、それぞれ光を出します。サブピクセルは画素を色ごとに分けた小さな単位です。</p>
+<p>OLEDの有機発光層では、電極から入った電子と正孔が出会って発光につながります。画素回路はサブピクセルへ流す電流を制御し、電流と発光の明るさが強く関係します。だから、黒や暗い色を表示するときは、発光電流を止める、または小さくすることができます。暗い面積が広いほど、発光に使う動的なパネル電力を減らしやすくなります。</p>
+<figure class="s58b-media" data-media-role="explanatory-image-03"><svg viewBox="0 0 760 360" role="img" aria-label="OLEDのRGBサブピクセルが個別に発光し暗い画素で電流を減らす模式図"><rect width="760" height="360" fill="#eef8fc"/><text x="380" y="40" text-anchor="middle" font-size="26" font-weight="700" fill="#172635">OLEDは画素ごとに光を調整する</text><g transform="translate(80 90)"><rect width="250" height="190" rx="16" fill="#253745" stroke="#176b9e" stroke-width="4"/><g transform="translate(35 35)"><rect width="48" height="110" rx="10" fill="#ef756f"/><rect x="65" width="48" height="110" rx="10" fill="#80c98d"/><rect x="130" width="48" height="110" rx="10" fill="#7db4e0"/></g><text x="125" y="170" text-anchor="middle" font-size="17" fill="#fff">RGBサブピクセル</text></g><g transform="translate(430 90)"><rect width="250" height="190" rx="16" fill="#fff" stroke="#e8893a" stroke-width="4"/><g transform="translate(35 35)"><rect width="48" height="110" rx="10" fill="#344c5d"/><rect x="65" width="48" height="110" rx="10" fill="#526b7a"/><rect x="130" width="48" height="110" rx="10" fill="#263b4a"/></g><text x="125" y="170" text-anchor="middle" font-size="17" fill="#172635">暗い表示</text></g><path d="M335 180h80" stroke="#176b9e" stroke-width="7" marker-end="url(#s58a)"/><text x="380" y="330" text-anchor="middle" font-size="16" fill="#596b78">暗い画素では発光に使う電流を小さくしやすい</text></svg><figcaption>OLEDでは、画素ごとの発光電流が表示の明るさと関係します。暗い表示ほどパネル電力を減らせる余地があります。</figcaption></figure>
+
+
+
+<h2 class="wp-block-heading">OLEDの黒でも、ディスプレイ全体の電力がゼロになるわけではない</h2>
+
+
+<p class="wp-block-paragraph">「黒い画素の発光が止まる」と「画面モジュールが電力を使わない」は別の話です。画素には、表示データを保持して電流を制御するTFTやコンデンサがあります。画面を更新する走査回路、行と列のドライバIC、電源変換回路、タッチ検出回路も動作します。</p>
+<p>そのため、完全な黒は発光素子の電力を抑えやすい一方で、周辺回路の電力まで消えるわけではありません。スマホ全体で見ると、SoCという演算用の半導体や通信も動いています。ダークモードで減るのは、主に画面表示のうち条件に合う部分です。</p>
+<figure class="s58b-media" data-media-role="explanatory-image-04"><svg viewBox="0 0 760 350" role="img" aria-label="黒いOLED画面でも画素回路、ドライバ、タッチ、電源、端末回路が動くことを示す層構造図"><rect width="760" height="350" fill="#f8fbfd"/><text x="380" y="38" text-anchor="middle" font-size="25" font-weight="700" fill="#172635">黒いOLED画面にも残る仕事</text><g font-size="17" text-anchor="middle"><rect x="80" y="75" width="600" height="38" rx="10" fill="#273a49"/><text x="380" y="101" fill="#fff">発光素子：暗い画素では電流を抑えやすい</text><rect x="80" y="125" width="600" height="38" rx="10" fill="#a9d6bd"/><text x="380" y="151" fill="#172635">TFT・コンデンサ：データと電流を制御</text><rect x="80" y="175" width="600" height="38" rx="10" fill="#b9dcea"/><text x="380" y="201" fill="#172635">走査・ドライバIC：画面を更新</text><rect x="80" y="225" width="600" height="38" rx="10" fill="#f4c68f"/><text x="380" y="251" fill="#172635">タッチ・電源変換：入力と電圧を支える</text><rect x="80" y="275" width="600" height="38" rx="10" fill="#e5edf2"/><text x="380" y="301" fill="#172635">SoC・通信：スマホ全体の仕事</text></g></svg><figcaption>黒いOLEDで減りやすいのは発光に関係する電力です。固定的な回路や端末全体の負荷は残ります。</figcaption></figure>
+
+
+
+<h2 class="wp-block-heading">LCDはバックライトで照らし、液晶で黒を作る</h2>
+
+
+<p class="wp-block-paragraph">一般的なLCDでは、液晶そのものは光りません。画面の後ろにあるLEDバックライトが光を作り、液晶と偏光板がその光をどれだけ通すかを調整します。明るい部分は光を通し、黒い部分は光を通しにくくすることで、画面の明暗を作る方式です。</p>
+<p>したがって、バックライトの明るさを同じにしたまま白い背景を黒い背景へ変えても、バックライトが使う主要な電力は大きく変わりにくいのが基本です。黒く見える場所の後ろでも、光源そのものは点灯し続けていることが多いからです。これが、OLEDとLCDでダークモードの効果が違う中心理由です。</p>
+<figure class="s58b-media" data-media-role="explanatory-image-05"><svg viewBox="0 0 760 360" role="img" aria-label="LCDのバックライト、液晶、偏光板、画面表面の順に光が進む構造図"><rect width="760" height="360" fill="#eef8fc"/><text x="380" y="40" text-anchor="middle" font-size="26" font-weight="700" fill="#172635">LCDで黒が見えるまで</text><g font-size="18" text-anchor="middle"><rect x="90" y="90" width="150" height="150" rx="12" fill="#f4c68f" stroke="#e8893a" stroke-width="3"/><text x="165" y="150" fill="#172635">LED</text><text x="165" y="180" fill="#172635">バックライト</text><rect x="290" y="90" width="150" height="150" rx="12" fill="#b9dcea" stroke="#176b9e" stroke-width="3"/><text x="365" y="150" fill="#172635">液晶</text><text x="365" y="180" fill="#172635">光を調整</text><rect x="490" y="90" width="150" height="150" rx="12" fill="#a9d6bd" stroke="#2b7a5b" stroke-width="3"/><text x="565" y="150" fill="#172635">偏光板</text><text x="565" y="180" fill="#172635">透過を調整</text></g><g stroke="#e8893a" stroke-width="8" marker-end="url(#s58a)"><path d="M240 165h40"/><path d="M440 165h40"/></g><text x="380" y="292" text-anchor="middle" font-size="19" fill="#172635">黒＝光を通しにくくする</text><text x="380" y="325" text-anchor="middle" font-size="16" fill="#596b78">バックライトの設定が同じなら、光源の電力は主に残る</text></svg><figcaption>LCDは、後ろの光を液晶と偏光板で調整します。黒い画面でも、一般的な固定バックライトは点灯し続けます。</figcaption></figure>
+
+
+
+<h2 class="wp-block-heading">LCDにも、表示内容でバックライトを下げる例外がある</h2>
+
+
+<p class="wp-block-paragraph">「LCDでは差が完全にない」と言い切ることもできません。表示内容に応じてバックライトを下げ、液晶側の表示を補正する<strong>内容適応型バックライト制御</strong>を備えた製品があります。また、バックライトを画面全体ではなく複数の領域に分け、暗い領域の後ろを弱めるローカルディミングを使う構成もあります。</p>
+<p>ただし、ローカルディミングは通常、一画素ごとではなくバックライトのゾーン単位で制御します。暗いUIが表示されても、そのゾーンの大きさや制御方式によって結果が変わります。つまり、LCDの節電は「液晶の黒い画素が自ら消える」からではなく、バックライト制御が実際に働くかどうかが条件になります。</p>
+<figure class="s58b-media" data-media-role="explanatory-image-06"><svg viewBox="0 0 760 360" role="img" aria-label="固定バックライトとローカルディミング対応LCDで暗い領域の光源制御が違う模式図"><rect width="760" height="360" fill="#f8fbfd"/><text x="380" y="38" text-anchor="middle" font-size="25" font-weight="700" fill="#172635">LCDのバックライト制御には差がある</text><g><rect x="55" y="78" width="285" height="195" rx="14" fill="#fff" stroke="#cbdce6" stroke-width="3"/><text x="197" y="108" text-anchor="middle" font-size="18" font-weight="700" fill="#172635">固定バックライトの例</text><g fill="#f4c68f" stroke="#e8893a"><rect x="88" y="135" width="85" height="55"/><rect x="178" y="135" width="85" height="55"/><rect x="88" y="195" width="85" height="55"/><rect x="178" y="195" width="85" height="55"/></g><rect x="178" y="135" width="85" height="55" fill="#526b7a" stroke="#176b9e" stroke-width="3"/><text x="197" y="292" text-anchor="middle" font-size="15" fill="#596b78">暗い表示でも全体が点灯</text></g><g><rect x="420" y="78" width="285" height="195" rx="14" fill="#fff" stroke="#cbdce6" stroke-width="3"/><text x="562" y="108" text-anchor="middle" font-size="18" font-weight="700" fill="#172635">領域制御の例</text><g fill="#f4c68f" stroke="#e8893a"><rect x="453" y="135" width="85" height="55"/><rect x="543" y="135" width="85" height="55"/><rect x="453" y="195" width="85" height="55"/><rect x="543" y="195" width="85" height="55"/></g><rect x="543" y="135" width="85" height="55" fill="#526b7a" stroke="#176b9e" stroke-width="3"/><rect x="543" y="195" width="85" height="55" fill="#526b7a" stroke="#176b9e" stroke-width="3"/><text x="562" y="292" text-anchor="middle" font-size="15" fill="#596b78">暗いゾーンを弱めることがある</text></g></svg><figcaption>LCDでも内容適応型バックライト制御やローカルディミングがあれば表示内容による差が出る場合がありますが、対応方式と設定に依存します。</figcaption></figure>
+
+
+
+<h2 class="wp-block-heading">節電効果を左右する第一の条件は画面輝度</h2>
+
+
+<p class="wp-block-paragraph">OLEDでは、同じダークモードでも画面輝度が高いほどライトモードとの差が大きくなりやすい傾向があります。明るい背景を強く発光させていると、暗い配色へ切り替えたときに減らせる発光電流の余地が大きくなるためです。一方、もともと低輝度ならライトモードの発光電力も小さく、切り替えによる差は小さくなりやすくなります。</p>
+<p>研究の一例では、Purdue大学の2021年研究が、4機種・6アプリを対象に、30〜50％輝度ではダークモードによる端末電力削減を平均3〜9％、100％輝度では平均39〜47％と報告しています。ただし、これは特定端末、特定アプリ、特定の測定条件の結果です。すべてのスマホの日常利用へそのまま当てはめる数値ではありません。</p>
+<p>2026年のGalaxy S23 Ultraを使った研究では、4アプリ全体のダークテーマによる削減が平均1.4％だった一方、輝度設定を0％から100％へ変えたときの平均エネルギーは86.5％増えました。こちらも1機種のソフトウェアベース推定で、普遍的な節電率ではありません。二つの研究結果が違って見えるのは、端末、アプリ、輝度、測定方法が違うからです。</p>
+<figure class="s58b-media" data-media-role="explanatory-image-07"><svg viewBox="0 0 760 390" role="img" aria-label="画面輝度が低い場合と高い場合でライトとダークの差が変わる概念グラフ"><rect width="760" height="390" fill="#f8fbfd"/><text x="380" y="38" text-anchor="middle" font-size="25" font-weight="700" fill="#172635">輝度が変わると、差の見え方も変わる</text><line x1="110" y1="315" x2="680" y2="315" stroke="#596b78" stroke-width="3"/><line x1="110" y1="80" x2="110" y2="315" stroke="#596b78" stroke-width="3"/><text x="395" y="355" text-anchor="middle" font-size="16" fill="#596b78">画面輝度（低 → 高）</text><text x="38" y="205" transform="rotate(-90 38 205)" text-anchor="middle" font-size="16" fill="#596b78">OLED表示電力の概念</text><path d="M125 290 C290 280 430 225 650 95" fill="none" stroke="#e8893a" stroke-width="8"/><path d="M125 285 C300 283 440 267 650 245" fill="none" stroke="#176b9e" stroke-width="8"/><text x="650" y="82" text-anchor="end" font-size="17" fill="#8d4b19">ライトの例</text><text x="650" y="238" text-anchor="end" font-size="17" fill="#075d91">ダークの例</text><text x="160" y="275" font-size="15" fill="#596b78">差は小さめ</text><text x="555" y="160" font-size="15" fill="#596b78">差が広がりやすい</text><text x="380" y="110" text-anchor="middle" font-size="15" fill="#596b78">実際の値は端末と表示内容で変わる</text></svg><figcaption>高輝度ほど差が広がりやすいという一般的傾向を示した概念図です。実際の節電率を保証するグラフではありません。</figcaption></figure>
+
+
+
+<h2 class="wp-block-heading">「黒い画面なら必ず大幅節電」にならない理由</h2>
+
+
+<p class="wp-block-paragraph">第一に、ダークモードの暗い部分が画面全体とは限りません。SNSやWebページに写真が多ければ、写真の中身はそのまま明るいことがあります。動画アプリでは、UIだけが暗くなり、動画そのものの処理や表示は変わらない場合があります。2026年研究でも、文字中心のアプリと動画・メディア中心のアプリでは効果の出方が異なりました。</p>
+<p>第二に、スマホ全体の電力には画面以外の項目が含まれます。画面表示の一部を減らしても、通信やSoCの処理が同じなら、その分の電力は残ります。ディスプレイの削減率と電池持続時間の改善率を同じ数字として扱うのは危険です。</p>
+<p>第三に、完全な黒と濃い灰色は違います。OLEDでは濃い灰色でも白より発光電流を減らせる場合が多いものの、完全な黒ほど発光を抑えられるとは限りません。読みやすさ、見た目、アプリの設計によって濃い灰色が選ばれることもあります。</p>
+<figure class="s58b-media" data-media-role="explanatory-image-08"><svg viewBox="0 0 760 400" role="img" aria-label="スマホ画面を背景、文字、写真、動画、広告に分け、暗くなる面積が節電効果を左右する模式図"><rect width="760" height="400" fill="#eef8fc"/><text x="380" y="38" text-anchor="middle" font-size="25" font-weight="700" fill="#172635">画面のどこが暗くなったかを見る</text><rect x="90" y="70" width="260" height="260" rx="20" fill="#263b4a" stroke="#176b9e" stroke-width="4"/><rect x="115" y="98" width="210" height="62" rx="10" fill="#314e5f"/><text x="220" y="135" text-anchor="middle" font-size="17" fill="#fff">暗い背景</text><rect x="115" y="180" width="90" height="105" rx="10" fill="#8fc1d8"/><text x="160" y="240" text-anchor="middle" font-size="15" fill="#172635">写真</text><rect x="220" y="180" width="105" height="44" rx="10" fill="#f4c68f"/><text x="272" y="208" text-anchor="middle" font-size="14" fill="#172635">文字</text><rect x="220" y="238" width="105" height="47" rx="10" fill="#e8893a"/><text x="272" y="267" text-anchor="middle" font-size="14" fill="#172635">広告・動画</text><g transform="translate(425 86)" font-size="18"><rect width="250" height="52" rx="12" fill="#fff3e7" stroke="#e8893a" stroke-width="2"/><text x="125" y="33" text-anchor="middle" fill="#172635">暗い面積が広い</text><rect y="78" width="250" height="52" rx="12" fill="#eaf6fd" stroke="#176b9e" stroke-width="2"/><text x="125" y="111" text-anchor="middle" fill="#172635">高い輝度で表示</text><rect y="156" width="250" height="52" rx="12" fill="#eaf7f1" stroke="#2b7a5b" stroke-width="2"/><text x="125" y="189" text-anchor="middle" fill="#172635">OLEDの効果が出やすい条件</text><rect y="234" width="250" height="52" rx="12" fill="#f8fafc" stroke="#596b78" stroke-width="2"/><text x="125" y="267" text-anchor="middle" fill="#172635">動画・通信の負荷は別に残る</text></g></svg><figcaption>節電の大きさは「ダークモードをONにしたか」ではなく、暗くなった面積、輝度、端末側の仕事を合わせて考えます。</figcaption></figure>
+
+
+
+<div class="s58b-cta"><strong>ここまでのポイント</strong><br>ダークモードを試すなら、まず自分のスマホがOLEDかLCDかを確認し、明るさを無理のない範囲で調整してみましょう。テーマだけでなく、よく使うアプリの背景や写真・動画の割合を見ると、結果を判断しやすくなります。</div>
+
+
+
+<h2 class="wp-block-heading">リフレッシュレートやSoCの負荷は、別の節電要因</h2>
+
+
+<p class="wp-block-paragraph">リフレッシュレートとは、画面を1秒間に何回書き換えるかを表す値です。ダークモードは主に表示色と画素輝度を変える機能で、リフレッシュレートを自動的に下げる機能ではありません。黒い背景になったから更新回数も減る、と考えるのは別の仕組みを混同しています。</p>
+<p>高いリフレッシュレートでアニメーションやスクロールを表示すると、表示回路やSoCの負荷が増えやすくなります。必要な場面だけ更新回数を上げる可変制御は、ダークモードとは別系統の省電力技術です。動画、ゲーム、通信が重いアプリでは、テーマを変えても端末側の仕事が大きく残ります。</p>
+<figure class="s58b-media" data-media-role="explanatory-image-09"><svg viewBox="0 0 760 350" role="img" aria-label="ダークモードとリフレッシュレートとSoC負荷が別の制御であることを示す三分岐図"><rect width="760" height="350" fill="#f8fbfd"/><text x="380" y="40" text-anchor="middle" font-size="26" font-weight="700" fill="#172635">電力を変える三つの別ルート</text><g text-anchor="middle" font-size="17"><rect x="55" y="100" width="185" height="115" rx="14" fill="#eaf6fd" stroke="#176b9e" stroke-width="3"/><text x="147" y="140" fill="#172635" font-weight="700">ダークモード</text><text x="147" y="174" fill="#172635">色・画素輝度</text><text x="147" y="198" fill="#596b78">主にOLEDの発光</text><rect x="288" y="100" width="185" height="115" rx="14" fill="#fff3e7" stroke="#e8893a" stroke-width="3"/><text x="380" y="140" fill="#172635" font-weight="700">更新レート</text><text x="380" y="174" fill="#172635">書き換え回数</text><text x="380" y="198" fill="#596b78">表示回路の仕事</text><rect x="521" y="100" width="185" height="115" rx="14" fill="#eaf7f1" stroke="#2b7a5b" stroke-width="3"/><text x="613" y="140" fill="#172635" font-weight="700">SoC・通信</text><text x="613" y="174" fill="#172635">計算・送受信</text><text x="613" y="198" fill="#596b78">アプリの仕事</text></g><path d="M380 75v-22" stroke="#596b78" stroke-width="4"/><text x="380" y="285" text-anchor="middle" font-size="17" fill="#172635">スマホ全体の電池持ちは、複数の電力源の合計で決まる</text><text x="380" y="316" text-anchor="middle" font-size="15" fill="#596b78">ダークモードだけで端末全体を説明しない</text></svg><figcaption>色テーマ、更新回数、演算・通信は別々の制御です。結果を比べるときは、条件をそろえる必要があります。</figcaption></figure>
+
+
+
+<h2 class="wp-block-heading">効果を確かめるなら、画面方式と条件をそろえる</h2>
+
+
+<p class="wp-block-paragraph">自分の端末でライトモードとダークモードを比べるときは、短時間のバッテリー残量だけで結論を出さないことが大切です。自動輝度が働くと、周囲の明るさに合わせて画面条件が途中で変わります。同じスライダー位置でも、端末や環境が違えば実際の画面輝度が同じとは限りません。</p>
+<p>比較するなら、同じ端末、同じアプリ、同じ表示内容、同じ実測輝度、同じリフレッシュレート、同じ通信状態をできるだけそろえます。写真や動画を含めるか、文章画面だけにするかも決めておきます。OLEDとLCDを別の条件で比べれば、テーマの効果なのか、画面方式や輝度の差なのか分からなくなるからです。</p>
+<p>このように条件をそろえても、研究結果や自分の体感は「その端末と使い方での結果」です。別の機種、別のOS、別のアプリへそのまま一般化はできません。普遍的な節電率を探すより、自分が長く見る画面がどれだけ暗くなるかを確認するほうが現実的です。</p>
+<figure class="s58b-media" data-media-role="explanatory-image-10"><svg viewBox="0 0 760 370" role="img" aria-label="ダークモードの公平な比較で端末、輝度、表示内容、更新レート、通信状態をそろえるチェック図"><rect width="760" height="370" fill="#eef8fc"/><text x="380" y="40" text-anchor="middle" font-size="25" font-weight="700" fill="#172635">公平な比較のチェック項目</text><g font-size="18" fill="#172635"><g transform="translate(80 78)"><circle cx="18" cy="18" r="16" fill="#a9d6bd"/><text x="18" y="25" text-anchor="middle" font-size="18">✓</text><text x="48" y="25">同じ端末・同じ画面方式</text></g><g transform="translate(80 128)"><circle cx="18" cy="18" r="16" fill="#a9d6bd"/><text x="18" y="25" text-anchor="middle" font-size="18">✓</text><text x="48" y="25">同じ実測輝度・自動輝度の扱い</text></g><g transform="translate(80 178)"><circle cx="18" cy="18" r="16" fill="#a9d6bd"/><text x="18" y="25" text-anchor="middle" font-size="18">✓</text><text x="48" y="25">同じ表示内容・写真や動画の割合</text></g><g transform="translate(80 228)"><circle cx="18" cy="18" r="16" fill="#a9d6bd"/><text x="18" y="25" text-anchor="middle" font-size="18">✓</text><text x="48" y="25">同じリフレッシュレート・通信状態</text></g><rect x="80" y="285" width="600" height="45" rx="12" fill="#fff3e7" stroke="#e8893a" stroke-width="2"/><text x="380" y="314" text-anchor="middle" font-size="17">残量の短時間変化だけで節電率を断定しない</text></g></svg><figcaption>比較条件がずれると、ダークモード以外の違いを測ってしまいます。数値は端末と条件を添えて読むのが基本です。</figcaption></figure>
+
+
+
+<h2 class="wp-block-heading">よくある誤解を5つ整理する</h2>
+
+
+<div class="s58b-faq"><details open><summary>Q1. ダークモードなら、すべてのスマホで節電できますか？</summary><p><strong>A.</strong> いいえ。OLEDでは暗い画素の発光電流を減らせますが、一般的なLCDでは効果が小さいことが多く、バックライト制御の例外もあります。</p></details><details><summary>Q2. OLEDの黒い画素は完全に電力ゼロですか？</summary><p><strong>A.</strong> 発光素子の電流を止める、または小さくできても、TFT、走査回路、ドライバIC、タッチや電源変換などは動きます。パネル全体やスマホ全体がゼロになる意味ではありません。</p></details><details><summary>Q3. OLEDなら必ず大幅に電池が長持ちしますか？</summary><p><strong>A.</strong> いいえ。画面輝度、暗い面積、写真や動画、アプリ、リフレッシュレート、SoCや通信の負荷で変わります。研究にも平均1.4％の条件や、輝度によって大きく異なる条件があります。</p></details><details><summary>Q4. LCDでは表示色による電力差は完全にゼロですか？</summary><p><strong>A.</strong> いいえ。固定バックライトでは差が小さくなりやすい一方、内容適応型バックライト制御やローカルディミングなどが表示内容に応じてバックライトを制御する場合があります。</p></details><details><summary>Q5. ダークモードにすればリフレッシュレートも下がりますか？</summary><p><strong>A.</strong> いいえ。ダークモードは色と画素輝度、リフレッシュレートは書き換え回数を主に変える別の制御です。</p></details></div>
+
+
+
+<section class="mp5-section" id="revenue-phase5-learning"><h2>画面の節電を、比較条件と学習メモへ</h2><p>ダークモードの違いが分かったら、画面方式、輝度、表示時間、動かすアプリを一組の条件として記録してみましょう。電池持ちを比べるときは、画面だけの効果と端末全体の消費を分けることが大切です。電気の基礎を教材で補う方法と、表計算で測定メモを整理する技能を学ぶ方法を選べます。まず手元の端末と無料の表計算で試し、不足が具体化してから有料学習を比較しましょう。</p></section>
+
+
+<h2 class="wp-block-heading">まとめ：節電の答えは「OLEDかLCDか、そして条件次第」</h2>
+
+
+<figure class="s58b-media" data-media-role="summary-infographic"><svg viewBox="0 0 760 440" role="img" aria-label="ダークモード節電の要点をOLED、LCD、輝度、表示内容、端末全体の五つにまとめたインフォグラフィック"><rect width="760" height="440" rx="18" fill="#172635"/><text x="380" y="48" text-anchor="middle" font-size="28" font-weight="700" fill="#fff">ダークモード節電の5つの要点</text><g text-anchor="middle"><circle cx="110" cy="170" r="55" fill="#b9dcea"/><text x="110" y="166" font-size="20" font-weight="700" fill="#172635">OLED</text><text x="110" y="192" font-size="15" fill="#172635">画素が光る</text><circle cx="245" cy="170" r="55" fill="#f4c68f"/><text x="245" y="166" font-size="20" font-weight="700" fill="#172635">LCD</text><text x="245" y="192" font-size="15" fill="#172635">後ろが光る</text><circle cx="380" cy="170" r="55" fill="#a9d6bd"/><text x="380" y="166" font-size="19" font-weight="700" fill="#172635">輝度</text><text x="380" y="192" font-size="15" fill="#172635">差を左右</text><circle cx="515" cy="170" r="55" fill="#b9dcea"/><text x="515" y="166" font-size="19" font-weight="700" fill="#172635">面積</text><text x="515" y="192" font-size="15" fill="#172635">暗い範囲</text><circle cx="650" cy="170" r="55" fill="#f4c68f"/><text x="650" y="166" font-size="19" font-weight="700" fill="#172635">端末</text><text x="650" y="192" font-size="15" fill="#172635">他の電力</text></g><rect x="95" y="278" width="570" height="84" rx="18" fill="#21394c" stroke="#a9d6bd" stroke-width="3"/><text x="380" y="314" text-anchor="middle" font-size="22" font-weight="700" fill="#fff">OLEDでは条件次第で節電</text><text x="380" y="344" text-anchor="middle" font-size="17" fill="#cbeeff">LCDではバックライト制御の有無を確認</text><text x="380" y="405" text-anchor="middle" font-size="16" fill="#cbdce6">画面の削減率と電池持ちの改善率は同じではない</text></svg><figcaption>ダークモードは万能な節電スイッチではありません。画面方式、輝度、暗い面積、表示内容、端末全体の負荷をまとめて見ると、仕組みを正しく理解できます。</figcaption></figure>
+<div class="s58b-summary">OLEDは画素そのものが光るため、暗い表示で発光電流を減らしやすい。<br>LCDはバックライトの光を液晶で調整するため、黒背景でも光源の電力が残りやすい。<br>実際の効果は、輝度・表示内容・更新回数・SoCや通信の負荷で変わる。</div>
+
+
+
+<h2 class="wp-block-heading">次に読む</h2>
+
+
+<p class="wp-block-paragraph">画面の表示を支える半導体の役割を、さらに身近な製品から学びたい方は、<a href="https://semicon-campus.com/how-airbags-detect-crashes-mems-sensor/">MEMS加速度センサーとECUでエアバッグが衝突を検知する仕組み</a>もおすすめです。Episode 058のShortsは、<a href="https://www.youtube.com/shorts/xZL3GnemB10">ダークモードの節電効果を60秒で見る</a>から確認できます（2026年9月12日19:30 JST公開予定）。</p>
+
+
+
+<section class="mp5-section" id="revenue-phase5-career"><h2>理解した内容から、次の学習と比較へ</h2><p>画面条件と使用時間の記録を、対象・条件・出典の三つで整理しましょう。関連する基礎記事、学習の入口、PCの要件を目的別に確認すると、無料で試せる範囲と有料の選択肢を分けて検討できます。</p><aside class="semicon-cta mp5-card"><h3>目的に合う関連記事から、次の行動を選ぶ</h3><p>仕事内容を知りたい方は職種記事へ、基礎を広げたい方は学習記事へ、自宅環境を見直す方はPC・メモリの解説へ進めます。各記事の求人・学習・機材の選び方も比較できます。</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/semiconductor-beginner-roadmap/" class="semicon-btn mp5-button" data-revenue-phase5-hub="391" data-cta="learning_hub" data-cta-type="learning_hub" data-cta-stage="career" data-cta-id="phase5_824_hub391_end" data-cta-route="phase5_824_hub391_end">半導体学習Hubで基礎・仕事・学び方を確認する</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/cpu-memory-storage-difference/" class="semicon-btn mp5-button" data-revenue-phase5-hub="479" data-cta="pc_guide" data-cta-type="pc_guide" data-cta-stage="career" data-cta-id="phase5_824_hub479_end" data-cta-route="phase5_824_hub479_end">PCの遅さをCPU・メモリ・保存容量から切り分ける</a></div></aside></section>
+
+
+
+<h2 class="wp-block-heading">参考資料</h2>
+
+
+<ol class="s58b-refs"><li>Japan Display, <a rel="noopener" href="https://www.j-display.com/en/product_tech/displaybasic.html" target="_blank">Display Basics</a>（LCDのバックライト・液晶・偏光板、OLEDの自発光とTFT）。</li><li>Universal Display Corporation, <a rel="noopener" href="https://oled.com/oleds/" target="_blank">OLED Technology</a>（有機発光層とOLEDの発光原理）。</li><li>Samsung Display, <a rel="noopener" href="https://global.samsungdisplay.com/30877/" target="_blank">Learn Display: Pixel Define Layer</a>（OLEDのRGBサブピクセルと発光層）。</li><li>Purdue University, <a rel="noopener" href="https://engineering.purdue.edu/ECE/News/2022/shedding-light-on-dark-mode-to-save-energy" target="_blank">Shedding light on dark mode to save energy</a>（輝度条件を変えたダークモード研究の大学公式解説）。</li><li>Android Developers, <a rel="noopener" href="https://developer.android.com/develop/ui/views/theming/darktheme" target="_blank">Implement dark theme</a>（ダークテーマの適用範囲と画面技術への配慮）。</li><li>Android Open Source Project, <a rel="noopener" href="https://source.android.com/docs/core/power/component" target="_blank">Measure component power</a>（画面と端末全体の電力を分けて測定する考え方）。</li><li>OMNIVISION, <a rel="noopener" href="https://www.ovt.com/products/td4160/" target="_blank">TD4160 Product Brief</a>（LCD向けの内容適応型バックライト制御・動的バックライト制御の製品例）。</li><li>Oliveira et al., <a rel="noopener" href="https://arxiv.org/abs/2604.25587" target="_blank">An Empirical Analysis of Mobile Energy Consumption</a>（2026年の単一端末・特定ワークロード研究。一般化の限界に注意）。</li></ol>
+
+
+
+</article>

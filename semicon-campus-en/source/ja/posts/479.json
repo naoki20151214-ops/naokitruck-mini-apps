@@ -1,0 +1,19 @@
+{
+ "id": 479,
+ "type": "post",
+ "slug": "cpu-memory-storage-difference",
+ "link": "https://semicon-campus.com/cpu-memory-storage-difference/",
+ "date": "2026-07-12T10:00:06",
+ "modified": "2026-10-30T21:22:56",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  4,
+  2
+ ],
+ "tags": [],
+ "featured_media": 525,
+ "title": "CPU・メモリ・ストレージの違いとは？キャッシュ・DRAM・NANDを図解",
+ "excerpt": "CPUは命令を実行する場所、DRAMは作業中のデータ置き場、NAND・SSDは長期保存する場所です。CPU内キャッシュとの違いまで、文系・未経験者向けに整理します。"
+}

@@ -1,0 +1,183 @@
+<!--KEEP:0-->
+<div class="semicon-article" id="semicon-top">
+<div class="semicon-level">
+<div class="semicon-level-top"><span class="semicon-level-label">学習レベル</span><strong class="semicon-stars" aria-label="初級（5段階中の1）"><span class="on">★</span><span class="off">☆☆☆☆</span><span>初級</span></strong></div>
+</div>
+<div class="semicon-lead">
+<p>スマホで写真を撮ったら、ピントがずれて、ぼやけてしまった。あるいは、明るすぎて白く飛んだ。暗すぎて、よく見えない。そんな経験は、ありませんか。</p>
+<p>半導体の回路を、光で「写す」工程でも、似たことが起こります。ピントがずれる。光の量が多すぎる、または少なすぎる。すると、写した線の太さや形が、設計とは違ってしまいます。</p>
+<p>先に答えを言うと、<strong class="semicon-key">光で写す工程では、「ピント」と「光の量」の二つが、ちょうどよい範囲に入っていないと、形がくずれます。</strong>だから、写して現像したあとに、すぐ測って、検査します。</p>
+</div>
+<div class="semicon-note">
+<p>カメラの例が合っているのは、「ピントと明るさがずれると、できあがりが変わる」という点だけです。カメラの仕組みと、半導体の露光装置の仕組みは、別のものです。</p>
+</div>
+<div class="semicon-map">
+<h3>この記事でわかること</h3>
+<ol>
+<li><strong>この記事の目的：</strong>光で回路の形を写す工程で、ピントと光の量が形を決めること、そして写した直後に測る理由を、つかむこと</li>
+<li>リソグラフィという工程と、そこで使う道具の名前</li>
+<li>ピント（フォーカス）と光の量（ドーズ）が、形に影響する理由</li>
+<li>写した直後に測って検査する理由と、現場で原因を探す考え方</li>
+</ol>
+</div>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep106-blog-01-litho-flow.png" alt="光で形を写し、現像して、すぐ測る流れを示す概念図"><figcaption>光で写す、現像する、測る、という流れを表した模式図。実際の装置や寸法を示すものではありません。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>光で写す：マスク越しに紫外線を当てて、レジストに形を写す</li>
+<li>現像：写した形を残す</li>
+<li>測る：現像のあとすぐに測る（ADI）</li>
+</ul>
+</div>
+<div class="semicon-chat-row naoki">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">助手</div>
+</div>
+<div class="semicon-bubble">
+<p>博士、光で写すだけなのに、なぜ形がくずれるのですか？</p>
+</div>
+</div>
+<div class="semicon-chat-row teacher">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">博士</div>
+</div>
+<div class="semicon-bubble">
+<p>カメラと同じじゃよ。ピントがずれたり、光の量が合わなかったりすると、うまく写らんのじゃ。</p>
+</div>
+</div>
+<div class="semicon-chat-row naoki">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">助手</div>
+</div>
+<div class="semicon-bubble">
+<p>なるほど。じゃあ、ちょうどよい範囲を見つけるのが大事なんですね。</p>
+</div>
+</div>
+<div class="semicon-chat-row teacher">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">博士</div>
+</div>
+<div class="semicon-bubble">
+<p>その通りじゃ。写したあとにすぐ測れば、やり直しもできる。順番に、見ていこう。</p>
+</div>
+</div>
+<h2 class="wp-block-heading" data-fact-ids="C01 C02">リソグラフィとは、光で回路の形を写す工程</h2>
+<p>半導体の回路は、ウェハと呼ぶ薄い円盤の上に作ります。日立ハイテクの解説によると、回路の一層は、主に三つの工程でできます。薄い膜をつける「成膜」、光で形を写す「パターン転写」、膜を削って形に仕上げる「エッチング」です。この中の「パターン転写」が、リソグラフィ（フォトリソグラフィ）です。</p>
+<p>リソグラフィでは、まず、ウェハの膜の上に、光に当たると性質が変わる膜を塗ります。これを「フォトレジスト」と呼びます。次に、「フォトマスク」を使います。フォトマスクは、回路の形を描いた、ガラス板の原版です。</p>
+<p>露光装置が、フォトマスク越しに紫外線を当てます。マスクの、模様のない部分だけ、紫外線が通ります。紫外線が当たったフォトレジストは、感光して、化学的に変わります。模様は、レンズで数分の1に縮められて、ウェハの上に写されます。そのあと、「現像」をして、写した形を残します。</p>
+<h2 class="wp-block-heading" data-fact-ids="C04 C06">形を決める二つの条件、ピントと光の量</h2>
+<p>光で写すときに大切なのが、「フォーカス」と「ドーズ」です。フォーカスは、ピントのことです。ASMLの解説は、フォーカスを「像がどれだけシャープか」と説明しています。ドーズは、光の量のことで、レジストに与える露光のエネルギーを指します。</p>
+<p>この二つは、写真のピントと明るさ（露出）に、よく似ています。ピントがずれると、像がぼやけます。光の量が多すぎたり、少なすぎたりすると、レジストの反応が足りなかったり、行きすぎたりします。</p>
+<p>では、ちょうどよい値は、どう探すのでしょうか。カリフォルニア大学サンタバーバラ校のナノファブの資料は、「FEM（フォーカス・露光量マトリクス）」という試験を紹介しています。ドーズとフォーカスを、縦と横に少しずつ変えながら、格子の升目ごとに露光します。そして、升目ごとに、できた形が許容範囲に入っているかを調べます。失敗した升目では、パターンが何も見えないこともある、と書かれています。</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep106-blog-02-process-window.png" alt="ピントと光の量を変えた格子のうち、真ん中の範囲だけが合格になる概念図"><figcaption>ピントと光の量を変えたときの、プロセスウィンドウを表した模式図。格子の色は説明用で、実測データではありません。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>縦：ピント、横：光の量</li>
+<li>青い升目：合格。灰色：不合格</li>
+<li>合格の範囲の、中心を選ぶ</li>
+</ul>
+</div>
+<h2 class="wp-block-heading" data-fact-ids="C06 C07">ちょうどよい範囲「プロセスウィンドウ」</h2>
+<p><strong class="semicon-key">合格になった升目が集まった範囲を、「プロセスウィンドウ」と呼びます。</strong>窓のように、「この範囲なら、うまく写せる」という領域です。UCSBの資料は、窓の中心を選ぶことを勧めています。ドーズが高すぎる、低すぎる、フォーカスが高すぎる、低すぎる、という悪い結果を、すべて確かめてはじめて、窓の中心が分かります。</p>
+<p>また、「いちばん良い升目」を選ばないよう、注意しています。<strong class="semicon-key">いちばん良い升目は、窓の端にあることが多く、小さなばらつきでも、規格から外れてしまうからです。</strong></p>
+<p>ウィーン工科大学の博士論文も、同じ考え方を説明しています。フォーカスの影響は、ドーズによって変わるので、二つを一緒に動かして調べます。その結果をグラフにしたものを、「ボッスンプロット」と呼びます。グラフには、線の太さ（CD）のほか、壁の傾き（側壁角）や、レジストの減り（レジスト損失）も描けます。プロセスウィンドウは、これらがすべて規格に入る、フォーカスと光の量の組み合わせです。</p>
+<p>さらに、この論文は、デフォーカス（ピントのずれ）が大きいと、ほかの誤差にも弱くなるので、実際に使えるピントの許容範囲は、理論の値より狭くなる、とも述べています。</p>
+<h2 class="wp-block-heading" data-fact-ids="C03">光で写せる細かさにも、限りがある</h2>
+<p>ASMLの解説では、写せる最小の寸法（CD）は、「CD＝k1×波長÷NA」と表されます。波長は、光の波の長さです。NA（開口数）は、レンズが光を集める力を表す数字です。k1は、工程によって決まる係数です。</p>
+<p>この式から、光の波長が短いほど、また、レンズが光をよく集めるほど、細かい形を写せる、と読み取れます。</p>
+<h2 class="wp-block-heading" data-fact-ids="C05 C08">現像のあとに、すぐ測る。やり直しもできる</h2>
+<p>写した形が正しいかは、現像のあとに、測って確かめます。日立ハイテクの解説によると、現像のあとに、CD-SEM（線の太さを測る電子顕微鏡）で、寸法を測ります。この測定の工程を、「ADI」と呼ぶことがあります。After Development Inspection、つまり「現像後検査」の略です。エッチングのあとにも、同じように測ります。こちらは「AEI」で、「エッチング後検査」です。</p>
+<p>なぜ、現像のあとに、すぐ測るのでしょうか。KLAという検査装置メーカーの発表によると、<strong class="semicon-key">現像の直後なら、ウェハを「やり直し（リワーク）」できる状態で、検査できるからです。</strong>エッチングで膜を削ったあとは、同じようにはやり直せない、と考えられます。写す工程の不良は、削る前に見つけるほうが、ずっと得になります。</p>
+<p>同じ発表は、写す工程の初期の不良は、確実に見つけるのが、むずかしかったとも述べています。測って、検査する技術が、大切な理由です。</p>
+<div class="semicon-cta">
+<h3>リソグラフィを、もう少し詳しく</h3>
+<p>リソグラフィの基本を、もう少し詳しく知りたい方は、こちらの記事も読んでみてください。</p>
+<div class="semicon-btnrow"><a class="semicon-btn" href="https://semicon-campus.com/what-is-lithography-semiconductor-process/">リソグラフィとは何か</a></div>
+</div>
+<h2 class="wp-block-heading" data-fact-ids="C04">位置のずれ「オーバーレイ」も、リソグラフィの不良</h2>
+<p>写した形の「太さ」や「かたち」だけでなく、「位置」も大切です。回路は、何層も重ねて作ります。ASMLの解説は、二つの層を合わせる精度を「オーバーレイ」と呼んでいます。</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep106-blog-03-overlay.png" alt="二つの層がぴったり重なる場合と、少しずれて重なる場合を示す概念図"><figcaption>二つの層のオーバーレイを表した模式図。ずれの大きさは見やすいよう誇張しており、実測値ではありません。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>左：二つの層が合っている</li>
+<li>右：二つの層がずれている</li>
+<li>ずれは、測って露光装置へ戻し、補正に使う</li>
+</ul>
+</div>
+<p>ピントとオーバーレイは、ウェハに印刷した、繰り返しの試験パターン（メトロロジーターゲット）が、どれだけうまく印刷されたかを測って、監視します。測った結果は、生産ラインに組み込まれた装置から、露光装置へ戻されて、補正に使われます。つまり、測ることは、記録を残すだけでなく、次の露光を直すためにも、使われます。</p>
+<h2 class="wp-block-heading" data-fact-ids="C04 C06 C08">ずれの原因を、設備保全と生産技術はどう探すのか</h2>
+<p>現場で、写した形のずれを見つけたら、次のような順番で調べる、と考えられます。</p>
+<ol>
+<li><strong>現像後の測定結果を確認する。</strong>線の太さと位置が、どれくらい、どちらへずれているのかを見ます。</li>
+<li><strong>フォーカスと光の量の記録を調べる。</strong>露光装置の設定と、実際に使われた値を、見比べます。</li>
+<li><strong>場所の特徴を整理する。</strong>ウェハのどこで、どのロットで、どの装置で、いつ起きたのかを、まとめます。</li>
+<li><strong>試験（FEM）で、プロセスウィンドウの位置を確かめる。</strong>今の条件が、窓の中心にあるのか、端にあるのかを見ます。</li>
+<li><strong>追加のデータで、確かめる。</strong>たまたま同時に起きただけかもしれないので、確かめてから判断します。</li>
+</ol>
+<p>設備の調整や復旧は、所属する工場やメーカーの正式な手順と、権限のある人の判断のもとで行います。この記事は、原因を考えるときの見方を紹介するもので、設備の操作を指示するものではありません。</p>
+<p>この問題を追う仕事は、プロセス、生産技術、設備保全、計測・検査などの担当が分担します。製造業で、条件の記録や、規格に対するばらつきを扱った経験は、「どの条件が、ちょうどよい範囲にあるか」を考える力として活きる、と考えられます。仕事の全体像は、<a href="https://semicon-campus.com/semiconductor-career-map/">半導体製造の仕事を工程別に見てみる</a>から確認できます。</p>
+<h2 class="wp-block-heading">ことばのおさらい</h2>
+<p>この記事に出てきた言葉を、やさしい言い方で、もう一度まとめます。</p>
+<ul>
+<li><strong>リソグラフィ：</strong>光で、回路の形を写す工程です。</li>
+<li><strong>フォトレジスト：</strong>光に当たると性質が変わる膜。ここに形を写します。</li>
+<li><strong>フォトマスク：</strong>回路の形を描いた、ガラス板の原版です。</li>
+<li><strong>フォーカス：</strong>ピントのこと。像のシャープさです。</li>
+<li><strong>ドーズ：</strong>光の量。レジストに与える露光のエネルギーです。</li>
+<li><strong>プロセスウィンドウ：</strong>うまく写せる、ピントと光の量の範囲です。</li>
+<li><strong>ADI：</strong>現像のあとに測って、検査することです。</li>
+<li><strong>オーバーレイ：</strong>二つの層を合わせる精度のことです。</li>
+</ul>
+<h2 class="wp-block-heading">よくある誤解</h2>
+<h3>Q. ピントが合っていれば、光の量は関係ありませんか？</h3>
+<p>関係あります。ピントの影響は、光の量によって変わります。だから、二つを一緒に変えて、うまく写せる範囲を調べます。</p>
+<h3>Q. いちばん良い結果が出た条件を使えば、安心ですか？</h3>
+<p>安心とは限りません。いちばん良い条件は、うまく写せる範囲の端にあることが多く、小さなばらつきで、規格から外れるためです。範囲の中心を選ぶのが、基本です。</p>
+<h3>Q. 現像のあとに測れば、エッチングのあとは測らなくてよいですか？</h3>
+<p>そうではありません。現像のあとも、エッチングのあとも、測ります。現像のあとは、やり直しができる段階の確認で、エッチングのあとは、削ったあとの形の確認です。</p>
+<h2 class="wp-block-heading">まとめ：写す工程は、ピントと光の量の「ちょうどよい範囲」で決まる</h2>
+<div class="semicon-lead">
+<p>光で写す工程では、ピントと光の量が、ちょうどよい範囲に入っていないと、形がくずれます。<br />その範囲は、プロセスウィンドウと呼ばれ、いちばん良い点ではなく、中心を選びます。<br />現像のあとに、すぐ測って検査するのは、やり直しができる段階で、不良を見つけるためです。</p>
+</div>
+<div class="semicon-cta">
+<h3>YouTubeでも、半導体をやさしく解説しています</h3>
+<p>図解で復習したい人向けに、YouTubeでも半導体製造を短く解説しています。</p>
+<div class="semicon-btnrow"><a rel="noopener" class="semicon-btn secondary" href="https://www.youtube.com/@semicon-campus" target="_blank">YouTubeで図解動画を見る</a></div>
+</div>
+<h2 class="wp-block-heading">参考にした公式情報</h2>
+<ul class="semicon-sources">
+<li data-source-id="S01"><a href="https://www.hitachi-hightech.com/jp/ja/knowledge/semiconductor/room/manufacturing/process.html">日立ハイテク「1. 半導体製造工程」</a></li>
+<li data-source-id="S02"><a href="https://www.asml.com/en/technology/lithography-principles/measuring-accuracy">ASML「Measuring accuracy」</a></li>
+<li data-source-id="S03"><a href="https://www.asml.com/en/technology/lithography-principles/rayleigh-criterion">ASML「Rayleigh criterion」</a></li>
+<li data-source-id="S04"><a href="https://wiki.nanofab.ucsb.edu/wiki/Lithography_Calibration_-_Analyzing_a_Focus-Exposure_Matrix">UCSB Nanofab「Lithography Calibration &#8211; Analyzing a Focus-Exposure Matrix」</a></li>
+<li data-source-id="S05"><a href="https://www.iue.tuwien.ac.at/phd/kirchauer/node41.html">TU Wien（Kirchauer博士論文）「Focus Effects and Process Window」</a></li>
+<li data-source-id="S06"><a href="https://ir.kla.com/news-events/press-releases/detail/78/kla-tencor-announces-voyager-1015-and-surfscan-sp7">KLA「Voyager 1015 and Surfscan SP7」（プレスリリース）</a></li>
+</ul>
+<section class="semicon-correction-form">
+<h2>質問・訂正フォーム</h2>
+<p>この記事の内容に誤りや、分かりにくい点があれば、下のフォームからお知らせください。確認して、記事を直します。</p>
+<div class="semicon-form-shortcode">
+<div class="wpcf7 no-js" id="wpcf7-f2045-o12" lang="ja" dir="ltr" data-wpcf7-id="2045">
+<div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
+<form action="/?rest_route=%2Fwp%2Fv2%2Fposts&#038;per_page=100&#038;page=1&#038;context=view#wpcf7-f2045-o12" method="post" class="wpcf7-form init" aria-label="コンタクトフォーム" novalidate="novalidate" data-status="init">
+<fieldset class="hidden-fields-container"><input type="hidden" name="_wpcf7" value="2045" /><input type="hidden" name="_wpcf7_version" value="6.1.6" /><input type="hidden" name="_wpcf7_locale" value="ja" /><input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f2045-o12" /><input type="hidden" name="_wpcf7_container_post" value="0" /><input type="hidden" name="_wpcf7_posted_data_hash" value="" />
+</fieldset>
+<p>お名前・電話番号・住所の入力は不要です。工場名や社外秘の情報は記載しないでください。
+</p>
+<p><label>報告の種類（必須） <span class="wpcf7-form-control-wrap" data-name="report-type"><select class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required" aria-required="true" aria-invalid="false" name="report-type"><option value="誤りと思われる点">誤りと思われる点</option><option value="分かりにくい箇所">分かりにくい箇所</option><option value="追加してほしい説明・質問">追加してほしい説明・質問</option></select></span></label><br />
+<label>該当する見出し・文章（任意） <span class="wpcf7-form-control-wrap" data-name="report-section"><input size="40" maxlength="200" class="wpcf7-form-control wpcf7-text" aria-invalid="false" value="" type="text" name="report-section" /></span></label><br />
+<label>内容（必須） <span class="wpcf7-form-control-wrap" data-name="report-message"><textarea cols="40" rows="10" maxlength="3000" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" aria-required="true" aria-invalid="false" name="report-message"></textarea></span></label><br />
+<label>返信用メールアドレス（返信をご希望の場合のみ・任意） <span class="wpcf7-form-control-wrap" data-name="report-email"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-email wpcf7-text wpcf7-validates-as-email" autocomplete="email" aria-invalid="false" value="" type="email" name="report-email" /></span></label>
+</p>
+<p>ご意見は記事の確認・改善のために利用します。<a href="https://semicon-campus.com/privacy-policy/">個人情報の取り扱い</a>をご確認ください。
+</p>
+<p><input class="wpcf7-form-control wpcf7-submit has-spinner" type="submit" value="ご意見・訂正報告を送信" />
+</p><div class="wpcf7-response-output" aria-hidden="true"></div>
+</form>
+</div>
+</div>
+</section>
+</div>

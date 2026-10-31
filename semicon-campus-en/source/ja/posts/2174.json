@@ -1,0 +1,18 @@
+{
+ "id": 2174,
+ "type": "post",
+ "slug": "semiconductor-cd-line-width",
+ "link": "https://semicon-campus.com/semiconductor-cd-line-width/",
+ "date": "2026-10-21T01:17:12",
+ "modified": "2026-10-30T21:15:42",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  9
+ ],
+ "tags": [],
+ "featured_media": 2751,
+ "title": "半導体の線幅（CD）ばらつき・LER/LWRの原因とCD制御",
+ "excerpt": "設計どおりに作ったのに線の太さがずれる理由を、線幅（CD）、エッチング、LER、CD-SEMの測定限界、設備保全・生産技術の視点からやさしく解説します。"
+}

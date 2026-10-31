@@ -1,0 +1,20 @@
+{
+ "id": 1159,
+ "type": "post",
+ "slug": "daily-news-34356371d71d9996e472",
+ "link": "https://semicon-campus.com/daily-news-34356371d71d9996e472/",
+ "date": "2026-09-24T09:00:00",
+ "modified": "2026-10-27T20:04:48",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  20
+ ],
+ "tags": [
+  19
+ ],
+ "featured_media": 2834,
+ "title": "fJscalerの100GHz BiCMOS TIA、AIデータセンター光接続を変えるか",
+ "excerpt": "fJscalerが発表した100GHz BiCMOS TIAのサンプル出荷を解説。TIAの役割、0.85pJ/bitや1.6T光接続の意味、技術の限界と今後の確認点を初心者向けに整理します。"
+}

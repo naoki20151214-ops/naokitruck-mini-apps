@@ -1,0 +1,34 @@
+
+<!--KEEP:0-->
+
+<p>Valens Semiconductorは2026年9月22日、onsemiと、高量産向けの3メガピクセル（3MP）車載カメラを想定したコスト最適化統合センサーについて協業すると発表しました。計画では、ValensのMIPI A-PHY接続ソリューションを、onsemiのイメージセンサーに統合できる形で共同開発します。これは量産製品の発売や採用決定を発表したものではなく、車載カメラの設計を簡素化し、MIPI A-PHYの採用を広げることを目指す開発計画です。<a href="https://www.valens.com/newsroom/valens-semiconductor-to-collaborate-with-onsemi-on-a-cost-optimized-integrated-sensor-based-on-the-mipi-a-phy-standard/">Valensの発表</a>と<a href="https://www.sec.gov/Archives/edgar/data/1863006/000121390026101917/ea030606001ex99-1.htm">米国証券取引委員会（SEC）提出資料</a>で確認できます。</p>
+
+<h2>何が発表されたのか</h2>
+<p>今回の対象は、車載カメラの映像を車内のコンピューターへ送るための接続機能を、イメージセンサー側に組み込む構想です。一般的なカメラモジュールでは、イメージセンサー、短距離向けのインターフェース、長距離伝送用のSerDesチップなどを組み合わせる場合があります。両社は、A-PHYの接続機能をセンサーと近い位置に統合することで、カメラの部品構成や設計を簡素化することを目指しています。</p>
+<p>Valensは、3MPを高量産車向けの重要な解像度帯として説明しています。また、車載イメージセンサーの多くが1〜3MPを対象にしているとしていますが、これは今回の発表に含まれる会社側の市場説明であり、独立した市場統計として確認されたものではありません。したがって、3MPが市場全体でどの程度の規模を持つかは、別の調査が必要です。<a href="https://www.valens.com/newsroom/valens-semiconductor-to-collaborate-with-onsemi-on-a-cost-optimized-integrated-sensor-based-on-the-mipi-a-phy-standard/">発表内容</a></p>
+<h2>MIPI A-PHYとは何か</h2>
+<p><strong>MIPI A-PHY</strong>は、車載カメラなどの機器間でデータを長距離伝送するための<strong>SerDes（シリアライザー／デシリアライザー）物理層</strong>です。SerDesとは、複数の信号をまとめて高速に送信し、受信側で元の信号に戻す仕組みです。車内のカメラと車載コンピューターは離れた場所に置かれるため、短い基板上の配線を前提にしたインターフェースだけでは対応しにくいことがあります。A-PHYは、そうした車載内の長い配線を想定しています。</p>
+<p>MIPI Allianceの説明では、A-PHYは高速な片方向データ、双方向の制御データ、構成によっては電力供給も同じ物理配線で扱える設計です。映像だけでなく、カメラの設定や状態確認に使う制御信号も同じ接続で運べるため、配線や周辺部品を減らせる可能性があります。対象はADAS（先進運転支援システム）、ADS（自動運転システム）、車載インフォテインメントなどです。<a href="https://www.mipi.org/specifications/a-phy">MIPI AllianceのA-PHY説明</a></p>
+<p>もう一つ重要な用語が<strong>CSI-2</strong>です。CSI-2は、カメラのイメージセンサーから画像データを扱うために広く使われるMIPIのカメラ向けプロトコルです。A-PHYは、Protocol Adaptation Layer（プロトコル適応層）を介してCSI-2などのデータを長距離リンクに載せる設計を採ります。これにより、センサー側のカメラ用信号と、車内の長距離伝送をつなぐ専用ブリッジを減らせる構成を目指せます。</p>
+<p>MIPIの公式ページは、現行版としてA-PHY v2.0を表示し、最大32Gbpsの下りリンク速度や最大1.6Gbpsの上りリンク速度などを説明しています。ただし、今回の統合センサーがA-PHY v2.0のどの機能や速度を採用するかは、両社の発表では明らかになっていません。規格全体の仕様と、今回開発される製品の仕様を同一視することはできません。</p>
+<h2>なぜ車載カメラの部品統合が重要なのか</h2>
+<p>車載カメラは、周囲の認識や駐車支援、車線維持など、運転支援機能の入力装置です。カメラの数が増え、より高い解像度の映像を扱うようになると、信号を安定して遠くへ送る配線と、カメラ側の電子部品が重要になります。</p>
+<p>もし接続機能をセンサー側に統合できれば、別チップを追加する場合と比べて、基板面積、部品点数、配線、電源設計を簡素化できる可能性があります。部品が減れば、設計や組み立ての手間を抑えられる場合もあります。onsemiは、こうした統合によってカメラアーキテクチャを簡素化し、OEMやTier 1が標準技術を利用しやすくすることを目指しています。<a href="https://www.sec.gov/Archives/edgar/data/1863006/000121390026101917/ea030606001ex99-1.htm">SEC提出の発表資料</a></p>
+<p>ただし、「統合すること」と「必ず安くなること」は同じではありません。新しいチップ設計には開発費がかかり、車載用途では電磁ノイズ、温度、振動、安全性、長期信頼性、量産歩留まりなどの確認も必要です。部品点数が減っても、1個の部品に求められる機能が増えれば、故障時の影響や評価項目が増える可能性もあります。</p>
+
+<section class="mp4-section" id="revenue-phase4-learning"><h2>車載カメラ接続から、信号・評価の学習へ</h2><p>A-PHYの協業を理解したら、センサー、通信、処理、評価のどこを誰が担当するか整理します。統合された機能と、実車で確認する品質条件を分けて読むと仕事内容との接点が見えます。信号測定、接続確認、製造・検査の経験を説明し、電気・計測の基礎学習と技術職相談を併用しましょう。一般の講座がこの車載規格の認証や設計資格を与えるわけではありません。</p></section>
+
+<h2>今回の発表で確定していないこと</h2>
+<p>今回確認できるのは、Valensとonsemiが協業し、3MP車載カメラ向けの統合センサーを開発する計画です。次の項目は発表されていません。</p>
+<ul><li>正式な製品型番</li><li>サンプル提供時期と量産開始日</li><li>採用するOEM、Tier 1、車種</li><li>価格や具体的なコスト削減幅</li><li>消費電力、面積、伝送性能の実測値</li><li>量産歩留まりや安全規格への適合結果</li></ul>
+<p>したがって、発表を「すでに量産される製品」と読むことはできません。また、両社が示す「A-PHY採用を速める」「部品数を減らす」といった内容は、協業の目的や期待であって、実現済みの成果ではありません。会社の予測と、試作品・量産品による独立した検証結果は分けて見る必要があります。</p>
+<h2>今後の注目点</h2>
+<p>今後は、まず評価用サンプルの提供時期と、統合センサーの正式仕様が示されるかが焦点です。特に、A-PHYのどの世代を採用するのか、CSI-2との接続方法、実際の伝送距離、消費電力、温度範囲、電磁ノイズへの耐性が重要になります。</p>
+<p>次に、車載部品としての認定と量産実績を確認する必要があります。自動車メーカーが採用を決めても、量産開始までには設計検証、信頼性試験、車両への組み込み評価など複数の段階があります。採用車種、量産時期、価格が公表されて初めて、今回の協業が市場にどの程度の影響を与えるかを具体的に判断できます。</p>
+<p>今回のニュースは、A-PHYを単独の接続部品として使うだけでなく、イメージセンサーの選択肢に組み込もうとする動きです。実現すれば車載カメラの設計自由度を高める可能性がありますが、現時点ではあくまで開発協業の段階です。今後は、規格への対応表明よりも、実際のサンプル性能、量産品質、顧客採用という証拠に注目するのが適切です。</p>
+
+<section class="mp4-section" id="revenue-phase4-career"><h2>この記事の知識を、次の仕事・学習へつなげる</h2><p>信号測定、接続確認、製造・検査、評価記録の経験を、対象・作業・確認した結果で整理します。担当範囲と必要経験、勤務地、勤務・出張、教育体制を比較すると、次に補う知識も具体的になります。</p><aside class="semicon-cta mp4-card"><h3>関連する職種の仕事内容・求人・学習を見る</h3><p>記事で学んだ技術が、点検・復旧、装置立上げ、顧客対応、実装・工程改善のどの仕事で使われるか確認できます。職種記事の求人・学習の選び方へ進みましょう。</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/" class="semicon-btn mp4-button" data-revenue-phase4-hub="237" data-cta="equipment_hub" data-cta-type="equipment_hub" data-cta-stage="career" data-cta-id="phase4_1214_hub237_end" data-cta-route="phase4_1214_hub237_end">装置エンジニアの担当範囲・求人・学習を見る</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-process-engineer/" class="semicon-btn mp4-button" data-revenue-phase4-hub="230" data-cta="process_hub" data-cta-type="process_hub" data-cta-stage="career" data-cta-id="phase4_1214_hub230_end" data-cta-route="phase4_1214_hub230_end">プロセスエンジニアの担当範囲・求人・学習を見る</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/semiconductor-beginner-roadmap/" class="semicon-btn mp4-button" data-revenue-phase4-hub="391" data-cta="learning_hub" data-cta-type="learning_hub" data-cta-stage="career" data-cta-id="phase4_1214_hub391_end" data-cta-route="phase4_1214_hub391_end">半導体学習Hubで基礎・仕事・学び方を確認する</a></div></aside></section>
+
+
+<h2>出典</h2>
+<ul><li><a href="https://www.valens.com/newsroom/valens-semiconductor-to-collaborate-with-onsemi-on-a-cost-optimized-integrated-sensor-based-on-the-mipi-a-phy-standard/">Valens Semiconductor：onsemiとのMIPI A-PHY統合センサー協業発表（2026年9月22日）</a></li><li><a href="https://www.sec.gov/Archives/edgar/data/1863006/000121390026101917/ea030606001ex99-1.htm">SEC EDGAR：2026年9月22日付Valensプレスリリース提出資料</a></li><li><a href="https://www.mipi.org/specifications/a-phy">MIPI Alliance：MIPI A-PHY公式技術説明</a></li></ul>

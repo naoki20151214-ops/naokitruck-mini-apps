@@ -1,0 +1,20 @@
+{
+ "id": 1510,
+ "type": "post",
+ "slug": "daily-news-58d063f71c0dc847b226",
+ "link": "https://semicon-campus.com/daily-news-58d063f71c0dc847b226/",
+ "date": "2026-10-02T13:00:00",
+ "modified": "2026-10-27T20:04:10",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  20
+ ],
+ "tags": [
+  19
+ ],
+ "featured_media": 2801,
+ "title": "MIPSとXcelsaのAI半導体設計最適化をやさしく解説",
+ "excerpt": "MIPSとXcelsaが発表したAI半導体設計最適化を、形式検証、RISC-V、PPAの意味から解説。3時間未満・33％削減の位置付けと限界、今後の確認点を整理します。"
+}

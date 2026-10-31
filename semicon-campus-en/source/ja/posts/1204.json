@@ -1,0 +1,18 @@
+{
+ "id": 1204,
+ "type": "post",
+ "slug": "mass-flow-controller-mfc",
+ "link": "https://semicon-campus.com/mass-flow-controller-mfc/",
+ "date": "2026-09-28T18:00:00",
+ "modified": "2026-10-30T21:32:34",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  21
+ ],
+ "tags": [],
+ "featured_media": 2814,
+ "title": "マスフローコントローラ（MFC）とは？ガス流量を一定に保つ仕組みと役割",
+ "excerpt": "ガスを毎回同じ量に保つ、マスフローコントローラの役割 半導体の成膜やエッチングでは、見えないガスの流れがウェハの結果を左右します。表示された流量だけを読んでも、短い工程の途中で何が起きたかは分かりません。答えは、ガスを測 […]"
+}

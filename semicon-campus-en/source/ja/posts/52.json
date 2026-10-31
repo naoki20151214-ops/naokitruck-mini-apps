@@ -1,0 +1,20 @@
+{
+ "id": 52,
+ "type": "post",
+ "slug": "what-is-feol-semiconductor-process",
+ "link": "https://semicon-campus.com/what-is-feol-semiconductor-process/",
+ "date": "2026-06-25T21:08:53",
+ "modified": "2026-10-30T21:22:53",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  7,
+  5,
+  12
+ ],
+ "tags": [],
+ "featured_media": 383,
+ "title": "前工程とは何か？文系にもわかる半導体製造の全体像",
+ "excerpt": "前工程とは、シリコンウェハの上に回路を作り込む半導体製造の中心工程です。洗浄、成膜、リソグラフィ、エッチング、CMP、検査の流れを文系・未経験者向けにやさしく解説します。"
+}

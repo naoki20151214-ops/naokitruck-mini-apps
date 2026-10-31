@@ -1,0 +1,119 @@
+
+<!--KEEP:0-->
+
+
+<!--KEEP:1-->
+
+
+<!--KEEP:2-->
+<div class="semicon-article" id="semicon-top">
+
+<div class="semicon-level"><span class="semicon-level-label">学習レベル</span> <strong>初級</strong><p>公開第27話「工場を持たない会社が、なぜAI半導体を作れるのか」を、設計・製造・後工程の分業から理解する記事です。</p></div>
+
+<p class="semicon-lead"><strong>結論からいうと、半導体の「作る」には設計と製造の両方があるからです。</strong> 自社でウェハ量産工場を運営せず、チップの企画・回路設計・検証へ集中する会社を<strong>ファブレス</strong>、顧客の設計を受けてウェハ上へ回路を作る受託製造会社を<strong>ファウンドリ</strong>と呼びます。</p>
+
+<figure class="semicon-hero"><img src="https://semicon-campus.com/wp-content/uploads/2026/07/fabless-foundry-ecosystem-featured.webp" alt="左の半導体設計チームから設計データが中央のウェハ工場へ渡り、右の組立・検査を経てAI機器へつながる分業のイメージ" width="1672" height="941" loading="eager" decoding="async"><figcaption>AI半導体は、設計、ウェハ製造、組立・検査を得意な会社がつなぐことで完成します。</figcaption></figure>
+
+<div class="semicon-map"><strong>この記事でわかること</strong><div class="semicon-map-grid"><div class="semicon-map-item"><b>ファブレス</b><span>工場を持たず、何を担当するのか</span></div><div class="semicon-map-item"><b>ファウンドリ</b><span>設計をどうウェハへ作り込むのか</span></div><div class="semicon-map-item"><b>分業の全体像</b><span>EDA・IP・材料・装置・後工程まで</span></div></div></div>
+
+
+<h2>30秒でわかる：工場がなくてもAI半導体を作れる理由</h2>
+
+<div class="semicon-summary"><strong>30秒の結論</strong><p>ファブレス企業は、AI半導体の目的、回路、性能、電力、検証、ソフトウェアなどを設計します。ファウンドリは、その設計を製造工程へ結びつけ、ウェハ上に回路を作ります。さらにEDA・IP、材料、製造装置、ダイシング、パッケージ、検査の企業が加わります。工場を持たない会社も、設計と製品化の中核を担うことで「AI半導体を作る会社」になれるのです。</p></div>
+
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>工場がないなら、完成品を買って名前だけ付けているのかと思っていました。</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>そうではない。どんな計算を、どれだけ速く、どの電力で行うかを決め、回路として成立させる設計も「作る」の大切な部分じゃ。</p></div></div>
+
+<p class="semicon-one-line">最初の一言まとめ：設計と製造を別会社が担当できるため、工場を持たない会社でもAI半導体を生み出せます。</p>
+
+<h2>半導体の「作る」には設計と製造がある</h2>
+
+<p>日常会話では「作る」という言葉を一つにまとめがちです。しかし半導体では、少なくとも<strong>何をするチップにするかを決める設計</strong>と、<strong>その回路をウェハ上へ形成する製造</strong>を分けて考える必要があります。</p>
+
+<div class="semicon-two"><div class="semicon-role"><b>設計する</b><span>製品の目的、回路構成、計算性能、消費電力、入出力、検証方法、ソフトウェアとの接続を決めます。</span></div><div class="semicon-role foundry"><b>製造する</b><span>設計ルールに沿った回路を、マスク、成膜、露光、エッチング、洗浄、配線などの工程でウェハ上へ作ります。</span></div></div>
+
+<figure class="semicon-visual"><img src="https://semicon-campus.com/wp-content/uploads/2026/07/fabless-foundry-design-vs-manufacturing.webp" alt="半導体の回路を設計するチームと、ウェハ上へ回路を作る製造工場の役割の違い" width="1672" height="941" loading="lazy" decoding="async"><figcaption>半導体の「作る」は、回路を考える設計と、ウェハへ回路を形成する製造に分かれます。</figcaption></figure>
+
+<p>設計だけでもチップは完成せず、製造だけでも「どんなAI計算をするチップか」は決まりません。両者が設計ルール、検証結果、製造条件、量産立ち上げの情報を往復させて初めて、同じ設計を安定して量産できる状態へ近づきます。</p>
+
+<div class="semicon-note"><p><strong>誤解しないポイント：</strong> 設計データをファウンドリへ送れば自動的に完成するわけではありません。製造プロセスに合う設計、ルール確認、物理検証、試作、評価、歩留まり改善など、両者の継続的な協業が必要です。</p></div>
+
+<h2>ファブレスとは何をする会社か</h2>
+
+<p><strong>ファブレス（fabless）</strong>は、自社で半導体のウェハ量産工場を運営せず、チップの企画・設計・検証・製品化へ集中する事業モデルです。「fab」は半導体工場を表し、「less」は持たないという意味です。</p>
+
+<div class="semicon-grid"><div class="semicon-card"><b>製品を企画する</b><span>どの機器で、どんなAI処理を、どの性能・電力・価格帯で実現するかを決めます。</span></div><div class="semicon-card"><b>回路を設計・検証する</b><span>論理回路、メモリ、入出力、演算器の配置を設計し、意図どおり動くか確かめます。</span></div><div class="semicon-card"><b>製品全体を成立させる</b><span>ソフトウェア、パッケージ、試験、量産計画、顧客製品との接続まで調整します。</span></div></div>
+
+<p>ファブレスは「製造を丸投げする会社」ではありません。製品仕様と設計品質に責任を持ち、製造パートナーや後工程企業と調整しながら市場へ届けます。工場への巨額投資を避けられる点だけでなく、設計やソフトウェアへ経営資源を集中できる点が、この分業の意味です。</p>
+
+<h2>ファウンドリとは何をする会社か</h2>
+
+<p><strong>ファウンドリ（foundry）</strong>は、顧客が設計した半導体を受託製造する会社です。製造プロセス、工場、装置、材料管理、品質管理を組み合わせ、設計された回路をウェハ上へ作り込みます。</p>
+
+<p>ウェハ製造では、薄膜を作る<strong>成膜</strong>、回路パターンを転写する<strong>露光</strong>、不要部分を削る<strong>エッチング</strong>、汚れや残留物を除く<strong>洗浄</strong>などを何度も繰り返します。東京エレクトロンの公式工程解説でも、成膜・リソグラフィ・エッチング・洗浄が主要な前工程として示されています。</p>
+
+<p>ただし、ファウンドリの役割は装置を動かすことだけではありません。設計者が使う設計ルールや技術情報を整え、試作ロットの結果、ウェハ試験、品質・信頼性、量産状況などを顧客と共有します。TSMCの公式eFoundry説明も、設計・エンジニアリング・物流の協業を製造サービスの一部として示しています。</p>
+
+<p class="semicon-one-line">ここまでの一言まとめ：ファブレスは「何を作るか」を設計し、ファウンドリは「どう安定してウェハへ作るか」を担います。</p>
+
+<h2>設計データからウェハまで、どう協業するのか</h2>
+
+<div class="semicon-step-list"><div class="semicon-step"><b>1. 製品仕様と回路を決める</b><span>ファブレス側がAI処理、性能、電力、メモリ、入出力などの目標を回路へ落とし込みます。</span></div><div class="semicon-step"><b>2. 製造技術に合う形へ設計する</b><span>ファウンドリが提供する設計ルールやPDKに合わせます。PDKは、使える素子、寸法、配線、検証条件などをまとめた設計用の情報一式です。</span></div><div class="semicon-step"><b>3. 設計を検証してテープアウトする</b><span>論理動作だけでなく、配線、タイミング、電力、製造ルールを確認し、マスク作成へ渡せる設計データにします。</span></div><div class="semicon-step"><b>4. 試作して測る</b><span>ファウンドリがウェハを製造し、試験結果や歩留まりを確認します。設計側も実チップで性能と動作を評価します。</span></div><div class="semicon-step"><b>5. 調整して量産へつなぐ</b><span>設計、製造条件、検査条件、パッケージなどを調整し、繰り返し作れる状態へ近づけます。</span></div></div>
+
+<figure class="semicon-visual"><img src="https://semicon-campus.com/wp-content/uploads/2026/07/fabless-foundry-collaboration-loop.webp" alt="製品仕様から回路設計、検証、試作ウェハ、測定、改善、量産へ進む協業サイクル" width="1672" height="941" loading="lazy" decoding="async"><figcaption>設計データを渡して終わりではなく、試作と測定の結果を設計・製造へ戻しながら量産へ近づけます。</figcaption></figure>
+
+<div class="semicon-flow" role="img" aria-label="ファブレスの企画・設計から、ファウンドリのウェハ製造、後工程の組立・検査、AI機器へつながる分業の流れ"><div class="semicon-flow-main"><div class="semicon-flow-box design"><b>ファブレス</b><span>企画・回路設計・検証</span></div><div class="semicon-arrow">→</div><div class="semicon-flow-box"><b>設計と製造の協業</b><span>PDK・検証・試作・評価</span></div><div class="semicon-arrow">→</div><div class="semicon-flow-box wafer"><b>ファウンドリ</b><span>ウェハ製造・品質・量産</span></div><div class="semicon-arrow">→</div><div class="semicon-flow-box"><b>後工程・製品</b><span>組立・検査・機器搭載</span></div></div><div class="semicon-support"><div>EDA</div><div>IP</div><div>材料</div><div>製造装置</div><div>検査装置</div></div></div>
+
+<h2>EDA・IP・材料・装置・後工程も欠かせない</h2>
+
+<p>ファブレスとファウンドリの二社だけで、すべてを用意するわけではありません。半導体は、設計と製造を支える専門企業が重なって成立します。</p>
+
+<div class="semicon-grid"><div class="semicon-card"><b>EDA</b><span>回路設計、配置配線、タイミング解析、消費電力解析、製造ルール確認などを助ける設計自動化ツールです。</span></div><div class="semicon-card"><b>IP</b><span>CPUコア、通信回路、メモリ制御など、検証済みの設計部品を再利用できる形で提供します。</span></div><div class="semicon-card"><b>材料</b><span>シリコンウェハ、フォトレジスト、ガス、薬液、金属、パッケージ基板などを供給します。</span></div><div class="semicon-card"><b>製造装置</b><span>成膜、露光、エッチング、洗浄、検査・計測など、ウェハへ回路を作る工程を実行します。</span></div><div class="semicon-card"><b>後工程</b><span>ウェハをチップへ切り分け、パッケージへ組み立て、外部と電気的につながる形にします。</span></div><div class="semicon-card"><b>テスト</b><span>ウェハ段階や完成後に、仕様どおり動くか、電気特性や機能を検査します。</span></div></div>
+
+<figure class="semicon-visual"><img src="https://semicon-campus.com/wp-content/uploads/2026/07/fabless-foundry-ecosystem-network.webp" alt="中央のAI半導体をEDA、IP、材料、製造装置、後工程、検査の専門企業が支える連携図" width="1672" height="941" loading="lazy" decoding="async"><figcaption>一つのAI半導体は、EDA・IP・材料・装置・後工程・テストなど多くの専門企業の連携で完成します。</figcaption></figure>
+
+<p>Synopsysの公式説明では、EDAは複雑なチップの設計・検証と、製造に必要なプロセスやモデルの開発を支え、同社のシリコンIPと組み合わせて使われます。TSMCのOpen Innovation Platformも、EDA認証、IP、設計サービス、製造・パッケージ技術をつなぐ仕組みとして説明されています。</p>
+
+<p>ウェハから先では、<a href="https://semicon-campus.com/what-is-semiconductor-dicing/">ダイシング</a>でチップを切り分け、パッケージへ組み立て、検査します。ASEの公式情報でも、ウェハプロービング、最終テスト、システムレベルテストなど複数段階の試験サービスが示されています。</p>
+
+<h2>身近なAI機器までの流れで考える</h2>
+
+<p>AIサーバーやスマートフォンへ入るチップを例にすると、次のような役割の流れで考えられます。</p>
+
+<div class="semicon-step-list"><div class="semicon-step"><b>AI処理の目的を決める</b><span>画像認識、生成AI、音声処理など、必要な計算と利用場面を決めます。</span></div><div class="semicon-step"><b>回路とソフトウェアを設計する</b><span>演算器、メモリ、データ移動、入出力を設計し、ソフトウェアから使える形にします。</span></div><div class="semicon-step"><b>ウェハ上へ回路を作る</b><span>ファウンドリが多くの前工程を重ね、設計をシリコン上の回路として実体化します。</span></div><div class="semicon-step"><b>切断・組立・検査を行う</b><span>チップを切り分け、パッケージへ組み立て、電気的・機能的に検査します。</span></div><div class="semicon-step"><b>機器へ搭載する</b><span>基板や冷却、電源、メモリ、OS、AIソフトウェアと組み合わせて、利用者が触れる製品になります。</span></div></div>
+
+<div class="semicon-note"><p><strong>実際の分担は製品ごとに異なります：</strong> 一社が設計から製造まで広く担う場合もあれば、製造、パッケージ、検査を複数社へ分ける場合もあります。特定企業が常に同じ製造先を使うとは限りません。</p></div>
+
+
+<section class="mp3-section" id="revenue-phase3-learning"><h2>分業の地図から自分の担当範囲へ</h2><p>ファブレスとファウンドリの違いが分かったら、設計、製造、装置、材料、実装・検査のどこに関心や経験があるかを一つ選びます。製造・保全・品質の実務経験は、担当した工程と確認した結果を書き出すと求人相談の材料になります。未経験の製造職は教育体制と勤務条件から比較し、機械・電気・品質の不足を学び直す道も持ちましょう。</p></section>
+
+<h2>この分業はどんな仕事につながるのか</h2>
+
+<p>ファブレスとファウンドリの違いがわかると、「半導体会社で働く」といっても仕事の場所が一つではないことが見えてきます。</p>
+
+<div class="semicon-grid"><div class="semicon-card"><b>ファブレス側</b><span>製品企画、アーキテクチャ、論理設計、物理設計、検証、組み込みソフトウェア、量産・品質調整。</span></div><div class="semicon-card"><b>ファウンドリ側</b><span>プロセス開発、プロセスインテグレーション、製造、装置、歩留まり、品質、顧客技術支援。</span></div><div class="semicon-card"><b>支援・後工程側</b><span>EDA/IP開発、材料、装置、ダイシング、パッケージ設計、実装、テスト、信頼性評価。</span></div></div>
+
+<p>工場の仕事だけが半導体の仕事ではなく、設計会社だけが技術の中心でもありません。設計・製造・材料・装置・後工程のどこで価値を出すかによって、必要な専門性が変わります。</p>
+
+<p>企業を工程別に見たい方は、<a href="https://semicon-campus.com/semiconductor-company-map-by-process/">半導体企業マップ</a>へ進むと、ウェハ・材料、製造装置、検査・計測、後工程などの位置関係を確認できます。</p>
+
+<h2>まとめ：一つのAI半導体は、多くの会社の得意分野でできている</h2>
+
+<div class="semicon-summary"><strong>この記事の結論</strong><ul><li>半導体の「作る」には、設計とウェハ製造の両方がある</li><li>ファブレスは工場を持たず、企画・回路設計・検証・製品化へ集中する</li><li>ファウンドリは顧客設計を製造技術へ結びつけ、ウェハ上へ回路を作る</li><li>設計データだけで自動製造されるのではなく、PDK・検証・試作・評価・量産立ち上げの協業が必要</li><li>EDA・IP・材料・装置・後工程・テストの企業までつながって、AI半導体が完成する</li></ul></div>
+
+<p>工場を持たない会社がAI半導体を作れるのは、「何も作っていない」からではありません。設計へ集中する会社と、製造へ集中する会社、それを支える専門企業が強みをつないでいるからです。</p>
+
+<div class="semicon-links"><div class="semicon-linkbox next"><strong>次に読む記事</strong><p><a href="https://semicon-campus.com/semiconductor-company-map-by-process/">半導体企業マップ｜工程別に会社の役割を見る</a></p></div><div class="semicon-linkbox"><strong>基礎から順番に学ぶ</strong><p><a href="https://semicon-campus.com/semiconductor-beginner-roadmap/">初心者向け半導体ロードマップ</a></p></div></div>
+
+
+<section class="mp3-section" id="revenue-phase3-career"><h2>この記事の知識を、次の仕事・学習へつなげる</h2><p>製造、検査、装置保守、工程改善の経験を、対象・作業・確認した結果で整理します。担当範囲と必要経験、勤務地、勤務・出張、教育体制を比較すると、次に補う知識も具体的になります。</p><aside class="semicon-cta mp3-card"><h3>関連する職種の仕事内容・求人・学習を見る</h3><p>記事で学んだ技術が、点検・復旧、装置立上げ、顧客対応、実装・工程改善のどの仕事で使われるか確認できます。職種記事の求人・学習の選び方へ進みましょう。</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/" class="semicon-btn mp3-button" data-revenue-phase3-hub="277" data-cta="maintenance_hub" data-cta-type="maintenance_hub" data-cta-stage="career" data-cta-id="phase3_557_hub277_end" data-cta-route="phase3_557_hub277_end">設備保全Hubで仕事内容・求人・学習を確認する</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/" class="semicon-btn mp3-button" data-revenue-phase3-hub="237" data-cta="equipment_hub" data-cta-type="equipment_hub" data-cta-stage="career" data-cta-id="phase3_557_hub237_end" data-cta-route="phase3_557_hub237_end">装置エンジニアの担当範囲・求人・学習を見る</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/advanced-packaging-jobs-career/" class="semicon-btn mp3-button" data-revenue-phase3-hub="651" data-cta="packaging_hub" data-cta-type="packaging_hub" data-cta-stage="career" data-cta-id="phase3_557_hub651_end" data-cta-route="phase3_557_hub651_end">先端パッケージの仕事・求人・学習の選び方を見る</a></div></aside></section>
+
+
+<h2>参考情報</h2>
+
+<p>変動しやすい市場シェアや費用は使わず、役割と協業の説明は次の公式一次資料を確認しました。</p>
+<ul class="semicon-source-list"><li><a rel="noopener" href="https://www.tsmc.com/english/dedicatedFoundry/services" target="_blank">TSMC｜Dedicated Foundry Services</a></li><li><a rel="noopener" href="https://www.tsmc.com/english/dedicatedFoundry/oip" target="_blank">TSMC｜Open Innovation Platform</a></li><li><a rel="noopener" href="https://www.tsmc.com/english/dedicatedFoundry/services/eFoundry" target="_blank">TSMC｜eFoundry</a></li><li><a rel="noopener" href="https://www.synopsys.com/silicon-design.html" target="_blank">Synopsys｜Electronic Design Automation</a></li><li><a rel="noopener" href="https://www.tel.com/product/" target="_blank">Tokyo Electron｜Semiconductor Production Process</a></li><li><a rel="noopener" href="https://ase.aseglobal.com/test-services/" target="_blank">ASE｜Test Services</a></li></ul>
+
+<a class="semicon-backtop" href="#semicon-top">↑ 先頭へ</a>
+</div>
+

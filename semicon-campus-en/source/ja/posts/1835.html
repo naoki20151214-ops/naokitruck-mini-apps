@@ -1,0 +1,42 @@
+<p>Texas Instruments（TI）は2026年10月1日、MCU、MPU、無線接続デバイスを含む幅広い組み込み半導体ポートフォリオについて、オープンソースの組み込み向けOS「Zephyr」への対応を広げたと発表しました。TIは、既存のZephyrコードベースやツールチェーンを活用したまま、自社製品へ移行しやすくする方針を示しています。ただし、これはTIによる製品・開発計画の説明であり、全製品で無修正移行できることや、すべての機能が同時に利用できることを意味しません。<a href="https://www.ti.com/about-ti/newsroom/news-releases/2026/ti-expands-zephyr-rtos-support-to-its-broad-embedded-portfolio.html">TI公式発表</a></p>
+<h2>何が発表されたのか</h2>
+<p>今回の中心は、TIがZephyrを特定の評価ボードや一部の無線チップだけでなく、一般用途MCU、無線接続製品、リアルタイムMCU、MPUへ広げるという発表です。TIは、上流優先のコードレビュー、公開GitHub上のCI/CD、検証済みリリース、移行ガイド、後方互換性に関する情報、長期保守情報などを提供すると説明しています。これらは、半導体を変更する際に必要となるドライバー、ビルド設定、テスト手順の作り直しを減らすことを狙ったものです。<a href="https://www.ti.com/about-ti/newsroom/news-releases/2026/ti-expands-zephyr-rtos-support-to-its-broad-embedded-portfolio.html">TI公式発表</a></p>
+<p>具体例として、TIのSimpleLink Low Power Zephyr SDK V3.7.0-01.00.00-GAは2026年7月27日付で掲載され、CC2340R5、CC2340R5MODA、CC2755P10、CC2755P20、CC2755R10を対応製品として挙げています。このSDKはTI側の下流フォークを基盤にしたリリースで、TIは将来的なZephyr本流（mainline）への統合方針も示しています。したがって、発表時点で全機能がmainlineに統合済みだと解釈することはできません。<a href="https://www.ti.com/tool/SIMPLELINK-LOWPOWER-SDK">TI SimpleLink Low Power Zephyr SDK</a></p>
+<h2>Zephyr RTOSとは</h2>
+<p>RTOSは「リアルタイムOS」の略です。センサーの読み取り、モーター制御、通信処理などを、決められた時間内に実行することを重視します。スマートフォン向けOSのように大規模な画面機能を中心とするのではなく、メモリーや消費電力が限られた機器で、複数の処理を安定して動かすためのOSです。</p>
+<p>Zephyrは、資源制約のある組み込み機器向けの小規模カーネルを基盤とし、Arm Cortex-M・Cortex-A・Cortex-R、RISC-V、x86、ARC、Xtensaなど複数のCPUアーキテクチャに対応します。モジュール式の構成を採用しており、必要な機能だけを組み合わせやすい点が特徴です。<a href="https://docs.zephyrproject.org/latest/introduction/index.html">Zephyr公式技術文書</a></p>
+<h3>重要な技術用語</h3>
+<ul>
+<li><strong>Devicetree</strong>：CPU、メモリー、GPIO、通信回路など、基板上のハードウェア構成を記述する仕組みです。ソースコードを大きく書き換えず、ボードごとの差分を設定として管理しやすくします。</li>
+<li><strong>ドライバ</strong>：OSやアプリケーションから、UART、SPI、I2C、センサー、無線回路などのハードウェアを操作するためのソフトウェアです。共通のドライバモデルがあれば、上位のアプリケーションを再利用しやすくなります。</li>
+<li><strong>CI/CD</strong>：コードを変更するたびにビルドやテストを自動実行し、問題を早く見つける開発方法です。公開されたCI/CDが整っていれば、対応状況や不具合を確認しやすくなります。</li>
+</ul>
+<p>TIの公式案内では、Zephyrの検証にTwisterとZtestを使うことも説明されています。これらは、複数のボードや設定でテストを繰り返すための枠組みです。つまり、単に「動くサンプルがある」というだけでなく、対応を継続的に確認する開発基盤を整えることが、今回の発表の重要な部分です。<a href="https://www.ti.com/design-development/software-design/Zephyr-RTOS.html">TIのZephyr案内</a></p>
+<h2>なぜ組み込み開発で重要なのか</h2>
+<p>組み込み製品では、半導体を別の品番や別メーカーへ変更すると、OS、ドライバー、通信スタック、ブートローダー、ビルド設定、テスト環境まで影響することがあります。ハードウェアが変わるたびにソフトウェアを一から作り直すと、開発期間だけでなく、長期保守の負担も増えます。</p>
+<p>共通のRTOS、API、ビルド方式、テスト手順を使える範囲が広がれば、製品系列の派生モデルを開発しやすくなります。特に、同じ会社が低消費電力の無線MCUから、より高性能なMPUまで複数の製品を使い分ける場合、ソフトウェア資産を共通化できる可能性があります。これは、TIが掲げる「既存のZephyrワークフローを維持した移行」という価値に対応しますが、移行工数や性能向上を独立機関が実証したという意味ではありません。<a href="https://www.ti.com/about-ti/newsroom/news-releases/2026/ti-expands-zephyr-rtos-support-to-its-broad-embedded-portfolio.html">TI公式発表</a></p>
+<h2>過去の課題と今回の位置づけ</h2>
+<p>Zephyrは複数の半導体メーカーをまたいで使えることを目指していますが、共通OSがあればハードウェア差が消えるわけではありません。2025年3月のZephyr公式Issueでは、TIの複数シリーズで周辺機能の対応が分散し、未対応の周辺ブロックも多いという技術的課題が記録されていました。今回の「広範なポートフォリオ対応」は、こうした過去の課題を背景に、対応範囲と開発体制を拡大する動きとして読むのが適切です。<a href="https://github.com/zephyrproject-rtos/zephyr/issues/87751">Zephyr公式Issue</a></p>
+<p>また、Zephyrの公式リリース情報では、4.4.0が2026年4月14日の最新安定版として掲載され、3.7.0は2024年7月26日のLTS版です。4.5は2026年10月の計画リリースとされており、計画日を実際のリリース完了日と混同してはいけません。TIの下流SDK、TIが管理するリポジトリ、Zephyr本流の対応状況は、それぞれ別に確認する必要があります。<a href="https://github.com/zephyrproject-rtos/zephyr/blob/main/doc/releases/index.rst">Zephyrリリース情報</a></p>
+<h2>限界と量産採用で確認すべきこと</h2>
+<p>今回の発表で注意したいのは、「広範なポートフォリオ」という表現だけでは、全品番、全周辺機能、全アプリケーションの対応範囲を確定できない点です。Zephyrを使っていても、ピン割り当て、クロック、割り込み、DMA、電源状態、独自アクセラレーター、ブート構成、無線認証などは、チップごとに追加確認が必要です。</p>
+<p>また、TIがSDKを「production grade」と説明していても、それは該当SDKについてのTIの位置づけです。最終製品の信頼性、性能、消費電力、セキュリティ、法規制への適合を自動的に保証するものではありません。TIが言及するEUサイバーレジリエンス法（CRA）対応も、最終製品が法律上の義務を自動的に満たすという意味ではなく、製品事業者による脆弱性対応、文書化、適合評価などが別途必要です。</p>
+<ul>
+<li>対象品番のボード定義と周辺ドライバーが必要な機能を満たすか</li>
+<li>TIの下流SDKとZephyr mainlineのバージョン・パッチ差分</li>
+<li>テストレポート、性能、消費電力、無線認証の実測結果</li>
+<li>セキュリティ修正の提供元と、製品終了後を含む保守責任</li>
+<li>評価ボードと量産基板で、ピンや電源、ブート構成が一致しているか</li>
+</ul>
+<h2>これから注目したい点</h2>
+<p>今後は、TIがどの品番・周辺機能をZephyr本流へ実際に統合するか、下流SDKとmainlineの差がどの程度縮まるかが焦点になります。Zephyr 4.5についても、予定どおり公開されたかを実績として確認する必要があります。加えて、公開CI/CDやテストレポートが、開発者が使う具体的なボードと製品構成をどこまでカバーするかも重要です。</p>
+<p>今回の発表は、半導体の価値がCPU性能や価格だけでなく、長期に使えるソフトウェア基盤や開発者コミュニティとの接続性にも左右されることを示すニュースです。採用を検討する際は、「Zephyr対応」という一言だけで判断せず、品番単位の機能、SDKの保守、テスト結果、mainlineとの関係を確認することが大切です。</p>
+<h2>出典</h2>
+<ul>
+<li><a href="https://www.ti.com/about-ti/newsroom/news-releases/2026/ti-expands-zephyr-rtos-support-to-its-broad-embedded-portfolio.html">Texas Instruments：TI expands Zephyr RTOS support to its broad embedded portfolio</a></li>
+<li><a href="https://docs.zephyrproject.org/latest/introduction/index.html">Zephyr Project：Introduction</a></li>
+<li><a href="https://www.ti.com/design-development/software-design/Zephyr-RTOS.html">Texas Instruments：Zephyr</a></li>
+<li><a href="https://www.ti.com/tool/SIMPLELINK-LOWPOWER-SDK">Texas Instruments：SimpleLink Low Power SDK</a></li>
+<li><a href="https://github.com/zephyrproject-rtos/zephyr/blob/main/doc/releases/index.rst">Zephyr Project：Zephyr releases</a></li>
+<li><a href="https://github.com/zephyrproject-rtos/zephyr/issues/87751">Zephyr Project GitHub：Texas Instruments development overview / roadmap</a></li>
+</ul>

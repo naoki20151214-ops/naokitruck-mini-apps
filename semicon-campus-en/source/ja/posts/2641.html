@@ -1,0 +1,206 @@
+<!--KEEP:0-->
+<div class="semicon-article" id="semicon-top">
+<div class="semicon-level">
+<div class="semicon-level-top"><span class="semicon-level-label">学習レベル</span><strong class="semicon-stars" aria-label="初級（5段階中の1）"><span class="on">★</span><span class="off">☆☆☆☆</span><span>初級</span></strong></div>
+</div>
+<div class="semicon-lead">
+<p>カメラのレンズに、小さなホコリが付いたまま、写真を撮ったことはありませんか。すると、撮った写真のすべてに、同じ黒い点が写ってしまいます。</p>
+<p>半導体の工場でも、似たことが起こりえます。回路の原版である「フォトマスク」に、ホコリがひとつ付くだけで、そこから作られるチップに、同じ欠陥が写ってしまうのです。それを防ぐのが、「ペリクル」という、薄くて透明な膜です。この記事では、フォトマスクとペリクルの役割を、順に説明します。</p>
+</div>
+<div class="semicon-note">
+<p>レンズのホコリの例が当てはまるのは、「原版に付いた汚れが、すべての写しに現れる」という点だけです。カメラと半導体の工場では、仕組みがまったく違います。</p>
+</div>
+<div class="semicon-map">
+<h3>この記事でわかること</h3>
+<ol>
+<li><strong>この記事の目的：</strong>ペリクルが、なぜフォトマスクに必要なのかを、つかむこと</li>
+<li><strong>前半：</strong>フォトマスクとは何か、欠陥がなぜ困るのか</li>
+<li><strong>後半：</strong>ペリクルの役割と、EUV用の新しいペリクル</li>
+</ol>
+</div>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep115-blog-ep115-05-mask.jpg" alt="クリーンルームの服を着た技術者が、回路の形が描かれたフォトマスクを、ピンセットで持っているイメージ"><figcaption>フォトマスクを持つ技術者のイメージ。実際の工場や人物ではありません。 EP115 記事用画像（AI生成）。生成画像を縮小し、JPEGに最適化。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>回路の形が描かれた、原版</li>
+<li>透明な板に、光を通さない膜</li>
+<li>この原版から、回路が写される</li>
+</ul>
+</div>
+<div class="semicon-chat-row naoki">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">助手</div>
+</div>
+<div class="semicon-bubble">
+<p>博士、フォトマスクにホコリが付くと、そんなに困るんですか？</p>
+</div>
+</div>
+<div class="semicon-chat-row teacher">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">博士</div>
+</div>
+<div class="semicon-bubble">
+<p>そうじゃ。マスクの欠陥は、そこから作られるチップ全部に、写ってしまうんじゃ。</p>
+</div>
+</div>
+<div class="semicon-chat-row naoki">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">助手</div>
+</div>
+<div class="semicon-bubble">
+<p>どうすれば、防げますか？</p>
+</div>
+</div>
+<div class="semicon-chat-row teacher">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">博士</div>
+</div>
+<div class="semicon-bubble">
+<p>マスクに、ペリクルという、薄い透明な膜をかぶせるんじゃ。順に、見ていこう。</p>
+</div>
+</div>
+<h2 class="wp-block-heading" data-fact-ids="C01">ホコリひとつで、チップがだめになる</h2>
+<p>Semiconductor Engineeringの記事（2016年）では、フォトマスクにホコリなどの粒子が付くと、露光装置が、その欠陥を、ウェハに写してしまうと説明されています。ロジックのチップでは、欠陥がひとつあるだけで、そのチップ全体が使えなくなる、というのが、Applied Materialsの技術者の言葉として紹介されています。<strong class="semicon-key">原版のホコリは、チップの不良に、直結します。</strong></p>
+<details class="semicon-quiz">
+<summary>確認クイズ：フォトマスクにホコリが付くと、何が困るでしょう？</summary>
+<p>答え：その欠陥が、ウェハに写り、チップが使えなくなることがあります。</p>
+</details>
+<h2 class="wp-block-heading" data-fact-ids="C02">回路の原版「フォトマスク」</h2>
+<p>フォトマスクは、半導体の回路の形が描かれた、原版です。ウィーン工科大学のマスクの解説では、「ブランク」と呼ぶ透明な板に、光を通さない膜で、パターンが描かれたもの、と説明されています。板には、石英などのガラスが使われ、石英は、短い波長の光でも透明で、熱による膨張が、とても小さいという長所があります。光を通さない膜は、約100ナノメートルの、とても薄いクロムで、表面には、反射を抑える膜がつきます。高品質なフォトマスクには、平らさ、パターンの位置の正確さ、最小の線の細さ、線の太さの管理、欠陥の少なさなど、厳しい条件が求められます。</p>
+<details class="semicon-quiz">
+<summary>確認クイズ：フォトマスクの、光を通さない膜には、何が使われるでしょう？</summary>
+<p>答え：とても薄いクロムです。厚さは、約100ナノメートルです。</p>
+</details>
+<h2 class="wp-block-heading" data-fact-ids="C03">フォトマスクの欠陥は、ウェハに写る</h2>
+<p>三井化学の発表を伝えるMONOistの記事では、半導体のウェハに光を当てて、回路の形を描く工程が、フォトリソグラフィ工程と説明されています。フォトマスクは、その工程で、同じ回路を、何枚ものウェハに写すための、「型」です。そのため、マスクに欠陥があると、その欠陥も、そのまま写ってしまいます。</p>
+<p>ウィーン工科大学の解説では、マスクの欠陥の例として、クロムが欠けた部分、クロムの小さな穴、解像されなかったクロムの領域が挙げられています。約0.1マイクロメートルより大きな欠陥は、自動の検査で見つけられ、レーザーやイオンビームで、修復されます。また、電子ビームで作ったマスクは、最大で75％に欠陥が見つかったという観測も紹介されています。</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep115-blog-01-flow.png" alt="光がフォトマスクを通り、回路の形がウェハに写される流れの概念図"><figcaption>フォトマスクを通った光が、回路の形をウェハに写す流れを表した模式図。説明用の流れで、特定の装置の構造ではありません。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>光が、マスクを通る</li>
+<li>回路の形が、ウェハに写される</li>
+<li>マスクは、同じ回路を写す型</li>
+</ul>
+</div>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep115-blog-02-dust.png" alt="フォトマスクにホコリが付くと、その欠陥がウェハの全部のチップに写ることを示した概念図"><figcaption>マスクのホコリが、ウェハの欠陥として写る様子を表した模式図。説明用の図で、実際の画像ではありません。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>マスクにホコリが付く</li>
+<li>その欠陥が、写ってしまう</li>
+<li>全部のチップに、同じ欠陥</li>
+</ul>
+</div>
+<details class="semicon-quiz">
+<summary>確認クイズ：フォトマスクは、ウェハに対して、どんな役割でしょう？</summary>
+<p>答え：同じ回路を、何枚も写すための「型」です。</p>
+</details>
+<h2 class="wp-block-heading" data-fact-ids="C04">ホコリよけの膜「ペリクル」</h2>
+<p>ペリクルは、フォトマスクにかぶせる、薄くて透明な、ホコリよけの膜です。Semiconductor Engineeringの記事では、製造の流れの中で、露光装置が、粒子や汚れを出しやすいため、ペリクルで、それらがマスクに落ちるのを防ぐ、と説明されています。同時に、光を、装置からマスクへ通せるだけの透明さも、必要です。なお、メモリのチップは、予備の回路を持つため、ロジックのチップとは、事情が違うとも説明されています。</p>
+<p>MONOistの記事によると、ペリクルは、光の波長ごとに、耐光性のある膜の材料を選び、光をよく通すように、膜の厚さを設計した、防塵カバーです。フォトマスクをきれいに保ち、半導体の生産性を高めます。三井化学は、1984年に、ペリクルを発売しました。<strong class="semicon-key">ペリクルは、光は通して、ホコリは通さない、マスクのカバーです。</strong></p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep115-blog-ep115-06-pellicle.jpg" alt="フォトマスクの上に、金属の枠に張った薄くて透明なペリクルの膜がかぶせられているイメージ"><figcaption>ペリクルをかぶせたフォトマスクのイメージ。実際の製品の形とは異なります。 EP115 記事用画像（AI生成）。生成画像を縮小し、JPEGに最適化。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>マスクにかぶせる、透明な膜</li>
+<li>光は通して、ホコリは通さない</li>
+<li>マスクを、きれいに保つ</li>
+</ul>
+</div>
+<details class="semicon-quiz">
+<summary>確認クイズ：ペリクルは、何のためにあるでしょう？</summary>
+<p>答え：ホコリなどの粒子が、フォトマスクに落ちるのを防ぐためです。</p>
+</details>
+<h2 class="wp-block-heading" data-fact-ids="C05">普通のマスクと、EUV用のマスク</h2>
+<p>Semiconductor Engineeringの記事によると、光を通す普通のマスクでは、何十年も前から、ペリクルが使われてきました。材料は、薄い樹脂です。一方、最先端の「EUV」露光では、事情が変わります。EUVは、MONOistの記事で、波長13.5ナノメートルの、極端紫外線と説明されています。EUV用のマスクは、光を通す板ではなく、シリコンとモリブデンの層を、40〜50層重ねた、鏡です。</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep115-blog-03-euv.png" alt="光を通す普通のマスクと、光を反射するEUV用のマスクの違いを示した概念図"><figcaption>普通のマスクとEUV用のマスクの違いを表した模式図。説明用の図です。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>普通のマスクは、光を通す板</li>
+<li>EUV用は、光を反射する鏡</li>
+<li>層を重ねた、特別な構造</li>
+</ul>
+</div>
+<p>EUVでは、以前、装置の中が、完全にきれいに保たれるなら、ペリクルは不要だという考えもありました。しかし、チップメーカーは、装置の中を、100％きれいには保てないとして、考えを改めました。Applied Materialsの技術者は、ペリクルがあると、マスクの取り扱いや保管も、ずっと楽になる、と話しています。</p>
+<p>EUV用のペリクルは、光をよく通しながら、強い光にも耐える必要があり、開発が難しい部品です。2016年の記事では、膜が、とても高い温度になることが、課題として挙げられていました。三井化学は、2021年に、オランダのASMLからライセンスを受けて、EUV用ペリクルの商業生産を始めています。</p>
+<details class="semicon-quiz">
+<summary>確認クイズ：EUV用のマスクは、光を通す板でしょうか、鏡でしょうか？</summary>
+<p>答え：鏡です。シリコンとモリブデンの層を、40〜50層重ねたものです。</p>
+</details>
+<h2 class="wp-block-heading" data-fact-ids="C06">次世代のペリクル：カーボンナノチューブ</h2>
+<p>MONOistの記事によると、次世代のEUV露光装置には、高い開口数と、600ワット以上の高出力が求められ、そのためには、過酷な露光に耐える新しい素材のペリクルが必要です。回路の線の幅が、7ナノメートル以下になる、超微細な半導体を作るために、EUV露光の採用が、広がっています。三井化学は、EUVの光を92％以上通し、1キロワットを超える露光出力にも耐える、カーボンナノチューブ（炭素でできた細い筒）の膜の、生産設備を設置することを、2024年に発表しました。年間5000枚を生産でき、完成は、2025年12月の予定とされています。いまのEUV用ペリクルの膜材は、シリコン系の素材で、カーボンナノチューブの製品は、それに加える、次世代の品ぞろえです。</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep115-blog-04-next.png" alt="次世代のカーボンナノチューブのペリクルに求められる、光の透過と耐光性の条件を示した概念図"><figcaption>次世代のカーボンナノチューブのペリクルの条件を表した模式図。数字は、三井化学の発表にある目標です。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>光を、92%以上通す</li>
+<li>強い光に、耐える</li>
+<li>材料は、カーボンナノチューブ</li>
+</ul>
+</div>
+<details class="semicon-quiz">
+<summary>確認クイズ：次世代のEUV用ペリクルに使われる、新しい膜の材料は、何でしょう？</summary>
+<p>答え：カーボンナノチューブです。</p>
+</details>
+<div class="semicon-cta">
+<h3>工程を担当する仕事を、知る</h3>
+<p>この工程を担当する仕事を知りたい方は、こちらの記事も読んでみてください。</p>
+<div class="semicon-btnrow"><a class="semicon-btn" href="https://semicon-campus.com/semiconductor-career-map/">半導体製造の仕事を工程別に見てみる</a></div>
+</div>
+<p>製造の全体像は、<a href="https://semicon-campus.com/semiconductor-manufacturing-overview/">半導体の製造工程の全体像</a>で紹介しています。なお、設備の調整や復旧は、所属する工場やメーカーの正式な手順と、権限のある人の判断のもとで行います。この記事は、考え方の紹介で、設備の操作を指示するものではありません。</p>
+<h2 class="wp-block-heading">ことばのおさらい</h2>
+<ul>
+<li><strong>フォトマスク：</strong>半導体の回路の形が描かれた、原版です。</li>
+<li><strong>ブランク：</strong>フォトマスクの、透明な板の部分です。</li>
+<li><strong>ペリクル：</strong>フォトマスクにかぶせる、薄くて透明なホコリよけの膜です。</li>
+<li><strong>EUV：</strong>波長13.5ナノメートルの、極端紫外線です。</li>
+<li><strong>カーボンナノチューブ：</strong>炭素でできた、細い筒状の材料です。</li>
+</ul>
+<h2 class="wp-block-heading">よくある誤解</h2>
+<h3>Q. ペリクルは、フォトマスクの、光を通さない膜のことですか？</h3>
+<p>いいえ。光を通さない膜は、クロムなどで、回路の形を作る部分です。ペリクルは、そのマスクの上にかぶせる、ホコリよけの、透明な膜です。</p>
+<h3>Q. EUVのマスクも、光を通す板ですか？</h3>
+<p>いいえ。EUV用のマスクは、シリコンとモリブデンの層が重なった、光を反射する鏡です。</p>
+<h2 class="wp-block-heading">まとめ</h2>
+<div class="semicon-lead">
+<p>フォトマスクは、回路の原版で、ホコリや傷があると、その欠陥が、ウェハに写ってしまいます。<br />ペリクルは、フォトマスクにかぶせる、薄くて透明なホコリよけの膜で、光は通し、ホコリは通しません。<br />最先端のEUVでは、光をよく通して、強い光にも耐える、カーボンナノチューブの膜の開発が、進んでいます。</p>
+</div>
+<div class="semicon-note">
+<p>この記事の図解は、Instagram（semicon_campus）にも、まとめて投稿しています。保存して、見返してください。</p>
+</div>
+<div class="semicon-cta">
+<h3>YouTubeでも、半導体をやさしく解説しています</h3>
+<p>図解で復習したい人向けに、YouTubeでも半導体製造を短く解説しています。</p>
+<div class="semicon-btnrow"><a rel="noopener" class="semicon-btn secondary" href="https://www.youtube.com/@semicon-campus" target="_blank">YouTubeで図解動画を見る</a></div>
+</div>
+<h2 class="wp-block-heading">参考にした公式情報</h2>
+<ul class="semicon-sources">
+<li data-source-id="S01"><a href="https://www.iue.tuwien.ac.at/phd/kirchauer/node23.html">ウィーン工科大学 H. Kirchauer「2.4.1 Binary Masks」（マイクロエレクトロニクス研究所）</a></li>
+<li data-source-id="S02"><a href="https://monoist.itmedia.co.jp/mn/articles/2405/31/news044.html">MONOist「三井化学が次世代EUV露光用CNTペリクルの生産設備を山口県の工場に設置」（2024年）</a></li>
+<li data-source-id="S03"><a href="https://semiengineering.com/next-euv-challenge-pellicles/">Semiconductor Engineering「Next EUV Challenge: Pellicles」（2016年）</a></li>
+</ul>
+<section class="semicon-correction-form">
+<h2>質問・訂正フォーム</h2>
+<p>この記事の内容に誤りや、分かりにくい点があれば、下のフォームからお知らせください。確認して、記事を直します。</p>
+<div class="semicon-form-shortcode">
+<div class="wpcf7 no-js" id="wpcf7-f2045-o2" lang="ja" dir="ltr" data-wpcf7-id="2045">
+<div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
+<form action="/?rest_route=%2Fwp%2Fv2%2Fposts&#038;per_page=100&#038;page=1&#038;context=view#wpcf7-f2045-o2" method="post" class="wpcf7-form init" aria-label="コンタクトフォーム" novalidate="novalidate" data-status="init">
+<fieldset class="hidden-fields-container"><input type="hidden" name="_wpcf7" value="2045" /><input type="hidden" name="_wpcf7_version" value="6.1.6" /><input type="hidden" name="_wpcf7_locale" value="ja" /><input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f2045-o2" /><input type="hidden" name="_wpcf7_container_post" value="0" /><input type="hidden" name="_wpcf7_posted_data_hash" value="" />
+</fieldset>
+<p>お名前・電話番号・住所の入力は不要です。工場名や社外秘の情報は記載しないでください。
+</p>
+<p><label>報告の種類（必須） <span class="wpcf7-form-control-wrap" data-name="report-type"><select class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required" aria-required="true" aria-invalid="false" name="report-type"><option value="誤りと思われる点">誤りと思われる点</option><option value="分かりにくい箇所">分かりにくい箇所</option><option value="追加してほしい説明・質問">追加してほしい説明・質問</option></select></span></label><br />
+<label>該当する見出し・文章（任意） <span class="wpcf7-form-control-wrap" data-name="report-section"><input size="40" maxlength="200" class="wpcf7-form-control wpcf7-text" aria-invalid="false" value="" type="text" name="report-section" /></span></label><br />
+<label>内容（必須） <span class="wpcf7-form-control-wrap" data-name="report-message"><textarea cols="40" rows="10" maxlength="3000" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" aria-required="true" aria-invalid="false" name="report-message"></textarea></span></label><br />
+<label>返信用メールアドレス（返信をご希望の場合のみ・任意） <span class="wpcf7-form-control-wrap" data-name="report-email"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-email wpcf7-text wpcf7-validates-as-email" autocomplete="email" aria-invalid="false" value="" type="email" name="report-email" /></span></label>
+</p>
+<p>ご意見は記事の確認・改善のために利用します。<a href="https://semicon-campus.com/privacy-policy/">個人情報の取り扱い</a>をご確認ください。
+</p>
+<p><input class="wpcf7-form-control wpcf7-submit has-spinner" type="submit" value="ご意見・訂正報告を送信" />
+</p><div class="wpcf7-response-output" aria-hidden="true"></div>
+</form>
+</div>
+</div>
+</section>
+</div>

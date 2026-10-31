@@ -1,0 +1,20 @@
+{
+ "id": 1835,
+ "type": "post",
+ "slug": "daily-news-d88a6d9a8e3f08a077b8",
+ "link": "https://semicon-campus.com/daily-news-d88a6d9a8e3f08a077b8/",
+ "date": "2026-10-06T12:00:00",
+ "modified": "2026-10-27T20:03:48",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  20
+ ],
+ "tags": [
+  19
+ ],
+ "featured_media": 2783,
+ "title": "TIがZephyr対応を拡大、組み込み半導体の開発はどう変わる？",
+ "excerpt": "TIがMCU・MPU・無線チップのZephyr対応拡大を発表。Zephyrの仕組み、移行メリット、下流SDKと量産採用の注意点を初心者向けに解説します。"
+}

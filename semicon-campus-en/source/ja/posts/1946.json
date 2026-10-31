@@ -1,0 +1,20 @@
+{
+ "id": 1946,
+ "type": "post",
+ "slug": "daily-news-0a5697843accf6b54a94",
+ "link": "https://semicon-campus.com/daily-news-0a5697843accf6b54a94/",
+ "date": "2026-10-12T09:00:00",
+ "modified": "2026-10-27T20:03:26",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  20
+ ],
+ "tags": [
+  19
+ ],
+ "featured_media": 2766,
+ "title": "Intel、Diamond RapidsをSGX搭載最後のXeonに　TDXへ重点移行",
+ "excerpt": "IntelがDiamond RapidsをSGX搭載最後の次世代Xeonとする計画を発表。SGXとTDXの違い、AI時代の機密計算、今後の確認点を初心者向けに解説します。"
+}

@@ -1,0 +1,165 @@
+<!--KEEP:0-->
+<article class="semicon-template-v2" data-episode="094" data-slug="sensor-interlock" data-template-version="2" data-research="episodes/094/research/deep-research-result.md">
+<div class="semicon-hook">
+<p>扉は閉まっているのに、装置が「開いている」と表示して動かない。</p>
+<p>そんなとき、扉そのものが故障したとは限りません。</p>
+<p>装置は現物を直接理解するのではなく、センサーの信号を条件と照らして動作の可否を決めます。</p>
+</div>
+<p>この記事の主役は、半導体製造装置の<strong>センサーとインターロック</strong>です。センサーは圧力や位置などの状態を信号に変える入口。インターロックは、決められた条件が成立しないときに動作を許可しない、または運転を停止側へ移す仕組みとして捉えます。「危ない」の中身には人に関わる危険と、装置や工程にとって不適切な状態があります。両者の目的を混ぜず、実物から制御判断までの経路をたどります。<a class="source-ref" href="#source-S03">[S03]</a><a class="source-ref" href="#source-S04">[S04]</a><a class="source-ref" href="#source-S09">[S09]</a></p>
+<h2>この記事でわかること</h2>
+<ul>
+<li>なぜ装置は圧力・流量・温度・位置・扉などを確かめるのか</li>
+<li>Sensor → Signal → I/O → Controller → Logicから、許可・禁止・停止へ至る流れ</li>
+<li>インターロック発生後、実設備と信号経路のどこから原因を絞るか</li>
+</ul>
+<nav class="learning-map" aria-label="この記事の読み順">
+<ol>
+<li><a href="#need">なぜ検知と停止の仕組みが必要か</a></li>
+<li><a href="#chain">装置が状態を判断する経路</a></li>
+<li><a href="#protect">人・装置・ウェハ・工程をどう守るか</a></li>
+<li><a href="#trouble">停止後に何を順に見るか</a></li>
+<li><a href="#branches">六つの原因候補をどう分けるか</a></li>
+<li><a href="#maintenance">設備保全の仕事とのつながり</a></li>
+</ol>
+</nav>
+<section id="need">
+<h2>1. なぜ、装置は動く前と動いている間に状態を確かめるのか</h2>
+<p>必要な理由は、装置の画面上の命令だけでは、現実の圧力や扉の位置がわからないからです。半導体装置には、処理室の真空、ガス流量、温度、バルブや搬送機構の位置、ウェハやキャリアの有無を測る部品が使われます。ただし、監視項目とセンサーの配置は装置ごとに異なります。これらを一つの装置の標準構成として列挙しているのではなく、安全の枠組みと各社の製品例を組み合わせた説明です。<a class="source-ref" href="#source-S08">[S08]</a><a class="source-ref" href="#source-S11">[S11]</a><a class="source-ref" href="#source-S13">[S13]</a><a class="source-ref" href="#source-S14">[S14]</a></p>
+<p>たとえばロードロックや処理室の圧力を測る真空計、流量を測って調整するMFC、ウェハキャリアの有無を検出する光学センサーには、それぞれメーカーの実装例があります。装置が必要な状態を確かめずに次の動作へ進めば、圧力・流量・位置などの条件がそろっていないまま操作が進む可能性があります。どの条件で何を禁止するかは個別の設計によります。<a class="source-ref" href="#source-S14">[S14]</a><a class="source-ref" href="#source-S11">[S11]</a><a class="source-ref" href="#source-S13">[S13]</a><a class="source-ref" href="#source-S04">[S04]</a></p>
+<p>逆に、条件が満たされないときに開始を許可しない仕組みがあれば、不適切な順序や状態で動作することを抑えられます。運転中に条件が外れた場合は、設計された停止側へ移すこともあります。インターロックの役割は「何でも即座に全部止める」ことではありません。対象の危険や工程、装置に応じて、何を許可し、何を禁止するかが定められます。<a class="source-ref" href="#source-S04">[S04]</a><a class="source-ref" href="#source-S09">[S09]</a></p>
+</section>
+<section id="chain">
+<h2>2. センサーから停止判断まで、どこを信号が通るのか</h2>
+<p>装置は「危険」を人のように理解しません。物理状態をセンサーが電気信号やデジタル情報に変え、I/Oという制御装置の入出力を通して、コントローラーが受け取ります。そこで設定された条件と比較し、動作許可（Permit）か禁止（Inhibit）かを決め、必要な出力を駆動部へ送ります。次の一本の線は、IEEEのセンサー定義、産業用コントローラーのI/O資料、インターロックの説明をつないだ<strong>記事上の整理</strong>です。すべての半導体装置の配線図を表すものではありません。<a class="source-ref" href="#source-S03">[S03]</a><a class="source-ref" href="#source-S06">[S06]</a><a class="source-ref" href="#source-S04">[S04]</a></p>
+<p class="signal-chain"><strong>Physical state → Sensor → Signal → I/O → Controller → Logic → Permit / Inhibit → Output → Actuator</strong></p>
+<p>Sensorは実際の状態を検出する部品、Signalはその結果を伝える情報です。I/Oは信号を制御装置へ入れたり、制御装置から出したりする接点。Controllerは入力値を受ける制御装置、Logicは「この条件なら動作可」といった判定です。Actuatorはバルブやモーターなど、命令を受けて働く側を指します。産業用機器にはON/OFF入力のほか、0/4–20 mAや0–10 Vのような連続量の入力例がありますが、通信方式や電気的仕様は機種によります。<a class="source-ref" href="#source-S06">[S06]</a><a class="source-ref" href="#source-S11">[S11]</a></p>
+<p>圧力計の一例では、圧力に応じた0–10 Vの出力がコントローラー側へ渡ります。そこで信号の範囲を測定値へ対応付け、装置が定める条件と比べる、という考え方です。ただし、0–10 Vという値はMKSの製品例であり、どの真空計も同じ出力という意味ではありません。しきい値も装置固有です。画面に出る圧力が実物と違うときは、現実の圧力、センサー出力、I/Oでの値、画面表示を同じものとして扱わず、一段ずつ比べます。<a class="source-ref" href="#source-S02">[S02]</a><a class="source-ref" href="#source-S06">[S06]</a></p>
+<p>ON/OFFの例が扉や位置の検出です。扉が物理的に閉じていても、スイッチが作動していない、配線が途切れている、I/Oに信号が届かない、といった場合には制御側が「閉じた」と認識できません。逆に画面が正常を示しても、センサーの測定点や応答には限界があります。表示だけを現物の証明にしないことが重要です。<a class="source-ref" href="#source-S10">[S10]</a><a class="source-ref" href="#source-S06">[S06]</a><a class="source-ref" href="#source-S01">[S01]</a></p>
+</section>
+<section id="protect">
+<h2>3. インターロックは、何を守るために働くのか</h2>
+<p>「止まった」という見た目が同じでも、守る対象は同じではありません。<strong>人</strong>に関わる安全機能と、<strong>装置</strong>の損傷を防ぐ条件、<strong>ウェハ・工程</strong>にとって不適切な順序を防ぐ条件を分けて考えます。この三つは理解のための分類であり、装置メーカーの正式なアラーム分類を示すものではありません。<a class="source-ref" href="#source-S08">[S08]</a><a class="source-ref" href="#source-S09">[S09]</a><a class="source-ref" href="#source-S04">[S04]</a></p>
+<p>人に関わる例は扉やガードです。安全インターロックスイッチには製品例があります。ただし、スイッチを付けただけで装置全体がSEMI S2に適合するわけではありません。SEMI S2は半導体製造装置のEHSに関するガイドラインで、安全機能の設計は個別の危険とリスク評価に依存します。安全PLC、二重化、手動リセットをすべての装置で一律に要求するという説明はしません。<a class="source-ref" href="#source-S10">[S10]</a><a class="source-ref" href="#source-S16">[S16]</a><a class="source-ref" href="#source-S08">[S08]</a><a class="source-ref" href="#source-S09">[S09]</a></p>
+<p>装置を守る例としては、ポンプ、ヒーター、モーターなどを不適切な運転条件から守る考え方があります。工程側では、圧力、ガス流量、バルブ位置、ウェハの有無などが開始許可や順序の条件になり得ます。条件が外れたまま処理を続ければ、狙った工程条件が成立しない可能性があります。ここでいう「ウェハを守る」は、あらゆるウェハ不良を防ぐという意味ではなく、不適切な状態・順序で搬送や処理を進めないという役割です。実際に何を止めるか、どこで止めるかは装置ごとに確認します。<a class="source-ref" href="#source-S04">[S04]</a><a class="source-ref" href="#source-S02">[S02]</a><a class="source-ref" href="#source-S11">[S11]</a><a class="source-ref" href="#source-S13">[S13]</a></p>
+<p>また、画面に「Alarm」と出たら必ず停止、「Interlock」と出たら必ず同じ停止動作、と名前だけで決めることもできません。通知なのか、開始を許可しないのか、運転中の出力を止めたのか。保全では名称より、実際に作用した出力と禁止条件を確認します。<a class="source-ref" href="#source-S04">[S04]</a><a class="source-ref" href="#source-S11">[S11]</a></p>
+</section>
+<section id="trouble">
+<h2>4. インターロックが出たら、何を順番に見るのか</h2>
+<p>最初にするのは、部品を交換することではなく、<strong>どの条件が、いつ、どの動作を止めたか</strong>を特定することです。以下はResearchの複数資料を組み合わせた診断の順序です。実機の作業手順や安全措置を置き換えるものではなく、現物確認や測定は装置メーカーの手順に従います。<a class="source-ref" href="#source-S01">[S01]</a><a class="source-ref" href="#source-S06">[S06]</a><a class="source-ref" href="#source-S07">[S07]</a></p>
+<ol>
+<li><strong>発生履歴を見る。</strong>最初のイベント、発生時刻、関連する警報、直前の操作を並べる。後から出た警報を最初の原因と決めない。</li>
+<li><strong>外れた許可条件を探す。</strong>圧力、流量、温度、位置、扉など、どの値・状態がNGになったかを特定する。</li>
+<li><strong>表示と推移を比べる。</strong>現在値だけでなく、変化の順序、設定値、関連する測定値との整合を見る。</li>
+<li><strong>現物の状態を確かめる。</strong>許された安全な方法で、表示された異常が実際にもあるかを確認する。独立した測定や目視が可能かも装置手順で判断する。</li>
+<li><strong>信号経路を追う。</strong>センサー出力、電源、配線・コネクター、I/O入力、制御側の認識を順に比べる。</li>
+<li><strong>判断と動作を分ける。</strong>しきい値・設定・論理条件を確認した後、命令が出たか、駆動部や機械が実際に動いたかを見る。</li>
+</ol>
+<p>この順序なら、画面の表示と実物が同じ方向に異常なのか、途中のどこかで食い違ったのかが見えます。たとえば圧力が本当に高いなら、真空計の交換だけでは解決しません。一方、独立した確認では圧力が正常なのに制御側だけNGなら、センサーからI/Oまでを詳しく調べます。これは資料をつないだ<strong>診断上の整理</strong>であり、単一メーカーが定めた共通手順ではありません。<a class="source-ref" href="#source-S01">[S01]</a><a class="source-ref" href="#source-S02">[S02]</a><a class="source-ref" href="#source-S06">[S06]</a><a class="source-ref" href="#source-S14">[S14]</a></p>
+</section>
+<aside class="semicon-note" aria-label="学習の続き">
+<p>信号の入口だけをさらに確かめたい方は、この記事の<a href="#chain">センサーから制御判断までの流れ</a>を、停止履歴と照らして読み直してください。次の節では、同じ警報から六つの原因候補を分けます。</p>
+</aside>
+<section id="branches">
+<h2>5. 原因候補は、六つの層に分ける</h2>
+<p>インターロックが出た場所は、根本原因の住所ではありません。「扉が開いている」「圧力が足りない」と画面に出ても、その条件を成立させる現物と信号の間には複数の層があります。次の分け方はResearchの故障診断、I/O資料、装置部品の例を組み合わせた<strong>記事上の整理</strong>です。<a class="source-ref" href="#source-S01">[S01]</a><a class="source-ref" href="#source-S06">[S06]</a><a class="source-ref" href="#source-S04">[S04]</a></p>
+<div class="semicon-table-wrap">
+<table>
+<caption>表示と現物を突き合わせるための六つの原因候補</caption>
+<thead>
+<tr>
+<th scope="col">層</th>
+<th scope="col">確認する食い違い</th>
+<th scope="col">例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">実設備異常</th>
+<td>現物も条件を満たしていないか</td>
+<td>圧力、流量、温度などが実際に許可条件の外にある</td>
+</tr>
+<tr>
+<th scope="row">Sensor異常</th>
+<td>現物とセンサー出力が一致するか</td>
+<td>ずれ、汚れ、校正の問題、検出位置のずれ</td>
+</tr>
+<tr>
+<th scope="row">Wiring異常</th>
+<td>出力が接続先まで届いているか</td>
+<td>断線、ゆるいコネクター、電源やノイズの問題</td>
+</tr>
+<tr>
+<th scope="row">I/O異常</th>
+<td>入力チャネルが信号を正しく読んでいるか</td>
+<td>入力種別、スケーリング、チャネルの食い違い</td>
+</tr>
+<tr>
+<th scope="row">Logic異常</th>
+<td>制御側の条件と現在値の関係が妥当か</td>
+<td>しきい値や設定、動作許可条件の不一致</td>
+</tr>
+<tr>
+<th scope="row">Mechanical position異常</th>
+<td>命令に対して機械が所定位置へ到達したか</td>
+<td>バルブや機構が途中で止まる、位置が成立しない</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>実設備異常を先に除外せず「誤検知」と決めるのは危険です。反対に、実物が正常に見えても、センサー出力が正しいとはまだ言えません。センサーの断線・短絡、校正ずれ、一時的なノイズといった可能性を、制御側の表示と現物の比較から絞ります。<a class="source-ref" href="#source-S01">[S01]</a><a class="source-ref" href="#source-S07">[S07]</a></p>
+<p>位置については特に、<strong>「機械がその位置にある」と「コントローラーがその位置と認識する」</strong>を分けます。近接センサーには非接触で位置を検出する製品例があります。実際に到達していないなら駆動や機械側、到達しているのに検出が変わらないならセンサーや取付け側、センサー出力は変わるのに制御入力が変わらないなら配線・I/O側へ進みます。<a class="source-ref" href="#source-S12">[S12]</a><a class="source-ref" href="#source-S06">[S06]</a><a class="source-ref" href="#source-S01">[S01]</a></p>
+<p>扉の例でも同じです。扉を閉めたという観察、スイッチが検出したという事実、I/OがONを受けたという事実、Logicが許可したという結果は、別々に確認します。安全機能を安易にバイパスして動作だけを確かめるのではなく、指定手順で原因を特定します。安全機能の設計や試験条件は個別装置に依存します。<a class="source-ref" href="#source-S10">[S10]</a><a class="source-ref" href="#source-S16">[S16]</a><a class="source-ref" href="#source-S08">[S08]</a></p>
+</section>
+<section id="examples">
+<h2>6. 圧力と流量の警報では、測定器の外側も見る</h2>
+<p>圧力インターロックなら、まず本当に必要な圧力に達していないかを確かめます。現物側にはポンプ、バルブ、気体の流入、漏れなどの候補があり、信号側には真空計、配線、I/O、しきい値があります。INFICONは処理室・搬送室・ロードロック向け真空計の製品例を示し、MKSは圧力に応じた電圧出力を持つ計器の例を示しています。そこから先の原因分岐は、資料をつないだ整理です。特定の圧力値を全装置の停止基準にはできません。<a class="source-ref" href="#source-S14">[S14]</a><a class="source-ref" href="#source-S02">[S02]</a><a class="source-ref" href="#source-S01">[S01]</a></p>
+<p>流量の警報なら、MFCの設定値と実測値だけでなく、供給側、バルブ、流路、フィードバック、通信や配線を分けます。MFCは流量を測って制御する機器で、アナログ信号やデジタル通信を備えた製品例があります。Flow switchは設定した流量条件をスイッチ信号に変える別の構成例です。「流量が不足した」という結果からMFC本体の故障を直ちに決めることはできません。<a class="source-ref" href="#source-S11">[S11]</a><a class="source-ref" href="#source-S05">[S05]</a><a class="source-ref" href="#source-S01">[S01]</a></p>
+<p>温度も同じで、表示値だけを原因としません。熱電対やRTDには異なる測定原理があり、センサーの種類、取付け位置、加熱・冷却側、I/O、しきい値を分けます。処理温度の管理と装置の過熱保護は目的が異なるため、同じ「温度警報」という名前から一つの仕組みを想像しないことが大切です。<a class="source-ref" href="#source-S15">[S15]</a><a class="source-ref" href="#source-S06">[S06]</a></p>
+</section>
+<section id="maintenance">
+<h2>7. この切り分けが、設備保全の仕事になる</h2>
+<p>設備保全では、「止まった部品を交換する」より前に、どの状態が崩れたかを証拠で確かめます。イベント履歴、値の推移、現物の状態、電気図面、I/O一覧、制御条件を重ねれば、実設備、センサー、配線、I/O、論理、駆動機構を混同しにくくなります。この順序はResearch資料を組み合わせた実務上の整理で、メーカー固有の保全手順を置き換えるものではありません。<a class="source-ref" href="#source-S01">[S01]</a><a class="source-ref" href="#source-S06">[S06]</a><a class="source-ref" href="#source-S07">[S07]</a></p>
+<p>予防保全では、センサーの点検・清掃・接続確認・校正や、指定された機能確認が候補になります。安全スイッチの確認はメーカー文書と装置側の安全手順に沿って行います。機械位置のずれと電気信号の異常、真空系の実際の異常と真空計の異常を分けて考えられることが、停止からの復旧だけでなく再発を防ぐ手がかりになります。<a class="source-ref" href="#source-S07">[S07]</a><a class="source-ref" href="#source-S16">[S16]</a><a class="source-ref" href="#source-S01">[S01]</a></p>
+<p>工場でセンサー、配線、PLC、空圧、モーターの経験がある人は、この信号経路の読み方を半導体装置にもつなげられます。一方、真空、ガス、ウェハ搬送、装置固有の安全条件は別途理解が必要です。これは仕事に必要な技術の接続であり、個別求人の条件を推測したものではありません。<a class="source-ref" href="#source-S06">[S06]</a><a class="source-ref" href="#source-S08">[S08]</a><a class="source-ref" href="#source-S11">[S11]</a><a class="source-ref" href="#source-S14">[S14]</a></p>
+</section>
+<section id="faq">
+<h2>よくある疑問</h2>
+<h3>扉が閉まっているのに「Door Open」なら、スイッチ交換ですか？</h3>
+<p>まだ決められません。扉とスイッチの位置、スイッチ出力、配線、I/Oでの認識を分けて確認します。物理的に閉じていても、制御側が閉状態を受け取っているとは限りません。<a class="source-ref" href="#source-S10">[S10]</a><a class="source-ref" href="#source-S06">[S06]</a></p>
+<h3>Alarmが出たら必ずインターロックで停止しますか？</h3>
+<p>名称だけでは判断できません。通知、開始禁止、運転中の停止など、装置が実際に行った動作を確認します。<a class="source-ref" href="#source-S04">[S04]</a><a class="source-ref" href="#source-S11">[S11]</a></p>
+<h3>センサーの値が正常なら、装置も安全ですか？</h3>
+<p>それだけでは証明できません。測る場所、応答、配線や入力側の状態には限界があり、必要に応じて現物を安全な手段で独立に確かめます。安全機能の妥当性も、個別の設計とリスク評価で判断します。<a class="source-ref" href="#source-S01">[S01]</a><a class="source-ref" href="#source-S08">[S08]</a></p>
+</section>
+<section id="summary">
+<h2>3行でまとめる</h2>
+<p>装置はセンサーから届いた状態を、I/Oと制御条件を通して動作の許可・禁止に変えます。<br />人の安全、装置の保護、ウェハ・工程の条件は目的を分けて考えます。<br />停止後は警報名だけで部品を決めず、現物から信号、I/O、Logic、機械動作へたどります。</p>
+<h3>次に読む記事</h3>
+<ul>
+<li><a href="https://semicon-campus.com/load-lock-wafer-exchange/">ロードロックとウェハ交換の仕組み</a> — 圧力と搬送順序がなぜ関係するか</li>
+</ul>
+<p>仕組みを仕事に結び付けたい方は、<a href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/">半導体設備保全の仕事</a>で、点検と原因の切り分けがどのような業務につながるかを確認してください。</p>
+</section>
+<section id="sources">
+<h2>出典</h2>
+<p>本文の[Sxx]はEP094 Research正本のSource IDに対応します。メーカー資料の仕様は製品例であり、個別装置の判断にはその装置の資料を使用します。診断順序・保護対象の分類は、下記資料を組み合わせた記事上の整理です。</p>
+<ol>
+<li id="source-S01">[S01] アイアール技術者教育研究所：<a href="https://engineer-education.com/sensor-failure-diagnosis_response-design/">センサの故障診断と故障対応設計のポイント</a> — 故障診断と信号の整合確認。</li>
+<li id="source-S02">[S02] MKS Instruments：<a href="https://www.mks.com/p/626D11TDE">626D11TDE Absolute Pressure Transducer</a> — 圧力測定と出力の製品例。</li>
+<li id="source-S03">[S03] IEEE：<a href="https://technav.ieee.org/area/sensors/">Sensors</a> — センサーの定義。</li>
+<li id="source-S04">[S04] C-P Systems：<a href="https://c-psystems.com/glossary-process-interlock/">What Is Process Interlock?</a> — 許可・停止・順序の概念。</li>
+<li id="source-S05">[S05] PSG Dover / Malema：<a href="https://www.psgdover.com/malema/products/flow-switches">Flow Switches</a> — 流量条件のスイッチ信号。</li>
+<li id="source-S06">[S06] Siemens：<a href="https://sid.siemens.com/r/A6V14300949/25901888779___en-US_22503589003">Configure controller I/Os</a> — 入力種別とスケーリング。</li>
+<li id="source-S07">[S07] Meskernel：<a href="https://www.meskernel.com/news/user-guide-and-tips-installation-calibration-and-maintenance-of-sensors-286425.html">Installation, Calibration, and Maintenance of Sensors</a> — 点検と校正。</li>
+<li id="source-S08">[S08] SEMI：<a href="https://store-us.semi.org/products/s00200-semi-s2-environmental-health-and-safety-guideline-for-semiconductor-manufacturing-equipment">SEMI S2</a> — 半導体装置のEHSガイドライン。</li>
+<li id="source-S09">[S09] SEMI：<a href="https://www.semi.org/en/standards-watch-2022-June/safety-interlock-design-systems-in-semi-s2">Safety Interlock Design Systems in SEMI S2</a> — 安全インターロック設計の検討。</li>
+<li id="source-S10">[S10] OMRON：<a href="https://automation.omron.com/en/us/products/family/D4NS">D4NS Tongue Interlock Switches</a> — 扉用安全スイッチの製品例。</li>
+<li id="source-S11">[S11] Brooks Instrument：<a href="https://www.brooksinstrument.com/product/sla5800-series">SLA5800 Mass Flow Controllers &amp; Meters</a> — 流量測定・制御と信号方式の例。</li>
+<li id="source-S12">[S12] OMRON：<a href="https://www.ia.omron.com/support/guide/41/overview.html">Overview of Proximity Sensors</a> — 非接触位置検出。</li>
+<li id="source-S13">[S13] OMRON：<a href="https://www.ia.omron.com/products/family/1171/lineup.html">Wafer-carrier Mounting Photomicrosensors</a> — ウェハキャリア有無の検出例。</li>
+<li id="source-S14">[S14] INFICON：<a href="https://www.inficon.com/en/products/vacuum-gauge-and-controller/bcg552-trigon">Trigon BCG552 Vacuum Gauge</a> — 半導体装置内の真空測定例。</li>
+<li id="source-S15">[S15] OMEGA Engineering：<a href="https://www.jp.omega.com/techref/measureguide.html">Practical Guidelines for Temperature Measurement</a> — 温度測定方式。</li>
+<li id="source-S16">[S16] Rockwell Automation：<a href="https://www.rockwellautomation.com/en-us/support/documentation/technical/safety-sensors-and-switches/safety-interlock-switches.html">Safety Interlock Switches Technical Documentation</a> — 安全スイッチの種類と文書。</li>
+</ol>
+</section>
+</article>

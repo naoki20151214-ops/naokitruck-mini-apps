@@ -1,0 +1,20 @@
+{
+ "id": 1151,
+ "type": "post",
+ "slug": "daily-news-3bf079dd41b4513001af",
+ "link": "https://semicon-campus.com/daily-news-3bf079dd41b4513001af/",
+ "date": "2026-09-23T10:00:00",
+ "modified": "2026-10-27T20:04:53",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  20
+ ],
+ "tags": [
+  19
+ ],
+ "featured_media": 2840,
+ "title": "OMNIVISIONのOAX7700、車載常時監視を省電力化するAI ASIC",
+ "excerpt": "OMNIVISIONが発表したOAX7700を、車載常時監視、NPU、エッジAI、97%低消費電力の主張、2027年第1四半期量産予定と限界から解説します。"
+}

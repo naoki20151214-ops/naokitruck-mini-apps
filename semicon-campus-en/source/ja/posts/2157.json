@@ -1,0 +1,18 @@
+{
+ "id": 2157,
+ "type": "post",
+ "slug": "film-thickness-uniformity",
+ "link": "https://semicon-campus.com/film-thickness-uniformity/",
+ "date": "2026-10-19T19:38:15",
+ "modified": "2026-10-30T21:15:42",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  9
+ ],
+ "tags": [],
+ "featured_media": 2749,
+ "title": "ウェハ面内膜厚均一性（WiWNU・WTWNU）が悪化する原因と装置保全",
+ "excerpt": "同じウェハでも場所で膜厚が異なる原因と確認方法を、CVD・PVD・ALD、膜厚マップ、計測誤差、設備保全・生産技術の視点から解説。"
+}

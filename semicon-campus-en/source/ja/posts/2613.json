@@ -1,0 +1,19 @@
+{
+ "id": 2613,
+ "type": "post",
+ "slug": "semiconductor-copper-damascene",
+ "link": "https://semicon-campus.com/semiconductor-copper-damascene/",
+ "date": "2026-10-27T17:59:00",
+ "modified": "2026-10-30T20:02:18",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  8,
+  5
+ ],
+ "tags": [],
+ "featured_media": 2742,
+ "title": "半導体の銅配線とは？ダマシン法で「溝を掘って埋める」理由",
+ "excerpt": "半導体の銅配線とは何か。銅が削れない理由、溝を掘って銅を埋めるダマシン法、CMPで磨く工程、デュアルダマシン、銅の強みと細くなったときの弱点を、一次資料をもとに初心者向けに解説します。"
+}

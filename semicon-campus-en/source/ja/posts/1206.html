@@ -1,0 +1,122 @@
+
+<!--KEEP:0-->
+
+
+<!--KEEP:1-->
+
+<article class="semicon-article" data-episode="085" data-status="draft-only" data-slug="turbomolecular-pump" data-target="new_post">
+
+<!--KEEP:2-->
+
+<h1>ターボ分子ポンプはなぜ粗引きポンプと組み合わせる？ 高真空を作る仕組み</h1>
+
+<p class="hook">半導体装置の真空は、一台のポンプだけで作るものではありません。<br>高真空側を担当するTMPと、起動時の粗引き・出口側の背圧を支えるポンプが役割を分けます。<br>答えは、TMPが分子流で分子を排気側へ運ぶポンプだからです。</p>
+
+
+<p data-fact-ids="F001 F003">この記事の問いは「なぜターボ分子ポンプ（TMP）は粗引きポンプやbacking pumpと組み合わせるのか」です。TMPは完成したチップの内部にある部品ではなく、ウェハを処理するチャンバーの排気系に取り付けられる装置です。まず真空系のどこにあるかを確認し、次に分子を運ぶ仕組み、二段構えが必要な理由、保全で見る範囲へ進みます。</p>
+
+<h2>この記事でわかること</h2>
+
+<ul><li>TMPがファンではなく、分子流で気体分子を運ぶ理由</li><li>ロータとステータを何段も重ねる構造と、TMP単体で大気圧へ排気できない理由</li><li>粗引き、backing pump、foreline、配管コンダクタンスを一つの排気系として見る方法</li></ul>
+
+<p class="visual-context">ここで見る具体物は「半導体装置の真空チャンバーとターボ分子ポンプ」です。</p><figure class="semicon-figure" data-media-role="explanatory-image-01" data-visual-kind="photoreal" data-subject="半導体装置の真空チャンバーとターボ分子ポンプ" data-purpose="導入でTMPが装置のどこにあるかを示す" data-composition="equipment-wide" data-concrete-object="true" data-selection-reason="導入でTMPが装置のどこにあるかを示す。" data-photo-assessment="メーカー名、実測値、固有仕様を主張せず、具体物の位置と役割だけを示す。" data-provenance="articles/provenance/episode085/01-v001.md"><img loading="lazy" decoding="async" src="images/episode085/optimized/01-v001.webp" alt="半導体装置の真空チャンバーとターボ分子ポンプ（導入でTMPが装置のどこにあるかを示す）" width="900" height="900"><figcaption>半導体装置の真空チャンバーとターボ分子ポンプを、導入でTMPが装置のどこにあるかを示す。AI生成 / AI-generated image (OpenAI ImageGen), episode EP085／変更: Resized/cropped and converted to WebP; no semantic object edits.</figcaption></figure>
+
+<h2>TMPは「空気を押すファン」ではない</h2>
+
+<p data-fact-ids="F001 F003">ポンプという言葉から、連続した空気の流れを羽根で押すファンを想像しがちです。しかしTMPが主に扱うのは、互いに離れて飛ぶ気体分子です。真空度が高くなると分子同士の衝突頻度が下がり、分子が次の衝突までに進む平均自由行程が、配管やチャンバーの代表寸法より長くなることがあります。この状態では、分子同士より壁や翼との衝突が支配的になります。</p>
+
+<p>この領域を分子流と呼びます。分子流かどうかは圧力だけで決まりません。同じ圧力でも配管の太さ、チャンバーの大きさ、流路の形が違えば、分子がどのように移動するかは変わります。「何Pa以下なら必ず分子流」と単一の数字だけで決めると、装置寸法を見落とします。</p>
+
+<p data-fact-ids="F001">TMPでは、回転するロータ翼に分子が衝突します。翼は分子へロータの運動量を伝え、吸気側へ戻るより排気側へ進む確率が高くなるように分子の進行方向を偏らせます。連続した風を圧縮するのではなく、分子の衝突と運動量輸送を利用している点が、ファンとの違いです。</p>
+
+<p class="visual-context">ここで見る具体物は「ターボ分子ポンプのロータとステータを想起させる翼構造」です。</p><figure class="semicon-figure" data-media-role="explanatory-image-02" data-visual-kind="photoreal" data-subject="ターボ分子ポンプのロータとステータを想起させる翼構造" data-purpose="ロータ翼による運動量輸送を具体物へ結びつける" data-composition="rotor-closeup" data-concrete-object="true" data-selection-reason="ロータ翼による運動量輸送を具体物へ結びつける。" data-photo-assessment="メーカー名、実測値、固有仕様を主張せず、具体物の位置と役割だけを示す。" data-provenance="articles/provenance/episode085/02-v002.md"><img loading="lazy" decoding="async" src="images/episode085/optimized/02-v002.webp" alt="ターボ分子ポンプのロータとステータを想起させる翼構造（ロータ翼による運動量輸送を具体物へ結びつける）" width="900" height="900"><figcaption>ターボ分子ポンプのロータとステータを想起させる翼構造を、ロータ翼による運動量輸送を具体物へ結びつける。AI生成 / AI-generated image (OpenAI ImageGen), episode EP085／変更: Resized/cropped and converted to WebP; no semantic object edits.</figcaption></figure>
+
+<h2>ロータとステータを何段も通して分子を運ぶ</h2>
+
+<p data-fact-ids="F002">TMPの内部には、回転するロータ翼と、回転しないステータ翼が交互に配置されます。ロータが分子へ運動量を与え、ステータが分子を次のロータ段へ向かいやすい向きに整えます。一段で急にすべての圧力を変えるのではなく、複数段の輸送を重ねて、高真空側から排気側まで分子を送ります。</p>
+
+<p>各段が作るのは、分子が排気側へ移動しやすい確率です。これが多数段で積み重なると、吸気側と排気側の間に圧力比が生じます。そのため、カタログにある排気速度や圧縮比を読むときは、どのガス、どの背圧、どの測定条件の値なのかを確認します。ポンプを大きな風量の送風機として読むと、この条件を取り違えます。</p>
+
+<p class="visual-context">ここで見る具体物は「高真空側と排気側をつなぐTMP外観」です。</p><figure class="semicon-figure" data-media-role="explanatory-image-03" data-visual-kind="photoreal" data-subject="高真空側と排気側をつなぐTMP外観" data-purpose="TMPをファンではない高真空ポンプとして示す" data-composition="pump-exterior" data-concrete-object="true" data-selection-reason="TMPをファンではない高真空ポンプとして示す。" data-photo-assessment="メーカー名、実測値、固有仕様を主張せず、具体物の位置と役割だけを示す。" data-provenance="articles/provenance/episode085/03-v003.md"><img loading="lazy" decoding="async" src="images/episode085/optimized/03-v003.webp" alt="高真空側と排気側をつなぐTMP外観（TMPをファンではない高真空ポンプとして示す）" width="900" height="900"><figcaption>高真空側と排気側をつなぐTMP外観を、TMPをファンではない高真空ポンプとして示す。AI生成 / AI-generated image (OpenAI ImageGen), episode EP085／変更: Resized/cropped and converted to WebP; no semantic object edits.</figcaption></figure>
+
+<h2>なぜTMPだけでは大気圧へ排気できないのか</h2>
+
+<p data-fact-ids="F004">TMPは高真空側から分子を取り込み、排気側へ移します。しかし、TMPの出口側に大気圧に近い圧力がかかると、ロータ翼が分子を排気側へ運び続ける条件が崩れます。TMPのターボ段だけで、大気圧から高真空までを一台で連続して担当する構成ではありません。</p>
+
+<p data-fact-ids="F004 F005">そこでTMPの出口には別のポンプを接続します。これがbacking pump、forepump、補助ポンプなどと呼ばれるポンプです。backing pumpはTMPの排気口側を低い圧力に保ち、TMPが高真空側を担当できる背圧条件を支えます。装置を大気圧から立ち上げるときには大量の気体を最初に抜く粗引きも必要です。</p>
+
+<p>粗引きポンプとbacking pumpは、必ず別の機械を意味するわけではありません。同じドライポンプが、起動時には粗引きを行い、TMP運転中には出口側の背圧維持を兼ねることがあります。呼び方ではなく、どの圧力領域でどの役割を担っているかを見るのがポイントです。</p>
+
+<p class="visual-context">ここで見る具体物は「粗引きポンプとforelineの接続」です。</p><figure class="semicon-figure" data-media-role="explanatory-image-04" data-visual-kind="photoreal" data-subject="粗引きポンプとforelineの接続" data-purpose="粗引きとbackingの役割を考える入口を示す" data-composition="foreline-connection" data-concrete-object="true" data-selection-reason="粗引きとbackingの役割を考える入口を示す。" data-photo-assessment="メーカー名、実測値、固有仕様を主張せず、具体物の位置と役割だけを示す。" data-provenance="articles/provenance/episode085/04-v004.md"><img loading="lazy" decoding="async" src="images/episode085/optimized/04-v004.webp" alt="粗引きポンプとforelineの接続（粗引きとbackingの役割を考える入口を示す）" width="900" height="900"><figcaption>粗引きポンプとforelineの接続を、粗引きとbackingの役割を考える入口を示す。AI生成 / AI-generated image (OpenAI ImageGen), episode EP085／変更: Resized/cropped and converted to WebP; no semantic object edits.</figcaption></figure>
+
+<h2>ポンプの間をつなぐforelineと配管を見る</h2>
+
+<p data-fact-ids="F006">TMPの排気口からbacking pumpへ向かう配管は、forelineと呼ばれることがあります。ポンプ入口の排気速度が大きくても、チャンバーとTMPの間に細く長い配管、多数の曲がり、狭いバルブがあれば、分子は通りにくくなります。この通りやすさを表す概念がコンダクタンスです。</p>
+
+<p>実効排気速度は、TMPの銘板やカタログ値だけで決まりません。配管の形、バルブの開き方、フィルタやトラップ、forelineの堆積、backing側の圧力が連鎖します。チャンバーから見た排気性能を考えるときは、ポンプ単体の数値ではなく、途中の抵抗を含む排気系として評価します。</p>
+
+<p class="visual-context">ここで見る具体物は「真空配管とバルブの排気系」です。</p><figure class="semicon-figure" data-media-role="explanatory-image-05" data-visual-kind="photoreal" data-subject="真空配管とバルブの排気系" data-purpose="コンダクタンスと背圧が系全体で決まることを示す" data-composition="pipe-and-valve" data-concrete-object="true" data-selection-reason="コンダクタンスと背圧が系全体で決まることを示す。" data-photo-assessment="メーカー名、実測値、固有仕様を主張せず、具体物の位置と役割だけを示す。" data-provenance="articles/provenance/episode085/05-v005.md"><img loading="lazy" decoding="async" src="images/episode085/optimized/05-v005.webp" alt="真空配管とバルブの排気系（コンダクタンスと背圧が系全体で決まることを示す）" width="900" height="900"><figcaption>真空配管とバルブの排気系を、コンダクタンスと背圧が系全体で決まることを示す。AI生成 / AI-generated image (OpenAI ImageGen), episode EP085／変更: Resized/cropped and converted to WebP; no semantic object edits.</figcaption></figure>
+
+<h2>ガス種と背圧で性能の見え方が変わる</h2>
+
+<p data-fact-ids="F006">TMPの圧縮比は、気体種によって同じではありません。水素やヘリウムのように軽い分子は、重い分子と同じ運動量輸送の結果になるとは限りません。また、背圧が高いとTMPの排気条件が変わります。したがって「TMPならどのガスでも同じ圧縮比」「オイルフリーTMPなら真空系全体が必ずオイルフリー」とは言えません。</p>
+
+<p>性能表を見るときは、ガス種、吸気側の圧力、背圧、配管構成、測定方法を一緒に読みます。軽いガスの扱いや排気側の条件は、機種ごとの資料と実際の設備構成で確認すべき領域です。一般論から機種固有の許容値を作らないことが安全な境界になります。</p>
+
+<p class="visual-context">ここで見る具体物は「TMPの金属ハウジングと保全対象」です。</p><figure class="semicon-figure" data-media-role="explanatory-image-06" data-visual-kind="photoreal" data-subject="TMPの金属ハウジングと保全対象" data-purpose="ロータ・ステータを支える具体的な装置外観を示す" data-composition="housing-closeup" data-concrete-object="true" data-selection-reason="ロータ・ステータを支える具体的な装置外観を示す。" data-photo-assessment="メーカー名、実測値、固有仕様を主張せず、具体物の位置と役割だけを示す。" data-provenance="articles/provenance/episode085/06-v006.md"><img loading="lazy" decoding="async" src="images/episode085/optimized/06-v006.webp" alt="TMPの金属ハウジングと保全対象（ロータ・ステータを支える具体的な装置外観を示す）" width="900" height="900"><figcaption>TMPの金属ハウジングと保全対象を、ロータ・ステータを支える具体的な装置外観を示す。AI生成 / AI-generated image (OpenAI ImageGen), episode EP085／変更: Resized/cropped and converted to WebP; no semantic object edits.</figcaption></figure>
+
+<h2>半導体装置では排気系全体を保全する</h2>
+
+<p data-fact-ids="F007">半導体装置の排気系は、チャンバー、バルブ、配管、TMP、foreline、backing pump、必要に応じた排ガス処理設備がつながった一つの系です。プロセス中はガス流量、圧力、プラズマ、反応生成物、堆積物、温度、パージ条件が変化します。TMP一台の状態だけでは、ポンプダウン時間や到達圧力の変化を説明できないことがあります。</p>
+
+<p>例えばポンプダウンが遅くなったとき、TMP本体だけを交換候補にする前に、背圧、forelineの詰まりや堆積、バルブの開閉、配管の状態、チャンバー側のリークや生成物を同じ因果鎖で確認します。冷却やパージの状態も、機種資料に従って確認する対象です。</p>
+
+<p class="visual-context">ここで見る具体物は「真空ポンプ周辺の冷却・配管設備」です。</p><figure class="semicon-figure" data-media-role="explanatory-image-07" data-visual-kind="photoreal" data-subject="真空ポンプ周辺の冷却・配管設備" data-purpose="冷却や補助設備も保全対象になることを示す" data-composition="cooling-system" data-concrete-object="true" data-selection-reason="冷却や補助設備も保全対象になることを示す。" data-photo-assessment="メーカー名、実測値、固有仕様を主張せず、具体物の位置と役割だけを示す。" data-provenance="articles/provenance/episode085/07-v007.md"><img loading="lazy" decoding="async" src="images/episode085/optimized/07-v007.webp" alt="真空ポンプ周辺の冷却・配管設備（冷却や補助設備も保全対象になることを示す）" width="900" height="900"><figcaption>真空ポンプ周辺の冷却・配管設備を、冷却や補助設備も保全対象になることを示す。AI生成 / AI-generated image (OpenAI ImageGen), episode EP085／変更: Resized/cropped and converted to WebP; no semantic object edits.</figcaption></figure>
+
+<p class="semicon-mid-cta"><strong>設備の数字を因果で読みたい方へ</strong><br>ポンプだけを単独で見るより、<a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/">半導体製造装置エンジニアの仕事</a>の記事と照らし、電力・ガス・圧力・排気がつながる設備の見方を深めてください。</p>
+
+<h2>保全で最初に確認する順番</h2>
+
+<p data-fact-ids="F007">現場で異常が出たときは、まず症状がどの工程、どのガス、どの圧力帯、どの時間帯で現れたかを揃えます。次に、TMPの回転・冷却・パージ状態、forelineの背圧、バルブの開度、配管やトラップの状態を排気の向きに沿って見ます。最後にチャンバー側のリーク、堆積物、プロセス生成物との関係を切り分けます。</p>
+
+<p>ここで大切なのは、一般記事から最大背圧や回転数の閾値を決めないことです。これらは機種、ガス、運転モード、冷却、パージ、装置構成に依存します。実際の作業ではポンプメーカーと装置メーカーの取扱説明書、安全規程、設備の正式なログを優先します。</p>
+
+<p class="visual-context">ここで見る具体物は「圧力計と真空排気ライン」です。</p><figure class="semicon-figure" data-media-role="explanatory-image-08" data-visual-kind="photoreal" data-subject="圧力計と真空排気ライン" data-purpose="圧力条件を単独でなく排気系で読むことを示す" data-composition="gauge-and-line" data-concrete-object="true" data-selection-reason="圧力条件を単独でなく排気系で読むことを示す。" data-photo-assessment="メーカー名、実測値、固有仕様を主張せず、具体物の位置と役割だけを示す。" data-provenance="articles/provenance/episode085/08-v008.md"><img loading="lazy" decoding="async" src="images/episode085/optimized/08-v008.webp" alt="圧力計と真空排気ライン（圧力条件を単独でなく排気系で読むことを示す）" width="900" height="900"><figcaption>圧力計と真空排気ラインを、圧力条件を単独でなく排気系で読むことを示す。AI生成 / AI-generated image (OpenAI ImageGen), episode EP085／変更: Resized/cropped and converted to WebP; no semantic object edits.</figcaption></figure>
+
+<p class="visual-context">ここで見る具体物は「装置保全で点検するポンプ接続」です。</p><figure class="semicon-figure" data-media-role="explanatory-image-09" data-visual-kind="photoreal" data-subject="装置保全で点検するポンプ接続" data-purpose="点検時にTMP単体以外も確認する視点を示す" data-composition="maintenance-check" data-concrete-object="true" data-selection-reason="点検時にTMP単体以外も確認する視点を示す。" data-photo-assessment="メーカー名、実測値、固有仕様を主張せず、具体物の位置と役割だけを示す。" data-provenance="articles/provenance/episode085/09-v009.md"><img loading="lazy" decoding="async" src="images/episode085/optimized/09-v009.webp" alt="装置保全で点検するポンプ接続（点検時にTMP単体以外も確認する視点を示す）" width="900" height="900"><figcaption>装置保全で点検するポンプ接続を、点検時にTMP単体以外も確認する視点を示す。AI生成 / AI-generated image (OpenAI ImageGen), episode EP085／変更: Resized/cropped and converted to WebP; no semantic object edits.</figcaption></figure>
+
+<p class="visual-context">ここで見る具体物は「排気系全体の設備配置」です。</p><figure class="semicon-figure" data-media-role="explanatory-image-10" data-visual-kind="photoreal" data-subject="排気系全体の設備配置" data-purpose="チャンバーから排ガス側まで一つの系として見る視点を示す" data-composition="system-wide" data-concrete-object="true" data-selection-reason="チャンバーから排ガス側まで一つの系として見る視点を示す。" data-photo-assessment="メーカー名、実測値、固有仕様を主張せず、具体物の位置と役割だけを示す。" data-provenance="articles/provenance/episode085/10-v010.md"><img loading="lazy" decoding="async" src="images/episode085/optimized/10-v010.webp" alt="排気系全体の設備配置（チャンバーから排ガス側まで一つの系として見る視点を示す）" width="900" height="900"><figcaption>排気系全体の設備配置を、チャンバーから排ガス側まで一つの系として見る視点を示す。AI生成 / AI-generated image (OpenAI ImageGen), episode EP085／変更: Resized/cropped and converted to WebP; no semantic object edits.</figcaption></figure>
+
+<section class="maintenance-route-section" id="maintenance-related-learning"><h2>排気系の理解を、機械保全の基礎学習へつなげる</h2><p>TMPの排気速度だけでなく、粗引きポンプ、背圧、forelineの履歴を一組にして見ることが、保全の仕事との接点になります。ポンプや配管の役割を説明するのが難しいと感じたら、まず機械・保全の基礎のどこが不足しているかを整理しましょう。</p></section>
+<h2>よくある誤解</h2>
+
+<h3>Q. TMPは超高速ファンですか？</h3>
+
+<p>A. いいえ。TMPは分子流で、ロータ翼が気体分子へ運動量を与え、ステータを挟む多段構造で排気側への輸送を積み上げるポンプです。</p>
+
+<h3>Q. backing pumpは必ずTMPと別のポンプですか？</h3>
+
+<p>A. いいえ。粗引きとTMP出口の背圧維持を同じポンプが兼ねる構成もあります。名称より、起動時と運転時の役割で確認します。</p>
+
+<h3>Q. TMPの排気速度だけ見れば十分ですか？</h3>
+
+<p>A. いいえ。ガス種、背圧、配管コンダクタンス、バルブ、forelineまで含めて、チャンバーから見た実効性能を判断します。</p>
+
+<h2>まとめ</h2>
+
+<div class="semicon-three-line-recap"><p>TMPは、分子流でロータ翼から分子へ運動量を与え、ステータを挟む多段構造で排気側へ運びます。<br>大気圧からの粗引きとTMP出口の背圧維持は後段のbacking pumpが担うため、二段構えが必要です。<br>現場ではTMP単体でなく、チャンバー・配管・foreline・冷却・パージ・生成物を一つの排気系として見ます。</p></div>
+
+<p class="visual-context">ここで見る関係は「チャンバー・TMP・backing pumpの二段構え」です。</p><figure class="semicon-figure" data-media-role="summary-infographic" data-visual-kind="diagram" data-subject="チャンバー・TMP・backing pumpの二段構え" data-purpose="end-summary" data-composition="three-card-flow-summary" data-concrete-object="false" data-selection-reason="記事末で、高真空側からTMPを経てbacking pumpへ排気する役割分担を一枚で復習するため。" data-photo-assessment="個別の実写風写真は装置を示せるが、三者の因果関係と排気方向を一枚で示せない。" data-diagram-justification="個別の実写写真だけでは、チャンバー・TMP・backing pumpの役割分担と排気方向の関係を一枚で示せないため、まとめに限って関係図を採用した。" data-provenance="articles/provenance/episode085/11-summary-tmp-system.md"><img loading="lazy" decoding="async" src="images/episode085/optimized/11-summary-tmp-system.webp" alt="チャンバー・TMP・backing pumpの二段構えをまとめた図" width="1200" height="900"><figcaption>チャンバー・TMP・backing pumpの二段構えをまとめた関係図です。Self-created summary infographic from episode-local v2 visuals, EP085／変更: Three episode-local v2 assets arranged with Japanese labels and arrows; converted to WebP.</figcaption></figure>
+
+<p>次に半導体装置の現場を学ぶなら、設備のログを単独の数字ではなく、装置同士の因果として読む練習を続けてください。</p>
+
+<section class="maintenance-route-section" id="maintenance-related-hub"><h2>排気系の点検は、どんな仕事につながる？</h2><p>圧力の推移や異音の確認、点検記録、異常の引き継ぎを行った経験は、設備保全の仕事内容と照合できます。設備保全Hubで担当範囲、経験の整理、求人・学習の選び方まで確認しましょう。</p><aside class="semicon-cta maintenance-route-card" aria-label="設備保全Hubへの案内"><h3>設備保全Hubで、仕事・求人・学習をまとめて確認</h3><div class="semicon-btnrow"><a class="semicon-btn maintenance-route-button" href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/" data-maintenance-hub="277" data-cta="maintenance_hub" data-cta-type="maintenance_hub" data-cta-stage="career" data-cta-id="maintenance_1206_hub277_end" data-cta-route="maintenance_1206_hub277_end">排気系の理解を設備保全の仕事・求人・学習へつなげる</a></div></aside></section>
+
+<h2>参考にした公式情報</h2>
+
+<ul class="semicon-sources"><li data-source-id="S01"><a href="https://www.pfeiffervacuum.com/global/en/products/vacuum-pumps/turbomolecular/turbomolecular-technology/">Pfeiffer Vacuum: Turbomolecular Technology</a></li><li data-source-id="S02"><a href="https://www.pfeiffervacuum.com/global/en/knowledge/vacuum-technology/knowledge-book/">Pfeiffer Vacuum: Vacuum Technology Knowledge Book</a></li><li data-source-id="S03"><a href="https://www.agilent.com/media/urn:aaid:aem:03f0d5e1-2602-483b-8a70-6298d17c8b1c/original/as/brochure-vacuum-leak-detection-reference-formulas-properties-glossary-5994-5366en-agilent.pdf">Agilent: Vacuum and Leak Detection Reference</a></li><li data-source-id="S04"><a href="https://www.iso.org/standard/69441.html">ISO 21360-4:2018</a></li><li data-source-id="S05"><a href="https://www.leybold.com/en/knowledge/vacuum-fundamentals/vacuum-generation/how-does-a-turbomolecular-pump-work">Leybold: How does a turbomolecular pump work</a></li><li data-source-id="S06"><a href="https://www.jstage.jst.go.jp/article/jvsj2/56/6/56_13-LC-014/_pdf">日本真空学会「排気と真空ポンプ」</a></li><li data-source-id="S07"><a href="https://www.leybold.com/en-be/knowledge/vacuum-fundamentals/fundamental-physics-of-vacuum/how-to-calculate-vacuum-conductance">Leybold: How is conductance in vacuum calculated</a></li><li data-source-id="S08"><a href="https://www.jstage.jst.go.jp/article/jvsj2/58/7/58_14-RV-072/_pdf">日本真空学会「ターボ分子ポンプの性能表記に関する考察」</a></li><li data-source-id="S09"><a href="https://www.osakavacuum.co.jp/en/products/magnetic_turbo_pump/">大阪真空: Magnetically Levitated Turbo Molecular Pumps</a></li></ul>
+
+<div class="semicon-editorial-note"><strong>編集メモ（公開不要）</strong><br>短抽出：視聴者の疑問＝「なぜTMPは粗引きポンプと組み合わせるのか」。残す因果＝分子流→ロータ・ステータ多段→TMP出口の背圧→backing pump→排気系全体の保全。科学的境界＝圧力だけで分子流を断定しない、ガス種や機種をまたいだ性能値を一般化しない、一般記事から保全閾値や操作手順を作らない。45〜60秒候補＝ファンとの違い、二段構え、foreline・コンダクタンス、保全で見る範囲。</div>
+
+</article>
+<p class="pillar-link">装置の主要部品の全体像は、<a href="/semiconductor-equipment-components-map/">半導体製造装置の構造・主要部品マップ</a>で確認できます。</p>

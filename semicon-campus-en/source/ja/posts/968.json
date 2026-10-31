@@ -1,0 +1,20 @@
+{
+ "id": 968,
+ "type": "post",
+ "slug": "daily-news-e1d520dd1d4ea6fd55dc",
+ "link": "https://semicon-campus.com/daily-news-e1d520dd1d4ea6fd55dc/",
+ "date": "2026-09-16T11:00:00",
+ "modified": "2026-10-27T20:05:20",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  20
+ ],
+ "tags": [
+  19
+ ],
+ "featured_media": 2868,
+ "title": "Micron、512GB DDR5を実証　積層DRAMでサーバーメモリ大容量化へ",
+ "excerpt": "Micronが2026年9月15日に発表した512GB DDR5 RDIMMの実証を解説。TSVによるDRAM積層の仕組み、AI用途での意義、検証状況と2027年後半の量産見通しを整理します。"
+}

@@ -1,0 +1,18 @@
+{
+ "id": 1208,
+ "type": "post",
+ "slug": "helium-leak-testing",
+ "link": "https://semicon-campus.com/helium-leak-testing/",
+ "date": "2026-10-02T18:00:00",
+ "modified": "2026-10-30T21:32:34",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  21
+ ],
+ "tags": [],
+ "featured_media": 2797,
+ "title": "ヘリウムリーク検査とは？真空漏れの場所を信号で切り分ける方法",
+ "excerpt": "ヘリウムリーク検査はどう探す？ 真空漏れを信号で切り分ける 真空装置の小さな漏れは、外観を見ただけでは見つからないことがあります。ヘリウムリーク検査は、穴を目で探す検査ではありません。装置の外からヘリウムを与え、漏れ経路 […]"
+}

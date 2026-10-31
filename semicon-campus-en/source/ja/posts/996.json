@@ -1,0 +1,20 @@
+{
+ "id": 996,
+ "type": "post",
+ "slug": "daily-news-03f346e38ed615ed2971",
+ "link": "https://semicon-campus.com/daily-news-03f346e38ed615ed2971/",
+ "date": "2026-09-17T17:00:00",
+ "modified": "2026-10-27T20:05:08",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  20
+ ],
+ "tags": [
+  19
+ ],
+ "featured_media": 2859,
+ "title": "Astera LabsがLeo新製品を発表、AIのメモリ拡張とDDR4再利用の狙い",
+ "excerpt": "Astera Labsが2026年9月15日に発表したLeo新製品群を解説。AIのKVキャッシュ、CXLによるメモリ拡張、DDR4再利用の仕組みと、サンプル提供段階の限界を整理します。"
+}

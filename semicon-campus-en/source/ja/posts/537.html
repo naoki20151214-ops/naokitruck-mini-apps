@@ -1,0 +1,116 @@
+
+<!--KEEP:0-->
+
+
+<!--KEEP:1-->
+
+
+<!--KEEP:2-->
+<div class="semicon-article" id="semicon-top">
+
+<div class="semicon-level"><span class="semicon-level-label">学習レベル</span> <strong>初級</strong><p>CPUとGPUを知った人が、スマホやPCの端末内AIを支えるNPUへ進む記事です。</p></div>
+
+<p class="semicon-lead"><strong>NPU（Neural Processing Unit）</strong>は、ニューラルネットワークの推論を、端末の中で低遅延・低電力に動かすための専用アクセラレータです。CPUやGPUが失敗した代用品ではありません。万能性の一部を手放し、AIで繰り返す計算へ回路を寄せた共同担当です。</p>
+
+<div class="semicon-role-flow" aria-label="CPU、GPU、NPUの役割の全体像"><div class="semicon-role-card"><b>CPU</b><span>判断・制御・幅広い処理</span></div><div class="semicon-role-card gpu"><b>GPU</b><span>大規模な並列計算</span></div><div class="semicon-role-card npu"><b>NPU</b><span>対応するAI推論を高効率化</span></div></div>
+
+<p>CPUとGPUの基本を先に確認したい方は、<a href="https://semicon-campus.com/what-is-gpu-ai-parallel-processing/">GPUがAIで使われる理由</a>を読むと役割分担が見えやすくなります。</p>
+
+<div class="semicon-map"><h3>この記事でわかること</h3><div class="semicon-scope-grid"><div class="semicon-scope-block"><b>まず理解する4項目</b><ol><li>NPUが必要になった困りごと</li><li>MAC・PE・オンチップメモリの役割</li><li>省電力になる4つの理由</li><li>CPU・GPU・NPUの役割分担</li></ol></div><div class="semicon-scope-block deep"><b>もう一歩深く知る2項目</b><ol><li>TPUから端末内AIへつながる流れ</li><li>性能とソフトウェアを見る注意点</li></ol></div></div></div>
+
+
+<h2>NPUは何に困って必要になったのか</h2>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>CPUやGPUがあるのに、なぜNPUまで増やしたんですか？</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>カメラ、音声、認証などでAI推論を何度も動かすようになり、端末では電力・熱・待ち時間が重くなったからじゃ。</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>一度だけ速く計算するより、電池を減らしすぎず日常的に動かすことが大切になったんですね。</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>その通り。通信せず端末内で処理したい場面も増え、AI専用の効率を持つ回路が必要になったんじゃ。</p></div></div>
+
+<div class="semicon-grid four"><div class="semicon-card"><b>電力</b><span>スマホやノートPCでは、AIを動かすたびに電池を大きく減らすわけにはいきません。</span></div><div class="semicon-card"><b>熱</b><span>高い負荷を長く続けると発熱し、端末が性能を抑える場合があります。</span></div><div class="semicon-card"><b>遅延</b><span>認証やカメラ補正は、操作に合わせてすぐ反応することが求められます。</span></div><div class="semicon-card"><b>通信依存</b><span>クラウドへ毎回送る方式は、回線状況や通信時間の影響を受けます。</span></div></div>
+
+<div class="semicon-paths" aria-label="クラウドAIと端末内AIの処理経路"><div class="semicon-path"><strong>クラウドで処理</strong><div class="semicon-path-line">端末 → 通信 → クラウド → 通信 → 端末</div><p>大きなモデルや重い処理に向きますが、ネットワークを経由します。</p></div><div class="semicon-path device"><strong>端末内で処理</strong><div class="semicon-path-line">端末 → NPU → 結果</div><p>対応する処理なら、通信を待たず端末の中で実行できます。</p></div></div>
+
+<div class="semicon-note"><p><strong>誤解しないポイント：</strong> 端末内AIだから必ず高速・安全・完全オフラインとは限りません。AIモデル、アプリ、端末、クラウドとの分担によって変わります。</p></div>
+<p class="semicon-one-line">ここまでの一言まとめ：常時使うAIを、端末内で低遅延・低電力に動かしたい要求がNPUを必要にしました。</p>
+
+<h2>NPUは半導体の中でどう計算するのか</h2>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>AI専用の回路は、中で何をしているんですか？</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>ニューラルネットで何度も出てくる「掛け算して足す」計算を、多数の演算器で並行して進めるんじゃ。</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>計算器を増やすだけでなく、使うデータも近くへ置くんですか？</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>そこが重要じゃ。同じ重みや入力を近くで再利用し、外部メモリとの往復を減らす。</p></div></div>
+
+<div class="semicon-arch" role="img" aria-label="外部DRAMからオンチップメモリへデータを移し、多数のMACとPEで再利用しながら計算して結果を返すNPUの概念図"><div class="semicon-arch-flow"><div class="semicon-arch-box"><b>外部DRAM</b><span>重み・入力データ</span></div><div class="semicon-arch-arrow">→</div><div class="semicon-arch-box memory"><b>オンチップメモリ</b><span>使うデータを演算器の近くへ置く</span></div><div class="semicon-arch-arrow">→</div><div class="semicon-arch-box compute"><b>MAC / PE群</b><span>掛け算＋足し算を多数並列で実行</span></div><div class="semicon-arch-arrow">→</div><div class="semicon-arch-box"><b>結果</b><span>次の処理へ</span></div></div><div class="semicon-reuse">同じ重み・入力を近くで何度も再利用し、遠いメモリとの往復を減らす</div></div>
+
+<p><strong>MAC</strong>はMultiply-Accumulateの略で、「掛け算して、その結果を足す」演算です。<strong>PE</strong>はProcessing Elementの略で、こうした計算を担当する小さな処理単位を指します。</p>
+<p>NPUではさらに、INT8などの小さな数値表現を使う場合があります。必要な精度を保てる範囲で1つの数値を小さくすると、計算回路とデータ転送の負担を減らせます。</p>
+<div class="semicon-note"><p><strong>構造は製品ごとに違います：</strong> MACやPEの数、メモリ階層、データの流し方、対応する数値精度はベンダーや世代によって異なります。図は共通する考え方を簡略化したものです。</p></div>
+<p class="semicon-one-line">ここまでの一言まとめ：NPUは多数の演算器と近くのメモリを組み合わせ、同じデータを再利用しながらAI計算を進めます。</p>
+
+<h2>NPUはなぜ少ない電力で処理しやすいのか</h2>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>「専用だから省電力」だけでは、まだ少しふわっとします。</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>では無駄を減らす場所を4つに分けよう。命令制御、並列計算、データ移動、数値の大きさじゃ。</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>計算そのものだけでなく、データを運ぶ電力も減らすんですね。</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>むしろAIでは、遠いメモリとの往復が効率を大きく左右することがあるんじゃ。</p></div></div>
+
+<div class="semicon-grid four"><div class="semicon-card"><b>1. 汎用制御を減らす</b><span>CPUのような幅広い命令、複雑な分岐、順序の入れ替えをすべて備えず、対応するAI処理へ回路を絞ります。</span></div><div class="semicon-card"><b>2. MACを並列化する</b><span>行列計算や畳み込みで繰り返す積和演算を、多数のPEで同時に進めます。</span></div><div class="semicon-card"><b>3. データ移動を減らす</b><span>重みや入力をオンチップメモリへ置いて再利用し、電力コストの高い外部DRAMとの往復を抑えます。</span></div><div class="semicon-card"><b>4. 低精度演算を使う</b><span>用途に応じてINT8などを使い、演算回路の規模と1回に運ぶデータ量を小さくします。</span></div></div>
+
+<p>NPUはこの4つを組み合わせ、1回のAI推論に必要なエネルギーを減らします。ただし、モデルがNPUに対応していない、メモリへ頻繁に戻る、変換処理が多いといった場合は、期待どおりの効率が出ないこともあります。</p>
+<p class="semicon-one-line">ここまでの一言まとめ：NPUは計算・制御・データ移動・数値表現の無駄をまとめて減らします。</p>
+
+<h2>CPU・GPU・NPUはどう役割を分けるのか</h2>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>NPUが得意なら、AIではCPUとGPUはいらなくなりますか？</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>なくならん。NPUはSoCの中の共同担当じゃ。CPUは全体を制御し、GPUは大きな並列計算を進め、NPUは対応する推論を高効率化する。</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>万能な1人を選ぶのではなく、得意な処理へ振り分けるんですね。</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>その通り。学習は今もGPUやデータセンターで行うことが多く、端末のNPUは推論を主に担当する。</p></div></div>
+
+<div class="semicon-compare"><table><thead><tr><th>処理装置</th><th>主な役割</th><th>AIでの使われ方</th></tr></thead><tbody><tr><td>CPU</td><td>判断、制御、幅広い命令</td><td>アプリ全体の進行や分岐の多い処理を担う</td></tr><tr><td>GPU</td><td>柔軟な大規模並列計算</td><td>大規模な学習・推論など計算量の多い場面で力を発揮</td></tr><tr><td>NPU</td><td>対応するAI計算の専用化</td><td>主に推論を端末内で低遅延・低電力に続けやすくする</td></tr></tbody></table></div>
+<p class="semicon-one-line">ここまでの一言まとめ：NPUはCPU/GPUの代用品ではなく、SoCの中でAI推論を受け持つ共同担当です。</p>
+
+<h2>NPUへつながる転換はどう起きたのか</h2>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>NPUは、スマホのために急に生まれた技術なんですか？</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>一つの発明で始まったのではない。AI推論の規模が増え、専用回路の効率が示され、それが端末の具体的な機能へ結び付いた流れで見ると分かりやすい。</p></div></div>
+
+<div class="semicon-story" aria-label="AI専用アクセラレータがデータセンターから端末内AIへ広がる因果の流れ"><div class="semicon-story-step"><span class="semicon-story-mark">1</span><b>AI推論が増え、汎用処理だけでは電力効率が重くなる</b><p>ニューラルネットを実サービスで大量に動かすと、計算量と電力が大きな課題になります。Googleは2015年からデータセンターでTPUを配備しました。</p></div><div class="semicon-story-step"><span class="semicon-story-mark">2</span><b>2017年のTPU論文が、専用ASICの効率を具体的に示す</b><p>Googleの論文は、8ビットMACの行列演算器、大きなオンチップメモリ、汎用機能を絞った構造を報告しました。AI推論へ専用化する価値が、実運用のデータとして見えるようになります。</p></div><div class="semicon-story-step"><span class="semicon-story-mark">3</span><b>同じ2017年、A11 Neural Engineが端末機能と結び付く</b><p>AppleはA11 BionicのNeural EngineをFace IDやAnimojiなどに結び付けました。専用回路が、日常の認証やリアルタイム処理を端末内で支える姿が利用者にも見える形になります。</p></div><div class="semicon-story-step"><span class="semicon-story-mark">4</span><b>2018年のA12で、端末内AIの利用範囲が広がる</b><p>A12のNeural EngineはCore MLから利用可能になり、開発者が対応アプリへ使える範囲が広がりました。Appleは特定条件のCore ML処理について、A11比で最大9倍、エネルギーは最大10分の1と公称しています。</p></div></div>
+
+<div class="semicon-note"><p><strong>歴史の読み方：</strong> これは「最初のNPU」を決める年表ではありません。データセンターで専用AI回路の効率が示され、端末の具体的な機能と開発環境へ広がった因果を示しています。メーカー公称値は対象処理と測定条件に依存します。</p></div>
+<p class="semicon-one-line">記憶の一文：AI推論の増加が専用回路を求め、TPUが効率を示し、A11とA12が端末の日常機能へつなげました。</p>
+
+<h2>NPUは日常の何を改善したのか</h2>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>使う側から見ると、NPUで何が変わったんですか？</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>Face IDが分かりやすい。カメラで得た顔の情報をニューラルネットで処理し、端末内で照合する一連の機能を支えた。</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>速さだけでなく、毎回クラウドへ送らず反応できることにも意味があるんですね。</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>そうじゃ。現在はカメラ補正、ノイズ低減、音声認識、翻訳、端末内生成AIなどへ広がっておる。</p></div></div>
+
+<div class="semicon-grid"><div class="semicon-card"><b>応答時間</b><span>対応処理を端末内で実行すれば、通信の往復を待たず結果を返しやすくなります。</span></div><div class="semicon-card"><b>通信不要の可能性</b><span>一部機能はオフラインでも動作できます。ただしクラウド併用の機能もあります。</span></div><div class="semicon-card"><b>データを端末内へ</b><span>入力データを外へ送らず処理できる設計も可能です。ただし実際の扱いはアプリごとに異なります。</span></div><div class="semicon-card"><b>電池と熱</b><span>同じ対応推論をより少ないエネルギーで行えれば、継続動作と発熱の抑制に役立ちます。</span></div><div class="semicon-card"><b>カメラ・音声</b><span>補正、認識、ノイズ低減、文字起こし、翻訳などのリアルタイム処理を支えます。</span></div><div class="semicon-card"><b>端末内生成AI</b><span>対応する小型モデルの要約、生成、検索支援などを端末側で処理する用途が増えています。</span></div></div>
+<p class="semicon-one-line">ここまでの一言まとめ：NPUは、AIをデモではなく日常機能として素早く・継続的に使うための土台です。</p>
+
+<div class="semicon-basic-complete">ここまででNPUの基本は理解できました。</div>
+
+<div class="semicon-deep-break"><strong>ここから、もう一歩深く</strong><p>ここから先は、NPUの性能表示とソフトウェア条件まで確認したい方向けです。基本だけ知りたい方は、<a href="#npu-summary">まとめへ進んでも問題ありません</a>。</p></div>
+
+<h2>NPUの性能は数字だけで比べられるのか</h2>
+<p>NPUでは、1秒あたりの演算回数を示すTOPSという指標を見かけます。しかし、TOPSだけで実際の速度や電池持ちは決まりません。数値精度、オンチップメモリ容量、外部メモリ帯域、モデルの形、電力制限などが関係します。</p>
+<div class="semicon-note"><p><strong>比較するときの注意：</strong> 異なる精度や測定条件で示されたTOPSを、そのまま横並びにしないことが大切です。この記事では特定製品の順位付けを行いません。</p></div>
+
+
+<section class="mp4-section" id="revenue-phase4-learning"><h2>NPUの役割を、用途と学習環境へ広げる</h2><p>NPUを理解したら、音声・画像・文章のどの処理を使いたいか、端末内で動くかクラウドを使うかを分けます。自宅の演習PCは、必要なソフトの動作条件に戻って比較しましょう。NPUの搭載だけで、すべての生成AIが速く動くとは限りません。公開資料の要約や文章作成の使い方を学ぶ講座と、PC本体を更新する選択肢を目的別に比較できます。</p><p>比較前の確認メモ：使うAIソフトの対応CPU・GPU・NPU、OS、メモリと保存容量。今の環境で試せる範囲と、更新が必要な箇所を分けてから候補を選びましょう。</p></section>
+
+<h2>NPUがあれば、すべてのAIが速くなるのか</h2>
+<p>いいえ。AIモデルをNPUが対応する形式へ変換し、OS、ドライバ、コンパイラ、実行環境が処理を正しく割り当てる必要があります。対応しない演算はCPUやGPUへ戻る場合もあります。</p>
+<p>つまり、NPUは回路だけで完結しません。対応モデルとソフトウェアまでつながって初めて、端末内AIの効率を発揮します。</p>
+<p class="semicon-one-line">ここまでの一言まとめ：NPUは回路性能だけでなく、モデル・メモリ・コンパイラを含む仕組み全体で見ます。</p>
+
+<h2 id="npu-summary">まとめ</h2>
+<div class="semicon-note"><p><strong>まず覚える3点</strong></p><ol><li>NPUは、端末内でニューラルネットの推論を低遅延・低電力に動かす専用アクセラレータ</li><li>多数のMAC/PE、近くのメモリ、データ再利用、低精度演算で計算とデータ移動の無駄を減らす</li><li>CPUは制御、GPUは大規模並列、NPUは対応推論を高効率化し、ソフトウェアと協力して動く</li></ol></div>
+
+<div class="semicon-links"><div class="semicon-linkbox next"><h3>次に読む</h3><p><a href="https://semicon-campus.com/what-is-gpu-ai-parallel-processing/">GPUとは？なぜAIで使われるのか</a></p></div><div class="semicon-linkbox"><h3>順番に学ぶ</h3><p><a href="https://semicon-campus.com/cpu-memory-storage-difference/">CPU・メモリ・ストレージの違い</a></p><p><a href="https://semicon-campus.com/semiconductor-beginner-roadmap/">半導体初心者ロードマップへ戻る</a></p></div></div>
+
+
+<section class="mp4-section" id="revenue-phase4-career"><h2>この記事の知識を、次の仕事・学習へつなげる</h2><p>測定・検査、設備点検、品質記録の経験を、対象・作業・確認した結果で整理します。担当範囲と必要経験、勤務地、勤務・出張、教育体制を比較すると、次に補う知識も具体的になります。</p><aside class="semicon-cta mp4-card"><h3>関連する職種の仕事内容・求人・学習を見る</h3><p>記事で学んだ技術が、点検・復旧、装置立上げ、顧客対応、実装・工程改善のどの仕事で使われるか確認できます。職種記事の求人・学習の選び方へ進みましょう。</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/cpu-memory-storage-difference/" class="semicon-btn mp4-button" data-revenue-phase4-hub="479" data-cta="pc_guide" data-cta-type="pc_guide" data-cta-stage="career" data-cta-id="phase4_537_hub479_end" data-cta-route="phase4_537_hub479_end">PCの遅さをCPU・メモリ・保存容量から切り分ける</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/dram-nand-difference/" class="semicon-btn mp4-button" data-revenue-phase4-hub="486" data-cta="memory_guide" data-cta-type="memory_guide" data-cta-stage="career" data-cta-id="phase4_537_hub486_end" data-cta-route="phase4_537_hub486_end">DRAM・NANDの違いとPCの増設・更新を確認する</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/semiconductor-beginner-roadmap/" class="semicon-btn mp4-button" data-revenue-phase4-hub="391" data-cta="learning_hub" data-cta-type="learning_hub" data-cta-stage="career" data-cta-id="phase4_537_hub391_end" data-cta-route="phase4_537_hub391_end">半導体学習Hubで基礎・仕事・学び方を確認する</a></div></aside></section>
+
+
+<h2>参考資料</h2>
+<ul><li><a rel="noopener" href="https://research.google/pubs/in-datacenter-performance-analysis-of-a-tensor-processing-unit/" target="_blank">Google Research: In-Datacenter Performance Analysis of a Tensor Processing Unit</a></li><li><a rel="noopener" href="https://eyeriss.mit.edu/" target="_blank">MIT: Eyeriss Project</a></li><li><a rel="noopener" href="https://www.apple.com/newsroom/2017/09/the-future-is-here-iphone-x/" target="_blank">Apple: The future is here — iPhone X and A11 Neural Engine</a></li><li><a rel="noopener" href="https://www.apple.com/newsroom/2018/09/iphone-xs-and-iphone-xs-max-bring-the-best-and-biggest-displays-to-iphone/" target="_blank">Apple: iPhone Xs and A12 Neural Engine</a></li><li><a rel="noopener" href="https://learn.microsoft.com/en-us/windows/ai/faq" target="_blank">Microsoft Learn: FAQs about using AI in Windows apps</a></li><li><a rel="noopener" href="https://newsroom.intel.com/artificial-intelligence/what-is-an-ai-pc" target="_blank">Intel: What is an AI PC?</a></li><li><a rel="noopener" href="https://www.qualcomm.com/smartphones/features/mobile-ai" target="_blank">Qualcomm: Mobile AI and on-device AI</a></li></ul>
+
+<a class="semicon-backtop" href="#semicon-top">↑ 先頭</a>
+</div>
+

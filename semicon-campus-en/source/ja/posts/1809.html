@@ -1,0 +1,224 @@
+<!--KEEP:0-->
+<article class="semicon-template-v2" data-episode="093" data-slug="vacuum-gate-valve" data-target="new_post" data-template-version="2">
+<div class="semicon-hook" data-fact-ids="F001 F012">
+<p>材料を出し入れしても、奥の部屋の圧力を保ちたい。</p>
+<p>真空バルブは、装置の空間や気体の通り道を必要な順番でつなぎ、切り離します。</p>
+<p>開かないという警報が出ても、バルブ本体が壊れたとは限りません。</p>
+</div>
+<p><strong>真空バルブは単なる開閉部品ではありません。</strong>気体を抜いた空間を隔離し、ウェハを搬送する開口を確保し、種類によっては排気の通りやすさを変えて圧力を調整します。空圧やセンサーに慣れた設備保全担当者も、「動いたか」に加えて「何と何をつないだか」「圧力はどう変わったか」を見ると、半導体装置の異常を整理しやすくなります。<a class="semicon-source-ref" href="#source-S1">[1]</a><a class="semicon-source-ref" href="#source-S2">[2]</a></p>
+<h2>この記事でわかること</h2>
+<ul>
+<li>処理室・搬送室・ロードロック・ポンプの間で、真空バルブが守る境界</li>
+<li>ゲートの開閉、差圧、コンダクタンス、圧力制御がつながる仕組み</li>
+<li>命令・空圧・機械動作・位置確認・圧力応答を分けて、警報の原因を絞る方法</li>
+</ul>
+<nav class="learning-map" aria-label="この記事の読み順">
+<ol>
+<li><a href="#need">なぜ必要？ 装置の境界とウェハ搬送</a></li>
+<li><a href="#conductance">なぜポンプだけでは決まらない？ 気体の通りやすさ</a></li>
+<li><a href="#drive">どう動く？ 空圧と制御のつながり</a></li>
+<li><a href="#open-alarm">開かないとき、何を順に見る？</a></li>
+<li><a href="#pressure">閉じたのに真空が悪いとき、何を疑う？</a></li>
+<li><a href="#maintenance">点検・復旧と保全の仕事へ</a></li>
+</ol>
+</nav>
+<section id="need" data-fact-ids="F001 F002">
+<h2>1. なぜ、半導体装置の中に「境界」が必要なのか</h2>
+<p>真空バルブが必要なのは、つながった空間をいつも同じ状態にしておけないからです。チャンバーは装置内の容器や部屋、真空は大気より圧力が低い状態です。ウェハという半導体の加工対象を出し入れする場所と、加工する場所では、必要な圧力条件が異なります。</p>
+<p>もし大気側と処理室が開いた通り道でつながれば、大気側の気体が真空側へ流れ込みます。ウェハ交換のたびに処理室全体を大気へ戻す構成では、処理に必要な真空条件を保ったまま交換できません。そこで、必要な空間だけを排気したり大気側へ戻したりするために、境界を開閉します。<a class="semicon-source-ref" href="#source-S8">[8]</a><a class="semicon-source-ref" href="#source-S16">[16]</a></p>
+<p>真空バルブを「部屋のドア」にたとえると、役割をつかみやすくなります。ただし、実物が止めるのは人の通行ではなく、気体が通る流路です。搬送用ならウェハを通す開口も必要です。閉じたときの漏れ、動いたときの粒子、両側の圧力差まで考える必要があり、単に板が動けばよいわけではありません。<a class="semicon-source-ref" href="#source-S1">[1]</a></p>
+<p>ここで「真空を流す」と考えないことが大切です。流れるのは気体で、ポンプは気体を排出します。バルブはその経路をつないだり遮断したりします。バルブ自身が真空を作るのではなく、部屋とポンプの関係を変えることで、必要な状態を成立させています。</p>
+</section>
+<section id="locations" data-fact-ids="F002 F003">
+<h2>2. 装置のどこを、隔離・接続しているのか</h2>
+<p>見るべきなのは、部品名より「バルブの両側に何があるか」です。複数の部屋を持つ装置では、処理室、搬送室、ロードロック、排気系の間で、それぞれ異なる境界を管理します。以下は典型的な機能配置で、すべての装置に同じ数・形・順番のバルブがあるわけではありません。<a class="semicon-source-ref" href="#source-S1">[1]</a><a class="semicon-source-ref" href="#source-S9">[9]</a></p>
+<div class="semicon-table-wrap">
+<table>
+<caption>バルブの両側を見るための、四つの場所</caption>
+<thead>
+<tr>
+<th scope="col">場所</th>
+<th scope="col">必要な状態</th>
+<th scope="col">バルブの役割</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">Process Chamber<br />処理室</th>
+<td>加工に必要な圧力・気体条件を保つ</td>
+<td>搬送側を隔離する。排気側では遮断や流れの調整を担う</td>
+</tr>
+<tr>
+<th scope="row">Transfer Chamber<br />搬送室</th>
+<td>ウェハを部屋の間へ運ぶ</td>
+<td>搬送時は開口を確保し、必要時は隣の室を隔離する</td>
+</tr>
+<tr>
+<th scope="row">Load Lock<br />ロードロック</th>
+<td>大気側と真空側の受け渡し条件を整える</td>
+<td>外側と奥の真空空間を切り離し、搬送時に接続する</td>
+</tr>
+<tr>
+<th scope="row">Pumping system<br />排気系</th>
+<td>部屋からポンプへ気体を抜く</td>
+<td>ポンプ・配管を切り離す。制御用なら排気の通りやすさを変える</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>搬送用のTransfer Valveは、ロードロックや処理室の隔離に使われる製品群です。排気配管のバルブは気体を通すためのもので、ウェハが通るとは限りません。Edwardsにも半導体工場のポンプ隔離向けゲートバルブの例があります。同じ「ゲートバルブ」でも、何を通して何を止めるかが違います。<a class="semicon-source-ref" href="#source-S9">[9]</a><a class="semicon-source-ref" href="#source-S17">[17]</a></p>
+</section>
+<section id="transfer" data-fact-ids="F002 F006">
+<h2>3. ロードロックでは、圧力条件を整えてからつなぐ</h2>
+<p>ロードロックは、大気側と真空側の間にある受け渡し用の部屋です。重要なのは、奥の処理室を真空に保ちながら、手前の部屋の状態を変えられることです。ULVACの装置にも、ロードロックによって処理室の真空を破らずに基板を搬送する例が示されています。<a class="semicon-source-ref" href="#source-S8">[8]</a><a class="semicon-source-ref" href="#source-S16">[16]</a></p>
+<p>典型的な投入の考え方は、次の順序です。これは機能を理解するための説明で、実機の操作手順や開放許可値を指定するものではありません。</p>
+<ol>
+<li>奥の真空側を隔離した状態で、大気側からウェハを受け入れる。</li>
+<li>大気側を閉じ、ロードロック内の気体をポンプで抜く。この圧力を下げる動作をポンプダウンと呼ぶ。</li>
+<li>装置が定める圧力・搬送条件を満たしてから、真空側のバルブを開ける。</li>
+<li>ウェハを搬送し、搬送の完了後に必要な境界を閉じる。</li>
+</ol>
+<p>取り出す側では、真空側から受け取ったウェハを、奥と隔離したロードロックから大気側へ戻します。気体を導入して圧力を戻す動作をベントと呼びます。ポンプダウン、ベント、バルブ開閉、搬送を、別々の動作として順序よくつなぐ必要があります。<a class="semicon-source-ref" href="#source-S8">[8]</a><a class="semicon-source-ref" href="#source-S9">[9]</a></p>
+<h3>差圧は「閉じているとき」と「開けるとき」で見る</h3>
+<p>差圧は、バルブの両側の圧力の差です。片側が大気、もう片側が真空なら、閉じた板の両面には大きな圧力差がかかります。「閉じたまま耐えられる差圧」と「開く動作が許される差圧」は、同じ条件とは限りません。VATやKurt J. Leskerの製品資料にも、開く前の差圧に個別の条件があります。<a class="semicon-source-ref" href="#source-S2">[2]</a><a class="semicon-source-ref" href="#source-S6">[6]</a><a class="semicon-source-ref" href="#source-S15">[15]</a></p>
+<p>そのため、空圧シリンダーが動けることだけで開放可否は決まりません。まず隣接する空間の圧力条件を整え、仕様と制御の許可条件を確認します。公開資料の一機種の数値を、別のバルブや装置の共通基準にしてはいけません。</p>
+</section>
+<section id="mechanism" data-fact-ids="F003 F004 F010 F011">
+<h2>4. ゲートを退避させる動作と、密封する動作を分ける</h2>
+<p>ゲートバルブは、流路をふさぐ板を退避させて開口を確保します。開いたときに気体や搬送対象が通りやすく、閉じたときには板とシール面の接触で境界を隔離します。VATはゲートバルブを、隔離や比較的単純な制御に適し、高いコンダクタンスを得やすい構造と説明しています。<a class="semicon-source-ref" href="#source-S1">[1]</a></p>
+<p>コンダクタンスは、配管や開口を気体が通りやすい度合いです。大きな開口を持つ意味は、ウェハが通ることだけではありません。気体の流れを妨げにくいことも、排気側で重要になります。一方、閉じたときにはバルブシートと呼ぶ受け側の密封面や、Oリングなどのシールが働きます。移動と密封は関係しますが、位置が閉側になっただけで気密まで証明できるわけではありません。<a class="semicon-source-ref" href="#source-S2">[2]</a><a class="semicon-source-ref" href="#source-S4">[4]</a></p>
+<p>半導体装置では、開閉時の摩擦による粒子も考慮します。粒子をParticle、不要な物質による汚染をContaminationと呼びます。メーカーは動作時の粒子放出や衝撃を抑える設計を示していますが、具体的な機構は製品ごとに異なります。あるメーカーの低摩擦機構を、すべてのゲートバルブの構造として説明することはできません。<a class="semicon-source-ref" href="#source-S2">[2]</a><a class="semicon-source-ref" href="#source-S9">[9]</a><a class="semicon-source-ref" href="#source-S10">[10]</a></p>
+<h3>形の名前と、仕事の名前を混ぜない</h3>
+<p>Isolationは「隔離する」という役割です。Isolation Valveは、必ず一つの構造だけを指す言葉ではありません。ゲートで隔離する製品もあれば、流路を約90度曲げるアングルバルブで、配管の接続・遮断を行う構成もあります。アングルバルブは省スペースの配管に適した選択肢ですが、ゲートと同じ流れやすさを持つとは限りません。<a class="semicon-source-ref" href="#source-S1">[1]</a><a class="semicon-source-ref" href="#source-S5">[5]</a><a class="semicon-source-ref" href="#source-S7">[7]</a></p>
+<p>一方、Throttle Valve、つまり流れを絞る制御用バルブは、開度を変えて圧力を調整します。機種によって機能が重なることもありますが、「遮断のために全開・全閉する役割」と「途中の開度を使う役割」を分けると、装置の動作を読み取りやすくなります。<a class="semicon-source-ref" href="#source-S2">[2]</a><a class="semicon-source-ref" href="#source-S3">[3]</a></p>
+</section>
+<section id="conductance" data-fact-ids="F004 F005">
+<h2>5. ポンプが強くても、気体の通り道が狭ければ抜けない</h2>
+<p>チャンバーの排気能力は、ポンプ単体の能力だけでは決まりません。ポンプまでの配管やバルブが気体の通過を妨げると、チャンバー側で得られる実効排気速度が小さくなります。実効排気速度は、途中の流路の影響も含めて、その部屋で得られる排気能力です。<a class="semicon-source-ref" href="#source-S11">[11]</a></p>
+<p>たとえば、正常時には全開だった排気バルブが途中までしか開かなくなった場合を考えます。ポンプが同じように動いていても、気体が通れる経路の状態は変わっています。ポンプダウンが遅いときは、ポンプの稼働だけでなく、実際のバルブ開度と配管の通り道も見る必要があります。</p>
+<p>基本関係は <strong>1/S<sub>eff</sub> = 1/S<sub>pump</sub> + 1/C</strong> です。S<sub>eff</sub>はチャンバー側の実効排気速度、S<sub>pump</sub>はポンプ側の排気速度、Cは途中の流路のコンダクタンスを表します。途中の通りやすさが小さいと、ポンプ能力を高くしても、その能力をチャンバー側で十分に使えません。<a class="semicon-source-ref" href="#source-S11">[11]</a></p>
+<p>ただし、Cは単に配管径だけで決まる固定値ではありません。配管の長さや形、気体の種類、圧力による流れ方の違いにも依存します。この式を理解の軸にしながら、実機の計算には該当条件の値を使います。「開いているから流路は正常」とも、「ポンプを交換すれば速くなる」とも、まだ決められません。<a class="semicon-source-ref" href="#source-S2">[2]</a><a class="semicon-source-ref" href="#source-S11">[11]</a></p>
+<h3>処理中は、あえて絞って圧力を保つこともある</h3>
+<p>処理室では、気体を十分に抜くことだけが目的ではありません。必要な気体を導入し、決められた圧力を維持することもあります。MFCは導入する気体の流量を制御する機器です。排気側のThrottle Valveは、ポンプへ通る気体の経路を絞り、実効排気速度を変えます。入る量と抜ける側の状態が釣り合って、処理室の圧力が決まります。<a class="semicon-source-ref" href="#source-S2">[2]</a><a class="semicon-source-ref" href="#source-S3">[3]</a></p>
+<p>APCは自動圧力制御です。圧力センサーの測定値を設定圧力と比較し、コントローラーがバルブ位置を調整する閉ループを使います。閉ループとは、結果を測って操作へ戻す仕組みです。圧力が不安定なら、バルブの動作だけでなく、測定値、導入流量、ポンプ、制御状態まで含めて考えます。<a class="semicon-source-ref" href="#source-S2">[2]</a></p>
+</section>
+<section id="drive" data-fact-ids="F007 F008 F009">
+<h2>6. 空圧の経験に、真空側の「結果」をつなぐ</h2>
+<p>空圧式の自動バルブでは、圧縮空気がアクチュエーターを動かし、その力がバルブの機構に伝わります。アクチュエーターは、供給されたエネルギーを機械動作に変える駆動部です。電磁弁、つまりSolenoid Valveは、電気信号を受けて駆動用空気の流路を切り替えます。この電磁弁と、真空側を開閉するバルブ本体は役割が異なります。<a class="semicon-source-ref" href="#source-S2">[2]</a><a class="semicon-source-ref" href="#source-S13">[13]</a></p>
+<p>工場設備でシリンダー、レギュレーター、リミットスイッチ、PLCの入出力を見た経験は、この部分で生かせます。PLCは機械の順序や条件を扱う制御装置です。ただし、真空バルブの駆動方式は手動・空圧・電動など製品ごとに異なります。ここからの診断例は空圧式を対象とし、電動式にそのまま空気系統の点検を当てはめるものではありません。<a class="semicon-source-ref" href="#source-S1">[1]</a></p>
+<p>開命令であるOpen Commandが出て、制御出力が電磁弁へ届き、供給空気が切り替わり、アクチュエーターとバルブが動き、位置センサーが結果を返す。このつながりで見ます。結果を制御側へ返す信号がFeedbackです。空気がなくなったときや電源が切れたときに、閉じるのか、保持するのかも製品仕様で確認します。空圧式だから必ずばねで閉じる、と決めることはできません。<a class="semicon-source-ref" href="#source-S4">[4]</a><a class="semicon-source-ref" href="#source-S5">[5]</a><a class="semicon-source-ref" href="#source-S13">[13]</a></p>
+<h3>位置の事実と、制御側の認識は別に見る</h3>
+<p>Position Sensorは、所定の位置を検出するセンサーです。バルブではOpen／Closedの位置表示やスイッチを持つ製品があります。シリンダー位置の検出には、一般の空圧設備でも磁気を利用したスイッチなどが使われます。どの方式かは機種によります。<a class="semicon-source-ref" href="#source-S4">[4]</a><a class="semicon-source-ref" href="#source-S7">[7]</a><a class="semicon-source-ref" href="#source-S14">[14]</a></p>
+<p><strong>バルブが動いたこと、センサーが検出したこと、PLCが信号を受け取ったことは、別々の確認点です。</strong>位置が正常でも検出位置のずれや配線の異常があれば、制御側にはOpenが返らない可能性があります。逆に「少し動いた」だけでは、全開位置へ到達したことになりません。物理動作、検出信号、制御入力を順に分けます。</p>
+<h3>インターロックは、動かせることと動かしてよいことを分ける</h3>
+<p>Interlockは、装置の条件を満たしたときだけ動作を許可する仕組みです。バルブの両側の圧力、ポンプの状態、ドア、搬送ロボットやウェハの位置などが、開放許可に関わることがあります。具体的な条件と組み合わせは装置メーカーごとの設計であり、すべての装置に共通する一覧ではありません。</p>
+<p>たとえば差圧条件が満たされず開放が禁止されているなら、バルブが動かないこと自体は保護の結果かもしれません。保全では、禁止を解除することを先に目指さず、どの条件が成立していないのかを確認します。この制御から真空応答までの整理は、メーカーの構成資料をつないだ診断の考え方で、特定装置のシーケンスを再現したものではありません。<a class="semicon-source-ref" href="#source-S2">[2]</a><a class="semicon-source-ref" href="#source-S5">[5]</a><a class="semicon-source-ref" href="#source-S13">[13]</a><a class="semicon-source-ref" href="#source-S14">[14]</a></p>
+</section>
+<section id="open-alarm" data-fact-ids="F007 F008 F009 F012">
+<h2>7. 「バルブが開かない」を、八つの確認点へ分ける</h2>
+<p>Valve Alarmは、装置が期待した状態を確認できなかったことを知らせます。警報名だけでは、故障部品までは確定できません。まず警報の定義、発生した工程、命令と位置確認の時刻、同時に出た警報を記録し、どこまで正常に進んだかを見ます。以下は修復済みResearchで整理された切り分けの例です。</p>
+<h3>① Open Commandは出ているか</h3>
+<p>「開くはずだった」と「実際に開命令が出た」を分けます。装置画面の要求、制御内部の命令、出力信号が同じ意味とは限りません。命令が生成されていないなら、工程の状態や上流の条件を調べる段階です。バルブ本体を交換しても、命令がない問題は解決しません。</p>
+<h3>② Interlockで禁止されていないか</h3>
+<p>開要求はあるのに出力が許可されない場合、許可条件を確認します。隣室の圧力がまだ整っていないのか、搬送位置が条件を満たしていないのか、実機の制御仕様に沿って読みます。表示が示すのは「許可されていない」という事実で、その条件が満たされない原因は別に調べます。</p>
+<h3>③ Air Supplyは正常か</h3>
+<p>Air Supplyは駆動用の空気供給です。工場側に圧縮空気があるだけでなく、対象バルブへ必要な圧力が届いているかを見ます。レギュレーター、配管・継手の漏れ、フィルターや空気中の水分・異物も候補です。必要圧力はメーカー指定で確認し、一律の値で判断しません。<a class="semicon-source-ref" href="#source-S20">[20]</a></p>
+<h3>④ Solenoidは切り替わっているか</h3>
+<p>制御出力と、電磁弁の動作を分けます。仕様に沿って電気出力や接続を確認し、その先で空気の切り替えが成立しているかを見る考え方です。出力表示がONになっただけで、電磁弁からアクチュエーターまで正常と判断してはいけません。<a class="semicon-source-ref" href="#source-S13">[13]</a></p>
+<h3>⑤ Actuatorは動いているか</h3>
+<p>空気が切り替わった後に、駆動部が所定の移動をしているかを確認します。供給不足、空気漏れ、駆動部や機構の異常などが候補です。電磁弁の動作音だけでは、必要な移動量が得られたことを証明できません。</p>
+<h3>⑥ Valveは物理的に開いているか</h3>
+<p>駆動部の動きと、真空側のゲートが所定位置へ移動したことを分けます。確認可能な位置表示やメーカー指定の点検方法を使い、途中で止まっていないかを見ます。力を加えて動かす方法で原因を決めず、機構の点検は装置の停止・隔離を含む承認済みの手順に従います。</p>
+<h3>⑦ Open Sensorは検知し、Feedbackは届いているか</h3>
+<p>物理位置が正常なら、センサーの検出、配線・コネクター、PLC入力を分けます。センサー出力はあるのに制御入力がない場合と、センサー自身が検出していない場合では、調べる区間が変わります。センサー異常を疑う前に、バルブが本当に検出位置へ届いたことも確認します。<a class="semicon-source-ref" href="#source-S4">[4]</a><a class="semicon-source-ref" href="#source-S5">[5]</a><a class="semicon-source-ref" href="#source-S14">[14]</a></p>
+<h3>⑧ 圧力は、接続先に見合った変化をしたか</h3>
+<p>開命令とOpen確認がそろったら、接続した部屋や排気系の圧力応答も見ます。ただし、どのバルブを開けても圧力が下がるわけではありません。ポンプへつなぐのか、別の室へつなぐのかで結果が違います。正常履歴と同じ条件で比較し、真空計の位置、気体の流入、ポンプの状態も含めます。<a class="semicon-source-ref" href="#source-S2">[2]</a><a class="semicon-source-ref" href="#source-S11">[11]</a></p>
+<p>たとえば「命令あり、許可あり、物理位置は全開、センサー出力あり、PLC入力なし」という観察結果なら、まずセンサーから制御入力までの区間を絞れます。これは説明用の仮定例で、現場の記録ではありません。原因をまだ断定せず、どの区間まで確認できたかを残すことが、部品の順番交換を避ける出発点になります。</p>
+<aside class="semicon-mid-cta" aria-label="学習を続ける">
+<p>開閉の信号がそろっても、真空の結果まで正常とは限りません。続く<a href="#pressure">「圧力の変化とシールから見る切り分け」</a>で、機械・制御の確認を真空側へつなげましょう。</p>
+</aside>
+</section>
+<section id="pressure" data-fact-ids="F010 F012 F013">
+<h2>8. 閉じたのに真空が悪いときは、位置と気密を分ける</h2>
+<p><strong>Closed信号は、閉位置の確認です。漏れが許容範囲内であることを直接測った信号ではありません。</strong>位置が閉側でも、Oリングの損傷、シートへの粒子付着、密封面の傷、別の接合部からの漏れなどで、必要な隔離性能が得られない可能性があります。<a class="semicon-source-ref" href="#source-S2">[2]</a><a class="semicon-source-ref" href="#source-S4">[4]</a><a class="semicon-source-ref" href="#source-S5">[5]</a></p>
+<h3>EP092のOリングを、バルブの密封面へつなぐ</h3>
+<p>Oリングは、溝の中で圧縮されて密封する輪状のシールです。バルブでは、閉じる板側のシールだけでなく、ふた・ボンネットなど別の境界にもシールがあります。どの接合部が何を隔離しているかを把握し、材質、温度、使用する気体との適合、圧縮永久ひずみ、傷、シートの汚れを確認項目にします。圧縮永久ひずみは、圧縮を解いても元に戻りきらない永久変形です。<a class="semicon-source-ref" href="#source-S2">[2]</a><a class="semicon-source-ref" href="#source-S4">[4]</a></p>
+<p>EP092「Oリング／真空シール」の原理は、ここで位置確認と気密を分けるために役立ちます。ただし、真空が悪いという症状だけでOリング不良とも決められません。バルブ外の配管・チャンバー、ポンプ、測定側も候補です。また、超高真空向けでもゴム系シールを使う製品例があるため、「高真空なら金属シールが必須」という判断もしません。<a class="semicon-source-ref" href="#source-S4">[4]</a></p>
+<h3>EP091の真空計を、開閉前後の圧力応答へつなぐ</h3>
+<p>EP091「真空計」は、装置の圧力を測る側の話です。バルブの開閉で、接続する空間や排気の通りやすさが変わるため、圧力の時間変化にも手がかりが現れます。開閉信号と同じ時刻の圧力履歴を重ねて考えると、どの動作の後からいつもと違ったかを整理できます。<a class="semicon-source-ref" href="#source-S2">[2]</a><a class="semicon-source-ref" href="#source-S11">[11]</a></p>
+<p>ただし、「圧力が期待どおり変わらない＝バルブ故障」ではありません。真空計の異常、測定位置の違い、気体の流入、ポンプ状態でも見え方は変わります。ゲートが実際に動いたという情報と、圧力表示を別の観察として扱い、互いを照合します。位置信号を圧力測定の代わりにせず、圧力測定を位置確認の代わりにしないことが重要です。</p>
+<p>漏れの切り分けには、装置の手順に沿った隔離確認やリーク検査を使います。圧力だけで漏れ箇所を決めず、シールや隣接配管などの候補を確認します。検査条件や合否値は機種・構成に合わせます。この章の横断診断はResearchで整理された考え方で、一つの測定だけで故障位置を確定する方法ではありません。</p>
+</section>
+<section id="vacuum-symptoms" data-fact-ids="F004 F005 F011 F012 F013">
+<h2>9. 排気が遅い・圧力が揺れる症状も、経路ごとに考える</h2>
+<p>ポンプダウンが遅い場合は、「抜けにくい」のか「入り続ける」のか「測定が違う」のかを分けます。バルブが全開になっていない、配管が流れを制限している、ポンプ能力が変わった、漏れや継続的な気体流入がある、真空計側に異常がある、といった候補が残ります。<a class="semicon-source-ref" href="#source-S2">[2]</a><a class="semicon-source-ref" href="#source-S11">[11]</a></p>
+<p>そのため、到達圧力だけでなく、到達までの時間、バルブの実位置、気体導入の状態、ポンプの状態を同じ工程の正常履歴と比べます。途中の流路が原因なら、ポンプの稼働表示が正常でも遅くなり得ます。堆積物による制限や汚染も候補ですが、症状だけで付着箇所や物質を決めつけません。</p>
+<p>処理中の圧力が揺れる場合は、APCのつながりを見ます。設定圧力と実測値、バルブ位置、MFCの流量、ポンプ状態、漏れや放出ガスの影響を分けて確認します。バルブが頻繁に動いていても、測定値や流入側の変化へ制御が応答している可能性があります。動きが目立つ部品を原因と決めず、閉ループのどこで変化が始まったかを探します。<a class="semicon-source-ref" href="#source-S2">[2]</a><a class="semicon-source-ref" href="#source-S3">[3]</a></p>
+<p>Particleやシールの摩耗は、密封と清浄度の両方に関わります。メーカーが粒子低減を設計目標にしていることは確認できますが、一つのバルブの粒子が必ず特定の不良や歩留まり低下を起こす、とまでは断定できません。保全で観察した汚れや摩耗と、加工結果への影響は、それぞれ根拠を持って結び付けます。<a class="semicon-source-ref" href="#source-S9">[9]</a><a class="semicon-source-ref" href="#source-S10">[10]</a></p>
+</section>
+<section id="maintenance" data-fact-ids="F010 F012 F014">
+<h2>10. 点検から復旧まで、真空・機械・制御を一緒に見る</h2>
+<p>予防保全では、メーカー指定の点検内容に、開閉回数、温度、工程での汚染、動作と漏れの履歴を合わせます。清浄な条件で示されたサービス周期を、堆積物が多い工程へそのまま当てはめることはできません。VATも、汚染や高温によって保全間隔が短くなることを説明しています。<a class="semicon-source-ref" href="#source-S2">[2]</a></p>
+<p>確認対象は、シールと密封面、駆動用空気、電磁弁・配管、位置確認、機械動作、真空性能です。交換部品や保全キットは機種に合わせます。Oリングだけを取り替えても、シートの傷や汚れ、別の密封部の問題が残れば、期待した結果にならない可能性があります。<a class="semicon-source-ref" href="#source-S2">[2]</a><a class="semicon-source-ref" href="#source-S7">[7]</a></p>
+<p>復旧確認でも、開閉できたこと、位置信号が返ったこと、必要な気密や圧力応答が得られたことを分けて記録します。修理前にどの観察が異常だったかを残しておけば、修理後に同じ条件の確認で改善を判断できます。どの試験で運転へ戻せるかは実機の保全手順で決め、この記事の説明だけで合否値を設定しません。</p>
+<p>製造業で培った、空圧の供給点から末端まで追う力、センサー出力とPLC入力を分ける力、機構の動きと摩耗を見る力は、半導体装置でも土台になります。そこへ真空、差圧、コンダクタンス、清浄度、加工条件を加えると、同じ「開かない」警報をより広い視点で読めます。</p>
+<p>関連する企業資料も、役割ごとに読むと整理できます。VATやEdwardsは真空バルブ、Leyboldは排気とコンダクタンス、CKDやSMCは空圧駆動や位置検出、ULVACは装置内のロードロック構成を理解する材料になります。これは製品・技術資料の関係で、採用条件や求人を示すものではありません。<a class="semicon-source-ref" href="#source-S1">[1]</a><a class="semicon-source-ref" href="#source-S11">[11]</a><a class="semicon-source-ref" href="#source-S13">[13]</a><a class="semicon-source-ref" href="#source-S14">[14]</a><a class="semicon-source-ref" href="#source-S16">[16]</a><a class="semicon-source-ref" href="#source-S17">[17]</a></p>
+</section>
+<section id="faq" data-fact-ids="F005 F006 F008 F010 F012">
+<h2>よくある誤解</h2>
+<h3>Q. Valve Alarmが出たら、まず本体を交換すればよいですか？</h3>
+<p>警報だけでは交換部品を決められません。命令、インターロック、空気供給、電磁弁、駆動部、位置検出、制御入力を分け、どの区間で期待した状態にならなかったかを確認します。</p>
+<h3>Q. Open／Closedの信号があれば、真空性能も正常ですか？</h3>
+<p>位置確認と真空性能は別です。所定位置へ動いても、シールや密封面の状態が悪ければ隔離性能が不足する可能性があります。位置・信号・圧力応答を照合します。</p>
+<h3>Q. 強いポンプを使えば、排気の遅さは解決しますか？</h3>
+<p>途中のバルブや配管のコンダクタンスが小さいと、チャンバーで得られる排気能力が制限されます。ポンプだけでなく、開度、流路、気体流入、漏れ、測定側も見ます。</p>
+<h3>Q. 大気と真空の間でも、ゲートバルブなら開けられますか？</h3>
+<p>閉状態で耐える条件と、開く際の条件は分けて確認します。許容差圧とインターロックは製品・装置ごとに異なり、別機種の数値を共通基準にはできません。</p>
+</section>
+<section id="recap">
+<h2>まとめ</h2>
+<div class="semicon-three-line-recap">
+<p>真空バルブは、部屋・搬送・排気の境界を管理し、必要な圧力条件を支えます。</p>
+<p>開閉の結果は、差圧、コンダクタンス、シール、空圧、センサー、制御がつながって決まります。</p>
+<p>警報名から故障部品を決めず、命令・物理動作・信号・圧力を分けて原因を絞ります。</p>
+</div>
+<p>部屋の接続をさらに理解したい方は、<a href="https://semicon-campus.com/load-lock-wafer-exchange/">ロードロックとウェハ交換の仕組み</a>へ進むと、バルブが守る境界を装置の一サイクルとして整理できます。</p>
+</section>
+<aside class="semicon-career-cta" aria-label="技術の理解を仕事へつなぐ">
+<p><strong>今の保全経験を、半導体装置の仕事へつなげる</strong></p>
+<p>空圧・機械・制御の経験を、真空と清浄度の理解へどう広げるか。点検、原因の切り分け、復旧、予防保全という担当業務から、半導体の設備保全職を知ることができます。</p>
+<p><a class="semicon-cta-link" href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/">半導体設備保全の仕事を知る</a><br />
+</aside>
+<section id="references">
+<h2>参考にした公式情報</h2>
+<div class="semicon-note">
+<p>出典番号はEP093の修復済みResearchに対応しています。開放条件・電圧・点検周期などの製品仕様は、その機種の資料で確認します。診断順序とEP091・EP092への接続は、資料の構成や原理をつないだ整理です。</p>
+</div>
+<ul class="semicon-sources">
+<li id="source-S1" data-source-id="S1">[1] VAT：<a href="https://www.vatgroup.com/vacuum-valves">Vacuum Valves</a> — 隔離・制御の役割、構造の選択肢。</li>
+<li id="source-S2" data-source-id="S2">[2] VAT：<a href="https://www.vatgroup.com/glossary">Glossary</a> — コンダクタンス、差圧、シール、空圧、圧力制御、保全。</li>
+<li id="source-S3" data-source-id="S3">[3] VAT：<a href="https://www.vatgroup.com/series/617-hv-butterfly-control-valve">61.7 HV Butterfly Control Valve</a> — 排気側の開度制御と圧力センサー。</li>
+<li id="source-S4" data-source-id="S4">[4] VAT：<a href="https://www.vatgroup.com/series/ultra-high-vacuum-gate-valve">10.8 Ultra High Vacuum Gate Valve</a> — 空圧・位置表示・シールの製品例。</li>
+<li id="source-S5" data-source-id="S5">[5] VAT：<a href="https://www.vatgroup.com/series/150-isolation-gate-valve?_locale=en">15.0 Vacuum Isolation Gate Valve</a> — 隔離、駆動、位置確認の製品例。</li>
+<li id="source-S6" data-source-id="S6">[6] VAT：<a href="https://www.vatgroup.com/series/mini-uhv-gate-valve">01.0 Mini UHV Gate Valve</a> — 閉状態と開動作の差圧条件。</li>
+<li id="source-S7" data-source-id="S7">[7] VAT：<a href="https://www.vatgroup.com/series/242-Angle-Valve-with-Seal-Protection">24.2 Angle Valve with Seal Protection</a> — アングル構造、位置確認、保全の製品例。</li>
+<li id="source-S8" data-source-id="S8">[8] VAT：<a href="https://www.vatgroup.com/series/970-load-lock">97.0 Load Lock</a> — 大気側と真空側の受け渡し。</li>
+<li id="source-S9" data-source-id="S9">[9] VAT：<a href="https://www.vatgroup.com/solutions/semiconductor-production/substrate-transfer">Substrate Transfer</a> — 搬送用バルブと低摩擦・低粒子設計。</li>
+<li id="source-S10" data-source-id="S10">[10] VAT：<a href="https://www.vatgroup.com/ja/solutions/semiconductor-production/process-control-isolation">Process Control &amp; Isolation</a> — 半導体工程の隔離・制御・粒子対策。</li>
+<li id="source-S11" data-source-id="S11">[11] Leybold：<a href="https://www.leybold.com/en-be/knowledge/vacuum-fundamentals/fundamental-physics-of-vacuum/how-to-calculate-vacuum-conductance">How is conductance in vacuum calculated</a> — 流路抵抗と実効排気速度。</li>
+<li id="source-S13" data-source-id="S13">[13] CKD：<a href="https://www.ckd.co.jp/kiki/en/technopedia/fluid/system/air/">Technopedia — Air operated valve</a> — 圧縮空気、電磁弁、ピストン駆動。</li>
+<li id="source-S14" data-source-id="S14">[14] SMC：<a href="https://www.smcworld.com/webcatalog/en-jp/categoryID/478?ca_id=478">Auto Switches for Air Cylinders</a> — シリンダーの位置検出。</li>
+<li id="source-S15" data-source-id="S15">[15] Kurt J. Lesker：<a href="https://www.lesker.com/valves/gatevalves-standard-ss-man-copper/part/sg1000mccfm">SG1000MCCFM Gate Valve</a> — 製品固有の開動作前差圧。</li>
+<li id="source-S16" data-source-id="S16">[16] ULVAC：<a href="https://www.ulvac.com/markets/PVD/RandDPVD/CS200">CS-200 R&amp;D Sputter System</a> — 処理室の真空を保つロードロック搬送。</li>
+<li id="source-S17" data-source-id="S17">[17] Edwards：<a href="https://www.edwardsvacuum.com/ja-jp/vacuum-pumps/our-products/valves-for-vacuum-systems/gate-valves">真空システム用ゲートバルブ</a> — 半導体工場のポンプ隔離向け製品。</li>
+<li id="source-S20" data-source-id="S20">[20] CKD：<a href="https://www.ckd.co.jp/kiki/en/file/23901">Pneumatic components — Safety precautions</a> — 供給圧・空気品質と動作異常。</li>
+</ul>
+</section>
+</article>
+<aside class="related-spokes">
+<h2>あわせて読みたい</h2>
+<ul>
+<li><a href="/vacuum-gauge/">真空なのに、どうやって圧力を測るのか？半導体装置の真空計を読み解く</a></li>
+</ul>
+</aside>
+<p class="pillar-link">装置の主要部品の全体像は、<a href="/semiconductor-equipment-components-map/">半導体製造装置の構造・主要部品マップ</a>で確認できます。</p>

@@ -1,0 +1,20 @@
+{
+ "id": 1964,
+ "type": "post",
+ "slug": "daily-news-b7fb31b036a0f0f6c6bd",
+ "link": "https://semicon-campus.com/daily-news-b7fb31b036a0f0f6c6bd/",
+ "date": "2026-10-13T15:00:00",
+ "modified": "2026-10-27T20:03:26",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  20
+ ],
+ "tags": [
+  19
+ ],
+ "featured_media": 2768,
+ "title": "NVIDIAとCiscoのUSFP構想、AI工場の光接続はどう変わるか",
+ "excerpt": "NVIDIAとCiscoが発表したUSFP光モジュール構想を、400Gbps/レーン、帯域計算、電力、標準化の課題から初心者向けに解説します。"
+}

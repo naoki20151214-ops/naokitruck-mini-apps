@@ -1,0 +1,20 @@
+{
+ "id": 1156,
+ "type": "post",
+ "slug": "daily-news-8097b98c24ecd3b0ecb0",
+ "link": "https://semicon-campus.com/daily-news-8097b98c24ecd3b0ecb0/",
+ "date": "2026-09-23T15:00:00",
+ "modified": "2026-10-27T20:04:51",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  20
+ ],
+ "tags": [
+  19
+ ],
+ "featured_media": 2838,
+ "title": "AlibabaのZhenwu V900発表で読む中国AI半導体の現在地",
+ "excerpt": "Alibaba傘下T-Headが発表したZhenwu V900を題材に、性能・メモリ・帯域、量産計画、AI半導体の技術背景と今後の確認点を初心者向けに解説します。"
+}

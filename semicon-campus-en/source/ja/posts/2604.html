@@ -1,0 +1,204 @@
+<!--KEEP:0-->
+<div class="semicon-article" id="semicon-top">
+<div class="semicon-level">
+<div class="semicon-level-top"><span class="semicon-level-label">学習レベル</span><strong class="semicon-stars" aria-label="初級（5段階中の1）"><span class="on">★</span><span class="off">☆☆☆☆</span><span>初級</span></strong></div>
+</div>
+<div class="semicon-lead">
+<p>きれいな水は、電気をほとんど通しません。ところが、塩をほんの少し溶かすだけで、電気を通すようになります。混ぜるものが少しでも、電気の通り方は、がらりと変わるのです。</p>
+<p>半導体の工場でも、似たことをします。ウェハ（半導体を作る、丸い板）の決まった場所に、ほかの原子を、ほんの少し打ち込んで、電気の通り方を変えます。この工程が「イオン注入」です。先に答えを言うと、イオン注入は、トランジスタの電気の通り道を作る工程で、打ち込んだあとの熱処理「アニール」で、仕上げます。</p>
+</div>
+<div class="semicon-note">
+<p>塩水の例が当てはまるのは、「少し混ぜると、電気の通り方が変わる」という点だけです。塩水と、シリコンのウェハは、仕組みがまったく違います。</p>
+</div>
+<div class="semicon-map">
+<h3>この記事でわかること</h3>
+<ol>
+<li><strong>この記事の目的：</strong>イオン注入で何をして、なぜ必要なのかを、アニールとあわせて、つかむこと</li>
+<li><strong>前半：</strong>イオン注入の目的と、原子を打ち込む装置の仕組み</li>
+<li><strong>後半：</strong>打ち込むと結晶が傷つく理由と、アニールで直す工程</li>
+</ol>
+</div>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep111-blog-ep111-05-implanter-1.jpg" alt="クリーンルームに並ぶ、長いビームラインを持つ大きなイオン注入装置と、その横に立つ技術者のイメージ"><figcaption>イオン注入装置のイメージ。実際の装置や人物ではありません。 EP111 記事用画像（AI生成）。生成画像を縮小し、JPEGに最適化。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>原子を打ち込む、大きな装置</li>
+<li>ビームの通り道が、長く続く</li>
+<li>電気の通り道を作る工程で使う</li>
+</ul>
+</div>
+<div class="semicon-chat-row naoki">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">助手</div>
+</div>
+<div class="semicon-bubble">
+<p>博士、ウェハに原子を打ち込むって、どういうことですか？</p>
+</div>
+</div>
+<div class="semicon-chat-row teacher">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">博士</div>
+</div>
+<div class="semicon-bubble">
+<p>電気を通しにくい基板に、ほかの原子を少し混ぜて、電気の通り方を変えるんじゃ。</p>
+</div>
+</div>
+<div class="semicon-chat-row naoki">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">助手</div>
+</div>
+<div class="semicon-bubble">
+<p>打ち込んだら、それで終わりですか？</p>
+</div>
+</div>
+<div class="semicon-chat-row teacher">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">博士</div>
+</div>
+<div class="semicon-bubble">
+<p>いや、結晶が傷つくので、熱で直す必要があるんじゃ。順に、見ていこう。</p>
+</div>
+</div>
+<h2 class="wp-block-heading" data-fact-ids="C01 C02">イオン注入は、「使える半導体」にする工程</h2>
+<p>SCREENセミコンダクターソリューションズの入門解説によると、イオン注入は、半導体に、電気が流れたり、溜まったりするところを作る工程です。具体的には、シリコンのウェハに、ボロンや砒素などのイオンを打ち込みます。イオンとは、電気を帯びた原子のことです。解説は、イオン注入をしないと、素子を正常に動かす電気が通らず、まともに動くICはできない、とも述べています。（かなり乱暴な表現だと、解説自身が断っています。）</p>
+<p>イオン注入装置を作る日新イオン機器の解説では、もともと電気を通しにくい基板に、電気の特性を変える不純物を打ち込んで、「使える半導体」にする工程だと説明されています。<strong class="semicon-key">もともと使えない基板を、原子を混ぜることで、使えるものに変える</strong>のです。</p>
+<p>この工程は、前工程の中で、フォトレジストの塗布、露光、エッチング、洗浄、平坦化などと一緒に、何度も繰り返されます。たとえば、トランジスタ（NMOS）のソースとドレイン、つまり電気の出入り口を作るときにも、イオン注入が使われます。</p>
+<p>歴史も、少しだけ紹介します。Georgia Techの講義資料によると、ショックレーが、イオン注入のアイデアを特許にしたのは1956年です。最初の商用の注入装置は、1973年に登場しました。今の注入装置は、数百万ドルもする、大きな装置です。</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep111-blog-ep111-06-wafer-1.jpg" alt="クリーンルーム用の服を着た技術者が、シリコンのウェハを手に持って見ているイメージ"><figcaption>ウェハを見る技術者のイメージ。実際の工場や人物ではありません。ウェハの中に、原子を打ち込みます。 EP111 記事用画像（AI生成）。生成画像を縮小し、JPEGに最適化。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>打ち込む相手は、ウェハ</li>
+<li>表面の形は、ほとんど変わらない</li>
+<li>中に、原子が入る</li>
+</ul>
+</div>
+<h2 class="wp-block-heading" data-fact-ids="C03">原子を打ち込む装置の仕組み</h2>
+<p>では、どうやって、原子をウェハに打ち込むのでしょうか。書籍の章を紹介するScienceDirectの解説によると、流れは次のとおりです。</p>
+<ol>
+<li>原料のガスなどから、電子をぶつけて、イオンを作る。</li>
+<li>90度に曲げる磁石で、イオンを質量ごとに分けて、必要なイオンだけを選ぶ。</li>
+<li>選んだイオンを、電圧で加速して、ウェハに当てる。</li>
+<li>ビームを、電界で左右に動かして、ウェハ全体に当てる。</li>
+</ol>
+<p>ボロンのイオンには、三フッ化ホウ素（BF3）などのガスを使い、リンや砒素のイオンには、ホスフィン（PH3）やアルシン（AsH3）などのガスを使います。毒性の強いガスを使うことが多いので、装置の取り扱いには、注意が必要です。</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep111-blog-01-flow-1.png" alt="ガスをイオンにし、磁石でイオンを選び、電圧で加速し、ビームを動かして当てる、イオン注入装置の流れの概念図"><figcaption>イオン注入装置の流れを表した模式図。磁石でイオンを選ぶ段階が、途中に入ります。説明用の流れで、特定の装置の構造ではありません。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>ガスをイオンにする</li>
+<li>磁石で、必要なイオンだけを選ぶ</li>
+<li>加速して、ビームを動かして当てる</li>
+</ul>
+</div>
+<h2 class="wp-block-heading" data-fact-ids="C04">深さは「加速の強さ」、量は「電流」で決める</h2>
+<p>Georgia Techの講義資料（Alan Doolittle教授）によると、イオンが入る深さは、加速のエネルギー、つまり電圧で決まります。一方、打ち込む量（ドーズ）は、測ったイオンの電流を積み重ねて、とても正確に管理します。<strong class="semicon-key">深さと量を、別々に決められる</strong>のが、イオン注入の大きな強みです。</p>
+<p>打ち込まれたイオンは、どうやって止まるのでしょうか。講義資料によると、二つの仕組みがあります。一つは、シリコンの原子核とぶつかること、もう一つは、電子の海の中を進むときの、抵抗のようなものです。イオンは、結晶の中を、何千もの原子の層を通り抜けて、やがて止まります。</p>
+<p>講義資料は、ほかにも、次のような長所を挙げています。</p>
+<ul>
+<li>速い。12インチのウェハ1枚が、中くらいの量なら、最短で25秒。</li>
+<li>ウェハの表面ではなく、内部に濃度のピークを作れる。</li>
+<li>エネルギーを変えて何度も打つと、複雑な分布も作れる。</li>
+</ul>
+<p>ここが、熱で原子を広げる「拡散」との違いです。ScienceDirectの解説によると、拡散では、濃度が最も高いのは表面で、深くなるほど下がります。イオン注入では、表面の少し下に、濃度の最大が来ます。この深さを、「飛程（レンジ）」と呼びます。</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep111-blog-02-depth-1.png" alt="加速が弱いと浅く、強いと深く入ることと、量は電流を測って正確に決めることを示した、深さと量の概念図"><figcaption>イオンが入る深さと、打ち込む量の決め方を表した模式図。説明用の図で、実測データではありません。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>深さは、加速の強さで決まる</li>
+<li>量は、電流を測って決める</li>
+<li>深さと量を、別々に決められる</li>
+</ul>
+</div>
+<h2 class="wp-block-heading" data-fact-ids="C05">弱点もある。打ち込むと、結晶が傷つく</h2>
+<p>反面、弱点もあります。講義資料は、とても深い分布や、とても浅い分布は作りにくいこと、毒性の強いガスを使うことが多いこと、装置が高価なことを挙げています。</p>
+<p>なかでも大きいのが、結晶の傷です。高いエネルギーのイオンが、シリコンの原子をはじき飛ばして、結晶に傷をつけます。講義資料によると、傷をつけるのは、イオンが原子核とぶつかって止まる過程で、傷がもっとも多いのは、イオンが止まる深さのあたりです。打ち込む量が増えるほど、傷も増えます。<strong class="semicon-key">結晶が傷ついたままでは、電気をうまくコントロールできません。</strong></p>
+<p>もう一つ、やっかいなのが「チャネリング」です。結晶には、原子が並んで、トンネルのような通り道ができる方向があり、イオンがそこを通ると、予定より深く入ってしまいます。この現象は、角度にとても敏感なので、再現性のためには避ける必要があります。講義資料によると、多くの注入では、ウェハを7度ほど傾けて打ちます。</p>
+<h2 class="wp-block-heading" data-fact-ids="C06">必要な場所だけに打ち込む、マスク</h2>
+<p>ウェハ全体に、同じように打ち込むわけではありません。ScienceDirectの解説によると、イオン注入は、室温に近い物理的な方法なので、通常のリソグラフィと両立して、小さな領域だけをドーピングできます。講義資料も、厚い材料や、密度の高い材料を「マスク」にして、打ち込みたくない場所を守れる、と説明しています。密度の高い材料ほど、イオンを止める力が強い、とのことです。</p>
+<h2 class="wp-block-heading" data-fact-ids="C07">アニールで、傷を直して、原子を働かせる</h2>
+<p>では、傷は、どう直すのでしょうか。答えが「アニール」、つまり、熱をかける工程です。講義資料によると、打ち込んだ原子のうち、ドーパントとして働くのは、結晶の決まった位置に収まったものだけです。高温のアニールで、その割合が上がります。言いかえると、<strong class="semicon-key">シリコン原子の一つと入れ替わるように、結晶の決まった位置（席）に収まった原子だけが、働く</strong>のです。打ち込む瞬間は、速いイオンが結晶に突っ込むので、丁寧な入れ替えではありません。そのため、アニールで、席に座り直させる必要があります。</p>
+<p>ScienceDirectの解説は、熱処理の方法を二つ紹介しています。一つは、管状の炉を使う方法で、600〜1000度ほどの、低めの温度で行い、横方向の広がりを抑えます。もう一つは、急速加熱アニール（RTA）です。講義資料は、シリコンの場合、傷を消すより、いったん結晶が壊れた層から、結晶を再び育てるほうが、楽なことが多い、とも述べています。</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep111-blog-03-anneal-1.png" alt="打ち込みで傷ついた結晶が、アニールの熱で直り、原子が決まった位置で働く様子の概念図"><figcaption>アニールで、傷ついた結晶が直る様子を表した模式図。原子の位置は説明用で、実測データではありません。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>打ち込むと、結晶が傷つく</li>
+<li>熱（アニール）で、傷が直る</li>
+<li>原子が、決まった位置で働く</li>
+</ul>
+</div>
+<p>ただし、熱をかければ、よいわけではありません。講義資料によると、注入後の高温の工程で、打ち込んだ原子は、広がってしまいます。<strong class="semicon-key">傷は直したい、でも、原子は広げたくない。</strong>この兼ね合いが、アニールの難しさです。</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep111-blog-04-balance-1.png" alt="熱が足りないと傷が残り、かけすぎると原子が広がるため、ちょうどよい熱の兼ね合いが必要なことを示した概念図"><figcaption>アニールの熱の兼ね合いを表した模式図。三つの場合の比較は、説明用の例です。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>熱が足りないと、傷が残る</li>
+<li>ちょうどよい熱で、傷が直る</li>
+<li>かけすぎると、原子が広がる</li>
+</ul>
+</div>
+<h2 class="wp-block-heading" data-fact-ids="C08">パワー半導体でも、重要さが増している</h2>
+<p>日新イオン機器の解説によると、近年は、自動車向けのパワーデバイスの製造でも、イオン注入の重要度が増しています。</p>
+<div class="semicon-cta">
+<h3>工程を担当する仕事を、知る</h3>
+<p>この工程を担当する仕事を知りたい方は、こちらの記事も読んでみてください。</p>
+<div class="semicon-btnrow"><a class="semicon-btn" href="https://semicon-campus.com/semiconductor-career-map/">半導体製造の仕事を工程別に見てみる</a></div>
+</div>
+<p>製造の全体像は、<a href="https://semicon-campus.com/semiconductor-manufacturing-overview/">半導体の製造工程の全体像</a>で紹介しています。なお、設備の調整や復旧は、所属する工場やメーカーの正式な手順と、権限のある人の判断のもとで行います。この記事は、考え方の紹介で、設備の操作を指示するものではありません。</p>
+<h2 class="wp-block-heading">ことばのおさらい</h2>
+<ul>
+<li><strong>イオン：</strong>電気を帯びた原子です。</li>
+<li><strong>イオン注入：</strong>イオンを加速して、ウェハに打ち込む工程です。</li>
+<li><strong>ドーズ：</strong>打ち込む量のことです。</li>
+<li><strong>ドーパント：</strong>電気の通り方を変えるために混ぜる、原子のことです。</li>
+<li><strong>ソース・ドレイン：</strong>トランジスタの、電気の出入り口です。</li>
+<li><strong>チャネリング：</strong>結晶の通り道を、イオンが深く進んでしまう現象です。</li>
+<li><strong>アニール：</strong>熱をかけて、傷を直し、原子を働かせる工程です。</li>
+</ul>
+<h2 class="wp-block-heading">よくある誤解</h2>
+<h3>Q. イオン注入は、ウェハに溝を掘る工程ですか？</h3>
+<p>いいえ。溝を掘るのは、エッチングです。イオン注入は、ウェハの中に、原子を入れる工程で、見た目の形は、ほとんど変わりません。</p>
+<h3>Q. 打ち込んだ原子は、すべて、電気の通り方を変えますか？</h3>
+<p>いいえ。働くのは、結晶の決まった位置に収まった原子だけです。そのために、アニールが必要になります。</p>
+<h3>Q. イオン注入は、シリコン原子を、別の原子に置き換える作業ですか？</h3>
+<p>結果としては、そう言えます。ただし、打ち込む瞬間は、速いイオンがシリコン原子をはじき飛ばしながら止まるので、丁寧な置き換えではありません。止まったイオンが、結晶の席に収まって、はじめて働きます。</p>
+<h2 class="wp-block-heading">まとめ</h2>
+<div class="semicon-lead">
+<p>イオン注入は、ボロンや砒素などのイオンを打ち込んで、電気の通り道を作る工程です。<br />深さは加速の強さで、量は電流で、別々に決められますが、結晶が傷つき、原子が働かないという弱点があります。<br />アニールで、傷を直して、原子を働かせます。ただし、熱をかけすぎると、原子が広がります。</p>
+</div>
+<div class="semicon-cta">
+<h3>YouTubeでも、半導体をやさしく解説しています</h3>
+<p>図解で復習したい人向けに、YouTubeでも半導体製造を短く解説しています。</p>
+<div class="semicon-btnrow"><a rel="noopener" class="semicon-btn secondary" href="https://www.youtube.com/@semicon-campus" target="_blank">YouTubeで図解動画を見る</a></div>
+</div>
+<h2 class="wp-block-heading">参考にした公式情報</h2>
+<ul class="semicon-sources">
+<li data-source-id="S01"><a href="https://alan.ece.gatech.edu/ECE6450/Lectures/ECE6450L5-Ion%20Implantation.pdf">Alan Doolittle「ECE 6450 Lecture 5: Ion Implantation」（Georgia Tech 講義資料）</a></li>
+<li data-source-id="S02"><a href="https://www.screen.co.jp/spe/technical/guide/implantation">SCREENセミコンダクターソリューションズ「イオン注入（初心者のための半導体入門）」</a></li>
+<li data-source-id="S03"><a href="https://www.nissin-ion.co.jp/prd/ion-implanter/">日新イオン機器「イオン注入とは（装置事業）」</a></li>
+<li data-source-id="S04"><a href="https://www.sciencedirect.com/topics/engineering/ion-implantation">ScienceDirect Topics「Ion Implantation」（書籍の章の抜粋）</a></li>
+</ul>
+<section class="semicon-correction-form">
+<h2>質問・訂正フォーム</h2>
+<p>この記事の内容に誤りや、分かりにくい点があれば、下のフォームからお知らせください。確認して、記事を直します。</p>
+<div class="semicon-form-shortcode">
+<div class="wpcf7 no-js" id="wpcf7-f2045-o7" lang="ja" dir="ltr" data-wpcf7-id="2045">
+<div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
+<form action="/?rest_route=%2Fwp%2Fv2%2Fposts&#038;per_page=100&#038;page=1&#038;context=view#wpcf7-f2045-o7" method="post" class="wpcf7-form init" aria-label="コンタクトフォーム" novalidate="novalidate" data-status="init">
+<fieldset class="hidden-fields-container"><input type="hidden" name="_wpcf7" value="2045" /><input type="hidden" name="_wpcf7_version" value="6.1.6" /><input type="hidden" name="_wpcf7_locale" value="ja" /><input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f2045-o7" /><input type="hidden" name="_wpcf7_container_post" value="0" /><input type="hidden" name="_wpcf7_posted_data_hash" value="" />
+</fieldset>
+<p>お名前・電話番号・住所の入力は不要です。工場名や社外秘の情報は記載しないでください。
+</p>
+<p><label>報告の種類（必須） <span class="wpcf7-form-control-wrap" data-name="report-type"><select class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required" aria-required="true" aria-invalid="false" name="report-type"><option value="誤りと思われる点">誤りと思われる点</option><option value="分かりにくい箇所">分かりにくい箇所</option><option value="追加してほしい説明・質問">追加してほしい説明・質問</option></select></span></label><br />
+<label>該当する見出し・文章（任意） <span class="wpcf7-form-control-wrap" data-name="report-section"><input size="40" maxlength="200" class="wpcf7-form-control wpcf7-text" aria-invalid="false" value="" type="text" name="report-section" /></span></label><br />
+<label>内容（必須） <span class="wpcf7-form-control-wrap" data-name="report-message"><textarea cols="40" rows="10" maxlength="3000" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" aria-required="true" aria-invalid="false" name="report-message"></textarea></span></label><br />
+<label>返信用メールアドレス（返信をご希望の場合のみ・任意） <span class="wpcf7-form-control-wrap" data-name="report-email"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-email wpcf7-text wpcf7-validates-as-email" autocomplete="email" aria-invalid="false" value="" type="email" name="report-email" /></span></label>
+</p>
+<p>ご意見は記事の確認・改善のために利用します。<a href="https://semicon-campus.com/privacy-policy/">個人情報の取り扱い</a>をご確認ください。
+</p>
+<p><input class="wpcf7-form-control wpcf7-submit has-spinner" type="submit" value="ご意見・訂正報告を送信" />
+</p><div class="wpcf7-response-output" aria-hidden="true"></div>
+</form>
+</div>
+</div>
+</section>
+</div>

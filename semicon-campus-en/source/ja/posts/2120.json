@@ -1,0 +1,18 @@
+{
+ "id": 2120,
+ "type": "post",
+ "slug": "wafer-map-defect-pattern",
+ "link": "https://semicon-campus.com/wafer-map-defect-pattern/",
+ "date": "2026-10-17T18:00:00",
+ "modified": "2026-10-30T20:02:17",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  9
+ ],
+ "tags": [],
+ "featured_media": 2752,
+ "title": "不良は「どこ」に出た？ ウェハマップから原因の手掛かりを探す技術",
+ "excerpt": "この記事の結論：不良の「数」だけでは分からない異常も、「場所」と「分布」を残すことで調べる方向が見えてきます。ただし、分布は原因の証明ではありません。検査条件、装置・工程履歴、現物の観察を組み合わせて初めて原因を絞り込め […]"
+}

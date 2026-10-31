@@ -1,0 +1,20 @@
+{
+ "id": 1082,
+ "type": "post",
+ "slug": "daily-news-422d69bc00a333583b80",
+ "link": "https://semicon-campus.com/daily-news-422d69bc00a333583b80/",
+ "date": "2026-09-20T17:00:00",
+ "modified": "2026-10-27T20:05:00",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  20
+ ],
+ "tags": [
+  19
+ ],
+ "featured_media": 2847,
+ "title": "Lattice Promptを無料提供、自然言語でFPGA設計を支援",
+ "excerpt": "Latticeが2026年9月16日、AI設計支援ツールLattice Promptの無料提供を発表。FPGAの基礎からRadiant・MCPの役割、支援できる工程、無料の範囲、生産性10倍以上というメーカー主張の限界まで解説します。"
+}

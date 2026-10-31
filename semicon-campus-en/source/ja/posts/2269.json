@@ -1,0 +1,18 @@
+{
+ "id": 2269,
+ "type": "post",
+ "slug": "semiconductor-yield-improvement",
+ "link": "https://semicon-campus.com/semiconductor-yield-improvement/",
+ "date": "2026-10-25T17:59:00",
+ "modified": "2026-10-30T21:15:42",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  9
+ ],
+ "tags": [],
+ "featured_media": 2745,
+ "title": "半導体の歩留まり改善とは？イールドラーニング・ポアソンモデル・欠陥密度D0の考え方",
+ "excerpt": "半導体の歩留まりとは何か。ライン歩留まりとダイ歩留まり、欠陥、チップの大きさとの関係、歩留まり学習、ツールモニタリングまで、歩留まりを上げる改善サイクルの全体像を、一次資料をもとに初心者向けに解説します。"
+}

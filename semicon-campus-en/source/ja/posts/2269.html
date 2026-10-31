@@ -1,0 +1,194 @@
+<!--KEEP:0-->
+<div class="semicon-article" id="semicon-top">
+<div class="semicon-level">
+<div class="semicon-level-top"><span class="semicon-level-label">学習レベル</span><strong class="semicon-stars" aria-label="初級（5段階中の1）"><span class="on">★</span><span class="off">☆☆☆☆</span><span>初級</span></strong></div>
+</div>
+<div class="semicon-lead">
+<p>クッキーを100枚焼いて、焦げずにお店に並べられるのが92枚だったとします。この92枚が「歩留まり」の考え方です。焼いた枚数に対して、使えるものが何割か、という数字ですね。</p>
+<p>半導体の工場にも、同じ数字があります。ウェハ（半導体を作る、丸い板）の上に作ったチップのうち、良品だった割合です。この数字が高いほど、同じ材料と手間で、たくさんの良品が取れます。先に答えを言うと、<strong class="semicon-key">歩留まりは、「欠陥の原因を見つけて、直す」改善を繰り返すことで上がっていきます。</strong></p>
+</div>
+<div class="semicon-note">
+<p>クッキーの例が当てはまるのは、「良品の割合」という点だけです。クッキーと半導体では、失敗の理由がまったく違います。</p>
+</div>
+<div class="semicon-map">
+<h3>この記事でわかること</h3>
+<ol>
+<li><strong>この記事の目的：</strong>歩留まりとは何かと、それを上げる改善サイクルの全体像を、つかむこと</li>
+<li><strong>前半：</strong>歩留まりの損失の種類と、その主な原因である「欠陥」</li>
+<li><strong>後半：</strong>歩留まりを上げる「歩留まり学習」と、これまでの記事のつながり</li>
+</ol>
+</div>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep110-blog-ep110-05-wafer.jpg" alt="クリーンルーム用の服を着た技術者が、たくさんのチップが並ぶウェハを掲げて見ているイメージ"><figcaption>ウェハを見る技術者のイメージ。実際の工場や人物ではありません。ウェハの上のチップのうち、良品の割合が歩留まりです。 EP110 記事用画像（AI生成）。生成画像を縮小し、JPEGに最適化。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>丸い板がウェハ。たくさんのチップが並ぶ</li>
+<li>その中の良品の割合が、歩留まり</li>
+<li>高いほど、同じ手間で良品がたくさん取れる</li>
+</ul>
+</div>
+<div class="semicon-chat-row naoki">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">助手</div>
+</div>
+<div class="semicon-bubble">
+<p>博士、歩留まりって、何ですか？</p>
+</div>
+</div>
+<div class="semicon-chat-row teacher">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">博士</div>
+</div>
+<div class="semicon-bubble">
+<p>作ったチップのうち、良品だった割合のことじゃ。高いほど、無駄が少ないんじゃよ。</p>
+</div>
+</div>
+<div class="semicon-chat-row naoki">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">助手</div>
+</div>
+<div class="semicon-bubble">
+<p>どうすれば、上がるのですか？</p>
+</div>
+</div>
+<div class="semicon-chat-row teacher">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">博士</div>
+</div>
+<div class="semicon-bubble">
+<p>欠陥の原因を見つけて、直す。その繰り返しじゃ。順に、見ていこう。</p>
+</div>
+</div>
+<h2 class="wp-block-heading" data-fact-ids="C01 C02">歩留まりの損失は、2種類ある</h2>
+<p>カリフォルニア大学バークレー校の講義資料によると、<strong class="semicon-key">ウェハ工場での歩留まりの損失は、「ライン歩留まり」と「ダイ歩留まり」の二つに分かれます。</strong>ダイとは、ウェハから切り出す一つ一つのチップのことです。</p>
+<p>ライン歩留まりの損失は、ウェハの取り扱いの不注意や、工程のミスで起こります。たとえば、工程を飛ばしたり、手順書を取り違えたり、装置が管理から外れたりした場合です。一方、ダイ歩留まりは、チップ一つ一つが動くかどうかの割合です。資料では、チップが動く確率を、ダイ歩留まりと呼んでいます。</p>
+<h2 class="wp-block-heading" data-fact-ids="C02 C03">チップを壊す主役は、小さな「欠陥」</h2>
+<p>チップ単位の損失の多くは、とても小さな欠陥が原因です。資料によれば、<strong class="semicon-key">欠陥とは、回路を故障させる物理的な異常のすべてを指します。</strong>具体的には、粒子（ほこり）、傷、配線がつながってしまう短絡、配線が切れてしまう断線などです。</p>
+<p>ここで使う道具が「ウェハマップ」です。電気を流して調べる検査で動かなかったチップを、ウェハの図の上に印にしたものです。欠陥の位置が偏っていれば、原因の手がかりになります。</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep110-blog-ep110-06-wafermap.jpg" alt="モニターに映った丸いウェハマップの図で、不良を表す赤い点が散らばっているイメージ"><figcaption>ウェハマップを見ているイメージ。実際の装置や測定結果ではありません。ウェハマップは、動かなかったチップを印にした図です。 EP110 記事用画像（AI生成）。生成画像を縮小し、JPEGに最適化。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>動かなかったチップを、図の上に印にしたもの</li>
+<li>印の偏りは、原因の手がかりになる</li>
+<li>欠陥の場所を、一目で見られる</li>
+</ul>
+</div>
+<p>ただし、損失のすべてが欠陥というわけではありません。資料は、たとえばウェハの端では、膜の厚さの制御が難しく、端のチップが丸ごと不良になる例を挙げています。</p>
+<h2 class="wp-block-heading" data-fact-ids="C04">大きなチップほど、歩留まりは下がる</h2>
+<p>同じ工場で、同じ数の欠陥があっても、チップの大きさで歩留まりは変わります。<strong class="semicon-key">チップが大きいほど、欠陥が一つでも入る確率が上がるからです。</strong>資料でも、同じ工程、同じ欠陥の密度なら、大きなチップのウェハは、小さなチップのウェハより歩留まりが低くなる、と説明されています。</p>
+<p>したがって、チップが大きい製品ほど、欠陥の少ない工場が必要になります。</p>
+<p>ここから、もう一つ大事なことが分かります。チップの大きさが違う製品どうしを、そのまま歩留まりで比べても、公平な比較にはなりません。そこで資料は、歩留まりの数字から、工場の「欠陥の密度」、つまり、1平方センチあたりに欠陥がいくつあるかを逆算する方法を紹介しています。欠陥の密度が低い工場ほど、高い歩留まりで作れる、という見方です。</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep110-blog-01-chipsize.png" alt="欠陥の数が同じでも、小さいチップと大きいチップを比べると、大きいチップのほうが欠陥に当たりやすいことを示した概念図"><figcaption>チップの大きさと欠陥の関係を表した模式図。欠陥の位置や数は説明用で、実測データではありません。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>欠陥の数は同じ</li>
+<li>チップが大きいほど、欠陥に当たりやすい</li>
+<li>だから、大きなチップほど歩留まりは下がる</li>
+</ul>
+</div>
+<h2 class="wp-block-heading" data-fact-ids="C05">欠陥は、工程ごとの足し算で考えられる</h2>
+<p>ウェハは、たくさんの工程を通って、チップになります。資料では、欠陥の密度を、工程や層ごとの足し算として考える方法が紹介されています。この考え方なら、歩留まりは、各工程の歩留まりをかけ合わせたものになります。</p>
+<p>たとえば、三つの工程の歩留まりが、それぞれ98%、95%、99%だったとします。全体の歩留まりは、これらをかけ合わせて、約92%です。クッキーの例と同じ数字になりますね。このうち、いちばん低い95%の工程を、少し良くするだけでも、全体への効き目は大きいことが分かります。（説明用の計算です。）</p>
+<p>これが便利なのは、どの工程が、どれだけ歩留まりを下げているのかを、はっきり分けられるからです。さらに、ある工程の欠陥を減らしたら、全体の歩留まりがどれだけ上がるのかも、計算できます。<strong class="semicon-key">直す順番を、数字で決められる</strong>わけです。</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep110-blog-02-steps.png" alt="工程A、B、Cの損失を比べ、損失の大きい工程Bから直すことを示した概念図"><figcaption>工程ごとの損失を比べる考え方の模式図。損失の大きさは説明用の例で、実測データではありません。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>工程ごとに、損失を比べる</li>
+<li>損失が大きい工程を見つける</li>
+<li>大きい工程から直すと、効き目が大きい</li>
+</ul>
+</div>
+<h2 class="wp-block-heading" data-fact-ids="C06">歩留まりを上げる中心は、「歩留まり学習」</h2>
+<p>では、現場はどうやって歩留まりを上げるのでしょうか。業界の技術ロードマップ（ITRS）は、歩留まり学習という考え方を示しています。工程とウェハについての知識を集めて、うまく使い、製造上の問題を見つけて解決することで、歩留まりを上げる取り組みです。</p>
+<p>ロードマップは、歩留まりを上げる作業を、ある技術世代の基本の歩留まりを、研究開発の段階の値から、「成熟した歩留まり」へ引き上げることと説明しています。ここでいう歩留まりは、チップ単位の検査（ウェハソート）の結果です。</p>
+<p><strong class="semicon-key">見つけて、解決して、また見つける。</strong>この繰り返しが、歩留まり学習の中身です。ロードマップは、課題として、ますます小さくなる欠陥の検出と、データが増える中で根本原因を早く特定することを挙げています。</p>
+<h2 class="wp-block-heading" data-fact-ids="C07">原因は2種類。はっきりした原因から片づく</h2>
+<p>歩留まりを下げる原因は、大きく二つに分けられます。はっきりした仕組みのある「系統的」な原因と、偶然に近い「ランダム」な原因です。検査装置メーカーKLAの解説によると、歩留まりが上がっていく過程で、系統的な原因は、ほとんど解決されます。</p>
+<p>では、最後に何が残るのでしょうか。主に、工程の装置や環境が起こす、ランダムな欠陥です。つまり、<strong class="semicon-key">最初は大きな原因を直し、最後は小さなばらつきと向き合う</strong>、という流れになります。</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep110-blog-03-curve.png" alt="時間とともに歩留まりが上がり、先に系統的な原因が解決され、最後にランダムな欠陥が残る様子を示した概念図"><figcaption>系統的な原因が先に解決され、歩留まりが上がっていく流れを表した模式図。曲線の形は説明用で、実測データではありません。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>最初は、はっきりした原因（系統的）を解決</li>
+<li>歩留まりは、時間とともに上がる</li>
+<li>最後に残るのは、ランダムな欠陥</li>
+</ul>
+</div>
+<h2 class="wp-block-heading" data-fact-ids="C08">装置ごとに白黒をつける「ツールモニタリング」</h2>
+<p>欠陥が、どこで生まれたのかは、案外わかりにくいものです。KLAの解説は、欠陥の発生源から何工程も離れて見つかることがある、と述べています。そこで使われるのが、ツールモニタリングです。</p>
+<p>やり方は、とても単純です。まず、何もないウェハを検査します。次に、調べたい装置にそのウェハを通します。最後に、もう一度検査します。<strong class="semicon-key">二度目の検査で増えた欠陥は、その装置が足したものです。</strong>疑いようがなく、原因がはっきりします。</p>
+<p>さらに、適切な管理の限界や、基準から外れたときの行動計画（OCAP）と組み合わせれば、装置ごとに、ランダムな歩留まりの損失の源を明らかにして、対処できる、と解説は述べています。見つけたら、手を打つところまでが、セットなのです。</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep110-blog-04-toolmon.png" alt="ウェハを検査し、装置に通し、もう一度検査して、増えた欠陥をその装置が足したものと判断するツールモニタリングの流れの概念図"><figcaption>ツールモニタリングの流れを表した模式図。説明用の流れで、特定の工場の手順ではありません。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>検査で、現状を記録する</li>
+<li>装置に通して、もう一度検査する</li>
+<li>増えた欠陥は、その装置が足したもの</li>
+</ul>
+</div>
+<h2 class="wp-block-heading">これまでの記事は、すべて、このサイクルの部品</h2>
+<p>ここまでのシリーズも、実は、一つの改善サイクルでした。線の太さ（CD）を測る。リソグラフィの不良を見つける。SPCで数字の変化を見張る。FDCで装置の記録から兆しをつかむ。根本原因解析で原因を探る。どれも、見張る、気づく、原因を探す、直す、確かめる、のどこかを受け持っています。</p>
+<div class="semicon-cta">
+<h3>歩留まりを見張る仕事を、知る</h3>
+<p>この見張りを担当する仕事を知りたい方は、こちらの記事も読んでみてください。</p>
+<div class="semicon-btnrow"><a class="semicon-btn" href="https://semicon-campus.com/semiconductor-career-map/">半導体製造の仕事を工程別に見てみる</a></div>
+</div>
+<p>数字の変化に気づく方法は、<a href="https://semicon-campus.com/what-is-spc-semiconductor-process-control/">SPC（統計的工程管理）とは何か</a>で紹介しています。なお、設備の調整や復旧は、所属する工場やメーカーの正式な手順と、権限のある人の判断のもとで行います。この記事は考え方の紹介で、設備の操作を指示するものではありません。</p>
+<h2 class="wp-block-heading">ことばのおさらい</h2>
+<ul>
+<li><strong>歩留まり：</strong>作ったもののうち、良品だった割合です。</li>
+<li><strong>ライン歩留まり：</strong>ウェハの取り扱いや工程のミスで、失われなかった割合です。</li>
+<li><strong>ダイ歩留まり：</strong>チップ一つ一つが、動く割合です。</li>
+<li><strong>欠陥：</strong>回路を壊してしまう、小さな物理的な異常です。</li>
+<li><strong>ウェハマップ：</strong>動かなかったチップを、ウェハの図の上に印にしたものです。</li>
+<li><strong>歩留まり学習：</strong>原因を見つけて解決する、学びの繰り返しです。</li>
+<li><strong>系統的な原因・ランダムな原因：</strong>はっきりした仕組みのある原因と、偶然に近い原因です。</li>
+<li><strong>ツールモニタリング：</strong>検査、装置に通す、再検査、の順で、装置が足した欠陥を調べる方法です。</li>
+</ul>
+<h2 class="wp-block-heading" data-fact-ids="C09">よくある誤解</h2>
+<h3>Q. 歩留まりが低いのは、欠陥が多いからだけですか？</h3>
+<p>いいえ。欠陥は大きな原因ですが、すべてではありません。ウェハの端の損失のように、欠陥とは別の理由で不良になる場合もあります。</p>
+<h3>Q. 歩留まりは、100%を目指すものですか？</h3>
+<p>目標は用途によって違います。KLAの解説によると、消費者向けの工場では、これ以上の改善に手間と費用が見合わなくなる点を、「成熟した歩留まり」と考えます。車の部品のように、信頼性の要求が高い用途では、もっと上を目指します。</p>
+<h2 class="wp-block-heading">まとめ</h2>
+<div class="semicon-lead">
+<p>歩留まりは、作ったチップのうち、良品だった割合で、損失の主役は小さな欠陥です。<br />欠陥の原因を、見つけて、解決して、また見つける「歩留まり学習」で、歩留まりは上がっていきます。<br />見張る、気づく、原因を探す、直す、確かめる。この繰り返しが、シリーズ全体の流れです。</p>
+</div>
+<div class="semicon-cta">
+<h3>YouTubeでも、半導体をやさしく解説しています</h3>
+<p>図解で復習したい人向けに、YouTubeでも半導体製造を短く解説しています。</p>
+<div class="semicon-btnrow"><a rel="noopener" class="semicon-btn secondary" href="https://www.youtube.com/@semicon-campus" target="_blank">YouTubeで図解動画を見る</a></div>
+</div>
+<h2 class="wp-block-heading">参考にした公式情報</h2>
+<ul class="semicon-sources">
+<li data-source-id="S01"><a href="https://fog.misty.com/perry/cod/references/yield_models.pdf">Robert C. Leachman「Yield Modeling and Analysis」（UC Berkeley IEOR 130 講義資料、2014年）</a></li>
+<li data-source-id="S02"><a href="https://www.kla.com/documents/02_ProcessWatchAutomotive_2018_03.pdf">KLA「Process Watch: Baseline yield predicts baseline reliability」（2018年）</a></li>
+<li data-source-id="S03"><a href="https://www.semiconductors.org/wp-content/uploads/2018/08/YieldEnhanc2003.pdf">ITRS「Yield Enhancement」（国際半導体技術ロードマップ2003年版）</a></li>
+</ul>
+<section class="semicon-correction-form">
+<h2>質問・訂正フォーム</h2>
+<p>この記事の内容に誤りや、分かりにくい点があれば、下のフォームからお知らせください。確認して、記事を直します。</p>
+<div class="semicon-form-shortcode">
+<div class="wpcf7 no-js" id="wpcf7-f2045-o8" lang="ja" dir="ltr" data-wpcf7-id="2045">
+<div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
+<form action="/?rest_route=%2Fwp%2Fv2%2Fposts&#038;per_page=100&#038;page=1&#038;context=view#wpcf7-f2045-o8" method="post" class="wpcf7-form init" aria-label="コンタクトフォーム" novalidate="novalidate" data-status="init">
+<fieldset class="hidden-fields-container"><input type="hidden" name="_wpcf7" value="2045" /><input type="hidden" name="_wpcf7_version" value="6.1.6" /><input type="hidden" name="_wpcf7_locale" value="ja" /><input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f2045-o8" /><input type="hidden" name="_wpcf7_container_post" value="0" /><input type="hidden" name="_wpcf7_posted_data_hash" value="" />
+</fieldset>
+<p>お名前・電話番号・住所の入力は不要です。工場名や社外秘の情報は記載しないでください。
+</p>
+<p><label>報告の種類（必須） <span class="wpcf7-form-control-wrap" data-name="report-type"><select class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required" aria-required="true" aria-invalid="false" name="report-type"><option value="誤りと思われる点">誤りと思われる点</option><option value="分かりにくい箇所">分かりにくい箇所</option><option value="追加してほしい説明・質問">追加してほしい説明・質問</option></select></span></label><br />
+<label>該当する見出し・文章（任意） <span class="wpcf7-form-control-wrap" data-name="report-section"><input size="40" maxlength="200" class="wpcf7-form-control wpcf7-text" aria-invalid="false" value="" type="text" name="report-section" /></span></label><br />
+<label>内容（必須） <span class="wpcf7-form-control-wrap" data-name="report-message"><textarea cols="40" rows="10" maxlength="3000" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" aria-required="true" aria-invalid="false" name="report-message"></textarea></span></label><br />
+<label>返信用メールアドレス（返信をご希望の場合のみ・任意） <span class="wpcf7-form-control-wrap" data-name="report-email"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-email wpcf7-text wpcf7-validates-as-email" autocomplete="email" aria-invalid="false" value="" type="email" name="report-email" /></span></label>
+</p>
+<p>ご意見は記事の確認・改善のために利用します。<a href="https://semicon-campus.com/privacy-policy/">個人情報の取り扱い</a>をご確認ください。
+</p>
+<p><input class="wpcf7-form-control wpcf7-submit has-spinner" type="submit" value="ご意見・訂正報告を送信" />
+</p><div class="wpcf7-response-output" aria-hidden="true"></div>
+</form>
+</div>
+</div>
+</section>
+</div>

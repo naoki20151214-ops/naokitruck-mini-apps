@@ -1,0 +1,19 @@
+{
+ "id": 1790,
+ "type": "post",
+ "slug": "o-ring-vacuum-seal",
+ "link": "https://semicon-campus.com/o-ring-vacuum-seal/",
+ "date": "2026-10-07T18:00:00",
+ "modified": "2026-10-30T21:32:34",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  5,
+  21
+ ],
+ "tags": [],
+ "featured_media": 2780,
+ "title": "半導体製造装置のOリング・真空シールの仕組み｜材質（FFKMなど）の選び方とリーク対策",
+ "excerpt": "半導体製造装置のOリングが真空を密封する仕組みを、溝・つぶし代・材質・劣化から解説。実リーク、仮想リーク、透過、放出ガスを区別し、圧力履歴やHe検査による切り分け、交換後の復旧確認までつなげます。"
+}

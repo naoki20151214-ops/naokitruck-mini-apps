@@ -1,0 +1,108 @@
+<!--KEEP:0-->
+<article class="semicon-episode" data-episode="089" data-slug="efem-load-port-foup" data-target="existing_post" data-fact-ids="F001 F002 F003 F004 F005 F006 F007 F008 F009 F010 F011 F012">
+<h1>ウェハはどうやって装置に入る？、FOUPとEFEMの搬送を追う</h1>
+<div class="semicon-editorial-note">article_title: ウェハはどうやって装置に入る？、FOUPとEFEMの搬送を追う<br />short_headline: ウェハ搬送の仕組みを順に解説する<br />short extraction: 視聴者の疑問＝人がウェハに触れずに装置へ渡す方法。残す因果＝FOUP搬送→ロードポート位置決め・ドッキング→EFEM個別搬送→必要時のアライナ→清浄度・状態管理。科学的境界＝構成・保持方式・N2は装置ごとに異なり、数値や性能保証を一般化しない。45〜60秒候補＝FOUPが閉じたまま到着し、ロードポートでつながり、EFEMロボットが1枚を取り出す場面。</div>
+<h2>最初に答え</h2>
+<p>スマートフォンや車に使われる半導体は、工場で一枚ずつ人が持って装置へ入れているわけではありません。人がウェハを直接持つ場面を減らし、FOUPという閉じたキャリアごと装置の前へ運びます。</p>
+<p>答えは、<strong>FOUPを運ぶ仕組み、ロードポート、EFEM内のロボットが役割を分担する</strong>ことです。FOUPをAMHSやOHTで運び、ロードポートで位置とドアを整え、EFEMがウェハを一枚ずつ装置へ渡します。必要な構成ではアライナが中心や向きを補正します。</p>
+<p>この順番を知ると、「搬送ロボットがウェハを運ぶ」という一言では見えない、位置決め・清浄度・信号管理のつながりが分かります。</p>
+<h2>この記事でわかること</h2>
+<ul>
+<li>FOUPがウェハを閉じたまま運ぶ理由と、OHT・AMHSの役割</li>
+<li>ロードポートでキャリアを位置決めし、FIMSで前面を接続する流れ</li>
+<li>EFEMのロボット、必要に応じたアライナ、清浄度と状態管理の境界</li>
+</ul>
+<h2>まず、運ばれるのはウェハではなくFOUP</h2>
+<p>300 mmウェハの代表的な自動搬送では、ウェハはFOUPの中に収納されたまま工場内を移動します。FOUPはFront Opening Unified Podの略で、前面からアクセスするキャリアです。外から見ると箱に近い形ですが、内部にはウェハを一枚ずつ収めるスロットがあり、搬送中のウェハを直接開放しない役割を持ちます。</p>
+<p>AMHSは工場内の自動搬送システム全体を指す言葉で、OHTは天井付近のレールを走る搬送方式の一例です。OHTがつかんで運ぶ対象は、通常、裸のウェハではなくFOUPです。ここで大切なのは、FOUPが「ウェハを加工する容器」ではなく、搬送と保護のためのキャリアだという区別です。</p>
+<p>装置前に到着するまで、FOUPの扉は閉じています。これにより、工場の物流空間からウェハをむき出しにする範囲を限定できます。ただし、FOUPの規格に合っているだけで、粒子数や全装置の清浄度が自動的に保証されるわけではありません。扉、底面、周辺機構の状態も合わせて管理します。</p>
+<p class="visual-context">ここで見る具体物は「閉じたFOUPを運ぶ装置前の搬送」です。</p>
+<figure class="semicon-figure" data-media-role="explanatory-image-01" data-visual-kind="photoreal" data-subject="閉じたFOUPを運ぶ装置前の搬送" data-purpose="intro-object" data-composition="fab-arrival" data-concrete-object="true" data-selection-reason="最初に、ウェハそのものではなく閉じたFOUPが装置前へ到着するという記事の主役を具体的に示すため。" data-photo-assessment="FOUP、搬送レール、装置前の関係が通常表示幅で識別でき、ロゴや未確認の数値を含まない。" data-provenance="articles/images/episode089/provenance/01-V001.md"><img decoding="async" src="images/episode089/optimized/01-v001.webp" alt="閉じたFOUPを運ぶ装置前の搬送（閉じたFOUPを運ぶ装置前の搬送）"><figcaption>FOUPはウェハを閉じたまま装置前へ運ぶキャリアです。閉じたFOUPを運ぶ装置前の搬送を示すAI生成画像（OpenAI image generation）。変更: article WebP optimization.</figcaption></figure>
+<h2>ロードポートは物流と装置をつなぐ境界</h2>
+<p>FOUPが装置前に着いたら、すぐにウェハを取り出すわけではありません。ロードポートがキャリアを受け取り、装置側が想定する基準位置へ置きます。ロードポートは台に見えますが、キャリア搬送システムと製造・検査装置の間にある機械的な受け渡しインターフェースです。</p>
+<p>この境界があることで、工場側の搬送と装置側の搬送を分けて考えられます。OHTがFOUPを運ぶ動作、ロードポートが受け取る動作、EFEMが内部のウェハを扱う動作は、それぞれ別の仕事です。キャリアを置く位置がずれると、後のドア接続やロボットのアクセスにも影響するため、最初の位置決めが重要になります。</p>
+<p>ロードポート上のFOUPは、外見だけを見れば置かれているだけに見えます。しかし、装置へ渡す対象を同じ基準位置へ再現性よく置けることが、次の機械動作の前提になります。</p>
+<p class="visual-context">ここで見る具体物は「ロードポート上の閉じたFOUP」です。</p>
+<figure class="semicon-figure" data-media-role="explanatory-image-02" data-visual-kind="photoreal" data-subject="ロードポート上の閉じたFOUP" data-purpose="boundary-object" data-composition="carrier-on-load-port" data-concrete-object="true" data-selection-reason="ロードポートが単なる台ではなく、FOUPを受け取る装置境界であることを、キャリアと受け部の具体的な配置で示すため。" data-photo-assessment="閉じたFOUPとロードポートの受け部が分離して見え、機械的な受け渡しの説明に対応する。" data-provenance="articles/images/episode089/provenance/02-V002.md"><img decoding="async" src="images/episode089/optimized/02-v002.webp" alt="ロードポート上の閉じたFOUP（ロードポート上の閉じたFOUP）"><figcaption>ロードポートはFOUPを装置側の基準へ受け渡す境界です。ロードポート上の閉じたFOUPを示すAI生成画像（OpenAI image generation）。変更: article WebP optimization.</figcaption></figure>
+<h2>OHTからロードポートへ、キャリアの受け渡しを分けて見る</h2>
+<p>工場の搬送を想像するとき、天井レールから装置へウェハが直接落ちてくるように考えると混乱します。実際には、天井側の搬送機構はFOUPを運び、装置前のロードポートへ引き渡します。ウェハはFOUPの中に残ったままです。</p>
+<p>この分担は、装置前の作業を標準化するうえでも意味があります。FOUPを運ぶ設備、キャリアを受ける設備、キャリアを開けてウェハへアクセスする設備を切り分ければ、どの段階で止まったかを追いやすくなります。個別の搬送方式や機器構成は工場・装置によって異なるため、ここではOHTを代表例として扱います。</p>
+<p class="visual-context">ここで見る具体物は「OHTレールとロードポート」です。</p>
+<figure class="semicon-figure" data-media-role="explanatory-image-03" data-visual-kind="photoreal" data-subject="OHTレールとロードポート" data-purpose="logistics-to-tool" data-composition="wide-aisle" data-concrete-object="true" data-selection-reason="工場物流と装置前の受け渡しがつながる場所を、OHTレール、FOUP、ロードポートの実物関係で示すため。" data-photo-assessment="レール上の搬送対象と装置前のロードポートが同じ視野に入り、模式矢印なしで物流の関係を読める。" data-provenance="articles/images/episode089/provenance/03-V003.md"><img decoding="async" src="images/episode089/optimized/03-v003.webp" alt="OHTレールとロードポートが並ぶ半導体工場の搬送通路（OHTレールとロードポート）"><figcaption>OHTはFOUPを工場内で運ぶ方式の一例です。OHTレールとロードポートを示すAI生成画像（OpenAI image generation）。変更: article WebP optimization.</figcaption></figure>
+<h2>FOUP全体を先に位置決めする</h2>
+<p>FOUPがロードポートへ着いた後、最初に整えるのはウェハ一枚の中心ではなく、FOUPというキャリア全体の位置です。キネマティックカップリングは、300 mmキャリアを支持し、決められた基準へ位置決めする機械結合の例です。複数の接触点でキャリアの姿勢を定め、後段のドア接続やアクセスのばらつきを抑えます。</p>
+<p>ここで「位置決め」と言っても、すべての装置が同じ部品配置を採用するとは限りません。重要なのは、FOUPの底面とロードポート側の受け部が干渉せず、想定された基準へ再現性よく収まることです。異物、摩耗、変形、部品のずれがあれば、ドアの接続やロボットの動きに連鎖する可能性があります。</p>
+<p class="visual-context">ここで見る具体物は「FOUP底面とキネマティック支持点」です。</p>
+<figure class="semicon-figure" data-media-role="explanatory-image-04" data-visual-kind="photoreal" data-subject="FOUP底面とキネマティック支持点" data-purpose="carrier-positioning" data-composition="support-point-macro" data-concrete-object="true" data-selection-reason="ウェハを直接合わせる前に、FOUP全体を支持点で位置決めする段階を、底面と受け部の具体物で示すため。" data-photo-assessment="キャリア底面の縁と支持点が識別でき、数値やメーカー固有構造を断定しない接写になっている。" data-provenance="articles/images/episode089/provenance/04-V004.md"><img decoding="async" src="images/episode089/optimized/04-v004.webp" alt="FOUP底面とキネマティック支持点の接触部（FOUP底面とキネマティック支持点）"><figcaption>キネマティックカップリングはFOUP全体を支持・位置決めする機械結合の例です。FOUP底面とキネマティック支持点を示すAI生成画像（OpenAI image generation）。変更: article WebP optimization.</figcaption></figure>
+<h2>前面ドアをFIMSで装置側へつなぐ</h2>
+<p>FOUPの位置が決まったら、次は前面を装置側のインターフェースへ合わせます。FIMSは、300 mm FOUPの前面と製造・計測装置をつなぐ機械的なインターフェースです。装置側の機構がドアを扱い、ウェハへアクセスできる状態を作ります。</p>
+<p>この工程は、単に扉を開ける動作ではありません。FOUPの前面、ロードポートのフレーム、装置側の開口がずれたまま動くと、接触や擦れが起きる可能性があります。そのため、ドアが開いたかだけでなく、接続の位置、戻りの状態、周辺部品との干渉まで設備状態として見ます。</p>
+<p class="visual-context">ここで見る具体物は「FOUP前面ドアとFIMS接続部」です。</p>
+<figure class="semicon-figure" data-media-role="explanatory-image-05" data-visual-kind="photoreal" data-subject="FOUP前面ドアとFIMS接続部" data-purpose="front-interface" data-composition="front-docking" data-concrete-object="true" data-selection-reason="FOUPの前面を装置側へつなぐFIMSの役割を、ドアと開口の対面関係で具体化するため。" data-photo-assessment="FOUP前面ドアと装置側インターフェースが明瞭で、実在の規格値や操作手順を画像に埋め込んでいない。" data-provenance="articles/images/episode089/provenance/05-V005.md"><img decoding="async" src="images/episode089/optimized/05-v005.webp" alt="FOUP前面ドアとFIMS接続部が向かい合うロードポート（FOUP前面ドアとFIMS接続部）"><figcaption>FIMSはFOUP前面と装置側をつなぐ機械的なインターフェースです。FOUP前面ドアとFIMS接続部を示すAI生成画像（OpenAI image generation）。変更: article WebP optimization.</figcaption></figure>
+<h2>ドアが開く前後も、位置と擦れを管理する</h2>
+<p>ロードポートのレールやラッチは、FOUPを置く動作と、前面をつなぐ動作を支える部品です。写真では金属部品の集合に見えますが、設備保全では、動く部品が干渉しないか、戻り位置が安定しているか、接触面に異物や摩耗がないかを切り分けます。</p>
+<p>ここで断定できるのは、位置ずれや擦れが粒子発生・搬送停止につながり得るという因果までです。具体的な許容値、交換周期、メーカー固有の構造は装置の仕様書や保全基準に依存します。記事では一般化できる機械関係だけを扱います。</p>
+<p class="visual-context">ここで見る具体物は「ロードポートのドッキング機構」です。</p>
+<figure class="semicon-figure" data-media-role="explanatory-image-06" data-visual-kind="photoreal" data-subject="ロードポートのドッキング機構" data-purpose="docking-precision" data-composition="rail-latch-detail" data-concrete-object="true" data-selection-reason="キャリアを置くだけでなく、レールやラッチで前面接続を成立させる段階を、実物に近い機械部品で示すため。" data-photo-assessment="レール、ラッチ、ドア周辺の機械部品が別々に認識でき、手順や安全指示を表す画像ではない。" data-provenance="articles/images/episode089/provenance/06-V006.md"><img decoding="async" src="images/episode089/optimized/06-v006.webp" alt="ロードポートのドッキング機構にあるレールとラッチ（ロードポートのドッキング機構）"><figcaption>ロードポートでは、ドッキング機構の位置と動きも搬送の再現性に関わります。ロードポートのドッキング機構を示すAI生成画像（OpenAI image generation）。変更: article WebP optimization.</figcaption></figure>
+<h2>清浄度は一つの部品だけで守らない</h2>
+<p>ウェハを清浄に扱う考え方は、FOUP、ロードポート、EFEMを一つの層として見ると分かりやすくなります。まずFOUPを閉じたまま運び、装置前で必要な範囲だけ開けます。次にEFEMをmini-environmentとして構成し、フィルタや気流などで搬送空間を管理する例があります。N2を使う構成もありますが、すべてのEFEMに共通する方式ではありません。</p>
+<p>清浄度の問題は、フィルタの有無だけで決まりません。ドアやフレームが擦れる、キャリア底面に異物がある、ロボットの保持部が接触条件を外れる、といった機械状態も関係します。設備担当者が見るのは、粒子という結果だけでなく、どの部品の位置や動作が変わったかという原因候補です。</p>
+<p class="visual-context">ここで見る具体物は「ドアとフレームの位置確認」です。</p>
+<figure class="semicon-figure" data-media-role="explanatory-image-07" data-visual-kind="photoreal" data-subject="ドアとフレームの位置確認" data-purpose="cleanliness-maintenance" data-composition="inspection-scene" data-concrete-object="true" data-selection-reason="清浄度を機械状態とも結び付けて考えるため、ドアとフレームの隙間を確認する保全場面を具体物として示すため。" data-photo-assessment="作業者、ドア、フレームの位置関係が見え、具体的な検査手順や合否値は表現していない。" data-provenance="articles/images/episode089/provenance/07-V007.md"><img decoding="async" src="images/episode089/optimized/07-v007.webp" alt="クリーンルームでドアとフレームの位置を確認する作業者（ドアとフレームの位置確認）"><figcaption>ドアとフレームの位置確認は、擦れや干渉の原因候補を考える設備視点につながります。ドアとフレームの位置確認を示すAI生成画像（OpenAI image generation）。変更: article WebP optimization.</figcaption></figure>
+<h2>EFEMでウェハを一枚ずつ取り出す</h2>
+<p>FOUPの前面が装置側へつながると、EFEM内の搬送ロボットがスロットへアクセスします。EFEMは装置前面のフロントエンド機構で、清浄化された搬送空間、ウェハの受け渡し機構、必要なセンサーや周辺設備を組み合わせる構成です。ロボットはFOUPからウェハを一枚ずつ取り出し、装置側の受け渡し位置へ運びます。</p>
+<p>ここでは、FOUP搬送とウェハ搬送を分けてください。OHTが運んだのはFOUP全体です。EFEMのロボットが扱うのは、その中の個々のウェハです。別々の機構が境界をつなぐからこそ、人が開放されたウェハを持って歩かなくても装置投入が成立します。</p>
+<p class="visual-context">ここで見る具体物は「EFEM内のウェハ搬送ロボット」です。</p>
+<figure class="semicon-figure" data-media-role="explanatory-image-08" data-visual-kind="photoreal" data-subject="EFEM内のウェハ搬送ロボット" data-purpose="individual-wafer-transfer" data-composition="efem-interior" data-concrete-object="true" data-selection-reason="FOUP全体の搬送から個々のウェハ搬送へ切り替わる境界を、EFEM内部のロボットとスロットで示すため。" data-photo-assessment="ロボットアーム、開いたFOUP、スロットの関係が識別でき、ウェハの一枚ずつの搬送を説明できる。" data-provenance="articles/images/episode089/provenance/08-V008.md"><img decoding="async" src="images/episode089/optimized/08-v008.webp" alt="EFEM内のウェハ搬送ロボットがFOUPのスロットへ入る場面（EFEM内のウェハ搬送ロボット）"><figcaption>EFEMのロボットは、FOUPからウェハを個別に取り出して装置側へ渡します。EFEM内のウェハ搬送ロボットを示すAI生成画像（OpenAI image generation）。変更: article WebP optimization.</figcaption></figure>
+<h2>保持方式は一つに決め付けない</h2>
+<p>ウェハを持つロボットの先端は、エンドエフェクタと呼ばれる部分です。公開されている搬送ロボットには、真空吸着、エッジグリップ、ベルヌーイなど複数の保持方式があります。したがって「ウェハは一切触られない」と説明するのは正確ではありません。人が直接触れず、装置が設計された接触条件で扱う、と説明するほうが安全です。</p>
+<p>保持方式が違えば、接触する場所、検知する状態、許容される動きも変わります。記事で画像を使う目的は、特定メーカーの仕様を断定することではなく、ウェハを受け渡す先端機構があり、保持条件を設備として管理することを理解してもらうことです。</p>
+<p class="visual-context">ここで見る具体物は「ウェハを支えるロボットエンドエフェクタ」です。</p>
+<figure class="semicon-figure" data-media-role="explanatory-image-09" data-visual-kind="photoreal" data-subject="ウェハを支えるロボットエンドエフェクタ" data-purpose="controlled-holding" data-composition="end-effector-macro" data-concrete-object="true" data-selection-reason="保持方式を一種類に一般化せず、ウェハとエンドエフェクタの接触条件を設備として考えるための具体例を示すため。" data-photo-assessment="ウェハの縁とエンドエフェクタの支持関係が明瞭で、保持方式の普遍性や数値を断定しない。" data-provenance="articles/images/episode089/provenance/09-V009.md"><img decoding="async" src="images/episode089/optimized/09-v009.webp" alt="ウェハを支えるロボットエンドエフェクタの接写（ウェハを支えるロボットエンドエフェクタ）"><figcaption>エンドエフェクタはウェハを決められた条件で支える先端機構です。ウェハを支えるロボットエンドエフェクタを示すAI生成画像（OpenAI image generation）。変更: article WebP optimization.</figcaption></figure>
+<h2>必要な構成ではアライナで中心と向きを整える</h2>
+<p>ロボットがウェハを取り出した後、装置構成やレシピによってはアライナを通します。アライナはウェハの中心ずれを整えたり、ノッチなど回転方向の基準を合わせたりする機構です。これによって、次の受け渡しで位置と向きを扱いやすくなります。</p>
+<p>ただし、すべての装置が同じ順序で外付けアライナを使うわけではありません。装置内部に補正機構がある場合や、工程条件に合わせた構成もあります。「必要に応じて使われる位置・向きの補正」と理解し、全装置共通の必須工程とは言わないことが境界です。</p>
+<p class="visual-context">ここで見る具体物は「ウェハアライナの回転ステージ」です。</p>
+<figure class="semicon-figure" data-media-role="explanatory-image-10" data-visual-kind="photoreal" data-subject="ウェハアライナの回転ステージ" data-purpose="center-and-notch-alignment" data-composition="rotary-aligner" data-concrete-object="true" data-selection-reason="ウェハの中心とノッチ方向を補正するアライナの役割を、回転ステージとウェハの具体的な関係で示すため。" data-photo-assessment="円形ウェハと回転ステージが区別でき、特定装置の必須構成や測定値を画像から主張していない。" data-provenance="articles/images/episode089/provenance/10-V010.md"><img decoding="async" src="images/episode089/optimized/10-v010.webp" alt="ウェハアライナの回転ステージで中心と向きを整える場面（ウェハアライナの回転ステージ）"><figcaption>アライナは必要な構成で、ウェハの中心やノッチ方向を整えます。ウェハアライナの回転ステージを示すAI生成画像（OpenAI image generation）。変更: article WebP optimization.</figcaption></figure>
+<div class="semicon-mid-cta">
+<p>FOUP、ロードポート、EFEMを設備の境界として整理できたら、次は装置の排ガスをどう処理するかを見ると、搬送とは別の設備連鎖も追いやすくなります。<a href="https://semicon-campus.com/abatement-scrubber/">半導体工場の排ガス処理を解説した記事</a>も、設備保全の次の一歩として読めます。</p>
+</div>
+<h2>機械動作だけでなく、状態も追跡する</h2>
+<p>FOUPをロードポートへ置き、ドアを開け、ロボットがウェハを運べても、工場の管理が完了したとは限りません。AMHSと装置の間で、どの段階まで受け渡しが進んだかを共有する必要があります。SEMI E84は、carrier handoffに関する信号、シーケンス、エラー検出・回復を扱う標準です。</p>
+<p>さらに、キャリア単位の状態と、キャリア内にあるウェハ単位の状態は別レベルです。SEMI E87はCarrier Management、E90はSubstrate Trackingを扱います。機械的にはウェハが動いていても、ホストから見たFOUPの状態やウェハの所在がずれていれば、製造管理上の問題になります。</p>
+<p>このため保全では、モーターやラッチだけでなく、ハンドオフの状態、キャリアの識別、ウェハの追跡が同じ時系列でつながるかも確認します。具体的な信号名や装置画面は製品構成に依存するため、ここでは「物理搬送と状態管理が別の層で連携する」という関係に限定します。</p>
+<h2>よくある誤解</h2>
+<h3>Q. FOUPを運べば、ウェハの清浄度は自動的に保証されますか？</h3>
+<p>A. いいえ。閉じたFOUPはウェハを開放環境へさらす範囲を限定しますが、ドア、底面、ロードポート、EFEM、ロボットの状態まで含めて管理します。規格に適合することと、個別設備の粒子状態が同じことは別です。</p>
+<h3>Q. すべてのウェハは必ずアライナを通りますか？</h3>
+<p>A. いいえ。アライナは必要な装置構成やレシピで使われる中心・向きの補正機構です。装置内部で補正する構成もあり、すべての装置に同じ順番で外付け機構があるとは限りません。</p>
+<h3>Q. ウェハはロボットに一切触られませんか？</h3>
+<p>A. いいえ。保持方式には複数の例があり、装置が決められた接触条件でウェハを扱います。「人が直接持たない」と「機械が接触しない」は意味が違います。</p>
+<h2>まとめ</h2>
+<div class="semicon-three-line-recap">
+<p>FOUPがウェハを閉じたまま装置前へ運びます。<br />ロードポートがキャリアを位置決めし、FIMSで装置側へつなぎます。<br />EFEMが必要な補正と清浄度・状態管理を重ね、ウェハを一枚ずつ装置へ渡します。</p>
+</div>
+<p class="visual-context">ここで見る具体物は「FOUPから装置までの受け渡し」です。</p>
+<figure class="semicon-figure" data-media-role="summary-infographic" data-visual-kind="diagram" data-subject="FOUPから装置までの受け渡し" data-purpose="end-summary" data-composition="horizontal-relationship-map" data-concrete-object="false" data-selection-reason="記事末で、FOUPの物流、ロードポートの位置決め、EFEMの個別搬送、状態管理という複数の関係を一枚で復習するため。" data-photo-assessment="実写は個々のFOUPやロボットを示せるが、AMHS/OHTから装置までの順序とE84/E87/E90の状態管理を同時には示せない。" data-diagram-justification="実写写真はFOUP、ロードポート、EFEMなど個別の物体を示せますが、搬送の順序とE84/E87/E90の状態管理がどう関係するかを一枚で示せないため、まとめに限って自作の関係図を採用する。" data-provenance="articles/images/episode089/provenance/11-summary-infographic.md"><img decoding="async" src="images/episode089/optimized/11-summary-infographic.svg" alt="AMHSとOHTがFOUPを運び、ロードポートとFIMSを経てEFEMから装置へウェハを渡す関係図（FOUPから装置までの受け渡し）"><figcaption>まとめ図：FOUPから装置までの受け渡しは、搬送・位置決め・清浄な個別搬送・状態管理の連鎖です。FOUPから装置までの受け渡しを示す自作まとめ図（Semicon Campus）。変更: original SVG composition。</figcaption></figure>
+<p>次に設備の温度管理を学ぶなら、<a href="https://semicon-campus.com/chiller-temperature-control/">半導体装置のチラーと温度制御</a>が関連します。搬送と温度は別の設備機能ですが、どちらも工程条件を安定させるための装置周辺インフラです。</p>
+<h2>参考にした公式情報</h2>
+<ul class="semicon-sources">
+<li data-source-id="S01"><a href="https://store-us.semi.org/products/e01500-semi-e15-specification-for-tool-load-port">SEMI E15 Tool Load Port</a></li>
+<li data-source-id="S02"><a href="https://store-us.semi.org/products/e01501-semi-e15-1-specification-for-300-mm-tool-load-port">SEMI E15.1 300 mm Tool Load Port</a></li>
+<li data-source-id="S03"><a href="https://store-us.semi.org/products/e04701-semi-e47-1-300-mm">SEMI E47.1 Mechanical Specification for FOUPs</a></li>
+<li data-source-id="S04"><a href="https://store-us.semi.org/products/e05700-semi-e57-specification-for-kinematic-couplings-used-to-align-and-support-300-mm-wafer-carriers">SEMI E57 Kinematic Couplings</a></li>
+<li data-source-id="S05"><a href="https://store-us.semi.org/products/e06200-semi-e62-specification-for-300-mm-front-opening-interface-mechanical-standard-fims">SEMI E62 FIMS</a></li>
+<li data-source-id="S06"><a href="https://www.semi.org/sites/semi.org/files/2020-08/AUX018-00-0710.pdf">FOUP/Load Port Interoperability Report</a></li>
+<li data-source-id="S07"><a href="https://www.rorze.com/en/products_category/wafer-transfer-system/">RORZE Wafer Transfer System and RA320 Aligner</a></li>
+<li data-source-id="S08"><a href="https://www.jel-robot.co.jp/products/MTCR4160.html">JEL MTCR4160 clean robot</a></li>
+<li data-source-id="S09"><a href="https://www.jel-robot.co.jp/products/MTCR4200.html">JEL MTCR4200 clean robot</a></li>
+<li data-source-id="S10"><a href="https://www.ti.com/video/6370601542112">Texas Instruments 300 mm Fab Virtual Tour</a></li>
+<li data-source-id="S11"><a href="https://www.sinfo-t.jp/clean-transport/efem/">SINFONIA 300 mm EFEM</a></li>
+<li data-source-id="S12"><a href="https://www.sinfo-t.jp/clean-transport/n2-efem/">SINFONIA 300 mm N2 EFEM</a></li>
+<li data-source-id="S13"><a href="https://www.semi.org/sites/semi.org/files/2020-08/AUX018-00-0710.pdf">SEMI FOUP/Load Port interoperability guidance</a></li>
+<li data-source-id="S14"><a href="https://store-us.semi.org/products/e08400-semi-e84-specification-for-enhanced-carrier-handoff-parallel-i-o-interface">SEMI E84 Carrier Handoff</a></li>
+<li data-source-id="S15"><a href="https://store-us.semi.org/products/e08700-semi-e87-specification-for-carrier-management-cms">SEMI E87 Carrier Management</a></li>
+<li data-source-id="S16"><a href="https://store-us.semi.org/products/e09000-semi-e90-specification-for-substrate-tracking">SEMI E90 Substrate Tracking</a></li>
+</ul>
+</article>
+<p class="pillar-link">装置の主要部品の全体像は、<a href="/semiconductor-equipment-components-map/">半導体製造装置の構造・主要部品マップ</a>で確認できます。</p>

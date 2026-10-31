@@ -1,0 +1,106 @@
+<blockquote>
+<p><strong>この記事の結論</strong>：不良の「数」だけでは分からない異常も、「場所」と「分布」を残すことで調べる方向が見えてきます。ただし、<strong>分布は原因の証明ではありません</strong>。検査条件、装置・工程履歴、現物の観察を組み合わせて初めて原因を絞り込めます。</p>
+</blockquote>
+<p>例えば、1枚のウェハ上に1,000個の半導体チップがあり、電気試験で100個が不合格だったとします。合格したのは900個。試験済みのチップに限れば良品率は90％です。</p>
+<p>ところが、現場の技術者にとっては、ここからが本当の問題です。</p>
+<p>不合格の100個が、ウェハの<strong>外周にぐるりと並んでいる</strong>のか。それとも<strong>一本の線のようにつながっている</strong>のか。あるいは<strong>あちこちに散らばっている</strong>のか。</p>
+<p>どれも数字は同じ「不良100個」です。しかし、調べ始める場所は同じとは限りません。外周で起きやすい加工のばらつき、何かが触れた可能性、広い領域に散った粒子など、疑う現象が違ってくるからです。</p>
+<p><picture><source media="(max-width: 650px)" srcset="https://semicon-campus.com/wp-content/uploads/2026/10/ep102-01-same-count-different-patterns-mobile.webp"/><img alt="同じ不良数でも分布が異なる3枚のウェハの教育画像" decoding="async" height="864" loading="lazy" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep102-01-same-count-different-patterns.webp" style="width:100%;height:auto" width="1536"/></picture></p>
+<p><em>画像：赤マスの数をそろえて配置を変えた説明用データ。実際の製造結果ではありません。分布だけから特定原因を断定することはできません。</em></p>
+<p>この「どこに起きたか」を見える形にするのが、<strong>ウェハマップ</strong>です。</p>
+<h2>不良の場所が、なぜ原因調査の手掛かりになるのか</h2>
+<p>まずは学校のテストを想像してください。クラス全体の平均点が下がっただけでは、何が起きたか分かりません。しかし、同じ設問だけを多くの人が間違えたなら、授業の説明や設問の内容を調べる理由が生まれます。</p>
+<p>半導体製造でも似ています。<strong>どの位置に不良が集中したか</strong>という情報は、製造中に場所ごとに違う影響がなかったか調べる入口になります。</p>
+<p>ただし、この例えには限界があります。半導体では測定された位置と異常が生じた工程が異なることもあり、異常の模様から原因を一意に逆算できません。重要なのは「この形なら、この原因」と覚えることではなく、<strong>その形を生む可能性がある現象を挙げ、別の情報で確かめること</strong>です。</p>
+<p>端だけで起きる問題は、端と中央で処理条件が違っていないか確認する理由になります。線が見えれば、接触物や搬送の軌跡と関係するかもしれません。繰り返し同じ位置に現れれば、繰り返し使うパターンや位置決めとの関係が気になります。</p>
+<p>ここで技術者は、数字を眺める人から、<strong>仮説を立てて現場を調べる人</strong>へと変わります。</p>
+<h2>二つのウェハマップは、同じ「赤」でも意味が違う</h2>
+<p>ウェハマップという言葉には、異なる種類のデータが含まれます。初心者が最初に区別したいのが、次の二つです。</p>
+<p><picture><source media="(max-width: 650px)" srcset="https://semicon-campus.com/wp-content/uploads/2026/10/ep102-02-bin-vs-defect-mobile.webp"/><img alt="Wafer Bin MapとDefect Mapの違い" decoding="async" height="864" loading="lazy" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep102-02-bin-vs-defect.webp" style="width:100%;height:auto" width="1536"/></picture></p>
+<p><em>画像：マス単位の良否判定と、点単位の検出欠陥を比較した教育用イラストです。色・Bin番号の意味は製品や試験設定によって変わります。</em></p>
+<p><strong>Wafer Bin Map（ウェハ・ビンマップ）<strong>は、主に電気試験で得られた</strong>チップ（ダイ）ごとの試験結果の区分</strong>を、ウェハ上の位置へ戻したものです。色付きの一マスがダイを表す場合があります。どのBinが合格か、どのような不合格かは、製品と試験プログラムによって異なります。</p>
+<p>一方の<strong>Defect Map（欠陥マップ）<strong>は、検査装置が見つけた</strong>欠陥候補の位置</strong>を表します。一つのダイに複数の点があることもあります。</p>
+<p>したがって、赤い点が10個あることと、不合格のダイが10個あることは同じではありません。検出された欠陥が必ず電気的な不合格を起こすとも、電気試験に合格したダイに検出対象外の異常が絶対にないとも言えません。マップを重ねるときは、そもそも何を測ったデータかを先に確かめます。</p>
+<p>ウェハ上の電気試験については、<a href="https://semicon-campus.com/semiconductor-test-wafer-final/">ウェハテストから最終テストまでの仕組み</a>で詳しく解説しています。欠陥を探す検査と寸法・膜厚を測る計測の違いは、<a href="https://semicon-campus.com/semiconductor-inspection-metrology/">検査と計測の記事</a>をご覧ください。</p>
+<h2>よく見る七つの分布は、何を疑うきっかけになるのか</h2>
+<p>次に、ウェハマップの模様を見てみましょう。以下の七つは理解のための整理であり、<strong>どの工場でも形と故障原因が一対一に決まるという分類ではありません</strong>。</p>
+<p><picture><source media="(max-width: 650px)" srcset="https://semicon-campus.com/wp-content/uploads/2026/10/ep102-03-seven-patterns-mobile.webp"/><img alt="ウェハマップの7種類の代表的な分布の例" decoding="async" height="864" loading="lazy" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep102-03-seven-patterns.webp" style="width:100%;height:auto" width="1536"/></picture></p>
+<p><em>画像：外周・中央・線状・局所集中・散在・放射状・反復を示した説明用画像。実測のウェハマップではありません。</em></p>
+<p><strong>外周にリング状の不良が集まる</strong>ときは、端と中央で加工条件に違いがなかったか考えます。例えばLam Researchは、エッチング工程でウェハ端の電気的・化学的な条件が均一性に影響することを説明しています。ただし、リングが出たから特定のエッジ部品が摩耗したと断定することはできません。</p>
+<p><strong>中央に集中する</strong>なら、中央と周辺で膜厚・温度・処理量などが違っていないか考えられます。ただし「中央＝CMP不良」のような固定の対応はありません。</p>
+<p><strong>線状に並ぶ</strong>場合は、機械的な接触や搬送の方向、表面に残る傷などを調べる価値があります。しかし、Bin Mapの線は傷を撮影した写真ではなく、不合格ダイの並びにすぎません。</p>
+<p><strong>一角に集まる</strong>なら、その位置で起きた局所的な異常の候補を挙げます。<strong>散在する</strong>なら、目立つ形がないから放置してよいわけではありません。欠陥の密度、種類、発生時刻が重要です。</p>
+<p><strong>放射状の筋</strong>では、回転を伴う処理などを候補にすることがあります。東京エレクトロンの公開特許には、回転塗布での周辺部の放射状の膜異常が記述されています。ただし、それを電気試験のあらゆる放射状パターンの原因に広げてはいけません。</p>
+<p>そして、<strong>同じ相対位置で繰り返す</strong>場合。ここでは一枚のウェハ上の「絶対的な位置」ではなく、同じ回路や露光領域の中の「対応する位置」に注目します。KLAは、ウェハ検査データを露光領域側の座標に変換し、繰り返し現れる欠陥を別の検査データと照合する技術を紹介しています。</p>
+<p>どの模様でも、最初に発する問いは同じです。</p>
+<blockquote>
+<p><strong>「その模様を生む可能性のある現象は何か。そして、それを裏付ける別の証拠はどこにあるか？」</strong></p>
+</blockquote>
+<h2>本当にあった調査――線状の傷を追った先に、小さな繊維があった</h2>
+<p>ここからは、実際に公表された事例です。ただし、以下は<strong>Foamtec社自身による報告</strong>であり、独立した第三者による再検証結果ではありません。</p>
+<p>傷のような分布を見つけたとき、現場でただちに搬送ロボットを交換するのは適切ではありません。傷の向き、ウェハに触れる位置、搬送時の動きを調べることで、仮説を一段ずつ確かめていきます。</p>
+<p>Foamtec社の公開記事には、搬送装置のロボットブレード上で<strong>ポリエステル繊維</strong>が動く様子を観察し、ウェハ搬送の際にも同じような挙動があったという事例が紹介されています。同社は、その繊維を傷の原因と特定し、取り除いたと報告しています。</p>
+<p><picture><source media="(max-width: 650px)" srcset="https://semicon-campus.com/wp-content/uploads/2026/10/ep102-05-fiber-case-mobile.webp"/><img alt="傷の分布と搬送系の接触部分を照らし合わせる概念図" decoding="async" height="864" loading="lazy" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep102-05-fiber-case.webp" style="width:100%;height:auto" width="1536"/></picture></p>
+<p><em>画像：Foamtec社の事例を理解するための概念表現。報告中の装置・繊維・傷を実写再現したものではありません。出典：<a href="https://www.foamtecintlwcc.com/scratch-defects-troubleshooting-root-cause-identification-in-wafer-fabs/">Foamtec公式事例</a>。</em></p>
+<p>この事例が教えてくれるのは、「線状だからロボットが悪い」という短絡ではありません。<strong>模様から接触の仮説を立て、現物を見て、具体的な異物を確かめた</strong>という過程です。</p>
+<p>公開資料では、繊維を除去した後の歩留まり改善率や長期再発率は確認できていません。そこに都合のよい数字を足して、成功談にしてはいけません。</p>
+<h2>難しいのは「正しい場所に重ねる」こと</h2>
+<p>実際の原因調査には、もう一つ大きな壁があります。</p>
+<p>検査装置Aではウェハの左下を原点としているのに、試験装置Bでは別の位置から数えているとしたら。両方のデータが正しくても、そのまま重ねた画像は誤解を生みます。</p>
+<p><picture><source media="(max-width: 650px)" srcset="https://semicon-campus.com/wp-content/uploads/2026/10/ep102-04-coordinate-alignment-mobile.webp"/><img alt="座標の向きが異なるウェハマップを比較する教育画像" decoding="async" height="864" loading="lazy" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep102-04-coordinate-alignment.webp" style="width:100%;height:auto" width="1536"/></picture></p>
+<p><em>画像：データの向きの違いを示す仮想例。特定の装置の実際の座標規約を再現したものではありません。</em></p>
+<p>SEMIの公式解説にも、プローバと試験レシピの組み合わせで用いる座標系と、基板マッピング規格E142の座標系が必ずしも同じではないことが記されています。</p>
+<p>そこで必要なのは、ウェハID、原点、X・Yの向き、単位、ノッチ方向、ダイの配置、検査時刻をそろえる作業です。</p>
+<p>見栄えのよいグラフを描く前に、地味なデータ整理を終わらせる。半導体工場のデータ解析では、それがとても重要な仕事になります。</p>
+<h2>分布が見えたら、技術者は何を順番に調べるのか</h2>
+<p>では、不良がある装置を通ったウェハに偏っていると分かったとします。原因はその装置でしょうか。</p>
+<p>まだ決められません。仮にその装置が特定の材料ロットしか処理していなかったなら、<strong>装置の影響と材料の影響を、観察したデータだけで区別できない</strong>からです。</p>
+<p>実際の工場で必要な確認や承認は、それぞれの品質管理・安全手順に従います。以下は調査の考え方を整理したものであり、停止・再開や保守作業の指示ではありません。</p>
+<p><picture><source media="(max-width: 650px)" srcset="https://semicon-campus.com/wp-content/uploads/2026/10/ep102-06-cause-verification-mobile.webp"/><img alt="ウェハマップから原因検証へ進む4つの確認" decoding="async" height="864" loading="lazy" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep102-06-cause-verification.webp" style="width:100%;height:auto" width="1536"/></picture></p>
+<ol>
+<li><strong>データの意味を確かめる。</strong> 不合格ダイのマップか、検出欠陥のマップか。検査の感度や試験条件は同じか。未評価の領域を不良と数えていないか。</li>
+<li><strong>良い群と悪い群を比べる。</strong> 製品、装置、チャンバー、レシピ、材料ロットを層別します。「不良に共通する条件」だけでなく、「同じ条件でも良かったウェハ」が重要です。</li>
+<li><strong>位置を工程履歴につなぐ。</strong> いつ、どの工程を通り、清掃や部品交換の前後で何が変わったか。欠陥を見つけた工程と、生み出した工程は別かもしれません。</li>
+<li><strong>観察と比較検証を行う。</strong> 必要に応じてレビューSEMなどで該当位置を調べ、複数の説明のうちどれが合うか確かめます。改善後も再発や別の悪化がないかを確認します。</li>
+</ol>
+<p>IBM関連研究者らが発表した2025年の研究では、787枚のウェハの工程履歴と欠陥密度を解析し、<strong>特定装置での長い待ち時間</strong>を原因候補として抽出しています。ただし、公開された研究で確認できるのは候補の抽出までです。待ち時間を変更して原因を実証した、という話に置き換えてはいけません。</p>
+<p>一連の考え方は、<a href="https://semicon-campus.com/semiconductor-equipment-troubleshooting/">装置トラブルの原因を絞る技術</a>や、<a href="https://semicon-campus.com/equipment-recovery-qualification/">復旧後にも工程品質を確認する理由</a>ともつながっています。</p>
+<h2>AIはウェハマップの何を見つけられるのか</h2>
+<p>不良分布のパターンを大量に比較する作業は、人間だけで処理するには負担が大きくなります。そこで、形状を数値化する画像処理や、機械学習、深層学習が研究・利用されてきました。</p>
+<p><picture><source media="(max-width: 650px)" srcset="https://semicon-campus.com/wp-content/uploads/2026/10/ep102-07-ai-vs-root-cause-mobile.webp"/><img alt="AIのパターン分類と原因の検証の違い" decoding="async" height="864" loading="lazy" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep102-07-ai-vs-root-cause.webp" style="width:100%;height:auto" width="1536"/></picture></p>
+<p><em>画像：AIによる形状の分類と、現場での原因の検証を区別した教育画像です。</em></p>
+<p>2025年のTsai・Wangの論文では、WM-811Kという研究用データセットを用いた九分類で、提案した条件下の分類Accuracyが**98.39％**と報告されています。ここには、学習データの拡張や評価条件があります。</p>
+<p>ここで重要な点があります。この数字は<strong>マップをどの形のクラスに分類したかの正答率</strong>です。<strong>故障原因を98.39％当てた数字でも、歩留まりを98.39％改善した数字でもありません。</strong></p>
+<p>現場では、一枚に複数のパターンが重なることもあります。AIが「線状」と分類しても、その線が何の現象で生じたかは、元の座標、検査条件、装置・材料・工程履歴を調べなければ分かりません。</p>
+<p>AIの役目は技術者に代わって証拠のない断定をすることではなく、<strong>見落としやすい模様を浮かび上がらせ、調査する優先順位を付けること</strong>にあります。</p>
+<h2>製造業で培った「比べる・記録する・確かめる」が生きる</h2>
+<p>この仕事は、高度なAIの知識だけでできているわけではありません。</p>
+<p>設備保全なら、どの部品をいつ交換し、その後の装置の振る舞いがどう変わったかを説明する力。生産技術なら、条件変更と品質の関係を層別して比較する力。検査・品質管理なら、測定条件や判定基準の違いを見逃さない力。</p>
+<p>こうした経験は、半導体業界に移っても考え方の面で接点があります。もちろん、半導体特有の工程・装置・安全管理を新たに学ぶ必要はあります。</p>
+<p>なぜその仕事が重要なのでしょうか。原因を早く絞れなければ、調べるウェハも装置も増え、影響範囲や生産計画の判断が難しくなります。一方、データの読み違いによって正常な装置や良品まで疑ってしまえば、それも損失になり得ます。</p>
+<p>つまり、ウェハマップを読む仕事は、単に丸い図を見る仕事ではありません。<strong>無駄な調査と誤った判断を減らし、同じ品質で半導体を作り続けるための仕事</strong>なのです。</p>
+<p><a aria-label="半導体業界の職種マップを見る" class="semicon-career-cta" href="https://semicon-campus.com/semiconductor-career-map/"><picture><source media="(max-width: 650px)" srcset="https://semicon-campus.com/wp-content/uploads/2026/10/ep102-08-career-cta-mobile.webp"/><img alt="設備保全・生産技術・品質とウェハマップ解析のつながりを示すキャリア案内画像。クリックすると半導体職種マップへ移動します" decoding="async" height="864" loading="lazy" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep102-08-career-cta.webp" style="display:block;width:100%;height:auto;border-radius:12px" width="1536"/></picture></a></p>
+<p><em>画像をタップすると、設備保全・プロセス技術・生産技術・品質保証などの仕事を比較できる<a href="https://semicon-campus.com/semiconductor-career-map/">半導体業界の職種マップ</a>へ進みます。職種の紹介は求人や採用の保証ではありません。</em></p>
+<h2>まとめ：ウェハマップが教えるのは「次に確かめるべきこと」</h2>
+<p>一枚のウェハで不良が100個あった。そこから分かるのは不良の多さだけです。</p>
+<p>それが端なのか、線状なのか、繰り返し同じ場所なのか。<strong>位置を加えると、原因を調べる仮説が生まれます。</strong></p>
+<p>しかし、形はあくまで入口です。何を測ったマップなのか、座標は合っているのか、どの装置と工程を通ったのか。技術者は別々の証拠をつなぎ合わせ、思い込みを一つずつ減らしていきます。</p>
+<p>不良を見つけることと、原因を証明することは違う。だからこそ、ウェハマップには価値があります。</p>
+<p>半導体の不良が製造やコストに与える影響から理解したい方は、<a href="https://semicon-campus.com/what-is-semiconductor-yield/">歩留まりの基礎</a>も合わせて読んでみてください。</p>
+<h2>質問・訂正の連絡先</h2>
+<p>用語が難しかった箇所、根拠の確認が必要な説明、記事中の誤りなどがあれば、<a href="https://semicon-campus.com/contact/">お問い合わせフォーム</a>からお知らせください。いただいた内容は確認し、必要に応じて記事を訂正します。</p>
+<h2>主な参考文献・一次資料</h2>
+<ul>
+<li><a href="https://store-us.semi.org/products/e14200-semi-e142-specification-for-substrate-mapping">SEMI｜SEMI E142 Substrate Mapping公式概要</a>（公開概要を参照。有料規格本文の全要求事項は未確認）</li>
+<li><a href="https://www.semi.org/en/standards-watch-2026-apr/major-revision-underway-for-semi-e142">SEMI｜基板マッピングの座標系に関する改訂提案の解説</a>（2026年4月16日。提案の最終承認状況は未確認）</li>
+<li><a href="https://www.pdf.com/understanding-semiconductor-data-visualization-with-wafer-maps-an-introduction/">PDF Solutions｜Wafer Maps入門</a>（2025年7月2日）</li>
+<li><a href="https://www.hitachi-hightech.com/global/en/knowledge/semiconductor/room/manufacturing/inspection.html">日立ハイテク｜ウェハ検査</a></li>
+<li><a href="https://www.hitachi-hightech.com/global/en/knowledge/semiconductor/room/manufacturing/review-sem.html">日立ハイテク｜Review SEM</a></li>
+<li><a href="https://newsroom.lamresearch.com/Lam-Extends-Leadership-in-Edge-Control-Solutions?blog=true">Lam Research｜Edge Control Solutions</a>（2019年12月3日）</li>
+<li><a href="https://www.kla.com/advance/innovation/a-klearview-of-all-reticle-data">KLA｜A KlearView of All Reticle Data</a>（2020年9月16日）</li>
+<li><a href="https://patents.google.com/patent/WO2017145840A1/en">東京エレクトロン｜公開特許WO2017145840A1</a>（2017年8月31日公開）</li>
+<li><a href="https://www.foamtecintlwcc.com/scratch-defects-troubleshooting-root-cause-identification-in-wafer-fabs/">Foamtec｜Scratch Defects, Troubleshooting &amp; Root Cause Identification</a>（メーカーの事例報告。独立検証・対策後改善量は未確認）</li>
+<li><a href="https://arxiv.org/html/2507.20357v1">Miyaguchiほか｜Wafer Defect Root Cause Analysis with Partial Trajectory Regression</a>（2025年7月27日公開著者版）</li>
+<li><a href="https://link.springer.com/article/10.1186/s13640-025-00666-3">Tsai・Wang｜Wafer map defect classification using deep learning framework</a>（2025年3月15日）</li>
+<li><a href="https://www.itl.nist.gov/div898/handbook/ppc/section1/ppc136.htm">NIST/SEMATECH｜実験計画と相関・因果関係</a></li>
+</ul>

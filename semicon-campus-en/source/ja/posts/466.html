@@ -1,0 +1,266 @@
+
+<!--KEEP:0-->
+
+
+<!--KEEP:1-->
+
+<!--KEEP:2-->
+
+<article class="semicon-article" id="top">
+<div class="semicon-level">
+  <div class="semicon-level-badge">初級</div>
+  <div>
+    <strong>この記事のレベル</strong><br>
+    半導体の後工程を初めて学ぶ人向けです。ダイシングで切り分けたチップを、基板やリードフレームへ固定する流れを、位置合わせ・接着・加熱・品質確認まで順番に整理します。
+  </div>
+</div>
+
+<p class="semicon-lead">ダイボンディングとは、ダイシングで切り分けた半導体チップを、基板やリードフレームの決まった位置へ固定する後工程です。見た目は「チップを置く作業」に見えますが、実際には位置精度、接着状態、熱の逃げ道、ボイドの少なさが品質を大きく左右します。</p>
+
+<div class="semicon-note">
+  <strong>まずは技術として理解しましょう</strong><br>
+  この記事では、最初にダイボンディングの意味、工程フロー、固定方法、品質不良を説明します。そのうえで、求人票でこの言葉を見た人、装置や材料企業を調べたい人、後工程を体系的に学びたい人向けに次の行き先を分けます。
+</div>
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/die-bonding-flow.png" alt="ダイボンディングの基本フロー。ピックアップ、位置合わせ、接着・接合、加熱・硬化、確認の順に進む">
+  <figcaption>ダイボンディングは、チップを拾う、位置を合わせる、固定する、固める、確認するという流れで進みます。単に「置く」だけではなく、あとで剥がれたり熱が逃げにくくなったりしないように、接着状態まで含めて管理します。</figcaption>
+</figure>
+
+<div class="semicon-map">
+  <strong>この記事でわかること</strong>
+  <ul>
+    <li>ダイボンディングとは何か、後工程のどこにあるのか</li>
+    <li>チップのピックアップ、位置合わせ、接着・接合の流れ</li>
+    <li>接着剤、ダイアタッチフィルム、はんだ、焼結などの固定方法</li>
+    <li>位置ずれ、傾き、ボイド、接着不足がなぜ問題になるのか</li>
+    <li>求人票や企業研究で見るときの言葉と次に読む記事</li>
+  </ul>
+</div>
+
+
+<h2>ダイボンディングとは何か</h2>
+
+<p>ダイボンディングは、半導体チップをパッケージの中へ固定する工程です。英語では die bonding、die attach と呼ばれます。ダイシングでウェハを1個ずつのチップに切り分けたあと、そのチップを基板、リードフレーム、インターポーザなどの所定位置へ載せて固定します。</p>
+
+<p>ここで大事なのは、固定するだけでなく「正しい位置に、正しい向きで、安定して、熱や電気の条件に合うように」載せることです。チップが少しずれていたり、斜めに傾いていたり、接着層の中に空気のすき間が残っていたりすると、後のワイヤーボンディング、封止、検査で問題になることがあります。</p>
+
+<p>ASMPTは、ダイボンディングを半導体チップを基板へ固定する重要な実装工程として説明しています。HenkelやIndiumのような材料メーカーも、ダイアタッチ材をパッケージの信頼性や熱特性に関わる材料として扱っています。つまり、ダイボンディングは装置だけでなく、材料、温度、圧力、位置精度が重なる工程です。</p>
+
+<div class="semicon-mobile-summary">スマホで読むなら、まずここだけ押さえれば大丈夫です。ダイボンディングは「切り分けたチップを、パッケージの土台へ正確に固定する工程」です。品質のポイントは、位置ずれ・傾き・ボイド・接着不足を抑えることです。</div>
+
+<h2>後工程のどこにあるのか</h2>
+
+<p>半導体製造は、大きく前工程と後工程に分けられます。前工程では、シリコンウェハの上にトランジスタや配線を作ります。後工程では、そのウェハを切り分け、1個ずつのチップを実際の部品として使える形に組み立てていきます。</p>
+
+<p>ダイボンディングは、ダイシングの次に来る代表的な工程です。ダイシングでチップを切り分け、ダイボンディングで土台へ固定し、その後にワイヤーボンディングやフリップチップ接合、封止、最終検査へ進みます。</p>
+
+<div class="semicon-grid two">
+  <div class="semicon-card"><b>ダイシング</b><span>ウェハを1個ずつのチップに切り分ける工程。欠け、割れ、汚れを抑えて次工程へ渡すことが重要です。</span></div>
+  <div class="semicon-card"><b>ダイボンディング</b><span>切り分けたチップを、基板やリードフレームへ固定する工程。位置、傾き、接着状態を管理します。</span></div>
+</div>
+
+<h2>ダイシングからダイボンディングまでの流れ</h2>
+
+<p>ダイボンディングの細かい条件は、製品、パッケージ構造、材料、装置によって変わります。ただし、初心者がまず理解するなら、次の5つの流れで見ると整理しやすいです。</p>
+
+<h3>1. チップをピックアップする</h3>
+<p>ダイシング後のチップは、テープ上に並んでいます。装置は対象のチップを認識し、吸着ノズルなどでそっと持ち上げます。このとき、チップを割らないこと、表面を傷つけないこと、向きを間違えないことが重要です。求人票で「ピックアップ」「チップ供給」「搬送」といった言葉が出る場合、この周辺の作業や装置管理を含むことがあります。</p>
+
+<h3>2. 基板やリードフレームの位置を合わせる</h3>
+<p>チップを固定する土台には、置くべき位置が決まっています。装置はカメラなどでチップと土台の位置を見て、ずれないように合わせます。位置合わせが甘いと、後の配線接続や外観検査で不良になりやすくなります。</p>
+
+<h3>3. 接着剤・はんだ・焼結材などで固定する</h3>
+<p>チップを固定する方法には、エポキシ系の接着剤、ダイアタッチフィルム、はんだ、銀焼結材などがあります。どの方法を使うかは、製品に求められる熱の逃げやすさ、電気的な接続、コスト、信頼性によって変わります。</p>
+
+<h3>4. 加熱・硬化・接合する</h3>
+<p>接着剤やフィルムを使う場合は、熱をかけて硬化させます。はんだや焼結材を使う場合も、温度、時間、圧力などの条件管理が重要になります。温度が足りなければ接着不足になり、強すぎれば材料やチップに余計な負荷がかかることがあります。</p>
+
+<h3>5. 位置・傾き・ボイドを確認する</h3>
+<p>固定したあとは、チップが正しい位置にあるか、傾いていないか、接着層に空洞が残っていないかを確認します。外観検査やX線検査、装置データの確認などが関わることがあります。ここで見つかる小さな違和感が、後の歩留まり改善につながります。</p>
+
+<h2>固定方法の違いをざっくり見る</h2>
+
+<p>ダイボンディングで使う固定方法は、製品の種類によって変わります。初心者の段階では、すべての材料名を暗記する必要はありません。まずは「接着剤で固定する」「フィルムで固定する」「はんだや焼結で熱を逃がしやすくする」という大きな違いで見れば十分です。</p>
+
+<div class="semicon-table-wrap">
+  <table class="semicon-table">
+    <thead>
+      <tr><th>固定方法</th><th>イメージ</th><th>見るポイント</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>接着剤</td><td>液状やペースト状の材料でチップを固定する</td><td>塗布量、はみ出し、硬化条件、接着強度</td></tr>
+      <tr><td>ダイアタッチフィルム</td><td>あらかじめフィルム状の接着材を使う</td><td>厚み、貼り合わせ、ボイド、加工性</td></tr>
+      <tr><td>はんだ</td><td>金属材料で接合し、熱や電気の通り道を作る</td><td>ぬれ性、ボイド、温度条件、信頼性</td></tr>
+      <tr><td>焼結材</td><td>銀などの粒子を焼き固めて接合する</td><td>熱伝導、圧力、温度、パワー半導体との相性</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<p>たとえばパワー半導体のように熱が大きい製品では、チップから熱を逃がすことが非常に重要になります。Indiumは、ダイアタッチ材料では熱伝導やボイド低減が重要な観点になると説明しています。Henkelも、ダイアタッチフィルムやペーストを、ワイヤーボンド系パッケージの信頼性に関わる材料として紹介しています。</p>
+
+
+<!-- semicon-a8-top30-top30-7-1:start -->
+
+
+<!-- semicon-a8-top30-top30-7-1:end -->
+<h2>品質で見るポイント</h2>
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/die-bonding-quality.png" alt="ダイボンディングで見る品質ポイント。位置ずれ、傾き、ボイド、接着不足を抑える">
+  <figcaption>ダイボンディングの品質は、チップを置いた瞬間だけで決まりません。位置、傾き、接着層、熱の逃げ道、後工程での扱いやすさまで含めて確認します。</figcaption>
+</figure>
+
+<h3>位置ずれ</h3>
+<p>チップが所定の位置からずれることです。ずれが大きいと、後のワイヤーボンディングや封止で問題が出たり、外観検査で不良になったりします。装置のカメラ認識、搬送、基板の位置決めが関係します。</p>
+
+<h3>傾き</h3>
+<p>チップが水平に乗らず、斜めになることです。傾きがあると、接着層の厚みが場所によって変わり、熱の逃げ方や後工程の接続に影響することがあります。見た目では小さな差でも、パッケージの信頼性に関わります。</p>
+
+<h3>ボイド</h3>
+<p>ボイドとは、接着層の中に残る空洞のことです。空気のすき間が多いと、熱が逃げにくくなったり、接合の強さが落ちたりすることがあります。特に熱を逃がしたい製品では、ボイドをどれだけ抑えるかが重要です。</p>
+
+<h3>接着不足</h3>
+<p>接着剤やはんだが十分に効かず、チップがしっかり固定されていない状態です。材料の量、加熱条件、圧力、表面状態などが関係します。接着不足は、後工程や使用中の信頼性に影響します。</p>
+
+<div class="semicon-note">
+  <strong>歩留まりとのつながり</strong><br>
+  ダイボンディングの不良は、あとから「なぜこのロットだけ剥がれやすいのか」「なぜ熱で壊れやすいのか」「なぜ外観不良が増えたのか」という形で見えてくることがあります。だから、装置条件、材料ロット、温度、圧力、検査結果をつなげて見ることが大切です。
+</div>
+
+<h2>関係する装置・材料・企業</h2>
+
+<p>ダイボンディングでは、チップを搬送して位置合わせする装置、接着剤やフィルムを扱う材料、加熱・硬化・検査の仕組みが関わります。装置企業だけでなく、材料企業や後工程受託企業も重要です。</p>
+
+<div class="semicon-grid">
+  <div class="semicon-card"><b>装置</b><span>ダイボンダ、フリップチップボンダ、ピックアップ機構、画像認識、搬送、加熱ステージなど。</span></div>
+  <div class="semicon-card"><b>材料</b><span>接着剤、ダイアタッチフィルム、はんだ、銀焼結材、熱伝導材料など。</span></div>
+  <div class="semicon-card"><b>検査</b><span>外観検査、位置確認、X線検査、ボイド確認、接着状態の確認など。</span></div>
+</div>
+
+<p>ASMPTは、ダイボンディングやフリップチップ実装に関わる装置を展開しています。Henkelはダイアタッチフィルムやダイアタッチペーストなどの接着材料を扱っています。Indiumは、はんだやプリフォームなど、半導体パッケージング向けのダイアタッチ材料を紹介しています。</p>
+
+<p>企業研究をするときは、会社名だけを見るのではなく、「装置なのか」「材料なのか」「検査なのか」「後工程受託なのか」を分けると理解しやすくなります。ダイボンディングは、まさに装置・材料・品質が交差する工程です。</p>
+
+<div class="semicon-cta">
+  <h3>企業や装置を調べている方へ</h3>
+  <p>ダイボンディングは、後工程装置、接着材料、検査、パッケージング企業が関わる工程です。工程別に企業を見たい場合は、企業マップから調べるとつながりが見えやすくなります。</p>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn" href="https://semicon-campus.com/semiconductor-company-map-by-process/">工程別企業マップを見る</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/what-is-backend-semiconductor-process/">後工程全体を確認する</a>
+  </div>
+</div>
+
+<section class="mp1-section" id="maintenance-phase1-learning"><h2>ダイボンダ・搬送・位置合わせを、実務と学び直しにつなげる</h2><p>ダイボンディングの異常は、位置ずれ、傾き、ボイドなど現象を分け、搬送・画像認識・加熱部の状態と材料・接着条件を照合して考えます。ピックアップや位置合わせの点検を担当したなら、確認した部位と品質結果、専門担当へ渡した情報をまとめましょう。機械・制御の基礎を補う学習と、搬送系の保全経験を活かす仕事探しにつなげられます。</p></section>
+<h2>ダイボンディングは仕事にもつながる工程</h2>
+
+<p>ダイボンディングは、製造オペレーター、検査・品質、材料・プロセス、装置保全など、複数の仕事につながります。求人票では「ダイボンド」「ダイアタッチ」「チップ実装」「接着条件」「外観検査」「X線検査」などの言葉で出ることがあります。</p>
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/die-bonding-jobs.png" alt="ダイボンディングが装置オペレーター、検査・品質、材料・プロセス、装置保全の仕事につながることを示す図">
+  <figcaption>同じダイボンディングでも、装置操作が中心なのか、接着条件や材料まで見るのか、検査や品質記録まで含むのかで仕事内容が変わります。</figcaption>
+</figure>
+
+<div class="semicon-table-wrap">
+  <table class="semicon-table">
+    <thead>
+      <tr><th>近い職種</th><th>見る仕事</th><th>求人票で出やすい言葉</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>製造オペレーター</td><td>チップ供給、装置操作、条件確認、作業記録</td><td>ダイボンド、実装、装置オペレーター、クリーンルーム</td></tr>
+      <tr><td>検査・品質</td><td>位置ずれ、傾き、ボイド、接着状態、外観確認</td><td>外観検査、X線検査、品質確認、不良解析</td></tr>
+      <tr><td>材料・プロセス</td><td>接着剤、はんだ、焼結、硬化条件、接合条件</td><td>接着条件、プロセス条件、工程改善、材料評価</td></tr>
+      <tr><td>装置保全</td><td>ピックアップ、搬送、画像認識、加熱部、位置合わせの点検</td><td>装置保全、メンテナンス、搬送系、画像認識、設備立上げ</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="semicon-cta">
+  <h3>求人票で「ダイボンド」「ダイアタッチ」を見た方へ</h3>
+  <p>同じダイボンディングでも、装置操作が中心なのか、位置合わせや接着条件の管理まで担当するのか、外観検査や品質記録まで含むのかで仕事内容が変わります。まず仕事内容を整理したい人は求人票の読み方へ、すでに求人を探している人は経験別の転職サービス選定ガイドへ進んでください。</p>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn" href="https://semicon-campus.com/how-to-read-semiconductor-job-description/">仕事内容と求人票の見方を確認する</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/semiconductor-career-service-selection-guide/">経験別に半導体転職サービスを比較する</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/%e5%8d%8a%e5%b0%8e%e4%bd%93%e6%b1%82%e4%ba%ba%e3%82%ad%e3%83%bc%e3%83%af%e3%83%bc%e3%83%89%e4%b8%80%e8%a6%a7%ef%bd%9c%e6%9c%aa%e7%b5%8c%e9%a8%93%e8%80%85%e3%81%8c%e6%b1%82%e4%ba%ba%e7%a5%a8%e3%81%a7/">関連する求人キーワードを見る</a>
+  </div>
+</div>
+
+<h2>まとめ</h2>
+
+<p>ダイボンディングとは、ダイシングで切り分けた半導体チップを、基板やリードフレームへ固定する後工程です。ピックアップ、位置合わせ、接着・接合、加熱・硬化、確認という流れで進みます。</p>
+
+<p>初心者が押さえるべきポイントは、位置ずれ、傾き、ボイド、接着不足です。ここを理解すると、後工程の品質、歩留まり、装置、材料、求人票の言葉がつながって見えるようになります。</p>
+
+<div class="semicon-cta">
+  <h3>あなたの目的に合わせて次へ進む</h3>
+  <p>ダイボンディングを理解したら、次は「後工程全体」「求人票」「企業・装置」のどこを知りたいかで読み進めると迷いにくくなります。</p>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn" href="https://semicon-campus.com/what-is-backend-semiconductor-process/">後工程全体を学ぶ</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/how-to-read-semiconductor-job-description/">求人票で見た言葉を整理する</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/semiconductor-company-map-by-process/">企業・装置を調べる</a>
+  </div>
+</div>
+
+<h2>次回予告</h2>
+
+<p>次に読むなら、固定したチップと外部端子を細い金属線でつなぐ <a href="https://semicon-campus.com/what-is-semiconductor-wire-bonding/">ワイヤーボンディングとは何か？</a> がおすすめです。ダイボンディングでチップを置いたあと、どうやって電気的につなぐのかを、初心者向けに整理しています。</p>
+
+<p>次回は、チップやワイヤーを樹脂などで守る「封止・モールド」を取り上げます。後工程が、だんだん製品らしい形へ近づいていく流れを見ていきましょう。</p>
+
+<div class="semicon-note">
+  <strong>YouTubeでも半導体をわかりやすく解説しています</strong><br>
+  ショート動画や図解で半導体製造を学びたい方は、YouTubeチャンネル <a href="https://www.youtube.com/@semicon-campus">AI時代の半導体教室</a> もあわせてご覧ください。
+</div>
+
+<h2>次に読む記事</h2>
+
+<div class="semicon-links">
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/what-is-semiconductor-dicing/">ダイシングとは何か？</a></strong>
+    <p>ダイボンディングの直前にある、ウェハをチップへ切り分ける工程を解説しています。</p>
+  </div>
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/what-is-backend-semiconductor-process/">後工程とは何か？</a></strong>
+    <p>ダイシング、ダイボンディング、接続、封止、検査まで、後工程全体をつかむ親記事です。</p>
+  </div>
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/how-to-read-semiconductor-job-description/">半導体求人票の読み方</a></strong>
+    <p>仕事内容、応募条件、働き方を分けて求人票を読むための記事です。</p>
+  </div>
+</div>
+
+<h2>関連記事</h2>
+
+<div class="semicon-links">
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/what-is-semiconductor-inspection-quality-control/">半導体検査・品質評価とは？</a></strong>
+    <p>位置ずれ、外観検査、X線検査など、ダイボンディング後の確認にも関わる仕事を理解できます。</p>
+  </div>
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/">半導体保全・メンテナンス職とは？</a></strong>
+    <p>搬送、ピックアップ、加熱部、画像認識など、装置を止めずに支える仕事につながります。</p>
+  </div>
+</div>
+
+
+<section class="mp1-section" id="maintenance-phase1-career"><h2>ダイボンダ・搬送・位置合わせの知識を活かす仕事と次の行動</h2><p>搬送・ピックアップ・加熱部の点検、位置合わせの経験がある方は、「対象装置・現象・自分が行った確認・結果」を一組にして整理しましょう。担当設備、夜勤・出張、教育体制、応募条件を求人票と照合すると、活かせる経験と補う知識を分けられます。</p><aside class="semicon-cta mp1-card"><h3>仕事の全体像と、求人・学習の選び方を確認する</h3><p>設備保全Hubでは、点検・異常対応の仕事と経験の整理、求人・基礎学習・資格対策をまとめて確認できます。装置担当や顧客対応の範囲を比べたい方は、関連する職種記事も参照してください。</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/" class="semicon-btn mp1-button" data-maintenance-phase1-hub="277" data-cta="maintenance_hub" data-cta-type="maintenance_hub" data-cta-stage="career" data-cta-id="maintenance_466_hub277_end" data-cta-route="maintenance_466_hub277_end">設備保全Hubで仕事内容・求人・学習を確認する</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/" class="semicon-btn mp1-button" data-maintenance-phase1-hub="237" data-cta="equipment_hub" data-cta-type="equipment_hub" data-cta-stage="career" data-cta-id="maintenance_466_hub237_end" data-cta-route="maintenance_466_hub237_end">装置エンジニアの担当範囲・求人・学習を見る</a></div></aside></section>
+
+<h2>参考資料</h2>
+
+<div class="semicon-note">
+  <ul>
+    <li><a href="https://semi.asmpt.com/en/products/icd/da/">ASMPT: Die Bonding</a></li>
+    <li><a href="https://semi.asmpt.com/en/news-center/market-insights/innovative-die-attach-solutions-for-advanced-blt-control/">ASMPT: Innovative Die Attach Solutions for Advanced BLT Control</a></li>
+    <li><a href="https://next.henkel-adhesives.com/us/en/applications/wirebond-semiconductor-packaging/die-attach-film.html">Henkel: Die Attach Film</a></li>
+    <li><a href="https://next.henkel-adhesives.com/us/en/applications/wirebond-semiconductor-packaging/die-attach-paste.html">Henkel: Die Attach Paste</a></li>
+    <li><a href="https://www.indium.com/applications/semiconductor-packaging-and-assembly/die-attach/">Indium Corporation: Die Attach</a></li>
+  </ul>
+</div>
+
+<div class="semicon-note">
+  <strong>この記事の調査方針</strong><br>
+  この記事は、後工程の全体像を初心者がつかめるように、装置メーカーと材料メーカーが公開している基礎情報を確認し、専門用語をかみ砕いて整理しています。実際の装置条件や材料選定は、製品構造、パッケージ、信頼性要求によって変わります。最終確認日: 2026年7月11日。
+</div>
+
+<a class="semicon-backtop" href="#top" aria-label="ページ先頭へ戻る">↑</a>
+</article>

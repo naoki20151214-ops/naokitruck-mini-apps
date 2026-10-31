@@ -1,0 +1,329 @@
+
+<!--KEEP:0-->
+
+
+<!--KEEP:1-->
+
+
+<!--KEEP:2-->
+<div class="semicon-article" id="semicon-top">
+
+
+
+<div class="semicon-level">
+  <div class="semicon-level-top"><span class="semicon-level-label">学習レベル</span><strong>初級 → 中級</strong></div>
+  <p>成膜、CMP、検査、SPCの基本が少し見えてきた人向けです。膜厚測定を「薄膜の厚さを測る作業」だけでなく、工程管理・歩留まり・求人票へつながる言葉として説明します。</p>
+  <p>レベル表示は読む順番の目安です。初級記事で全体像をつかみ、こうした中級寄りの記事で仕事や求人の言葉へつなげていくイメージです。</p>
+</div>
+
+
+
+<p class="semicon-lead wp-block-paragraph">膜厚測定とは、ウェハ上に作った薄い膜の厚さを測る半導体計測です。成膜で作った膜が厚すぎないか、CMPで削りすぎていないか、ウェハの中心と端でムラがないかを見ます。この記事では、膜厚測定を初心者向けに解説しながら、成膜・CMP・SPC・歩留まり改善、そして求人票に出る「薄膜評価」「メトロロジー」「工程管理」という言葉までつなげます。</p>
+
+
+
+<div class="semicon-map">
+  <h3>この記事でわかること</h3>
+  <ol>
+    <li>膜厚測定とは何を測る工程か</li>
+    <li>なぜ成膜やCMPのあとに膜厚を測るのか</li>
+    <li>厚すぎる、薄すぎる、ムラがある状態の意味</li>
+    <li>反射率測定、エリプソメトリ、XRR、マッピングの役割</li>
+    <li>SPCや歩留まり改善とのつながり</li>
+    <li>求人票で見る「膜厚測定」「薄膜評価」「メトロロジー」の意味</li>
+  </ol>
+</div>
+
+
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/film-thickness-featured.png" alt="膜厚測定とは何か。ウェハ上の薄い膜の厚さを光で測り、厚すぎる、薄すぎる、ムラがある、いつも通りを判定する">
+  <figcaption>膜厚測定は、薄い膜の厚さを測り、工程が狙い通りに動いているかを確認するための計測です。</figcaption>
+</figure>
+<div class="semicon-mobile-summary">
+  <b>図の要点</b>
+  <ul>
+    <li>薄膜の厚さを測る</li>
+    <li>厚すぎる、薄すぎる、ムラがある状態を見る</li>
+    <li>結果を工程条件の見直しへ戻す</li>
+  </ul>
+</div>
+
+
+
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>成膜やCMPの記事で「膜厚」ってよく出てきました。厚さを測るだけなら簡単そうですが、なぜそんなに重要なんですか？</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>半導体では、ほんの少しの膜厚の違いが電気特性や歩留まりに効くことがあるんじゃ。だから「作れたか」だけでなく、「狙った厚さで、均一に作れたか」を測る必要がある。</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>平均値が合っていればいい、というわけでもないんですね。</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>その通りじゃ。中心と端で違うのか、ロットごとにずれるのか、特定の装置だけで変わるのか。膜厚測定は、工程のクセを見つける入口にもなるんじゃよ。</p></div></div>
+
+
+
+
+<h2 class="wp-block-heading">膜厚測定とは何か</h2>
+
+
+
+<p class="wp-block-paragraph">膜厚測定とは、ウェハの上に作った薄膜の厚さを測ることです。半導体では、酸化膜、絶縁膜、金属膜、バリア膜、レジスト膜など、さまざまな膜を何度も作ります。その膜が狙った厚さになっていないと、次の工程や最終的なチップ性能に影響します。</p>
+
+
+
+<p class="wp-block-paragraph">たとえば、絶縁膜が薄すぎると、本来電気を通してはいけない場所でリークが増える可能性があります。逆に厚すぎると、次の加工寸法や電気特性がずれることがあります。CMPで削る工程では、削り残しや削りすぎを確認するためにも膜厚測定が必要です。</p>
+
+
+
+<div class="semicon-note">
+  <p><strong>初心者向けに言うと、膜厚測定は「薄膜の健康診断」です。</strong></p>
+  <p>ただ厚さを測るだけではなく、工程がいつも通りか、ウェハ内にムラがないか、次工程へ安全に流せるかを見るために使います。</p>
+</div>
+
+
+
+<h2 class="wp-block-heading">膜厚測定は工程を閉じるための測定</h2>
+
+
+
+<p class="wp-block-paragraph">膜厚測定は、数値を出して終わりではありません。成膜で膜を作る、CMPで膜を削る、その後に厚さを測る。もし厚すぎる、薄すぎる、ムラが大きいとわかれば、ガス流量、処理時間、温度、研磨条件、装置メンテナンスなどへ戻して条件を見直します。</p>
+
+
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/film-thickness-flow.png" alt="膜厚測定は工程を閉じるための測定。膜を作る、厚さを測る、分布を見る、判定する、条件へ戻す">
+  <figcaption>膜厚測定は、測定値を工程条件へ戻して、成膜やCMPを安定させるために使われます。</figcaption>
+</figure>
+<div class="semicon-mobile-summary">
+  <b>図の要点</b>
+  <ul>
+    <li>成膜やCMPのあとに厚さを測る</li>
+    <li>中心・端・装置差などの分布を見る</li>
+    <li>異常なら条件調整やメンテナンスへ戻す</li>
+  </ul>
+</div>
+
+
+
+<p class="wp-block-paragraph">この考え方はSPCともつながります。膜厚の測定値をロットごとに見れば、工程が少しずつ厚い方向へずれている、特定の装置だけ薄い、ウェハ端だけムラが大きい、といった変化に気づきやすくなります。</p>
+
+
+
+<h2 class="wp-block-heading">膜厚で見る3つの異常</h2>
+
+
+
+<p class="wp-block-paragraph">膜厚測定で見る異常は、大きく分けると「厚すぎる」「薄すぎる」「ムラがある」の3つです。ここで重要なのは、平均値だけで安心しないことです。平均膜厚が狙いに近くても、ウェハ内の分布が悪ければ、チップごとの性能ばらつきや歩留まり低下につながります。</p>
+
+
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/film-thickness-bad-patterns.png" alt="膜厚で見る3つの異常。厚すぎる、薄すぎる、中心と端でムラがある">
+  <figcaption>膜厚は平均値だけでなく、ウェハ面内のムラやロット間の変化も見ます。</figcaption>
+</figure>
+<div class="semicon-mobile-summary">
+  <b>図の要点</b>
+  <ul>
+    <li>厚すぎる: 次工程の寸法や電気特性がずれる</li>
+    <li>薄すぎる: 絶縁やバリアの役割が弱くなる</li>
+    <li>中心と端でムラ: 装置条件やCMP状態を疑う</li>
+  </ul>
+</div>
+
+
+
+<div class="semicon-grid">
+  <div class="semicon-card"><b>厚すぎる</b><span>成膜時間が長い、反応が強い、削り残しがあるなどを疑います。</span></div>
+  <div class="semicon-card"><b>薄すぎる</b><span>成膜不足、エッチングやCMPの進みすぎ、膜のダメージなどを疑います。</span></div>
+  <div class="semicon-card"><b>ムラがある</b><span>ウェハ面内の温度、ガス分布、研磨状態、装置コンディションを疑います。</span></div>
+</div>
+
+
+
+<h2 class="wp-block-heading">膜厚測定で使う代表的な方法</h2>
+
+
+
+<p class="wp-block-paragraph">膜厚測定には複数の方法があります。代表的なのは、光の反射を使う反射率測定、偏光の変化を見るエリプソメトリ、X線を使うXRRなどです。実際の工場では、膜の種類、厚さ、透明か不透明か、単層か多層か、量産中に素早く測りたいかによって測定方法を選びます。</p>
+
+
+
+<h3 class="wp-block-heading">光で測りやすい膜と、別の方法を使う膜がある</h3>
+
+
+
+<p class="wp-block-paragraph">膜厚測定で大切なのは、「どの測定法がすごいか」ではなく、「どの膜に合う測定法か」を選ぶことです。酸化膜、窒化膜、レジスト膜、層間絶縁膜のように光との相互作用を利用しやすい膜では、反射率測定やエリプソメトリがよく使われます。ウェハを壊さず、量産ラインで素早く測りやすいのが強みです。</p>
+
+
+
+<p class="wp-block-paragraph">一方で、銅、アルミ、タングステンなどの金属膜や、多層で複雑な膜では、光学測定だけでは判断しにくい場合があります。その場合は、X線を使うXRR、シート抵抗から膜厚や膜状態を推定する方法、断面観察など、目的に合った測定を組み合わせます。つまり、膜厚測定は「膜の材料」「厚さ」「工程目的」に合わせて測り方を変える仕事です。</p>
+
+
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/film-thickness-methods.png" alt="膜厚測定で使う代表的な方法。反射率測定、エリプソメトリ、XRR、マッピング">
+  <figcaption>測定法の名前よりも、「何の膜を、どの工程で、何のために測るか」を理解することが大切です。</figcaption>
+</figure>
+<div class="semicon-mobile-summary">
+  <b>図の要点</b>
+  <ul>
+    <li>反射率測定: 光の反射から膜厚を見る</li>
+    <li>エリプソメトリ: 偏光の変化から膜厚や光学特性を見る</li>
+    <li>XRR / X線: 薄膜や多層膜を高精度に評価する</li>
+    <li>マッピング: ウェハ内の膜厚分布を見る</li>
+  </ul>
+</div>
+
+
+
+<p class="wp-block-paragraph">KLA、Onto Innovation、Nova、Semilabなどは、薄膜計測やメトロロジー装置を扱う代表的な企業です。KLAは薄膜反射率計で膜厚や屈折率などを測る装置を説明しており、Onto InnovationやNovaも半導体向けのメトロロジー製品を展開しています。</p>
+
+
+
+<div class="semicon-compare">
+<table>
+  <thead>
+    <tr><th>測定方法</th><th>初心者向けの見方</th><th>求人票での出方</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>反射率測定</strong></td><td>光の反射パターンから薄膜の厚さを見る</td><td>膜厚測定、薄膜測定、光学測定</td></tr>
+    <tr><td><strong>エリプソメトリ</strong></td><td>偏光の変化から膜厚や光学特性を見る</td><td>エリプソ、薄膜評価、光学特性</td></tr>
+    <tr><td><strong>XRR / X線</strong></td><td>薄膜や多層膜を高精度に評価する</td><td>X線評価、XRR、材料評価</td></tr>
+    <tr><td><strong>マッピング</strong></td><td>ウェハの中心・端・面内分布を見る</td><td>面内均一性、ばらつき解析、工程管理</td></tr>
+  </tbody>
+</table>
+</div>
+
+
+<section class="mp1-section" id="maintenance-phase1-learning"><h2>膜厚測定・保全後の品質確認を、実務と学び直しにつなげる</h2><p>保全後の確認では、装置が動くことと、工程結果が期待した状態へ戻ることを分けて考えます。膜厚の平均値だけでなく面内分布やロット間の変化を装置履歴と照合した経験は、復旧確認や工程改善との接点です。測定条件をそろえて記録し、品質担当へ何を渡したかを整理しましょう。計測と品質管理の基礎を学ぶと、結果の説明を補えます。</p></section>
+
+<h2 class="wp-block-heading">なぜ膜厚測定がわかる人は市場価値が高いのか</h2>
+
+
+
+<p class="wp-block-paragraph">膜厚測定がわかる人の価値は、測定装置を操作できることだけではありません。測定値を見て、工程がどちらへずれているのか、どの条件へ戻すべきか、歩留まり低下の原因候補は何かを考えられる点にあります。</p>
+
+
+
+<p class="wp-block-paragraph">成膜プロセスエンジニアなら、膜厚の均一性やロット間ばらつきを見て、温度、圧力、ガス流量、処理時間を調整します。CMPなら、削りすぎや削り残しを見て、研磨条件やスラリー、パッド状態を考えます。品質評価や検査の仕事では、測定値がいつから変わったかをSPCや歩留まりデータと合わせて見ます。</p>
+
+
+
+<div class="semicon-cta">
+  <h3>膜厚測定は、技術記事から求人票へつながる言葉</h3>
+  <p>求人票で「膜厚測定」「薄膜評価」「メトロロジー」「面内均一性」「SPC」「歩留まり改善」を見つけたら、この記事の内容とつながります。品質管理、分析、評価、装置保全、プロセス改善の経験がある人は、測定値を工程改善へ戻した経験を言語化すると強くなります。</p>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn" href="https://semicon-campus.com/%e5%8d%8a%e5%b0%8e%e4%bd%93%e6%b1%82%e4%ba%ba%e3%82%ad%e3%83%bc%e3%83%af%e3%83%bc%e3%83%89%e4%b8%80%e8%a6%a7%ef%bd%9c%e6%9c%aa%e7%b5%8c%e9%a8%93%e8%80%85%e3%81%8c%e6%b1%82%e4%ba%ba%e7%a5%a8%e3%81%a7/">求人キーワード一覧を見る</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/how-to-read-semiconductor-job-description/">求人票の読み方を見る</a>
+  </div>
+</div>
+
+
+
+<h2 class="wp-block-heading">求人票ではどんな言葉で出てくるか</h2>
+
+
+
+<p class="wp-block-paragraph">膜厚測定は、求人票では「膜厚測定」そのまま出ることもありますが、「薄膜評価」「メトロロジー」「光学測定」「面内均一性」「プロセス管理」「SPC」「歩留まり改善」といった言葉で出ることもあります。成膜、CMP、検査・計測、品質評価、プロセスエンジニアの求人で見かけやすいキーワードです。</p>
+
+
+
+<div class="semicon-cta">
+  <h3>メトロロジー職は、実験・分析・品質経験を活かしやすい</h3>
+  <p>膜厚測定のような計測を専門に扱う仕事は、求人票では「メトロロジーエンジニア」「計測評価」「薄膜評価」「解析評価」といった名前で出ることがあります。設計職やプロセス開発職ほど目立たない一方で、量産ラインの品質や歩留まりを支える重要な職種です。</p>
+  <p>理系の実験、化学分析、物理計測、機器分析、品質評価、テスター測定などの経験がある人は、半導体未経験でも「測定値を取り、ばらつきを見て、原因候補を考えた経験」として言語化しやすいです。求人を見るときは、装置名だけでなく「測定データを工程改善へつなげる」「面内均一性を見る」「SPCでばらつきを管理する」といった表現にも注目しましょう。</p>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn" href="https://semicon-campus.com/semiconductor-career-service-selection-guide/">計測・評価職に強い転職サービスの選び方を見る</a>
+  </div>
+</div>
+
+
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/film-thickness-career-keywords.png" alt="求人票で見る膜厚測定キーワード。膜厚測定、薄膜評価、計測技術、成膜、CMP、SPC、歩留まり">
+  <figcaption>膜厚測定は、成膜・CMP・検査・プロセス管理の求人に分かれて出ることがあります。</figcaption>
+</figure>
+<div class="semicon-mobile-summary">
+  <b>図の要点</b>
+  <ul>
+    <li>膜厚測定: 薄膜の厚さを測る</li>
+    <li>薄膜評価: 膜質・均一性・光学特性を見る</li>
+    <li>計測技術: 測定データで工程を管理する</li>
+    <li>成膜 / CMP: 膜を作る・削る工程とつながる</li>
+    <li>SPC / 歩留まり: ばらつきを見て改善へ戻す</li>
+  </ul>
+</div>
+
+
+
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>膜厚測定って、測定担当だけの話かと思っていました。でも成膜やCMPの仕事にもかなり関係するんですね。</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>そうじゃ。膜厚のデータを見れば、工程が狙い通りか、装置の状態が変わっていないか、CMPで削りすぎていないかが見えてくる。だから、プロセス・品質・検査を横断する言葉なんじゃ。</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>求人票で「薄膜評価」や「メトロロジー」と見たら、膜厚測定も関係しているかもしれない、と考えればいいんですね。</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>その見方でよいぞ。完全未経験なら検査・測定や装置オペレーションから入り、経験者なら測定値を工程改善へ戻した経験を整理すると、求人票の読み方がかなり変わるはずじゃ。</p></div></div>
+
+
+
+<h2 class="wp-block-heading">まとめ</h2>
+
+
+
+<p class="wp-block-paragraph">膜厚測定とは、ウェハ上に作った薄膜の厚さを測る半導体計測です。成膜で膜を作ったあと、CMPで膜を削ったあとに、厚すぎる、薄すぎる、ムラがある、いつも通りかを確認します。</p>
+
+
+
+<p class="wp-block-paragraph">初心者は、まず「膜厚測定は薄膜の健康診断」と覚えると十分です。測定値を出して終わりではなく、工程条件へ戻し、SPCや歩留まり改善へつなげるところまでが重要です。膜厚測定がわかると、成膜、CMP、検査・計測、品質評価、プロセスエンジニアの仕事が読みやすくなります。</p>
+
+
+
+<div class="semicon-cta">
+  <h3>膜厚測定を仕事につなげるなら、求人票の言葉を見よう</h3>
+  <p>求人票で「膜厚測定」「薄膜評価」「メトロロジー」「光学測定」「面内均一性」「SPC」「歩留まり改善」と検索してみてください。仕事内容に、成膜、CMP、測定データ、工程管理、品質評価、装置条件といった言葉があれば、この記事の内容とつながる仕事です。</p>
+  <p>求人票だけでは、必要な経験レベルまでは読み切れません。品質、分析、評価、設備保全、製造技術、プロセス改善の経験を半導体求人でどう見せるかは職種によって変わります。まずは半導体求人に強い転職サービスの選び方を確認し、自分の経験をどう言語化するか整理しておきましょう。</p>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn" href="https://semicon-campus.com/semiconductor-career-service-selection-guide/">半導体求人に強い転職サービスの選び方を見る</a>
+  </div>
+</div>
+
+<div class="semicon-cta secondary-cta">
+  <h3>次回予告</h3>
+  <p>次回記事として「オーバーレイ計測とは何か？」を公開しました。露光で重ねたパターンがずれると何が起きるのか、位置ずれの測定が歩留まりやリソグラフィの仕事へどうつながるのかを整理します。</p>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn" href="https://semicon-campus.com/what-is-overlay-metrology/">オーバーレイ計測とは何かを読む</a>
+  </div>
+</div>
+
+<div class="semicon-cta secondary-cta">
+  <h3>YouTubeでも半導体をやさしく解説しています</h3>
+  <p>図解で復習したい人向けに、YouTubeでも半導体製造や工程の考え方を短く解説しています。</p>
+  <div class="semicon-btnrow">
+    <a rel="noopener" class="semicon-btn" href="https://www.youtube.com/@semicon-campus" target="_blank">YouTubeで図解動画を見る</a>
+  </div>
+</div>
+
+<div class="semicon-links">
+  <div class="semicon-linkbox next">
+    <h3>次に読む記事</h3>
+    <p><a href="https://semicon-campus.com/%e6%88%90%e8%86%9c%e3%81%a8%e3%81%af%e4%bd%95%e3%81%8b%ef%bc%9f%e3%82%a6%e3%82%a7%e3%83%8f%e3%81%ae%e4%b8%8a%e3%81%ab%e8%96%84%e3%81%84%e8%86%9c%e3%82%92%e4%bd%9c%e3%82%8b%e5%8d%8a%e5%b0%8e%e4%bd%93/">成膜とは何か？ウェハの上に薄い膜を作る半導体工程</a></p>
+    <p><a href="https://semicon-campus.com/what-is-cmp-semiconductor-process/">CMPとは何か？ウェハ表面を平らにする半導体製造工程</a></p>
+    <p><a href="https://semicon-campus.com/what-is-spc-semiconductor-process-control/">SPCとは何か？検査・計測データを工程管理へつなげる半導体品質管理</a></p>
+  </div>
+  <div class="semicon-linkbox">
+    <h3>関連記事</h3>
+    <p><a href="https://semicon-campus.com/what-is-semiconductor-inspection-quality-control/">半導体検査・品質評価とは？</a></p>
+    <p><a href="https://semicon-campus.com/what-is-semiconductor-yield/">歩留まりとは何か？</a></p>
+    <p><a href="https://semicon-campus.com/what-is-semiconductor-failure-analysis/">不良解析とは何か？</a></p>
+    <p><a href="https://semicon-campus.com/%e5%8d%8a%e5%b0%8e%e4%bd%93%e6%b1%82%e4%ba%ba%e3%82%ad%e3%83%bc%e3%83%af%e3%83%bc%e3%83%89%e4%b8%80%e8%a6%a7%ef%bd%9c%e6%9c%aa%e7%b5%8c%e9%a8%93%e8%80%85%e3%81%8c%e6%b1%82%e4%ba%ba%e7%a5%a8%e3%81%a7/">半導体求人キーワード一覧</a></p>
+  </div>
+</div>
+
+<section class="mp1-section" id="maintenance-phase1-career"><h2>膜厚測定・保全後の品質確認の知識を活かす仕事と次の行動</h2><p>測定データの評価、装置保全、工程改善の経験がある方は、「対象装置・現象・自分が行った確認・結果」を一組にして整理しましょう。担当設備、夜勤・出張、教育体制、応募条件を求人票と照合すると、活かせる経験と補う知識を分けられます。</p><aside class="semicon-cta mp1-card"><h3>仕事の全体像と、求人・学習の選び方を確認する</h3><p>設備保全Hubでは、点検・異常対応の仕事と経験の整理、求人・基礎学習・資格対策をまとめて確認できます。装置担当や顧客対応の範囲を比べたい方は、関連する職種記事も参照してください。</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/" class="semicon-btn mp1-button" data-maintenance-phase1-hub="277" data-cta="maintenance_hub" data-cta-type="maintenance_hub" data-cta-stage="career" data-cta-id="maintenance_380_hub277_end" data-cta-route="maintenance_380_hub277_end">設備保全Hubで仕事内容・求人・学習を確認する</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/" class="semicon-btn mp1-button" data-maintenance-phase1-hub="237" data-cta="equipment_hub" data-cta-type="equipment_hub" data-cta-stage="career" data-cta-id="maintenance_380_hub237_end" data-cta-route="maintenance_380_hub237_end">装置エンジニアの担当範囲・求人・学習を見る</a></div></aside></section>
+
+<h2>参考資料</h2>
+<ul class="semicon-sources">
+  <li><a rel="noopener" href="https://www.kla.com/products/instruments/thin-film-reflectometers" target="_blank">KLA: Thin-Film Thickness Measurement</a></li>
+  <li><a rel="noopener" href="https://ontoinnovation.com/product-categories/metrology/" target="_blank">Onto Innovation: Metrology products</a></li>
+  <li><a rel="noopener" href="https://www.novami.com/" target="_blank">Nova: Materials Metrology</a></li>
+  <li><a rel="noopener" href="https://semilab.com/category/products/thin-film-thickness-measurement" target="_blank">Semilab: Thin Film Thickness Measurement</a></li>
+  <li><a rel="noopener" href="https://www.nist.gov/programs-projects/thin-film-rgtms" target="_blank">NIST: Thin Film RGTMs</a></li>
+</ul>
+<a class="semicon-backtop" href="#semicon-top">↑ 先頭</a>
+</div>
+
+
+<aside class="related-spokes"><h2>あわせて読みたい</h2><ul><li><a href="/film-thickness-uniformity/">ウェハ面内膜厚均一性（WiWNU・WTWNU）が悪化する原因と装置保全</a></li></ul></aside>

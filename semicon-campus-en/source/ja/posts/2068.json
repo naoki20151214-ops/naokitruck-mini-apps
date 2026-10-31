@@ -1,0 +1,20 @@
+{
+ "id": 2068,
+ "type": "post",
+ "slug": "daily-news-1964bdd2e8423de24af6",
+ "link": "https://semicon-campus.com/daily-news-1964bdd2e8423de24af6/",
+ "date": "2026-10-15T10:00:00",
+ "modified": "2026-10-27T20:03:18",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  20
+ ],
+ "tags": [
+  19
+ ],
+ "featured_media": 2758,
+ "title": "CredoとAMDが発表したAI推論のメモリーウォール対策",
+ "excerpt": "CredoとAMDが発表した、Versal評価ボードとWeaverによるAI推論向けメモリー拡張を、技術の仕組み、期待される効果、量産化の限界と今後の確認点から初心者向けに解説します。"
+}

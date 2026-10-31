@@ -1,0 +1,18 @@
+{
+ "id": 1182,
+ "type": "post",
+ "slug": "semiconductor-test-wafer-final",
+ "link": "https://semicon-campus.com/semiconductor-test-wafer-final/",
+ "date": "2026-09-25T18:00:00",
+ "modified": "2026-10-22T13:56:05",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  5
+ ],
+ "tags": [],
+ "featured_media": 1175,
+ "title": "半導体テストとは？ウェハテストから最終テストまで良品・不良品を判定する仕組み",
+ "excerpt": "半導体はどうやって良品・不良品を判定するのか。ウェハテスト、プローブカード、ATE、最終テスト、DFT、Binningまでを初心者向けに解説します。"
+}

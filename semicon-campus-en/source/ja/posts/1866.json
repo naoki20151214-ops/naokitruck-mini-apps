@@ -1,0 +1,20 @@
+{
+ "id": 1866,
+ "type": "post",
+ "slug": "daily-news-bd76a43ad3bc6e3feca7",
+ "link": "https://semicon-campus.com/daily-news-bd76a43ad3bc6e3feca7/",
+ "date": "2026-10-09T09:00:00",
+ "modified": "2026-10-27T20:03:42",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  20
+ ],
+ "tags": [
+  19
+ ],
+ "featured_media": 2777,
+ "title": "Keysight、RF半導体設計にエージェント型AIを導入　ADS 2027で自動化",
+ "excerpt": "Keysightが発表したADS 2027のエージェント型AI機能を解説。MCP、マクロ、Python、シミュレーション検証の仕組みと限界、今後の注目点を初心者向けに整理します。"
+}

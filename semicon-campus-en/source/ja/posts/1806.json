@@ -1,0 +1,20 @@
+{
+ "id": 1806,
+ "type": "post",
+ "slug": "daily-news-345cffd1ec970aa76349",
+ "link": "https://semicon-campus.com/daily-news-345cffd1ec970aa76349/",
+ "date": "2026-10-04T17:00:00",
+ "modified": "2026-10-27T20:03:58",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  20
+ ],
+ "tags": [
+  19
+ ],
+ "featured_media": 2790,
+ "title": "芝浦工大の計算アルゴリズムをNVIDIA CUDAが採用　AI向けGPUで高精度科学計算を高速化",
+ "excerpt": "芝浦工業大学のOzaki Scheme IIがNVIDIA CUDA Toolkit 13.4に採用された背景を解説。低精度演算器で高精度計算を再現する仕組み、効果、限界、今後の確認点を紹介します。"
+}

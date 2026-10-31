@@ -1,0 +1,1 @@
+["<script>(function(){var target=new URL(\"/semiconductor-career-start/\",location.origin);var params=new URLSearchParams(location.search);params.set(\"source_article\",\"legacy_10q\");target.search=params.toString();target.hash=location.hash;location.replace(target.toString());})();</script>"]

@@ -1,0 +1,180 @@
+
+<!--KEEP:0-->
+
+
+<!--KEEP:1-->
+
+
+<!--KEEP:2-->
+<!--KEEP:3-->
+<div class="semicon-article" id="semicon-top">
+
+<div class="semicon-level"><span class="semicon-level-label">学習レベル</span> <strong>初中級</strong><p>DRAMが作業用メモリだと理解できた人が、AI半導体と先端パッケージへ進むための記事です。</p></div>
+
+<p class="semicon-lead"><strong>HBM（High Bandwidth Memory）</strong>は、AIの計算をするGPUへ大量のデータを一度に届ける作業用メモリです。GPUがどれほど速く計算できても、必要なデータが届かなければ待つことになります。HBMは、そのデータの通り道を広げる役割を担います。</p>
+
+<aside class="semicon-career-advisor-top" aria-label="半導体10問仕事ナビへの案内">
+  <p class="semicon-career-advisor-top-copy">GPU・メモリ・先端パッケージに関わる仕事のうち、自分が次に調べる入口を10問で整理できます。</p>
+  <p class="semicon-btn-wrap"><a class="semicon-btn" href="https://semicon-campus.com/semiconductor-career-advisor/?utm_source=website&amp;utm_medium=internal&amp;utm_campaign=career_advisor_pilot&amp;utm_content=hbm_compute_memory_career_advisor_top" data-cta="career_advisor" data-cta-stage="career" data-cta-type="career_tool" data-cta-route="hbm_compute_memory_career_advisor_top" data-cta-position="top" data-source-page-type="technical_article">10問仕事ナビβを試す</a></p>
+</aside>
+
+<div class="semicon-overview" aria-label="HBMの全体像"><div class="semicon-overview-box"><b>GPU</b><span>大量の計算を並列実行</span></div><div class="semicon-overview-arrow">⇄</div><div class="semicon-overview-box"><b>HBM</b><span>広い帯域でデータを供給</span></div></div>
+
+<p>前提から確認したい方は、先に<a href="https://semicon-campus.com/cpu-memory-storage-difference/">CPU・メモリ・ストレージの違い</a>、続いて<a href="https://semicon-campus.com/dram-nand-difference/">DRAMとNANDの違い</a>を読むと理解しやすくなります。</p>
+
+<div class="semicon-map"><h3>この記事でわかること</h3><div class="semicon-scope-grid"><div class="semicon-scope-block"><b>まず理解する4項目</b><ol><li>HBMがGPUへデータを届ける役割</li><li>AI・GPUでメモリ帯域が重要な理由</li><li>計算性能とメモリ帯域の釣り合い</li><li>道路の本数で考える「一度に運べる量」</li></ol></div><div class="semicon-scope-block deep"><b>もう一歩深く知る2項目</b><ol><li>積層DRAM、TSV、先端パッケージの仕組み</li><li>熱・歩留まり・企業・職種とのつながり</li></ol></div></div></div>
+
+<div class="semicon-note"><p><strong>まず覚える3点</strong></p><ol><li>HBMは保存用ではなく、DRAM系の作業用メモリ</li><li>GPUへ一度に大量のデータを渡す「広い帯域」が強み</li><li>積層DRAM、TSV、先端パッケージを組み合わせて作る</li></ol></div>
+
+
+<h2>HBMとは何かを一言でいうと</h2>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>HBMって、普通のDRAMをただ高速化したものですか？</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>DRAMの仲間じゃが、狙いはGPUへ一度に運べるデータ量を大きくすることじゃ。</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>1台の車を速くするより、道路を広げて大量に運ぶイメージですね。</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>その理解が入口じゃ。ただし本物のHBMでは、道路ではなく多数の信号線と短い配線で広い帯域を作る。</p></div></div>
+
+<figure class="semicon-figure"><img src="https://semicon-campus.com/wp-content/uploads/2026/07/hbm-gpu-data-bandwidth-role.png" alt="多数のGPU演算器へHBMが広い帯域でデータを供給する仕組み" width="1536" height="864" loading="lazy" decoding="async"><figcaption>GPUの演算器を働かせ続けるには、計算性能だけでなくデータを渡す帯域が必要です。</figcaption></figure>
+
+<div class="semicon-note"><p><strong>最初の結論：</strong> HBMはNANDのような保存用ではなく、GPUが計算中に使うDRAM系の作業用メモリです。</p></div>
+<p class="semicon-one-line">ここまでの一言まとめ：HBMは、GPUへ大量のデータを渡すDRAM系メモリです。</p>
+
+<h2>なぜAI・GPUではメモリ帯域が重要なのか</h2>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>GPUの計算性能が高ければ、メモリは普通でも大丈夫では？</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>計算器が多くても、材料となるデータが届かなければ待ち時間が増える。AIは大量のデータを並列に扱うため、供給路も太くする必要がある。</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>工場の機械を増やしても、部品を運ぶ通路が細いと止まるのと同じですね。</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>そうじゃ。計算性能とメモリ帯域は、別々ではなくシステム全体で考える。</p></div></div>
+
+<p>GPUの演算器へデータ供給が追いつかず、待ち時間が生まれる状態をメモリボトルネックと呼びます。前段の計算側は、<a href="https://semicon-campus.com/what-is-tensor-core-matrix-acceleration/">Tensor Coreが行列の積和演算を高速化する仕組み</a>を確認すると、なぜデータ供給が重要になるかつながります。</p>
+
+<div class="semicon-grid"><div class="semicon-card"><b>計算性能</b><span>GPUが一定時間にどれだけ演算できるか。</span></div><div class="semicon-card"><b>メモリ帯域</b><span>一定時間にメモリとGPUの間でどれだけデータを運べるか。</span></div><div class="semicon-card"><b>実効性能</b><span>計算、データ移動、ソフトウェアなどを合わせた実際の仕事量。</span></div></div>
+<p class="semicon-one-line">ここまでの一言まとめ：演算器を増やすだけでなく、データ供給路も太くする必要があります。</p>
+
+<h2 id="compute-memory-balance">AI用GPUは、計算が速いだけでは足りない</h2>
+
+<p>AI用GPUの性能は、演算器のピーク性能だけでは決まりません。計算に必要なデータをメモリから運ぶ速さ、同じデータを何度使えるか、キャッシュへ収まるか、ソフトウェアが演算器をうまく使えるかが組み合わさって、実際の処理時間が決まります。</p>
+
+<p>NVIDIAのNsight Computeは、この関係を<strong>Roofline（ルーフライン）</strong>という考え方で示します。横軸に相当するのが「運んだデータ量に対して、どれだけ計算するか」という<strong>算術強度</strong>です。少ないデータ移動で多く計算できる処理は演算器側の上限へ近づきやすく、データを何度も運ぶ処理はメモリ帯域側の上限を受けやすくなります。</p>
+
+<figure class="semicon-figure"><img src="https://semicon-campus.com/wp-content/uploads/2026/07/gpu-compute-memory-roofline-balance.png" alt="メモリ帯域で決まる斜めの性能上限とGPUの計算性能で決まる水平の上限の下に、処理ごとの到達性能が並ぶ概念図" width="1672" height="941" loading="lazy" decoding="async"><figcaption>同じGPUでも、処理ごとのデータ移動量と計算量によって、メモリ帯域側の上限を受けるか、計算性能側の上限を受けるかが変わります。</figcaption></figure>
+
+<div class="semicon-grid"><div class="semicon-card"><b>メモリ帯域律速</b><span>演算器に空きがあってもデータ供給が追いつかず、帯域を増やす工夫が効きやすい状態。</span></div><div class="semicon-card"><b>計算律速</b><span>データ供給に余裕があり、演算器の処理量や計算方法が上限になりやすい状態。</span></div><div class="semicon-card"><b>別の待ち時間</b><span>CPUとの転送、GPU間通信、分岐、同期、ソフトウェアなどが上限になる場合もある。</span></div></div>
+
+<p>ここで大切なのは、<strong>GPUが常にメモリ待ちになるわけではない</strong>ことです。たとえば、読み込んだデータをGPU内で何度も再利用できる行列計算は、条件によって計算性能側が上限になります。一方、データを少し計算してすぐ次へ入れ替える処理は、メモリ帯域側の影響を受けやすくなります。</p>
+
+<figure class="semicon-figure"><img src="https://semicon-campus.com/wp-content/uploads/2026/07/gpu-workload-bottleneck-comparison.png" alt="同じGPUでデータ移動が多く演算器が待つ処理、計算とデータ供給が釣り合う処理、データを再利用して演算器が上限になる処理を比較した図" width="1672" height="941" loading="lazy" decoding="async"><figcaption>ボトルネックはGPUの名前だけで決まらず、処理がデータをどう運び、どれだけ再利用して計算するかで変わります。</figcaption></figure>
+
+<div class="semicon-note"><p><strong>HBMは重要ですが、HBMだけで性能は決まりません。</strong></p><p>HBMの広い帯域は、メモリ帯域律速の処理を助けます。しかし、計算性能、容量、レイテンシ、キャッシュ、通信、ソフトウェアなど別の上限は残ります。必要なのは、用途に合う計算性能とデータ供給能力の釣り合いです。</p></div>
+
+<p class="semicon-one-line">ここまでの一言まとめ：速さを決める上限は処理ごとに変わるため、計算性能とメモリ帯域をセットで見ます。</p>
+
+<h2>「道路の本数」のたとえを実際の仕組みに戻す</h2>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>道路を広げるというのは、メモリの中で何を増やすことですか？</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>主に、同時にデータをやり取りできる信号線を多くし、GPUとの配線を短くすることじゃ。</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>たとえの道路は、実際には広いインターフェースと短い配線なんですね。</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>その通り。帯域は、1本の信号を速くすることだけでなく、並列に運ぶ幅でも大きくできる。</p></div></div>
+
+<div class="semicon-compare"><table><thead><tr><th>比較</th><th>道路のたとえ</th><th>実際の意味</th></tr></thead><tbody><tr><td>道路の本数・幅</td><td>同時に多くの車を通す</td><td>広いメモリインターフェースで並列にデータを転送する</td></tr><tr><td>車の速さ</td><td>1台が速く走る</td><td>信号1本当たりのデータレート</td></tr><tr><td>目的地までの距離</td><td>道が短い</td><td>GPUの近くへ実装し、配線を短くする</td></tr><tr><td>渋滞</td><td>車が詰まって工場が待つ</td><td>メモリ帯域が足りず、演算器へのデータ供給が滞る</td></tr></tbody></table></div>
+
+<div class="semicon-note"><p><strong>たとえと実物を混同しないでください。</strong> データは車のような物体ではなく、電気信号としてやり取りされます。道路のたとえは「同時に運べる量」をつかむためのものです。</p></div>
+
+<div class="semicon-grid two"><div class="semicon-card"><b>一般的なPC用メモリ（DDR系DRAM）</b><span>基板上の配線を通じてCPUなどへ接続します。交換可能なDIMMもこの仲間です。</span></div><div class="semicon-card"><b>HBM</b><span>GPUなどの近くへ置き、広いデータ経路で大量のデータを届けます。</span></div></div>
+<p class="semicon-one-line">ここまでの一言まとめ：道路の幅は、実物では並列に使う信号線と転送速度の組み合わせです。</p>
+
+<div class="semicon-basic-complete">ここまででHBMの基本は理解できました。</div>
+
+<div class="semicon-deep-break"><strong>ここから、もう一歩深く</strong><p>ここから先は、仕組み・製造・仕事まで知りたい人向けです。基本だけ知りたい方は、<a href="#hbm-summary">まとめへ進んでも問題ありません</a>。</p></div>
+
+<h2>HBMの積層構造とTSV</h2>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>なぜDRAMダイを横に並べず、縦に積むんですか？</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>限られた面積へ容量と接続をまとめ、層同士をTSVで短くつなぐためじゃ。</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>TSVは、積み重ねた階を縦に貫くエレベーターのような接続ですね。</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>概念としては近い。実際はシリコンを貫通する微細な電極で、製造や接合には高い精度が要る。</p></div></div>
+
+<figure class="semicon-figure"><img src="https://semicon-campus.com/wp-content/uploads/2026/07/hbm-stack-tsv-gpu-package-cross-section.png" alt="複数DRAMダイをTSVで積層しベースダイと先端パッケージを介してGPUへ接続するHBM構造" width="1536" height="864" loading="lazy" decoding="async"><figcaption>HBMは積層DRAMだけでなく、TSV、ベースダイ、高密度配線を含むパッケージ全体で帯域を作ります。</figcaption></figure>
+
+<p>図のように、HBMは複数のDRAMダイをTSVで縦につなぎ、下部のベース／ロジックダイと先端パッケージを介してGPUの近くへ実装します。世代や製品によって構成は異なりますが、積層メモリと短く密な配線を組み合わせる考え方が基本です。</p>
+<p class="semicon-one-line">ここまでの一言まとめ：HBMは積層DRAMだけでなく、縦の接続とパッケージ全体で成り立ちます。</p>
+
+<h2>帯域・容量・レイテンシは別の指標</h2>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>帯域が広いなら、容量も大きくて待ち時間も短いということですか？</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>そこは別々じゃ。帯域は一度に運べる量、容量は計算中に置けるデータ量、レイテンシは要求してから応答するまでの待ち時間じゃ。</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>広い倉庫、太い搬入口、荷物が届くまでの時間を、別に見る必要があるんですね。</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>そうじゃ。用途により、どの指標がボトルネックになるかも変わる。</p></div></div>
+
+<div class="semicon-compare"><table><thead><tr><th>指標</th><th>何を見るか</th><th>初心者向けの言い換え</th><th>注意点</th></tr></thead><tbody><tr><td>帯域</td><td>一定時間に運べるデータ量</td><td>道路全体で運べる量</td><td>実効値は処理内容やシステム構成でも変わる</td></tr><tr><td>容量</td><td>メモリへ置けるデータ量</td><td>倉庫の広さ</td><td>帯域が大きくても容量が十分とは限らない</td></tr><tr><td>レイテンシ</td><td>要求から応答までの時間</td><td>頼んだ荷物が届くまで</td><td>帯域と同じ意味ではない</td></tr></tbody></table></div>
+<p class="semicon-one-line">ここまでの一言まとめ：帯域は運べる量、容量は置ける量、レイテンシは待ち時間です。</p>
+
+<!-- HBM_FIGURE_3_OPTIONAL: 帯域・容量・レイテンシの3指標カード -->
+
+<h2>HBMが難しい理由：熱・歩留まり・コスト</h2>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>DRAMを積めば性能が上がるなら、もっとたくさん積めばいいのでは？</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>積層が増えるほど、薄化、接合、放熱、検査が難しくなる。1層の不良がスタック全体へ影響することもある。</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>性能だけでなく、良品を安定して作れるかが重要なんですね。</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>その通り。HBMはメモリ技術であり、同時に先端パッケージと量産技術の勝負でもある。</p></div></div>
+
+<div class="semicon-grid"><div class="semicon-card"><b>熱</b><span>積層したダイと近接するGPUから熱が生まれます。放熱経路と電力効率が重要です。</span></div><div class="semicon-card"><b>歩留まり</b><span>薄化、TSV、接合、積層、最終実装の各段階で欠陥を抑える必要があります。</span></div><div class="semicon-card"><b>コスト</b><span>高品質DRAM、複雑な積層、検査、先端パッケージが必要で、単純な部品比較では語れません。</span></div></div>
+
+<p>HBM単体が良品でも、GPU、インターポーザ、基板、接合部を含むパッケージ全体で性能と信頼性を満たす必要があります。良品率との関係は<a href="https://semicon-campus.com/what-is-semiconductor-yield/">歩留まりとは何か</a>で確認できます。</p>
+<p class="semicon-one-line">ここまでの一言まとめ：HBMは高性能なほど、放熱・検査・良品率の管理も難しくなります。</p>
+
+<!-- HBM_FIGURE_4_OPTIONAL: 熱・歩留まり・コストの三角関係 -->
+
+<h2>HBMに関わる企業をどう見るか</h2>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>HBMは、どの企業を見れば業界の動きがわかりますか？</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>まずメモリメーカーのSK hynix、Samsung、Micronじゃ。ただしHBMは1社だけで完結せず、パッケージ、装置、材料、検査企業も関わる。</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>メモリ会社のランキングを見るだけでは、全体像を見落とすんですね。</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>そうじゃ。シェアや世代の優劣は時期で変わる。企業ごとの役割を工程で見る方が学びやすい。</p></div></div>
+
+<div class="semicon-note"><p><strong>企業名は理解の入口です。</strong> SK hynix、Samsung、MicronはHBMを理解するうえで重要なメモリ企業ですが、本記事では順位や市場シェアを断定しません。製品認定、供給、世代、顧客構成は変化するため、必要な時点で各社の公式資料を確認してください。</p></div>
+
+<div class="semicon-grid"><div class="semicon-card"><b>メモリメーカー</b><span>DRAM設計・製造、積層、品質保証、顧客認定へつなげます。</span></div><div class="semicon-card"><b>パッケージ・ファウンドリ</b><span>GPUとHBMを高密度に接続する実装基盤を担います。</span></div><div class="semicon-card"><b>装置・材料・検査</b><span>TSV、薄化、接合、成膜、洗浄、計測、欠陥検査を支えます。</span></div></div>
+
+<p>企業を工程別に整理する場合は、<a href="https://semicon-campus.com/semiconductor-company-map-by-process/">半導体の工程別企業マップ</a>へ進んでください。</p>
+<p class="semicon-one-line">ここまでの一言まとめ：HBMはメモリ3社だけでなく、実装・装置・材料・検査企業の共同作業です。</p>
+
+<h2>製造工程・装置・材料・職種へつなげる</h2>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>HBMを作る仕事は、メモリの設計者だけですか？</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>いいや。前工程、TSV、ウェハ薄化、接合、パッケージ設計、熱設計、検査、品質、装置保全まで多くの職種がつながる。</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>HBMは、半導体の工程と仕事を横断して見られるテーマなんですね。</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>その通り。技術用語を工程へ戻すと、企業や職種の役割が見えやすくなる。</p></div></div>
+
+<div class="semicon-grid"><div class="semicon-card"><b>プロセス・装置</b><span>DRAM前工程、TSV、薄化、接合を安定して作る条件と設備を担当します。</span></div><div class="semicon-card"><b>パッケージ・熱設計</b><span>GPUとHBMの配線、電源、接合、放熱をパッケージ全体で設計します。</span></div><div class="semicon-card"><b>検査・品質・解析</b><span>積層前後の欠陥、電気特性、接合部、最終製品の信頼性を確認します。</span></div></div>
+
+<p>半導体製造の位置関係は<a href="https://semicon-campus.com/semiconductor-manufacturing-overview/">半導体製造の全体像</a>、仕事の種類は<a href="https://semicon-campus.com/semiconductor-career-map/">半導体業界の職種マップ</a>で整理できます。</p>
+<p class="semicon-one-line">ここまでの一言まとめ：HBMを理解すると、前工程から先端パッケージまで仕事のつながりが見えます。</p>
+
+<aside class="semicon-career-advisor-bridge" aria-label="半導体10問仕事ナビ">
+  <strong class="semicon-career-advisor-title">技術の興味を、次に調べる仕事へつなげる</strong>
+  <p class="semicon-career-advisor-copy">GPUアーキテクチャ、メモリ設計、先端パッケージ、製造装置、検査・品質など、HBMを支える仕事は多岐にわたります。匿名の10問で、次に読む職種候補を最大3つまで整理できます。採用適性を判定する診断ではありません。</p>
+  <p class="semicon-btn-wrap"><a class="semicon-btn" href="https://semicon-campus.com/semiconductor-career-advisor/?utm_source=website&amp;utm_medium=internal&amp;utm_campaign=career_advisor_pilot&amp;utm_content=hbm_compute_memory_career_advisor_bottom" data-cta="career_advisor" data-cta-stage="career" data-cta-type="career_tool" data-cta-route="hbm_compute_memory_career_advisor_bottom" data-cta-position="bottom" data-source-page-type="technical_article">10問仕事ナビβを試す</a></p>
+</aside>
+
+
+<section class="mp3-section" id="revenue-phase3-learning"><h2>HBMから実装・評価の仕事を比べる</h2><p>HBMの知識を仕事へつなげるには、TSV、薄化、接合、熱、検査のどこで自分の経験が使えそうかを整理します。組立や測定、品質、装置保守の担当範囲を書き出すと、先端パッケージの求人を読む材料になります。機械・電気・品質の基礎を補う学習と技術職相談を併用しましょう。家庭用のメモリを買えばHBMを増設できるという話とは分けて考えます。</p></section>
+
+<h2>よくある疑問</h2>
+<h3>HBMは普通のPCメモリより必ず速い？</h3><p>HBMは非常に広い帯域を得る設計ですが、「すべての処理で必ず速い」とは言えません。処理内容、メモリアクセス、容量、レイテンシ、GPU、ソフトウェアまで含めて実効性能が決まります。</p>
+<h3>HBMの世代名と性能値は覚えるべき？</h3><p>最初は暗記しなくて大丈夫です。世代が進むとインターフェース、積層、データレート、容量、ベースダイなどが変化します。まず「広い帯域」「積層DRAM」「GPUの近く」「先端パッケージ」の4点を押さえ、具体値が必要なときに各社の最新データシートを確認してください。</p>
+<h3>メモリ帯域とメモリ容量は同じですか？</h3><p>違います。帯域は一定時間に運べるデータ量、容量は置いておけるデータ量です。帯域が広くても必要なモデルやデータが容量へ収まるとは限らず、容量が大きくても十分な速さで運べるとは限りません。</p>
+<h3>GPUはいつもメモリ待ちをしていますか？</h3><p>いいえ。メモリ帯域が上限になる処理もあれば、演算器、通信、同期、ソフトウェアなどが上限になる処理もあります。同じGPUでも、計算量とデータ移動量の比率やデータ再利用の仕方で変わります。</p>
+<h3>HBMを増やせばAIは必ず速くなりますか？</h3><p>必ずではありません。帯域や容量を増やす効果は処理内容によって異なります。計算性能、キャッシュ、GPU間通信、モデルの実装、電力・冷却なども含めたシステム全体の釣り合いが必要です。</p>
+
+<h2 id="hbm-summary">まとめ</h2>
+<div class="semicon-note"><p><strong>まず覚える3点</strong></p><ol><li>HBMは、GPUへ大量のデータを渡すDRAM系メモリ</li><li>強みは「一度に運べる量」であるメモリ帯域</li><li>積層DRAM、TSV、先端パッケージが一体になって性能を支える</li></ol></div>
+
+<div class="semicon-links"><div class="semicon-linkbox next"><h3>順番に学ぶ</h3><p><a href="https://semicon-campus.com/semiconductor-beginner-roadmap/">半導体初心者ロードマップへ戻る</a></p><p><a href="https://semicon-campus.com/dram-nand-difference/">HBMの土台になるDRAMを復習する</a></p></div><div class="semicon-linkbox"><h3>次は接続と実装へ</h3><p><a href="https://semicon-campus.com/what-is-advanced-packaging-gpu-hbm/">GPUとHBMを近く広くつなぐ先端パッケージの基礎</a></p><p><a href="https://semicon-campus.com/semiconductor-company-map-by-process/">工程別企業マップを見る</a></p></div></div>
+
+<div class="semicon-map"><h3>次に深掘りするテーマ</h3><ul><li>先端パッケージに関わる設計・材料・接合・検査・熱の仕事</li><li>メモリ半導体の製造工程</li></ul></div>
+
+
+<section class="mp3-section" id="revenue-phase3-career"><h2>この記事の知識を、次の仕事・学習へつなげる</h2><p>接合・組立、熱評価、検査、装置保守の経験を、対象・作業・確認した結果で整理します。担当範囲と必要経験、勤務地、勤務・出張、教育体制を比較すると、次に補う知識も具体的になります。</p><aside class="semicon-cta mp3-card"><h3>関連する職種の仕事内容・求人・学習を見る</h3><p>記事で学んだ技術が、点検・復旧、装置立上げ、顧客対応、実装・工程改善のどの仕事で使われるか確認できます。職種記事の求人・学習の選び方へ進みましょう。</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/" class="semicon-btn mp3-button" data-revenue-phase3-hub="237" data-cta="equipment_hub" data-cta-type="equipment_hub" data-cta-stage="career" data-cta-id="phase3_493_hub237_end" data-cta-route="phase3_493_hub237_end">装置エンジニアの担当範囲・求人・学習を見る</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/advanced-packaging-jobs-career/" class="semicon-btn mp3-button" data-revenue-phase3-hub="651" data-cta="packaging_hub" data-cta-type="packaging_hub" data-cta-stage="career" data-cta-id="phase3_493_hub651_end" data-cta-route="phase3_493_hub651_end">先端パッケージの仕事・求人・学習の選び方を見る</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/" class="semicon-btn mp3-button" data-revenue-phase3-hub="277" data-cta="maintenance_hub" data-cta-type="maintenance_hub" data-cta-stage="career" data-cta-id="phase3_493_hub277_end" data-cta-route="phase3_493_hub277_end">設備保全Hubで仕事内容・求人・学習を確認する</a></div></aside></section>
+
+
+<h2>参考資料</h2>
+<ul><li><a rel="noopener" href="https://docs.nvidia.com/nsight-compute/2025.3/ProfilingGuide/index.html#roofline-charts" target="_blank">NVIDIA Nsight Compute Profiling Guide: Roofline Charts</a></li><li><a rel="noopener" href="https://developer.nvidia.com/blog/accelerating-hpc-applications-with-nsight-compute-roofline-analysis/" target="_blank">NVIDIA Technical Blog: Nsight Compute Roofline Analysis</a></li><li><a rel="noopener" href="https://news.skhynix.com/become-a-semiconductor-expert-with-sk-hynix-hbm/" target="_blank">SK hynix: Become a Semiconductor Expert with HBM</a></li><li><a rel="noopener" href="https://semiconductor.samsung.com/dram/hbm/" target="_blank">Samsung Semiconductor: HBM</a></li><li><a rel="noopener" href="https://www.micron.com/content/dam/micron/global/public/documents/products/product-flyer/hbm3e-product-brief.pdf" target="_blank">Micron: HBM3E Product Brief</a></li><li><a rel="noopener" href="https://3dfabric.tsmc.com/english/dedicatedFoundry/technology/cowos.htm" target="_blank">TSMC 3DFabric: CoWoS</a></li></ul>
+
+<a class="semicon-backtop" href="#semicon-top">↑ 先頭</a>
+</div>
+
+
+<aside class="related-spokes"><h2>あわせて読みたい</h2><ul><li><a href="/sk-hynix-indiana-hbm4e-news/">SK hynix、米国でHBM4E量産へ　40億ドル超のインディアナ工場でAIメモリ供給網を構築</a></li></ul></aside>

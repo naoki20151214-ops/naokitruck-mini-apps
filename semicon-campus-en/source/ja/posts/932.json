@@ -1,0 +1,19 @@
+{
+ "id": 932,
+ "type": "post",
+ "slug": "backside-power-delivery-why-power-moves-to-the-back",
+ "link": "https://semicon-campus.com/backside-power-delivery-why-power-moves-to-the-back/",
+ "date": "2026-09-16T18:00:00",
+ "modified": "2026-10-30T20:02:18",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  8,
+  5
+ ],
+ "tags": [],
+ "featured_media": 2864,
+ "title": "Backside Power Deliveryとは？電源配線をチップの裏側へ移す理由",
+ "excerpt": "Backside Power Deliveryとは何か。先端チップで電源配線を裏側へ分ける理由を、frontsideの配線混雑、IR drop、backside via、ウェハ薄化と量産の難所から初心者向けに解説します。"
+}

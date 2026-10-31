@@ -1,0 +1,29 @@
+<p>2026年10月12日、NVIDIAとCiscoは、AIファクトリー向けの新しいプラガブル光モジュール用フォームファクター「Ultra-Dense Small Form Factor Pluggable（USFP）」を発表しました。これは、AIサーバーやネットワークスイッチの接続を高密度化するための計画・設計段階の共同提案です。量産製品の販売開始や、すでに顧客へ大量出荷したという発表ではありません。<a href="https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m10/nvidia-and-cisco-new-pluggable-optics-to-scale-ai-factories.html">Ciscoの発表</a> <a href="https://nvidianews.nvidia.com/news/nvidia-and-cisco-introduce-new-pluggable-optics-form-factor-to-scale-ai-factories">NVIDIAの発表</a></p>
+<h2>何が発表されたのか</h2>
+<p>USFPは、400Gbps/レーンの電気信号に対応する新しいモジュール形状です。初期計画では、OSFPサイズ相当の筐体に16本のフルデュプレックス・レーンを収め、スイッチとSuperNICの両方で使うことを想定しています。レーンとは、データを運ぶ独立した信号経路です。道路にたとえると、道路の本数を増やすだけでなく、1本あたりの速度も上げる考え方です。<a href="https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m10/nvidia-and-cisco-new-pluggable-optics-to-scale-ai-factories.html">Cisco Newsroom</a></p>
+<p>容量の数字は慎重に読む必要があります。16レーンに400Gbpsを掛けると、片方向では6.4Tbpsです。フルデュプレックスの送信と受信を単純合算すれば12.8Tbpsになります。一方、Ciscoの説明では、初期の16レーンを6.4Tbpsとし、将来の32レーン化によって12.8Tbpsへ拡張する道筋も示されています。したがって、12.8Tbpsを「初期製品の実効速度」と断定することはできません。方向の数え方、初期構成か将来構成か、プロトコルの制御情報を含むかで意味が変わるからです。<a href="https://blogs.cisco.com/news/cisco-and-nvidia-announce-usfp-expanding-the-path-to-ai-connectivity">Ciscoブログ</a> <a href="https://nvidianews.nvidia.com/news/nvidia-and-cisco-introduce-new-pluggable-optics-form-factor-to-scale-ai-factories">NVIDIA Newsroom</a></p>
+<h2>初心者向けの技術用語</h2>
+<h3>プラガブル光モジュール</h3>
+<p>プラガブル光モジュールは、スイッチやネットワークカードに差し込んで使う交換式の部品です。装置内部の電気信号を光信号へ変換し、光ファイバーへ送り出します。故障時や性能更新時にモジュール単位で交換しやすいことが利点です。USFPは、この保守性や交換性を保ちながら、電気側のレーン速度と装置前面の帯域密度を高めようとする構想です。<a href="https://blogs.cisco.com/news/cisco-and-nvidia-announce-usfp-expanding-the-path-to-ai-connectivity">Ciscoブログ</a></p>
+<h3>PAM4とイコライゼーション</h3>
+<p>PAM4は、1回の信号変化で2ビット分の情報を表す変調方式です。高速通信に向いていますが、信号の状態が密集するため、ノイズや波形の崩れに注意が必要です。Ciscoの既存400G QSFP112は、100Gbps/レーンのPAM4を4レーン使う構成で、IEEE 802.3やMSAに基づく運用を想定しています。<a href="https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/400g-qsfp-transceiver-modules-ds.html">Ciscoの400G QSFPデータシート</a></p>
+<p>イコライゼーションは、基板やコネクターを通る間に弱くなった信号を補正し、受信側で読み取りやすくする処理です。レーン速度が上がるほど、伝送損失、反射、補正回路の電力、製造ばらつきが厳しくなります。OIFの技術資料でも、400G/レーン級の接続では、電力、密度、到達距離、コスト、変調、イコライゼーション、相互運用性が課題として扱われています。<a href="https://www.oiforum.com/wp-content/uploads/OIF_CEI_Demo_OFC2025.pdf">OIFの技術資料</a></p>
+<h2>コネクターと電力への狙い</h2>
+<p>USFPでは、モジュールを差し込んだ後に高速信号用の接点を接続する「二段階挿入」と、接点を並べた二次元アレイ構造を採用する計画です。両社は、接点の摩耗を抑え、信号品質を改善し、挿入力を予測しやすくする狙いを説明しています。400Gbps/レーン級では、コネクターの形状や接触状態も通信品質に影響するため、フォームファクター自体が重要な技術要素になります。<a href="https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m10/nvidia-and-cisco-new-pluggable-optics-to-scale-ai-factories.html">Cisco Newsroom</a></p>
+<p>また、両社は最大100Wの電力を、モジュール内に別個の専用内蔵冷却回路を設けずに扱える設計を説明しています。ただし、これは発表された設計仕様であり、実際の量産品がどの温度条件でも同じ性能を出すことや、システム全体の電力が下がることを保証する数値ではありません。光学方式、周囲温度、スイッチ筐体、ラックの冷却能力によって結果は変わります。<a href="https://nvidianews.nvidia.com/news/nvidia-and-cisco-introduce-new-pluggable-optics-form-factor-to-scale-ai-factories">NVIDIA Newsroom</a></p>
+<h2>AI工場で重要になる理由</h2>
+<p>AIファクトリーでは、GPUなどのアクセラレーター、ネットワークスイッチ、ストレージの間で大量のデータを交換します。計算装置を増やしてもネットワークがデータを運びきれなければ、アクセラレーターが待機する時間が増えます。そのため、総帯域だけでなく、限られたスイッチ前面にどれだけの接続を収められるか、電力と冷却を抑えられるか、故障時に交換できるかが重要です。</p>
+<p>USFPが実用化すれば、同じ装置面積により多くの接続帯域を配置できる可能性があります。プラガブル方式を維持できれば、装置全体を交換せずに光モジュールを保守できる利点も期待できます。ただし、「ネットワーク階層を減らせる」「AI工場の性能が必ず向上する」といった効果は、実際のトポロジー、光ファイバーの距離、スイッチポート構成、冷却設備に依存します。今回の発表だけで確定した効果ではありません。<a href="https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m10/nvidia-and-cisco-new-pluggable-optics-to-scale-ai-factories.html">Cisco Newsroom</a></p>
+<h2>標準化と量産化はこれから</h2>
+<p>TE ConnectivityとAmphenolは、USFPのケージ、コネクター、モジュール開発に協力するとされています。NVIDIAとCiscoは追加企業の参加を見込み、コミュニティ主導のマルチソース・プロジェクトを通じてオープンな業界仕様を作る計画を示しました。複数の供給元が参加すれば、調達や保守の選択肢を広げられる可能性がありますが、現時点で完成した業界標準になったわけではありません。<a href="https://nvidianews.nvidia.com/news/nvidia-and-cisco-introduce-new-pluggable-optics-form-factor-to-scale-ai-factories">NVIDIA Newsroom</a></p>
+<p>2026年10月13日時点で、正式なUSFP仕様書、量産開始日、製品型番、価格、実際の光学方式、到達距離、顧客の量産採用、相互運用試験、独立した性能検証は確認できません。12.8Tbps、帯域密度4倍、電力効率約1.3倍、最大100Wはいずれも発表資料に基づく設計値または会社側の比較・計画です。第三者が量産環境で測定した確定性能として扱うべきではありません。<a href="https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m10/nvidia-and-cisco-new-pluggable-optics-to-scale-ai-factories.html">Cisco Newsroom</a> <a href="https://nvidianews.nvidia.com/news/nvidia-and-cisco-introduce-new-pluggable-optics-form-factor-to-scale-ai-factories">NVIDIA Newsroom</a></p>
+<h2>これから確認したいこと</h2>
+<p>今後は、正式仕様の公開、他社スイッチやNICとの相互運用試験、初期サンプルの実測値、熱設計、歩留まり、価格、実際の顧客採用を確認する必要があります。特に、400Gbps/レーンという目標が安定動作と交換性を両立できるか、12.8Tbpsがどのレーン構成と方向定義で示されるのかが重要です。今回のニュースは、完成品の発売というより、AIネットワークの次世代接続をめぐる共同設計とエコシステム形成の開始と見るのが適切です。</p>
+<h2>出典</h2>
+<ul>
+<li><a href="https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m10/nvidia-and-cisco-new-pluggable-optics-to-scale-ai-factories.html">Cisco Newsroom：NVIDIA and Cisco Introduce New Pluggable Optics Form Factor to Scale AI Factories</a></li>
+<li><a href="https://nvidianews.nvidia.com/news/nvidia-and-cisco-introduce-new-pluggable-optics-form-factor-to-scale-ai-factories">NVIDIA Newsroom：NVIDIA and Cisco Introduce New Pluggable Optics Form Factor to Scale AI Factories</a></li>
+<li><a href="https://blogs.cisco.com/news/cisco-and-nvidia-announce-usfp-expanding-the-path-to-ai-connectivity">Cisco Blogs：Cisco and NVIDIA Announce USFP</a></li>
+<li><a href="https://www.cisco.com/c/en/us/products/collateral/interfaces-modules/400g-qsfp-transceiver-modules-ds.html">Cisco：400G QSFP Transceiver Modules Data Sheet</a></li>
+<li><a href="https://www.oiforum.com/wp-content/uploads/OIF_CEI_Demo_OFC2025.pdf">Optical Internetworking Forum：448G, 224G, 112G CEI Interoperability Demo</a></li>
+</ul>

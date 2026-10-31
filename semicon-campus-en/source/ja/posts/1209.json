@@ -1,0 +1,18 @@
+{
+ "id": 1209,
+ "type": "post",
+ "slug": "abatement-scrubber",
+ "link": "https://semicon-campus.com/abatement-scrubber/",
+ "date": "2026-10-03T18:00:00",
+ "modified": "2026-10-30T21:32:35",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  21
+ ],
+ "tags": [],
+ "featured_media": 2794,
+ "title": "半導体工場の除害装置（Abatement）とは？危険な排ガスの処理の仕組み",
+ "excerpt": "危険な排ガスはどこへ行く？、半導体工場のAbatementを追う 半導体工場のエッチングや成膜では、投入したプロセスガスのすべてがウェハ上で反応するとは限りません。装置から出る排気には、未反応の原料、反応生成物、粉体、凝 […]"
+}

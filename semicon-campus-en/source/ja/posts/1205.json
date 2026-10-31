@@ -1,0 +1,18 @@
+{
+ "id": 1205,
+ "type": "post",
+ "slug": "rf-matching-network",
+ "link": "https://semicon-campus.com/rf-matching-network/",
+ "date": "2026-09-29T18:00:00",
+ "modified": "2026-10-30T21:32:35",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  21
+ ],
+ "tags": [],
+ "featured_media": 2813,
+ "title": "RFマッチングネットワーク（整合器）とは？反射電力が増える理由",
+ "excerpt": "RFマッチングはなぜ必要？反射電力が増える理由 半導体装置では、電源の数字が同じでも、チャンバーへ届く電力の条件が変わることがあります。その変化を放置すると、プラズマの状態や装置の保護動作を読み違えるおそれがあります。答 […]"
+}

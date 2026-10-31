@@ -1,0 +1,93 @@
+<article class="semicon-template-v2 sc-lesson" data-slug="semiconductor-wafer-contamination-types" data-target="new_post" data-course="洗浄コース3級-2">
+<!--KEEP:0-->
+<div class="sc-head"><span class="sc-head-ico"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="56" height="56"><rect width="120" height="120" rx="26" fill="#12634f"/><g transform="translate(10 10)" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M50 14C50 14 26 44 26 60a24 24 0 0048 0C74 44 50 14 50 14z"/><path d="M40 62a10 10 0 0010 10" stroke="#e8a317"/><path d="M78 20l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="#e8a317" stroke="none"/></g></svg></span><span class="sc-head-txt"><span class="sc-head-sub">SEMICON CAMPUS 無料講座</span><b>洗浄コース</b><span class="sc-head-lv">3級 入門 ・ 第2講</span></span></div>
+<div class="semicon-hook">
+<p>前回は、洗浄が工程の約5分の1を占めることを見ました。では、落としたい「汚れ」とは、何でしょうか。</p>
+<p>じつは、汚れは大きく<strong>4種類</strong>に分けて考えます。種類ごとに、害のしかたも、落とし方もちがうからです。</p>
+</div>
+<div class="sc-legend"><mark class="sc-exam">黄色のマーカー</mark> ＝ この講座のテストに出す重要ポイント</div>
+<h2>この記事でわかること</h2>
+<ul>
+<li><strong>汚れの4種類</strong>（粒子・有機物・金属・自然酸化膜）</li>
+<li><strong>それぞれが、どんな悪さをするのか</strong></li>
+<li><strong>どんな方法で落とすのか</strong>（くわしくは、次回以降）</li>
+</ul>
+<figure><svg viewBox="0 0 640 250" role="img" aria-label="汚れの4種類">
+<rect x="0" y="0" width="150" height="250" rx="12" fill="#e8f0fc" stroke="#1f5fbf" stroke-width="2"/>
+<text x="75" y="34" font-size="17" font-weight="700" fill="#1f5fbf" text-anchor="middle">①粒子</text>
+<circle cx="45" cy="95" r="10" fill="#1f5fbf"/><circle cx="85" cy="75" r="6" fill="#1f5fbf"/><circle cx="105" cy="115" r="8" fill="#1f5fbf"/><circle cx="60" cy="140" r="5" fill="#1f5fbf"/>
+<text x="75" y="190" font-size="13" fill="#1b2430" text-anchor="middle">ごみ・ほこり</text><text x="75" y="210" font-size="13" fill="#1b2430" text-anchor="middle">→ ショート・断線</text>
+<rect x="163" y="0" width="150" height="250" rx="12" fill="#fff4e0" stroke="#e8a317" stroke-width="2"/>
+<text x="238" y="34" font-size="17" font-weight="700" fill="#b87800" text-anchor="middle">②有機物</text>
+<path d="M190 100c20-30 40 30 60 0s30-20 40 0" fill="none" stroke="#b87800" stroke-width="6" stroke-linecap="round"/><path d="M190 135c20-30 40 30 60 0s30-20 40 0" fill="none" stroke="#b87800" stroke-width="6" stroke-linecap="round"/>
+<text x="238" y="190" font-size="13" fill="#1b2430" text-anchor="middle">油・レジスト残り</text><text x="238" y="210" font-size="13" fill="#1b2430" text-anchor="middle">→ 膜がつかない</text>
+<rect x="326" y="0" width="150" height="250" rx="12" fill="#fde9ec" stroke="#d6455d" stroke-width="2"/>
+<text x="401" y="34" font-size="17" font-weight="700" fill="#d6455d" text-anchor="middle">③金属</text>
+<path d="M370 70l15 15-15 15-15-15z M410 100l15 15-15 15-15-15z M385 125l12 12-12 12-12-12z" fill="#d6455d"/>
+<text x="401" y="190" font-size="13" fill="#1b2430" text-anchor="middle">鉄・銅・ナトリウムなど</text><text x="401" y="210" font-size="13" fill="#1b2430" text-anchor="middle">→ 電気の特性が狂う</text>
+<rect x="489" y="0" width="150" height="250" rx="12" fill="#e9f6ee" stroke="#2e9e5b" stroke-width="2"/>
+<text x="564" y="34" font-size="17" font-weight="700" fill="#2e9e5b" text-anchor="middle">④自然酸化膜</text>
+<rect x="510" y="110" width="108" height="14" fill="#9fd8b5"/><rect x="510" y="124" width="108" height="40" fill="#cfd8e3"/>
+<text x="564" y="102" font-size="12" fill="#1b2430" text-anchor="middle">うすい酸化膜</text>
+<text x="564" y="190" font-size="13" fill="#1b2430" text-anchor="middle">空気にふれてできる</text><text x="564" y="210" font-size="13" fill="#1b2430" text-anchor="middle">→ 接触が悪くなる</text>
+</svg><figcaption>図1　ウェハの汚れ4種類のイメージ（模式図）</figcaption></figure>
+<h2 data-fact-ids="W05">① 粒子（パーティクル）</h2>
+<p>空気中のほこりや、装置から出る小さなかけらです。前回見たとおり、回路の細い線をつないだり、ふさいだりして、<strong>ショートや断線</strong>の原因になります。スウェーデンの王立工科大学（KTH）の講義資料では、「致命的な不良になる粒子の大きさは、最小の線の幅の2分の1」と書かれています。前回のノースイースタン大学の解説では「約4分の1」でした。<mark class="sc-exam">資料によって、不良になる粒子の大きさの目安は、線の幅の約4分の1〜2分の1とされます</mark>。</p>
+<div class="sc-box sc-ev"><b class="t">根拠</b><p>KTH（スウェーデン王立工科大学）の講義「Wafer Clean and Wet Processing」（Mikael Östling、2012年）。KTHの資料では最小の線の幅の2分の1、ノースイースタン大学の解説では約4分の1と、資料でちがいがあります。</p></div>
+<div class="sc-box sc-num"><b class="t">数字で考えてみよう</b><p>KTHの資料の表では、最小の線の幅が65ナノメートル（2007年）、45ナノメートル（2010年）、32ナノメートル（2013年）と小さくなっていきます。</p><p>2分の1の目安で考えると、65 ÷ 2 ＝ <strong>32.5ナノメートル</strong>、32 ÷ 2 ＝ <strong>16ナノメートル</strong>。線が細くなるほど、気にする粒子もどんどん小さくなります。</p></div>
+<details class="semicon-quiz"><summary>確認クイズ：粒子が「ショートや断線」を起こすのは、なぜでしょう？</summary><p>答え：回路の細い線のあいだをつないだり、線をふさいだりするからです。</p></details>
+<h2 data-fact-ids="W06">② 有機物</h2>
+<p>油のよごれ、空気中の有機物の蒸気、保管容器から出るもの、そしてフォトレジスト（光で回路の形をつくる材料）の残りなどです。KTHの資料は、有機物の主な発生源として、<mark class="sc-exam">空気中の有機物の蒸気・保管容器・フォトレジストの残り</mark>をあげています。</p>
+<div class="sc-box sc-why"><b class="t">なぜ、有機物は困るのか？</b><p>有機物の膜が残っていると、その上に、次の膜がうまくつきません。また、あとの高温の工程で、汚れがウェハの中に入りこむおそれがあります。KTHの資料も、「高温の工程は、汚れをシリコンや薄い膜の中に押しこむ」と注意しています。</p></div>
+<p>落とし方は、<mark class="sc-exam">強い酸化力で、有機物を二酸化炭素と水に変える</mark>のが基本です。たとえば、硫酸と過酸化水素水を混ぜた液（ピラニア液）や、オゾンを使う方法があります。</p>
+<details class="semicon-quiz"><summary>確認クイズ：有機物が残ったまま高温の工程に進むと、何が起こるおそれがありますか？</summary><p>答え：汚れが、ウェハや薄い膜の中に入りこむおそれがあります。</p></details>
+<h2 data-fact-ids="W07">③ 金属</h2>
+<p>鉄、銅、ニッケル、クロム、アルカリ金属（ナトリウムなど）です。KTHの資料では、金属汚れの発生源は、薬品や、イオン注入、ドライエッチングなどの工程だと説明されています。金属汚れの量の桁の例として、<mark class="sc-exam">1平方センチメートルあたり10の10乗個（1億の100倍）程度の原子</mark>という数字が示されています。</p>
+<div class="sc-box sc-num"><b class="t">数字で考えてみよう</b><p>直径300ミリメートルのウェハの面積は、半径15センチメートルから、3.14 × 15 × 15 ≒ <strong>707平方センチメートル</strong>です。</p><p>1平方センチメートルあたり10の10乗個なら、ウェハ全体で 10の10乗 × 707 ≒ <strong>7 × 10の12乗個</strong>（約7兆個）の原子になります。目に見えない量でも、数としては、とても多いのです。</p></div>
+<div class="sc-box sc-why"><b class="t">なぜ、ごく少量の金属でも困るのか？</b><p>金属の原子は、シリコンの中で電気の流れ方を変えてしまいます。そのため、トランジスタの特性が、設計からずれる原因になります。落とし方は、<mark class="sc-exam">酸性の液で金属を溶かし、くっつき直さないようにする</mark>のが基本です。</p></div>
+<details class="semicon-quiz"><summary>確認クイズ：金属の汚れは、おもにどんな工程や薬品から入りますか？</summary><p>答え：薬品や、イオン注入、ドライエッチングなどの工程からです。</p></details>
+<h2 data-fact-ids="W08">④ 自然酸化膜</h2>
+<p>シリコンは、空気や水にふれると、表面にごくうすい酸化膜が、すぐにできます。これを<strong>自然酸化膜</strong>といいます。KTHの資料は、<mark class="sc-exam">自然酸化膜が引き起こす問題</mark>として、次の4つをあげています。</p>
+<ul>
+<li>電気の接触の抵抗が、大きくなる</li>
+<li>選択的に膜を育てる成膜（CVDやエピタキシー）が、むずかしくなる</li>
+<li>金属汚れの、発生源になる</li>
+<li>金属とシリコンの化合物（シリサイド）が、つくりにくくなる</li>
+</ul>
+<div class="sc-box sc-num"><b class="t">数字で考えてみよう</b><p>自然酸化膜は、フッ酸（HF）を水でうすめた液で落とします。KTHの資料に出ている<mark class="sc-exam">うすめ方は、フッ酸：水＝1：50</mark>です。</p><p>全体は 1 ＋ 50 ＝ 51 なので、フッ酸の割合は 1 ÷ 51 ≒ <strong>約2％</strong>。ほとんどが水で、かなり薄い液です。</p></div>
+<div class="sc-box sc-why"><b class="t">なぜ、落としてもまた問題になるのか？</b><p>自然酸化膜は、<strong>空気や水にふれると、すぐにまたできる</strong>からです。だから、落としたら、できるだけ早く次の工程に進めることが大切です。</p></div>
+<details class="semicon-quiz"><summary>確認クイズ：自然酸化膜を落とすために使うのは、何をうすめた液でしょう？</summary><p>答え：フッ酸（HF）を、水でうすめた液です。</p></details>
+<div class="sc-box sc-key"><b class="t">この講のポイント</b><p>汚れは、粒子・有機物・金属・自然酸化膜の4種類。害のしかたも、落とし方もそれぞれちがう。だから、洗浄では、種類ごとに液や方法を使い分ける。</p></div>
+<table style="width:100%;border-collapse:collapse;font-size:.9em;margin:1em 0">
+<tr style="background:#e8f0fc"><th style="border:1px solid #d5dbe2;padding:6px">汚れ</th><th style="border:1px solid #d5dbe2;padding:6px">おもな害</th><th style="border:1px solid #d5dbe2;padding:6px">落とし方（概要）</th></tr>
+<tr><td style="border:1px solid #d5dbe2;padding:6px">粒子</td><td style="border:1px solid #d5dbe2;padding:6px">ショート・断線</td><td style="border:1px solid #d5dbe2;padding:6px">アルカリ性の液、超音波など</td></tr>
+<tr><td style="border:1px solid #d5dbe2;padding:6px">有機物</td><td style="border:1px solid #d5dbe2;padding:6px">膜がつかない、汚れの押しこみ</td><td style="border:1px solid #d5dbe2;padding:6px">強い酸化（硫酸＋過酸化水素水、オゾンなど）</td></tr>
+<tr><td style="border:1px solid #d5dbe2;padding:6px">金属</td><td style="border:1px solid #d5dbe2;padding:6px">電気特性のずれ</td><td style="border:1px solid #d5dbe2;padding:6px">酸性の液（塩酸＋過酸化水素水）</td></tr>
+<tr><td style="border:1px solid #d5dbe2;padding:6px">自然酸化膜</td><td style="border:1px solid #d5dbe2;padding:6px">接触不良、金属の発生源</td><td style="border:1px solid #d5dbe2;padding:6px">うすめたフッ酸</td></tr>
+</table>
+<p>次の記事では、これらを落とす液の組み合わせ、RCA洗浄を、くわしく見ていきます。</p>
+<h2>ことばのおさらい</h2>
+<ul>
+<li><strong>パーティクル：</strong>ウェハについた、ごく小さなごみの粒です。</li>
+<li><strong>フォトレジスト：</strong>光で回路の形をつくるときに使う、感光する材料です。</li>
+<li><strong>自然酸化膜：</strong>空気や水にふれて、表面にできる、ごくうすい酸化膜です。</li>
+<li><strong>フッ酸（HF）：</strong>自然酸化膜を落とす、うすめて使う薬品です。</li>
+</ul>
+<h2>よくある誤解</h2>
+<h3>Q. 汚れは、ごみのことだけですか？</h3>
+<p>いいえ。粒子のほかに、目に見えない有機物、金属、うすい酸化膜も、汚れとして扱います。</p>
+<h3>Q. 一度きれいにすれば、そのままで大丈夫ですか？</h3>
+<p>いいえ。自然酸化膜のように、空気にふれるとまたできるものがあります。</p>
+<h2>参考にした公式情報</h2>
+<ul class="semicon-sources sc-sources">
+<li data-source-id="S03"><a href="https://www.kth.se/social/upload/4f1d17ccf27654791f000000/Lecture%203.pdf">KTH Royal Institute of Technology, IH2655「Lecture 3: Wafer Clean and Wet Processing」（Mikael Östling、2012年春）</a></li>
+<li data-source-id="S01"><a href="https://cmc.sites.northeastern.edu/an-introduction-to-semiconductor-manufacturing-and-contamination-issues-control">Northeastern University「An Introduction to Semiconductor Manufacturing and Contamination Issues Control」（2013年更新の注記あり）</a></li>
+</ul>
+</article>
+
+
+<div id="sc-read" style="max-width:720px;margin:28px auto 0"></div>
+<!--KEEP:1-->
+<!--KEEP:2-->
+
+<aside class="course-nav-wash3"><h2>洗浄3級コースの他の講義</h2><p><a href="/wash-3/">洗浄3級コース一覧へ戻る</a></p><ul><li><a href="/semiconductor-why-wafer-cleaning/">半導体洗浄はなぜ何度も必要？洗浄工程の役割と理由</a></li><li><a href="/rca-clean-sc1-sc2/">半導体洗浄の基本「RCA洗浄」：SC-1とSC-2の中身と順番の理由</a></li><li><a href="/wet-cleaning-problems-dry-cleaning/">半導体洗浄の課題：洗いすぎのリスクとドライ洗浄</a></li><li><a href="/wafer-cleanliness-measurement/">半導体洗浄の評価方法：粒子・金属・有機物の測り方</a></li><li><a href="/cleanroom-class-contamination-sources/">クリーンルームのクラス規格（ISO 14644-1・米国連邦規格）の読み方とFFU・ULPAフィルタ【洗浄3級・第1講 補講】</a></li><li><a href="/native-oxide-hf-last-hydrogen-termination/">自然酸化膜はどのくらいで戻る？フッ酸のあとの表面と「水素終端」【洗浄3級・第2講 補講】</a></li><li><a href="/rca-clean-history-sc1-particle-removal/">SC-1洗浄（APM）のメカニズム｜ゼータ電位とアンモニア・過酸化水素水でパーティクルを除去する原理【洗浄3級・第3講 補講】</a></li><li><a href="/batch-vs-single-wafer-cleaning-one-bath/">バッチ洗浄と枚葉洗浄のちがい：複数槽から1槽方式への進化【洗浄3級・第4講 補講】</a></li><li><a href="/txrf-total-reflection-xray-fluorescence-basics/">TXRFの仕組み：全反射で、ウェハ表面の金属を測る【洗浄3級・第5講 補講】</a></li><li><a href="/ultrapure-water-rinse-drying-watermark/">半導体ウェハ乾燥（マランゴニ乾燥・IPA乾燥）とウォーターマーク対策｜超純水のすすぎと乾燥</a></li><li><a href="/wafer-cleaning-chemical-safety-hydrofluoric-acid/">洗浄で使う薬液の安全：フッ酸は、痛くなくても危険</a></li></ul><p>洗浄装置メーカーを知りたい方は、<a href="/what-is-screen-semiconductor-cleaning-equipment/">SCREENとは何がすごい？半導体洗浄装置と関わる工程・職種を初心者向けに解説</a>もどうぞ。</p></aside>

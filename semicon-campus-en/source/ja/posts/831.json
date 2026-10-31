@@ -1,0 +1,20 @@
+{
+ "id": 831,
+ "type": "post",
+ "slug": "how-transistors-create-zero-and-one",
+ "link": "https://semicon-campus.com/how-transistors-create-zero-and-one/",
+ "date": "2026-09-10T19:30:00",
+ "modified": "2026-10-30T21:22:57",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  2
+ ],
+ "tags": [
+  18
+ ],
+ "featured_media": 2877,
+ "title": "トランジスタはどうやって0と1を作るのか？電圧からCPUまでの仕組み",
+ "excerpt": "トランジスタが0と1そのものになるのではなく、ゲート電圧で電流の通り道を制御し、回路ノードのHighとLowを論理値へ変換する仕組みを、CMOSインバータからCPUまで初心者向けに解説します。"
+}

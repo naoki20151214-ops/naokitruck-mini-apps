@@ -1,0 +1,212 @@
+<!--KEEP:0-->
+<div class="semicon-article" id="semicon-top">
+<div class="semicon-level">
+<div class="semicon-level-top"><span class="semicon-level-label">学習レベル</span><strong class="semicon-stars" aria-label="初級（5段階中の1）"><span class="on">★</span><span class="off">☆☆☆☆</span><span>初級</span></strong></div>
+</div>
+<div class="semicon-lead">
+<p>スマホの充電器が、昔より小さくなったと感じたことはありませんか。新しい充電器は、小さくて軽いのに、素早く充電できるものが増えています。その理由のひとつは、充電器の中の半導体の材料にあります。</p>
+<p>電気の流れを調整する半導体は「パワー半導体」と呼ばれ、長いあいだ、シリコンで作られてきました。いま、そこに、「シリコンカーバイド（SiC）」と「窒化ガリウム（GaN）」という新しい材料が加わっています。この記事では、その違いと理由を、順に説明します。</p>
+</div>
+<div class="semicon-note">
+<p>充電器が小さくなった理由は、ほかにもあります。この記事は、そのうち、半導体の材料に関係する部分だけを取り上げます。</p>
+</div>
+<div class="semicon-map">
+<h3>この記事でわかること</h3>
+<ol>
+<li><strong>この記事の目的：</strong>シリコンカーバイドと窒化ガリウムが、なぜパワー半導体に使われるのかを、つかむこと</li>
+<li><strong>前半：</strong>パワー半導体の役割と、電力損失、シリコンの限界</li>
+<li><strong>後半：</strong>バンドギャップと絶縁破壊電界、シリコンカーバイドと窒化ガリウムの特長</li>
+</ol>
+</div>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep114-blog-ep114-05-charger.jpg" alt="小さな新しい充電器と、大きくて古い充電器を、机の上に並べたイメージ"><figcaption>新旧の充電器を並べたイメージ。実際の製品ではありません。 EP114 記事用画像（AI生成）。生成画像を縮小し、JPEGに最適化。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>新しい充電器は、小さい</li>
+<li>古い充電器は、大きい</li>
+<li>材料の違いが、関わっている</li>
+</ul>
+</div>
+<div class="semicon-chat-row naoki">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">助手</div>
+</div>
+<div class="semicon-bubble">
+<p>博士、充電器が小さくなったのは、半導体の材料が関係しているんですか？</p>
+</div>
+</div>
+<div class="semicon-chat-row teacher">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">博士</div>
+</div>
+<div class="semicon-bubble">
+<p>そうじゃ。電気の流れを調整する半導体の材料が、シリコンから、新しいものに変わりはじめたんじゃ。</p>
+</div>
+</div>
+<div class="semicon-chat-row naoki">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">助手</div>
+</div>
+<div class="semicon-bubble">
+<p>新しい材料だと、何がよいんですか？</p>
+</div>
+</div>
+<div class="semicon-chat-row teacher">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">博士</div>
+</div>
+<div class="semicon-bubble">
+<p>熱になって失われる電気が減って、部品も小さくできるんじゃ。順に、見ていこう。</p>
+</div>
+</div>
+<h2 class="wp-block-heading" data-fact-ids="C01">充電器が小さくなった理由は、半導体の材料</h2>
+<p>STマイクロエレクトロニクスの解説では、窒化ガリウムを使った半導体は、スマホやパソコンの充電器や電源アダプターに向いている、と紹介されています。変換効率が上がり、小型になり、同じ大きさで扱える電力が大きくなる、というのが理由です。<strong class="semicon-key">充電器の小型化には、半導体の材料が関わっています。</strong></p>
+<details class="semicon-quiz">
+<summary>確認クイズ：充電器の小型化に関わっているのは、半導体の何でしょう？</summary>
+<p>答え：半導体の材料です。窒化ガリウムなどの新しい材料が使われはじめています。</p>
+</details>
+<h2 class="wp-block-heading" data-fact-ids="C02">電気の流れを調整する「パワー半導体」</h2>
+<p>パワー半導体は、電気の流れを、うまく調整する半導体です。京都大学の用語解説では、半導体を使って電力を都合のよい形にして、自由に制御する技術が「パワーエレクトロニクス」と説明されています。家庭用の電気製品から、産業、鉄道、電力のシステムまで、幅広く使われています。たとえば、スマホの充電器、電車、電気自動車を充電する設備などです。</p>
+<details class="semicon-quiz">
+<summary>確認クイズ：パワー半導体は、何をする半導体でしょう？</summary>
+<p>答え：電気の流れを、うまく調整する半導体です。</p>
+</details>
+<h2 class="wp-block-heading" data-fact-ids="C03">調整のたびに、一部の電気が熱になる「電力損失」</h2>
+<p>ところが、電気の流れを調整するたびに、一部の電気が、熱になって失われてしまいます。これが「電力損失」です。EE Times Japanの記事では、出力電流が大きくなるほど損失が増えるため、それを抑える方法として、損失の少ない材料に変えることが期待されている、と説明されています。損失が多いと、電池が早く減るうえ、熱を逃がす工夫も、たくさん必要になります。</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep114-blog-01-loss.png" alt="パワー半導体で電気の流れを調整するたびに、一部の電気が熱になって失われる電力損失の概念図"><figcaption>電力損失の流れを表した模式図。入る電気の数字は、考え方を示すための例で、実測値ではありません。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>電気の流れを、調整する</li>
+<li>一部が、熱になって失われる</li>
+<li>これが、電力損失</li>
+</ul>
+</div>
+<details class="semicon-quiz">
+<summary>確認クイズ：電力損失で、失われた電気は、何になるでしょう？</summary>
+<p>答え：熱になります。</p>
+</details>
+<h2 class="wp-block-heading" data-fact-ids="C04">シリコンの限界と、新しい材料</h2>
+<p>パワー半導体には、これまで、主にシリコンが使われてきました。東芝の解説では、シリコンのMOSFET（電気のスイッチ）は、1000ボルトほどまでしか製品になっていないのに対し、シリコンカーバイドのMOSFETは、3300ボルトほどまで製品になっています。強い電圧に耐えようとすると、電気が通るときの抵抗が大きくなりやすいのです。EE Times Japanの記事（2019年）では、シリコンカーバイドのパワーデバイスは、すでに、家電用、産業用、自動車用、鉄道用、電力用で、実用化が進んでいる、と説明されています。</p>
+<p>そこで、シリコンよりもバンドギャップの広い、「ワイドギャップ」と呼ばれる材料が使われはじめました。EE Times Japanの記事では、その代表として、シリコンカーバイド（SiC）と窒化ガリウム（GaN）が挙げられています。半導体は、ウェハと呼ばれる、薄くて丸い板から作られます。そのウェハの材料を、シリコンから、これらの新しい材料に変える、ということです。</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep114-blog-ep114-06-wafer.jpg" alt="暗い色のシリコンカーバイドのウェハと、淡い色の窒化ガリウムのウェハを、並べたイメージ"><figcaption>新しい材料のウェハのイメージ。実際のウェハの色や形ではありません。 EP114 記事用画像（AI生成）。生成画像を縮小し、JPEGに最適化。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>新しい材料の、ウェハ</li>
+<li>シリコンカーバイドと、窒化ガリウム</li>
+<li>どちらも、バンドギャップが広い</li>
+</ul>
+</div>
+<details class="semicon-quiz">
+<summary>確認クイズ：シリコンのかわりに使われはじめた、2つの材料は何でしょう？</summary>
+<p>答え：シリコンカーバイド（SiC）と、窒化ガリウム（GaN）です。</p>
+</details>
+<h2 class="wp-block-heading" data-fact-ids="C05">バンドギャップと「絶縁破壊電界」</h2>
+<p>バンドギャップは、電子が動けるようになるために越える必要がある、エネルギーの幅のことです。東芝の解説では、シリコンカーバイドは、バンドギャップが大きく、原子どうしの結びつきも強いため、強い電圧がかかっても壊れにくい、と説明されています。この壊れにくさを「絶縁破壊電界」といいます。京都大学の用語解説では、シリコンカーバイドは、バンドギャップがシリコンの約3倍、絶縁破壊電界が約10倍、熱伝導率が約3倍とされています。</p>
+<p>原子どうしが強く結びついている材料ほど、電子は固く押さえられていて、動き出すのに大きなエネルギーが必要です。<strong class="semicon-key">電子が動きにくいので、強い電圧がかかっても、壊れにくくなります。</strong></p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep114-blog-02-bandgap.png" alt="シリコンよりバンドギャップが広いと、電子が動き出しにくく、強い電圧に強くなることを示した概念図"><figcaption>バンドギャップの広さと、電圧への強さを表した模式図。壁の高さは、説明用のイメージです。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>壁が高いと、電子は動きにくい</li>
+<li>強い電圧がかかっても、壊れにくい</li>
+<li>それが、絶縁破壊電界</li>
+</ul>
+</div>
+<details class="semicon-quiz">
+<summary>確認クイズ：バンドギャップが広い材料は、強い電圧に強いでしょうか、弱いでしょうか？</summary>
+<p>答え：強いです。電子が動きにくいので、壊れにくくなります。</p>
+</details>
+<h2 class="wp-block-heading" data-fact-ids="C06">薄い層で損失を減らす、シリコンカーバイド</h2>
+<p>EE Times Japanの記事によると、ワイドギャップ半導体は、絶縁破壊電界がシリコンの10倍前後と高いため、電圧に耐えるための層を、約10分の1に薄くできます。層が薄いと、電気が通るときの抵抗が小さくなり、損失が減ります。<strong class="semicon-key">強い電圧に耐えられるから、層を薄くでき、損失も減らせる</strong>のです。</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep114-blog-03-thin.png" alt="絶縁破壊電界が約10倍だと、電圧に耐えるための層を約10分の1に薄くでき、抵抗と損失が減ることを示した概念図"><figcaption>電圧に耐えるための層の厚さを比べた模式図。厚さの比は、約10分の1という目安を示す説明用の図です。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>耐える層を、約10分の1にできる</li>
+<li>層が薄いと、抵抗が小さい</li>
+<li>損失が、減る</li>
+</ul>
+</div>
+<p>東芝の解説によると、シリコンカーバイドのMOSFETは、電子だけで動くため、スイッチを切るときの損失が小さくなります。高い周波数でも動かせるので、トランスなどの部品を小さくする効果もあります。また、高い温度にも強く、EE Times Japanによると、シリコンの上限は、125〜150℃ほどですが、ワイドギャップ半導体では、175〜200℃が当面の目標です。電車のモーターを動かす装置に使った例では、損失が減り、大きさと重さも小さくなりました。</p>
+<details class="semicon-quiz">
+<summary>確認クイズ：絶縁破壊電界が高いと、電圧に耐えるための層は、どうなるでしょう？</summary>
+<p>答え：約10分の1に薄くできます。そのぶん、抵抗が小さくなり、損失が減ります。</p>
+</details>
+<h2 class="wp-block-heading" data-fact-ids="C07">速く切り替える、窒化ガリウム</h2>
+<p>窒化ガリウムは、バンドギャップが3.4電子ボルトと広く、電子がきわめて動きやすい材料です。STマイクロエレクトロニクスの解説では、そのため、抵抗が低く、スイッチを切り替える速さ（スイッチング周波数）も高い、と説明されています。切り替えが速いと、トランスなどの部品を、小さくできます。</p>
+<p>同じ解説では、窒化ガリウムは、より低い電圧と小さな電力で、きわめて速い切り替えが必要な用途に最適とされ、電源アダプターや、電気自動車の車載充電器などの例が挙げられています。つまり、強い電圧や大きな電力にはシリコンカーバイド、小さくて速い電源には窒化ガリウム、と使い分けられています。</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep114-blog-04-usage.png" alt="強い電圧や大きな電力にはシリコンカーバイド、小さくて速い電源には窒化ガリウムという使い分けを示した概念図"><figcaption>シリコンカーバイドと窒化ガリウムの使い分けを表した模式図。説明用の図です。</figcaption></figure>
+<div class="semicon-mobile-summary"><b>図の要点</b></p>
+<ul>
+<li>強い電圧には、シリコンカーバイド</li>
+<li>小さくて速い電源には、窒化ガリウム</li>
+<li>材料で、使い分ける</li>
+</ul>
+</div>
+<details class="semicon-quiz">
+<summary>確認クイズ：充電器のような、小さくて速い電源に向いているのは、どちらでしょう？ ①シリコンカーバイド　②窒化ガリウム</summary>
+<p>答え：②の、窒化ガリウムです。</p>
+</details>
+<div class="semicon-cta">
+<h3>工程を担当する仕事を、知る</h3>
+<p>この工程を担当する仕事を知りたい方は、こちらの記事も読んでみてください。</p>
+<div class="semicon-btnrow"><a class="semicon-btn" href="https://semicon-campus.com/semiconductor-career-map/">半導体製造の仕事を工程別に見てみる</a></div>
+</div>
+<p>製造の全体像は、<a href="https://semicon-campus.com/semiconductor-manufacturing-overview/">半導体の製造工程の全体像</a>で紹介しています。なお、設備の調整や復旧は、所属する工場やメーカーの正式な手順と、権限のある人の判断のもとで行います。この記事は、考え方の紹介で、設備の操作を指示するものではありません。</p>
+<h2 class="wp-block-heading">ことばのおさらい</h2>
+<ul>
+<li><strong>パワー半導体：</strong>電気の流れを、うまく調整する半導体です。</li>
+<li><strong>電力損失：</strong>調整のたびに、一部の電気が、熱になって失われることです。</li>
+<li><strong>バンドギャップ：</strong>電子が動けるようになるために、越える必要があるエネルギーの幅です。</li>
+<li><strong>絶縁破壊電界：</strong>強い電圧がかかっても、壊れにくい強さです。</li>
+<li><strong>シリコンカーバイド（SiC）：</strong>シリコンと炭素でできた、バンドギャップの広い材料です。</li>
+<li><strong>窒化ガリウム（GaN）：</strong>ガリウムと窒素でできた、バンドギャップの広い材料です。</li>
+</ul>
+<h2 class="wp-block-heading">よくある誤解</h2>
+<h3>Q. シリコンカーバイドと窒化ガリウムは、同じ材料ですか？</h3>
+<p>いいえ。シリコンカーバイドは、シリコンと炭素の化合物で、窒化ガリウムは、ガリウムと窒素の化合物です。どちらもバンドギャップは広いですが、得意な用途が違います。</p>
+<h3>Q. バンドギャップは、広いほど、何でもよくなりますか？</h3>
+<p>いいえ。たとえば、ワイドギャップ半導体を、250〜300℃で動かす案も検討されましたが、損失の増大や、周辺の部品の対応といった課題があり、実用化は進んでいません。広ければ何でもよい、というわけではありません。</p>
+<h2 class="wp-block-heading">まとめ</h2>
+<div class="semicon-lead">
+<p>パワー半導体は、電気の流れを調整しますが、そのたびに、一部の電気が熱になって失われます。<br />バンドギャップが広いシリコンカーバイドと窒化ガリウムは、強い電圧に耐えられるため、層を薄くでき、損失を減らせます。<br />強い電圧や大きな電力にはシリコンカーバイド、小さくて速い電源には窒化ガリウムが、使い分けられています。</p>
+</div>
+<div class="semicon-cta">
+<h3>YouTubeでも、半導体をやさしく解説しています</h3>
+<p>図解で復習したい人向けに、YouTubeでも半導体製造を短く解説しています。</p>
+<div class="semicon-btnrow"><a rel="noopener" class="semicon-btn secondary" href="https://www.youtube.com/@semicon-campus" target="_blank">YouTubeで図解動画を見る</a></div>
+</div>
+<h2 class="wp-block-heading">参考にした公式情報</h2>
+<ul class="semicon-sources">
+<li data-source-id="S01"><a href="https://toshiba.semicon-storage.com/jp/semiconductor/knowledge/faq/mosfet_sic-mosfet/sic-mosfet-001.html">東芝デバイス＆ストレージ「SiCはどのような材料ですか？ また、SiC MOSFETはどのような特徴を持っていますか？」</a></li>
+<li data-source-id="S02"><a href="https://www.kyoto-u.ac.jp/archive/prev/news_data/h/h1/news6/2009/091007_1_1">京都大学「世界最高性能の大容量SiCトレンチMOSFETを実現」（用語解説）</a></li>
+<li data-source-id="S03"><a href="https://eetimes.itmedia.co.jp/ee/articles/1909/30/news027_2.html">EE Times Japan 福田昭「SiCパワーデバイスがモビリティの電動化を加速」（2019年）</a></li>
+<li data-source-id="S04"><a href="https://eetimes.itmedia.co.jp/ee/articles/2401/09/news026_2.html">EE Times Japan 福田昭「車載パワーデバイスの出力密度向上手法」（2024年）</a></li>
+<li data-source-id="S05"><a href="https://www.st.com/content/st_com/ja/about/innovation-and-technology/gan.html">STマイクロエレクトロニクス「GaN（窒化ガリウム）」</a></li>
+</ul>
+<section class="semicon-correction-form">
+<h2>質問・訂正フォーム</h2>
+<p>この記事の内容に誤りや、分かりにくい点があれば、下のフォームからお知らせください。確認して、記事を直します。</p>
+<div class="semicon-form-shortcode">
+<div class="wpcf7 no-js" id="wpcf7-f2045-o3" lang="ja" dir="ltr" data-wpcf7-id="2045">
+<div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
+<form action="/?rest_route=%2Fwp%2Fv2%2Fposts&#038;per_page=100&#038;page=1&#038;context=view#wpcf7-f2045-o3" method="post" class="wpcf7-form init" aria-label="コンタクトフォーム" novalidate="novalidate" data-status="init">
+<fieldset class="hidden-fields-container"><input type="hidden" name="_wpcf7" value="2045" /><input type="hidden" name="_wpcf7_version" value="6.1.6" /><input type="hidden" name="_wpcf7_locale" value="ja" /><input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f2045-o3" /><input type="hidden" name="_wpcf7_container_post" value="0" /><input type="hidden" name="_wpcf7_posted_data_hash" value="" />
+</fieldset>
+<p>お名前・電話番号・住所の入力は不要です。工場名や社外秘の情報は記載しないでください。
+</p>
+<p><label>報告の種類（必須） <span class="wpcf7-form-control-wrap" data-name="report-type"><select class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required" aria-required="true" aria-invalid="false" name="report-type"><option value="誤りと思われる点">誤りと思われる点</option><option value="分かりにくい箇所">分かりにくい箇所</option><option value="追加してほしい説明・質問">追加してほしい説明・質問</option></select></span></label><br />
+<label>該当する見出し・文章（任意） <span class="wpcf7-form-control-wrap" data-name="report-section"><input size="40" maxlength="200" class="wpcf7-form-control wpcf7-text" aria-invalid="false" value="" type="text" name="report-section" /></span></label><br />
+<label>内容（必須） <span class="wpcf7-form-control-wrap" data-name="report-message"><textarea cols="40" rows="10" maxlength="3000" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" aria-required="true" aria-invalid="false" name="report-message"></textarea></span></label><br />
+<label>返信用メールアドレス（返信をご希望の場合のみ・任意） <span class="wpcf7-form-control-wrap" data-name="report-email"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-email wpcf7-text wpcf7-validates-as-email" autocomplete="email" aria-invalid="false" value="" type="email" name="report-email" /></span></label>
+</p>
+<p>ご意見は記事の確認・改善のために利用します。<a href="https://semicon-campus.com/privacy-policy/">個人情報の取り扱い</a>をご確認ください。
+</p>
+<p><input class="wpcf7-form-control wpcf7-submit has-spinner" type="submit" value="ご意見・訂正報告を送信" />
+</p><div class="wpcf7-response-output" aria-hidden="true"></div>
+</form>
+</div>
+</div>
+</section>
+</div>

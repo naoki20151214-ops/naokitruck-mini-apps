@@ -1,0 +1,101 @@
+<article class="semicon-template-v2 sc-lesson">
+<!--KEEP:0-->
+<div class="sc-head"><span class="sc-head-ico"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="56" height="56"><rect width="120" height="120" rx="26" fill="#12634f"/><g transform="translate(10 10)" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M50 14C50 14 26 44 26 60a24 24 0 0048 0C74 44 50 14 50 14z"/><path d="M40 62a10 10 0 0010 10" stroke="#e8a317"/><path d="M78 20l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="#e8a317" stroke="none"/></g></svg></span><span class="sc-head-txt"><span class="sc-head-sub">SEMICON CAMPUS 無料講座</span><b>洗浄コース</b><span class="sc-head-lv">3級 入門 ・ 第5講 補講</span></span></div>
+<div class="semicon-hook">
+<p>第5講で、金属の汚れを測る方法として、<strong>TXRF</strong>を見ました。「X線を当てて、出てくる光から、金属の種類と量を調べる」という説明でしたが、なぜ、ウェハの表面の、ごくわずかな汚れだけを、見つけられるのでしょうか。</p>
+<p>この補講では、TXRFの仕組みと、<strong>どのくらい少ない量まで、見つけられるのか</strong>を、数字で見ていきます。</p>
+</div>
+<div class="sc-legend"><mark class="sc-exam">黄色のマーカー</mark> ＝ この講座のテストに出す重要ポイント</div>
+<h2>この記事でわかること</h2>
+<ul>
+<li><strong>蛍光X線</strong>とは何か</li>
+<li>X線を<strong>ごく浅い角度</strong>で当てる理由（全反射）</li>
+<li>TXRFの<strong>検出下限</strong>（どのくらい少ない量まで、見つけられるか）</li>
+<li>TXRFの得意・不得意（軽い元素）</li>
+</ul>
+<h2>① TXRFは、何をしている装置か</h2>
+<p>第5講で、金属の汚れを測る方法として、<strong>TXRF</strong>を見ました。日本語では、<strong>全反射蛍光X線分析（ぜんはんしゃけいこうエックスせんぶんせき）</strong>といいます。名前が長いので、仕組みを、順番に見ていきましょう。</p>
+<p>物質にX線を当てると、その物質に含まれる元素が、<mark class="sc-exam">元素ごとに決まった光（蛍光X線）</mark>を出します。この光の種類から「何の元素か」、強さから「どれだけあるか」が、わかります。これが「蛍光X線分析」の基本です。</p>
+<details class="semicon-quiz">
+<summary>確認クイズ：蛍光X線から、何がわかりますか？</summary>
+<p>答え：元素の種類（光の種類から）と、量（光の強さから）です。</p>
+</details>
+<h2>② 「全反射」で、表面だけを見る</h2>
+<p>ウェハの汚れは、表面にだけ、ごくわずかに、のっています。ところが、X線を、ふつうに当てると、ウェハの<strong>奥深く</strong>まで入りこみ、シリコンの中からも、強い信号が出てしまいます。そうなると、表面の、わずかな汚れの信号は、かき消されてしまいます。</p>
+<p>そこで、TXRFでは、X線を、ウェハの表面に、<mark class="sc-exam">ごく浅い角度</mark>で当てます。ある角度（臨界角）より浅くすると、X線は、ほとんど反射して、ウェハの中に入りません。これが、<strong>全反射</strong>です。入らないので、ウェハの中の信号は、出にくくなり、<strong>表面の汚れだけ</strong>が、よく見えるようになります。</p>
+<div class="sc-box sc-ev"><b class="t">根拠</b></p>
+<p>アメリカのSSRL（スタンフォード放射光研究所）の紹介ページには、入射角を<mark class="sc-exam">0.085度</mark>という、全反射する浅い角度にして、シリコンウェハ上の、ごく微量の不純物を測る例が載っています。</p>
+</div>
+<figure><svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" role="img" style="width:100%;height:auto;max-width:640px;display:block;margin:0 auto" font-family="sans-serif"><rect x="60" y="200" width="520" height="30" fill="#d9d9d9" stroke="#777" stroke-width="2"/><text x="320" y="221" text-anchor="middle" font-size="14" fill="#333">ウェハ（シリコン）</text><g fill="#c0392b"><circle cx="300" cy="195" r="5"/><circle cx="330" cy="195" r="5"/><circle cx="355" cy="195" r="5"/></g><text x="330" y="250" text-anchor="middle" font-size="13" fill="#c0392b">表面の金属（汚れ）</text><g stroke="#1a5fb4" stroke-width="4" fill="none"><path d="M70 160 L300 198"/><path d="M300 198 l-12 -2 m12 2 l-9 8"/></g><text x="70" y="148" font-size="14" fill="#1a5fb4">X線（ごく浅い角度で当てる）</text><g stroke="#888" stroke-width="3" stroke-dasharray="6 5" fill="none"><path d="M355 198 L580 160"/></g><text x="580" y="150" text-anchor="end" font-size="13" fill="#888">ほとんど反射して、ウェハの中に入らない</text><g stroke="#c0392b" stroke-width="3" fill="none"><path d="M330 188 L330 70"/><path d="M330 70 l-6 10 m6 -10 l6 10"/></g><rect x="290" y="30" width="80" height="38" rx="5" fill="#fff" stroke="#c0392b" stroke-width="2"/><text x="330" y="54" text-anchor="middle" font-size="14" fill="#c0392b">検出器</text><text x="344" y="130" font-size="13" fill="#c0392b">金属から出る光（蛍光X線）</text></svg><figcaption>図1 TXRFの仕組みの模式図（仕組みを説明するための、編集部の自作の図です。角度や大きさは、実際の比率ではありません）</figcaption></figure>
+<div class="sc-box sc-num"><b class="t">数字で考えてみよう</b></p>
+<p>0.085度は、1度の約12分の1（1 ÷ 0.085 ≒ 11.8）です。1度でも、地面にほとんど平行に見えるくらいの、浅い角度です。その、さらに約12分の1という、ごく浅い角度で、X線を当てています。</p>
+</div>
+<details class="semicon-quiz">
+<summary>確認クイズ：TXRFで、X線を、ごく浅い角度で当てるのは、なぜですか？</summary>
+<p>答え：X線がウェハの中に入らず（全反射）、表面の汚れの信号だけが、よく見えるようにするためです。</p>
+</details>
+<h2>③ どのくらい、少ない汚れまで見つけられるか</h2>
+<p>第5講で、TXRFの検出下限は、1平方センチメートルあたり<strong>10の9乗〜10の10乗個</strong>と書きました。資料によって、数字には幅があります。たとえば、次のようなものがあります。</p>
+<ul>
+<li>ある解説（Rigakuの雑誌）の表では、ふつうのTXRFが<mark class="sc-exam">10の9乗個</mark>、VPD-ICP-MSが<mark class="sc-exam">10の7乗個</mark>（いずれも、1平方センチメートルあたり）</li>
+<li>1989年の論文を紹介するページでは、ふつうの装置で、<mark class="sc-exam">10の11乗個</mark>まで</li>
+<li>放射光（とても強いX線）を使うSSRLの例では、ニッケルで、<mark class="sc-exam">8×10の7乗個</mark>（1,000秒の測定）</li>
+</ul>
+<div class="sc-box sc-num"><b class="t">数字で考えてみよう</b></p>
+<p>TXRF（10の9乗個）とVPD-ICP-MS（10の7乗個）を比べると、10の9乗 ÷ 10の7乗 ＝ 10の2乗 ＝ <strong>100倍</strong>。VPD-ICP-MSのほうが、100倍少ない量まで、見つけられる計算です。</p>
+<p>第5講で、シリコン原子は1平方センチメートルに約7×10の14乗個ありました。金属が10の9乗個なら、7×10の14乗 ÷ 10の9乗 ＝ 7×10の5乗、つまり、シリコン原子<strong>約70万個に、金属1個</strong>の割合です。</p>
+</div>
+<p>国際規格のISO 14706:2014は、TXRFで、シリコンウェハの表面の汚れを測る方法を決めています。規格によると、測れる元素は、<mark class="sc-exam">原子番号16（硫黄）〜92（ウラン）</mark>、範囲は、1平方センチメートルあたり<strong>10の10乗〜10の14乗個</strong>です。さらに、<strong>VPD（気相分解）</strong>という、前処理をすると、より少ない量も、測れるようになります。（VPDは、一般に、ウェハ表面の汚れを、小さな液のしずくに集めて、濃くしてから測る方法です）</p>
+<div class="sc-box sc-why"><b class="t">なぜ、軽い元素は苦手なのか？</b></p>
+<p>規格が、硫黄（原子番号16）以上を対象にしているように、硫黄（原子番号16）より軽い元素は、TXRFでは、うまく測れません。そのため、第5講で見たとおり、軽い元素は、別の方法（SIMS）で測ります。</p>
+</div>
+<div class="sc-box sc-why" style="border-left:4px solid #1a5fb4"><b class="t">実物の様子を見てみよう（外部サイト・英語）</b></p>
+<p>TXRFの測定の様子や、図は、SSRL（スタンフォード放射光研究所）の紹介ページで見られます。</p>
+<p><a rel="nofollow noopener" href="https://www-ssrl.slac.stanford.edu/research/highlights_archive/txrf.html" target="_blank">SSRL「Looking at Trace Impurities on Silicon Wafers Using Synchrotron Radiation」</a></p>
+</div>
+<details class="semicon-quiz">
+<summary>確認クイズ：TXRFが、うまく測れないのは、どんな元素ですか？</summary>
+<p>答え：軽い元素です（規格の対象は、原子番号16の硫黄から）。軽い元素は、SIMSなどで測ります。</p>
+</details>
+<div class="sc-box sc-key"><b class="t">この補講のポイント</b></p>
+<p>TXRFは、X線をごく浅い角度で当てて全反射させ、ウェハの表面の金属だけを調べる方法。元素ごとの蛍光X線から、種類と量がわかる。検出下限は、1平方センチメートルあたり10の9乗個前後が目安（資料によって幅がある）。軽い元素は苦手で、別の方法で測る。</p>
+</div>
+<p>この講座の「3級 入門」は、ここまでです。5つの講と、それぞれの補講で、洗浄の目的・汚れ・RCA洗浄・課題・測り方を、ひと通り見てきました。確認テストで、理解をたしかめてみましょう。</p>
+<h2>ことばのおさらい</h2>
+<p><strong>蛍光X線</strong>：物質にX線を当てたとき、元素ごとに決まった光（X線）が出る現象、またその光です。</p>
+<p><strong>全反射</strong>：光やX線が、ごく浅い角度で当たると、ほとんど反射して、中に入らない現象です。</p>
+<p><strong>臨界角</strong>：全反射が起きる、境目の角度です。</p>
+<p><strong>検出下限</strong>：測定で、見つけられる、いちばん少ない量です。</p>
+<p><strong>VPD（気相分解）</strong>：ウェハ表面の汚れを集めて、濃くしてから測るための前処理です。</p>
+<h2>よくある誤解</h2>
+<h3>Q. TXRFは、ウェハを、こわして測りますか？</h3>
+<p>いいえ。第5講で見たとおり、ウェハを壊さずに測れます。</p>
+<h3>Q. TXRFの検出下限は、1つの決まった数字ですか？</h3>
+<p>いいえ。資料や装置、測る元素、使うX線の種類（放射光かどうか）、前処理の有無で、数字に幅があります。この記事では、資料ごとの数字を、そのまま並べました。</p>
+<h2>参考にした情報</h2>
+<ul class="semicon-sources sc-sources">
+<li><a rel="nofollow noopener" href="https://www-ssrl.slac.stanford.edu/research/highlights_archive/txrf.html" target="_blank">SSRL/SLAC「Looking at Trace Impurities on Silicon Wafers Using Synchrotron Radiation」（0.085度の入射角、8×10の7乗個の検出下限の例）</a></li>
+<li><a rel="nofollow noopener" href="https://resources.rigaku.com/hubfs/2024%20Rigaku%20Global%20Site/Resource%20Hub/Knowledge%20Library/Rigaku%20Journals/Volume%2029(1)%20-%20Winter%202013/RJ29-1_9-14.pdf?hsLang=en" target="_blank">Rigaku Journal Vol.29 No.1（2013）（TXRFとVPD-ICP-MSの検出下限の比較表）</a></li>
+<li><a rel="nofollow noopener" href="https://link.springer.com/article/10.1007/BF00572381" target="_blank">Springer「Penka and Hub, 1989」（ふつうの装置の検出下限の紹介）</a></li>
+<li><a rel="nofollow noopener" href="https://iteh.eu/catalog/standards/iso/0b017882-3bd5-4fea-9a04-e5b91585bd73/iso-14706-2014" target="_blank">ISO 14706:2014（TXRFによる、シリコンウェハ表面の汚れの測定方法。対象元素と測定範囲）</a></li>
+</ul>
+</article>
+<p><!--KEEP:1--></p>
+<aside class="course-nav-wash3">
+<h2>洗浄3級コースの他の講義</h2>
+<p><a href="/wash-3/">洗浄3級コース一覧へ戻る</a></p>
+<ul>
+<li><a href="/semiconductor-why-wafer-cleaning/">半導体洗浄はなぜ何度も必要？洗浄工程の役割と理由</a></li>
+<li><a href="/semiconductor-wafer-contamination-types/">半導体洗浄で落とす汚れ4種類：粒子・有機物・金属・自然酸化膜</a></li>
+<li><a href="/rca-clean-sc1-sc2/">半導体洗浄の基本「RCA洗浄」：SC-1とSC-2の中身と順番の理由</a></li>
+<li><a href="/wet-cleaning-problems-dry-cleaning/">半導体洗浄の課題：洗いすぎのリスクとドライ洗浄</a></li>
+<li><a href="/wafer-cleanliness-measurement/">半導体洗浄の評価方法：粒子・金属・有機物の測り方</a></li>
+<li><a href="/cleanroom-class-contamination-sources/">クリーンルームのクラス規格（ISO 14644-1・米国連邦規格）の読み方とFFU・ULPAフィルタ【洗浄3級・第1講 補講】</a></li>
+<li><a href="/native-oxide-hf-last-hydrogen-termination/">自然酸化膜はどのくらいで戻る？フッ酸のあとの表面と「水素終端」【洗浄3級・第2講 補講】</a></li>
+<li><a href="/rca-clean-history-sc1-particle-removal/">SC-1洗浄（APM）のメカニズム｜ゼータ電位とアンモニア・過酸化水素水でパーティクルを除去する原理【洗浄3級・第3講 補講】</a></li>
+<li><a href="/batch-vs-single-wafer-cleaning-one-bath/">バッチ洗浄と枚葉洗浄のちがい：複数槽から1槽方式への進化【洗浄3級・第4講 補講】</a></li>
+<li><a href="/ultrapure-water-rinse-drying-watermark/">半導体ウェハ乾燥（マランゴニ乾燥・IPA乾燥）とウォーターマーク対策｜超純水のすすぎと乾燥</a></li>
+<li><a href="/wafer-cleaning-chemical-safety-hydrofluoric-acid/">洗浄で使う薬液の安全：フッ酸は、痛くなくても危険</a></li>
+</ul>
+<p>洗浄装置メーカーを知りたい方は、<a href="/what-is-screen-semiconductor-cleaning-equipment/">SCREENとは何がすごい？半導体洗浄装置と関わる工程・職種を初心者向けに解説</a>もどうぞ。</p>
+</aside>

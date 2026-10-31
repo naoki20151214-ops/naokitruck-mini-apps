@@ -1,0 +1,40 @@
+
+<!--KEEP:0-->
+
+<p>2026年9月21日、半導体・光通信の研究機関imecは、300mmシリコンフォトニクス基盤で製造したゲルマニウム／シリコン（Ge/Si）アバランシェフォトダイオード（APD）を発表しました。公式発表によると、このAPDは100GHz帯域、5V動作、O帯とC帯の双方で1.8A/Wの応答度を備え、APD受信機を使った正味400Gbpsの光リンクと、3dBの受信感度改善を示したとされています。結果は9月24日のECOC 2026で発表予定です。つまり、9月24日はイベントでの発表予定日であり、ニュースが公開された日ではありません。<a href="https://www.imec-int.com/en/press/imec-debuts-100-ghz-gesi-avalanche-photodiode-apd-enabling-net-400-gbps-data-reception-just-5">imec公式発表</a> <a href="https://ecoc2026.org/site/api/programme/json_call.asp?a=ecoc2026&amp;catId=0&amp;dataType=categories_days&amp;roomid=0&amp;trackid=0">ECOC公式プログラム</a></p>
+
+<h2>何が新しいのか</h2>
+<p>今回のポイントは、単体の受光素子の高速化だけではありません。300mmウエハーを使うシリコンフォトニクス製造基盤、100GHz級の帯域、低い5V動作電圧、APDによる受信感度の向上を組み合わせ、さらに400Gbpsという光リンクの正味データレートまで示したことです。</p>
+<p>ただし、ここでいう「実証」は、すでにデータセンター向け製品が量産されているという意味ではありません。imecが発表した研究成果であり、製品化時期、量産開始、実際のシステム全体の消費電力は確定していません。400Gbpsリンクについても、公式リリース本文だけでは変調方式、伝送距離、ビット誤り率（BER）、前方誤り訂正（FEC）、光入力パワー、受信電子回路の詳細までは確認できません。</p>
+<h2>APDとは何か</h2>
+<p>フォトダイオードは、光を電気信号に変換する部品です。APDはその内部に「アバランシェ増倍」と呼ばれる仕組みを持ちます。光を受けて生じた電子や正孔を強い電界で加速し、別の電荷を生み出すことで、最初に発生した信号を内部で増幅します。</p>
+<p>この増幅によって、受信側で扱える信号を大きくし、光リンクの受信感度やリンクマージンを改善できる可能性があります。リンクマージンとは、送信された光が途中の損失や部品のばらつきを受けても、受信に必要な信号品質を保つための余裕です。余裕が増えれば、レーザー出力を抑えたり、光損失の大きい構成を許容したりできる可能性がありますが、実際の電力削減量はシステム設計に依存します。</p>
+<p>一方、APDの増幅は無条件に有利なわけではありません。増倍に伴う雑音、温度による特性変化、強い光が入った場合の耐性、長期信頼性、後段のトランスインピーダンスアンプ（TIA）との電気的な整合が課題になります。TIAは、フォトダイオードから出る小さな電流を電圧信号へ変換する増幅回路です。</p>
+<h2>Ge/Siとシリコンフォトニクスの背景</h2>
+<p>Ge/Si APDでは、光を吸収するゲルマニウムと、電荷の増倍を担うシリコンを組み合わせます。シリコンだけでは通信波長の光を効率よく検出しにくいため、光検出に適したゲルマニウムをシリコンフォトニクスの基盤へ組み込む考え方です。</p>
+<p>シリコンフォトニクスは、シリコンの中に光の通り道である光導波路を作り、光の分岐、変調、合波、検出までを集積する技術です。波長多重フィルターなどの受動部品と、変調器やGe光検出器などの能動部品を同じプラットフォームに載せられます。ドライバーやTIAなどの電子回路は別のウエハーで製造し、フリップチップ接続する構成も可能です。<a href="https://www.imec-int.com/en/imec-magazine/imec-magazine-december-2019/silicon-photonics-technology-for-next-generation-datacenter-interconnect">imecのシリコンフォトニクス解説</a></p>
+<p>300mmウエハーを使える点にも意味があります。一般に大口径ウエハーでは、1枚から多くのチップを処理し、半導体製造設備や工程管理の知見を活用できる可能性があります。そのため、光部品を研究室レベルの少量製造から、より大規模な製造へ近づける方向性を示します。ただし、ウエハーサイズだけで歩留まり、コスト、組立、検査、量産性が決まるわけではありません。</p>
+<h2>AIデータセンターで注目される理由</h2>
+<p>AIの学習や推論では、アクセラレーター、サーバー、ラックの間で大量のデータを移動させます。電気配線だけで高速・長距離の通信を担うと、信号損失や消費電力が問題になりやすいため、データセンター内では光インターコネクトの重要性が高まります。</p>
+<p>100GHz級の帯域は、高速な光信号を受け取るための余裕に関係します。APDの感度向上と組み合わせれば、同じリンクで高いデータレートを目指したり、光損失に対する余裕を増やしたりできます。さらに、低電圧動作は受信部の電力設計に関係します。しかし、受光器だけが5Vで動いても、レーザー、TIA、ドライバー、冷却、信号処理を含むトランシーバー全体の消費電力が同じ割合で下がるとは限りません。</p>
+
+<section class="mp6-section" id="revenue-phase6-learning"><h2>受光素子の実証から、測定条件を説明する</h2><p>APDの実証を読んだら、素子の帯域、光リンクの速度、感度、測定条件を別の欄にします。単体とシステムの値を分け、公開されていない条件も記録しましょう。電気・光・計測の基礎教材と公開論文を読む翻訳道具を併用できます。出典付きメモをスライドにする場合は図の利用条件も確認し、生成された説明を原文と照合します。無料で作れる範囲を試してから、有料の機能を比較しましょう。</p></section>
+
+<h2>過去の研究との違いと注意点</h2>
+<p>2026年3月3日に公開されたJournal of Lightwave Technologyの査読論文では、300mm SOIウエハー上の導波路結合Ge/Si APDについて、ピークの3dB帯域が100GHzを超えたと報告されています。また、応答度2A/Wの条件でO帯とC帯の70GHz帯域を維持し、逆バイアス7Vで測定したとされています。<a href="https://opg.optica.org/jlt/abstract.cfm?uri=jlt-44-16-6958">Journal of Lightwave Technology掲載論文</a></p>
+<p>今回の公式発表にある1.8A/W、5V、100GHzという数値と、論文の2A/W、7V、100GHz超という数値は、測定条件や試料、デバイス世代が異なる可能性があります。したがって、同じ試料を同じ条件で比較した数値だと扱うことはできません。論文は査読済みの技術報告ですが、今回の400Gbpsリンク実証の詳細をすべて説明する資料ではありません。</p>
+<h2>これから確認したいこと</h2>
+<p>まず、9月24日のECOC発表で、400Gbpsの条件がどこまで明らかになるかが注目点です。伝送距離、変調方式、BER、FEC、光入力パワー、温度条件、受信電子回路の構成が分かれば、単体デバイスの性能を実際の光通信システムの価値へ結び付けやすくなります。</p>
+<p>次に重要なのは、温度範囲、光入力の変動、長期動作に対する信頼性です。imec自身も、温度と光入力条件を広げた評価や、高速受信電子回路との統合を今後の課題として挙げています。APDが研究実証から製品へ進むには、単発の最高値だけでなく、ばらつき、歩留まり、組立後の性能、消費電力、コストを総合的に確認する必要があります。</p>
+<p>今回のニュースは、AIデータセンター向け光通信で、受光器の高速化と感度向上を300mm製造基盤へ結び付けようとする技術成果です。一方で、量産や商用投入を意味する発表ではありません。今後はECOCで追加される測定条件と、温度・信頼性・電子回路統合のデータを見ながら、実用化への距離を判断することが大切です。</p>
+
+<section class="mp6-section" id="revenue-phase6-career"><h2>理解した内容から、次の学習と比較へ</h2><p>受光素子と光リンクの測定条件整理を、対象・条件・出典の三つで整理しましょう。関連する基礎記事、学習の入口、PCの要件を目的別に確認すると、無料で試せる範囲と有料の選択肢を分けて検討できます。</p><aside class="semicon-cta mp6-card"><h3>目的に合う関連記事から、次の行動を選ぶ</h3><p>仕事内容を知りたい方は職種記事へ、基礎を広げたい方は学習記事へ、自宅環境を見直す方はPC・メモリの解説へ進めます。各記事の求人・学習・機材の選び方も比較できます。</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/semiconductor-beginner-roadmap/" class="semicon-btn mp6-button" data-revenue-phase6-hub="391" data-cta="learning_hub" data-cta-type="learning_hub" data-cta-stage="career" data-cta-id="phase6_1138_hub391_end" data-cta-route="phase6_1138_hub391_end">半導体学習Hubで基礎・仕事・学び方を確認する</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-process-engineer/" class="semicon-btn mp6-button" data-revenue-phase6-hub="230" data-cta="process_hub" data-cta-type="process_hub" data-cta-stage="career" data-cta-id="phase6_1138_hub230_end" data-cta-route="phase6_1138_hub230_end">プロセスエンジニアの担当範囲・求人・学習を見る</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/" class="semicon-btn mp6-button" data-revenue-phase6-hub="237" data-cta="equipment_hub" data-cta-type="equipment_hub" data-cta-stage="career" data-cta-id="phase6_1138_hub237_end" data-cta-route="phase6_1138_hub237_end">装置エンジニアの担当範囲・求人・学習を見る</a></div></aside></section>
+
+
+<h2>出典</h2>
+<ul>
+<li><a href="https://www.imec-int.com/en/press/imec-debuts-100-ghz-gesi-avalanche-photodiode-apd-enabling-net-400-gbps-data-reception-just-5">imec公式プレスリリース（2026年9月21日）</a></li>
+<li><a href="https://opg.optica.org/jlt/abstract.cfm?uri=jlt-44-16-6958">Optica Publishing Group, Journal of Lightwave Technology掲載論文（2026年3月3日）</a></li>
+<li><a href="https://www.imec-int.com/en/imec-magazine/imec-magazine-december-2019/silicon-photonics-technology-for-next-generation-datacenter-interconnect">imec、次世代データセンター接続向けシリコンフォトニクス解説</a></li>
+<li><a href="https://ecoc2026.org/site/api/programme/json_call.asp?a=ecoc2026&amp;catId=0&amp;dataType=categories_days&amp;roomid=0&amp;trackid=0">ECOC 2026公式プログラム</a></li>
+</ul>

@@ -1,0 +1,20 @@
+{
+ "id": 1024,
+ "type": "post",
+ "slug": "daily-news-5bdfa7bb152b2682734c",
+ "link": "https://semicon-campus.com/daily-news-5bdfa7bb152b2682734c/",
+ "date": "2026-09-18T12:00:00",
+ "modified": "2026-10-27T20:05:05",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  20
+ ],
+ "tags": [
+  19
+ ],
+ "featured_media": 2855,
+ "title": "Delos Dataが1億ドル超を調達、AI推論を支える接続半導体とは",
+ "excerpt": "Delos Dataは2026年9月15日、1億ドル超の資金調達を発表。AI推論を支える接続半導体の役割、データ移動の課題、性能目標と量産・提供計画の違いを初心者向けに解説します。"
+}

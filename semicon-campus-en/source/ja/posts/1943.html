@@ -1,0 +1,29 @@
+<p>Broadcomは2026年10月8日、米国カリフォルニア州San Joseで10月12日から15日まで開催予定のOCP Global Summit 2026に、AIデータセンター向けのネットワーク製品群を展示すると発表しました。対象はTomahawk 6、Tomahawk Ultra、Jericho 4のEthernetスイッチ、Thor Ultra 800G NIC、Thor 2 400G NIC、PCIe部品、統合光学などです。イベントの開催日程はOCP公式ページでも確認できます。<a href="https://investors.broadcom.com/news-releases/news-release-details/broadcom-redefines-ai-infrastructure-industry-leading-networking">Broadcomの発表</a> <a href="https://www.opencompute.org/events/ocp-summit/2026-ocp-global-summit/">OCP Global Summit公式ページ</a></p>
+<h2>何が発表されたのか</h2>
+<p>今回のニュースの中心は、単一の新チップだけではありません。Broadcomは、スイッチ、サーバー側のNIC、PCIe接続、光インターコネクト、ラック設計を組み合わせたAIネットワークの構成を、OCPの場で示す計画です。Celestica、Delta Electronics、Micas Networksなどのパートナーが、Tomahawk 6-Davissonによる102.4Tbps級のCPOデモを行う予定だと説明されています。</p>
+<p>ただし、2026年10月11日時点では、これは10月12日から始まる展示の<strong>予定</strong>です。実際にデモが行われたこと、顧客が採用したこと、どの規模で量産されたことを示す確認ではありません。Broadcomの基調講演も、10万を超えるアクセラレーターを使うAIクラスタや、光インターコネクト、モジュール式ラックを扱う予定とされています。予定と実績を分けて読むことが重要です。<a href="https://investors.broadcom.com/news-releases/news-release-details/broadcom-redefines-ai-infrastructure-industry-leading-networking">Broadcomの発表</a></p>
+<h2>102.4TbpsとCPOを初心者向けに説明</h2>
+<p><strong>Tbps</strong>は、1秒間に何テラビットのデータを扱えるかを示す通信速度の単位です。102.4Tbpsは、スイッチ内部で合計102.4テラビット毎秒の通信を処理する能力を表します。ただし、ネットワーク全体で各サーバーが常にその速度で通信できるという意味ではありません。実際の性能は、光モジュール、ケーブル、NIC、ソフトウェア、通信パターン、輻輳の有無などにも左右されます。</p>
+<p><strong>CPO（Co-Packaged Optics）</strong>は、スイッチASICと、電気信号を光信号へ変換する光エンジンを同一パッケージに近接配置する実装方式です。従来のプラガブル光モジュールでは、スイッチからモジュールまで電気信号を基板上で運びます。速度が上がるほど、この電気信号経路や信号調整の負担が問題になります。CPOは電気的な距離を短くし、光接続へ早く切り替えることで、電力や信号安定性の改善を狙います。</p>
+<p>Broadcomは2025年10月8日の製品発表で、TH6-Davissonを第三世代のCPO Ethernetスイッチと説明しました。公表された仕様は102.4Tbpsのスイッチング容量、200Gbpsのリンク、16基の6.4Tbps Davisson光エンジンです。また、TSMCのCOUPE技術を基盤にした光エンジンとマルチチップパッケージを用い、従来のプラガブル方式と比べて光インターコネクトの電力を70％削減できると主張しています。この数値はBroadcomの製品説明であり、今回確認できた資料では独立検証結果は示されていません。<a href="https://investors.broadcom.com/news-releases/news-release-details/broadcom-announces-tomahawkr-6-davisson-industrys-first-1024">BroadcomのTH6-Davisson発表</a></p>
+<h2>なぜAI時代にネットワークが重要なのか</h2>
+<p>AIの学習では、多数のGPUやAIアクセラレーターがデータや計算結果を頻繁に交換します。計算チップが速くても、チップ間の通信が遅ければ待ち時間が増え、全体の処理効率が下がります。そのため、AIデータセンターでは演算性能だけでなく、ネットワークの帯域、遅延、輻輳制御、リンクの安定性、消費電力が重要になります。</p>
+<p><strong>Scale-up</strong>は、同じサーバーやラック内、または近接したアクセラレーター同士を高密度に接続する考え方です。一方、<strong>scale-out</strong>は複数のサーバーやラックへ接続を広げ、より多くのノードで処理する構成を指します。Broadcomはさらに、巨大なクラスタ全体へ広げるscale-acrossも含め、AIネットワークを段階的に拡張する構想を訴求しています。</p>
+<p>Ethernetスイッチは、データをパケット単位で宛先へ転送する装置です。NIC（Network Interface Card）はサーバー側でネットワークへ接続し、データ転送の一部を処理します。Thor Ultraは800G AI Ethernet NICとして、UEC仕様への準拠、PCIe Gen6 x16、100G・200G PAM4 SerDes、パケット単位のマルチパス、アウト・オブ・オーダー配送、選択的再送、輻輳制御などを特徴として掲げています。<a href="https://investors.broadcom.com/news-releases/news-release-details/broadcom-introduces-industrys-first-800g-ai-ethernet-nic">BroadcomのThor Ultra発表</a></p>
+<h2>量産している製品と、まだ確認できない製品</h2>
+<p>ここで注意したいのは、「Tomahawk 6ファミリーが量産出荷中」という情報と、「TH6-Davisson CPO版が量産出荷中」という情報は同じではないことです。Broadcomは2026年3月12日、通常のTomahawk 6ファミリーについて、102.4Tbps、100G・200G SerDes、ロードバランシング、輻輳管理などを備え、AIのscale-upおよびscale-out用途に向けて量産出荷中だと発表しました。これは通常版ファミリーの出荷に関する会社発表です。<a href="https://investors.broadcom.com/news-releases/news-release-details/broadcom-now-shipping-worlds-first-1024-tbps-switch-production">Broadcomの量産出荷発表</a></p>
+<p>一方、TH6-Davissonについて、2025年10月の資料では早期アクセス顧客やパートナー向けにサンプルを提供中と説明されていました。2026年10月11日時点で確認できた資料だけからは、CPO版の量産出荷時期、出荷数量、顧客による本番導入を断定できません。展示、サンプル提供、量産出荷、本番稼働は、それぞれ異なる段階です。</p>
+<h2>この発表の意味と限界</h2>
+<p>今回の発表から読み取れる大きな流れは、AIデータセンターの通信ボトルネックに対して、スイッチASICだけでなく、光接続、NIC、PCIe、ラック、ネットワーク制御をまとめて最適化しようとしていることです。AIクラスタの規模が大きくなるほど、多数のリンクを安定して動かしながら電力と信号品質を管理する必要があるため、CPOのような実装技術が注目されます。</p>
+<p>ただし、102.4Tbpsという容量や70％の電力削減は、比較条件や測定環境を確認しなければ、実際のAI学習ジョブの速度やデータセンター全体の消費電力へそのまま置き換えられません。今回確認できた公式資料では、CPO版の量産規模、顧客の本番導入、実運用時の電力や遅延、長期的なリンク安定性について独立した検証は示されていません。したがって、現時点ではBroadcomの発表値と展示計画として評価するのが適切です。</p>
+<h2>今後どこを見ればよいか</h2>
+<p>まず確認したいのは、OCP Global Summitで予定どおり実機デモや基調講演が行われたかです。次に、TH6-Davisson CPOの量産開始時期、実際の顧客採用、運用時の電力とリンク安定性、通常版Tomahawk 6との用途の違いが示されるかに注目します。Thor Ultraなどの800G NICについても、サンプリングから量産へ進んだか、AIクラスタでどのような通信効率を実現したかが重要です。</p>
+<p>Broadcomの発表は、AI向けEthernetが「速いスイッチ」だけの競争ではなく、光と電気の接続方法、サーバー側NIC、輻輳制御、ラック構成まで含むシステム競争になっていることを示しています。今後は、会社が掲げる最大値だけでなく、独立した測定、顧客の本番事例、量産数量を合わせて評価する必要があります。</p>
+<h2>出典</h2>
+<ul>
+<li><a href="https://investors.broadcom.com/news-releases/news-release-details/broadcom-redefines-ai-infrastructure-industry-leading-networking">Broadcom Inc.「Broadcom Redefines AI Infrastructure with Industry-Leading Networking Innovations at 2026 OCP Global Summit」</a></li>
+<li><a href="https://investors.broadcom.com/news-releases/news-release-details/broadcom-announces-tomahawkr-6-davisson-industrys-first-1024">Broadcom Inc.「Broadcom Announces Tomahawk 6–Davisson」</a></li>
+<li><a href="https://investors.broadcom.com/news-releases/news-release-details/broadcom-now-shipping-worlds-first-1024-tbps-switch-production">Broadcom Inc.「Broadcom Now Shipping World’s First 102.4 Tbps Switch in Production Volume」</a></li>
+<li><a href="https://investors.broadcom.com/news-releases/news-release-details/broadcom-introduces-industrys-first-800g-ai-ethernet-nic">Broadcom Inc.「Broadcom Introduces Industry’s First 800G AI Ethernet NIC」</a></li>
+<li><a href="https://www.opencompute.org/events/ocp-summit/2026-ocp-global-summit/">Open Compute Project「2026 OCP Global Summit」</a></li>
+</ul>

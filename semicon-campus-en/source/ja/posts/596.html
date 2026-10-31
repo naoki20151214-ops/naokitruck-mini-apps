@@ -1,0 +1,104 @@
+
+<!--KEEP:0-->
+
+
+<!--KEEP:1-->
+
+
+<!--KEEP:2-->
+<div class="semicon-article" id="semicon-top">
+
+<div class="semicon-level"><span class="semicon-level-label">学習レベル</span> <strong>初級</strong><p>第28話で「ゲームがGPUの並列処理を育てた」と知った人が、CUDAによって何が変わったのかを理解する記事です。コードを書いた経験がなくても読めます。</p></div>
+
+<p class="semicon-lead"><strong>CUDA（クーダ）</strong>は、NVIDIAが開発した<strong>並列コンピューティングのプラットフォームとプログラミングモデル</strong>です。GPUの計算能力を、画面描画だけでなく科学計算やデータ処理などへ使いやすくしました。CUDAはGPUそのものでも、AI専用の言語でもありません。</p>
+
+<div class="semicon-map"><h3>先に結論</h3><div class="semicon-three"><div class="semicon-card"><b>変わる前</b><span>GPUの高い計算力があっても、画像以外の処理へ使うには専門的な工夫が多かった。</span></div><div class="semicon-card"><b>CUDAの役割</b><span>計算する部分をGPUへ渡し、多数の処理へ分けて実行する共通の考え方と道具を用意した。</span></div><div class="semicon-card"><b>変わった後</b><span>研究・シミュレーション・データ処理、そして後のAIへ用途が広がった。</span></div></div></div>
+
+<figure class="semicon-figure"><img src="https://semicon-campus.com/wp-content/uploads/2026/07/cuda-general-purpose-featured.png" alt="CPUとプログラムからGPUの多数の並列計算へ仕事を渡し、科学計算やデータ分析やAIへ用途が広がる様子" width="1672" height="941" loading="eager" decoding="async"><figcaption>CUDAはGPUを別の部品へ変えるものではなく、GPUの並列計算を幅広い用途から使うためのソフトウェア基盤です。</figcaption></figure>
+
+
+<h2>CUDAで何が変わった？</h2>
+
+<p>GPUは、3Dグラフィックスの大量計算によって発達しました。しかし、計算能力が高いことと、研究者や開発者が自由な計算へ使いやすいことは別です。初期のGPUで画像以外の処理を行うには、計算を描画処理に見せるなど、グラフィックス固有の知識が必要でした。</p>
+
+<p>NVIDIAは2006年にCUDAを発表しました。公式のCUDA Programming GuideはCUDAを「汎用並列コンピューティングのプラットフォームとプログラミングモデル」と説明しています。開発者は、CPU側で全体を進めながら、並列化しやすい計算をGPUへ渡せるようになりました。</p>
+
+<div class="semicon-flow" aria-label="CUDAで変わった流れ"><div>問題を分ける</div><div>GPUへデータを渡す</div><div>多数の処理を並列実行</div><div>結果をCPU側へ戻す</div></div>
+
+<p class="semicon-one-line">CUDAが開いたのは、「画像を描くGPU」から「プログラムで計算へ使えるGPU」への入口です。</p>
+
+<h2>CPUとGPUはどう協力する？</h2>
+
+<p>CUDAのプログラムは、GPUだけで完結するとは限りません。公式ガイドでは、CPUとCPU側のメモリを<strong>ホスト</strong>、GPUとGPU側のメモリを<strong>デバイス</strong>と呼びます。アプリはCPUから始まり、必要なデータをGPUへ渡し、GPUで動く処理を起動し、結果を受け取ります。</p>
+
+<figure class="semicon-figure"><img src="https://semicon-campus.com/wp-content/uploads/2026/07/cuda-host-device-workflow.png" alt="CPU側で仕事とデータを準備し、GPUメモリへ送り、多数の並列処理を実行して結果をCPUへ戻すCUDAの流れ" width="1672" height="941" loading="lazy" decoding="async"><figcaption>CPUは全体の進行やデータ準備を担い、GPUは並列化しやすい大量計算を担当します。CUDAは両者をつなぐ仕組みを提供します。</figcaption></figure>
+
+<div class="semicon-note"><p><strong>ここが誤解されやすい点</strong></p><p>CUDAがCPUを不要にするわけではありません。実際の速さは、計算の分け方、CPUとGPUの間で運ぶデータ量、GPUメモリへのアクセスなどを含むシステム全体で決まります。</p></div>
+
+<h2>大量の仕事を「グリッド・ブロック・スレッド」へ分ける</h2>
+
+<p>CUDAでは、GPUで実行する関数を<strong>カーネル</strong>と呼びます。カーネルを起動すると、多数のスレッドが同じ処理の流れを並列に実行します。スレッドはブロックにまとめられ、ブロックはさらにグリッドとして並びます。</p>
+
+<figure class="semicon-figure"><img src="https://semicon-campus.com/wp-content/uploads/2026/07/cuda-grid-block-thread-hierarchy.png" alt="大きな計算対象をグリッドから複数のブロックへ分け、各ブロックを多数のスレッドへ細分化するCUDAの階層" width="1672" height="941" loading="lazy" decoding="async"><figcaption>大きな問題を独立して進めやすい単位へ分けることで、規模の異なるGPUでも多数の処理を割り当てやすくします。</figcaption></figure>
+
+<p>この階層は、GPU内部の部品名を覚えるためだけのものではありません。「大きな仕事を、互いに依存しすぎない小さな仕事へ分ける」という並列計算の設計を、プログラムから表すための仕組みです。</p>
+
+<h2>CUDAは「言語ひとつ」ではなく、道具のまとまり</h2>
+
+<p>CUDAは「CUDAというAI専用言語」ではありません。CUDA C++のような言語拡張だけでなく、GPUへ仕事を渡すランタイム、コンパイラ、数値計算ライブラリ、デバッグ・性能分析ツールなどを含む基盤です。公式ドキュメントでも、C++以外の言語やAPIから利用できることが説明されています。</p>
+
+<figure class="semicon-figure"><img src="https://semicon-campus.com/wp-content/uploads/2026/07/cuda-platform-software-layers.png" alt="GPUハードウェアの上にCUDAのプログラミングモデルと実行基盤、ライブラリと開発ツール、各分野のアプリが積み重なる構造" width="1672" height="941" loading="lazy" decoding="async"><figcaption>ハードウェアだけでなく、プログラミングモデル、ライブラリ、開発ツールがそろったことで、GPU計算を別の分野へ持ち込みやすくなりました。</figcaption></figure>
+
+<div class="semicon-compare"><table><thead><tr><th>名称</th><th>役割</th><th>誤解しないための一言</th></tr></thead><tbody><tr><td>GPU</td><td>多数の処理を並列に実行するハードウェア</td><td>CUDAと同じものではない</td></tr><tr><td>CUDA</td><td>NVIDIA GPUを計算へ使うプラットフォームとプログラミングモデル</td><td>AIだけの仕組みではない</td></tr><tr><td>CUDA Toolkit</td><td>コンパイラ、ライブラリ、開発・分析ツールなどの集合</td><td>GPUを購入しただけで自動的に処理が速くなるわけではない</td></tr><tr><td>Tensor Core</td><td>行列の積和演算を効率よく進めるGPU内の演算器</td><td>CUDAとは役割が違う。次回のテーマ</td></tr></tbody></table></div>
+
+<h2>なぜAIへつながったのか</h2>
+
+<p>AIの学習や推論では、行列を使った計算を大量に繰り返します。こうした処理には、GPUの並列計算を生かしやすい部分があります。CUDAとそのライブラリが整ったことで、研究者やフレームワーク開発者はGPUを計算基盤として利用しやすくなりました。</p>
+
+<p>ただし、CUDAだけで現在のAIが生まれたわけではありません。アルゴリズム、データ、研究成果、GPUハードウェア、メモリ、ネットワーク、ライブラリが積み重なって現在のAI基盤になっています。普段PyTorchなどを使う人は、CUDAを直接書かなくても、その下でCUDA対応ライブラリの恩恵を受けることがあります。</p>
+
+<h2>CUDAなら何でも速くなる？</h2>
+
+<div class="semicon-three"><div class="semicon-card"><b>分けにくい処理</b><span>前の計算結果を待つ必要が多い処理は、大量並列の強みを出しにくい。</span></div><div class="semicon-card"><b>データ移動が多い処理</b><span>計算より転送時間が支配的になると、GPUを使う効果が小さくなる。</span></div><div class="semicon-card"><b>ソフトウェア対応</b><span>処理をCUDA向けに実装するか、CUDA対応ライブラリを使う必要がある。</span></div></div>
+
+<p>また、CUDAはNVIDIAのプラットフォームです。ほかのメーカーのGPUやアクセラレータには、別のプログラミング環境があります。用途、既存ソフトウェア、性能、電力、費用を含めて選ぶ必要があります。</p>
+
+<h2>CUDAを支える仕事</h2>
+
+<p>CUDAに関わる仕事は、カーネルを書く開発者だけではありません。GPUの回路設計、コンパイラやライブラリ開発、性能分析、データセンター運用、冷却、先端パッケージ、HBM、品質・検査まで多くの役割がつながります。</p>
+
+<div class="semicon-cta"><p><strong>自分に近い仕事の入口を探す</strong></p><p>ソフトウェア、設計、製造、装置、品質など、どの方向から学ぶか迷う方は、匿名・回答非保存の<a href="https://semicon-campus.com/semiconductor-career-advisor/">半導体10問仕事ナビ β</a>で候補を整理できます。診断結果は仕事の適性を断定するものではなく、次に読むテーマを選ぶための目安です。</p></div>
+
+
+<section class="mp4-section" id="revenue-phase4-learning"><h2>CUDAの理解から、小さな演習を始める</h2><p>CUDAを学んだら、まず動かしたい計算を一つ決め、対応GPU、開発環境、メモリとOSを確認します。今のPCで試せる範囲を確かめてから、本体更新や保存容量の増設と比べましょう。GPUの購入だけで計算が自動的に速くなるわけではありません。生成AIを文章業務へ使う学習は別の入口として選べますが、一般の生成AI講座をCUDAの専用プログラミング教育とは扱いません。</p><p>比較前の確認メモ：CUDA Toolkitと使用ライブラリの対応GPU・OS、VRAM、主メモリ、保存容量。今の環境で試せる範囲と、更新が必要な箇所を分けてから候補を選びましょう。</p></section>
+
+<h2>CUDAについてよくある質問</h2>
+
+<h3>CUDAはプログラミング言語ですか？</h3>
+<p>CUDAは言語ひとつの名前ではなく、並列コンピューティングのプラットフォームとプログラミングモデルです。CUDA C++のほか、ライブラリやAPIを通じて複数の言語・開発環境から利用できます。</p>
+
+<h3>CUDAはAI専用ですか？</h3>
+<p>いいえ。科学技術計算、シミュレーション、画像処理、データ分析など幅広い計算に使われます。AIはCUDAが利用される重要な分野の一つです。</p>
+
+<h3>CUDAを使うにはNVIDIAのGPUが必要ですか？</h3>
+<p>CUDAコードをGPUで実行するには、対応するNVIDIA GPUとドライバなどの環境が必要です。別メーカーのGPUには別の開発基盤があります。</p>
+
+<h3>Tensor CoreとCUDA Coreは同じですか？</h3>
+<p>同じではありません。Tensor Coreは行列の積和演算を効率よく行う演算器です。CUDAは、それらを含むNVIDIA GPUの計算機能をソフトウェアから利用するための基盤です。Tensor Coreの仕組みは次回、行列計算との関係から説明します。</p>
+
+<h2 id="cuda-summary">まとめ</h2>
+
+<div class="semicon-note"><ol><li>CUDAはGPUではなく、NVIDIAの並列コンピューティング基盤</li><li>CPUとGPUを協力させ、計算を多数のスレッドへ分けて実行しやすくした</li><li>共通のプログラミングモデル、ライブラリ、ツールがGPUの用途を研究やAIへ広げた</li><li>次の進化を理解する鍵は、行列計算を効率化するTensor Core</li></ol></div>
+
+<div class="semicon-links"><div class="semicon-linkbox"><h3>理解を一段戻す</h3><p><a href="https://semicon-campus.com/what-is-gpu-ai-parallel-processing/">GPUがゲームからAIへ広がった理由</a></p></div><div class="semicon-linkbox next"><h3>次に読む</h3><p><a href="https://semicon-campus.com/what-is-tensor-core-matrix-acceleration/">CUDAの上で行列計算を高速化するTensor Core</a></p></div></div>
+
+
+<section class="mp4-section" id="revenue-phase4-career"><h2>この記事の知識を、次の仕事・学習へつなげる</h2><p>測定・検査、設備点検、品質記録の経験を、対象・作業・確認した結果で整理します。担当範囲と必要経験、勤務地、勤務・出張、教育体制を比較すると、次に補う知識も具体的になります。</p><aside class="semicon-cta mp4-card"><h3>関連する職種の仕事内容・求人・学習を見る</h3><p>記事で学んだ技術が、点検・復旧、装置立上げ、顧客対応、実装・工程改善のどの仕事で使われるか確認できます。職種記事の求人・学習の選び方へ進みましょう。</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/cpu-memory-storage-difference/" class="semicon-btn mp4-button" data-revenue-phase4-hub="479" data-cta="pc_guide" data-cta-type="pc_guide" data-cta-stage="career" data-cta-id="phase4_596_hub479_end" data-cta-route="phase4_596_hub479_end">PCの遅さをCPU・メモリ・保存容量から切り分ける</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/dram-nand-difference/" class="semicon-btn mp4-button" data-revenue-phase4-hub="486" data-cta="memory_guide" data-cta-type="memory_guide" data-cta-stage="career" data-cta-id="phase4_596_hub486_end" data-cta-route="phase4_596_hub486_end">DRAM・NANDの違いとPCの増設・更新を確認する</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/semiconductor-beginner-roadmap/" class="semicon-btn mp4-button" data-revenue-phase4-hub="391" data-cta="learning_hub" data-cta-type="learning_hub" data-cta-stage="career" data-cta-id="phase4_596_hub391_end" data-cta-route="phase4_596_hub391_end">半導体学習Hubで基礎・仕事・学び方を確認する</a></div></aside></section>
+
+
+<h2>参考資料</h2>
+<ul><li><a rel="noopener" href="https://docs.nvidia.com/cuda/cuda-programming-guide/01-introduction/programming-model.html" target="_blank">NVIDIA CUDA Programming Guide: Programming Model</a></li><li><a rel="noopener" href="https://docs.nvidia.com/cuda/archive/12.5.0/cuda-c-programming-guide/index.html" target="_blank">NVIDIA CUDA C Programming Guide 12.5: Introduction and history</a></li><li><a rel="noopener" href="https://docs.nvidia.com/cuda/" target="_blank">NVIDIA CUDA Toolkit Documentation</a></li><li><a rel="noopener" href="https://developer.nvidia.com/blog/programming-tensor-cores-cuda-9/" target="_blank">NVIDIA Technical Blog: Programming Tensor Cores in CUDA 9</a></li></ul>
+
+<a class="semicon-backtop" href="#semicon-top">↑ 先頭</a>
+</div>
+

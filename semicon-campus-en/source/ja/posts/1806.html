@@ -1,0 +1,30 @@
+<h2>何が起きたのか</h2>
+<p>芝浦工業大学は2026年9月30日、尾崎克久教授らが開発した計算アルゴリズム「Ozaki Scheme II（オザキ・スキーム・ツー）」が、NVIDIAのCUDA Toolkit 13.4に採用されたと発表しました。大学の研究成果が、NVIDIA GPU向けの標準的な計算ソフトウェア基盤であるCUDAと、その行列計算ライブラリcuBLASの実装に組み込まれた、というニュースです。<a href="https://www.shibaura-it.ac.jp/headline/detail/20260930_7070_51_1.html">芝浦工業大学の発表</a></p>
+<p>NVIDIAの公式リリースノートでも、cuBLASの「エミュレートFP64行列乗算」にOzaki-IIを利用することが説明されています。性能上有利な場合には、従来のOzaki-Iに代わってOzaki-IIが選ばれ、NVIDIA Ampere世代以降のGPUがサポート対象です。ここで確認できるのは、アルゴリズムがCUDA/cuBLASの選択肢として実装されたことです。すべてのGPUや計算で、常にOzaki-IIが使われるという意味ではありません。<a href="https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/">NVIDIA CUDA Toolkitリリースノート</a></p>
+<h2>なぜAI向けGPUで高精度計算ができるのか</h2>
+<p>GPUには、AIの学習や推論で大量の行列を処理するための専用演算器があります。AIではINT8のような<strong>低精度</strong>の数値形式がよく使われます。INT8は8ビット整数で、扱える数値の範囲や細かさは限られますが、対応する演算器を大量に動かせるため、高い処理性能を得やすい形式です。</p>
+<p>一方、気象シミュレーションや耐震解析などでは、計算途中の誤差を小さくするため、FP64と呼ばれる64ビット浮動小数点形式が使われます。FP64、つまり<strong>倍精度</strong>は、数値の小数部分をより細かく表せる形式です。ただし、GPUによってはFP64の行列演算器がAI向けの低精度演算器ほど多くなく、計算が遅くなる場合があります。</p>
+<p>Ozaki Scheme IIは、FP64の行列積をFP64演算だけで実行するのではなく、低精度の整数行列積を複数回組み合わせて、高精度に近い結果を再構成します。基本的には、入力データを適切に<strong>スケーリング</strong>して扱いやすい整数成分に変換し、複数の異なる法に対する余りを求めます。その後、それぞれの整数行列積を計算し、最後に元の数値へ戻します。<a href="https://arxiv.org/abs/2504.08009">Ozaki Scheme IIの技術論文</a></p>
+<h2>中国剰余定理とは何か</h2>
+<p>この方式の中心にあるのが<strong>中国剰余定理</strong>です。これは、ある数を複数の異なる割り算の余りから復元できる、という数学的な考え方です。</p>
+<p>例えば、ある大きな数を直接保存する代わりに、「法3で割った余り」「法5で割った余り」「法7で割った余り」のように複数の情報へ分けて記録します。法同士が互いに素で、法の積が十分に大きければ、それらの余りから元の数を一意に復元できます。Ozaki Scheme IIでは、この考え方を行列積に応用します。入力行列を分解し、複数の剰余表現ごとにGEMMを計算して、結果を再構成する仕組みです。</p>
+<p><strong>GEMM</strong>は、行列同士を掛け合わせて足し合わせる処理で、AIのニューラルネットワークにも科学シミュレーションにも頻繁に登場します。論文では、INT8 Tensor Coreを使い、複数回の行列乗算を組み合わせてFP64相当の精度を目指す構成が示されています。低精度演算器を高精度計算へ転用できる点が、この研究の重要な特徴です。<a href="https://arxiv.org/abs/2504.08009">技術論文</a></p>
+<h2>これまでの経緯と今回の意味</h2>
+<p>Ozaki Scheme IIの論文初版は2025年4月10日に公開されました。その後、NVIDIAはCUDA Toolkit 13.4を2026年9月9日に公開したと公式技術ブログで説明しています。同ブログは、cuBLASにおけるOzaki-IIの固定小数点エミュレーションを、倍精度行列計算の性能改善に関係する機能として紹介しています。<a href="https://developer.nvidia.com/blog/?p=121255">NVIDIA公式技術ブログ</a></p>
+<p>また、NVIDIAのアーカイブにはCUDA Toolkit 13.4.1および13.4.2が2026年9月のリリースとして掲載されています。13.4.0はDeveloper Previewとして区別されているため、実際に利用する際は、導入するサブバージョンと対応GPUを確認する必要があります。<a href="https://developer.nvidia.com/cuda-toolkit-archive">CUDA Toolkit Archive</a></p>
+<p>今回の意味は、AIの普及で強化されてきた低精度行列演算器を、科学技術計算にも活用する道が、個別研究の段階からGPU計算ライブラリへ広がったことです。利用者は、アルゴリズムをすべて自作しなくても、CUDA/cuBLASが提供するエミュレートFP64機能を通じて試せる可能性があります。</p>
+<h2>期待される用途と、まだ分からないこと</h2>
+<p>芝浦工業大学は、気象予測、耐震設計、量子化学、新材料開発など、高精度な行列計算を含む科学シミュレーションへの応用を挙げています。ただし、これは大学側が示す用途例や将来への期待であり、今回の採用発表だけで各分野の実運用成果や計算時間の短縮が証明されたわけではありません。<a href="https://www.shibaura-it.ac.jp/headline/detail/20260930_7070_51_1.html">芝浦工業大学の発表</a></p>
+<p>技術的にも、効果は条件によって変わります。必要な剰余計算の回数、行列の大きさ、入力値の範囲、数値の偏り、GPU世代、メモリ使用量などが、速度と精度を左右します。論文の測定結果は、特定のGPUと行列サイズ、実装条件に基づく研究実験です。その数値を、すべてのNVIDIA GPUや実際のアプリケーションへそのまま当てはめることはできません。</p>
+<p>また、「FP64相当」は、どのような入力でもネイティブFP64と完全に同じ結果になることを意味しません。スケーリングや再構成範囲が適切か、丸め誤差が許容範囲に収まるかを、用途ごとに検証する必要があります。公開資料から確認できるのは、CUDA/cuBLASへの実装と論文での実験結果であり、すべての行列サイズや科学アプリケーションで同じ性能・精度が得られることではありません。<a href="https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/">NVIDIAリリースノート</a> <a href="https://arxiv.org/abs/2504.08009">技術論文</a></p>
+<h2>これから注目したい点</h2>
+<p>今後は、実際のCUDA 13.4系でどの条件のときにcuBLASがOzaki-IIを選ぶのか、GPU世代や行列サイズによって速度がどう変わるのかが確認ポイントです。科学計算の利用者にとっては、ネイティブFP64、Ozaki-I、Ozaki-IIを同じ問題で比較し、精度、処理時間、メモリ使用量を測ることが重要になります。</p>
+<p>さらに、気象、耐震、量子化学などの実アプリケーションで、計算結果の検証や再現性が確認されるかにも注目が必要です。今回のニュースは、研究アルゴリズムが世界規模のGPUソフトウェアへ組み込まれたという大きな一歩ですが、実用上の価値は、これから積み重ねられる独立したベンチマークと導入事例によって評価されます。</p>
+<h2>参考にした情報</h2>
+<ul>
+<li><a href="https://www.shibaura-it.ac.jp/headline/detail/20260930_7070_51_1.html">芝浦工業大学「尾崎教授の計算アルゴリズムをNVIDIAが新たに採用」</a></li>
+<li><a href="https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/">NVIDIA「CUDA Toolkit 13.4 Update 1 &#8211; Release Notes」</a></li>
+<li><a href="https://developer.nvidia.com/blog/?p=121255">NVIDIA Developer Blog「CUDA Toolkit 13.4 Adds Windows on Arm Support and Greater Control over Shared GPUs」</a></li>
+<li><a href="https://arxiv.org/abs/2504.08009">「Ozaki Scheme II: A GEMM-oriented emulation of floating-point matrix multiplication using an integer modular technique」</a></li>
+<li><a href="https://developer.nvidia.com/cuda-toolkit-archive">NVIDIA「CUDA Toolkit Archive」</a></li>
+</ul>

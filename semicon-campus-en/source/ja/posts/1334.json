@@ -1,0 +1,20 @@
+{
+ "id": 1334,
+ "type": "post",
+ "slug": "daily-news-e8eee90e5ef9ddc67f0b",
+ "link": "https://semicon-campus.com/daily-news-e8eee90e5ef9ddc67f0b/",
+ "date": "2026-09-30T12:00:00",
+ "modified": "2026-10-27T20:04:17",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  20
+ ],
+ "tags": [
+  19
+ ],
+ "featured_media": 2810,
+ "title": "TeradyneのMagnum E2発表、AIメモリ試験はどう変わる？",
+ "excerpt": "Teradyneが発表したMagnum E2を題材に、LPDDR6・GDDR7対応、高速信号試験、量産歩留まりとの関係、発表と実証の違いを初心者向けに解説します。"
+}

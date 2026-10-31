@@ -1,0 +1,341 @@
+
+<!--KEEP:0-->
+
+
+<!--KEEP:1-->
+
+
+<!--KEEP:2-->
+<div class="semicon-article">
+
+
+
+<p class="wp-block-paragraph">前回は、ウェハの上に薄い膜を作る「成膜」を見ました。</p>
+
+
+
+<p class="wp-block-paragraph">でも、成膜で膜を作っただけでは、まだ回路にはなりません。ウェハ全面に薄い層が広がっているだけです。</p>
+
+
+
+<p class="wp-block-paragraph">では、その膜をどうやってトランジスタや配線の形にしていくのでしょうか。</p>
+
+
+
+<div class="semicon-lead"><strong>この記事の結論</strong><br>リソグラフィとは、ウェハ上の膜に「どこを残し、どこを削るか」という回路の模様を写す工程です。成膜で作った膜を、次のエッチングで加工できる状態にします。</div>
+
+
+
+<figure class="semicon-hero">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/06/lithography-exposure-hero-bright.png" alt="露光装置の中でウェハに回路パターンを写しているリソグラフィ工程のイメージ">
+  <figcaption>リソグラフィは、ウェハ上に回路の模様を写す工程です。成膜で作った膜に「どこを残し、どこを削るか」という目印を作ります。</figcaption>
+</figure>
+
+
+
+<figure class="semicon-hero">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/06/lithography-flow.png" alt="成膜からレジスト塗布、露光、現像、エッチング準備までのリソグラフィ工程の流れ">
+  <figcaption>実物寄りのイメージだけでは工程のつながりが見えにくいので、ここで流れを整理します。リソグラフィは、次のエッチングとセットで理解すると一気につながります。</figcaption>
+</figure>
+
+
+
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>成膜でウェハの上に膜を作るところまでは、なんとなくわかったんですよ。でも、その膜ってウェハ全体にベターっと広がっているわけですよね？</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>その通りです。成膜しただけでは、まだ回路ではありません。そこで登場するのがリソグラフィです。</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>リソグラフィ。なんか急に専門用語感が強いですね。</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>言葉は難しいですが、イメージはかなり身近です。ウェハの上に、光で回路の模様を写す工程だと思ってください。</p></div></div>
+
+
+
+
+<h2 class="wp-block-heading">リソグラフィとは何か</h2>
+
+
+
+<p class="wp-block-paragraph">リソグラフィとは、ウェハの上に回路パターンを転写する工程です。</p>
+
+
+
+<p class="wp-block-paragraph">もう少しやさしく言うと、ウェハ上の膜に対して「ここは残す」「ここは削る」「ここは次の工程で加工する」という目印を作る工程です。</p>
+
+
+
+<p class="wp-block-paragraph">半導体製造では、ウェハの上に酸化膜、絶縁膜、金属膜など、さまざまな膜を作ります。しかし、その膜を全面に残したままでは、ただの層です。回路にするには、必要な形に加工しなければいけません。</p>
+
+
+
+<p class="wp-block-paragraph">そこで、膜の上にフォトレジストという光に反応する材料を塗り、マスクを通して光を当てます。光が当たった部分と当たらなかった部分でフォトレジストの性質が変わり、現像するとレジストの模様ができます。</p>
+
+
+
+<p class="wp-block-paragraph">このレジストの模様が、次のエッチング工程で「守る場所」や「削る場所」を決める目印になります。</p>
+
+
+
+<h2 class="wp-block-heading">なぜリソグラフィが必要なのか</h2>
+
+
+
+<p class="wp-block-paragraph">半導体チップの中には、非常に細かい回路が作り込まれています。CPU、GPU、メモリ、AI半導体などは、どれもウェハ上に微細な構造を大量に作ることで成り立っています。</p>
+
+
+
+<p class="wp-block-paragraph">このとき、ただ材料を積むだけでは回路になりません。材料を積んだあとに、必要な形へ加工する必要があります。その「形」を決めるのがリソグラフィです。</p>
+
+
+
+<div class="semicon-flow">
+  <strong>前工程の基本リズム</strong>
+  <div class="semicon-flow-grid">
+    <div class="semicon-flow-step"><strong>成膜</strong><span>膜を作る</span></div>
+    <div class="semicon-flow-step"><strong>リソグラフィ</strong><span>模様を写す</span></div>
+    <div class="semicon-flow-step"><strong>エッチング</strong><span>不要部分を削る</span></div>
+  </div>
+</div>
+
+
+
+<p class="wp-block-paragraph">建物で言えば、材料を運び込むだけでは家になりません。どこに柱を立てるのか、どこに壁を作るのか、どこを空けるのか。そういう設計図が必要です。</p>
+
+
+
+<p class="wp-block-paragraph">半導体でも同じです。成膜で材料を用意し、リソグラフィで形を指定し、エッチングで加工する。この繰り返しで、ウェハの上に複雑な半導体チップが作られていきます。</p>
+
+
+
+<!-- semicon-a8-top30-top30-17-1:start -->
+
+
+<!-- semicon-a8-top30-top30-17-1:end -->
+
+
+
+<h2 class="wp-block-heading">リソグラフィの基本的な流れ</h2>
+
+
+
+<p class="wp-block-paragraph">リソグラフィは、ざっくり次の流れで進みます。</p>
+
+
+
+<ol class="wp-block-list">
+  <li>ウェハをきれいにする</li>
+  <li>フォトレジストを塗る</li>
+  <li>マスクを通して光を当てる</li>
+  <li>現像する</li>
+  <li>レジストパターンを作る</li>
+  <li>次のエッチング工程へ進む</li>
+</ol>
+
+
+
+<h3 class="wp-block-heading">1. ウェハをきれいにする</h3>
+
+
+
+<p class="wp-block-paragraph">リソグラフィの前には、ウェハ表面をきれいな状態にします。半導体製造では、小さなゴミや汚れが大問題になります。人間の目には見えないような微粒子でも、ウェハ上では巨大な障害物になりえます。</p>
+
+
+
+<h3 class="wp-block-heading">2. フォトレジストを塗る</h3>
+
+
+
+<p class="wp-block-paragraph">次に、ウェハの表面にフォトレジストを塗ります。フォトレジストとは、光に反応する材料です。イメージとしては、光で性質が変わる薄い膜です。</p>
+
+
+
+<p class="wp-block-paragraph">ウェハを高速で回転させながら液体状のフォトレジストを広げ、非常に薄く均一に塗ります。この「均一に塗る」というのも簡単ではありません。厚さにムラがあると、露光や現像の結果に影響します。</p>
+
+
+
+<h3 class="wp-block-heading">3. マスクを通して光を当てる</h3>
+
+
+
+<p class="wp-block-paragraph">フォトレジストを塗ったら、マスクを通して光を当てます。マスクとは、回路の模様が描かれた原版のようなものです。</p>
+
+
+
+<figure class="semicon-hero">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/06/lithography-mask-wafer.png" alt="マスク、光、レンズ、ウェハの位置関係を示す露光装置の模式図">
+  <figcaption>露光装置は、マスクの模様をウェハ上のフォトレジストへ投影します。小さく写すだけでなく、正しい位置に重ねる精度も重要です。</figcaption>
+</figure>
+
+
+
+<p class="wp-block-paragraph">ここで使われる装置が、露光装置です。ASML、ニコン、キヤノンなどがこの分野に関わっています。特に最先端のEUV露光装置では、ASMLの存在感が非常に大きいです。</p>
+
+
+
+<p class="wp-block-paragraph">ただし、すべての工程がEUVで行われるわけではありません。チップの中のすべての層が同じ難易度ではないため、本当に細かく難しい層にはEUVを使い、その他の層にはDUVなど別の露光技術を使うことがあります。</p>
+
+
+
+<h3 class="wp-block-heading">4. 現像してレジストパターンを作る</h3>
+
+
+
+<p class="wp-block-paragraph">光を当てたあとは、現像を行います。現像とは、光で性質が変わったフォトレジストの一部を取り除く処理です。</p>
+
+
+
+<figure class="semicon-hero">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/06/lithography-resist-pattern.png" alt="フォトレジストが露光と現像によって一部だけ残る仕組みの図解">
+  <figcaption>初心者の段階では、まず「光が当たった場所と当たらなかった場所で、レジストの残り方が変わる」と理解すれば十分です。</figcaption>
+</figure>
+
+
+
+<p class="wp-block-paragraph">現像が終わると、ウェハ上にはフォトレジストのパターンが残ります。これが次の工程の目印になります。</p>
+
+
+
+<h2 class="wp-block-heading">フォトレジストとは何か</h2>
+
+
+
+<p class="wp-block-paragraph">フォトレジストは、光に反応する感光性材料です。半導体製造では、ウェハ上に回路パターンを作るために使われます。</p>
+
+
+
+<p class="wp-block-paragraph">リソグラフィというと露光装置に注目が集まります。もちろん露光装置は非常に重要です。しかし、フォトレジストという材料がなければ、光で模様を写すことはできません。</p>
+
+
+
+<p class="wp-block-paragraph">ここから、東京応化工業、JSR、信越化学などの材料メーカーがなぜ重要なのかが見えてきます。装置と材料がセットで限界に挑んでいるわけです。</p>
+
+
+
+<h2 class="wp-block-heading">リソグラフィが難しい理由</h2>
+
+
+
+<p class="wp-block-paragraph">リソグラフィが難しい理由は、一つではありません。代表的には次のような難しさがあります。</p>
+
+
+
+<div class="semicon-grid">
+  <div class="semicon-card"><b>模様が小さすぎる</b><span>微細化が進むほど、光で写す模様も小さくなります。</span></div>
+  <div class="semicon-card"><b>位置合わせが難しい</b><span>何層ものパターンを正しい位置に重ねる必要があります。</span></div>
+  <div class="semicon-card"><b>材料性能が必要</b><span>レジストの反応性、解像性、エッチング耐性が重要です。</span></div>
+  <div class="semicon-card"><b>欠陥を減らす必要</b><span>小さなゴミや欠陥が、後工程で大きな不良につながります。</span></div>
+  <div class="semicon-card"><b>量産で安定させる</b><span>研究室で1枚成功するだけでなく、工場で安定して作る必要があります。</span></div>
+  <div class="semicon-card"><b>計測とセット</b><span>寸法、オーバーレイ、欠陥を測りながら条件を合わせます。</span></div>
+</div>
+
+
+
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>やっとつながってきました。成膜だけだと、ただ膜があるだけ。リソグラフィで、どこを残すかの模様を写す。エッチングで、その模様に沿って削る。</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>その通りです。工程名をバラバラに覚えると難しく見えますが、前後のつながりで見ると、一気に意味が見えてきます。</p></div></div>
+
+
+
+<h2 class="wp-block-heading">関連企業をざっくり見る</h2>
+
+
+
+<p class="wp-block-paragraph">リソグラフィを理解すると、関連する企業も見えやすくなります。</p>
+
+
+
+<div class="semicon-grid">
+  <div class="semicon-card"><b>露光装置</b><span>ASML、ニコン、キヤノンなど。マスクの模様をウェハへ転写する装置に関わります。</span></div>
+  <div class="semicon-card"><b>レジスト・材料</b><span>東京応化工業、JSR、信越化学など。光に反応する材料が欠かせません。</span></div>
+  <div class="semicon-card"><b>検査・計測</b><span>KLA、日立ハイテク、レーザーテックなど。寸法、位置ずれ、欠陥を測ります。</span></div>
+</div>
+
+
+
+<p class="wp-block-paragraph">ここでは、企業名を「暗記する対象」として見る必要はありません。どの工程の、どの問題を支えている会社なのかを見ると、企業研究がかなり楽になります。リソグラフィ以外の工程も含めて会社を整理したい場合は、<a href="https://semicon-campus.com/semiconductor-company-map-by-process/">半導体企業マップ</a>で工程別に見られます。</p>
+
+
+<section class="mp2-section" id="revenue-phase2-learning"><h2>露光・レジスト・位置合わせを、実務と学び直しにつなげる</h2><p>露光の知識を仕事へ広げるには、パターンの結果と、位置合わせ・搬送・温度など装置側の状態を別々に確認した経験を整理します。材料や工程条件の問題まで一人で断定せず、どの情報をどの担当へ渡したかが具体的な接点です。光学の説明を読んだ後は、計測・制御や品質の基礎を補う学習と、装置の立上げ・保守を扱う求人の比較へ進めます。</p></section>
+
+<h2 class="wp-block-heading">関連する職種</h2>
+
+
+
+<p class="wp-block-paragraph">リソグラフィを理解すると、職種のイメージも広がります。たとえば、次のような仕事が関係します。</p>
+
+
+
+<ul class="wp-block-list">
+  <li>プロセスエンジニア</li>
+  <li>リソグラフィ工程エンジニア</li>
+  <li>露光装置エンジニア</li>
+  <li>フォトレジスト材料エンジニア</li>
+  <li>計測・検査エンジニア</li>
+  <li>歩留まり改善エンジニア</li>
+  <li>フィールドサービスエンジニア</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">初心者の段階では、求人を見る前に、まず「この工程では何を作っているのか」「どの装置や材料が関係するのか」「どんなトラブルを解決する仕事なのか」を理解すると、職種がかなり見えやすくなります。</p>
+
+
+
+<h2 class="wp-block-heading">まとめ: リソグラフィは成膜とエッチングをつなぐ工程</h2>
+
+
+
+<p class="wp-block-paragraph">リソグラフィとは、ウェハ上の膜に回路の模様を写す工程です。成膜で作った膜は、そのままでは回路になりません。リソグラフィで「どこを残し、どこを削るか」を決め、次のエッチングで不要な部分を削ることで、回路の形が作られていきます。</p>
+
+
+
+<ul class="wp-block-list">
+  <li>リソグラフィは、光で回路パターンを写す工程</li>
+  <li>フォトレジストは、光に反応する材料</li>
+  <li>マスクは、回路パターンの原版</li>
+  <li>露光装置は、マスクの模様をウェハに転写する装置</li>
+  <li>EUVは最先端の微細化で重要だが、DUVなど他の技術も使われる</li>
+  <li>リソグラフィは、成膜とエッチングをつなぐ工程</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">リソグラフィがわかると、なぜASMLが重要なのか、なぜ日本の材料メーカーが強いのか、なぜ計測・検査が歩留まりに直結するのかが、工程の中の役割として見えてきます。</p>
+
+
+
+<div class="semicon-links">
+  <div class="semicon-linkbox next">
+    <h3>次に読む記事</h3>
+    <p><a href="https://semicon-campus.com/what-is-etching-semiconductor-process/"><strong>エッチングとは何か？</strong></a><br>次は、リソグラフィで作った模様に沿って、ウェハ上の不要な膜を削る工程へ進みます。</p>
+  </div>
+  <div class="semicon-linkbox">
+    <h3>関連記事</h3>
+    <p><a href="https://semicon-campus.com/%e6%88%90%e8%86%9c%e3%81%a8%e3%81%af%e4%bd%95%e3%81%8b%ef%bc%9f%e3%82%a6%e3%82%a7%e3%83%8f%e3%81%ae%e4%b8%8a%e3%81%ab%e8%96%84%e3%81%84%e8%86%9c%e3%82%92%e4%bd%9c%e3%82%8b%e5%8d%8a%e5%b0%8e%e4%bd%93/">成膜とは何か？</a></p>
+    <p><a href="https://semicon-campus.com/semiconductor-company-map-by-process/">半導体企業マップ｜製造工程別に主要企業と役割を初心者向けに解説</a></p>
+    <p><a href="https://semicon-campus.com/what-is-feol-semiconductor-process/">前工程とは何か？</a></p>
+    <p><a href="https://semicon-campus.com/semiconductor-manufacturing-overview/">半導体製造の全体像とは？</a></p>
+  </div>
+</div>
+
+
+<section class="mp2-section" id="revenue-phase2-career"><h2>露光・レジスト・位置合わせから、求人と職種を比較する</h2><p>位置合わせ・搬送の点検、測定記録、装置立上げ支援の経験は、対象設備・作業・確認した結果を一組にして整理しましょう。転職を考える場合は担当範囲、勤務地、勤務・出張、教育体制、応募条件を求人票と照合すると、今の経験と補う知識を分けられます。</p><aside class="semicon-cta mp2-card"><h3>職種の全体像と、求人・学習の選び方を見る</h3><p>技術を学んだ後は、点検・復旧、装置の立上げ、工程改善、顧客対応など、担当する仕事の範囲を比較しましょう。以下の職種記事では、仕事内容に加えて求人・学習の選択肢を確認できます。</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/" class="semicon-btn mp2-button" data-revenue-phase2-hub="237" data-cta="equipment_hub" data-cta-type="equipment_hub" data-cta-stage="career" data-cta-id="phase2_68_hub237_end" data-cta-route="phase2_68_hub237_end">装置エンジニアの担当範囲・求人・学習を見る</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-field-service-engineer/" class="semicon-btn mp2-button" data-revenue-phase2-hub="270" data-cta="fse_hub" data-cta-type="fse_hub" data-cta-stage="career" data-cta-id="phase2_68_hub270_end" data-cta-route="phase2_68_hub270_end">FSEの復旧・顧客対応と求人・学習を見る</a></div></aside></section>
+
+
+<h2 class="wp-block-heading">参考にした公式情報</h2>
+
+
+
+<ul class="semicon-sources wp-block-list">
+  <li><a rel="noopener" href="https://www.asml.com/en/technology/lithography-principles" target="_blank">ASML: Principles of lithography</a></li>
+  <li><a rel="noopener" href="https://www.asml.com/en/products/euv-lithography-systems" target="_blank">ASML: EUV lithography systems</a></li>
+  <li><a rel="noopener" href="https://www.nikon.com/business/semi/" target="_blank">Nikon: Semiconductor Lithography Systems</a></li>
+  <li><a rel="noopener" href="https://global.canon/en/product/indtech/semicon/" target="_blank">Canon: Semiconductor Lithography Equipment</a></li>
+  <li><a rel="noopener" href="https://www.tok-pr.com/en/products/photoresist.html" target="_blank">Tokyo Ohka Kogyo: Photoresists</a></li>
+  <li><a rel="noopener" href="https://www.jsr.co.jp/jsr_e/products/em/" target="_blank">JSR: Electronic Materials Business</a></li>
+  <li><a rel="noopener" href="https://www.shinetsu.co.jp/en/products/electronics-materials/photoresist/" target="_blank">Shin-Etsu Chemical: Photoresist</a></li>
+  <li><a rel="noopener" href="https://www.kla.com/products/chip-manufacturing/metrology" target="_blank">KLA: Metrology</a></li>
+  <li><a rel="noopener" href="https://www.hitachi-hightech.com/global/en/knowledge/semiconductor/room/manufacturing/cd-sem.html" target="_blank">Hitachi High-Tech: CD-SEM</a></li>
+</ul>
+
+
+
+</div>
+
+
+<aside class="related-spokes"><h2>あわせて読みたい</h2><ul><li><a href="/semiconductor-lithography-defect/">写したはずの形がくずれるのはなぜ？リソグラフィ不良と、ピント・光の量・現像後検査</a></li><li><a href="/semiconductor-pellicle-photomask/">半導体のペリクルとは？フォトマスクを守る薄い膜の役割</a></li><li><a href="/asml-history-euv/">ASMLとは？雨漏りする小屋から、EUV装置までの40年</a></li></ul></aside>

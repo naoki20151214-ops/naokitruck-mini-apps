@@ -1,0 +1,284 @@
+
+<!--KEEP:0-->
+
+
+<!--KEEP:1-->
+
+
+<!--KEEP:2-->
+<div class="semicon-article" id="semicon-top">
+
+
+
+<div class="semicon-level">
+  <div class="semicon-level-top"><span class="semicon-level-label">学習レベル</span><strong>完全初心者 → 初級</strong></div>
+  <p>このページは、半導体製造工程をこれから学ぶ人のための地図です。成膜、リソグラフィ、エッチング、洗浄、CMP、検査の記事へ進む前に読むと、全体像がつながりやすくなります。</p>
+</div>
+
+
+
+<p class="semicon-lead wp-block-paragraph">前工程とは、シリコンウェハの上に回路を作り込む半導体製造の中心工程です。「前」と聞くと準備作業のように見えますが、実際には、ウェハをAIチップ、GPU、メモリなどの中身へ変えていく主役の工程です。この記事では、文系・未経験者でも迷わないように、前工程を「洗う、膜を作る、模様を写す、削る、平らにする、測る」という流れで整理します。</p>
+
+
+
+<div class="semicon-map">
+  <h3>この記事でわかること</h3>
+  <ol>
+    <li>前工程とは何か</li>
+    <li>なぜ前工程は半導体製造の中心なのか</li>
+    <li>洗浄、成膜、リソグラフィ、エッチング、CMP、検査のつながり</li>
+    <li>FEOL、MOL、BEOLという分類をどう見ればよいか</li>
+    <li>工程を理解すると、企業や職種がどう見えるか</li>
+    <li>次にどの記事を読めばよいか</li>
+  </ol>
+</div>
+
+
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/feol-hub-featured.png" alt="前工程とは何か。ウェハの上で洗う、膜を作る、模様を写す、削る、平らにする、測る工程を繰り返してチップを作る">
+  <figcaption>前工程は、ウェハに加工を重ねて回路を作る工程です。会社名や装置名を覚える前に、この大きな流れをつかむと理解が速くなります。</figcaption>
+</figure>
+<div class="semicon-mobile-summary">
+  <b>図の要点</b>
+  <ul>
+    <li>前工程はウェハの上に回路を作る工程</li>
+    <li>洗浄、成膜、リソグラフィ、エッチング、CMP、検査を繰り返す</li>
+    <li>この工程がチップの性能や歩留まりに直結する</li>
+  </ul>
+</div>
+
+
+
+
+<h2 class="wp-block-heading">前工程とは何か</h2>
+
+
+
+<p class="wp-block-paragraph">前工程とは、シリコンウェハの表面にトランジスタや配線などを作り込む工程です。完成したチップを切り出してパッケージに入れる段階を後工程と呼ぶのに対して、ウェハの上で回路そのものを作る段階を前工程と呼びます。</p>
+
+
+
+<p class="wp-block-paragraph">一言でいうと、前工程は「まだ回路のないウェハを、電子回路の街に変える工程」です。最初のウェハは、きれいに磨かれた丸い土台にすぎません。そこへ、薄い膜を作り、写真のように模様を写し、いらない部分を削り、表面を洗い、平らにし、測定して、また次の層へ進みます。</p>
+
+
+
+<div class="semicon-note">
+  <p><strong>文系・未経験者は、まずここだけで十分です。</strong></p>
+  <p>前工程は「ウェハの上に回路を作る工程」。細かい装置名や英語略語は、全体像が見えてから覚えれば大丈夫です。</p>
+</div>
+
+
+
+<h2 class="wp-block-heading">前工程はウェハをチップへ変える工程</h2>
+
+
+
+<p class="wp-block-paragraph">半導体は、砂や石英に含まれるシリコンから始まります。そこから高純度シリコン、単結晶インゴット、シリコンウェハへ進みます。ただし、ウェハになった時点ではまだ回路はありません。前工程で初めて、ウェハの上にトランジスタや配線の土台が作られていきます。</p>
+
+
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/feol-hub-roadmap.png" alt="前工程はウェハをチップへ変える工程。砂、シリコン、ウェハ、前工程、チップの流れ">
+  <figcaption>ウェハは完成品ではありません。前工程で何度も加工を重ねることで、回路を持つチップへ近づいていきます。</figcaption>
+</figure>
+<div class="semicon-mobile-summary">
+  <b>図の要点</b>
+  <ul>
+    <li>砂や石英から高純度シリコンを作る</li>
+    <li>シリコンを薄く切ってウェハにする</li>
+    <li>前工程でウェハ上に回路を作り込む</li>
+    <li>その後、チップとして切り出される</li>
+  </ul>
+</div>
+
+
+
+<!-- semicon-a8-top30-top30-15-1:start -->
+
+
+<!-- semicon-a8-top30-top30-15-1:end -->
+
+
+
+<h2 class="wp-block-heading">前工程の基本ループ</h2>
+
+
+
+<p class="wp-block-paragraph">前工程を理解するとき、最初からすべての工程名を暗記する必要はありません。まずは「洗う、膜を作る、模様を写す、削る、平らにする、測る」というリズムで見てください。半導体工場では、この流れを材料や目的を変えながら何度も繰り返します。</p>
+
+
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/feol-hub-loop.png" alt="前工程の基本ループ。洗浄、成膜、リソグラフィ、エッチング、CMP、検査・計測を何度も繰り返す">
+  <figcaption>前工程は一回で終わりません。層を作るたびに、洗浄、成膜、リソグラフィ、エッチング、CMP、検査・計測を繰り返します。</figcaption>
+</figure>
+<div class="semicon-mobile-summary">
+  <b>図の要点</b>
+  <ul>
+    <li>洗浄: 汚れを減らす</li>
+    <li>成膜: 薄い膜を作る</li>
+    <li>リソグラフィ: 模様を写す</li>
+    <li>エッチング: 不要な膜を削る</li>
+    <li>CMP: 表面を平らにする</li>
+    <li>検査・計測: ズレや欠陥を見る</li>
+  </ul>
+</div>
+
+
+
+<p class="wp-block-paragraph">この繰り返しが必要な理由は、半導体チップが立体的な構造を持つからです。一枚のウェハに一度だけ模様を作って終わりでは、CPU、GPU、AI半導体のような複雑なチップは作れません。膜を重ね、必要な場所だけ残し、また別の層を重ねることで、回路が少しずつ作られていきます。</p>
+
+
+
+<h2 class="wp-block-heading">前工程の主な工程を一言でつかむ</h2>
+
+
+
+<div class="semicon-grid">
+  <div class="semicon-card"><b>洗浄</b><span>ウェハ表面の微粒子、金属汚染、薬液残りを減らします。歩留まりを守る土台です。</span></div>
+  <div class="semicon-card"><b>成膜</b><span>絶縁膜、金属膜、保護膜など、必要な性質を持つ薄い膜を作ります。</span></div>
+  <div class="semicon-card"><b>リソグラフィ</b><span>光を使って、回路の模様をウェハ上に写します。ASMLで有名な工程です。</span></div>
+  <div class="semicon-card"><b>エッチング</b><span>リソグラフィで作った模様に沿って、不要な膜を削ります。</span></div>
+  <div class="semicon-card"><b>CMP</b><span>ウェハ表面の段差をならし、次の工程が進みやすい平らな面を作ります。</span></div>
+  <div class="semicon-card"><b>検査・計測</b><span>膜厚、線幅、位置ずれ、欠陥を測り、工程が狙い通りか確認します。</span></div>
+</div>
+
+
+
+<h2 class="wp-block-heading">FEOL、MOL、BEOLはどう考えればいいか</h2>
+
+
+
+<p class="wp-block-paragraph">半導体を少し詳しく学ぶと、FEOL、MOL、BEOLという言葉が出てきます。初心者はここで止まりがちですが、最初から全部を暗記する必要はありません。まずは、前工程を「ウェハ上に回路を作る工程全体」として理解してください。</p>
+
+
+
+<p class="wp-block-paragraph">そのうえで、細かく見ると、トランジスタを作る部分をFEOL、トランジスタと配線をつなぐ接続部をMOL、上に積み上がる配線層をBEOLと分けて考えます。記事や企業資料によって言葉の使い方が少し違うこともあるため、文脈を見ながら理解するのが大切です。</p>
+
+
+
+<div class="semicon-note">
+  <p><strong>初心者が間違えやすいポイント：BEOLは「後工程」ではありません。</strong></p>
+  <p>BEOLは Back-End of Line の略なので、名前だけ見ると「後工程」と同じに見えます。しかし、半導体製造でいうBEOLは、ウェハ上に金属配線を作る工程で、前工程の後半部分として扱われます。</p>
+  <ul>
+    <li><strong>BEOL:</strong> ウェハ上に配線層を作る工程。前工程側の話。</li>
+    <li><strong>後工程:</strong> ウェハを切り出し、パッケージに入れ、最終テストへ進む工程。</li>
+  </ul>
+  <p>求人票で「BEOLプロセス」「配線工程」「Cu配線」「低誘電率膜」などが出てきたら、組み立て作業ではなく、ウェハ上の配線技術に近い仕事だと考えると読み間違いを減らせます。</p>
+</div>
+
+
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/feol-hub-layers.png" alt="前工程を細かく見るとFEOL、MOL、BEOLに分かれる。初心者はまずウェハ上で回路を作る全体像から理解する">
+  <figcaption>最初は「前工程＝ウェハ上に回路を作る工程」で十分です。流れが見えてきたら、FEOL、MOL、BEOLに分けて理解しましょう。</figcaption>
+</figure>
+<div class="semicon-mobile-summary">
+  <b>図の要点</b>
+  <ul>
+    <li>初心者は前工程を大きな地図として理解する</li>
+    <li>中級へ進むとFEOL、MOL、BEOLに分けて見る</li>
+    <li>分類よりも、まず工程の流れをつかむことが大切</li>
+  </ul>
+</div>
+
+
+<section class="mp2-section" id="revenue-phase2-learning"><h2>前工程の製造・装置・品質を、実務と学び直しにつなげる</h2><p>前工程を学んだ後は、工程名を、装置を操作する仕事、装置を保守する仕事、結果を測って条件を整える仕事へ置き換えます。未経験の製造職を探す場合は教育体制と交替勤務、経験者は扱った装置や改善範囲を整理しましょう。機械・電気・品質の基礎学習に加え、工場求人の入口と技術職相談を使い分けると、自分の次の行動を選びやすくなります。</p></section>
+
+<h2 class="wp-block-heading">企業や職種はどこにつながるのか</h2>
+
+
+
+<p class="wp-block-paragraph">前工程を理解すると、企業名がただの暗記ではなくなります。露光装置ならASML、ニコン、キヤノン。成膜やエッチングなら東京エレクトロン、Applied Materials、Lam Research。洗浄ならSCREEN。CMPなら荏原製作所。検査・計測ならKLAやHitachi High-Tech。このように、工程ごとに関係する企業が見えてきます。</p>
+
+
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/feol-hub-company-career.png" alt="工程がわかると企業と職種が見える。リソグラフィ、成膜、エッチング、洗浄、CMP、検査・計測と企業・職種の対応">
+  <figcaption>会社名を丸暗記するより、どの工程を支えている会社かで見ると、企業研究と職種理解がつながります。</figcaption>
+</figure>
+<div class="semicon-mobile-summary">
+  <b>図の要点</b>
+  <ul>
+    <li>工程ごとに関係する企業が違う</li>
+    <li>装置メーカー、材料メーカー、検査装置メーカーが見えてくる</li>
+    <li>職種もプロセス、装置、FSE、品質、歩留まりへ分かれる</li>
+  </ul>
+</div>
+
+
+
+<p class="wp-block-paragraph">職種で見ると、プロセスエンジニア、装置エンジニア、フィールドサービスエンジニア、検査・計測エンジニア、品質・歩留まり改善などにつながります。文系・未経験者が半導体業界を目指す場合も、いきなり会社名だけを見るより、「どの工程に関わる仕事か」を見ると求人票が読みやすくなります。</p>
+
+
+
+<div class="semicon-cta">
+  <h3>前工程がわかると、求人票の言葉が読める</h3>
+  <p>求人票で「前工程」「成膜」「露光」「エッチング」「洗浄」「CMP」「検査」「歩留まり」「装置立上げ」「プロセス改善」といった言葉を見つけたら、この記事の内容とつながります。まずは工程名を手がかりに、職種マップや求人キーワードを確認してみましょう。</p>
+  <p>転職を現実的に考えている場合は、職種を知る、求人票の言葉を読む、自分に合う転職サービスを選ぶ、という順番で整理すると迷いにくくなります。</p>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn" href="https://semicon-campus.com/semiconductor-career-map/">職種マップで役割を知る</a>
+    <a class="semicon-btn" href="https://semicon-campus.com/semiconductor-career-service-selection-guide/">転職サービス選定ガイドを見る</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/%e5%8d%8a%e5%b0%8e%e4%bd%93%e6%b1%82%e4%ba%ba%e3%82%ad%e3%83%bc%e3%83%af%e3%83%bc%e3%83%89%e4%b8%80%e8%a6%a7%ef%bd%9c%e6%9c%aa%e7%b5%8c%e9%a8%93%e8%80%85%e3%81%8c%e6%b1%82%e4%ba%ba%e7%a5%a8%e3%81%a7/">求人キーワード一覧を見る</a>
+  </div>
+</div>
+
+
+
+<h2 class="wp-block-heading">まとめ</h2>
+
+
+
+<p class="wp-block-paragraph">前工程とは、シリコンウェハの上に回路を作り込む半導体製造の中心工程です。「前」とついていますが、ただの準備ではありません。ウェハをAIチップ、GPU、メモリなどの中身へ変える主役の工程です。</p>
+
+
+
+<p class="wp-block-paragraph">まずは、前工程を「洗う、膜を作る、模様を写す、削る、平らにする、測る」という繰り返しとして理解してください。この地図があると、成膜、リソグラフィ、エッチング、洗浄、CMP、検査・計測、歩留まりの記事が一気につながります。</p>
+
+
+
+<div class="semicon-cta secondary-cta">
+  <h3>次回予告</h3>
+  <p>次は「成膜とは何か？」へ進みます。前工程の中で、ウェハの上に薄い膜を作る工程です。膜を作る意味がわかると、リソグラフィやエッチングも理解しやすくなります。</p>
+</div>
+
+<div class="semicon-cta secondary-cta">
+  <h3>YouTubeでも半導体をやさしく解説しています</h3>
+  <p>図解で復習したい人向けに、YouTubeでも半導体製造や工程の考え方を短く解説しています。</p>
+  <div class="semicon-btnrow">
+    <a rel="noopener" class="semicon-btn" href="https://www.youtube.com/@semicon-campus" target="_blank">YouTubeで図解動画を見る</a>
+  </div>
+</div>
+
+<div class="semicon-links">
+  <div class="semicon-linkbox next">
+    <h3>次に読む記事</h3>
+    <p><a href="https://semicon-campus.com/%e6%88%90%e8%86%9c%e3%81%a8%e3%81%af%e4%bd%95%e3%81%8b%ef%bc%9f%e3%82%a6%e3%82%a7%e3%83%8f%e3%81%ae%e4%b8%8a%e3%81%ab%e8%96%84%e3%81%84%e8%86%9c%e3%82%92%e4%bd%9c%e3%82%8b%e5%8d%8a%e5%b0%8e%e4%bd%93/">成膜とは何か？ウェハの上に薄い膜を作る半導体製造工程</a></p>
+  </div>
+  <div class="semicon-linkbox">
+    <h3>関連記事</h3>
+    <p><a href="https://semicon-campus.com/what-is-silicon-wafer/">ウェハとは何か？</a></p>
+    <p><a href="https://semicon-campus.com/%e6%88%90%e8%86%9c%e3%81%a8%e3%81%af%e4%bd%95%e3%81%8b%ef%bc%9f%e3%82%a6%e3%82%a7%e3%83%8f%e3%81%ae%e4%b8%8a%e3%81%ab%e8%96%84%e3%81%84%e8%86%9c%e3%82%92%e4%bd%9c%e3%82%8b%e5%8d%8a%e5%b0%8e%e4%bd%93/">成膜とは何か？</a></p>
+    <p><a href="https://semicon-campus.com/what-is-lithography-semiconductor-process/">リソグラフィとは何か？</a></p>
+    <p><a href="https://semicon-campus.com/what-is-etching-semiconductor-process/">エッチングとは何か？</a></p>
+    <p><a href="https://semicon-campus.com/why-semiconductor-fab-uses-ultrapure-water/">洗浄・超純水とは何か？</a></p>
+    <p><a href="https://semicon-campus.com/what-is-cmp-semiconductor-process/">CMPとは何か？</a></p>
+    <p><a href="https://semicon-campus.com/what-is-semiconductor-inspection-quality-control/">検査・品質評価とは何か？</a></p>
+    <p><a href="https://semicon-campus.com/what-is-semiconductor-yield/">歩留まりとは何か？</a></p>
+  </div>
+</div>
+
+<section class="mp2-section" id="revenue-phase2-career"><h2>前工程の製造・装置・品質から、求人と職種を比較する</h2><p>製造装置操作、点検、検査・品質記録の経験は、対象設備・作業・確認した結果を一組にして整理しましょう。転職を考える場合は担当範囲、勤務地、勤務・出張、教育体制、応募条件を求人票と照合すると、今の経験と補う知識を分けられます。</p><aside class="semicon-cta mp2-card"><h3>職種の全体像と、求人・学習の選び方を見る</h3><p>技術を学んだ後は、点検・復旧、装置の立上げ、工程改善、顧客対応など、担当する仕事の範囲を比較しましょう。以下の職種記事では、仕事内容に加えて求人・学習の選択肢を確認できます。</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/" class="semicon-btn mp2-button" data-revenue-phase2-hub="277" data-cta="maintenance_hub" data-cta-type="maintenance_hub" data-cta-stage="career" data-cta-id="phase2_52_hub277_end" data-cta-route="phase2_52_hub277_end">設備保全Hubで仕事内容・求人・学習を確認する</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/" class="semicon-btn mp2-button" data-revenue-phase2-hub="237" data-cta="equipment_hub" data-cta-type="equipment_hub" data-cta-stage="career" data-cta-id="phase2_52_hub237_end" data-cta-route="phase2_52_hub237_end">装置エンジニアの担当範囲・求人・学習を見る</a></div></aside></section>
+
+<h2>参考資料</h2>
+<ul class="semicon-sources">
+  <li><a rel="noopener" href="https://newsroom.intel.com/tech101/how-a-semiconductor-factory-works" target="_blank">Intel Newsroom: How a Semiconductor Factory Works</a></li>
+  <li><a rel="noopener" href="https://www.asml.com/en/technology/all-about-microchips/how-microchips-are-made" target="_blank">ASML: How microchips are made</a></li>
+  <li><a rel="noopener" href="https://www.tel.co.jp/museum/exhibition/process/" target="_blank">東京エレクトロン: 半導体ができるまで</a></li>
+</ul>
+<a class="semicon-backtop" href="#semicon-top">↑ 先頭</a>
+</div>
+
+
+<aside class="related-spokes"><h2>あわせて読みたい</h2><ul><li><a href="/semiconductor-ion-implantation/">半導体のイオン注入とは？原子を打ち込む理由と、アニールで傷を直す工程</a></li><li><a href="/semiconductor-copper-damascene/">半導体の銅配線とは？ダマシン法で「溝を掘って埋める」理由</a></li><li><a href="/semiconductor-low-k-dielectric/">半導体のlow-k絶縁膜とは？配線のあいだをスカスカにする理由</a></li></ul></aside>

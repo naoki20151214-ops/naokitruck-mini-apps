@@ -1,0 +1,81 @@
+<!--KEEP:0-->
+<article class="semicon-article" data-episode="090" data-slug="preventive-maintenance-semiconductor" data-target="existing_post">
+<h1>なぜ壊れる前に止める？、半導体装置の予防保全を追う</h1>
+<p>半導体工場では、装置が動いているのに、あえて生産を止めて点検や部品交換をすることがあります。なぜなら、装置は故障した瞬間に初めて変化するのではなく、摩耗や堆積が少しずつ進むからです。</p>
+<p>先に答えると、予防保全、つまりPM（Preventive Maintenance）の目的は停止をゼロにすることではありません。予測できない突発停止や、気づきにくい品質異常を、計画できる停止へ置き換えることです。この記事では、負荷の蓄積、兆候の監視、計画停止、再認定、次回の周期判断までを一つの流れで見ます。</p>
+<h2>この記事でわかること</h2>
+<ul>
+<li>装置がまだ動いていても、なぜ保全を始めるのか</li>
+<li>チャンバー、消耗部品、真空ポンプ、排気ラインをどう一つの系として見るのか</li>
+<li>清掃・交換の後に、なぜ再認定やseasoningが必要になるのか</li>
+<li>PM周期を暦時間だけでなくcycle、work、状態データで考える理由</li>
+</ul>
+<p class="note" data-fact-ids="F001 F003"><strong>先に要点：</strong>PMは「壊れるまで使う」ための活動ではありません。まだ動く段階で兆候を確認し、計画停止で状態を戻し、次の判断に履歴を残す活動です。</p>
+<h2>1. 装置は故障前から少しずつ変わる</h2>
+<p data-fact-ids="F001">半導体装置は、正常か故障かの二つだけで分けられません。ウェハを処理するたびに、プラズマ、熱、薬品、真空、搬送の動作が部品へ負荷をかけます。エッチング装置では、反応生成物がチャンバー壁や排気ラインへ堆積し、異物、真空リーク、プロセス性能低下の要因になることがあります。次のチャンバー開放部と保全作業は、点検対象を具体的に示します。</p>
+<figure data-media-role="explanatory-01" data-visual-kind="photoreal" data-subject="チャンバー開放部と保全作業" data-purpose="摩耗や堆積を点検する対象" data-composition="chamber-inspection" data-concrete-object="true" data-selection-reason="チャンバー開放部と保全作業の具体物を見せると、見えない堆積や摩耗を点検する対象が読者に伝わるため採用した。" data-photo-assessment="実写だけでは負荷が時間とともに蓄積する因果は表しにくいが、この写真は本文で扱うチャンバーの具体的な外観を示す。" data-provenance="articles/provenance/ep090-article-01.md"><img decoding="async" src="assets/preventive-maintenance-episode090/optimized/V001.webp" alt="チャンバー開放部と保全作業を示すEP090のAI生成ビジュアル"><figcaption>チャンバー開放部と保全作業。EP090 episode-local v2 visual（AI生成）。cropped and WebP optimized from preserved episode-local original variant。本文の摩耗や堆積を点検する対象に対応します。</figcaption></figure>
+<p>装置が停止していないことと、良品を安定して作れることは同じではありません。処理条件の再現性がわずかに変わり、粒子や真空性能のリスクが増えているなら、故障表示が出る前でも保全の判断が必要になります。ここで見るチャンバー開放部と保全作業は、目視点検の対象を具体化します。</p>
+<h2>2. PMは部品交換だけでなく、計画停止の設計である</h2>
+<p data-fact-ids="F002 F009">PMでは、保全履歴と状態を確認し、生産計画と調整して装置を安全に停止します。チャンバーを点検し、必要ならedge ringのような消耗部品を交換します。作業前に部品在庫、人員、手順、停止時間をそろえることで、突発停止を計画された停止へ置き換えやすくなります。クリーンルームの装置保全作業は、その実務を具体化します。</p>
+<figure data-media-role="explanatory-02" data-visual-kind="photoreal" data-subject="クリーンルームの装置保全作業" data-purpose="PM前後の保全実務" data-composition="cleanroom-maintenance" data-concrete-object="true" data-selection-reason="クリーンルームで装置を確認する作業者の具体物を示し、PMが交換作業だけでなく準備と安全な停止を含むことを伝えるため採用した。" data-photo-assessment="実写だけでは保全履歴や生産計画との調整は見えないが、この写真は本文の保全実務を支える装置と作業環境を示す。" data-provenance="articles/provenance/ep090-article-02.md"><img decoding="async" src="assets/preventive-maintenance-episode090/optimized/V002.webp" alt="クリーンルームの装置保全作業を示すEP090のAI生成ビジュアル"><figcaption>クリーンルームの装置保全作業。EP090 episode-local v2 visual（AI生成）。cropped and WebP optimized from preserved episode-local original variant。本文のPM前後の保全実務に対応します。</figcaption></figure>
+<p>保全作業の中心は「止めること」そのものではありません。止める前に何を確認し、停止中にどこを清掃・交換し、再開前に何を確認するかを決めることが中心です。作業結果は次回の周期を考える材料になります。クリーンルームの装置保全作業は、この準備から確認までの実務をイメージする手掛かりです。</p>
+<h2>3. チャンバーの内側だけを見てはいけない</h2>
+<p data-fact-ids="F007 F008">チャンバーを開ければPMが終わるわけではありません。真空ポンプではoil、filter、seal、bearingなどが保全対象になる場合があります。TEOSなどの工程では副生成物がpump lineを閉塞し、粒子増加、ガス流の阻害、ポンプ故障につながり得ます。処理室、配管、ポンプを時間軸でつなげて見ることが必要です。真空チャンバーの点検口と真空ポンプと排気系は、その範囲を示します。</p>
+<figure data-media-role="explanatory-03" data-visual-kind="photoreal" data-subject="真空チャンバーの点検口" data-purpose="チャンバー点検と部品交換の対象" data-composition="chamber-port" data-concrete-object="true" data-selection-reason="真空チャンバーの点検口を大きく見せることで、PMで確認する物理的な対象を具体化するため採用した。" data-photo-assessment="実写だけでは副生成物が蓄積する時間変化は示せないが、この写真は保全対象となるチャンバーの構造を示す。" data-provenance="articles/provenance/ep090-article-03.md"><img decoding="async" src="assets/preventive-maintenance-episode090/optimized/V003.webp" alt="真空チャンバーの点検口を示すEP090のAI生成ビジュアル"><figcaption>真空チャンバーの点検口。EP090 episode-local v2 visual（AI生成）。cropped and WebP optimized from preserved episode-local original variant。本文のチャンバー点検と部品交換の対象に対応します。</figcaption></figure>
+<figure data-media-role="explanatory-04" data-visual-kind="photoreal" data-subject="真空ポンプと排気系" data-purpose="ポンプ保全と排気ラインの対象" data-composition="vacuum-pump" data-concrete-object="true" data-selection-reason="真空ポンプと排気系を一枚で示すことで、PMの対象が処理室から下流のポンプと配管まで広がることを説明できるため採用した。" data-photo-assessment="実写だけでは閉塞が進む因果は見えないが、この写真はポンプと排気系の具体物を示し、本文の範囲と対応する。" data-provenance="articles/provenance/ep090-article-04.md"><img decoding="async" src="assets/preventive-maintenance-episode090/optimized/V005.webp" alt="真空ポンプと排気系を示すEP090のAI生成ビジュアル"><figcaption>真空ポンプと排気系。EP090 episode-local v2 visual（AI生成）。cropped and WebP optimized from preserved episode-local original variant。本文のポンプ保全と排気ラインの対象に対応します。</figcaption></figure>
+<p>異常が出たときに処理室だけを交換しても、下流の堆積やポンプの状態が原因なら再発する可能性があります。PMでは、部品の寿命だけでなく、負荷がどこへ移動し、どこに蓄積したかを確認します。真空チャンバーの点検口と真空ポンプと排気系は、その確認対象を具体的に示します。</p>
+<h2>4. 清掃は多ければよいわけではない</h2>
+<p data-fact-ids="F003 F004">清掃不足は残留物や粒子の問題につながります。一方で、清掃しすぎるとチャンバー表面を傷めたり、部品寿命を縮めたりする可能性があります。だから、清掃周期は短ければよいのではなく、状態と履歴に応じて決めます。半導体製造装置の配管とポンプは、清掃や交換の範囲を具体化します。</p>
+<figure data-media-role="explanatory-05" data-visual-kind="photoreal" data-subject="半導体製造装置の配管とポンプ" data-purpose="装置全体の保全範囲" data-composition="equipment-piping" data-concrete-object="true" data-selection-reason="配管、ポンプ、装置本体を同時に見せることで、清掃や交換の影響を装置全体で考える必要を示すため採用した。" data-photo-assessment="実写だけでは清掃の過不足によるリスクは表せないが、この写真は本文に登場する配管とポンプの具体物を示す。" data-provenance="articles/provenance/ep090-article-05.md"><img decoding="async" src="assets/preventive-maintenance-episode090/optimized/V007.webp" alt="半導体製造装置の配管とポンプを示すEP090のAI生成ビジュアル"><figcaption>半導体製造装置の配管とポンプ。EP090 episode-local v2 visual（AI生成）。cropped and WebP optimized from preserved episode-local original variant。本文の装置全体の保全範囲に対応します。</figcaption></figure>
+<p>作業後は、組み立ててすぐ量産に戻れるとは限りません。真空、搬送、処理条件を確認し、必要なら再認定を行います。wet cleanの後にseasoningを行い、チャンバー状態を安定させる研究例もあります。PMは清掃の終了ではなく、製造条件へ戻ったことの確認までを含む工程です。半導体製造装置の配管とポンプは、清掃と交換の影響を装置全体で見るための具体物です。</p>
+<h2>5. 周期はカレンダーだけで決めない</h2>
+<p data-fact-ids="F005 F006 F010">「半年に一度」のような暦時間は計画しやすい基準ですが、同じ半年でも装置の実負荷は変わります。処理したウェハ枚数、cycle、累積work、RF-hours、laser pulse count、センサーや真空のcondition dataなどを組み合わせると、装置が受けた負荷をより具体的に把握できます。搬送装置とクリーンルーム設備、大型真空処理装置の背面は、その範囲を示します。</p>
+<figure data-media-role="explanatory-06" data-visual-kind="photoreal" data-subject="搬送装置とクリーンルーム設備" data-purpose="搬送と生産設備の状態" data-composition="cleanroom-transfer" data-concrete-object="true" data-selection-reason="搬送設備と生産設備を同時に見せ、PMの周期判断が一つの部品だけでなく装置の利用状況に関係することを示すため採用した。" data-photo-assessment="実写だけではcycleやworkの数値は読めないが、この写真は処理と搬送を支える設備の具体物を示す。" data-provenance="articles/provenance/ep090-article-06.md"><img decoding="async" src="assets/preventive-maintenance-episode090/optimized/V011.webp" alt="搬送装置とクリーンルーム設備を示すEP090のAI生成ビジュアル"><figcaption>搬送装置とクリーンルーム設備。EP090 episode-local v2 visual（AI生成）。cropped and WebP optimized from preserved episode-local original variant。本文の搬送と生産設備の状態に対応します。</figcaption></figure>
+<figure data-media-role="explanatory-07" data-visual-kind="photoreal" data-subject="大型真空処理装置の背面" data-purpose="排気と真空系のつながり" data-composition="vacuum-system" data-concrete-object="true" data-selection-reason="大型真空処理装置の背面を示すことで、周期判断の対象が処理室だけでなく真空・排気系にも及ぶことを具体化するため採用した。" data-photo-assessment="実写だけでは状態データの時間変化は表せないが、この写真は本文の真空・排気系の物理的なつながりを示す。" data-provenance="articles/provenance/ep090-article-07.md"><img decoding="async" src="assets/preventive-maintenance-episode090/optimized/V012.webp" alt="大型真空処理装置の背面を示すEP090のAI生成ビジュアル"><figcaption>大型真空処理装置の背面。EP090 episode-local v2 visual（AI生成）。cropped and WebP optimized from preserved episode-local original variant。本文の排気と真空系のつながりに対応します。</figcaption></figure>
+<p>SEMI E10は、MTBF、MTTR、MTTPMなど、装置の信頼性、可用性、保全性、利用率に関係する指標を扱います。指標は「この装置は何日で必ずPMする」という共通周期を決めるものではありません。実負荷、過去の交換時期、品質の兆候、停止の影響を合わせて判断するための共通言語です。搬送装置とクリーンルーム設備、大型真空処理装置の背面は、装置の利用状況と真空系を具体的に見る場面です。</p>
+<p class="semicon-mid-cta">ここまで読んだら、手元の装置について「最後に止めた日」だけでなく、「何サイクル処理したか」「どの状態値が変わったか」「交換後に何を確認したか」を履歴から探してみてください。PMの判断材料は、カレンダーの外にもあります。</p>
+<h2>6. 状態監視は次の停止時期を考える材料になる</h2>
+<p data-fact-ids="F005 F006 F007">状態監視では、温度、圧力、流量、真空、振動、漏れの兆候などを、レシピや処理回数と照合します。ひとつの値が基準を外れたからといって、直ちにすべての部品が寿命とは限りません。いつから変化したか、どの工程条件で変化したかを確認します。装置状態監視モニターは、その確認対象を具体化します。</p>
+<figure data-media-role="explanatory-08" data-visual-kind="photoreal" data-subject="装置状態監視モニター" data-purpose="状態データと履歴の確認" data-composition="condition-monitoring" data-concrete-object="true" data-selection-reason="装置状態監視モニターを見せることで、PM周期を状態データと履歴で判断する実務を具体化するため採用した。" data-photo-assessment="実写だけでは表示値の意味や閾値は保証できないが、この写真は本文で扱う状態監視という作業の具体物を示す。" data-provenance="articles/provenance/ep090-article-08.md"><img decoding="async" src="assets/preventive-maintenance-episode090/optimized/V013.webp" alt="装置状態監視モニターを示すEP090のAI生成ビジュアル"><figcaption>装置状態監視モニター。EP090 episode-local v2 visual（AI生成）。cropped and WebP optimized from preserved episode-local original variant。本文の状態データと履歴の確認に対応します。</figcaption></figure>
+<p>早すぎるPMには、計画停止、交換部品、作業時間、再立ち上げの負担があります。遅すぎるPMには、粒子、プロセス変動、突発故障、ウェハ損失のリスクがあります。周期は短ければ安全、長ければ高稼働率という単純な関係ではありません。装置状態監視モニターは、次の停止時期を考えるための具体的な確認対象です。</p>
+<h2>7. 再認定と生産復帰までがPMである</h2>
+<p data-fact-ids="F004 F009">保全後は、真空や搬送が正常か、処理条件が戻っているかを確認します。必要ならseasoningや再認定を行い、装置が製造条件へ戻ったことを確認してから生産へ復帰します。作業前後の履歴、交換部品、測定値、復帰判断を残すことで、次のPM計画の精度が上がります。断熱された真空処理室とウェハ搬送ステージは、熱・真空の確認と生産復帰先を具体化します。</p>
+<figure data-media-role="explanatory-09" data-visual-kind="photoreal" data-subject="断熱された真空処理室" data-purpose="処理室の熱と真空環境" data-composition="thermal-vacuum-chamber" data-concrete-object="true" data-selection-reason="断熱された真空処理室を示し、保全後に熱・真空の状態を確認して復帰する必要を具体化するため採用した。" data-photo-assessment="実写だけでは再認定の判定手順は見えないが、この写真は本文に登場する処理室の熱・真空環境を示す。" data-provenance="articles/provenance/ep090-article-09.md"><img decoding="async" src="assets/preventive-maintenance-episode090/optimized/V016.webp" alt="断熱された真空処理室を示すEP090のAI生成ビジュアル"><figcaption>断熱された真空処理室。EP090 episode-local v2 visual（AI生成）。cropped and WebP optimized from preserved episode-local original variant。本文の処理室の熱と真空環境に対応します。</figcaption></figure>
+<figure data-media-role="explanatory-10" data-visual-kind="photoreal" data-subject="ウェハ搬送ステージ" data-purpose="ウェハ処理後の確認と生産復帰" data-composition="wafer-stage" data-concrete-object="true" data-selection-reason="ウェハ搬送ステージを見せることで、PMの最終目的が部品交換ではなく、安定したウェハ処理へ戻ることだと示すため採用した。" data-photo-assessment="実写だけでは良品判定や再認定の条件は示せないが、この写真は生産復帰先となるウェハ処理設備の具体物を示す。" data-provenance="articles/provenance/ep090-article-10.md"><img decoding="async" src="assets/preventive-maintenance-episode090/optimized/V018.webp" alt="ウェハ搬送ステージを示すEP090のAI生成ビジュアル"><figcaption>ウェハ搬送ステージ。EP090 episode-local v2 visual（AI生成）。cropped and WebP optimized from preserved episode-local original variant。本文のウェハ処理後の確認と生産復帰に対応します。</figcaption></figure>
+<h2>8. 予防保全の流れを一枚で見る</h2>
+<p data-fact-ids="F001 F004 F006 F009">ここまでの流れは、負荷が蓄積する、兆候を監視する、計画停止する、清掃・交換と再認定を行う、その結果を履歴へ戻す、という循環です。次の周期は、前回の作業結果と、暦時間・cycle・work・状態データを組み合わせて決めます。予防保全の因果関係を次のまとめ図で振り返ります。</p>
+<figure data-media-role="summary-infographic" data-visual-kind="diagram" data-subject="予防保全の因果関係" data-purpose="負荷蓄積から履歴反映までの因果を一枚で整理する" data-composition="summary-causal-chain" data-concrete-object="false" data-selection-reason="予防保全の複数段階を順序と因果で一枚に整理し、本文全体の関係を振り返れるため採用した。" data-photo-assessment="写真や実写だけでは負荷蓄積、計画停止、再認定、履歴反映の関係を同時に示せないため、まとめ図が適切である。" data-diagram-justification="写真や実写だけでは予防保全の複数段階の関係を同時に示せないため、矢印付きのまとめ図で因果を整理する。" data-provenance="articles/provenance/ep090-article-11-summary.md"><img decoding="async" src="assets/preventive-maintenance-episode090/optimized/summary-infographic.svg" alt="予防保全の因果関係。負荷蓄積、兆候監視、計画停止、再認定、履歴反映を順に示すまとめ図"><figcaption>予防保全の因果関係。EP090まとめ図（自作）。original educational SVG infographic; no external image embedded。負荷蓄積から兆候監視、計画停止、再認定、履歴反映へ続く関係を整理しています。</figcaption></figure>
+<h2>よくある誤解</h2>
+<h3>Q. 装置が動いているなら、PMは後回しでよいですか？</h3>
+<p>いいえ。装置が動いていても、堆積、摩耗、粒子、真空やプロセス条件の変化が進んでいる可能性があります。故障表示の有無だけでなく、状態値と品質の兆候を履歴で確認します。</p>
+<h3>Q. PM周期は短いほど安全ですか？</h3>
+<p>必ずしもそうではありません。早すぎる停止は部品、作業、再立ち上げの負担を増やし、遅すぎる停止は突発故障のリスクを増やします。装置ごとの実負荷と状態で判断します。</p>
+<h3>Q. 清掃して部品を交換すれば、そのまま生産へ戻れますか？</h3>
+<p>必ずしも戻れるとは限りません。真空、搬送、処理条件を確認し、必要ならseasoningや再認定を行います。復帰確認と履歴への記録までがPMの一部です。</p>
+<h2>まとめ</h2>
+<div class="semicon-three-line-recap">
+<p>半導体装置は、壊れる前から摩耗や堆積で状態が変わります。<br />PMは、突発停止を計画停止へ置き換え、清掃・交換・再認定で状態を戻します。<br />周期は時間だけでなく、cycle・work・状態データと履歴を組み合わせて決めます。</p>
+</div>
+<p>設備保全が守っているのは、部品の寿命だけではありません。良品を安定して作れる装置状態を、どのタイミングで、どの負担で維持するかという判断です。これがPMの実務的な価値です。</p>
+<p>次に読むなら、<a href="https://semicon-campus.com/semiconductor-manufacturing/">半導体製造工程の基礎</a>で装置が担う位置を確認し、<a href="https://semicon-campus.com/semiconductor-equipment/">半導体製造装置の仕組み</a>でチャンバーや搬送の役割を振り返ると理解がつながります。</p>
+<h2>参考にした公式情報</h2>
+<ul class="semicon-sources">
+<li data-source-id="S01"><a href="https://store-us.semi.org/products/e01000-semi-e10-specification-for-definition-and-measurement-of-equipment-reliability-availability-and-maintainability-ram-and-utilization">SEMI E10 Equipment RAM and Utilization</a></li>
+<li data-source-id="S03"><a href="https://www.semi.org/en/standards-watch-2021March/e-ramp-standard-updated">SEMI Equipment RAMP Standard Updated</a></li>
+<li data-source-id="S05"><a href="https://www.hitachi-hightech.com/jp/ja/support/semiconductor-manufacturing/dry-etch-systems/maintenance/overhaul.html">Hitachi High-Tech Plasma Etching Equipment Maintenance</a></li>
+<li data-source-id="S07"><a href="https://newsroom.lamresearch.com/2019-04-24-Record-Productivity-Achieved-with-Lam-Research-Self-Maintaining-Equipment">Lam Research Self-Maintaining Equipment</a></li>
+<li data-source-id="S08"><a href="https://www.kokusai-electric.com/products/support">KOKUSAI ELECTRIC Service Support</a></li>
+<li data-source-id="S09"><a href="https://info.mks.com/l/1043321/2023-11-21/2k39j">MKS Chamber Clean Endpoint Detection</a></li>
+<li data-source-id="S10"><a href="https://pubs.aip.org/avs/jvb/article/32/2/022203/466530/Systematic-procedure-to-optimize-chamber-seasoning">Chamber Seasoning Study</a></li>
+<li data-source-id="S11"><a href="https://s1.mks.com/f/teos-process-traps">MKS TEOS Process Traps</a></li>
+<li data-source-id="S12"><a href="https://www.edwardsvacuum.com/en-us/vacuum-pumps/services/vacuum-pump-do-it-yourself-maintenance">Edwards Vacuum Pump Maintenance</a></li>
+</ul>
+<div class="semicon-editorial-note"><strong>short extraction:</strong> audience questionは「なぜ壊れる前に止めるのか」。残す因果は、負荷蓄積→兆候監視→計画停止→清掃・交換・再認定→履歴反映。全装置共通の周期や歩留まり改善率は断定しない。45〜60秒候補は、PM周期を暦時間だけでなくcycle・work・状態で決める節。</div>
+</article>
+<aside class="related-spokes">
+<h2>あわせて読みたい</h2>
+<ul>
+<li><a href="/sensor-interlock/">半導体装置は、どうやって「危ない」を判断して止まるのか？</a></li>
+<li><a href="/equipment-maintenance-replacement-ep097/">まだ動いている部品を、なぜ交換するのか？ 半導体製造装置の寿命と交換判断</a></li>
+</ul>
+</aside>

@@ -1,0 +1,98 @@
+
+<!--KEEP:0-->
+
+
+<!--KEEP:1-->
+
+<!--KEEP:2-->
+<div class="semicon-article" id="semicon-top">
+<p class="semicon-lead">チップレットを一つのパッケージに並べても、会話の方法がバラバラでは一つのシステムとして動かせません。UCIeは、パッケージ内でダイ同士を短距離・高速につなぐための共通ルールを整え、チップレット設計を組み合わせやすくする業界標準です。</p>
+
+<figure class="semicon-figure"><img src="https://semicon-campus.com/wp-content/uploads/2026/07/ucie-featured.webp" alt="一つの先端パッケージ上で四つのシリコンダイが短い銅配線により直接接続されたUCIe型チップレット構成" width="1672" height="941" decoding="async" fetchpriority="high"><figcaption>UCIeが標準化する中心は、パッケージ内にあるダイ間のインターフェースです。中央装置を経由するのではなく、対応するダイ同士が直接通信します。</figcaption></figure>
+
+<div class="semicon-note"><strong>30秒で要点</strong><ol><li>UCIeはチップレットそのものではなく、ダイ間接続の共通仕様</li><li>電気信号だけでなく、プロトコルやソフトウェアからの見え方まで扱う</li><li>PCIeやCXLの仕組みをパッケージ内の接続で利用できる</li><li>標準化は相互運用を助けるが、任意の他社ダイを無条件に混載できる保証ではない</li></ol></div>
+
+<div class="semicon-career"><strong>この技術に関わる仕事を知りたい方へ</strong><p>回路設計、検証、パッケージ、評価、ソフトウェアなど、自分の経験に近い入口を10問で整理できます。</p><a class="semicon-career-button" href="https://semicon-campus.com/semiconductor-career-advisor/?utm_source=technical_article&amp;utm_medium=blog_cta&amp;utm_campaign=ucie_career_advisor_top&amp;utm_content=ucie_career_advisor_top" data-cta-position="top">10問仕事ナビβを試す</a></div>
+
+
+<h2>まず、チップレット間接続は何が難しい？</h2>
+<p><strong>ダイ</strong>とは、ウェハから切り分けた回路の一片です。複数のダイを組み合わせる<a href="https://semicon-campus.com/what-is-chiplet/">チップレット設計</a>では、ダイの境界を越えてデータを送るための新しい接続が必要になります。</p>
+<p>ところが、送る電圧、接続点の並び、通信速度、エラーの見つけ方、起動時の設定、上位ソフトウェアからの見え方が各社独自では、別々に作られたダイを接続するたびに専用設計が必要です。信号が届くだけでは足りず、両側が同じ意味で情報を読み、異常時に回復し、システムとして起動できなければなりません。</p>
+
+<figure class="semicon-figure"><img src="https://semicon-campus.com/wp-content/uploads/2026/07/ucie-proprietary-vs-standard-interface.webp" alt="接続点と配線方式が合わず通信できない独自インターフェースと、共通の接続境界でダイ同士が直接つながる標準インターフェースの比較" width="1672" height="941" loading="lazy" decoding="async"><figcaption>左のように接続点や通信方式が合わなければ、同じパッケージに載せても会話できません。右のように共通の境界をそろえることが、UCIe標準化の第一歩です。</figcaption></figure>
+
+<h2>UCIeとは？</h2>
+<p><strong>UCIe（Universal Chiplet Interconnect Express）</strong>は、パッケージ内のダイ間インターフェースを標準化するオープンな業界仕様です。UCIe Consortiumは2022年に最初の仕様を公開し、物理層、ダイ間プロトコル、ソフトウェアモデル、適合試験を一つの枠組みとして整備しています。</p>
+<p>名前に「Chiplet」とありますが、UCIeがダイの内部回路や製造プロセスのすべてを決めるわけではありません。主役は、隣り合うダイの境界にある通信インターフェースです。パッケージ方式そのものを一種類へ固定する規格でもありません。</p>
+<div class="semicon-warning"><strong>ここまでで基本は理解できました。</strong> UCIeは「ダイ同士が会話する入口と手順をそろえる仕様」です。以下は、その入口を物理層・プロトコル・ソフトウェアモデルの3段で見ていきます。</div>
+
+<h2>第36話の答え：UCIeの信号はどう進む？</h2>
+<p>初心者向けに一行で言うと、<strong>送る側のPHYがビットを電気信号として出し、パッケージ内の接続点と短い配線を通って、受ける側のPHYが読み取る</strong>、という流れです。</p>
+<div class="semicon-grid"><div class="semicon-card"><b>1. 送る側</b><span>PHYの送信回路が、0と1を電気的な変化として出します。</span></div><div class="semicon-card"><b>2. 境界を越える</b><span>バンプなどの接続点とパッケージ内の配線を通り、隣のダイへ届きます。</span></div><div class="semicon-card"><b>3. 受ける側</b><span>相手のPHYの受信回路が信号を読み取り、次の通信処理へ渡します。</span></div></div>
+<p>これは信号経路を理解するための概念図です。実際の回路や波形、配線の細部を一つに決めて示すものではありません。電気的に送受信できる状態を整えるのが<strong>物理層</strong>、届いたデータをどの順序・形式で扱うかを整えるのが<strong>プロトコル</strong>です。どちらか一方だけでは、ダイ同士の通信は成立しません。</p>
+
+<h2>3つの層を平易に理解する</h2>
+<figure class="semicon-figure"><img src="https://semicon-campus.com/wp-content/uploads/2026/07/ucie-layer-stack.webp" alt="二つのダイ間接続を銅配線の物理層、信頼性を扱うプロトコル層、ソフトウェアから見える機能層に分けた概念図" width="1672" height="941" loading="lazy" decoding="async"><figcaption>下から順に、信号を運ぶ物理層、正しく届けるプロトコル、OSやソフトウェアへつなぐモデルです。実際には互いに連携して一つのリンクを構成します。</figcaption></figure>
+
+<h3>1. 物理層：0と1を実際に運ぶ</h3>
+<p><strong>物理層（PHY）</strong>は、電気信号としてビットを送受信する最下層です。接続点であるバンプの配置、データを送るレーン、クロック、電気特性、リンクを立ち上げる手順などを扱います。UCIeは一般的な有機基板向けと、より高密度な先端パッケージ向けの利用を想定し、世代を重ねて3D実装にも範囲を広げています。</p>
+<p>ここで大切なのは、PCの外付けケーブルではなく、同じパッケージ内の短い距離に最適化されていることです。距離が短いため、帯域密度と電力効率を高めやすい一方、パッケージ配線やバンプの精度が性能を左右します。</p>
+
+<h3>2. プロトコル：届いた情報の意味と信頼性をそろえる</h3>
+<p><strong>プロトコル</strong>は、情報をどの形で送り、順序やエラーをどう扱うかという会話の手順です。UCIeのDie-to-Die Adapterは、リンク状態の管理、CRCによる誤り検出、再送などを支えます。CRCは、送ったデータが途中で変化していないかを確認する仕組みです。</p>
+<p>上位にはPCIeやCXLを運ぶ標準的な方法があり、用途に応じてRaw Modeなどほかのストリーミングプロトコルを扱う道もあります。Raw Modeは「何でも自動で互換になるモード」ではなく、利用するプロトコル側にも整合と検証が必要です。</p>
+
+<h3>3. ソフトウェアモデル：既存の仕組みから使いやすくする</h3>
+<p><strong>ソフトウェアモデル</strong>は、OS、ファームウェア、ドライバーから接続先をどう見せ、設定し、利用するかという考え方です。PCIeやCXLの確立したモデルを活用すれば、ダイが分かれていても、ソフトウェアからは既存のデバイスやメモリ資源に近い形で扱える可能性があります。</p>
+<p>ただし、UCIeを使えばアプリケーションが必ず無変更で動くという意味ではありません。接続する機能、採用プロトコル、システム構成に応じたファームウェアやドライバーの設計は残ります。</p>
+
+
+
+<h2>PCIe・CXLとの関係</h2>
+<figure class="semicon-figure"><img src="https://semicon-campus.com/wp-content/uploads/2026/07/ucie-pcie-cxl-raw.webp" alt="二つのダイを結ぶ一つの物理接続上を入出力パケット、双方向の一貫したメモリ通信、ストリーミング信号が流れる概念図" width="1672" height="941" loading="lazy" decoding="async"><figcaption>UCIeはパッケージ内の通り道を整え、その上でPCIe、CXL、用途固有のストリーミング通信などを運べるようにします。</figcaption></figure>
+<div class="semicon-table-wrap"><table class="semicon-table"><thead><tr><th>規格</th><th>初心者向けの役割</th><th>UCIeとの関係</th></tr></thead><tbody><tr><td>UCIe</td><td>パッケージ内のダイ同士をつなぐ共通インターフェース</td><td>物理層から上位プロトコルの運び方、ソフトウェアモデルまで定義</td></tr><tr><td>PCIe</td><td>CPUとSSD、GPUなどを結ぶ汎用I/Oの仕組み</td><td>確立した発見・設定・データ転送のモデルをUCIe上で利用できる</td></tr><tr><td>CXL</td><td>CPU、アクセラレーター、メモリ間でキャッシュ一貫性やメモリ利用を支える仕組み</td><td>CXLのプロトコルをパッケージ内のUCIeリンクで運べる</td></tr></tbody></table></div>
+<p><strong>キャッシュ一貫性</strong>とは、CPUやアクセラレーターが同じデータのコピーを持つとき、古い値と新しい値が食い違わないよう整合を保つ仕組みです。CXLはこのようなメモリの意味を扱います。一方、UCIeはダイ間の物理接続と運搬の枠組みです。役割が重なる部分はありますが、同じ規格ではありません。</p>
+
+<h2>標準化で何が良くなる？</h2>
+<div class="semicon-grid"><div class="semicon-card"><b>専用接続の作り直しを減らす</b><span>共通の境界仕様を使えば、ダイごとにゼロから独自I/Oを設計する負担を減らせます。</span></div><div class="semicon-card"><b>検証の共通土台</b><span>適合試験や相互運用試験により、接続の問題を共通の観点で確認しやすくなります。</span></div><div class="semicon-card"><b>再利用しやすいIP</b><span>検証済みのPHYやコントローラーIPを複数製品で活用しやすくなります。</span></div><div class="semicon-card"><b>供給者の選択肢</b><span>将来、異なる設計会社やファウンドリのダイを組み合わせる市場の土台になります。</span></div></div>
+<p>ここでいう<strong>IP</strong>は、半導体設計で再利用できる回路ブロックや設計データです。標準化によって、PHY、コントローラー、検証環境、パッケージ設計の共通化が進めば、開発期間や設計リスクを抑えられる可能性があります。</p>
+
+<h2>「異なる会社のダイを自由に混載できる」はまだ早い</h2>
+<figure class="semicon-figure"><img src="https://semicon-campus.com/wp-content/uploads/2026/07/ucie-interoperability-conditions.webp" alt="共通インターフェースに加えてバンプ配置、パッケージ寸法、電力、放熱などの条件照合が必要なチップレット統合" width="1672" height="941" loading="lazy" decoding="async"><figcaption>共通インターフェースは重要な条件ですが、機械的に載ること、電力・熱・性能が成立すること、検証済みであることも必要です。</figcaption></figure>
+<p>UCIe Consortiumは複数ベンダーのチップレットを組み合わせる将来像を掲げています。しかし、仕様に対応したダイなら、通販部品のように好きなものを選んで必ず動かせる、という段階ではありません。</p>
+<div class="semicon-grid"><div class="semicon-card"><b>同じ対応範囲か</b><span>速度、レーン数、プロトコル、オプション機能、世代、パッケージ向け条件が一致する必要があります。</span></div><div class="semicon-card"><b>物理的に実装できるか</b><span>ダイ寸法、バンプ配置、ピッチ、パッケージ配線、組立工程を合わせます。</span></div><div class="semicon-card"><b>システムとして成立するか</b><span>消費電力、電源供給、放熱、クロック、起動順序、故障時の動作を検証します。</span></div><div class="semicon-card"><b>入手・保証できるか</b><span>良品ダイの品質情報、供給契約、責任分界、設計情報、長期供給も必要です。</span></div></div>
+<p>UCIe 2.0の公式資料も、広い「プラグ・アンド・プレイ」型のチップレット市場には、テスト、管理、デバッグを含む課題が残ると説明しています。標準は完成品を保証する魔法ではなく、関係者が同じ入口から問題を解けるようにする土台です。</p>
+
+<h2>どこで使われる？</h2>
+<p>想定用途は、クラウド、サーバー、高性能計算、AIアクセラレーター、メモリ、ストレージ、ネットワーク、5G、エッジ機器、自動車などです。計算ダイ同士を増やす、I/Oダイを分ける、アクセラレーターやメモリ機能を近くへ置く、光I/Oチップレットへ接続する、といった構成が考えられます。</p>
+<p>ただし、すべての小型機器がUCIeを必要とするわけではありません。単一ダイで十分な製品では、追加のPHY面積、パッケージ、検証コストを負う利点が小さい場合があります。</p>
+
+<h2>UCIeに関わる仕事</h2>
+<div class="semicon-grid"><div class="semicon-card"><b>PHY・アナログ回路設計</b><span>送受信回路、クロック、電気特性、低消費電力化を設計します。</span></div><div class="semicon-card"><b>論理・プロトコル設計</b><span>アダプター、リンク管理、エラー検出、再送、上位プロトコルとの接続を設計します。</span></div><div class="semicon-card"><b>検証・相互運用評価</b><span>仕様どおり動くか、異なるIPやダイ間で通信できるか、異常時を含め確認します。</span></div><div class="semicon-card"><b>パッケージ・SI/PI設計</b><span>バンプと配線、信号品質、電源品質、熱、機械条件を同時に成立させます。</span></div><div class="semicon-card"><b>DFT・テスト・解析</b><span>組立前後の検査、故障箇所の切り分け、テレメトリ、量産歩留まりを支えます。</span></div><div class="semicon-card"><b>ファームウェア・ドライバー</b><span>起動、設定、デバイス発見、管理、OSとの連携を実装します。</span></div></div>
+<p><strong>SI</strong>は信号品質、<strong>PI</strong>は電源品質、<strong>DFT</strong>は検査しやすさを回路へ組み込む設計です。実際の職種名は企業で異なるため、<a href="https://semicon-campus.com/advanced-packaging-jobs-career/">先端パッケージを支える仕事</a>と<a href="https://semicon-campus.com/how-to-read-semiconductor-job-description/">半導体求人票の読み方</a>も合わせると分担を整理できます。</p>
+
+<div class="semicon-career"><strong>自分に近い入口を整理する</strong><p>電気・情報・機械・材料・製造・評価のどこから関われそうか、10問で確認できます。</p><a class="semicon-career-button" href="https://semicon-campus.com/semiconductor-career-advisor/?utm_source=technical_article&amp;utm_medium=blog_cta&amp;utm_campaign=ucie_career_advisor_bottom&amp;utm_content=ucie_career_advisor_bottom" data-cta-position="bottom">10問仕事ナビβを試す</a></div>
+
+
+<section class="mp3-section" id="revenue-phase3-learning"><h2>UCIeを実装・評価の仕事と学習へ</h2><p>UCIeの理解を深める次の行動は、通信方式だけでなく、接合・検査・信号品質を誰が確認するか整理することです。実装や測定、品質管理の経験がある人は担当工程と確認項目を求人条件へ置き換えられます。手元の学習PCを整える場合も、一般のメモリ・SSDはUCIe部品ではありません。公開仕様を読む学習環境と、パッケージ内接続の専門業務を分けて考えましょう。</p><p>比較前の確認メモ：公開資料・演習データの保存容量、手元のPCの対応SSD規格。今の環境で試せる範囲と、更新が必要な箇所を分けてから候補を選びましょう。</p></section>
+
+<h2>よくある質問</h2>
+<h3>Q. UCIeはチップレットそのものですか？</h3><p>いいえ。チップレットは複数ダイでシステムを構成する考え方や、そのためのダイを指します。UCIeは、それらのダイ間をつなぐ共通インターフェースです。</p>
+<h3>Q. UCIeとPCIeは同じですか？</h3><p>同じではありません。PCIeは汎用I/Oのアーキテクチャとプロトコルを定めます。UCIeはPCIeのモデルや通信を、パッケージ内のダイ間接続で利用できるようにします。</p>
+<h3>Q. CXLは何のために使いますか？</h3><p>CPU、アクセラレーター、メモリ間で、キャッシュ一貫性やメモリの読み書きという意味を扱うために使います。UCIeはその通信をダイ間で運ぶ土台になれます。</p>
+<h3>Q. UCIe対応なら他社のダイを自由に接続できますか？</h3><p>無条件ではありません。対応速度やプロトコル、バンプ配置、パッケージ、電力、熱、検証、供給条件まで合わせる必要があります。標準化は重要な前提ですが、完成品としての互換性を単独で保証しません。</p>
+<h3>Q. UCIeを使えば必ず高速・低消費電力になりますか？</h3><p>いいえ。短距離向けの効率的な接続を目指す仕様ですが、実際の性能と電力はPHY、パッケージ、速度設定、通信量、実装品質、システム設計で変わります。</p>
+<h3>Q. UCIe 3.0では何が変わりましたか？</h3><p>2025年公開のUCIe 3.0では48 GT/sと64 GT/sのデータレート、管理・省電力・緊急通知などが拡張されました。GT/sは1秒間の信号転送回数を表し、アプリケーションが受け取る実データ量そのものとは異なります。</p>
+
+<h2>まとめ</h2>
+<div class="semicon-note"><ol><li>UCIeはパッケージ内のダイ間接続をそろえる業界標準</li><li>物理層、プロトコル、ソフトウェアモデル、適合試験まで扱う</li><li>PCIeの汎用I/OやCXLの一貫したメモリ通信をUCIe上で利用できる</li><li>標準化は複数ベンダー連携の土台だが、任意のダイの自由な混載を単独で保証しない</li></ol></div>
+<div class="semicon-links"><div class="semicon-linkbox"><strong>前提を復習</strong><p><a href="https://semicon-campus.com/what-is-chiplet/">チップレットとは？</a></p><p><a href="https://semicon-campus.com/what-is-advanced-packaging-gpu-hbm/">GPUとHBMをつなぐ先端パッケージ</a></p></div><div class="semicon-linkbox"><strong>仕事へつなぐ</strong><p><a href="https://semicon-campus.com/advanced-packaging-jobs-career/">先端パッケージを支える仕事</a></p><p><a href="https://semicon-campus.com/semiconductor-beginner-roadmap/">初心者ロードマップへ戻る</a></p></div></div>
+
+
+<section class="mp3-section" id="revenue-phase3-career"><h2>この記事の知識を、次の仕事・学習へつなげる</h2><p>接合・検査、信号品質の測定、実装評価の経験を、対象・作業・確認した結果で整理します。担当範囲と必要経験、勤務地、勤務・出張、教育体制を比較すると、次に補う知識も具体的になります。</p><aside class="semicon-cta mp3-card"><h3>関連する職種の仕事内容・求人・学習を見る</h3><p>記事で学んだ技術が、点検・復旧、装置立上げ、顧客対応、実装・工程改善のどの仕事で使われるか確認できます。職種記事の求人・学習の選び方へ進みましょう。</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/" class="semicon-btn mp3-button" data-revenue-phase3-hub="237" data-cta="equipment_hub" data-cta-type="equipment_hub" data-cta-stage="career" data-cta-id="phase3_665_hub237_end" data-cta-route="phase3_665_hub237_end">装置エンジニアの担当範囲・求人・学習を見る</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/advanced-packaging-jobs-career/" class="semicon-btn mp3-button" data-revenue-phase3-hub="651" data-cta="packaging_hub" data-cta-type="packaging_hub" data-cta-stage="career" data-cta-id="phase3_665_hub651_end" data-cta-route="phase3_665_hub651_end">先端パッケージの仕事・求人・学習の選び方を見る</a></div></aside></section>
+
+
+<h2>参考資料</h2>
+<ul class="semicon-sources"><li><a rel="noopener" href="https://www.uciexpress.org/specifications" target="_blank">UCIe Consortium: Specifications</a></li><li><a rel="noopener" href="https://www.uciexpress.org/_files/ugd/0c1418_b6481ec611e24c6e91f1beb743b0c860.pdf" target="_blank">UCIe Consortium: UCIe 2.0 Specification White Paper</a></li><li><a rel="noopener" href="https://www.uciexpress.org/post/introduction-to-ucie-webinar-q-a-recap" target="_blank">UCIe Consortium: Introduction to UCIe Webinar Q&amp;A</a></li><li><a rel="noopener" href="https://pcisig.com/what-pci-express-pcie-architecture" target="_blank">PCI-SIG: What is the PCI Express architecture?</a></li><li><a rel="noopener" href="https://computeexpresslink.org/about-cxl/" target="_blank">CXL Consortium: About CXL</a></li></ul>
+<a class="semicon-backtop" href="#semicon-top" aria-label="ページ先頭へ戻る">↑</a>
+</div>

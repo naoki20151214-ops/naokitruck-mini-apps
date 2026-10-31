@@ -1,0 +1,20 @@
+{
+ "id": 1836,
+ "type": "post",
+ "slug": "daily-news-292e50e63e315783e590",
+ "link": "https://semicon-campus.com/daily-news-292e50e63e315783e590/",
+ "date": "2026-10-06T13:00:00",
+ "modified": "2026-10-27T20:03:46",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  20
+ ],
+ "tags": [
+  19
+ ],
+ "featured_media": 2782,
+ "title": "NavitasとMicrochip、AI向け800V直流基準設計を発表",
+ "excerpt": "NavitasとMicrochipが発表したAIデータセンター向け800V直流基準設計を解説。20kW変換、GaN、LLC、セキュリティ、実用化の課題を整理します。"
+}

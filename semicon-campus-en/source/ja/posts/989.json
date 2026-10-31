@@ -1,0 +1,20 @@
+{
+ "id": 989,
+ "type": "post",
+ "slug": "daily-news-e8be62cbc5ab56b082ac",
+ "link": "https://semicon-campus.com/daily-news-e8be62cbc5ab56b082ac/",
+ "date": "2026-09-17T10:00:00",
+ "modified": "2026-10-27T20:05:14",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  20
+ ],
+ "tags": [
+  19
+ ],
+ "featured_media": 2863,
+ "title": "onsemiが電力統合基盤EPPを発表、AI・EVの電源をどう変える？",
+ "excerpt": "onsemiが2026年9月16日に発表した電力統合基盤EPP。Si・SiC・GaNを組み合わせる仕組みとAI・EVへの意味を解説し、性能数値の限界やSUBARUの評価段階も整理します。"
+}

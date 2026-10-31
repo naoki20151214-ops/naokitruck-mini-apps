@@ -1,0 +1,19 @@
+{
+ "id": 80,
+ "type": "post",
+ "slug": "what-is-etching-semiconductor-process",
+ "link": "https://semicon-campus.com/what-is-etching-semiconductor-process/",
+ "date": "2026-09-17T18:00:00",
+ "modified": "2026-10-30T21:22:53",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  7,
+  5
+ ],
+ "tags": [],
+ "featured_media": 74,
+ "title": "エッチングとは何か？リソグラフィの模様に沿って膜を削る半導体製造工程をやさしく解説",
+ "excerpt": "エッチングとは、リソグラフィで作ったレジストパターンを目印にして、露出している膜だけを取り除く工程です。選択性、異方性、均一性を軸に、半導体製造でなぜエッチングが重要なのかを初心者向けに解説します。"
+}

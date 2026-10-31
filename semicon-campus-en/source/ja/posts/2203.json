@@ -1,0 +1,18 @@
+{
+ "id": 2203,
+ "type": "post",
+ "slug": "semiconductor-fdc-equipment-data",
+ "link": "https://semicon-campus.com/semiconductor-fdc-equipment-data/",
+ "date": "2026-10-23T17:59:00",
+ "modified": "2026-10-30T21:29:57",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  9
+ ],
+ "tags": [],
+ "featured_media": 2746,
+ "title": "半導体のFDC（装置データ解析）とは？異常の兆しを見つける仕組み",
+ "excerpt": "半導体製造装置のセンサー記録から異常の兆しを見つけるFDC（故障検出と分類）を、指標・基準・警報、ゆっくりしたドリフトの事例とあわせて、初心者向けにやさしく解説します。"
+}

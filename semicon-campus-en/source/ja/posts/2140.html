@@ -1,0 +1,76 @@
+<p><!doctype html><br />
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>目に見えない小さな粒子が、なぜ半導体を壊すのか？パーティクル不良と装置保全</title></p>
+<!--KEEP:0-->
+<p></head><body></p>
+<article class="semicon-template-v2" data-episode="103" data-slug="semiconductor-particle-defect" data-target="new_post">
+<h1>目に見えない小さな粒子が、なぜ半導体を壊すのか？パーティクル不良と装置保全</h1>
+<p>ウェハ上に細い配線の模様を作る途中、小さなゴミがその模様に入り込んだらどうなるでしょう。<br />加工の場所によっては、線が途切れたり、本来離れている線がつながったりする可能性があります。<br />ただし、粒子が見つかっただけで回路の不良が決まるわけではありません。どこで見つかり、どの工程を通り、後の検査で何が分かったかをたどります。</p>
+<p>半導体工場でいう「パーティクル」は、ウェハや装置・材料に存在する小さな粒子状の異物です。表面検査で粒子らしいものを検出することと、完成した回路の電気的不良を確認することは、別の段階です。</p>
+<figure data-media-role="hero" data-visual-kind="diagram" data-subject="粒子" data-purpose="記事冒頭で、検出の対象がウェハ表面上の異常候補であることを見せる。" data-composition="inspection-beam-wafer" data-concrete-object="false" data-selection-reason="記事冒頭で、検出の対象がウェハ表面上の異常候補であることを見せる。" data-photo-assessment="写真では因果や複数段階の違いを同時に区別しにくいため、模式図を採用。" data-diagram-justification="記事冒頭で、検出の対象がウェハ表面上の異常候補であることを見せる。 実物写真では観察内容と原因候補の境界を同時に説明しにくいため、この模式図を採用しました。" data-provenance="articles/media/ep103/provenance/hero.txt"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep103-01-wafer-inspection.png" alt="ウェハ表面に検査光を当て、微小な粒子候補の散乱点と座標を記録する概念図" loading="lazy"><figcaption>ウェハ表面の検査を表した模式図。実機・実測写真ではなく、粒子候補の位置を示す説明用図です。 図版：Semicon Campus制作。新規ベクター模式図。外部原図なし。</figcaption></figure>
+<h2>この記事でわかること</h2>
+<ul>
+<li>粒子が回路の形を乱し、電気的不良のきっかけになる道筋</li>
+<li>検査マップと電気検査マップをどう読み分けるか</li>
+<li>公開研究の事例から見える、洗浄・装置保全・条件管理の役割</li>
+</ul>
+<h2 data-fact-ids="C03">小さな粒子が、回路の形を乱すことがある</h2>
+<p>小さな粒子が問題になるのは、粒そのものが完成したチップを突き刺すからだけではありません。ウェハの上では、膜を重ね、模様を写し、不要な部分を削り、別の膜や配線を作ります。その途中に粒子や残渣があると、工程によっては狙った形を作る邪魔になります。</p>
+<p>たとえば細い溝を並べて作るときに異物が局所的な障害物になると、溝が途切れたり、本来離れている場所に材料が残ったりする可能性があります。これは仕組みを想像するためのたとえです。実際の結果は、粒子の材質・大きさ・位置、工程、パターン、後続処理によって異なります。</p>
+<p>電気検査で後から確認される影響には、つながるはずの配線が切れる「断線（オープン）」や、離れているべき配線がつながる「短絡（ショート、ブリッジ）」などがあります。ただし、粒子が検出されたことだけでは、これらの電気的不良が起きたとは判断できません。粒子以外にも、残渣、傷、パターン形成のずれなどが欠陥の候補になります。Applied Materialsも欠陥管理の説明で、粒子・残渣・傷・ブリッジ・ショートを別の欠陥例として挙げています。</p>
+<figure data-media-role="mechanism" data-visual-kind="diagram" data-subject="粒子" data-purpose="粒子の位置が局所加工を変える可能性を、断線や橋渡しの候補と結び付けて示す。" data-composition="normal-versus-interference" data-concrete-object="false" data-selection-reason="粒子の位置が局所加工を変える可能性を、断線や橋渡しの候補と結び付けて示す。" data-photo-assessment="写真では因果や複数段階の違いを同時に区別しにくいため、模式図を採用。" data-diagram-justification="粒子の位置が局所加工を変える可能性を、断線や橋渡しの候補と結び付けて示す。 実物写真では観察内容と原因候補の境界を同時に説明しにくいため、この模式図を採用しました。" data-provenance="articles/media/ep103/provenance/mechanism.txt"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep103-02-particle-mechanism.png" alt="粒子が局所的な加工の乱れを生む可能性を示す模式図" loading="lazy"><figcaption>粒子がパターン形成を乱す可能性の模式図。実データ・実寸・特定工程の断面を示していません。 図版：Semicon Campus制作。新規ベクター模式図。外部原図なし。</figcaption></figure>
+<h3>微細化で管理が難しくなる理由</h3>
+<p>回路の間隔や構造が細かくなるほど、以前なら影響が小さかった異物でも重要な場所に重なる可能性があります。一方で「何nmの工程なら、何nmの粒子が必ず致命傷になる」という一律の境界はありません。工程世代の呼び名と、個別の異物が不良を起こす条件は同じではないからです。</p>
+<h2 data-fact-ids="C04 C08">粒子の発生源は、空気や人だけではない</h2>
+<p>クリーンルームの清浄度管理は大切ですが、床や空気だけを見ても原因が分からないことがあります。製造装置の内壁にできた反応生成物、部品や消耗品、材料、薬液、ウェハの搬送など、粒子の候補は複数あります。どれも、実際に調べる前は原因ではなく「候補」です。</p>
+<figure data-media-role="sources" data-visual-kind="diagram" data-subject="粒子" data-purpose="空気や作業者だけでなく、装置や材料にも候補があることを整理する。" data-composition="three-source-flow" data-concrete-object="false" data-selection-reason="空気や作業者だけでなく、装置や材料にも候補があることを整理する。" data-photo-assessment="写真では因果や複数段階の違いを同時に区別しにくいため、模式図を採用。" data-diagram-justification="空気や作業者だけでなく、装置や材料にも候補があることを整理する。 実物写真では観察内容と原因候補の境界を同時に説明しにくいため、この模式図を採用しました。" data-provenance="articles/media/ep103/provenance/sources.txt"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep103-03-particle-sources.png" alt="装置の壁や部品、材料、搬送など粒子の発生源候補を示す模式図" loading="lazy"><figcaption>粒子の発生源候補を整理した模式図。矢印は可能性を示し、実際の発生源を断定しません。 図版：Semicon Campus制作。新規ベクター模式図。外部原図なし。</figcaption></figure>
+<p>たとえばエッチング工程では、ウェハ表面の膜を加工すると同時に装置内にも反応生成物が関わります。条件によっては付着物や部品由来の粒子がウェハへ運ばれる可能性があります。だから、粒子が見つかっても、直ちに作業者や特定の装置を原因と決めつけてはいけません。</p>
+<p>原因を絞るには、「どの工程の後で増えたか」「同じチャンバーや材料ロットに偏るか」「清掃や部品交換の前後で変化したか」などを記録と照らします。空気中の粒子濃度を分類するクリーンルーム規格も、粒子の化学組成やウェハ上の電気的不良を直接判定するものではありません。</p>
+<h2 data-fact-ids="C01">検査は、見つける段階と正体を調べる段階に分かれる</h2>
+<p>ウェハ検査装置の一つは、光を当てたときに粒子や欠陥で散乱する光を捉え、位置座標を記録します。パターンのない鏡面ウェハと、回路パターンがあるウェハでは、検査の方法が異なる場合があります。日立ハイテクの説明では、検出後に必要に応じて欠陥レビューSEMで観察する流れも紹介されています。</p>
+<p>ここで得られるのは、まず「どこに、どんな特徴の信号が見つかったか」です。光学検査で反応した点が、すべて粒子とは限りません。傷や結晶欠陥など、別の候補を見分けるため、画像の拡大観察や材料分析を組み合わせることがあります。</p>
+<figure data-media-role="detection" data-visual-kind="diagram" data-subject="検査装置" data-purpose="見つける、観察する、電気状態を測る各段階を混同しないよう示す。" data-composition="three-stage-horizontal" data-concrete-object="false" data-selection-reason="見つける、観察する、電気状態を測る各段階を混同しないよう示す。" data-photo-assessment="写真では因果や複数段階の違いを同時に区別しにくいため、模式図を採用。" data-diagram-justification="見つける、観察する、電気状態を測る各段階を混同しないよう示す。 実物写真では観察内容と原因候補の境界を同時に説明しにくいため、この模式図を採用しました。" data-provenance="articles/media/ep103/provenance/detection.txt"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep103-04-inspection-stages.png" alt="検査装置の表面検査、欠陥レビュー、電気検査を区別して示す流れ図" loading="lazy"><figcaption>検査装置による検出、レビュー、電気検査の役割を分けた説明図。全試料に同じ手順を当てはめる意味ではありません。 図版：Semicon Campus制作。新規ベクター模式図。外部原図なし。</figcaption></figure>
+<h3 data-fact-ids="C02">粒子マップと電気検査マップは、別の情報を表す</h3>
+<p>粒子・欠陥マップは、表面検査で検出した異物や形状異常の座標・分布を示します。電気検査マップは、チップや検査単位ごとに電気的な合否や測定結果を配置したものです。同じウェハ座標を使って並べられることはありますが、測っているものは違います。</p>
+<p>両方のマップで似た場所に異常が見つかれば、原因調査の手掛かりになります。しかし、位置が重なったという相関だけでは因果関係の証明になりません。粒子の同定、工程履歴、装置差、別の検査結果、必要に応じた再現確認を重ねて、原因候補を確かめます。</p>
+<figure data-media-role="maps" data-visual-kind="diagram" data-subject="粒子マップ" data-purpose="両マップが記録する対象を比較し、位置相関だけでは因果が証明されない点を示す。" data-composition="side-by-side-maps" data-concrete-object="false" data-selection-reason="両マップが記録する対象を比較し、位置相関だけでは因果が証明されない点を示す。" data-photo-assessment="写真では因果や複数段階の違いを同時に区別しにくいため、模式図を採用。" data-diagram-justification="両マップが記録する対象を比較し、位置相関だけでは因果が証明されない点を示す。 実物写真では観察内容と原因候補の境界を同時に説明しにくいため、この模式図を採用しました。" data-provenance="articles/media/ep103/provenance/maps.txt"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep103-05-map-difference.png" alt="粒子マップとチップの電気検査マップの異なる観測内容を比べる図" loading="lazy"><figcaption>粒子マップと電気検査マップの違いを示す概念図。配置は説明用で、実測ウェハデータではありません。 図版：Semicon Campus制作。新規ベクター模式図。外部原図なし。</figcaption></figure>
+<h2 data-fact-ids="C05 C06">公開研究では、粒子の分布から装置の確認箇所を絞った</h2>
+<p>2018年のPark・Kim・Baekの論文は、粒子を数えるだけでは分からない、位置の偏りにも注目しました。論文に記された工程別の粒子マップでは、エッチング工程とstrip &amp; clean工程で粒子が密集する場所が見られました。技術者がその分布と装置の構造を手掛かりに装置を調べたところ、チャンバー内で固定が適切でないOリングに由来する粒子が確認された、と論文は報告しています。これは特定の現場での調査事例です。</p>
+<p>同じ論文の別の分析では、提案した監視方法を評価するため、実際のエッチング工程から5か月分のデータを集めています。600枚のウェハから600枚分の粒子マップを作り、粒子数だけでなく位置の密集度を反映する指標を検証しました。論文は、この600枚の評価データからOリングの問題を特定したとは述べていません。Oリングの発見は工程別マップを手掛かりにした設備調査の記述で、600枚は手法評価用の別データです。</p>
+<p>この事例が示すのは、粒子の数に加えて分布を調べることで、装置のどこを確認するかという調査の手掛かりが得られる場合があることです。一般的な不良解析では、検出位置や工程履歴、装置・材料の違い、保全の前後を照合し、原因候補を一つずつ確かめます。ここで挙げたOリングの事例と、こうした一般的な調査の進め方は区別して考えます。いずれも、粒子の検出だけで個々のチップの電気的不良を証明するものではありません。</p>
+<p>2022年の別の研究は、特定の酸化膜エッチング装置におけるウェハ端の粒子を調べ、静電チャックの条件やプラズマ放電の手順などを実験しました。これは、粒子対策が清掃だけでなく、装置部品・工程条件の検討にも及ぶ例です。論文中の条件を別の装置へそのまま当てはめられる、という意味ではありません。</p>
+<figure data-media-role="case" data-visual-kind="diagram" data-subject="公開研究" data-purpose="論文中の観測、調査、確認事例を区別して、研究の範囲を限定して示す。" data-composition="case-investigation-flow" data-concrete-object="false" data-selection-reason="論文中の観測、調査、確認事例を区別して、研究の範囲を限定して示す。" data-photo-assessment="写真では因果や複数段階の違いを同時に区別しにくいため、模式図を採用。" data-diagram-justification="論文中の観測、調査、確認事例を区別して、研究の範囲を限定して示す。 実物写真では観察内容と原因候補の境界を同時に説明しにくいため、この模式図を採用しました。" data-provenance="articles/media/ep103/provenance/case.txt"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep103-06-research-case.png" alt="2018年の公開研究でウェハ粒子分布から装置の確認箇所を絞った流れを示す図" loading="lazy"><figcaption>公開研究Park・Kim・Baek（2018）の本文をもとに再構成した模式図。論文の原図・実測マップ・Oリングの記録写真ではありません。 図版：Semicon Campus制作。新規ベクター模式図。外部原図なし。</figcaption></figure>
+<h2 data-fact-ids="C07">洗浄だけでなく、発生源を減らし、保全後を確かめる</h2>
+<p>ウェハ洗浄は、表面の粒子を取り除くための工程です。ブラシや薬液などの方法は、対象の粒子だけでなく、ウェハ上の微細構造や材料を傷めないことも考えて選ばれます。洗浄装置メーカーは、粒子除去やウェハ端の洗浄などの技術例を公開しています。</p>
+<p>ただし、ウェハを洗うことと、装置から粒子が出続ける原因を取り除くことは別です。装置由来の候補があれば、決められた安全手順のもとで内部の堆積物や部品、シール、消耗品を点検し、必要な清掃や交換を検討します。材料の受け入れ、保管、搬送方法、薬液や洗浄条件も、対象の工程に応じて確認します。</p>
+<p>保全後は、作業を終えたという事実だけで生産再開を判断せず、工場で定めた確認方法に従って粒子の増加や装置・工程状態を確かめます。何を測り、どの基準で復旧と判断するかは、装置や工程、工場の手順によって異なります。</p>
+<figure data-media-role="maintenance" data-visual-kind="diagram" data-subject="保全後" data-purpose="清掃だけでなく、発生源の点検と保全後の確認までが必要な考え方をまとめる。" data-composition="four-step-maintenance" data-concrete-object="false" data-selection-reason="清掃だけでなく、発生源の点検と保全後の確認までが必要な考え方をまとめる。" data-photo-assessment="写真では因果や複数段階の違いを同時に区別しにくいため、模式図を採用。" data-diagram-justification="清掃だけでなく、発生源の点検と保全後の確認までが必要な考え方をまとめる。 実物写真では観察内容と原因候補の境界を同時に説明しにくいため、この模式図を採用しました。" data-provenance="articles/media/ep103/provenance/maintenance.txt"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep103-08-clean-maintain.png" alt="保全後に粒子増加の記録、候補点検、復旧確認へ進む流れ図" loading="lazy"><figcaption>洗浄・保全後の確認を示す一般的な模式図。実際の作業や判定基準は各工場の手順に従います。 図版：Semicon Campus制作。新規ベクター模式図。外部原図なし。</figcaption></figure>
+<h3>ここまでの内容で質問や訂正があれば</h3>
+<p>検査の用語や原因の切り分けについて、分かりにくい点や訂正の指摘があれば、既存の<a href="https://semicon-campus.com/contact/">お問い合わせフォーム</a>からお知らせください。記事名「パーティクル不良」を添えていただくと確認しやすくなります。</p>
+<h2>粒子の原因をたどる仕事は、装置保全と生産技術につながる</h2>
+<p>装置保全の担当者は、点検・清掃・部品交換の記録と装置の状態を比べ、決められた手順で異常の切り分けや復旧確認を支えます。生産技術やプロセス担当者は、どの工程条件や材料で欠陥が増えるかを確かめ、検査・品質の担当者は表面画像、マップ、ロット履歴、電気検査の結果を照合します。職務の分担は会社や工場で異なります。</p>
+<p>共通するのは、目に見えない異常を記録と測定で捉え、仮説を立て、証拠を確かめることです。他の製造業での点検、部品交換、工程改善、不良調査の経験が役立つ場面はありますが、半導体特有の清浄度、材料、真空、微細加工、安全手順は別に身につける必要があります。</p>
+<p>仕事内容や必要な経験を知りたい方は、下の画像を開いて半導体の設備保全・メンテナンスの仕事をご覧ください。</p>
+<p><a class="semicon-career-cta" href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/" aria-label="半導体の設備保全・メンテナンス職の仕事内容を読む" style="display:block;color:inherit;text-decoration:none"></p>
+<figure data-media-role="career-cta" data-visual-kind="diagram" data-subject="装置保全" data-purpose="職種CTAの直前で、記録を照合して原因を調べる仕事の接点を視覚化する。" data-composition="two-technicians-wafer-map" data-concrete-object="false" data-selection-reason="職種CTAの直前で、記録を照合して原因を調べる仕事の接点を視覚化する。" data-photo-assessment="写真では因果や複数段階の違いを同時に区別しにくいため、模式図を採用。" data-diagram-justification="職種CTAの直前で、記録を照合して原因を調べる仕事の接点を視覚化する。 実物写真では観察内容と原因候補の境界を同時に説明しにくいため、この模式図を採用しました。" data-provenance="articles/media/ep103/provenance/career-cta.txt"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep103-07-career-cta.png" alt="装置保全と生産技術の担当者が記録と粒子マップを照合する模式図" loading="lazy"><figcaption>装置保全と検査の役割を表す説明用模式図。実在の作業者・工場・装置の記録写真ではありません。画像を開くと仕事内容を確認できます。 図版：Semicon Campus制作。新規ベクター模式図。外部原図なし。</figcaption></figure>
+<p></a></p>
+<h2>よくある誤解</h2>
+<h3>Q. 粒子が一つ見つかったら、そのチップは不良ですか？</h3>
+<p>いいえ。検出は表面の異常候補を見つけた段階です。位置や工程、後工程の状態、電気検査の結果を別に確認します。</p>
+<h3>Q. 粒子マップと電気検査マップの模様が同じなら、原因は粒子ですか？</h3>
+<p>まだ断定できません。位置の相関は調査の手掛かりですが、他の工程情報や追加観察などで候補を検証する必要があります。</p>
+<h3>Q. クリーンルームなら粒子は発生しませんか？</h3>
+<p>いいえ。清浄度の管理は重要ですが、装置、材料、搬送など複数の候補を管理します。空気の清浄度分類だけで、ウェハ上の異物や回路の合否を決めることはできません。</p>
+<h2>まとめ：粒子の検出から原因の確認まで</h2>
+<p>粒子は、位置や工程によって回路形成を乱す可能性があります。<br />粒子マップは調査の手掛かりであり、電気的不良や原因の証明とは別です。<br />検査・洗浄・装置保全・工程管理を記録と確認でつなぎ、再発を防ぎます。</p>
+<h2>主な参考資料</h2>
+<ul class="semicon-sources">
+<li data-source-id="S01"><a href="https://www.hitachi-hightech.com/jp/ja/knowledge/semiconductor/room/manufacturing/inspection.html">日立ハイテク｜ウェーハ欠陥検査装置とは</a></li>
+<li data-source-id="S02"><a href="https://www.hitachi-hightech.com/jp/ja/products/semiconductor-manufacturing/cd-sem/inspection-solution/ls.html">日立ハイテク｜ウェーハ表面検査装置 LSシリーズ</a></li>
+<li data-source-id="S03"><a href="https://www.appliedmaterials.com/us/en/semiconductor/products/analyze/defect-control.html">Applied Materials｜Defect Control</a></li>
+<li data-source-id="S04"><a href="https://www.mdpi.com/2076-3417/8/2/224">Parkほか｜Kernel-Density-Based Particle Defect Management for Semiconductor Manufacturing Facilities（2018）</a></li>
+<li data-source-id="S05"><a href="https://www.mdpi.com/2076-3417/12/11/5684">Ku・Cheng｜Factor Design for the Oxide Etching Process to Reduce Edge Particle Contamination（2022）</a></li>
+<li data-source-id="S07"><a href="https://www.tel.com/product/cellesta.html">Tokyo Electron｜Cleaning CELLESTA Series</a></li>
+<li data-source-id="S08"><a href="https://www.iso.org/standard/53394.html">ISO｜ISO 14644-1:2015</a></li>
+</ul>
+</article>
+<p></body></html></p>

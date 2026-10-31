@@ -1,0 +1,35 @@
+
+<!--KEEP:0-->
+
+<p>2026年9月24日、Microchip Technologyは、48V電源システム向けのデジタル電力モニター「PAC1761」と「PAC1861」を発表しました。両製品は最大65Vの電圧を測定し、電圧・電流・電力だけでなく、時間の経過にともなう累積エネルギーや急激な負荷変化も監視するICです。AIデータセンター、車載、通信、産業機器など、電力密度が高まる装置で電源の状態を細かく把握するための部品と位置付けられています。<a href="https://ir.microchip.com/news-events/press-releases/detail/1416/build-smarter-more-resilient-48v-power-systems-with-energy-aware-digital-power-monitoring-from-microchip">Microchipの公式発表</a></p>
+
+<h2>何が発表されたのか</h2>
+<p>PAC1761は12ビット、PAC1861は16ビットのデジタル電力モニターです。ビット数は、測定値をどれだけ細かい段階に分けてデジタル化できるかを表す目安です。同じ測定範囲なら、一般に16ビットの方が12ビットより細かな変化を扱いやすくなります。ただし、実際の精度はビット数だけで決まらず、センサー回路、ノイズ、基板レイアウト、校正などにも左右されます。<a href="https://www.microchip.com/en-us/products/amplifiers-and-linear-ics/current-voltage-power-monitor-ics">Microchipの製品ポートフォリオ</a></p>
+<p>両製品について、Microchipは最大65Vの測定と75Vのスパイク保護を説明しています。ここでいうスパイクとは、電源ラインに一時的に現れる急峻な電圧上昇です。モーターや電源変換器のスイッチング、負荷の接続・切断などで発生することがあります。75Vまでの保護は、通常の48V系から一時的に外れる現象に対する余裕を示すものですが、保護できる時間や波形、回路全体の耐性までを意味するわけではありません。これはメーカーの仕様説明であり、今回確認できた資料には第三者による独立試験結果はありません。<a href="https://ir.microchip.com/news-events/press-releases/detail/1416/build-smarter-more-resilient-48v-power-systems-with-energy-aware-digital-power-monitoring-from-microchip">公式リリース</a></p>
+<p>製品は、電圧・電流・電力が設定値を超えた場合のプログラマブルアラート、急な負荷変化を検出するステップ制限、累積エネルギーのしきい値にも対応すると説明されています。PAC1861の製品ページでは、I2C通信、累積値、双方向測定、アラート対応、高側電流センサー、量産中という情報が掲載されています。<a href="https://www.microchip.com/en-us/product/pac1861">PAC1861公式製品ページ</a></p>
+<h2>「電力」と「エネルギー」はどう違うのか</h2>
+<p>電力は、その瞬間にどれだけの仕事をしているかを示す値です。たとえば、サーバーがある時点で何ワット消費しているかは電力の情報です。一方、エネルギーは、どれだけの時間にわたって電力を使ったかを積算したものです。電気料金の計量で使われるワット時に近い考え方で、短時間のピークだけでなく、一定期間の消費量を把握できます。</p>
+<p>AIアクセラレーターを搭載したサーバーでは、処理内容によって負荷が急に変化することがあります。瞬時の電力値だけを見ていると、短い変動や繰り返し発生する負荷の影響を評価しにくい場合があります。累積エネルギーのレジスターやしきい値アラートがあれば、マイコンや管理ソフトウェアは、単発の過電圧・過電流だけでなく、一定時間の消費状況を電力制御や状態監視の入力にできます。ただし、これは監視情報を増やせるという意味であり、ICを搭載するだけで効率向上や故障率低下が保証されるわけではありません。<a href="https://www.microchip.com/en-us/products/amplifiers-and-linear-ics/current-voltage-power-monitor-ics">Microchipの製品情報</a></p>
+<h2>なぜ48V電源がAI時代に登場するのか</h2>
+<p>同じ電力を送る場合、電圧を高くすると必要な電流を小さくできます。電線やバスバーの抵抗による損失は、おおむね電流の二乗に比例するため、12Vから48Vへ電圧を上げると、同じ電力をより小さな電流で配電しやすくなります。これにより、配線の損失や導体に流れる電流を抑えやすくなります。</p>
+<p>しかし、AIアクセラレーターの高密度化でラックの消費電力が増えると、48V系でも大きな電流、発熱、負荷急変、故障時の保護協調が問題になります。Open Compute Project（OCP）は、こうした長期的な電力増加を背景に、Google、Microsoft、NVIDIAなどが800VDCの共通要件を策定していると説明しています。800VDCは、既存の交流設備を一度に置き換える計画ではなく、既存設備に対応した段階的な導入経路も想定されています。<a href="https://www.opencompute.org/index.php/blog/powering-the-next-era-of-ai-how-google-microsoft-and-nvidia-are-standardizing-and-accelerating-the-industry-transition-to-lvdc">OCPの解説</a></p>
+<p>800VDCが広がっても、すべての機器が同じ電圧で動くわけではありません。Renesasのホワイトペーパーは、800Vから48VへDC/DC変換し、既存の48Vエコシステムを利用する構成を説明しています。つまり、将来のデータセンターでは、高圧の配電系と、ラックやボード近くの48V系が段階的に併存する可能性があります。その場合、電圧階層ごとに電力を測り、異常を検出する必要があります。<a href="https://www.renesas.com/en/document/whp/power-architecture-evolution-data-centers">Renesasのホワイトペーパー</a></p>
+<h2>今回の製品が持つ技術的な意味</h2>
+<p>今回のニュースは、48Vという配電電圧そのものを新しくする話ではありません。重要なのは、既存または移行期の48V電源に、時間方向の情報を加えられる点です。電圧・電流・電力の瞬時値に加え、累積エネルギー、急な負荷変化、設定値を超えた状態を制御側へ伝えられれば、電源管理ソフトウェアはより多くの情報を使って制御できます。</p>
+<p>たとえば、負荷の急変を検出したときに電源変換器やシステム管理側が対応したり、一定期間のエネルギー使用量を監視して運用上の判断に利用したりする可能性があります。ただし、どの程度の効果が得られるかは、シャント抵抗、基板レイアウト、電源変換器、ファームウェア、保護回路、冷却設計との組み合わせで決まります。Microchipが列挙するAIデータセンターや車載などの用途は対象分野であり、特定顧客が採用したことや、量産設計への組み込みを示すものではありません。<a href="https://ir.microchip.com/news-events/press-releases/detail/1416/build-smarter-more-resilient-48v-power-systems-with-energy-aware-digital-power-monitoring-from-microchip">Microchipの公式発表</a></p>
+
+<section class="mp7-section" id="revenue-phase7-learning"><h2>48V電源監視から、電気・計測の学習へ</h2><p>電源監視ICを理解したら、電圧、電流、電力、時間積算したエネルギーを別々に記録します。測定の細かさと実際の精度を区別し、評価条件をそろえることが大切です。電気・計測の基礎を補う教材と、表計算やプログラミングで公開数値を整理する講座を併用できます。まず公開資料から小さな比較表を作り、足りない知識や操作を一つ決めてから学習を選びます。実設備の測定作業は職場の安全手順と正式な教育が前提です。</p></section>
+
+<h2>発売済みだが、確認すべき限界もある</h2>
+<p>Microchipは製品を発売時点で入手可能とし、指定されたMSOP-10品種について、1万個単位で1個0.56米ドルから、評価ボードEV12R33Aを49米ドルで提供すると説明しています。PAC1861の公式製品ページも量産中と記載しています。これは製品が計画段階だけでなく、購入・評価可能な段階にあることを示しますが、すべての型番の在庫や納期を保証する情報ではありません。価格も、品種、数量、地域、供給条件によって変わる開始価格です。<a href="https://ir.microchip.com/news-events/press-releases/detail/1416/build-smarter-more-resilient-48v-power-systems-with-energy-aware-digital-power-monitoring-from-microchip">価格と提供状況</a></p>
+<p>また、今回確認した資料だけでは、測定精度、帯域、アラート遅延、75Vスパイク保護の具体的な時間条件、車載向け認証の範囲、実機での効率改善幅は確定できません。メーカー発表にある性能と、第三者が独立に検証した性能は分けて考える必要があります。実際の採用を判断するには、データシートの電気的特性、評価ボードでの測定、温度・負荷変動試験、供給安定性の確認が必要です。</p>
+<h2>これから注目したい点</h2>
+<p>今後は、PAC1761・PAC1861を使った具体的な評価結果や設計事例が公開されるかが第一の焦点です。特に、負荷急変時の検出性能、累積エネルギー値の誤差、ノイズ環境での安定性、電源変換器や保護回路との組み合わせが重要になります。</p>
+<p>第二に、AIデータセンターの電圧アーキテクチャがどの速度で変化するかを見る必要があります。800VDCの標準化が進んでも、変換後の48Vラック配電やボード電源がすぐ消えるとは限りません。高電圧側、48V側、さらに低電圧側という複数の電圧階層で監視が必要になる可能性があります。今回の製品は、その移行期にある48V系の状態を細かく把握する部品として評価されるでしょう。</p>
+<p>結論として、PAC1761とPAC1861は、AI時代の電力課題を単独で解決する製品ではありません。しかし、電源の瞬間的な状態だけでなく、過渡現象と時間積算したエネルギーを制御側へ渡すという考え方は、電力密度が高まる装置で重要性を増しています。発表済み・量産中という製品の提供状況と、まだ確認されていない独立ベンチマークや採用実績を区別しながら、今後の設計事例を見ていくことが大切です。</p>
+
+<section class="mp7-section" id="revenue-phase7-career"><h2>理解した内容から、次の学習と比較へ</h2><p>電源の測定項目と記録方法の整理を、対象・条件・出典の三つで整理しましょう。関連する基礎記事、学習の入口、PCの要件を目的別に確認すると、無料で試せる範囲と有料の選択肢を分けて検討できます。</p><aside class="semicon-cta mp7-card"><h3>目的に合う関連記事から、次の行動を選ぶ</h3><p>仕事内容を知りたい方は職種記事へ、基礎を広げたい方は学習記事へ、自宅環境を見直す方はPC・メモリの解説へ進めます。各記事の求人・学習・機材の選び方も比較できます。</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/" class="semicon-btn mp7-button" data-revenue-phase7-hub="277" data-cta="maintenance_hub" data-cta-type="maintenance_hub" data-cta-stage="career" data-cta-id="phase7_1271_hub277_end" data-cta-route="phase7_1271_hub277_end">設備保全Hubで仕事内容・求人・学習を確認する</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/semiconductor-beginner-roadmap/" class="semicon-btn mp7-button" data-revenue-phase7-hub="391" data-cta="learning_hub" data-cta-type="learning_hub" data-cta-stage="career" data-cta-id="phase7_1271_hub391_end" data-cta-route="phase7_1271_hub391_end">半導体学習Hubで基礎・仕事・学び方を確認する</a></div></aside></section>
+
+
+<h2>参考にした公式情報</h2>
+<ul><li><a href="https://ir.microchip.com/news-events/press-releases/detail/1416/build-smarter-more-resilient-48v-power-systems-with-energy-aware-digital-power-monitoring-from-microchip">Microchip Technology：PAC1761・PAC1861の発表（2026年9月24日）</a></li><li><a href="https://www.microchip.com/en-us/products/amplifiers-and-linear-ics/current-voltage-power-monitor-ics">Microchip Technology：電流・電圧・電力モニターIC製品群</a></li><li><a href="https://www.microchip.com/en-us/product/pac1861">Microchip Technology：PAC1861製品ページ</a></li><li><a href="https://www.opencompute.org/index.php/blog/powering-the-next-era-of-ai-how-google-microsoft-and-nvidia-are-standardizing-and-accelerating-the-industry-transition-to-lvdc">Open Compute Project：AI向けLVDCと800VDCの背景（2026年8月11日）</a></li><li><a href="https://www.renesas.com/en/document/whp/power-architecture-evolution-data-centers">Renesas Electronics：データセンターの電力アーキテクチャの進化（2025年10月1日）</a></li></ul>

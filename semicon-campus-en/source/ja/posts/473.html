@@ -1,0 +1,257 @@
+
+<!--KEEP:0-->
+
+
+<!--KEEP:1-->
+
+<!--KEEP:2-->
+
+<article class="semicon-article" id="top">
+<div class="semicon-level">
+  <div class="semicon-level-badge">初級</div>
+  <div>
+    <strong>この記事のレベル</strong><br>
+    半導体の後工程を初めて学ぶ人向けです。ダイボンディングで固定したチップを、細い金属線で基板やリードフレームへつなぐ流れを、ボール形成・接合・ループ・品質確認まで順番に整理します。
+  </div>
+</div>
+
+<p class="semicon-lead">ワイヤーボンディングとは、半導体チップ上の電極パッドと、基板やリードフレーム側の端子を、金・銅・アルミなどの細い金属線で電気的につなぐ後工程です。見た目は細い線をつける作業ですが、接合強度、ループ形状、断線、隣の線との接触まで品質を左右します。</p>
+
+<div class="semicon-note">
+  <strong>まずは技術として理解しましょう</strong><br>
+  この記事では、最初にワイヤーボンディングの意味、工程フロー、材料、品質不良を説明します。そのうえで、求人票でこの言葉を見た人、装置メーカーを調べたい人、後工程を体系的に学びたい人向けに次の行き先を分けます。
+</div>
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/wire-bonding-flow.png" alt="ワイヤーボンディングの基本フロー。ボール形成、第1接合、ループ形成、第2接合、確認の順に進む">
+  <figcaption>ワイヤーボンディングは、チップと外部端子を細い金属線でつなぐ工程です。線が細いほど、接合の強さ、線の高さ、隣の線との距離を丁寧に管理する必要があります。</figcaption>
+</figure>
+
+<div class="semicon-map">
+  <strong>この記事でわかること</strong>
+  <ul>
+    <li>ワイヤーボンディングとは何か、後工程のどこにあるのか</li>
+    <li>ボール形成、第1接合、ループ形成、第2接合、確認の流れ</li>
+    <li>金線、銅線、アルミ線などのワイヤー材料の違い</li>
+    <li>断線、接合不良、ループ崩れ、ショートがなぜ問題になるのか</li>
+    <li>求人票や企業研究で見るときの言葉と次に読む記事</li>
+  </ul>
+</div>
+
+
+<h2>ワイヤーボンディングとは何か</h2>
+
+<p>半導体チップは、ダイボンディングで基板やリードフレームに固定されます。しかし、固定しただけでは外の世界と電気的につながっていません。チップの中の回路と、パッケージ外部の端子をつなぐ必要があります。その代表的な方法がワイヤーボンディングです。</p>
+
+<p>ワイヤーボンディングでは、チップ上の小さな電極パッドと、基板やリードフレーム側の接続先を、極細の金属線でつなぎます。ASMPTは、ワイヤーボンディングを電子部品における重要な接続技術のひとつとして紹介しています。K&#038;Sも、ボールボンディングでは金や銅などの細い線の先端に小さな球を作り、熱・圧力・超音波エネルギーを使って接合すると説明しています。</p>
+
+<p>初心者向けに言えば、ワイヤーボンディングは「チップの中の回路に、外へ出る電気の道を作る工程」です。ここで断線したり、接合が弱かったり、隣の線と触れたりすると、電気が流れない、ショートする、信頼性が落ちるといった問題につながります。</p>
+
+<div class="semicon-mobile-summary">スマホで読むなら、まずここだけ押さえれば大丈夫です。ワイヤーボンディングは「チップと基板を細い金属線でつなぐ工程」です。品質のポイントは、断線・接合不良・ループ崩れ・ショートを抑えることです。</div>
+
+<h2>後工程のどこにあるのか</h2>
+
+<p>後工程では、まずウェハをダイシングでチップに切り分けます。次に、ダイボンディングでチップを基板やリードフレームへ固定します。そのあと、チップと外部端子を電気的につなぐ工程として、ワイヤーボンディングやフリップチップ接続などが使われます。</p>
+
+<p>つまりワイヤーボンディングは、ダイボンディングの次に来る「電気的につなぐ工程」です。チップが正しい位置に固定されていても、ワイヤー接続が弱ければ製品としては機能しません。だから後工程では、固定する工程とつなぐ工程をセットで理解すると流れが見えやすくなります。</p>
+
+<div class="semicon-grid two">
+  <div class="semicon-card"><b>ダイボンディング</b><span>切り分けたチップを、基板やリードフレームへ固定する工程です。位置、傾き、接着状態を管理します。</span></div>
+  <div class="semicon-card"><b>ワイヤーボンディング</b><span>固定したチップと外部端子を、細い金属線で電気的につなぐ工程です。断線やショートを防ぎます。</span></div>
+</div>
+
+<h2>ワイヤーボンディングの基本フロー</h2>
+
+<p>ワイヤーボンディングにはいくつかの方式があります。ここでは代表的なボールボンディングをイメージして、初心者向けに5つの流れで整理します。</p>
+
+<h3>1. 金属線の先端にボールを作る</h3>
+<p>まず、細い金属線の先端に小さな球を作ります。金線や銅線を使う場合、この球がチップ側のパッドへ最初に接合されます。K&#038;Sは、この球を作ってからチップ側へ接合し、次に基板やリードフレーム側へつなぐ流れを説明しています。</p>
+
+<h3>2. チップ上のパッドへ第1接合する</h3>
+<p>チップ上には、外部とつなぐための小さな電極パッドがあります。装置は位置を合わせ、金属線の先端をパッドへ押し当て、熱・圧力・超音波などを使って接合します。ここが弱いと、後で線が外れたり、電気的につながらなかったりします。</p>
+
+<h3>3. ループを作って基板側へ運ぶ</h3>
+<p>第1接合のあと、装置は線を持ち上げ、弧を描くようにして基板やリードフレーム側へ運びます。この弧の形をループと呼びます。ループが高すぎる、低すぎる、隣の線に近すぎると、封止や使用中の信頼性に影響することがあります。</p>
+
+<h3>4. 基板やリードフレームへ第2接合する</h3>
+<p>線のもう一方を、基板やリードフレーム側の接続先へ接合します。ここでも接合位置、接合強度、線の切れ方が重要です。1本ずつの線はとても細いですが、製品全体では多数のワイヤーが並ぶため、安定した繰り返し精度が求められます。</p>
+
+<h3>5. 断線・高さ・形を確認する</h3>
+<p>接合した後は、線が切れていないか、ループの高さや形が安定しているか、隣の線や部品に触れていないかを確認します。外観検査、装置データ、引張試験やせん断試験など、製品や工場によってさまざまな確認が行われます。</p>
+
+<h2>ワイヤー材料と方式の違い</h2>
+
+<p>ワイヤーボンディングでは、金線、銅線、アルミ線などが使われます。どの材料を使うかは、製品の目的、コスト、接合性、信頼性、電流や熱の条件によって変わります。初心者の段階では、まず「線の材料が変わると、接合条件や見るべき品質も変わる」と理解すれば十分です。</p>
+
+<div class="semicon-table-wrap">
+  <table class="semicon-table">
+    <thead>
+      <tr><th>材料・方式</th><th>ざっくりした特徴</th><th>見るポイント</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>金線</td><td>古くから使われる代表的なワイヤー材料です。</td><td>接合の安定性、材料コスト、信頼性</td></tr>
+      <tr><td>銅線</td><td>コストや電気特性の面で使われることがあります。</td><td>酸化対策、接合条件、パッドへの影響</td></tr>
+      <tr><td>アルミ線</td><td>パワー半導体などで太い線として使われることがあります。</td><td>大電流、接合強度、ウェッジボンディング</td></tr>
+      <tr><td>ボールボンディング</td><td>線の先端に球を作ってチップ側に接合する方式です。</td><td>ボール形状、接合位置、ループ形状</td></tr>
+      <tr><td>ウェッジボンディング</td><td>くさび形のツールで線やリボンを接合する方式です。</td><td>太線、リボン、パワー系パッケージ</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<p>ASMPTは、より小さく高密度なパッケージや新しいワイヤー材料に対応するため、ワイヤーボンディングでは柔軟なプロセス制御が重要になると説明しています。つまり、ワイヤーボンディングは昔からある工程でありながら、今も装置制御や材料対応が進んでいる領域です。</p>
+
+<h2>品質で見るポイント</h2>
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/wire-bonding-quality.png" alt="ワイヤーボンディングで見る品質ポイント。断線、接合不良、ループ崩れ、ショートを抑える">
+  <figcaption>ワイヤーボンディングの品質は、線が見えているかだけでは判断できません。接合の強さ、ループの高さ、隣の線との距離、封止後の信頼性まで含めて見ます。</figcaption>
+</figure>
+
+<h3>断線</h3>
+<p>ワイヤーが切れて、電気が流れない状態です。見た目で分かる断線もあれば、検査で初めて分かる接続不良もあります。断線は製品の動作不良に直結します。</p>
+
+<h3>接合不良</h3>
+<p>チップ側のパッドや基板側の接続先に、ワイヤーが十分についていない状態です。接合条件、表面状態、ワイヤー材料、ツール状態などが関係します。接合が弱いと、後工程や使用中に外れるリスクがあります。</p>
+
+<h3>ループ崩れ</h3>
+<p>ワイヤーの高さや形が安定しない状態です。ループが高すぎれば封止時に変形しやすく、低すぎればチップや部品に触れることがあります。隣のワイヤーと近すぎる場合も注意が必要です。</p>
+
+<h3>ショート</h3>
+<p>本来つながってはいけない場所にワイヤーが触れて、電気的にショートすることです。ワイヤー同士の間隔、ループ形状、封止時の流れ、部品配置が関係します。</p>
+
+<div class="semicon-note">
+  <strong>歩留まりとのつながり</strong><br>
+  ワイヤーボンディングの不良は、最終検査で電気特性不良として見つかることがあります。だから、外観検査だけでなく、装置条件、材料、パッド状態、接合強度、電気検査の結果をつなげて見ることが大切です。
+</div>
+
+<h2>関係する装置・企業</h2>
+
+<p>ワイヤーボンディングでは、ワイヤーボンダと呼ばれる装置が中心になります。代表的な装置企業としては、Kulicke &#038; Soffa、ASMPTなどが知られています。K&#038;Sはボールボンダやウェッジボンダ、キャピラリなどの製品を展開しています。ASMPTも、IC・ディスクリート向けにワイヤーボンディング装置を扱っています。</p>
+
+<div class="semicon-grid">
+  <div class="semicon-card"><b>装置</b><span>ボールボンダ、ウェッジボンダ、画像認識、搬送、ステージ、ワイヤー供給など。</span></div>
+  <div class="semicon-card"><b>消耗品</b><span>キャピラリ、ウェッジツール、金線、銅線、アルミ線、リボンなど。</span></div>
+  <div class="semicon-card"><b>検査</b><span>外観検査、接合位置、ループ高さ、断線、ショート、接合強度など。</span></div>
+</div>
+
+<p>企業研究をするときは、「ボンダー本体の会社」「ツールやワイヤーの会社」「後工程を受託する会社」「検査装置の会社」を分けると理解しやすくなります。ワイヤーボンディングは、装置・材料・検査が重なる工程です。</p>
+
+<div class="semicon-cta">
+  <h3>企業や装置を調べている方へ</h3>
+  <p>ワイヤーボンディングは、後工程装置、接続材料、検査、パッケージング企業が関わる工程です。工程別に企業を見たい場合は、企業マップから調べるとつながりが見えやすくなります。</p>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn" href="https://semicon-campus.com/semiconductor-company-map-by-process/">工程別企業マップを見る</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/what-is-backend-semiconductor-process/">後工程全体を確認する</a>
+  </div>
+</div>
+
+<section class="mp1-section" id="maintenance-phase1-learning"><h2>ワイヤーボンダ・ツール・供給系を、実務と学び直しにつなげる</h2><p>接合不良やループ崩れを調べるときは、ツールの状態、ワイヤー供給、画像認識、接合条件のどこを確認したか分けて記録します。消耗部品の点検・交換と、その後の品質確認を一組にできれば、ボンダー保守や設備保全の経験を説明しやすくなります。機械・制御・品質の基礎を補う学習から、担当装置に合う求人条件の比較まで広げてみましょう。</p></section>
+<h2>ワイヤーボンディングは仕事にもつながる工程</h2>
+
+<p>ワイヤーボンディングは、製造オペレーター、検査・品質、材料・プロセス、装置保全、工程改善など、複数の仕事につながります。求人票では「ワイヤーボンド」「ボンダー」「後工程組立」「外観検査」「接合条件」「装置保全」などの言葉で出ることがあります。</p>
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/wire-bonding-jobs.png" alt="ワイヤーボンディングが装置オペレーター、検査・品質、材料・プロセス、装置保全の仕事につながることを示す図">
+  <figcaption>同じワイヤーボンディングでも、装置操作が中心なのか、検査や品質記録まで含むのか、接合条件や材料まで扱うのかで仕事内容が変わります。</figcaption>
+</figure>
+
+<div class="semicon-table-wrap">
+  <table class="semicon-table">
+    <thead>
+      <tr><th>近い職種</th><th>見る仕事</th><th>求人票で出やすい言葉</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>製造オペレーター</td><td>材料セット、装置操作、条件確認、作業記録</td><td>ワイヤーボンド、ボンダー、後工程組立、クリーンルーム</td></tr>
+      <tr><td>検査・品質</td><td>断線、ループ形状、接合不良、ショート、外観確認</td><td>外観検査、品質確認、断線、ショート、不良解析</td></tr>
+      <tr><td>材料・プロセス</td><td>金線・銅線・アルミ線、接合条件、ループ条件、改善</td><td>接合条件、工程改善、プロセス条件、材料評価</td></tr>
+      <tr><td>装置保全</td><td>キャピラリ、ワイヤー供給、搬送、画像認識部の点検</td><td>装置保全、メンテナンス、設備立上げ、ボンダー保守</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="semicon-cta">
+  <h3>求人票で「ワイヤーボンド」「ボンダー」を見た方へ</h3>
+  <p>同じワイヤーボンディングでも、装置操作が中心なのか、接合条件の管理まで担当するのか、検査や品質記録まで含むのかで仕事内容が変わります。まず仕事内容を整理したい人は求人票の読み方へ、すでに求人を探している人は経験別の転職サービス選定ガイドへ進んでください。</p>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn" href="https://semicon-campus.com/how-to-read-semiconductor-job-description/">仕事内容と求人票の見方を確認する</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/semiconductor-career-service-selection-guide/">経験別に半導体転職サービスを比較する</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/%e5%8d%8a%e5%b0%8e%e4%bd%93%e6%b1%82%e4%ba%ba%e3%82%ad%e3%83%bc%e3%83%af%e3%83%bc%e3%83%89%e4%b8%80%e8%a6%a7%ef%bd%9c%e6%9c%aa%e7%b5%8c%e9%a8%93%e8%80%85%e3%81%8c%e6%b1%82%e4%ba%ba%e7%a5%a8%e3%81%a7/">関連する求人キーワードを見る</a>
+  </div>
+</div>
+
+<h2>まとめ</h2>
+
+<p>ワイヤーボンディングとは、半導体チップ上の電極パッドと、基板やリードフレーム側の端子を、細い金属線で電気的につなぐ後工程です。ボール形成、第1接合、ループ形成、第2接合、確認という流れで進みます。</p>
+
+<p>初心者が押さえるべきポイントは、断線、接合不良、ループ崩れ、ショートです。ここを理解すると、後工程の品質、歩留まり、装置、材料、求人票の言葉がつながって見えるようになります。</p>
+
+<div class="semicon-cta">
+  <h3>あなたの目的に合わせて次へ進む</h3>
+  <p>ワイヤーボンディングを理解したら、次は「後工程全体」「求人票」「企業・装置」のどこを知りたいかで読み進めると迷いにくくなります。</p>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn" href="https://semicon-campus.com/what-is-backend-semiconductor-process/">後工程全体を学ぶ</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/how-to-read-semiconductor-job-description/">求人票で見た言葉を整理する</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/semiconductor-company-map-by-process/">企業・装置を調べる</a>
+  </div>
+</div>
+
+<h2>次回予告</h2>
+
+<p>次回は、チップやワイヤーを樹脂などで守る「封止・モールドとは何か」を解説します。ワイヤーで電気的につないだあと、なぜ外から守る必要があるのかを初心者向けに整理します。</p>
+
+<div class="semicon-note">
+  <strong>YouTubeでも半導体をわかりやすく解説しています</strong><br>
+  ショート動画や図解で半導体製造を学びたい方は、YouTubeチャンネル <a href="https://www.youtube.com/@semicon-campus">AI時代の半導体教室</a> もあわせてご覧ください。
+</div>
+
+<h2>次に読む記事</h2>
+
+<div class="semicon-links">
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/what-is-semiconductor-die-bonding/">ダイボンディングとは何か？</a></strong>
+    <p>ワイヤーボンディングの直前にある、チップを基板へ固定する工程を解説しています。</p>
+  </div>
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/what-is-backend-semiconductor-process/">後工程とは何か？</a></strong>
+    <p>ダイシング、ダイボンディング、接続、封止、検査まで、後工程全体をつかむ親記事です。</p>
+  </div>
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/how-to-read-semiconductor-job-description/">半導体求人票の読み方</a></strong>
+    <p>仕事内容、応募条件、働き方を分けて求人票を読むための記事です。</p>
+  </div>
+</div>
+
+<h2>関連記事</h2>
+
+<div class="semicon-links">
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/what-is-semiconductor-inspection-quality-control/">半導体検査・品質評価とは？</a></strong>
+    <p>断線、外観検査、品質確認など、ワイヤーボンディング後の確認にも関わる仕事を理解できます。</p>
+  </div>
+  <div class="semicon-link-card">
+    <strong><a href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/">半導体保全・メンテナンス職とは？</a></strong>
+    <p>ボンダー、搬送、画像認識、キャピラリ周辺など、装置を支える仕事につながります。</p>
+  </div>
+</div>
+
+<section class="mp1-section" id="maintenance-phase1-career"><h2>ワイヤーボンダ・ツール・供給系の知識を活かす仕事と次の行動</h2><p>ツール・供給系・搬送の点検、接合品質の確認の経験がある方は、「対象装置・現象・自分が行った確認・結果」を一組にして整理しましょう。担当設備、夜勤・出張、教育体制、応募条件を求人票と照合すると、活かせる経験と補う知識を分けられます。</p><aside class="semicon-cta mp1-card"><h3>仕事の全体像と、求人・学習の選び方を確認する</h3><p>設備保全Hubでは、点検・異常対応の仕事と経験の整理、求人・基礎学習・資格対策をまとめて確認できます。装置担当や顧客対応の範囲を比べたい方は、関連する職種記事も参照してください。</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/" class="semicon-btn mp1-button" data-maintenance-phase1-hub="277" data-cta="maintenance_hub" data-cta-type="maintenance_hub" data-cta-stage="career" data-cta-id="maintenance_473_hub277_end" data-cta-route="maintenance_473_hub277_end">設備保全Hubで仕事内容・求人・学習を確認する</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/" class="semicon-btn mp1-button" data-maintenance-phase1-hub="237" data-cta="equipment_hub" data-cta-type="equipment_hub" data-cta-stage="career" data-cta-id="maintenance_473_hub237_end" data-cta-route="maintenance_473_hub237_end">装置エンジニアの担当範囲・求人・学習を見る</a></div></aside></section>
+
+<h2>参考資料</h2>
+
+<div class="semicon-note">
+  <ul>
+    <li><a href="https://semi.asmpt.com/en/products/icd/wb/">ASMPT: Wire Bonding</a></li>
+    <li><a href="https://semi.asmpt.com/en/products/icd/wb/ball-bonding/">ASMPT: Gold Wire Ball Bonding</a></li>
+    <li><a href="https://www.kns.com/products-services/ball-bonding">Kulicke &#038; Soffa: Ball Bonding</a></li>
+    <li><a href="https://www.kns.com/products-services/ball-bonder">Kulicke &#038; Soffa: Ball Bonder</a></li>
+    <li><a href="https://www.kns.com/products-services/vertical-wire-bonding">Kulicke &#038; Soffa: Vertical Wire Bonding Technology</a></li>
+  </ul>
+</div>
+
+<div class="semicon-note">
+  <strong>この記事の調査方針</strong><br>
+  この記事は、後工程の全体像を初心者がつかめるように、装置メーカーが公開している基礎情報を確認し、専門用語をかみ砕いて整理しています。実際の材料、接合条件、検査方法は、製品構造、パッケージ、信頼性要求によって変わります。最終確認日: 2026年7月11日。
+</div>
+
+<a class="semicon-backtop" href="#top" aria-label="ページ先頭へ戻る">↑</a>
+</article>

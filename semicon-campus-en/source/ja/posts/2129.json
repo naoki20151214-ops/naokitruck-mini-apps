@@ -1,0 +1,20 @@
+{
+ "id": 2129,
+ "type": "post",
+ "slug": "daily-news-da868096c78d0ab62b97",
+ "link": "https://semicon-campus.com/daily-news-da868096c78d0ab62b97/",
+ "date": "2026-10-17T12:00:00",
+ "modified": "2026-10-27T20:03:15",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  20
+ ],
+ "tags": [
+  19
+ ],
+ "featured_media": 2755,
+ "title": "SK hynix、CXLでAIラックを「メモリー中心」へ再設計する方向性",
+ "excerpt": "SK hynixがOCP Global Summit 2026で示したCXLメモリープール、KVキャッシュ共有、計算メモリーの仕組みと、量産化に向けた課題を初心者向けに解説します。"
+}

@@ -1,0 +1,20 @@
+{
+ "id": 836,
+ "type": "post",
+ "slug": "cpu-gpu-difference-ai",
+ "link": "https://semicon-campus.com/cpu-gpu-difference-ai/",
+ "date": "2026-09-11T19:30:00",
+ "modified": "2026-10-27T20:05:23",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  2
+ ],
+ "tags": [
+  18
+ ],
+ "featured_media": 2872,
+ "title": "CPUとGPUは何が違うのか？AIでGPUが使われる理由を初心者向けに解説",
+ "excerpt": "CPUとGPUはどちらが上かではなく、低レイテンシと総スループットという設計目標が違います。AIでGPUが多く使われる理由を、行列計算・データ並列性・CPUとの協調から初心者向けに解説します。"
+}

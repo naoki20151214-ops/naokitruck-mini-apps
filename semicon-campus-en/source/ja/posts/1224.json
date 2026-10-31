@@ -1,0 +1,20 @@
+{
+ "id": 1224,
+ "type": "post",
+ "slug": "daily-news-e15c58596bb573a57409",
+ "link": "https://semicon-campus.com/daily-news-e15c58596bb573a57409/",
+ "date": "2026-09-24T17:00:00",
+ "modified": "2026-10-27T20:04:45",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  20
+ ],
+ "tags": [
+  19
+ ],
+ "featured_media": 2829,
+ "title": "ScantinelのELSFP発表、AIデータセンターの光接続を変えるか",
+ "excerpt": "MicroVision傘下Scantinelが発表したELSFP外部レーザー光源を初心者向けに解説。CPOとの関係、技術的な利点、未確認の課題、今後の注目点を整理します。"
+}

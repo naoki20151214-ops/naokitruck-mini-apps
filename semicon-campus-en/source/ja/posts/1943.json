@@ -1,0 +1,20 @@
+{
+ "id": 1943,
+ "type": "post",
+ "slug": "daily-news-64c5f70ed02a88b43d27",
+ "link": "https://semicon-campus.com/daily-news-64c5f70ed02a88b43d27/",
+ "date": "2026-10-11T10:00:00",
+ "modified": "2026-10-27T20:03:30",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  20
+ ],
+ "tags": [
+  19
+ ],
+ "featured_media": 2770,
+ "title": "Broadcomの102.4Tbps CPOが示すAIネットワークの次の課題",
+ "excerpt": "Broadcomが発表した102.4Tbps CPO、Tomahawk 6、800G NICを初心者向けに解説。AIデータセンターの通信ボトルネック、量産状況、今後の確認点を整理します。"
+}

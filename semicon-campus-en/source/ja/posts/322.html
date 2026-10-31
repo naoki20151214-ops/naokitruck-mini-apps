@@ -1,0 +1,337 @@
+
+<!--KEEP:0-->
+
+
+<!--KEEP:1-->
+
+
+<!--KEEP:2-->
+<div class="semicon-article">
+
+
+
+<p class="semicon-lead wp-block-paragraph">欠陥検査とは、ウェハやチップの上にある小さな異物、傷、パターン欠け、寸法ずれなどを見つける工程です。半導体製造では、目に見えないほど小さな不良でも、回路のショート、断線、リーク電流、歩留まり低下につながります。この記事では、欠陥検査が何を見ているのか、検査データをどう歩留まり改善へつなげるのか、そして求人票ではどんな仕事として出てくるのかを初心者向けに整理します。</p>
+
+
+
+<div class="semicon-map">
+  <h3>この記事でわかること</h3>
+  <ol>
+    <li>欠陥検査とは何をする工程か</li>
+    <li>粒子、傷、ブリッジ、オープン、重ね合わせずれの違い</li>
+    <li>欠陥マップを歩留まり改善へ戻す考え方</li>
+    <li>KLA、レーザーテックなど検査装置企業がなぜ重要か</li>
+    <li>求人票で見る「欠陥検査」「SEM」「不良解析」「SPC」の意味</li>
+  </ol>
+</div>
+
+
+
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>歩留まりの記事で、不良を減らすには検査が大事だと出てきました。でも、欠陥検査って単に「悪いチップを探す作業」なんですか？</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>それだけではありません。欠陥検査は、悪いものを見つけるだけでなく、どこで不良が増えているのかを読み取り、工程改善へ戻すための入口です。</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>つまり、検査はゴールではなくて、原因を探すためのスタートなんですね。</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>その通りです。欠陥を「見つける」「分ける」「場所を見る」「原因候補へ戻す」までつなげて、初めて歩留まり改善に効いてきます。</p></div></div>
+
+
+
+
+<h2 class="wp-block-heading">欠陥検査とは何か</h2>
+
+
+
+<p class="wp-block-paragraph">欠陥検査とは、半導体製造の途中や完成後に、ウェハ表面、薄膜、配線パターン、チップ外観などを調べ、不良につながる異常を見つける工程です。半導体の回路は非常に細かいため、肉眼では見えない粒子やわずかなパターンのずれでも、製品としては大きな問題になります。</p>
+
+
+
+<p class="wp-block-paragraph">たとえば、配線と配線の間に小さな異物が残ると、電気的にショートすることがあります。逆に、本来つながっているはずの細い線が切れていれば、断線になります。膜厚や線幅が基準からずれると、電気特性がばらつきます。欠陥検査は、こうした問題を早い段階で見つけるためにあります。</p>
+
+
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/semiconductor-defect-inspection-flow.png" alt="欠陥検査の流れ。撮像、検出、分類、解析、改善へつなげる工程を示した図解">
+  <figcaption>欠陥検査は「撮像して終わり」ではありません。怪しい点を見つけ、種類を分け、原因候補を絞り、工程や装置へ結果を戻します。</figcaption>
+</figure>
+<div class="semicon-mobile-summary">
+  <b>図の要点</b>
+  <ul>
+    <li>撮像: 光学・電子線でウェハを見る</li>
+    <li>検出: 怪しい点を拾う</li>
+    <li>分類: 粒子・傷など種類を分ける</li>
+    <li>解析: 場所や工程から原因候補を絞る</li>
+    <li>改善: 工程や装置へ結果を戻す</li>
+  </ul>
+</div>
+
+
+
+<h2 class="wp-block-heading">なぜ欠陥検査が歩留まりに直結するのか</h2>
+
+
+
+<p class="wp-block-paragraph">歩留まりとは、作ったチップのうち、実際に良品として使える割合です。欠陥検査が弱いと、不良がどこで増えているのかを見逃します。すると、同じ装置、同じ材料、同じ工程条件で不良を作り続けてしまいます。</p>
+
+
+
+<p class="wp-block-paragraph">欠陥検査が強い工場では、「どのロットで増えたのか」「ウェハの中心に多いのか、端に多いのか」「特定の装置を通った後に増えたのか」「洗浄後か、露光後か、エッチング後か」といった見方ができます。欠陥を見つけることよりも、欠陥の出方から原因候補を絞ることが重要です。</p>
+
+
+
+<div class="semicon-note">
+  <p><strong>欠陥検査の本質は「次の判断を速くすること」です。</strong></p>
+  <p>不良そのものは、検査した瞬間に消えるわけではありません。しかし、欠陥の場所、種類、発生タイミングがわかると、工程条件を変える、装置を点検する、洗浄を見直す、材料ロットを確認する、といった行動につながります。これが歩留まり改善です。</p>
+</div>
+
+
+
+<h2 class="wp-block-heading">検査で見つける主な欠陥</h2>
+
+
+
+<p class="wp-block-paragraph">欠陥といっても、すべて同じではありません。粒子、傷、ブリッジ、オープン、重ね合わせずれでは、原因も対策も違います。ここを分けて理解すると、半導体製造の工程同士のつながりが見えやすくなります。</p>
+
+
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/semiconductor-defect-types-map.png" alt="半導体欠陥の種類。粒子、傷、ブリッジ、オープン、重ね合わせずれをウェハ上に示した図解">
+  <figcaption>同じ「不良」でも、戻るべき工程は違います。粒子なら洗浄や搬送、パターン欠けならリソグラフィやエッチング、段差や表面状態ならCMPが関わることがあります。</figcaption>
+</figure>
+
+
+
+<div class="semicon-compare">
+<table>
+  <thead>
+    <tr><th>欠陥の種類</th><th>何が起きているか</th><th>関係しやすい工程</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>粒子・汚れ</strong></td><td>小さな異物や薬液残りがウェハ上に残る</td><td>洗浄、搬送、薬液管理、クリーンルーム管理</td></tr>
+    <tr><td><strong>傷・欠け</strong></td><td>表面に傷が入る、端部が欠ける</td><td>搬送、ハンドリング、装置内接触、研磨</td></tr>
+    <tr><td><strong>ブリッジ</strong></td><td>本来離れる配線やパターンがつながる</td><td>リソグラフィ、エッチング、成膜、洗浄</td></tr>
+    <tr><td><strong>オープン</strong></td><td>本来つながる線が切れる</td><td>リソグラフィ、エッチング、CMP、配線形成</td></tr>
+    <tr><td><strong>重ね合わせずれ</strong></td><td>前の層と次の層の位置がずれる</td><td>リソグラフィ、露光装置、アライメント、ウェハ平坦性</td></tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<h2 class="wp-block-heading">欠陥マップを見ると、工程のどこが怪しいか見えてくる</h2>
+
+
+
+<p class="wp-block-paragraph">欠陥検査では、ウェハ上のどこに欠陥があるかを地図のように見ることがあります。これを欠陥マップ、またはウェハマップと考えるとわかりやすいです。欠陥がランダムに散らばっているのか、端に集中しているのか、ある方向に筋のように出ているのかで、疑う原因が変わります。</p>
+
+
+
+<p class="wp-block-paragraph">たとえば、ウェハの端だけに欠陥が多ければ、搬送、保持、薬液の流れ、エッジ部の処理が疑われます。特定のロットだけ悪ければ、材料ロットや装置条件が疑われます。特定のパターンだけで増えるなら、リソグラフィやエッチングの条件が関係している可能性があります。</p>
+
+
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/semiconductor-defect-feedback-loop.png" alt="欠陥データを歩留まり改善へ戻す流れ。欠陥マップ、ロット比較、装置履歴、工程改善を示した図解">
+  <figcaption>欠陥データは、工程改善の手がかりです。場所、ロット、装置履歴、工程条件を合わせて見ることで、原因候補を絞ります。</figcaption>
+</figure>
+
+
+
+<!-- semicon-a8-top30-top30-30-1:start -->
+
+
+<!-- semicon-a8-top30-top30-30-1:end -->
+
+
+
+<h2 class="wp-block-heading">欠陥検査に関わる装置と企業</h2>
+
+
+
+<p class="wp-block-paragraph">欠陥検査には、光学検査装置、電子線検査装置、SEMレビュー装置、マスク検査装置、計測装置、データ解析ソフトウェアなどが関わります。検査装置は、半導体工場の中で「見えない不良を見える情報に変える」役割を持っています。</p>
+
+
+
+<p class="wp-block-paragraph">代表的な企業としては、検査・計測・プロセス制御で知られるKLA、フォトマスクやEUV関連検査で知られるレーザーテック、製造装置と計測・制御領域を持つApplied Materialsなどがあります。日本の読者にとっては、検査装置企業を理解すると、半導体業界が単に「チップを作る会社」だけで成り立っているわけではないことが見えます。</p>
+
+
+
+<div class="semicon-cta">
+  <h3>検査装置企業は、キャリア面でも見る価値が高い</h3>
+  <p>KLAやレーザーテックのような検査装置企業は、半導体工場の歩留まりを左右する重要領域にいます。特にレーザーテックのような上場企業は有価証券報告書で平均年間給与などの情報も公開されており、転職市場でも高付加価値な半導体企業として注目されやすい存在です。</p>
+  <p>つまり、欠陥検査を理解すると「どの企業がなぜ強いのか」「どんな職種が高い専門性を持つのか」「求人票ではどの言葉を見ればいいのか」が見えやすくなります。</p>
+  <p>ここで大事なのは、いきなり応募することではありません。まず求人票で「欠陥検査」「SEM」「不良解析」「歩留まり改善」「フィールドサービス」「プロセス制御」といった言葉を探し、技術理解と企業理解をつなげることです。</p>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn" href="https://semicon-campus.com/semiconductor-company-map-by-process/">工程別企業マップを見る</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/semiconductor-career-service-selection-guide/">KLAやレーザーテックの求人を探す前に、転職サービスの選び方を見る</a>
+  </div>
+</div>
+
+
+
+<div class="semicon-compare">
+<table>
+  <thead>
+    <tr><th>領域</th><th>何を見るか</th><th>初心者が押さえるポイント</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>ウェハ欠陥検査</strong></td><td>粒子、傷、パターン異常、ロット異常</td><td>歩留まり改善に直結する入口</td></tr>
+    <tr><td><strong>SEMレビュー</strong></td><td>検出した欠陥を高倍率で確認する</td><td>「本当に欠陥か」「何の欠陥か」を深く見る</td></tr>
+    <tr><td><strong>マスク検査</strong></td><td>露光で使うマスクやブランクスの欠陥</td><td>リソグラフィの前段で不良を防ぐ</td></tr>
+    <tr><td><strong>データ解析</strong></td><td>欠陥マップ、ロット傾向、装置履歴</td><td>検査結果を工程改善へつなげる</td></tr>
+  </tbody>
+</table>
+</div>
+
+
+<section class="mp2-section" id="revenue-phase2-learning"><h2>欠陥検査と検査装置を、実務と学び直しにつなげる</h2><p>欠陥検査の経験を伝えるには、欠陥の件数だけでなく、位置・種類・発生時刻と、装置や工程の履歴をどう照合したかを整理します。検査条件の確認、画像のレビュー、工程担当への報告は、装置支援や品質改善との接点になります。品質管理・計測の基礎学習を補いながら、検査担当、装置担当、顧客サポートのどこまでを担う求人なのか比較しましょう。</p></section>
+
+<h2 class="wp-block-heading">欠陥検査から見える仕事</h2>
+
+
+
+<p class="wp-block-paragraph">欠陥検査を理解すると、半導体業界の職種がかなり見えやすくなります。検査・計測の仕事、品質評価の仕事、プロセスエンジニアの仕事、装置エンジニアやフィールドサービスエンジニアの仕事、データ解析の仕事がつながっているからです。</p>
+
+
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/semiconductor-defect-career-map.png" alt="欠陥検査から見える仕事。検査計測、品質評価、プロセス、装置FSE、データ解析を示した図解">
+  <figcaption>欠陥検査は、検査・品質・プロセス・装置・データ解析の交差点です。未経験者でも、求人票の言葉を分けて読むと入口が見えます。</figcaption>
+</figure>
+<div class="semicon-mobile-summary">
+  <b>図の要点</b>
+  <ul>
+    <li>検査・計測: 装置でウェハやパターンを確認する</li>
+    <li>品質評価: 良否判定と報告、再発防止を担う</li>
+    <li>プロセス: 欠陥原因を工程条件へ戻す</li>
+    <li>装置・FSE: 検査装置や製造装置の状態を保つ</li>
+    <li>データ解析: 欠陥マップやロット傾向を読む</li>
+  </ul>
+</div>
+
+
+
+<div class="semicon-grid">
+  <div class="semicon-card"><b>検査・計測</b><span>ウェハやパターンを装置で確認し、異常を検出します。</span></div>
+  <div class="semicon-card"><b>品質評価</b><span>良否判定、報告、再発防止、品質データの整理を担います。</span></div>
+  <div class="semicon-card"><b>プロセス</b><span>欠陥の原因候補を工程条件へ戻し、不良を減らします。</span></div>
+  <div class="semicon-card"><b>装置・FSE</b><span>検査装置や製造装置の状態を保ち、異常時に対応します。</span></div>
+  <div class="semicon-card"><b>データ解析</b><span>欠陥マップ、ロット傾向、SPCを見て改善点を探します。</span></div>
+  <div class="semicon-card"><b>製造オペレーター</b><span>検査手順、装置操作、異常報告を通じて品質を守ります。</span></div>
+</div>
+
+
+
+<h2 class="wp-block-heading">求人票ではどんな言葉で出てくるか</h2>
+
+
+
+<p class="wp-block-paragraph">求人票では、「欠陥検査」という言葉だけで出てくるとは限りません。実際には、検査、計測、SEM、レビュー、外観検査、不良解析、歩留まり改善、SPC、品質評価、工程改善などの言葉に分かれて出てきます。</p>
+
+
+
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>欠陥検査の仕事って面白そうです。でも、SEMとか不良解析って書かれると、未経験だと無理に見えますね。</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>求人によります。ただ、入口はひとつではありません。製造オペレーター、検査、品質評価、装置保全、FSEから入り、現場で装置や不良の見方を覚えていくルートもあります。</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>じゃあ、最初から「解析職だけ」を狙うより、求人票の言葉を分解して、自分が入れる入口を探す方が現実的なんですね。</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>その通りです。だから求人票を見るときは、職種名だけで判断せず、仕事内容、使う装置、扱うデータ、教育体制を見ます。ここを一人で読み切れない場合は、半導体求人に詳しい転職サービスを使う価値があります。</p></div></div>
+
+
+
+<div class="semicon-compare">
+<table>
+  <thead>
+    <tr><th>求人票の言葉</th><th>意味</th><th>見ておく記事</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>欠陥検査・外観検査</strong></td><td>ウェハやチップの異常を見つける</td><td><a href="https://semicon-campus.com/what-is-semiconductor-inspection-quality-control/">検査・品質評価とは何か</a></td></tr>
+    <tr><td><strong>SEM・レビュー</strong></td><td>電子顕微鏡で欠陥を詳しく見る</td><td>次回記事で解説予定</td></tr>
+    <tr><td><strong>不良解析</strong></td><td>なぜ不良が出たかを調べる</td><td><a href="https://semicon-campus.com/what-is-semiconductor-yield/">歩留まりとは何か</a></td></tr>
+    <tr><td><strong>SPC</strong></td><td>測定値のばらつきを統計的に管理する</td><td><a href="https://semicon-campus.com/how-to-read-semiconductor-job-description/">求人票の読み方</a></td></tr>
+    <tr><td><strong>工程改善</strong></td><td>条件や手順を見直して不良を減らす</td><td><a href="https://semicon-campus.com/what-is-semiconductor-process-engineer/">プロセスエンジニアとは何か</a></td></tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<div class="semicon-cta">
+  <h3>言葉の意味がわかったら、実際の求人票で確認する</h3>
+  <p>この記事で「欠陥検査」「SEM」「不良解析」「歩留まり改善」の意味が見えたら、次は求人票で同じ言葉を探してみましょう。勉強で終わらせず、実際の職種・企業・応募条件へつなげることが重要です。</p>
+  <p>未経験から半導体業界を目指す場合、いきなり高度な解析職だけを見る必要はありません。まずは、製造オペレーター、検査、品質評価、装置保全、フィールドサービスなどの入口を見て、自分の経験がどこに近いかを整理すると判断しやすくなります。</p>
+  <div class="semicon-stack">
+    <div class="semicon-stack-item"><b>1. 求人キーワードを拾う</b><p>欠陥検査、SEM、外観検査、不良解析、SPC、歩留まり改善、工程改善を探します。</p></div>
+    <div class="semicon-stack-item"><b>2. 仕事内容を分ける</b><p>装置操作なのか、データ整理なのか、原因解析なのか、顧客先対応なのかを見ます。</p></div>
+    <div class="semicon-stack-item"><b>3. 相談先を選ぶ</b><p>半導体求人は職種名だけでは判断しにくいため、求人票を一緒に読めるサービスを選ぶとミスマッチを減らしやすくなります。</p></div>
+  </div>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn" href="https://semicon-campus.com/%e5%8d%8a%e5%b0%8e%e4%bd%93%e6%b1%82%e4%ba%ba%e3%82%ad%e3%83%bc%e3%83%af%e3%83%bc%e3%83%89%e4%b8%80%e8%a6%a7%ef%bd%9c%e6%9c%aa%e7%b5%8c%e9%a8%93%e8%80%85%e3%81%8c%e6%b1%82%e4%ba%ba%e7%a5%a8%e3%81%a7/">求人キーワードを整理する</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/how-to-read-semiconductor-job-description/">求人票の読み方を見る</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/semiconductor-career-service-selection-guide/">未経験から半導体業界を狙うなら？転職サービスの選び方を見る</a>
+  </div>
+</div>
+
+
+<section class="mp2-section" id="revenue-phase2-career"><h2>欠陥検査と検査装置から、求人と職種を比較する</h2><p>欠陥マップ・画像レビュー、検査条件確認、工程への報告の経験は、対象設備・作業・確認した結果を一組にして整理しましょう。転職を考える場合は担当範囲、勤務地、勤務・出張、教育体制、応募条件を求人票と照合すると、今の経験と補う知識を分けられます。</p><aside class="semicon-cta mp2-card"><h3>職種の全体像と、求人・学習の選び方を見る</h3><p>技術を学んだ後は、点検・復旧、装置の立上げ、工程改善、顧客対応など、担当する仕事の範囲を比較しましょう。以下の職種記事では、仕事内容に加えて求人・学習の選択肢を確認できます。</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/" class="semicon-btn mp2-button" data-revenue-phase2-hub="237" data-cta="equipment_hub" data-cta-type="equipment_hub" data-cta-stage="career" data-cta-id="phase2_322_hub237_end" data-cta-route="phase2_322_hub237_end">装置エンジニアの担当範囲・求人・学習を見る</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-field-service-engineer/" class="semicon-btn mp2-button" data-revenue-phase2-hub="270" data-cta="fse_hub" data-cta-type="fse_hub" data-cta-stage="career" data-cta-id="phase2_322_hub270_end" data-cta-route="phase2_322_hub270_end">FSEの復旧・顧客対応と求人・学習を見る</a></div></aside></section>
+
+
+<h2 class="wp-block-heading">まとめ</h2>
+
+
+
+<p class="wp-block-paragraph">欠陥検査とは、ウェハやチップの上にある小さな不良を見つける工程です。ただし、本当の価値は「不良を見つけること」だけではありません。欠陥の種類、場所、発生タイミング、ロット傾向を読み取り、工程・装置・材料・洗浄・リソグラフィ・エッチング・CMPなどへ改善の手がかりを戻すことにあります。</p>
+
+
+
+<p class="wp-block-paragraph">半導体製造を中級レベルまで理解したいなら、欠陥検査は避けて通れません。なぜなら、歩留まり、品質、プロセス改善、装置保全、データ解析がここでつながるからです。</p>
+
+
+
+<div class="semicon-cta">
+  <h3>次に読む記事</h3>
+  <p><a href="https://semicon-campus.com/what-is-cd-sem-sem-review/">CD-SEM・SEMレビューとは何か？寸法を測り欠陥を詳しく見る半導体検査・計測をやさしく解説</a></p>
+</div>
+
+
+
+<div class="semicon-cta">
+  <h3>YouTubeでも図解で復習できます</h3>
+  <p>図解で復習したい人向けに、YouTubeでも半導体製造を短く解説しています。</p>
+  <div class="semicon-btnrow">
+    <a rel="noopener" class="semicon-btn" href="https://www.youtube.com/@semicon-campus" target="_blank">YouTubeで図解動画を見る</a>
+  </div>
+</div>
+
+
+
+<div class="semicon-links">
+  <div class="semicon-linkbox next">
+    
+    <p><a href="https://semicon-campus.com/what-is-semiconductor-yield/">歩留まりとは何か？半導体製造の良品率・不良・改善を初心者向けに解説</a></p>
+    <p><a href="https://semicon-campus.com/what-is-semiconductor-inspection-quality-control/">半導体検査・品質評価とは？未経験から関わる仕事をやさしく解説</a></p>
+  </div>
+  <div class="semicon-linkbox">
+    <h3>関連記事</h3>
+    <p><a href="https://semicon-campus.com/what-is-semiconductor-process-engineer/">プロセスエンジニアとは何か</a></p>
+    <p><a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/">装置エンジニアとは何か</a></p>
+    <p><a href="https://semicon-campus.com/how-to-enter-semiconductor-industry-without-experience/">未経験から半導体業界へ入るには</a></p>
+  </div>
+</div>
+
+
+
+<h3 class="wp-block-heading">参考にした公開情報</h3>
+
+
+
+<ul class="semicon-sources wp-block-list">
+  <li><a rel="noopener" href="https://www.kla.com/" target="_blank">KLA: process control, defect inspection and review, metrology に関する公開情報</a></li>
+  <li><a rel="noopener" href="https://www.lasertec.co.jp/products/semiconductor/" target="_blank">レーザーテック: 半導体関連検査装置に関する公開情報</a></li>
+  <li><a rel="noopener" href="https://www.lasertec.co.jp/ir/data/securities.html" target="_blank">レーザーテック: 有価証券報告書</a></li>
+  <li><a rel="noopener" href="https://arxiv.org/abs/2308.08376" target="_blank">Automated Semiconductor Defect Inspection in Scanning Electron Microscope Images: a Systematic Review</a></li>
+</ul>
+
+
+
+<!--KEEP:3-->
+<a class="semicon-backtop" href="#" aria-label="ページの先頭に戻る">↑<span>先頭</span></a>
+</div>
+
+
+<aside class="related-spokes"><h2>あわせて読みたい</h2><ul><li><a href="/semiconductor-particle-defect/">目に見えない小さな粒子が、なぜ半導体を壊すのか？パーティクル不良と装置保全</a></li></ul></aside>

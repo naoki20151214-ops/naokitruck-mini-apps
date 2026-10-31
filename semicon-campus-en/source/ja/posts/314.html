@@ -1,0 +1,295 @@
+
+<!--KEEP:0-->
+
+
+<!--KEEP:1-->
+
+
+<!--KEEP:2-->
+<div class="semicon-article">
+
+
+
+<p class="semicon-lead wp-block-paragraph">歩留まりとは、半導体製造で作ったチップのうち、実際に使える良品がどれくらいあるかを示す割合です。歩留まりが低いと、同じウェハ、同じ装置、同じ材料を使っても、売れるチップが少なくなります。この記事では、歩留まりの意味、不良が増える原因、歩留まり改善に関わる仕事を初心者向けに整理します。</p>
+
+
+
+<div class="semicon-map">
+  <h3>この記事でわかること</h3>
+  <ol>
+    <li>歩留まりとは何か</li>
+    <li>なぜ歩留まりが半導体のコストや量産に直結するのか</li>
+    <li>不良が増える原因をどこで見るのか</li>
+    <li>検査、プロセス、品質、データ解析の仕事とのつながり</li>
+    <li>求人票で見る「歩留まり改善」「不良解析」「SPC」の意味</li>
+  </ol>
+</div>
+
+
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/semiconductor-yield-featured.png" alt="歩留まりとは半導体製造の良品率を決める考え方であることを示す図解">
+  <figcaption>歩留まりは、作ったチップのうち、使えるチップがどれだけあるかを見る考え方です。不良を減らすほど、同じウェハから得られる良品が増えます。</figcaption>
+</figure>
+
+
+
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>半導体の記事で「歩留まりが大事」ってよく見ます。正直、何となくしかわかっていません。</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>歩留まりは、ものすごく大事です。簡単に言えば「作ったもののうち、売れる良品がどれだけ取れたか」です。</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>100個作って、90個使えたら歩留まり90%みたいな感じですか？</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>その通りです。半導体では、この数%の違いがコスト、納期、量産立ち上げ、会社の利益に大きく効いてきます。</p></div></div>
+
+
+
+
+<h2 class="wp-block-heading">歩留まりとは何か</h2>
+
+
+
+<p class="wp-block-paragraph">歩留まりとは、作れるはずだった製品のうち、実際に良品として使える割合です。半導体では、1枚のウェハの上に多数のチップ領域を作ります。その中で、電気特性や外観、信頼性などの基準を満たしたものだけが良品として使われます。</p>
+
+
+
+<p class="wp-block-paragraph">半導体業界の資料では、歩留まりは「売れる製品数を、作れる可能性があった製品数で割る考え方」として説明されます。難しく見えますが、初心者はまず「使えるチップの割合」と覚えれば十分です。</p>
+
+
+
+<h3 class="wp-block-heading">実務では「3つの歩留まり」の掛け算で見る</h3>
+
+
+
+<p class="wp-block-paragraph">ここから一歩だけ専門的に見ると、半導体の歩留まりはひとつの数字だけではありません。実務では、ウェハを投入してから前工程を終えるまで、ウェハ上のチップが電気テストに合格するまで、さらに後工程でパッケージにして最終テストに合格するまでを分けて見ます。</p>
+
+
+
+<div class="semicon-compare">
+<table>
+  <thead>
+    <tr><th>歩留まりの種類</th><th>何を見るのか</th><th>主な不具合の例</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>ウェハ歩留まり<br>ライン歩留まり</strong></td><td>投入したウェハが、割れたり廃棄されたりせず、前工程を流れ切る割合。</td><td>ウェハ破損、搬送エラー、工程途中のロット廃棄など。</td></tr>
+    <tr><td><strong>チップ歩留まり<br>ダイ・イールド</strong></td><td>ウェハ上に作ったチップ領域のうち、電気テストや検査で合格した割合。</td><td>露光ズレ、エッチング残り、粒子付着、膜厚ムラ、配線不良など。</td></tr>
+    <tr><td><strong>パッケージ歩留まり<br>アセンブリ歩留まり</strong></td><td>切り出したチップを組み立て、パッケージ後の最終テストに合格する割合。</td><td>接続不良、熱ストレス、封止不良、傷、実装後の特性不良など。</td></tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<div class="semicon-note">
+  <p><strong>全体の歩留まり = ウェハ歩留まり × チップ歩留まり × パッケージ歩留まり</strong></p>
+  <p>初心者向けには「良品チップの割合」で十分ですが、中級へ進むなら、この掛け算を覚えると一気に見え方が変わります。前工程だけ良くても、後工程で落ちれば最終製品は増えません。半導体製造は、すべての段階でロスを減らす技術です。</p>
+</div>
+
+
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/semiconductor-yield-formula.png" alt="歩留まりは良品数を作った数で割ることを示す図解">
+  <figcaption>歩留まりは、良品数を作った数で割って考えます。100個中92個が良品なら、歩留まりは92%です。</figcaption>
+</figure>
+
+
+
+<!-- semicon-a8-top30-top30-28-1:start -->
+
+
+<!-- semicon-a8-top30-top30-28-1:end -->
+
+
+
+<h2 class="wp-block-heading">なぜ歩留まりが重要なのか</h2>
+
+
+
+<p class="wp-block-paragraph">歩留まりが重要な理由は、半導体製造のコストが非常に大きいからです。ウェハ、薬液、ガス、電力、クリーンルーム、製造装置、人件費。どれも高額です。もし同じコストで作っても、良品が少なければ、1個あたりのコストは高くなります。</p>
+
+
+
+<div class="semicon-note">
+  <p><strong>AI半導体時代は、パッケージ歩留まりも戦場になる</strong></p>
+  <p>GPUやAI向け半導体では、複数のチップやHBMを近くに並べたり、重ねたりする先端パッケージが重要になっています。ここでは、単体チップの歩留まりだけでなく、組み合わせた後の全体歩留まりが大きな課題になります。</p>
+  <p>たとえば、単体では90%の確率で良品になるチップを4個組み合わせると、全体がすべて良品になる確率は <strong>0.9 × 0.9 × 0.9 × 0.9 = 約65.6%</strong> まで下がります。1個でも不良が混ざると、組み立てた製品全体が使えなくなるからです。</p>
+  <p>そのため、組み立てる前に良品だと確認されたダイ、つまり <strong>KGD（Known Good Die：良品保証ダイ）</strong> を選別する検査技術や、パッケージ工程での歩留まり改善がとても重要になります。AI時代の半導体では、前工程だけでなく後工程・先端パッケージの品質管理も競争力になります。</p>
+</div>
+
+
+
+<div class="semicon-compare">
+<table>
+  <thead><tr><th>状態</th><th>同じウェハから取れる良品</th><th>意味</th></tr></thead>
+  <tbody>
+    <tr><td><strong>歩留まりが低い</strong></td><td>良品が少ない</td><td>材料や装置を使っても売れるチップが少なく、コストが重くなる</td></tr>
+    <tr><td><strong>歩留まりが高い</strong></td><td>良品が多い</td><td>同じ設備から出荷できるチップが増え、量産が安定しやすい</td></tr>
+    <tr><td><strong>歩留まりがばらつく</strong></td><td>ロットごとに良品数が変わる</td><td>原因追跡が必要で、工程・装置・材料・環境の切り分けが重要になる</td></tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<p class="wp-block-paragraph">新しいプロセスや新しい製品を量産に持っていくときは、最初から歩留まりが高いとは限りません。そこで、検査データや工程データを見ながら、どこで不良が増えているのかを探し、少しずつ改善していきます。これが歩留まり改善です。</p>
+
+
+
+<h2 class="wp-block-heading">不良はどこで増えるのか</h2>
+
+
+
+<p class="wp-block-paragraph">歩留まりを下げる原因は、ひとつとは限りません。材料、工程、装置、環境、設計、検査条件など、いろいろな場所に原因があります。</p>
+
+
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/semiconductor-yield-loss-map.png" alt="材料、工程、装置、環境、設計検査で不良が増える原因を示す図解">
+  <figcaption>不良は、材料だけ、装置だけ、作業者だけで決まるわけではありません。原因を一つずつ切り分けることが大切です。</figcaption>
+</figure>
+
+
+
+<div class="semicon-grid">
+  <div class="semicon-card"><b>材料</b><span>ウェハ欠陥、不純物、金属汚染、薬液品質などが影響します。</span></div>
+  <div class="semicon-card"><b>工程</b><span>成膜ムラ、露光ズレ、エッチング残り、洗浄不足、CMPの削りすぎなど。</span></div>
+  <div class="semicon-card"><b>装置</b><span>条件ずれ、部品劣化、チャンバー汚れ、センサー異常などが不良につながります。</span></div>
+  <div class="semicon-card"><b>環境</b><span>粒子、温度湿度、薬液残り、クリーンルーム内の管理が関係します。</span></div>
+  <div class="semicon-card"><b>設計</b><span>微細化で余裕が少ない設計ほど、わずかなばらつきが不良につながります。</span></div>
+  <div class="semicon-card"><b>検査</b><span>測定ばらつきや判定基準のずれで、良否判断が安定しないことがあります。</span></div>
+</div>
+
+
+
+<h2 class="wp-block-heading">歩留まり改善は何をする仕事か</h2>
+
+
+
+<p class="wp-block-paragraph">歩留まり改善は、単に「もっと丁寧に作る」という話ではありません。不良の場所、種類、発生タイミング、工程条件、装置状態、材料ロット、検査データを見て、原因を絞っていく仕事です。</p>
+
+
+
+<div class="semicon-stack">
+  <div class="semicon-stack-item"><b>1. 不良を見つける</b><p>外観検査、欠陥検査、電気検査、膜厚測定、線幅測定などで、どこに異常があるかを見ます。</p></div>
+  <div class="semicon-stack-item"><b>2. 不良の分布を見る</b><p>ウェハの中心に多いのか、端に多いのか、特定ロットだけなのか、特定装置だけなのかを見ます。</p></div>
+  <div class="semicon-stack-item"><b>3. 原因候補を絞る</b><p>工程条件、装置メンテナンス履歴、材料ロット、作業タイミング、測定条件を照らし合わせます。</p></div>
+  <div class="semicon-stack-item"><b>4. 条件を変えて確認する</b><p>成膜条件、エッチング条件、洗浄条件、CMP条件などを変え、不良が減るかを確認します。</p></div>
+  <div class="semicon-stack-item"><b>5. 標準化する</b><p>改善できた条件を手順や管理値に反映し、同じ不良が再発しないようにします。</p></div>
+</div>
+
+
+
+<p class="wp-block-paragraph">KLAは、検査、計測、計算解析を使ったプロセス制御や歩留まり管理を扱う企業です。Applied SmartFactoryのような製造データ管理の説明でも、歩留まり管理はファブ全体のデータを集め、歩留まり学習や量産立ち上げを速める仕組みとして扱われています。つまり歩留まり改善は、現場の勘だけではなく、測定とデータの仕事でもあります。</p>
+
+
+<section class="mp2-section" id="revenue-phase2-learning"><h2>歩留まりと改善の記録を、実務と学び直しにつなげる</h2><p>歩留まりを仕事につなげる出発点は、不良が増えた場所・工程・時刻をそろえて記録することです。装置状態や材料ロットを確認した経験と、原因を確定した経験を分けると、自分が担った範囲を伝えやすくなります。品質管理・統計を学び直す道と、製造・品質・保全の経験を活かせる技術職を比較する道を持ち、求人票の担当工程と教育体制を確認しましょう。</p></section>
+
+<h2 class="wp-block-heading">歩留まりから見える職種</h2>
+
+
+
+<p class="wp-block-paragraph">歩留まりを理解すると、半導体の職種がかなり見えやすくなります。プロセスエンジニア、検査・計測、品質、データ解析は、どれも歩留まりと強くつながります。</p>
+
+
+
+<figure class="semicon-figure">
+  <img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/07/semiconductor-yield-career-map.png" alt="歩留まりから見えるプロセスエンジニア、検査計測、品質、データ解析の仕事">
+  <figcaption>歩留まりは、プロセス、検査、品質、データ解析の共通言語です。求人票でも重要なキーワードになります。</figcaption>
+</figure>
+
+
+
+<div class="semicon-compare">
+<table>
+  <thead><tr><th>職種</th><th>歩留まりとの関係</th><th>求人票で見る言葉</th></tr></thead>
+  <tbody>
+    <tr><td><strong>プロセスエンジニア</strong></td><td>工程条件を調整して、不良を減らす</td><td>条件出し、工程改善、歩留まり改善、DOE</td></tr>
+    <tr><td><strong>検査・計測</strong></td><td>欠陥、膜厚、線幅、電気特性を測る</td><td>検査、測定、SEM、膜厚、欠陥検査</td></tr>
+    <tr><td><strong>品質・歩留まり</strong></td><td>不良率、規格、再発防止を管理する</td><td>品質管理、品質保証、不良解析、SPC</td></tr>
+    <tr><td><strong>データ解析</strong></td><td>工程データや検査データから傾向を見つける</td><td>データ分析、Python、統計、工程データ</td></tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<div class="semicon-cta">
+  <h3>求人票で「歩留まり改善」が出たら、仕事の中身を確認する</h3>
+  <p>歩留まり改善は、工程条件を触る仕事なのか、検査データを見る仕事なのか、品質資料をまとめる仕事なのかで中身が変わります。求人票では、担当工程、使う装置、扱うデータ、改善に関われる範囲を確認しましょう。</p>
+  <p>歩留まり改善、不良解析、工程データ解析は、半導体工場の利益や量産安定に直結するため、経験者求人では待遇が高くなりやすい領域です。未経験からいきなり狙うより、プロセス、検査、品質、装置、データ分析のどこに自分の経験を寄せられるかを整理してから相談すると、求人紹介の精度が上がります。</p>
+  <div class="semicon-btnrow">
+    <a class="semicon-btn" href="https://semicon-campus.com/what-is-semiconductor-process-engineer/">プロセスエンジニア記事を見る</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/semiconductor-career-service-selection-guide/">転職サービス選びを見る</a>
+    <a class="semicon-btn secondary" href="https://semicon-campus.com/how-to-read-semiconductor-job-description/">求人票の読み方を見る</a>
+  </div>
+</div>
+
+
+
+<h2 class="wp-block-heading">初心者が覚えるべき歩留まり用語</h2>
+
+
+
+<div class="semicon-stack">
+  <div class="semicon-stack-item"><b>不良率</b><p>作ったもののうち、不良になった割合です。歩留まりと反対側から見る言葉です。</p><div class="semicon-tagrow"><span class="semicon-tag">不良</span><span class="semicon-tag">歩留まり</span></div></div>
+  <div class="semicon-stack-item"><b>欠陥密度</b><p>ウェハやチップ上にどれくらい欠陥があるかを見る考え方です。微細化するほど小さな欠陥が大きな問題になります。</p><div class="semicon-tagrow"><span class="semicon-tag">欠陥</span><span class="semicon-tag">検査</span></div></div>
+  <div class="semicon-stack-item"><b>SPC</b><p>Statistical Process Controlの略です。測定値のばらつきを統計的に管理し、工程がいつも通りかを見ます。</p><div class="semicon-tagrow"><span class="semicon-tag">統計</span><span class="semicon-tag">工程管理</span></div></div>
+  <div class="semicon-stack-item"><b>歩留まりランプ</b><p>新製品や新工程を量産に近づけるため、歩留まりを段階的に上げていくことです。</p><div class="semicon-tagrow"><span class="semicon-tag">量産立ち上げ</span><span class="semicon-tag">改善</span></div></div>
+</div>
+
+
+
+<h2 class="wp-block-heading">まとめ：歩留まりは半導体製造の成績表</h2>
+
+
+
+<p class="wp-block-paragraph">歩留まりとは、作ったチップのうち、実際に使える良品がどれくらいあるかを示す割合です。歩留まりが高いほど、同じウェハ、同じ装置、同じ材料から使えるチップが増えます。</p>
+
+
+
+<p class="wp-block-paragraph">歩留まりを下げる原因は、材料、工程、装置、環境、設計、検査など、いろいろな場所にあります。だから半導体製造では、検査して終わりではなく、データを見て、原因を切り分け、条件を変え、再発を防ぐことが重要になります。</p>
+
+
+
+<p class="wp-block-paragraph">歩留まりを理解すると、プロセスエンジニア、検査・品質評価、品質保証、データ解析の仕事が一気につながります。技術記事を読むだけでなく、求人票の「歩留まり改善」「不良解析」「SPC」「工程改善」という言葉にも注目してみてください。</p>
+
+
+
+<h2 class="wp-block-heading">次に読む記事</h2>
+
+
+
+<div class="semicon-links">
+  <div class="semicon-linkbox next">
+    
+    <p><a href="https://semicon-campus.com/what-is-semiconductor-defect-inspection/">欠陥検査とは何か？ウェハ上の小さな不良を見つける半導体検査工程をやさしく解説</a></p>
+    <p>歩留まりを下げる小さな欠陥をどう見つけ、工程改善へ戻すのかを見ていきましょう。</p>
+    <p><a href="https://semicon-campus.com/what-is-semiconductor-inspection-quality-control/">半導体検査・品質評価とは？未経験から品質を守る仕事をやさしく解説</a></p>
+    <p>歩留まりを守るために、検査・品質評価がどんな役割を持つのかを見ていきましょう。</p>
+  </div>
+  <div class="semicon-linkbox">
+    <h3>関連記事</h3>
+    <p><a href="https://semicon-campus.com/what-is-semiconductor-process-engineer/">プロセスエンジニアとは？条件出し・歩留まり改善を初心者向けに解説</a></p>
+    <p><a href="https://semicon-campus.com/what-is-etching-semiconductor-process/">エッチングとは？膜を削って形を作る工程</a></p>
+    <p><a href="https://semicon-campus.com/what-is-cmp-semiconductor-process/">CMPとは？ウェハ表面を平らにする工程</a></p>
+    <p><a href="https://semicon-campus.com/%e5%8d%8a%e5%b0%8e%e4%bd%93%e6%b1%82%e4%ba%ba%e3%82%ad%e3%83%bc%e3%83%af%e3%83%bc%e3%83%89%e4%b8%80%e8%a6%a7%ef%bd%9c%e6%9c%aa%e7%b5%8c%e9%a8%93%e8%80%85%e3%81%8c%e6%b1%82%e4%ba%ba%e7%a5%a8%e3%81%a7/">半導体求人キーワード一覧</a></p>
+  </div>
+</div>
+
+
+<section class="mp2-section" id="revenue-phase2-career"><h2>歩留まりと改善の記録から、求人と職種を比較する</h2><p>不良記録、工程データ確認、装置・材料履歴との照合の経験は、対象設備・作業・確認した結果を一組にして整理しましょう。転職を考える場合は担当範囲、勤務地、勤務・出張、教育体制、応募条件を求人票と照合すると、今の経験と補う知識を分けられます。</p><aside class="semicon-cta mp2-card"><h3>職種の全体像と、求人・学習の選び方を見る</h3><p>技術を学んだ後は、点検・復旧、装置の立上げ、工程改善、顧客対応など、担当する仕事の範囲を比較しましょう。以下の職種記事では、仕事内容に加えて求人・学習の選択肢を確認できます。</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/" class="semicon-btn mp2-button" data-revenue-phase2-hub="277" data-cta="maintenance_hub" data-cta-type="maintenance_hub" data-cta-stage="career" data-cta-id="phase2_314_hub277_end" data-cta-route="phase2_314_hub277_end">設備保全Hubで仕事内容・求人・学習を確認する</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/" class="semicon-btn mp2-button" data-revenue-phase2-hub="237" data-cta="equipment_hub" data-cta-type="equipment_hub" data-cta-stage="career" data-cta-id="phase2_314_hub237_end" data-cta-route="phase2_314_hub237_end">装置エンジニアの担当範囲・求人・学習を見る</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-process-engineer/" class="semicon-btn mp2-button" data-revenue-phase2-hub="230" data-cta="process_hub" data-cta-type="process_hub" data-cta-stage="career" data-cta-id="phase2_314_hub230_end" data-cta-route="phase2_314_hub230_end">プロセスエンジニアの担当範囲・求人・学習を見る</a></div></aside></section>
+
+
+<h2 class="wp-block-heading">参考資料</h2>
+
+
+
+<ul class="semicon-sources">
+  <li><a rel="noopener" href="https://www.semiconductors.org/wp-content/uploads/2018/09/Yield.pdf" target="_blank">Semiconductor Industry Association &#8211; Yield Enhancement</a></li>
+  <li><a rel="noopener" href="https://www.kla.com/" target="_blank">KLA &#8211; Process Control &#038; Yield Management</a></li>
+  <li><a rel="noopener" href="https://www.kla.com/products/software-solutions/semiconductor" target="_blank">KLA &#8211; Semiconductor Software Solutions</a></li>
+  <li><a rel="noopener" href="https://appliedsmartfactory.com/semiconductor-blog/quality/yield-management/" target="_blank">Applied SmartFactory &#8211; Yield Management</a></li>
+  <li><a rel="noopener" href="https://appliedsmartfactory.com/semiconductor-blog/quality/improve-yield-learning/" target="_blank">Applied SmartFactory &#8211; Yield and Defect Management Solutions</a></li>
+</ul>
+
+
+
+</div>
+

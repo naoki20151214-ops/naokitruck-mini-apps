@@ -1,0 +1,16 @@
+{
+ "id": 2682,
+ "type": "page",
+ "slug": "chapter-5-transistor-scaling",
+ "link": "https://semicon-campus.com/chapter-5-transistor-scaling/",
+ "date": "2026-10-26T20:10:21",
+ "modified": "2026-10-26T20:10:21",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [],
+ "tags": [],
+ "featured_media": 0,
+ "title": "第5章 トランジスタと微細化",
+ "excerpt": "第5章 トランジスタと微細化小さくするほど速くなる。でも、電気が漏れる。どう解決してきた? スマホが速くなり、電池も長持ちするようになったのは、トランジスタを小さくしてきたからです。ところが、小さくすると「スイッチを切っ […]"
+}

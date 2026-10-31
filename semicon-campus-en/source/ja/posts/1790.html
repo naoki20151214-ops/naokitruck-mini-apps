@@ -1,0 +1,195 @@
+<!--KEEP:0-->
+<article class="semicon-template-v2" data-episode="092" data-slug="o-ring-vacuum-seal" data-target="new_post" data-template-version="2">
+<div class="semicon-hook" data-fact-ids="F001 F013">
+<p>装置のふたを閉めたのに、空気を十分に抜けない。</p>
+<p>接合部の小さなOリングは、空気の入り口をふさぐ大切な部品です。</p>
+<p>でも、真空が悪いという理由だけで、Oリング交換とは決められません。</p>
+</div>
+<p>Oリングは、半導体を加工する装置のふたや配管の接合部などにある輪状のシールです。溝に収めて押しつぶすことで面に密着し、不要な気体の流入を抑えます。気体を抜くのはポンプ、接合部を密封するのはシール。この二つの役割がそろって、必要な圧力へ近づけられます。<a class="semicon-source-ref" href="#source-S005">[5]</a><a class="semicon-source-ref" href="#source-S006">[6]</a></p>
+<p>タイトルの「1本」は、一つの接合部を支える小さな部品への問いです。装置全体にOリングが1本しかない、という意味ではありません。製造業で点検や交換を経験した方も、半導体装置では「何を密封しているか」「数字の異常が何を意味するか」をつなげると、部品交換の前後に必要な判断が見えてきます。</p>
+<h2>この記事でわかること</h2>
+<ul>
+<li>真空シールが必要な理由と、Oリングが溝・つぶし代・接触圧で密封する仕組み</li>
+<li>傷や劣化、材質の不適合が異常につながる理由と、四つのガス負荷の違い</li>
+<li>圧力の変化とHe検査から原因を絞り、交換後の復旧を確かめる考え方</li>
+</ul>
+<nav class="learning-map" aria-label="この記事の読み順">
+<ol>
+<li><a href="#need">何を守る？ 必要性と密封の仕組みへ</a></li>
+<li><a href="#locations">どこにある？ 装置内の場所と傷・劣化へ</a></li>
+<li><a href="#materials">なぜ材質を変える？ 環境との相性へ</a></li>
+<li><a href="#gas-loads">どこから気体が来る？ 四つの現象へ</a></li>
+<li><a href="#troubleshooting">何を測る？ 切り分けとHe検査へ</a></li>
+<li><a href="#recovery">何をもって直ったと言う？ 復旧確認と仕事へ</a></li>
+</ol>
+</nav>
+<section id="need" data-fact-ids="F001">
+<h2>1. なぜ半導体装置には真空シールが必要なのか</h2>
+<p>真空シールが守るのは、装置内部を必要な圧力と雰囲気に保つための境界です。真空とは、大気より圧力の低い状態。半導体製造では、材料を積む成膜や、不要な材料を削るエッチングなどで、圧力や使う気体を管理します。Oリングはウェハの中に組み込まれる材料ではなく、ウェハを加工する装置を支える部品です。</p>
+<p>外の大気と、空気を抜いたチャンバーの間に通り道があると、気体が真空側へ入ります。チャンバーは処理を行う容器、フランジは配管や容器をつなぐ接合部です。金属面を合わせただけでは微小な隙間が残り得るため、その境界をシールで密封します。<a class="semicon-source-ref" href="#source-S005">[5]</a></p>
+<p>ここで大切なのは、密封と排気を分けることです。シールが健全でもポンプが十分に排気できなければ圧力は下がりません。逆にポンプが動いていても、外から気体が入り続ければ負担が増えます。まず「気体の入り方と抜け方の釣り合いを見る」と理解すると、真空異常を部品名だけで判断しにくくなります。<a class="semicon-source-ref" href="#source-S006">[6]</a></p>
+</section>
+<section id="mechanism" data-fact-ids="F002 F003">
+<h2>2. Oリングはどうやって隙間を密封するのか</h2>
+<p>Oリングは、組み付けたときの圧縮と弾性で面へ押し付き、連続した接触部分を作ります。エラストマーとは、力を加えると変形し、力を除くと戻ろうとするゴム状の材料です。Oリングの断面は丸く、接合部の溝に収めて相手の面で挟むと、その断面が変形します。<a class="semicon-source-ref" href="#source-S002">[2]</a></p>
+<p>この押しつぶす量を<strong>squeeze（つぶし代）</strong>、元の断面の太さに対する割合をつぶし率と呼びます。戻ろうとする力によって接触部分に生じる圧力が<strong>接触圧</strong>です。ゴムが面の小さな凹凸に沿って変形し、気体の通り道をふさぐ働きにつながります。細い一点だけが触れている、と考えるより、変形した断面に接触帯ができると理解してください。<a class="semicon-source-ref" href="#source-S005">[5]</a></p>
+<p>溝は<strong>groove</strong>とも呼ばれ、Oリングの位置と変形の仕方を決めます。浅すぎる溝で強く挟めばよい、という設計ではありません。つぶし不足は接触不足につながり得ますが、過大な圧縮や充填も損傷の原因になります。幅や深さ、寸法のばらつき、熱で膨張したり薬品で膨らんだりする余裕まで考えます。<a class="semicon-source-ref" href="#source-S001">[1]</a><a class="semicon-source-ref" href="#source-S005">[5]</a></p>
+<p>圧力差が密着を助ける構造もあります。ただし、それは傷が自然に治る仕組みではありません。圧力があれば多少の傷を無視できる、とは言えないのです。必要なつぶし率も、面を挟む構造と軸を囲む構造、材質や温度で変わります。現場で締付けを増やして解決しようとせず、装置が指定する寸法と組付け条件を確認します。</p>
+</section>
+<section id="locations" data-fact-ids="F001 F003">
+<h2>3. 半導体装置のどこにOリングがあるのか</h2>
+<p>Oリングを探すときは、輪そのものより「気体をどこで隔てるか」を見ます。開閉するチャンバーのふたやドア、真空配管の接続部、ポンプの接続部、圧力を測る真空計の取付口などが、シールを確認する候補です。接合面の傷も含めて見る必要があります。<a class="semicon-source-ref" href="#source-S005">[5]</a></p>
+<p>ウェハを出し入れするために圧力を切り替える部屋を<strong>ロードロック</strong>と呼びます。そこを隔てるドアや、搬送空間を開閉するバルブの密封も重要です。ただし、バルブ内部の漏れは必ずしも外気の流入ではなく、隣の区画から別の区画へ気体が移る場合もあります。隔てている相手を図面で確かめます。</p>
+<p>すべての接続がOリング式ではありません。例えばISO-KFという真空フランジでは、二つのフランジの間にOリングを備えたセンタリングリングを置く構造があります。一方、一般的なCFフランジは銅の金属ガスケットを使います。ガス配管やバルブも構造が異なるので、「真空系だからどこも同じゴム」とは考えず、部品表と指定部品を照合します。<a class="semicon-source-ref" href="#source-S010">[10]</a></p>
+</section>
+<section id="degradation" data-fact-ids="F004 F005 F006 F012">
+<h2>4. 傷・異物・ヘタリは、なぜ異常につながるのか</h2>
+<p>異常につながるのは、設計した接触状態や材料の性質が保てなくなるからです。新品でも、取付時に鋭い縁へ引っ掛ける、ねじれたまま挟む、溝から一部がはみ出すといったことがあれば、切傷や接触不良の候補になります。これが<strong>installation damage（組付け損傷）</strong>です。「交換したばかり」は健全性の証拠になりません。<a class="semicon-source-ref" href="#source-S003">[3]</a></p>
+<p>異物も、シールと面の間で密着を妨げたり、締結時にシールを傷つけたりすることがあります。Oリングの傷だけを見ると、溝の汚れやフランジの面傷を残すかもしれません。部品を交換しても相手側が変わらなければ、同じ問題が再現する可能性があります。</p>
+<p>長く押しつぶしたゴムを外したとき、元の厚さまで戻らない変形を<strong>compression set（圧縮永久ひずみ）</strong>と呼びます。いわゆるヘタリです。戻る余裕が減れば、接合部のわずかな変化に追従しにくくなります。ただし、圧縮永久ひずみの試験値だけで「何日後に漏れる」とは決められません。温度、時間、試験片の形などの条件が関係するからです。<a class="semicon-source-ref" href="#source-S002">[2]</a></p>
+<p>熱や薬品への曝露も、膨潤、収縮、硬化、亀裂などの原因になり得ます。膨潤とは、材料が媒体を取り込むなどして膨らむこと。太くなれば接触が強まりそうに見えても、溝の余裕を失ったり物性が変わったりすれば、密封は不安定になり得ます。長期使用では、交換からの日数に加えて温度や媒体、開閉の履歴を考えます。<a class="semicon-source-ref" href="#source-S003">[3]</a></p>
+<p>プラズマは、気体が電離してイオンや電子などを含む状態です。工程や洗浄で使うプラズマがシールへ作用すると、反応性のある粒子との化学反応や、イオン衝撃による物理的な侵食で消耗する場合があります。熱劣化と同じ話ではなく、設置位置や工程条件、材料配合で挙動が変わります。<a class="semicon-source-ref" href="#source-S008">[8]</a></p>
+</section>
+<section id="materials" data-fact-ids="F007">
+<h2>5. なぜ環境によってOリングの材質を変えるのか</h2>
+<p>材質選定の目的は、その場所で密封と清浄度を保つことです。「耐熱性が高い」だけでは、使う薬品に耐えられるか、気体が透過しにくいか、粒子が出にくいかまでは分かりません。同じ材質略号でも、配合や製品グレードが違えば特性が変わります。<a class="semicon-source-ref" href="#source-S001">[1]</a><a class="semicon-source-ref" href="#source-S009">[9]</a></p>
+<h3>NBR・EPDM・シリコーンは、何に合わせて選ぶのか</h3>
+<p><strong>NBR（ニトリルゴム）</strong>は、油との相性や機械特性が選定理由になる材料です。ただし、油に使えることが、そのまま高温や別の薬品への適合を意味するわけではありません。<strong>EPDM（エチレンプロピレンゴム）</strong>は、温水などとの相性が選定理由になります。油や別の媒体への適合は個別に確かめます。<a class="semicon-source-ref" href="#source-S002">[2]</a></p>
+<p><strong>シリコーンゴム（VMQ）</strong>は、温度範囲や柔軟性が選定理由になります。一方で、気体の透過や機械的な損傷への配慮も必要です。「柔らかいから真空に最適」「清潔そうだから放出ガスが少ない」という選び方では、必要な条件を取りこぼします。<a class="semicon-source-ref" href="#source-S001">[1]</a></p>
+<h3>FKMとFFKMなら、どちらを選んでもよいのか</h3>
+<p><strong>FKM（フッ素ゴム）</strong>は、耐熱、耐油、比較的低いガス透過などが選定理由になる材料です。<strong>FFKM（パーフルオロエラストマー）</strong>は、厳しい薬品や高温などへの対応候補になります。ただし、どちらも全薬品・全プラズマに一律適合する材料ではありません。<a class="semicon-source-ref" href="#source-S002">[2]</a></p>
+<p>DuPontの技術資料には、FFKMでも配合によってプラズマ曝露後の粒子発生が異なる比較が示されています。この結果を、すべての材料・工程の順位へ広げてはいけません。「FFKMが最高」と決めるより、温度、気体・薬品、プラズマへの曝され方、圧縮・開閉、透過・放出ガス、粒子、装置指定部品を照合します。材質名は選定の入口であり、互換品の保証ではないのです。<a class="semicon-source-ref" href="#source-S008">[8]</a><a class="semicon-source-ref" href="#source-S009">[9]</a></p>
+</section>
+<section id="gas-loads" data-fact-ids="F008 F009">
+<h2>6. 真空が悪い原因は、漏れ穴だけではない</h2>
+<p>圧力が下がりにくいときは、気体の出所と通り道を分けます。真空側へ入ったり、内部で放出されたりして排気の対象になる気体の量を、ここでは<strong>ガス負荷</strong>と呼びます。圧力表示が悪いという一つの症状から、次の四つを同じ現象と判断することはできません。</p>
+<h3>外部から通り道を通って入る：Real Leak</h3>
+<p><strong>Real Leak（実リーク）</strong>は、外側と真空側をつなぐ実際の流路から気体が入ることです。Oリングの切傷だけでなく、接合面、配管、溶接部なども候補になります。シール部の実リークを疑うときも、ゴムだけに確認範囲を狭めません。<a class="semicon-source-ref" href="#source-S005">[5]</a></p>
+<h3>内部に閉じ込めた気体が遅れて出る：Virtual Leak</h3>
+<p><strong>Virtual Leak（仮想リーク）</strong>は、内部の小さな閉じ込め空間から気体がゆっくり出て、漏れのように見える現象です。例えば、底まで貫通していないねじ穴の奥に残った気体が、狭い経路を通って出る場合があります。新たに外気が入る実リークとは経路が違います。対策として内部の排気経路を考える場合も、真空室を外気へつなぐという意味ではありません。<a class="semicon-source-ref" href="#source-S005">[5]</a></p>
+<h3>材料を通り抜ける：Permeation</h3>
+<p><strong>Permeation（透過）</strong>は、気体が材料へ溶け込み、内部を拡散して反対側へ移ることです。Oリングに貫通した穴がなくても起こり得ます。気体の種類や温度、配合、厚さなどで変わるため、「漏れ穴がない」と「気体の移動がない」は同じではありません。<a class="semicon-source-ref" href="#source-S012">[12]</a></p>
+<h3>表面や材料から出る：Outgassing</h3>
+<p><strong>Outgassing（放出ガス）</strong>は、壁面に付着した水分や、材料に含まれる気体・揮発成分などが真空側へ出ることです。チャンバーを開けた履歴や清掃、付着物も関係します。外の一点に漏れ穴を探すだけでは、壁面や材料から出る気体を説明できません。<a class="semicon-source-ref" href="#source-S006">[6]</a></p>
+<div class="semicon-table-wrap">
+<table>
+<caption>四つの現象は、気体の経路で区別する</caption>
+<thead>
+<tr>
+<th scope="col">現象</th>
+<th scope="col">主に確かめたいこと</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">実リーク</th>
+<td>外部と真空側をつなぐ流路があるか</td>
+</tr>
+<tr>
+<th scope="row">仮想リーク</th>
+<td>内部の閉じ込め空間が遅れて排気されていないか</td>
+</tr>
+<tr>
+<th scope="row">透過</th>
+<td>材料を通る移動が測定に効いていないか</td>
+</tr>
+<tr>
+<th scope="row">放出ガス</th>
+<td>壁面・材料・付着物から気体が出ていないか</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>これらは重なることがあります。種類だけで「急に起こる」「工程への影響が小さい」と順位付けせず、時間変化と検査結果を合わせて考えます。</p>
+</section>
+<section id="process" data-fact-ids="F012 F013">
+<h2>7. シールの異常は、なぜProcessまで影響するのか</h2>
+<p>半導体の工程で守りたいのは、圧力の数字に加えて、同じ条件で同じ加工結果を得るための環境です。外気が入れば、排気すべき気体が増え、工程に必要な気体の組成にも影響し得ます。圧力制御が追い付くか、どんな気体がどれだけ入るかで、影響の出方は変わります。<a class="semicon-source-ref" href="#source-S006">[6]</a></p>
+<p>もう一つの経路が、シール自体の汚染です。プラズマで侵食された材料や配合中の成分は、<strong>particle（微粒子）</strong>や金属成分の汚染源になり得ます。漏れ穴による外気侵入と、シール材料から生じる汚染は、同じ因果ではありません。圧力の表示だけで材料の清浄度まで保証することはできません。<a class="semicon-source-ref" href="#source-S008">[8]</a></p>
+<p>条件の変化は、工程の再現性や加工結果、良品の割合である歩留まりに影響する可能性があります。ただし、真空異常が出たから製品不良が確定する、歩留まりが落ちたからOリングが原因、と断定しません。シールの状態、圧力・気体の履歴、工程評価を結び付けて、影響の有無と範囲を確認します。</p>
+</section>
+<section id="troubleshooting" data-fact-ids="F010 F013">
+<h2>8. 設備保全担当者は、どのデータから原因を絞るのか</h2>
+<p>切り分けは、「真空が悪い」を観察できる症状へ言い換えるところから始まります。いつから、どの工程で、何を変えた後に起きたのか。保全直後なのか、ガス導入時だけなのか、時間をかけても圧力が下がらないのかを分けると、次に確かめる候補が変わります。</p>
+<p>まず圧力表示が信頼できるかを確認します。真空計は圧力を測る計器ですが、測定方式や使用条件、汚れ、校正状態によって解釈に注意が必要です。一つの表示だけで外部からの気体流入を確定せず、正常時の履歴、装置アラーム、関連する測定と照合します。</p>
+<p>次に見るのが<strong>pump-down（ポンプダウン）</strong>、つまり排気開始から圧力が下がる様子です。工程ガスを導入せず、指定した排気・温度・待機条件で見る基準の圧力を<strong>base pressure（ベースプレッシャー）</strong>と呼びます。正常時と同じ条件で比較しないと、開放時間や付着した水分の違いまで故障のように扱うかもしれません。<a class="semicon-source-ref" href="#source-S006">[6]</a></p>
+<p>圧力の上がり方を見る<strong>rate-of-rise（圧力上昇試験）</strong>では、排気した対象容積をポンプ側から隔離し、圧力が時間とともにどう変わるかを見ます。測定範囲や弁の操作は実機の手順に従います。温度と容積が安定し、残った排気などの影響を抑えた条件では、容積×圧力の上昇速度が、内部へ現れる総ガス負荷の目安になります。<a class="semicon-source-ref" href="#source-S004">[4]</a></p>
+<p>しかし、その値をそのまま実リーク率とは呼べません。放出ガスや仮想リークなども混ざるからです。時間とともにガス放出が減る傾向は判断材料になりますが、曲線だけで原因を一意に決めることもできません。圧力上昇試験は「このOリングのここが漏れている」と位置を示す検査ではないのです。</p>
+<aside class="semicon-mid-cta">
+<p>圧力の変化だけでは、漏れの場所までは分かりません。次のHe検査の説明と合わせて、<a href="https://semicon-campus.com/helium-leak-testing/">ヘリウムリーク検査を信号で切り分ける記事</a>も読むと、吹付け位置と応答の関係を深められます。</p>
+</aside>
+<p>例えば、<strong>説明用の仮想例</strong>として、チャンバーのふたを開けた保全の後に排気が遅くなったとします。ふたのシールや接合面を候補に残しつつ、開放で増えた水分の放出、バルブ状態、測定条件も考えます。「直前に触った場所」は有力な手掛かりですが、それだけで故障箇所を確定したことにはなりません。</p>
+<ul>
+<li><strong>シール・接合面：</strong>傷、異物、寸法、組付け、締結状態を確認する候補</li>
+<li><strong>配管・バルブ：</strong>接続部の漏れ、閉止不良、排気経路が妨げられていないかという候補</li>
+<li><strong>ポンプ：</strong>動作、排気能力、接続・排気側の状態を確認する候補</li>
+<li><strong>ガス導入：</strong>意図した流量・弁状態になっているかという候補</li>
+<li><strong>真空計・チャンバー：</strong>測定異常、付着物の放出、閉じ込め容積という候補</li>
+</ul>
+<p>この整理は、全装置で同じ順序に操作する作業手順ではありません。正常時との比較から仮説を立て、区画や条件を変えた検証で候補を絞るための考え方です。<a class="semicon-source-ref" href="#source-S004">[4]</a><a class="semicon-source-ref" href="#source-S005">[5]</a><a class="semicon-source-ref" href="#source-S007">[7]</a></p>
+</section>
+<section id="helium" data-fact-ids="F011">
+<h2>9. He Leak Detectionで、何が分かり何が分からないのか</h2>
+<p><strong>He Leak Detection（ヘリウムリーク検査）</strong>は、漏れを探すために与えたヘリウムと検出器の信号を結び付ける検査です。真空吹付け法では、対象内部を排気して検出器につなぎ、外側の疑わしい接合部へヘリウムを局所的に与えます。通り道があれば、ヘリウムが真空側へ入り、検出器へ届きます。<a class="semicon-source-ref" href="#source-S007">[7]</a></p>
+<p>検出器が漏れ穴を写真で見ているわけではありません。どこへ吹き付け、どれだけ待つと信号が現れたか、同じ場所で再現するかを見て、位置を絞ります。既知のヘリウム流量を与える<strong>校正リーク</strong>で測定系を確認し、配管の容積や排気速度による応答の遅れも考えます。<a class="semicon-source-ref" href="#source-S007">[7]</a></p>
+<p>検査前から残るヘリウムは背景信号に関係します。またヘリウムはゴムを透過し得るため、遅れて信号が出ても、必ず切傷を通ったとは言えません。吹付け位置との関係、時間変化、校正や背景を合わせます。検出器本体の性能だけでなく、補助ポンプを含む測定系も重要です。<a class="semicon-source-ref" href="#source-S011">[11]</a><a class="semicon-source-ref" href="#source-S012">[12]</a></p>
+<p>信号が出なかった場合も、「その検査条件と対象範囲で検出されなかった」という結果です。放出ガス、仮想リーク、真空計の異常や、工程条件の適否をすべて否定したことにはなりません。局所的に場所を探す検査と、装置・対象全体の漏れ量で合否を判定する検査も、目的を区別します。<a class="semicon-source-ref" href="#source-S007">[7]</a></p>
+</section>
+<section id="recovery" data-fact-ids="F004 F014">
+<h2>10. Oリング交換後に、何をもって復旧と判断するのか</h2>
+<p>交換は、原因を直すための一工程です。交換作業では指定部品を照合し、新品の傷・汚れ、溝と相手側の面を確認します。異物の清掃、ねじれや挟み込みを防ぐ取付、指定した締結までを一続きで考えます。面傷を残したまま新品を入れても、密封条件は戻らない可能性があります。<a class="semicon-source-ref" href="#source-S002">[2]</a><a class="semicon-source-ref" href="#source-S003">[3]</a></p>
+<p>潤滑剤も「真空用なら塗ればよい」とは決めません。温度で変わる蒸気圧や、材料・工程との相性を確認します。使う場合は装置が許す指定品と量を守り、清浄度が必要な場所へ独断で追加しません。傷の研磨や溝の加工、材料の変更も、通常の交換と同じ判断ではありません。<a class="semicon-source-ref" href="#source-S005">[5]</a></p>
+<p>組付け後は対象範囲の漏れを確認し、正常時と同じ条件でポンプダウン、ベースプレッシャー、圧力の安定性が回復するかを見ます。漏れが見つからなくても排気が遅いなら、測定系や残るガス負荷などを再検討します。交換という作業の完了と、装置状態の回復を分けて確認するのです。<a class="semicon-source-ref" href="#source-S004">[4]</a><a class="semicon-source-ref" href="#source-S007">[7]</a></p>
+<p>工程に影響する保全では、工場や装置で定められた<strong>post-maintenance qualification（保全後の適合確認）</strong>につなげます。必要に応じてテストウェハの粒子や膜厚、エッチング結果などを見るのは確認項目の例です。すべてのOリング交換で同じ試験を行うという共通規格ではありません。</p>
+<p>漏れの確認は密封の評価、qualificationは製造へ戻せる状態かの評価です。圧力が戻っただけでは汚染や加工結果まで保証できないため、対象工程の項目と合否値で判断します。作業内容、使った部品、検査条件と結果を残すことで、再発時に同じ条件で比較できます。<a class="semicon-source-ref" href="#source-S008">[8]</a></p>
+</section>
+<section id="work" data-fact-ids="F013 F014">
+<h2>11. この知識は、設備保全の仕事にどうつながるのか</h2>
+<p>設備保全で役立つのは、Oリングの材質名を暗記することだけではありません。「症状→データ→仮説→切り分け→修理→復旧確認」を一続きで考える力です。圧力が悪いという症状を、いつ・何が変わったかという観察へ変え、確かめた結果と原因候補を分けて記録します。</p>
+<p>製造業の点検・交換・計測・記録の経験は、この考え方との接点になります。半導体装置では、そこへ真空の経路、工程ガス、材料と汚染、保全後の適合確認を重ねます。Oリングを交換できることに加えて、交換が必要だった理由と、復旧した根拠を説明できることが仕事の理解につながります。</p>
+<p>なお、装置そのものの保全と、工場の電源・空調・ガス供給などを担う設備保全では、担当範囲が異なります。職種名だけで同じ仕事とせず、担当装置と確認・復旧の範囲を見てください。</p>
+</section>
+<section id="faq">
+<h2>よくある誤解</h2>
+<h3>Q. 真空が悪ければ、まずOリングを交換すればよいですか？</h3>
+<p>原因候補の一つですが、それだけでは決めません。圧力履歴、排気、バルブ、ガス導入、真空計、チャンバーのガス負荷も確認し、必要な検査で候補を絞ります。</p>
+<h3>Q. FFKMなら、どの場所にも使えるのですか？</h3>
+<p>いいえ。同じFFKMでも配合と使用条件で特性が変わります。温度、媒体、プラズマ、清浄度や装置指定を合わせて選びます。</p>
+<h3>Q. He検査で漏れが見つからなければ、修理完了ですか？</h3>
+<p>検査条件下の漏れ確認と、排気・装置・工程の復旧は別です。対象範囲の検査に加えて、指定された復旧確認が必要です。</p>
+</section>
+<h2>まとめ</h2>
+<div class="semicon-three-line-recap">
+<p>Oリングは、溝での圧縮と接触圧で接合部を密封します。</p>
+<p>真空異常は、実リーク・仮想リーク・透過・放出ガスや機器状態を分けて考えます。</p>
+<p>設備保全は原因を絞って直し、漏れと装置・工程の復旧を確かめる仕事です。</p>
+</div>
+<aside class="semicon-career-cta">
+<p><strong>次に読む：真空系の理解を、設備保全の仕事へ</strong></p>
+<p>点検や交換の経験が、半導体装置のどんな業務につながるかを知りたい方へ。担当設備、保全後の確認、必要な知識を仕事の流れと合わせて整理できます。</p>
+<p><a class="semicon-cta-link" href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/" data-cta-stage="career" data-cta-type="tech_to_job" data-cta-route="o_ring_vacuum_seal_to_maintenance_end">半導体の保全・メンテナンス職を知る</a><br />
+</aside>
+<h2>参考にした公式情報</h2>
+<p class="semicon-note">本文の出典番号は下の資料に対応します。材料の一般傾向と、特定配合・試験条件の結果は区別しています。交換・検査の考え方を説明する記事であり、実機の作業条件や合否値は装置・工場の手順で決めます。資料の確認日：2026年10月3日。</p>
+<ul class="semicon-sources">
+<li id="source-S001" data-source-id="S001">[1] <a href="https://www.parker.com/content/dam/Parker-com/Literature/O-Ring-Division-Literature/ORD-5705-Parker-O-Ring-Vacuum-Sealing-Guide.pdf">Parker：O-Ring Vacuum Sealing Guide, ORD 5705</a> — 材料配合、透過、圧縮、溝と表面の条件。</li>
+<li id="source-S002" data-source-id="S002">[2] <a href="https://www.trelleborg.com/-/media/tss-media-repository/tss_website/pdf-and-other-literature/catalogs/o_ring_gb_en.pdf">Trelleborg：O-Rings &amp; Back-up Rings（2024年6月版）</a> — 材料、圧縮永久ひずみ、組付けと初期圧縮。</li>
+<li id="source-S003" data-source-id="S003">[3] <a href="https://www.trelleborg.com/en/inthegroove/products-and-solutions/technical-support">Trelleborg：Technical Support</a> — Oリングの損傷・化学劣化・熱劣化・ヘタリの要因。</li>
+<li id="source-S004" data-source-id="S004">[4] <a href="https://www.leybold.com/en/knowledge/vacuum-fundamentals/leak-detection/pressure-rise-and-drop-tests">Leybold：Pressure rise and drop tests</a> — 圧力上昇試験とガス放出が重なる場合の限界。</li>
+<li id="source-S005" data-source-id="S005">[5] <a href="https://www.pfeiffervacuum.com/il/en/knowledge/vacuum-technology/knowledge-book/3-mechanical-components-in-vacuum/3.3-connections.html">Pfeiffer Vacuum：Vacuum Connections</a> — シールと接合面、溝、閉じ込め空間の仮想リーク。</li>
+<li id="source-S006" data-source-id="S006">[6] <a href="https://www.pfeiffervacuum.com/global/en/knowledge/vacuum-technology/knowledge-book/1-introduction/1_3_influences/">Pfeiffer Vacuum：Influences in Vacuum Systems</a> — 汚染、放出ガス、透過、排気との関係。</li>
+<li id="source-S007" data-source-id="S007">[7] <a href="https://www.pfeiffervacuum.com/pl/pl/knowledge/vacuum-technology/knowledge-book/7-leak-detection/7_2_leak_detection_with_tracer_gases/">Pfeiffer Vacuum：Leak Detection with Tracer Gases</a> — 校正、局所検査、全体検査と応答時間。</li>
+<li id="source-S008" data-source-id="S008">[8] <a href="https://www.dupont.com/content/dam/dupont/amer/us/en/kalrez/public/documents/en/Contamination_considerations_for_perfluoroelastomer_seals_used_in_deposition_processes.pdf">DuPont：Contamination Considerations for Perfluoroelastomer Seals used in Deposition Processes</a> — 2008年の技術資料。プラズマ侵食と汚染、特定条件でのFFKM配合比較。</li>
+<li id="source-S009" data-source-id="S009">[9] <a href="https://www.qnityelectronics.com/knowledge/elastomer-chemical-resistance-guide.html">Qnity：Elastomers Chemical Resistance &amp; Kalrez Application Guide</a> — 旧DuPont掲載先から移転した公式資料。温度・圧力等に応じた選定。</li>
+<li id="source-S010" data-source-id="S010">[10] <a href="https://www.leybold.com/en/products/vacuum-hardware-and-valves/hardware">Leybold：Hardware</a> — ISO-KFのOリングとCFの銅ガスケット。</li>
+<li id="source-S011" data-source-id="S011">[11] <a href="https://www.agilent.com/en/product/vacuum-technologies/helium-leak-detection">Agilent：Helium Leak Detection</a> — He検査の測定系と背景、排気条件。</li>
+<li id="source-S012" data-source-id="S012">[12] <a href="https://www.pfeiffervacuum.com/media/documents/leak-detection-know-how/leak-detection-compendium-pfeiffer-vacuum.pdf">Pfeiffer Vacuum：Leak Detection Compendium</a> — 材料透過と、検出方式で分かることの違い。</li>
+</ul>
+</article>
+<aside class="related-spokes">
+<h2>あわせて読みたい</h2>
+<ul>
+<li><a href="/vacuum-gauge/">真空なのに、どうやって圧力を測るのか？半導体装置の真空計を読み解く</a></li>
+</ul>
+</aside>
+<p class="pillar-link">装置の主要部品の全体像は、<a href="/semiconductor-equipment-components-map/">半導体製造装置の構造・主要部品マップ</a>で確認できます。</p>

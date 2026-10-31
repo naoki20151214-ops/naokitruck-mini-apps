@@ -1,0 +1,111 @@
+
+<!--KEEP:0-->
+
+
+<!--KEEP:1-->
+
+
+<!--KEEP:2-->
+<div class="semicon-article" id="semicon-top">
+
+<div class="semicon-level"><span class="semicon-level-label">学習レベル</span> <strong>初級</strong><p>NANDが保存用メモリだと分かった人が、SSDの中でデータを管理する仕組みへ進む記事です。</p></div>
+
+<p class="semicon-lead"><strong>SSDコントローラ</strong>は、パソコンやスマホから届いた命令を受け取り、NANDのどこへ保存するかを決める司令塔です。書込みを分散し、読出し時の誤りを直しながら、NANDを使いやすいストレージとしてまとめます。</p>
+
+<p>メモリの基本から確認したい方は、先に<a href="https://semicon-campus.com/cpu-memory-storage-difference/">CPU・メモリ・ストレージの違い</a>、続いて<a href="https://semicon-campus.com/dram-nand-difference/">DRAMとNANDの違い</a>を読むと理解しやすくなります。</p>
+
+<div class="semicon-map"><h3>この記事でわかること</h3><div class="semicon-scope-grid"><div class="semicon-scope-block"><b>まず理解する3項目</b><ol><li>SSDコントローラがNANDの司令塔である理由</li><li>保存場所・書込み分散・誤り訂正の3つの仕事</li><li>NANDだけではSSDとして扱いにくい理由</li></ol></div><div class="semicon-scope-block deep"><b>もう一歩深く知る4項目</b><ol><li>FTL</li><li>ウェアレベリング</li><li>ECC</li><li>ガベージコレクション</li></ol></div></div></div>
+
+
+<h2>SSDコントローラとは何か</h2>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>SSDはNANDに保存する装置ですよね。コントローラは本当に必要ですか？</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>NANDは保存場所じゃが、パソコンの命令をそのまま理解して管理するわけではない。間に司令塔が必要なんじゃ。</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>NANDが倉庫で、コントローラが荷物の住所と出入りを管理する人なんですね。</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>入口の理解としてはよい。実際はLSIとファームウェアが、ホストの命令とNANDの物理動作を橋渡しする。</p></div></div>
+
+<figure class="semicon-figure"><img src="https://semicon-campus.com/wp-content/uploads/2026/07/ssd-controller-command-system-overview.png" alt="パソコンの命令をSSDコントローラが受け取り複数のNANDへ読み書きする全体像" width="1536" height="864" loading="eager" decoding="async"><figcaption>SSDコントローラは、ホストの命令とNANDの物理動作を橋渡しします。</figcaption></figure>
+
+<div class="semicon-note"><p><strong>最初の結論：</strong> SSDコントローラは、NANDそのものではなく、NANDをストレージとして使えるように管理するロジック半導体と制御ソフトウェアです。</p></div>
+<p class="semicon-one-line">ここまでの一言まとめ：SSDコントローラは、ホストとNANDをつなぐ司令塔です。</p>
+
+<h2>なぜNANDだけではSSDにならないのか</h2>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>NANDへ、ファイル名と保存場所を直接書けばよいのでは？</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>ホストは論理的な番号で命令するが、NANDはページへ書き、ブロック単位で消す。使う単位とルールが違うんじゃ。</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>パソコン側の住所と、NAND内部の実際の棚番号を変換する必要があるんですね。</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>その通り。しかもセルには書換え寿命があり、誤りも起こり得る。場所だけでなく使い方まで管理する。</p></div></div>
+
+<div class="semicon-grid"><div class="semicon-card"><b>書込みと消去の単位が違う</b><span>NANDはページへ書き込み、複数ページを含むブロック単位で消去します。</span></div><div class="semicon-card"><b>同じ場所へ集中できない</b><span>書換えが一部へ偏ると、そのブロックだけ早く劣化しやすくなります。</span></div><div class="semicon-card"><b>読出し誤りへ備える</b><span>保存密度や使用状況に応じて生じるビット誤りを検出・訂正します。</span></div></div>
+<p class="semicon-one-line">ここまでの一言まとめ：NANDの物理ルールを、使いやすい保存装置へ翻訳する必要があります。</p>
+
+<h2>まず覚える3つの仕事</h2>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>機能が多そうですが、最初は何を覚えればよいですか？</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>保存場所を決める、書込みを分散する、誤りを直す。この3つから始めればよい。</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>住所係、寿命を守る係、データを守る係の3役ですね。</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>よい整理じゃ。実際は並列処理、暗号化、電力管理などもあるが、製品で実装は異なる。</p></div></div>
+
+<figure class="semicon-figure"><img src="https://semicon-campus.com/wp-content/uploads/2026/07/ssd-controller-three-jobs-address-wear-ecc.png" alt="SSDコントローラが保存場所の管理、書込み分散、誤り訂正を行う3つの役割" width="1536" height="864" loading="lazy" decoding="async"><figcaption>最初は「場所を決める・書込みを分散する・誤りを直す」の3役を覚えれば十分です。</figcaption></figure>
+
+<p class="semicon-one-line">SSDコントローラは、住所の変換、書換え負担の分散、データ保護をまとめて担当します。</p>
+
+<div class="semicon-basic-complete">ここまででSSDコントローラの基本は理解できました。</div>
+
+<div class="semicon-deep-break"><strong>ここから、もう一歩深く</strong><p>ここから先はFTL、ウェアレベリング、ECC、ガベージコレクションを知りたい方向けです。基本だけ知りたい方は、<a href="#ssd-controller-summary">まとめへ進んでも問題ありません</a>。</p></div>
+
+<h2>FTL：見える住所と実際の場所を対応させる</h2>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>同じファイルを上書きすると、同じセルへ書くんですか？</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>必ずしも同じ場所ではない。FTLが論理アドレスと物理アドレスの対応を更新する。</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>利用者には同じ住所に見えても、実際の保管棚は入れ替えられるんですね。</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>そうじゃ。FTLはFlash Translation Layerの略で、その対応表とNAND管理の中心になる。</p></div></div>
+<div class="semicon-note"><p><strong>技術メモ：</strong> 一般的なSSDではホストがLBAという論理ブロック番号でアクセスし、コントローラ側がNANDの物理配置へ対応させます。マッピング方法や、ホストと装置の分担は製品・方式で異なります。</p></div>
+<p class="semicon-one-line">ここまでの一言まとめ：FTLは、ホストの住所とNANDの実際の場所を対応させます。</p>
+
+<h2>ウェアレベリング：書換えの偏りを減らす</h2>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>よく更新するデータがあると、そこだけ壊れませんか？</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>そこで書込み先を分散し、特定ブロックへ消去回数が偏るのを抑える。</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>同じ靴だけを履き潰さず、順番に使う感覚ですね。</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>たとえとしては近い。ただし寿命はNAND種類、温度、書込み量、制御方法でも変わる。</p></div></div>
+<p class="semicon-one-line">ここまでの一言まとめ：ウェアレベリングは、消去・書込みの負担を分散します。</p>
+
+<h2>ECC：読出したデータの誤りを直す</h2>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>保存した0と1は、そのまま正確に読めるのでは？</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>電荷状態のばらつきや劣化などで、読出し時にビット誤りが起こり得る。ECCで検出・訂正するんじゃ。</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>答え合わせ用の情報も一緒に持ち、間違いを見つけて直すんですね。</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>その理解でよい。訂正能力や方式は、NANDとコントローラの設計で異なる。</p></div></div>
+<p class="semicon-one-line">ここまでの一言まとめ：ECCは、読出し誤りを検出し、訂正できる範囲で元のデータへ戻します。</p>
+
+<h2>ガベージコレクション：消せるブロックを作る</h2>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>削除したファイルの場所へ、すぐ新しいデータを書けないんですか？</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>NANDはブロック単位で消す。残したいページを別の場所へ移してから、ブロックを消去する必要がある。</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">なおき</div></div><div class="semicon-bubble"><p>必要な荷物を別棚へ移し、棚全体を空にして再利用するんですね。</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">ふくろう先生</div></div><div class="semicon-bubble"><p>そうじゃ。この裏側の移動と消去が、性能や追加書込み量にも関わる。</p></div></div>
+
+<!-- SSD_CONTROLLER_FIGURE_3_OPTIONAL: 有効ページを移動→ブロック消去→空きページ再生の3段階。文章のたとえを画像で代替可能 -->
+
+<div class="semicon-note"><p><strong>TRIMとの違い：</strong> TRIMは、ホストが「この論理領域は不要」とSSDへ伝える仕組みです。実際に有効データを移し、ブロックを消去して空きを作るガベージコレクションとは役割が異なります。</p></div>
+<p class="semicon-one-line">ここまでの一言まとめ：ガベージコレクションは、必要なデータを退避してブロックを再利用可能にします。</p>
+
+
+<section class="mp3-section" id="revenue-phase3-learning"><h2>SSDの仕組みから自分の保存環境を選ぶ</h2><p>SSDコントローラの役割を理解した後は、保存するデータ量、書込みの多さ、使う機種の接続方式を整理して製品を比べます。最大速度だけでなく、保証や耐久性の指標、容量、温度条件も確認しましょう。交換前には必要なデータをバックアップし、部品交換が難しい場合はPC本体の更新とも比較できます。評価や検査経験がある人は、製品品質や装置の仕事へ知識を広げられます。</p><p>比較前の確認メモ：M.2のサイズ、SATA・NVMeの対応、容量・保証・耐久性と移行方法。今の環境で試せる範囲と、更新が必要な箇所を分けてから候補を選びましょう。</p></section>
+
+<h2>コントローラでSSDの性格が変わる</h2>
+<div class="semicon-grid"><div class="semicon-card"><b>性能</b><span>複数NANDチャネルの並列利用、キュー処理、キャッシュ、ファームウェア設計が影響します。</span></div><div class="semicon-card"><b>耐久性・信頼性</b><span>ウェアレベリング、ECC、不良ブロック管理、電源断対策などが関係します。</span></div><div class="semicon-card"><b>用途への最適化</b><span>個人向け、データセンター向け、組込み向けでは、性能・消費電力・保護機能の優先度が異なります。</span></div></div>
+<p>すべてのSSDが同じ機能や構成を持つわけではありません。DRAMキャッシュの有無、ECC方式、予備領域、電源断保護、暗号化などは製品ごとに異なります。単に「同じNANDだから同じ性能」とは判断できません。</p>
+<p class="semicon-one-line">ここまでの一言まとめ：SSDはNANDだけでなく、コントローラとファームウェアを含むシステムです。</p>
+
+<h2 id="ssd-controller-summary">まとめ</h2>
+<div class="semicon-note"><p><strong>まず覚える3点</strong></p><ol><li>SSDコントローラは、ホストとNANDをつなぐ司令塔</li><li>保存場所を決め、書込みを分散し、誤りを直す</li><li>FTL、ウェアレベリング、ECC、ガベージコレクションがNANDを使いやすくする</li></ol></div>
+
+<div class="semicon-links"><div class="semicon-linkbox next"><h3>前提を復習する</h3><p><a href="https://semicon-campus.com/dram-nand-difference/">DRAMとNANDの違い</a></p><p><a href="https://semicon-campus.com/cpu-memory-storage-difference/">CPU・メモリ・ストレージの違い</a></p></div><div class="semicon-linkbox"><h3>順番に学ぶ</h3><p><a href="https://semicon-campus.com/semiconductor-beginner-roadmap/">半導体初心者ロードマップへ戻る</a></p></div></div>
+
+<div class="semicon-map"><h3>次に深掘りするテーマ</h3><ul><li>NANDのページとブロックとは何か</li><li>SSDの寿命とTBW</li><li>NVMeとSATAの違い</li></ul><p>未作成の記事には、現時点ではリンクを設置しません。</p></div>
+
+
+<section class="mp3-section" id="revenue-phase3-career"><h2>この記事の知識を、次の仕事・学習へつなげる</h2><p>製品評価、書込み・読出し検査、品質記録の経験を、対象・作業・確認した結果で整理します。担当範囲と必要経験、勤務地、勤務・出張、教育体制を比較すると、次に補う知識も具体的になります。</p><aside class="semicon-cta mp3-card"><h3>関連する職種の仕事内容・求人・学習を見る</h3><p>記事で学んだ技術が、点検・復旧、装置立上げ、顧客対応、実装・工程改善のどの仕事で使われるか確認できます。職種記事の求人・学習の選び方へ進みましょう。</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/" class="semicon-btn mp3-button" data-revenue-phase3-hub="237" data-cta="equipment_hub" data-cta-type="equipment_hub" data-cta-stage="career" data-cta-id="phase3_501_hub237_end" data-cta-route="phase3_501_hub237_end">装置エンジニアの担当範囲・求人・学習を見る</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/" class="semicon-btn mp3-button" data-revenue-phase3-hub="277" data-cta="maintenance_hub" data-cta-type="maintenance_hub" data-cta-stage="career" data-cta-id="phase3_501_hub277_end" data-cta-route="phase3_501_hub277_end">設備保全Hubで仕事内容・求人・学習を確認する</a></div></aside></section>
+
+
+<h2>参考資料</h2>
+<ul><li><a rel="noopener" href="https://www.kioxia.com/en-jp/rd/organization/process.html" target="_blank">KIOXIA: Product Development Process</a></li><li><a rel="noopener" href="https://jp.micron.com/products/storage/nand-flash/choosing-the-right-nand" target="_blank">Micron: NANDフラッシュメモリの種類</a></li><li><a rel="noopener" href="https://www.micron.com/about/micron-glossary/solid-state-drives" target="_blank">Micron: What is an SSD?</a></li><li><a rel="noopener" href="https://www.snia.org/education/what-is-ssd" target="_blank">SNIA: What is an SSD?</a></li></ul>
+
+<a class="semicon-backtop" href="#semicon-top">↑ 先頭</a>
+</div>
+

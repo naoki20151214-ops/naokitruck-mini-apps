@@ -1,0 +1,19 @@
+{
+ "id": 314,
+ "type": "post",
+ "slug": "what-is-semiconductor-yield",
+ "link": "https://semicon-campus.com/what-is-semiconductor-yield/",
+ "date": "2026-09-21T18:00:00",
+ "modified": "2026-10-22T13:56:11",
+ "parent": 0,
+ "menu_order": 0,
+ "template": "",
+ "categories": [
+  5,
+  12
+ ],
+ "tags": [],
+ "featured_media": 310,
+ "title": "歩留まりとは何か？半導体製造の良品率・不良・改善を初心者向けに解説",
+ "excerpt": "歩留まりとは、半導体製造で作ったチップのうち実際に使える良品の割合です。不良が増える原因、歩留まり改善、検査・品質・プロセスエンジニアの仕事とのつながりを初心者向けに解説します。"
+}

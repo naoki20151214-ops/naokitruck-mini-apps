@@ -1,0 +1,146 @@
+
+<!--KEEP:0-->
+
+<article data-episode="082" data-slug="load-lock-wafer-exchange" data-target="new_post">
+<!--KEEP:1-->
+<h1>真空室を開けずにウェハ交換、ロードロックの役割</h1>
+
+
+<h2>この記事でわかること</h2>
+
+<p data-fact-ids="F001 F002 F003">ウェハ交換のたびに真空プロセス室全体を大気へ戻すと、再排気と表面状態の負荷が増えます。結論から言えば、ロードロックという小さな前室だけを大気と真空の間で切り替えることで、奥の空間を保ったままウェハを受け渡せます。</p>
+
+<ul><li>ロードロックが装置のどこにあるか</li><li>ゲートバルブ、排気、搬送がどう連動するか</li><li>水蒸気と保全指標をなぜ見るのか</li></ul>
+
+<h2>ロードロックはどこにあるのか</h2>
+
+<p data-fact-ids="F001 F003 F007">典型的なクラスター型の装置を外側から見ると、ウェハを受け渡す大気側のロードポートがあります。その先にロードロックがあり、さらに奥に真空搬送室、複数のプロセス室がつながります。プロセス室ではエッチングや成膜などが行われ、真空搬送室のロボットがウェハを各室へ運びます。</p>
+
+<p class="visual-context">この記事では、真空装置のウェハ投入部を具体物として確認します。</p><figure data-media-role="article-visual-01" data-visual-kind="photoreal" data-subject="真空装置のウェハ投入部" data-purpose="投入前の大気側の位置関係を見せる" data-composition="front" data-concrete-object="true" data-selection-reason="ロードロックへ入るウェハを示す具体的な投入部。既存EP082 v2の具体物画像を個別に再利用し、本文の因果を補う。" data-photo-assessment="実写素材の権利条件を追加確認せずに転載するより、既存のAI生成具体物を記事用に最適化する方が安全で、対象の形状と用途を読み取れる。" data-provenance="articles/provenance/ep082-article-01.md"><img loading="lazy" decoding="async" src="assets/load-lock-wafer-exchange-episode082/load-lock-01.webp" alt="真空装置のウェハ投入部" width="721" height="1280"><figcaption>真空装置のウェハ投入部。AI生成画像（OpenAI ImageGen）。WebPへ最適化、記事幅に合わせて縮小。個別の生成記録とSHAはprovenanceに記録。</figcaption></figure>
+
+<p data-fact-ids="F001 F003 F007">ロードロックと真空側の間にはゲートバルブがあります。ゲートバルブは、前室と奥の真空空間を切り分ける境界です。ロードロックを大気に戻すときは、真空側を閉じたままにします。反対に、ロードロックを排気して搬送できる圧力条件になったら、真空側のゲートを開けてウェハを搬送室へ渡します。</p>
+
+<h2>ウェハ交換の一サイクル</h2>
+
+<p data-fact-ids="F002 F003 F006">大気側からウェハを入れるときは、まず真空側のゲートバルブが閉じていることが前提です。外側のドアを開け、ウェハをロードロックへ置き、外側を閉じます。その後、ロードロックだけを排気します。十分に条件が整ってから真空側のゲートを開け、ロボットがウェハを搬送室へ運びます。</p>
+
+<p class="visual-context">この記事では、ロードロック前室の内部を具体物として確認します。</p><figure data-media-role="article-visual-02" data-visual-kind="photoreal" data-subject="ロードロック前室の内部" data-purpose="小さな前室が境界になることを示す" data-composition="interior" data-concrete-object="true" data-selection-reason="前室の内部空間とウェハ台を示す。既存EP082 v2の具体物画像を個別に再利用し、本文の因果を補う。" data-photo-assessment="実写素材の権利条件を追加確認せずに転載するより、既存のAI生成具体物を記事用に最適化する方が安全で、対象の形状と用途を読み取れる。" data-provenance="articles/provenance/ep082-article-02.md"><img loading="lazy" decoding="async" src="assets/load-lock-wafer-exchange-episode082/load-lock-02.webp" alt="ロードロック前室の内部" width="721" height="1280"><figcaption>ロードロック前室の内部。AI生成画像（OpenAI ImageGen）。WebPへ最適化、記事幅に合わせて縮小。個別の生成記録とSHAはprovenanceに記録。</figcaption></figure>
+
+<p data-fact-ids="F002 F003 F006">ウェハを取り出すときは、これと逆の順序になります。真空搬送室からロードロックへウェハを戻し、真空側を隔離してから、ロードロックを大気側へ戻します。ここで開け閉めしているのは小さな前室です。奥のプロセス室は、通常のウェハ交換で大気に戻しません。</p>
+
+<p data-fact-ids="F002 F003 F006">ロードロックの具体的なバルブ順や圧力条件は装置によって異なります。メーカー資料の一例として独立した排気系やゲートバルブ、搬送機構が説明されていますが、すべての装置が同じ構成とは限りません。ベントに使うガスや到達圧力も、用途、装置、レシピに依存します。「ロードロックは必ずこの圧力」と一つの数字で覚えるより、真空側を保ったままウェハを境界越しに受け渡す機能として理解する方が安全です。</p>
+
+<h2>問題は空気の量だけではない</h2>
+
+<p data-fact-ids="F004 F002">大気開放を避ける理由は、空気をポンプで抜き直す時間だけではありません。大気中の水蒸気は、真空チャンバーの内壁や部品表面へ吸着します。再び排気すると、表面に付いた水分が少しずつ脱離し、真空中へ出てきます。そのため、同じ容積の空気を抜くだけでも、表面状態や大気にさらされた時間によって排気の挙動が変わります。</p>
+
+<p class="visual-context">この記事では、ロードロックのウェハ受け渡しを具体物として確認します。</p><figure data-media-role="article-visual-03" data-visual-kind="photoreal" data-subject="ロードロックのウェハ受け渡し" data-purpose="外側と内側の境界を具体化する" data-composition="handoff" data-concrete-object="true" data-selection-reason="扉とウェハ受け渡しの場面を示す。既存EP082 v2の具体物画像を個別に再利用し、本文の因果を補う。" data-photo-assessment="実写素材の権利条件を追加確認せずに転載するより、既存のAI生成具体物を記事用に最適化する方が安全で、対象の形状と用途を読み取れる。" data-provenance="articles/provenance/ep082-article-03.md"><img loading="lazy" decoding="async" src="assets/load-lock-wafer-exchange-episode082/load-lock-03.webp" alt="ロードロックのウェハ受け渡し" width="721" height="1280"><figcaption>ロードロックのウェハ受け渡し。AI生成画像（OpenAI ImageGen）。WebPへ最適化、記事幅に合わせて縮小。個別の生成記録とSHAはprovenanceに記録。</figcaption></figure>
+
+<p data-fact-ids="F004 F002">水蒸気が残った状態では、真空の到達が遅くなったり、装置が処理を始められるまでの時間が伸びたりします。プロセス室全体を毎回大気へ戻す設計では、この負荷がウェハ交換のたびに発生します。ロードロックを使えば、主に小さな前室だけが大気開放の対象になります。真空側の内壁や搬送空間を不用意に空気へさらす機会を減らせます。</p>
+
+<p data-fact-ids="F004 F002">もちろん、ロードロックだけで汚染がゼロになるわけではありません。大気側の搬送でウェハが受ける影響や、装置内部の粒子、部品の表面状態などは別に管理する必要があります。ロードロックが守っているのは、真空側を大きな空間ごと頻繁に大気へ戻さないという境界機能です。</p>
+
+<p class="semicon-mid-cta">装置の構造を一つずつ確認したい場合は、<a href="https://semicon-campus.com/what-is-etching-semiconductor-process/">半導体製造工程の基礎記事</a>も続けて読むと、真空装置が各工程を支える位置づけを整理できます。</p>
+
+<h2>タクトを守る前室</h2>
+
+<p data-fact-ids="F002 F003">生産設備では、処理時間だけでなく、ウェハを入れ替える時間もタクトに含まれます。プロセス室をベントして再排気すると、排気時間に加えて、表面から出てくる水分や装置状態が落ち着くまで待つ負荷が加わります。ロードロックは、交換の対象となる容積を小さくし、奥のモジュールを真空のまま使えるようにします。</p>
+
+<p class="visual-context">この記事では、真空ゲートバルブと排気配管を具体物として確認します。</p><figure data-media-role="article-visual-04" data-visual-kind="photoreal" data-subject="真空ゲートバルブと排気配管" data-purpose="隔離と排気を担う部品を見せる" data-composition="valve" data-concrete-object="true" data-selection-reason="ゲートバルブと排気配管の実物風景を示す。既存EP082 v2の具体物画像を個別に再利用し、本文の因果を補う。" data-photo-assessment="実写素材の権利条件を追加確認せずに転載するより、既存のAI生成具体物を記事用に最適化する方が安全で、対象の形状と用途を読み取れる。" data-provenance="articles/provenance/ep082-article-04.md"><img loading="lazy" decoding="async" src="assets/load-lock-wafer-exchange-episode082/load-lock-04.webp" alt="真空ゲートバルブと排気配管" width="721" height="1280"><figcaption>真空ゲートバルブと排気配管。AI生成画像（OpenAI ImageGen）。WebPへ最適化、記事幅に合わせて縮小。個別の生成記録とSHAはprovenanceに記録。</figcaption></figure>
+
+<p data-fact-ids="F002 F003">このとき重要なのは、ロードロックが単に「真空を作る箱」ではないことです。大気側から来たウェハを受け入れ、真空側へ渡し、必要なら逆方向へ戻す。その境界をゲートバルブ、排気系、ベント系、搬送機構が分担しています。ロードロックは、圧力の切り替えと搬送の同期を成立させる装置です。</p>
+
+<h2>保全で見るのは到達圧力だけではない</h2>
+
+<p data-fact-ids="F005 F006">ロードロックの異常を考えるとき、「目標の圧力まで下がったか」だけを見ていると原因を取り違えることがあります。いつもよりポンプダウンに時間がかかるなら、リーク、表面の汚染、水分負荷、排気配管の制限、ポンプの状態、真空計のずれ、フランジシールの状態など、候補を切り分けます。</p>
+
+<p class="visual-context">この記事では、真空搬送ロボットのウェハを具体物として確認します。</p><figure data-media-role="article-visual-05" data-visual-kind="photoreal" data-subject="真空搬送ロボットのウェハ" data-purpose="前室から搬送室へ渡る動作を補足する" data-composition="arm" data-concrete-object="true" data-selection-reason="搬送アーム上のウェハを示す。既存EP082 v2の具体物画像を個別に再利用し、本文の因果を補う。" data-photo-assessment="実写素材の権利条件を追加確認せずに転載するより、既存のAI生成具体物を記事用に最適化する方が安全で、対象の形状と用途を読み取れる。" data-provenance="articles/provenance/ep082-article-05.md"><img loading="lazy" decoding="async" src="assets/load-lock-wafer-exchange-episode082/load-lock-05.webp" alt="真空搬送ロボットのウェハ" width="721" height="1280"><figcaption>真空搬送ロボットのウェハ。AI生成画像（OpenAI ImageGen）。WebPへ最適化、記事幅に合わせて縮小。個別の生成記録とSHAはprovenanceに記録。</figcaption></figure>
+
+<p data-fact-ids="F005 F006">たとえば、最終的な到達圧力は同じでも、そこへ着くまでの時間が長くなっているなら、装置の状態が変わった兆候かもしれません。反対に、圧力表示だけが不自然なら、真空計や配線を確認する必要があります。搬送位置やバルブの開閉状態に問題があれば、ポンプが正常でもウェハを次の室へ渡せません。</p>
+
+<p data-fact-ids="F005 F006">実際の保全では、装置の履歴とメーカーの基準を合わせて判断します。公開資料から業界共通の閾値を決めることはできません。圧力、ポンプダウン時間、バルブ動作、シール、配管、搬送の各情報を別々に見て、どこで変化が起きたかを追うことが大切です。</p>
+
+<h2>まとめ</h2>
+
+<p data-fact-ids="F001 F002 F004 F005">ロードロックは、ウェハ交換のたびに真空プロセス室全体を大気へ戻さないための前室です。外側と真空側をバルブで切り分け、ロードロックだけをベントと排気の間で往復させます。こうして真空搬送室やプロセス室を保ち、水蒸気や粒子など大気由来の負荷、再排気時間、装置状態の変動を抑えます。</p>
+
+<p data-fact-ids="F001 F002 F004 F005">覚えておきたいのは、ロードロックを「圧力の玄関」と考えることです。ウェハが大気側から入り、前室で条件を整え、真空ロボットが奥へ運ぶ。保全では、到達圧力に加えてポンプダウン時間やリーク、シール、配管、ポンプ、真空計、バルブ、搬送位置を確認する。ロードロックは、真空、清浄度、タクト、設備保全を一つの境界でつなぐ部品です。</p>
+
+<h2>装置の状態を読むときの順番</h2>
+
+<p>ロードロックの状態を確認するときは、表示された一つの数値だけで結論を出さないことが大切です。まず、ウェハを受け入れる外側のドアと、真空搬送室へつながるゲートバルブが、シーケンスどおりに隔離できているかを確認します。次に、排気を開始してから圧力が下がる曲線や、搬送許可が出るまでの時間を履歴と比べます。いつもより時間が伸びた場合は、リークだけに決めつけず、水分負荷、表面の汚れ、配管の抵抗、ポンプの能力、真空計の応答を順番に切り分けます。</p>
+
+<p class="visual-context">この記事では、クラスター型真空装置を具体物として確認します。</p><figure data-media-role="article-visual-06" data-visual-kind="photoreal" data-subject="クラスター型真空装置" data-purpose="ロードロックの先に複数室が続く構成を俯瞰する" data-composition="wide" data-concrete-object="true" data-selection-reason="複数モジュールを持つ装置全体を示す。既存EP082 v2の具体物画像を個別に再利用し、本文の因果を補う。" data-photo-assessment="実写素材の権利条件を追加確認せずに転載するより、既存のAI生成具体物を記事用に最適化する方が安全で、対象の形状と用途を読み取れる。" data-provenance="articles/provenance/ep082-article-06.md"><img loading="lazy" decoding="async" src="assets/load-lock-wafer-exchange-episode082/load-lock-06.webp" alt="クラスター型真空装置" width="721" height="1280"><figcaption>クラスター型真空装置。AI生成画像（OpenAI ImageGen）。WebPへ最適化、記事幅に合わせて縮小。個別の生成記録とSHAはprovenanceに記録。</figcaption></figure>
+
+<p>保全記録には、異常が起きた時刻、処理していた製品やレシピ、扉やバルブの動作、ポンプダウン時間、到達圧力、警報の内容を残します。こうした情報が揃うと、ロードロック単体の問題なのか、搬送室やプロセス室側の条件変化なのかを比較できます。装置ごとの基準値や復旧手順はメーカーのマニュアルと現場の安全規程に従う必要があり、公開資料だけで一律の閾値を決めることはできません。</p>
+
+<h2>ロードロックがつなぐ三つの視点</h2>
+
+<p>ロードロックの役割を覚えるときは、真空だけを見ないようにします。第一は清浄度です。真空側を大気にさらす回数を減らし、水分や粒子が奥へ入る機会を抑えます。第二はタクトです。交換のたびに大きな容積をベントして排気する必要がなくなり、装置が処理へ戻るまでの待ち時間を小さくできます。第三は搬送です。外側のドア、排気とベント、ゲートバルブ、ロボットが、互いの状態を確認しながら動くことで、ウェハを境界の両側へ渡せます。</p>
+
+<p class="visual-context">この記事では、真空チャンバー内壁の表面を具体物として確認します。</p><figure data-media-role="article-visual-07" data-visual-kind="photoreal" data-subject="真空チャンバー内壁の表面" data-purpose="水蒸気や表面状態が再排気へ関係する説明を補う" data-composition="surface" data-concrete-object="true" data-selection-reason="チャンバー内壁の表面状態を接写する。既存EP082 v2の具体物画像を個別に再利用し、本文の因果を補う。" data-photo-assessment="実写素材の権利条件を追加確認せずに転載するより、既存のAI生成具体物を記事用に最適化する方が安全で、対象の形状と用途を読み取れる。" data-provenance="articles/provenance/ep082-article-07.md"><img loading="lazy" decoding="async" src="assets/load-lock-wafer-exchange-episode082/load-lock-07.webp" alt="真空チャンバー内壁の表面" width="721" height="1280"><figcaption>真空チャンバー内壁の表面。AI生成画像（OpenAI ImageGen）。WebPへ最適化、記事幅に合わせて縮小。個別の生成記録とSHAはprovenanceに記録。</figcaption></figure>
+
+<p>この三つは別々の機能に見えますが、実際には同じ境界の管理です。真空を維持できてもバルブが所定の位置へ動かなければ搬送できず、搬送できても表面状態が不安定なら次の処理の再現性に影響します。ロードロックは、装置の奥を守る小さな前室であり、設備状態を観察する窓でもあります。</p>
+
+<p class="visual-context">この記事では、真空ポンプと排気配管を具体物として確認します。</p><figure data-media-role="article-visual-08" data-visual-kind="photoreal" data-subject="真空ポンプと排気配管" data-purpose="ポンプダウンと排気系の保全対象を示す" data-composition="pump" data-concrete-object="true" data-selection-reason="ポンプダウンと排気系の保全対象を示す。既存EP082 v2の具体物画像を個別に再利用し、本文の因果を補う。" data-photo-assessment="実写素材の権利条件を追加確認せずに転載するより、既存のAI生成具体物を記事用に最適化する方が安全で、対象の形状と用途を読み取れる。" data-provenance="articles/provenance/ep082-article-08.md"><img loading="lazy" decoding="async" src="assets/load-lock-wafer-exchange-episode082/load-lock-08.webp" alt="真空ポンプと排気配管" width="721" height="1280"><figcaption>真空ポンプと排気配管。AI生成画像（OpenAI ImageGen）。WebPへ最適化、記事幅に合わせて縮小。個別の生成記録とSHAはprovenanceに記録。</figcaption></figure>
+
+<p class="visual-context">この記事では、真空搬送室のロボットを具体物として確認します。</p><figure data-media-role="article-visual-09" data-visual-kind="photoreal" data-subject="真空搬送室のロボット" data-purpose="境界を越えた後の搬送を見せる" data-composition="robot" data-concrete-object="true" data-selection-reason="境界を越えた後の搬送を見せる。既存EP082 v2の具体物画像を個別に再利用し、本文の因果を補う。" data-photo-assessment="実写素材の権利条件を追加確認せずに転載するより、既存のAI生成具体物を記事用に最適化する方が安全で、対象の形状と用途を読み取れる。" data-provenance="articles/provenance/ep082-article-09.md"><img loading="lazy" decoding="async" src="assets/load-lock-wafer-exchange-episode082/load-lock-09.webp" alt="真空搬送室のロボット" width="721" height="1280"><figcaption>真空搬送室のロボット。AI生成画像（OpenAI ImageGen）。WebPへ最適化、記事幅に合わせて縮小。個別の生成記録とSHAはprovenanceに記録。</figcaption></figure>
+
+<p class="visual-context">この記事では、真空装置を点検する保全担当者を具体物として確認します。</p><figure data-media-role="article-visual-10" data-visual-kind="photoreal" data-subject="真空装置を点検する保全担当者" data-purpose="圧力だけでなく履歴や動作を切り分ける現場を示す" data-composition="maintenance" data-concrete-object="true" data-selection-reason="圧力だけでなく履歴や動作を切り分ける現場を示す。既存EP082 v2の具体物画像を個別に再利用し、本文の因果を補う。" data-photo-assessment="実写素材の権利条件を追加確認せずに転載するより、既存のAI生成具体物を記事用に最適化する方が安全で、対象の形状と用途を読み取れる。" data-provenance="articles/provenance/ep082-article-10.md"><img loading="lazy" decoding="async" src="assets/load-lock-wafer-exchange-episode082/load-lock-10.webp" alt="真空装置を点検する保全担当者" width="721" height="1280"><figcaption>真空装置を点検する保全担当者。AI生成画像（OpenAI ImageGen）。WebPへ最適化、記事幅に合わせて縮小。個別の生成記録とSHAはprovenanceに記録。</figcaption></figure>
+
+<section class="maintenance-route-section" id="maintenance-related-learning"><h2>圧力と動作の順番を、基礎知識へ戻して考える</h2><p>ロードロックの保全では、圧力変化、バルブの状態、ウェハ搬送のタイミングを合わせて読むことが接点になります。「圧力が下がらない」と記録できても、バルブや動作順序の役割が曖昧なら、機械・電気のどちらの基礎を補うか一つ選んでみましょう。</p></section>
+<h2>よくある誤解</h2>
+
+<h3>Q. ロードロックがあれば汚染は完全になくなりますか？</h3>
+
+<p>いいえ。ロードロックは真空側を大きな空間ごと頻繁に大気へ戻さないための境界です。大気側の搬送、粒子、部品表面などは別に管理します。</p>
+
+<h3>Q. どの装置でも同じ圧力まで下げればよいですか？</h3>
+
+<p>いいえ。要求圧力、ポンプ構成、ベント方式は装置、用途、レシピに依存します。共通の一つの数値として断定せず、メーカー基準と装置履歴で判断します。</p>
+
+
+
+<p class="semicon-three-line-recap" data-fact-ids="F001 F002 F004 F005">ロードロックは大気と真空を切り替える前室です。<br>奥のプロセス室を開けず、ウェハを境界の両側へ渡します。<br>保全では圧力だけでなく、水分、リーク、ポンプ、シール、搬送を切り分けます。</p>
+
+<p class="visual-context">この記事では、ロードロックの圧力境界を具体物として確認します。</p><figure data-media-role="summary-infographic" data-visual-kind="diagram" data-subject="ロードロックの圧力境界" data-purpose="大気側から前室を経て真空側へウェハを渡す関係をまとめる" data-composition="three-panel-boundary" data-concrete-object="false" data-selection-reason="写真だけでは大気側・前室・真空側の関係を一枚の順序として示せないため、既存の具体物写真を三面に再配置した。" data-photo-assessment="三つの実物写真を個別に並べるだけでは境界をまたぐ順序が伝わりにくく、まとめ段落の関係整理に限って編集図を採用した。" data-diagram-justification="大気側、ロードロック前室、真空側を同じ一枚で順序づける関係は、個別の写真だけでは伝わらないため、本文のまとめに限って編集インフォグラフィックを採用した。" data-provenance="articles/provenance/ep082-article-summary.md"><img loading="lazy" decoding="async" src="assets/load-lock-wafer-exchange-episode082/load-lock-summary-infographic.webp" alt="ロードロックの圧力境界を大気側、前室、真空側の順に示すまとめインフォグラフィック" width="1200" height="800"><figcaption>ロードロックの圧力境界を示すまとめインフォグラフィック。EP082 episode-local summary infographic（AI生成画像3点を編集）。3枚のAI生成写真を横並びに再配置し、日本語の関係ラベルと矢印を追加。</figcaption></figure>
+
+<section class="maintenance-route-section" id="maintenance-related-hub"><h2>真空の状態を読む力を、保全の仕事に結び付ける</h2><p>点検、状態の記録、異常報告をどこまで担当するかは職場によって違います。設備保全Hubで仕事内容と自分の製造経験を照合し、求人を見る前に補う知識も整理できます。</p><aside class="semicon-cta maintenance-route-card" aria-label="設備保全Hubへの案内"><h3>設備保全Hubで、仕事・求人・学習をまとめて確認</h3><div class="semicon-btnrow"><a class="semicon-btn maintenance-route-button" href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/" data-maintenance-hub="277" data-cta="maintenance_hub" data-cta-type="maintenance_hub" data-cta-stage="career" data-cta-id="maintenance_1203_hub277_end" data-cta-route="maintenance_1203_hub277_end">真空の学びから設備保全の仕事内容と次の行動を確認する</a></div></aside></section>
+
+<h2>参考にした公式情報</h2>
+
+<ul class="semicon-sources">
+
+<li data-source-id="S01">Pfeiffer Vacuum, <a href="https://www.pfeiffervacuum.com/global/en/applications/load-lock-transfer/">Vacuum Technology for Load Lock and Transfer</a></li>
+
+<li data-source-id="S02">Leybold, <a href="https://www.leybold.com/en/products/systems-and-solutions/coating-systems/univex-coating-processes">UNIVEX coating processes — Load lock</a></li>
+
+<li data-source-id="S03">Pal et al., <a href="https://doi.org/10.1088/1742-6596/390/1/012045">Removal of water from unbaked vacuum system</a></li>
+
+<li data-source-id="S04">Leybold, <a href="https://www.leybold.com/en-us/knowledge/vacuum-fundamentals/vacuum-maintenance/general-troubleshooting">General troubleshooting</a></li>
+
+<li data-source-id="S05">Pfeiffer Vacuum, <a href="https://www.pfeiffervacuum.com/global/en/knowledge/vacuum-technology/knowledge-book/4-vacuum-generation/4_9_turbomolecular_pumps/">Evacuating load lock chambers</a></li>
+
+<li data-source-id="S06">Pfeiffer Vacuum, <a href="https://www.pfeiffervacuum.com/global/en/industries/semiconductor/">Semiconductor Manufacturing</a></li>
+
+<li data-source-id="S07">Brooks Automation, <a href="https://www.brooks.com/solutions/vacuum-automation/">Vacuum Automation</a></li>
+
+<li data-source-id="S08">Applied Materials, <a href="https://www.appliedmaterials.com/us/en/product-library/endura-pvd.html">Endura PVD</a></li>
+
+</ul>
+
+<h2>短尺抽出メモ</h2>
+
+<p>視聴者の疑問は「なぜ奥の真空室を毎回開けずにウェハを交換できるのか」。保持する因果は「小さな前室だけをベント・排気し、ゲートバルブで真空側を隔離して搬送する」。メーカー固有の圧力値、ベントガス、保全操作手順は断定しない。45〜60秒候補は、投入→外側閉鎖→前室排気→ゲート開放→搬送→水蒸気と保全指標の順で説明する。</p>
+
+</article>
+
+
+
+
+
+
+
+
+<aside class="related-spokes"><h2>あわせて読みたい</h2><ul><li><a href="/electrostatic-chuck-wafer-temperature/">半導体のウェハはなぜ装置に吸着する？静電チャックと温度制御の役割</a></li><li><a href="/efem-load-port-foup/">ウェハはどうやって装置に入る？FOUPとEFEMの搬送を追う</a></li></ul></aside>
+<p class="pillar-link">装置の主要部品の全体像は、<a href="/semiconductor-equipment-components-map/">半導体製造装置の構造・主要部品マップ</a>で確認できます。</p>

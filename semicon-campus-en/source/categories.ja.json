@@ -1,0 +1,107 @@
+[
+ {
+  "id": 4,
+  "name": "AI半導体・GPU",
+  "slug": "ai-semiconductor-gpu",
+  "parent": 0,
+  "description": "GPU、AI半導体、NVIDIA、HBM、チップレットなど。"
+ },
+ {
+  "id": 8,
+  "name": "MOL・BEOL",
+  "slug": "mol-beol",
+  "parent": 0,
+  "description": "コンタクト、ビア、銅配線、Low-k、多層配線、RC遅延。"
+ },
+ {
+  "id": 1,
+  "name": "お知らせ",
+  "slug": "news",
+  "parent": 0,
+  "description": "サイト更新、運営からのお知らせ。"
+ },
+ {
+  "id": 6,
+  "name": "ウェハ・材料",
+  "slug": "wafer-materials",
+  "parent": 0,
+  "description": "高純度シリコン、単結晶、ウェハ加工、材料メーカー。"
+ },
+ {
+  "id": 11,
+  "name": "企業研究・サプライチェーン",
+  "slug": "companies-supply-chain",
+  "parent": 0,
+  "description": "TSMC、ASML、東京エレクトロン、SCREEN、信越化学、SUMCOなど。"
+ },
+ {
+  "id": 7,
+  "name": "前工程 FEOL",
+  "slug": "feol",
+  "parent": 0,
+  "description": "酸化、成膜、リソグラフィ、エッチング、イオン注入、洗浄、CMP。"
+ },
+ {
+  "id": 2,
+  "name": "半導体の基礎",
+  "slug": "semiconductor-basics",
+  "parent": 0,
+  "description": "半導体とは何か、シリコン、PN接合、MOSFETなどの基礎。"
+ },
+ {
+  "id": 3,
+  "name": "半導体の歴史と微細化",
+  "slug": "history-scaling",
+  "parent": 0,
+  "description": "真空管、トランジスタ、IC、ムーアの法則、EUV、FinFET、GAA。"
+ },
+ {
+  "id": 20,
+  "name": "半導体ニュース",
+  "slug": "semiconductor-news",
+  "parent": 0,
+  "description": "半導体ニュースと企業・技術の最新動向"
+ },
+ {
+  "id": 5,
+  "name": "半導体製造工程",
+  "slug": "manufacturing-process",
+  "parent": 0,
+  "description": "砂・石英からウェハ、前工程、後工程、製品までの全体像。"
+ },
+ {
+  "id": 10,
+  "name": "後工程・先端パッケージ",
+  "slug": "packaging",
+  "parent": 0,
+  "description": "ダイシング、ボンディング、2.5D/3D、TSV、HBM、CoWoS。"
+ },
+ {
+  "id": 9,
+  "name": "検査・計測・歩留まり",
+  "slug": "inspection-yield",
+  "parent": 0,
+  "description": "CD-SEM、欠陥検査、膜厚測定、オーバーレイ、歩留まり解析。"
+ },
+ {
+  "id": 13,
+  "name": "用語集",
+  "slug": "glossary",
+  "parent": 0,
+  "description": "半導体・AI半導体・製造工程の用語を短く整理。"
+ },
+ {
+  "id": 12,
+  "name": "職種・転職",
+  "slug": "careers",
+  "parent": 0,
+  "description": "プロセス、装置、材料、検査、品質、歩留まり、フィールドサービスなど。"
+ },
+ {
+  "id": 21,
+  "name": "装置・保全・真空",
+  "slug": "equipment-maintenance-vacuum",
+  "parent": 0,
+  "description": "半導体製造装置の部品（真空・ガス・プラズマ・搬送・温調）と設備保全の解説記事。"
+ }
+]
