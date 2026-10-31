@@ -1,0 +1,109 @@
+<!--KEEP:0-->
+
+
+<!--KEEP:1-->
+
+
+<!--KEEP:2-->
+<div class="semicon-article" id="semicon-top">
+
+<div class="semicon-level"><span class="semicon-level-label">Learning level</span> <strong>Beginner</strong><p>This article is for readers who already know NAND is memory for storing data and want to learn how data is managed inside an SSD.</p></div>
+
+<p class="semicon-lead">An <strong>SSD controller</strong> is the command center that receives instructions from a PC or smartphone and decides where in the NAND to store data. It spreads out writes and fixes errors during reads, turning NAND into storage that is easy to use.</p>
+
+<p>If you want to review memory basics first, read <a href="https://semicon-campus.com/cpu-memory-storage-difference/">The Difference Between CPU, Memory, and Storage</a>, then <a href="https://semicon-campus.com/dram-nand-difference/">The Difference Between DRAM and NAND</a>. This will make the article easier to follow.</p>
+
+<div class="semicon-map"><h3>What you will learn</h3><div class="semicon-scope-grid"><div class="semicon-scope-block"><b>3 things to understand first</b><ol><li>Why the SSD controller is the command center for NAND</li><li>Its 3 jobs: choosing where to store data, spreading out writes, and correcting errors</li><li>Why NAND alone is hard to use as an SSD</li></ol></div><div class="semicon-scope-block deep"><b>4 topics for going one step deeper</b><ol><li>FTL</li><li>Wear leveling</li><li>ECC</li><li>Garbage collection</li></ol></div></div></div>
+
+
+<h2>What is an SSD controller?</h2>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>An SSD is a device that stores data in NAND, right? Do we really need a controller?</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>NAND is where data is stored, but it does not understand and manage the PC's commands on its own. A command center is needed in between.</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>So NAND is the warehouse, and the controller is the person who manages package addresses and what goes in and out.</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>That is a good starting point. In reality, an LSI chip and firmware bridge the host's commands and the physical operation of the NAND.</p></div></div>
+
+<figure class="semicon-figure"><img src="https://semicon-campus.com/wp-content/uploads/2026/07/ssd-controller-command-system-overview.png" alt="Overview of an SSD controller receiving PC commands and reading from and writing to multiple NAND chips" width="1536" height="864" loading="eager" decoding="async"><figcaption>The SSD controller bridges the host's commands and the physical operation of the NAND.</figcaption></figure>
+
+<div class="semicon-note"><p><strong>The short answer:</strong> An SSD controller is not NAND itself. It is a logic chip plus control software that manages NAND so it can be used as storage.</p></div>
+<p class="semicon-one-line">Summary so far: The SSD controller is the command center that connects the host and the NAND.</p>
+
+<h2>Why NAND alone does not make an SSD</h2>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>Couldn't we just write the file name and storage location directly to the NAND?</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>The host sends commands using logical numbers, but NAND writes in pages and erases in blocks. They use different units and rules.</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>So we need to translate the PC's addresses into the actual shelf numbers inside the NAND.</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>Exactly. On top of that, cells have a limited number of rewrites, and errors can happen. The controller manages not just locations but how the NAND is used.</p></div></div>
+
+<div class="semicon-grid"><div class="semicon-card"><b>Write and erase units are different</b><span>NAND writes to pages and erases in blocks, which contain multiple pages.</span></div><div class="semicon-card"><b>Writes cannot pile up in one place</b><span>If rewrites are concentrated in one area, those blocks tend to wear out faster.</span></div><div class="semicon-card"><b>Prepare for read errors</b><span>The controller detects and corrects bit errors that occur depending on storage density and usage.</span></div></div>
+<p class="semicon-one-line">Summary so far: NAND's physical rules must be translated into an easy-to-use storage device.</p>
+
+<h2>3 jobs to learn first</h2>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>It seems to have lots of functions. What should I learn first?</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>Deciding where to store data, spreading out writes, and fixing errors. Start with these 3.</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>So it plays 3 roles: address clerk, lifespan protector, and data protector.</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>Nicely organized. In reality there is also parallel processing, encryption, power management, and more, but how these are implemented differs by product.</p></div></div>
+
+<figure class="semicon-figure"><img src="https://semicon-campus.com/wp-content/uploads/2026/07/ssd-controller-three-jobs-address-wear-ecc.png" alt="The 3 roles of an SSD controller: managing storage locations, spreading out writes, and correcting errors" width="1536" height="864" loading="lazy" decoding="async"><figcaption>At first, it is enough to remember 3 roles: "decide the location, spread out writes, fix errors."</figcaption></figure>
+
+<p class="semicon-one-line">The SSD controller handles address translation, spreading the rewrite load, and data protection all together.</p>
+
+<div class="semicon-basic-complete">You now understand the basics of the SSD controller.</div>
+
+<div class="semicon-deep-break"><strong>Going one step deeper</strong><p>The rest of this article is for readers who want to learn about FTL, wear leveling, ECC, and garbage collection. If you only want the basics, <a href="#ssd-controller-summary">feel free to skip to the Summary</a>.</p></div>
+
+<h2>FTL: Matching visible addresses to actual locations</h2>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>When I overwrite the same file, does it get written to the same cells?</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>Not necessarily the same place. The FTL updates the mapping between logical addresses and physical addresses.</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>So even if the user sees the same address, the actual storage shelf can be swapped.</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>Right. FTL stands for Flash Translation Layer. It holds that mapping table and is the core of NAND management.</p></div></div>
+<div class="semicon-note"><p><strong>Technical note:</strong> In a typical SSD, the host accesses data using logical block numbers called LBAs, and the controller maps them to physical locations in the NAND. The mapping method and the division of work between host and device differ by product and approach.</p></div>
+<p class="semicon-one-line">Summary so far: The FTL maps the host's addresses to the actual locations in the NAND.</p>
+
+<h2>Wear leveling: Reducing uneven rewrites</h2>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>If some data is updated often, won't just that spot wear out?</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>That is why the controller spreads out where data is written, so erase counts do not pile up on specific blocks.</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>It's like rotating your shoes instead of wearing out just one pair.</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>That is a close analogy. But lifespan also depends on the type of NAND, temperature, amount of writing, and control method.</p></div></div>
+<p class="semicon-one-line">Summary so far: Wear leveling spreads out the load of erasing and writing.</p>
+
+<h2>ECC: Fixing errors in data that is read</h2>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>Can't the stored 0s and 1s just be read back exactly?</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>Variation in charge states and wear can cause bit errors during reads. ECC detects and corrects them.</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>So it stores extra information for checking answers, and uses it to find and fix mistakes.</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>That understanding is fine. The correction capability and method differ depending on the NAND and controller design.</p></div></div>
+<p class="semicon-one-line">Summary so far: ECC detects read errors and restores the original data, within the range it can correct.</p>
+
+<h2>Garbage collection: Creating blocks that can be erased</h2>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>Can't new data be written right away where a deleted file was?</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>NAND erases in blocks. The pages you want to keep must be moved elsewhere before the block can be erased.</p></div></div>
+<div class="semicon-chat-row naoki"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Naoki</div></div><div class="semicon-bubble"><p>So you move the packages you need to another shelf, then empty the whole shelf and reuse it.</p></div></div>
+<div class="semicon-chat-row teacher"><div class="semicon-avatar"><div class="semicon-avatar-face"></div><div class="semicon-avatar-name">Professor Owl</div></div><div class="semicon-bubble"><p>Yes. This behind-the-scenes moving and erasing also affects performance and the amount of extra writing.</p></div></div>
+
+<!-- SSD_CONTROLLER_FIGURE_3_OPTIONAL: 3 steps: move valid pages, erase block, recover free pages. An image can replace the analogy in the text -->
+
+<div class="semicon-note"><p><strong>How it differs from TRIM:</strong> TRIM is a way for the host to tell the SSD, "This logical area is no longer needed." Garbage collection has a different role: it actually moves valid data, erases blocks, and creates free space.</p></div>
+<p class="semicon-one-line">Summary so far: Garbage collection moves needed data out of the way so blocks can be reused.</p>
+
+
+<section class="mp3-section" id="revenue-phase3-learning"><h2>Choosing your own storage setup based on how SSDs work</h2><p>Once you understand the role of the SSD controller, compare products after sorting out how much data you store, how much you write, and what interface your device uses. Check not only maximum speed but also warranty and endurance ratings, capacity, and temperature conditions. Back up the data you need before replacing a drive, and if swapping parts is difficult, you can also compare against upgrading the whole PC. People with evaluation or inspection experience can extend this knowledge to product quality and equipment jobs.</p><p>Notes to check before comparing: M.2 size, SATA/NVMe support, capacity, warranty, endurance, and how to migrate. Separate what you can try with your current setup from what needs upgrading, then choose your candidates.</p></section>
+
+<h2>The controller shapes an SSD's character</h2>
+<div class="semicon-grid"><div class="semicon-card"><b>Performance</b><span>Parallel use of multiple NAND channels, queue handling, caching, and firmware design all have an effect.</span></div><div class="semicon-card"><b>Endurance and reliability</b><span>Wear leveling, ECC, bad block management, and power-loss protection all play a part.</span></div><div class="semicon-card"><b>Optimization for use</b><span>Consumer, data center, and embedded SSDs prioritize performance, power consumption, and protection features differently.</span></div></div>
+<p>Not all SSDs have the same functions or configuration. Whether there is a DRAM cache, the ECC method, spare area, power-loss protection, encryption, and more differ by product. You cannot simply conclude "same NAND means same performance."</p>
+<p class="semicon-one-line">Summary so far: An SSD is a system that includes not only NAND but also a controller and firmware.</p>
+
+<h2 id="ssd-controller-summary">Summary</h2>
+<div class="semicon-note"><p><strong>3 points to remember first</strong></p><ol><li>The SSD controller is the command center that connects the host and the NAND</li><li>It decides where to store data, spreads out writes, and fixes errors</li><li>FTL, wear leveling, ECC, and garbage collection make NAND easy to use</li></ol></div>
+
+<div class="semicon-links"><div class="semicon-linkbox next"><h3>Review the basics</h3><p><a href="https://semicon-campus.com/dram-nand-difference/">The Difference Between DRAM and NAND</a></p><p><a href="https://semicon-campus.com/cpu-memory-storage-difference/">The Difference Between CPU, Memory, and Storage</a></p></div><div class="semicon-linkbox"><h3>Learn step by step</h3><p><a href="https://semicon-campus.com/semiconductor-beginner-roadmap/">Back to the Semiconductor Beginner Roadmap</a></p></div></div>
+
+<div class="semicon-map"><h3>Topics to explore next</h3><ul><li>What are NAND pages and blocks?</li><li>SSD lifespan and TBW</li><li>The difference between NVMe and SATA</li></ul><p>Links are not added for articles that have not been written yet.</p></div>
+
+
+<section class="mp3-section" id="revenue-phase3-career"><h2>Connect what you learned here to your next job or study</h2><p>Organize your experience in product evaluation, write/read testing, and quality records by target, task, and the results you checked. Comparing scope of work, required experience, work location, work schedule and business travel, and training programs makes it clear what knowledge to add next.</p><aside class="semicon-cta mp3-card"><h3>See job duties, openings, and learning for related roles</h3><p>See which jobs use the technology from this article: inspection and recovery, equipment startup, customer support, or assembly and process improvement. Go on to the job articles to learn how to choose openings and study options.</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-equipment-engineer/" class="semicon-btn mp3-button" data-revenue-phase3-hub="237" data-cta="equipment_hub" data-cta-type="equipment_hub" data-cta-stage="career" data-cta-id="phase3_501_hub237_end" data-cta-route="phase3_501_hub237_end">See equipment engineer duties, openings, and learning</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/" class="semicon-btn mp3-button" data-revenue-phase3-hub="277" data-cta="maintenance_hub" data-cta-type="maintenance_hub" data-cta-stage="career" data-cta-id="phase3_501_hub277_end" data-cta-route="phase3_501_hub277_end">Check job duties, openings, and learning in the Equipment Maintenance Hub</a></div></aside></section>
+
+
+<h2>References</h2>
+<ul><li><a rel="noopener" href="https://www.kioxia.com/en-jp/rd/organization/process.html" target="_blank">KIOXIA: Product Development Process</a></li><li><a rel="noopener" href="https://jp.micron.com/products/storage/nand-flash/choosing-the-right-nand" target="_blank">Micron: Types of NAND Flash Memory</a></li><li><a rel="noopener" href="https://www.micron.com/about/micron-glossary/solid-state-drives" target="_blank">Micron: What is an SSD?</a></li><li><a rel="noopener" href="https://www.snia.org/education/what-is-ssd" target="_blank">SNIA: What is an SSD?</a></li></ul>
+
+<a class="semicon-backtop" href="#semicon-top">↑ Back to top</a>
+</div>
