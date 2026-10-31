@@ -1,0 +1,64 @@
+<p>On October 5, 2026, OMNIVISION announced the "OG05D," a CMOS image sensor that combines 2.2µm pixels, about 5MP resolution, a global shutter, and HDR. It lists barcode scanners, factory automation, compact AI cameras, humanoid robots, and data-collection devices for robot training as applications. Samples are available now, and mass production is planned for Q4 2026. However, this is the company's plan, and it does not mean that the start of mass production or shipments had been confirmed as of October 9, 2026. <a href="https://www.ovt.com/press-releases/omnivision-launches-industrys-first-2-2-micron-global-shutter-hdr-sensor-for-flagship-industrial-and-robotics-machine-vision-cameras/">OMNIVISION official announcement</a></p>
+<p>The announcement date was October 5, and VISION 2026, where the product exhibit was announced, ran from October 6 to 8. So the event had already ended by the time this article was published. The exhibit notice shows there was a chance to present the product, but it does not prove real-world performance or customer adoption. <a href="https://www.ovt.com/company/events/vision-2026/">Official VISION 2026 notice</a></p>
+<h2>Official OG05D specifications</h2>
+<p>The OG05D is an approximately 5MP sensor with 2592 × 1944 pixels. The pixel size is 2.2µm, the optical format is 1/2.525 inch, and it supports a MIPI interface and CSP packaging. The product page says it supports 10-, 12-, 14-, and 16-bit HDR RAW output. It can be described as a product aimed at easy integration into small camera modules, but the actual camera size also depends on the lens, board, heat-dissipation parts, and more. <a href="https://www.ovt.com/products/og05d/">Official OG05D product page</a></p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Listed on the official page</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Linear capture</td>
+<td>Up to 146fps without encryption</td>
+</tr>
+<tr>
+<td>Linear capture with encryption</td>
+<td>Up to 130fps</td>
+</tr>
+<tr>
+<td>3-exposure HDR</td>
+<td>Up to 60fps</td>
+</tr>
+<tr>
+<td>Key technologies</td>
+<td>Nyxel NIR, PureCel®Plus-S, RGB-IR, DCG</td>
+</tr>
+</tbody>
+</table>
+<p>Note that 146fps, 130fps, and 60fps are not figures for the same capture conditions. The mode and speed change depending on whether HDR or encryption is used, so you cannot simply read this as "146fps even with HDR."</p>
+<h2>What problem does a global shutter solve?</h2>
+<p>A <strong>global shutter</strong> exposes all pixels on the sensor at the same moment and then reads them out. A <strong>rolling shutter</strong>, by contrast, processes the image line by line from top to bottom, with a time lag between lines.</p>
+<p>When you capture fast-moving parts or a robot arm with a rolling shutter, the top and bottom of the object are captured at different times. As a result, straight lines can look slanted, or shapes and positions can be distorted. A global shutter captures the whole image at the same instant, so it makes this kind of motion distortion easier to avoid. Sony's official technical materials also describe machine vision inspection, barcodes, and robot arms as related applications. <a href="https://www.sony-semicon.com/en/feature/2021020201.html">Sony's Pregius S explainer</a> <a href="https://www.sony-semicon.com/en/technology/industry/pregius.html">Sony's description of global shutter technology</a></p>
+<p>In factories and logistics facilities, cameras measure the positions of parts on conveyors and recognize objects for robots to pick up. In these situations, it is important not only to have enough pixels but also to accurately capture the shape and position of moving objects. Our reading of the materials is that combining 2.2µm pixels, 5MP, and a global shutter in one sensor may suit applications that need both small size and motion capture.</p>
+<h2>The roles of HDR and near-infrared imaging</h2>
+<p><strong>HDR (high dynamic range)</strong> is a technology that prevents blown-out highlights and crushed shadows when bright and dark areas appear in the same image. For example, in a factory that captures a brightly lit metal part and the dark area behind it at the same time, normal capture can lose information from one of them.</p>
+<p>Typical multi-exposure HDR combines several images with different brightness levels. But if the object moves between exposures, the images can be misaligned, creating artifacts around edges. OMNIVISION explains this issue and offers both single-exposure HDR using DCG and 3-exposure HDR on the OG05D. Single-exposure HDR is expected to suit moving objects better than methods that combine images taken at different times, but the OG05D's real-world performance has not been independently proven. Results depend on lighting, exposure settings, object speed, lens, ISP, recognition software, and more. <a href="https://www.ovt.com/technologies/">OMNIVISION's technology overview</a></p>
+<p><strong>NIR (near-infrared)</strong> imaging captures light in the near-infrared range, which is hard for the human eye to see. Official materials state that the OG05D combines Nyxel NIR for near-infrared imaging, RGB-IR for handling both visible and infrared information, PureCel®Plus-S, and DCG. From these technology names, we can see that it aims for image capture that does not rely only on visible light, as well as small size and high speed. However, the materials reviewed here alone are not enough to state its performance for specific uses such as distance measurement or material identification.</p>
+<h2>What this means for robot vision</h2>
+<p>Robot cameras need to capture moving objects with little distortion, extract information from scenes with big differences between light and dark, be small, and output images fast enough. The OG05D uses a global shutter to reduce motion distortion, HDR to handle light-dark differences, built-in NIR-related technologies, and small pixels and CSP to reduce size. This combination may suit industrial and robot vision, but there are no materials confirming the benefits of adoption or improved robot recognition accuracy.</p>
+<p>OMNIVISION says the sensor is 143% faster and 30% smaller than the previous generation, with lower power consumption, higher NIR quantum efficiency, and lower noise. However, the comparison target, measurement conditions, temperature, resolution, and output mode are not fully shown, so these should be treated as company claims. They cannot be stated as an objective advantage over competing products or an improvement in overall system performance.</p>
+<h2>Mass-production plans and what to check next</h2>
+<p>What we can confirm as of October 9, 2026, is the product announcement, the public specifications, the statement that samples are available, and the company's plan for mass production in Q4 2026. Sample availability shows that customers and developers can evaluate the product, but it does not mean mass-produced units are shipping steadily or that the sensor has been adopted in final products.</p>
+<p>Going forward, it is important to check the following points separately.</p>
+<ul>
+<li>Whether mass production and shipments actually began in Q4 2026</li>
+<li>Whether there are differences in specifications or performance between samples and mass-produced units</li>
+<li>Whether third-party evaluations measuring HDR, NIR, noise, and power consumption under the same conditions are published</li>
+<li>Whether real-hardware demos in factories, barcode reading, and robots can be reproduced</li>
+<li>Whether benefits can be confirmed for the whole system, including the camera, ISP, data transfer, and AI inference</li>
+</ul>
+<p>Even if the sensor alone has a high frame rate, the robot's overall response speed will not improve if the lens, data transfer, image processing, or AI inference is slow. The OG05D is a promising candidate that tries to handle several challenges in one component, but as of the announcement, it is not a complete system backed by mass-production results and independent performance evaluations.</p>
+<h2>Summary</h2>
+<p>The OG05D combines a 2.2µm-pixel, 5MP global shutter sensor with HDR, near-infrared imaging, and a small package. Its key feature is that it may address the challenges of industrial cameras: fast motion, light-dark differences, and small size. On the other hand, mass production is still planned, and its performance advantages and customer adoption have not been independently confirmed. Going forward, the start of mass production, measured data, and reproducibility on real hardware need to be evaluated separately.</p>
+<h3>Sources used</h3>
+<ul>
+<li><a href="https://www.ovt.com/press-releases/omnivision-launches-industrys-first-2-2-micron-global-shutter-hdr-sensor-for-flagship-industrial-and-robotics-machine-vision-cameras/">OMNIVISION official announcement (October 5, 2026)</a></li>
+<li><a href="https://www.ovt.com/products/og05d/">OMNIVISION OG05D official product page</a></li>
+<li><a href="https://www.ovt.com/technologies/">OMNIVISION Technologies</a></li>
+<li><a href="https://www.sony-semicon.com/en/feature/2021020201.html">Sony Semiconductor Solutions Group: Pregius S explainer</a></li>
+<li><a href="https://www.sony-semicon.com/en/technology/industry/pregius.html">Sony Semiconductor Solutions Group: Global Shutter Technology</a></li>
+<li><a href="https://www.ovt.com/company/events/vision-2026/">OMNIVISION official VISION 2026 notice</a></li>
+</ul>
