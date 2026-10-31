@@ -1,0 +1,124 @@
+<p>"The tool is running. No alarms are going off. And yet, today we are stopping it for cleaning."</p>
+<p>In a semiconductor fab, this kind of decision is sometimes necessary.</p>
+<p>If you stop a machine that is not broken, you cannot process wafers in the meantime. Considering output, you would want to keep it running as much as possible.</p>
+<p>So why stop it?</p>
+<p>The answer is that <strong>a tool that runs and a tool that keeps making chips at the same quality are two different things</strong>.</p>
+<p>Seen from the outside, the chamber of a semiconductor manufacturing tool is a sealed, clean container. But the processing that happens inside it creates deposits on the inner walls. Left alone, invisible changes can eventually show up in wafer quality.[1][2]</p>
+<p>And the story does not end with "just remove the dirt." Even a freshly cleaned chamber has things that must be checked before the next product goes in.</p>
+<h2>What you will learn in this article</h2>
+<ul>
+<li>Why deposits form inside the chamber during processing</li>
+<li>How deposits lead to particles and changes in process conditions</li>
+<li>Why the chamber is checked after cleaning before returning to production</li>
+</ul>
+<figure>
+<img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/fig01.jpg" alt="Conceptual image of a semiconductor tool chamber with a thin deposit on its inner metal wall"><figcaption>An AI-generated conceptual image explaining chamber condition. It shows the relationship between the chamber exterior and the inner walls. The deposit is thin and conceptual, so it should not be mistaken for a photo of a real tool or a specific chemical species. AI-generated conceptual image (OpenAI ImageGen). Resized to 1280×720 and optimized as JPEG (original PNG kept).</figcaption></figure>
+<h2>If it is sealed, why does the inside get dirty?</h2>
+<p>"If it is sealed, dust can't get in from outside, right?"</p>
+<p>That is a fair question. But the deposits that form in a chamber are not only dust coming in from outside. Some are <strong>created when the gases fed in for processing react</strong>.</p>
+<p>Take "etching," which removes material from the semiconductor surface. When processing silicon oxide and similar materials, some processes use fluorocarbon gases. These gases break down and react in the plasma, producing species that help the processing.</p>
+<p>However, the CFₓ-type polymers produced by these reactions do not stick only to the wafer. They can also stick to chamber walls and the surfaces of quartz parts and build up over time.[1]</p>
+<p><strong>Here is the interesting part.</strong> This polymer is not always the bad guy. It can help separate areas you want to process from areas you want to protect. The problem is that while it supports a needed reaction, it can also accumulate inside the tool.</p>
+<p>Meanwhile, in "deposition," which forms thin films on the wafer, something else happens. The materials and reactions that form a film are not always limited to the wafer surface. Films can also form on chamber walls, parts, and shields. A patent document from equipment maker Applied Materials also explains that these deposited films can later crack or flake off and cause particles.[2]</p>
+<p>In other words, <strong>whether a tool removes material or builds films, the more it processes, the more the chamber's own condition can change</strong>. However, what gets deposited and which cleaning method is suitable differ by tool and process.</p>
+<figure>
+<img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/fig02.jpg" alt="Conceptual image of a thin, uneven film on a chamber wall"><figcaption>An AI-generated conceptual image explaining the condition of a chamber wall. It shows the relationship between the chamber wall and a thin deposited layer. The color does not indicate chemical composition, and it is not presented as a microscope image or analysis result. AI-generated conceptual image (OpenAI ImageGen). Resized to 1280×720 and optimized as JPEG (original PNG kept).</figcaption></figure>
+<h2>Why can "a little dirt" cause product defects?</h2>
+<p>Problems from deposits fall into two broad types: <strong>flaking off</strong> and <strong>changing the process conditions</strong>.</p>
+<h3>1. Tiny flakes leave damage on the wafer</h3>
+<p>First, imagine a film on a wall getting thicker. Paint applied over and over can eventually crack or chip.</p>
+<p>Under some conditions, something similar happens in a chamber. Part of the film on inner walls or parts flakes off and becomes tiny particles. If they land on a wafer, they can cause defects that interfere with forming circuits or films.[2]</p>
+<p>*The paint analogy only explains the point that "films flake off." How particles actually form and move depends on the film material, the plasma, the gas flow, and more.</p>
+<p>Many chips are made from a single wafer. If more of those chips are unusable, the share you can ship as finished products, called <strong>yield</strong>, goes down.</p>
+<h3>2. Even without falling particles, results gradually drift</h3>
+<p>The other problem is harder to notice.</p>
+<p>You process with the same gas flow, the same pressure, the same RF power, and the same recipe, but the results no longer match what they were. This is one example of a phenomenon called "process drift."</p>
+<p>Why does this happen?</p>
+<p>The plasma is not in contact with the wafer alone. It also interacts with the chamber walls. If the amount or nature of the film on the walls changes, the plasma's condition is affected too. A study published in 2025 reported an attempt to use sensors to monitor how fluorocarbon polymer buildup affects the plasma's electrical characteristics.[1]</p>
+<p>The tool starts up normally. The processing runs to the end. But the finish is slightly different from before.</p>
+<p>Not overlooking this difference is what makes equipment maintenance challenging.</p>
+<figure>
+<img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/fig03.jpg" alt="Not-to-scale conceptual image showing a small flake leaving a chamber wall and possibly heading toward a wafer"><figcaption>An AI-generated conceptual image explaining chamber condition. It shows the positions of the chamber wall, particles, and wafer. It does not show scale and does not depict particle generation as inevitable. AI-generated conceptual image (OpenAI ImageGen). Resized to 1280×720 and optimized as JPEG (original PNG kept).</figcaption></figure>
+<h2>So is cleaning every day the safe answer?</h2>
+<p>After reading this far, you might think, "It's better to clean often, before it gets dirty."</p>
+<p>But it is not that simple.</p>
+<p>While cleaning, the tool cannot make product. If the cleaning requires opening the chamber, the work, removing parts, reassembly, and recovery checks all take time. Cleaning can also affect part surfaces and coatings. Ultra Clean Holdings, which does precision cleaning of chamber parts, describes removing deposited films while limiting damage to part surfaces as a key challenge.[3]</p>
+<p>So <strong>if cleaning comes too late, quality is at risk. If it comes too early, you lose production time and may put extra stress on parts.</strong></p>
+<p>What maintenance staff consider is not simply "dirty or not," but when, by what method, and how much cleaning is needed.</p>
+<h2>How is a chamber cleaned?</h2>
+<p>Unlike cleaning at home, a chamber is not always opened and wiped by a person.</p>
+<p>One common method is <strong>cleaning that removes deposited films with reactive gases without opening the chamber</strong>. This is called <em>in-situ cleaning</em>.</p>
+<p>For example, some CVD tools use fluorine-containing gases such as nitrogen trifluoride (NF₃). With the help of plasma, they turn unwanted silicon-based films into volatile reaction products and remove them through the exhaust system.[2]</p>
+<p>The cleaning method depends on the tool and process, and not every deposit can be removed with the same gas.[2]</p>
+<p>When deposits remain or parts need inspection or replacement, the chamber is opened for cleaning and servicing. In this case there are hazards such as vacuum, gases, high voltage, and residual chemicals, so you must follow the equipment maker's and site's procedures and safe isolation measures.[5][6]</p>
+<figure>
+<img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/fig04.jpg" alt="Conceptual image of a worker in protective gear inspecting a removed chamber part"><figcaption>An AI-generated conceptual image explaining the condition of chamber parts. It shows chamber parts being inspected on a workbench. Proper protective gear is worn, and no hazardous work or specific procedures are shown. AI-generated conceptual image (OpenAI ImageGen). Resized to 1280×720 and optimized as JPEG (original PNG kept).</figcaption></figure>
+<h2>Why not run product right after cleaning?</h2>
+<p>Here is the most surprising part of chamber cleaning.</p>
+<p><strong>A tool that has just been cleaned is not in the same state as before cleaning.</strong></p>
+<p>The film that was on the walls has been removed, and the chemical state of the surface has changed. With cleaning that uses fluorine-containing gases, fluorine-derived residues can become a problem in some processes.[2]</p>
+<p>A CVD-related patent published by Applied Materials in 2001 describes a method of reducing residual fluorine with hydrogen plasma after cleaning, then forming a thin silicon-based film on the inner chamber surfaces.[2]</p>
+<p>What stands out is the idea of <strong>deliberately adding a thin film right after cleaning</strong>.</p>
+<p>This is not because the cleaning failed. It prepares the walls in advance to a desirable state so the next processing is stable. This kind of reconditioning is generally called "seasoning." However, the combination of hydrogen plasma and a silicon nitride film is an example of a specific method, not a common procedure for all tools.</p>
+<p>In other words, what is needed after cleaning is not a judgment like "it looks clean, so it passes," but a check of <strong>whether the tool is back to a state where it can process the next wafer at the same quality</strong>.</p>
+<figure>
+<img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/fig05.jpg" alt="Conceptual image, limited to a specific method, contrasting a chamber wall after cleaning with a thin conditioning layer"><figcaption>An AI-generated conceptual image explaining the condition of a chamber wall. It modestly contrasts differences in surface condition after cleaning. It does not show a specific recipe or a recovery procedure common to all tools. AI-generated conceptual image (OpenAI ImageGen). Resized to 1280×720 and optimized as JPEG (original PNG kept).</figcaption></figure>
+<h2>Why are "cleaning complete" and "production restart" separate decisions?</h2>
+<p>Some processes require checks even after cleaning and seasoning are finished.</p>
+<p>One of them is evaluating process results using monitor wafers and similar. Depending on the process, set items are checked, such as particle condition, etch depth and rate, film thickness, and within-wafer uniformity.</p>
+<p>Sometimes only the first wafer turns out differently from the wafers that follow. This is called the "first wafer effect." Another Applied Materials patent also describes a technique for suppressing this effect through seasoning after chamber cleaning.[4]</p>
+<p>The idea of watching tool condition through changes in numbers before a fault appears is also covered in our <a href="https://semicon-campus.com/equipment-trend-condition-monitoring/">article on trend data and condition monitoring</a>.</p>
+<p>However, what to measure on monitor wafers, how many to check, and what values pass all differ by process. <strong>Confirming that the tool has come back up</strong> is also distinct from <strong>approving, for quality control, that product may be loaded</strong>.</p>
+<p>The tool can return to production not at the moment the cleaning work ends, but only once it passes the required checks.</p>
+<figure>
+<img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/fig06.jpg" alt="Conceptual image of a monitor wafer on a measurement tool and an engineer checking a screen"><figcaption>An AI-generated conceptual image explaining monitor wafer condition. It shows the equipment and worker checking a monitor wafer. The screen shows no readable values, pass/fail results, or site-specific criteria. AI-generated conceptual image (OpenAI ImageGen). Resized to 1280×720 and optimized as JPEG (original PNG kept).</figcaption></figure>
+<h2>What do experienced maintenance technicians look at before stopping a tool?</h2>
+<p>So how is the timing of cleaning decided?</p>
+<p>First, there are the equipment maker's recommended conditions and the maintenance intervals set by the fab. Wafer count, operating hours, cumulative RF hours, and similar serve as guides.</p>
+<p>But even if they run for the same time, not every chamber ends up in the same condition. That is because the materials processed, gases, recipes, and usage differ.</p>
+<p>That is why <strong>changes in the numbers</strong> matter.</p>
+<p>For example, trends in particle counts on wafers, variation in etch rate and film thickness, and tool pressure and plasma monitoring data. Looking at this information together can sometimes catch signs of "something different from usual" before an alarm goes off.[1]</p>
+<p>However, more particles do not always mean the cause is chamber contamination. Other factors are possible, such as gas supply, wafer transfer, part condition, or measurement method.</p>
+<p>So equipment maintenance is not a job of starting to clean the moment a number changes.</p>
+<p><strong>Will cleaning likely help? Will cleaning not solve it? Is it time to stop?</strong></p>
+<p>It is a job of thinking through those differences based on data and how the process works.</p>
+<h2>Common misunderstandings</h2>
+<h3>Q. If the chamber is sealed, why do deposits form?</h3>
+<p>Because not only dust from outside, but also substances formed when processing gases react, can stick to the inner walls.</p>
+<h3>Q. Should cleaning be done every day?</h3>
+<p>It cannot be set uniformly as every day. How deposits form and how cleaning is done differ by tool and process, and the decision combines quality signs and maintenance conditions.</p>
+<h3>Q. Once cleaning is done, can product be processed right away?</h3>
+<p>Right after cleaning, the wall condition has changed. Production restarts after adjustments and checks suited to the process confirm that set quality conditions are met.</p>
+<h2>The decision to stop a tool protects semiconductor quality</h2>
+<p>Looking back at chamber cleaning, a slightly curious cycle appears.</p>
+<p>Gases are reacted to process wafers. Those reactions also leave films on the walls. As the films grow, particles and changing process conditions become problems. So the chamber is cleaned. But cleaning then changes the wall condition. So you check whether stable processing is possible.</p>
+<p><strong>Stop → Clean → Condition → Check → Produce again.</strong></p>
+<p>This series of decisions ties together knowledge of tool structure, gases and materials, plasma, metrology, and quality control.</p>
+<p>Making semiconductors is not just about keeping tools running without stopping. Stopping when needed and returning to a state where you can produce with confidence is also an important part of manufacturing technology.</p>
+<p>And the people who support this everyday reality are those working in equipment maintenance and production engineering.</p>
+<p>You can learn about the role of the jobs that support tool inspection, cleaning, and recovery in our <a href="https://semicon-campus.com/what-is-semiconductor-maintenance-technician/">article on semiconductor maintenance jobs</a>.</p>
+<hr>
+<h2>Official information and research referenced</h2>
+<ul class="semicon-sources">
+<li>
+<p>[1] Junyeob Lee, Kyongnam Kim, <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11723226/"><em>A Study on the Development of Real-Time Chamber Contamination Diagnosis Sensors</em></a>, Sensors 25(1), 20 (2025).</p>
+</li>
+<li>
+<p>[2] Applied Materials, <a href="https://patents.google.com/patent/EP1154038A1/en"><em>Method of conditioning a chamber for chemical vapor deposition</em></a>, EP1154038A1 (2001).</p>
+</li>
+<li>
+<p>[3] Ultra Clean Holdings, <a href="https://www.uct.com/services/cleaning/default.aspx"><em>Cleaning — UHP Parts Cleaning / SmartEtch</em></a>.</p>
+</li>
+<li>
+<p>[4] Applied Materials, <a href="https://patents.google.com/patent/US9157151B2/en"><em>Elimination of first wafer effect for PECVD films</em></a>, US9157151B2.</p>
+</li>
+<li>
+<p>[5] OSHA, <a href="https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.147"><em>29 CFR 1910.147 — The control of hazardous energy (lockout/tagout)</em></a>.</p>
+</li>
+<li>
+<p>[6] SEMI, <a href="https://www.semi.org/en/node/114001"><em>Environmental, Health, and Safety Standards / SEMI S2</em></a>.</p>
+</li>
+</ul>
+<p>*This article explains how to think about equipment maintenance based on published papers, patents, and manufacturer materials. It does not provide maintenance procedures for any specific tool. For actual work, follow the manufacturer's procedures, equipment specifications, and your site's safety standards.</p>
+<h2>Summary</h2>
+<p>Even while a tool is running, the inside of the chamber can change due to process reactions.<br />Cleaning is done to limit particles and changes in process conditions.<br />Only after the post-cleaning checks are finished can the tool return to production.</p>

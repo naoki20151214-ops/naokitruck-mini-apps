@@ -1,0 +1,182 @@
+<!--KEEP:0-->
+<div class="semicon-article" id="semicon-top">
+<div class="semicon-level">
+<div class="semicon-level-top"><span class="semicon-level-label">Learning level</span><strong class="semicon-stars" aria-label="Beginner (1 of 5)"><span class="on">★</span><span class="off">☆☆☆☆</span><span>Beginner</span></strong></div>
+</div>
+<div class="semicon-lead">
+<p>While driving, you feel the engine sounds a little different from usual. But no warning light has come on yet. Have you ever had that experience? A car records many numbers, such as speed and temperature, the whole time it is running. If you look back at the records from before the warning light came on, you might be able to see "when things started changing, little by little."</p>
+<p>The same thing happens in semiconductor manufacturing equipment. While a tool processes wafers, it constantly records numbers such as pressure and temperature. "FDC" is a method that uses these records to find problems in the equipment, or early signs of them. <strong class="semicon-key">To give you the answer first: FDC is a way of watching what happens inside the equipment through its numerical records.</strong></p>
+</div>
+<div class="semicon-note">
+<p>The car example fits only in one way: "the records from before a warning hold clues about changes." Cars and semiconductor manufacturing equipment are different things.</p>
+</div>
+<div class="semicon-map">
+<h3>What you will learn in this article</h3>
+<ol>
+<li><strong>Goal of this article: </strong>To understand how FDC finds early signs of problems from the numbers that equipment records</li>
+<li>What FDC (a method for detecting and classifying equipment problems) and equipment sensor records mean</li>
+<li>How "indicators" are made from records and compared with a baseline to notice problems</li>
+<li>A case where a small change was linked to yield and electrical performance</li>
+</ol>
+</div>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep108-blog-01-flow.png" alt="Concept diagram showing the FDC flow in order: equipment processing, sensor recording, summarizing into indicators, comparing with a baseline, and alarms and root-cause investigation"><figcaption>A schematic of the FDC flow. This flow is for explanation only and is not the procedure of any specific fab or tool.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the figure</b></p>
+<ul>
+<li>Sensors record numbers while the tool processes</li>
+<li>The records are summarized into indicators and compared with a baseline</li>
+<li>If they move outside the baseline, it leads to an alarm and an investigation of the cause</li>
+</ul>
+</div>
+<div class="semicon-chat-row naoki">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">Assistant</div>
+</div>
+<div class="semicon-bubble">
+<p>Professor, what does FDC do?</p>
+</div>
+</div>
+<div class="semicon-chat-row teacher">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">Professor</div>
+</div>
+<div class="semicon-bubble">
+<p>It uses the numbers the tool records while processing to find early signs of problems.</p>
+</div>
+</div>
+<div class="semicon-chat-row naoki">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">Assistant</div>
+</div>
+<div class="semicon-bubble">
+<p>Is it too late once an alarm goes off?</p>
+</div>
+</div>
+<div class="semicon-chat-row teacher">
+<div class="semicon-avatar">
+<div class="semicon-avatar-face"></div>
+<div class="semicon-avatar-name">Professor</div>
+</div>
+<div class="semicon-bubble">
+<p>Sometimes clues remain in the records from before the alarm. Let's go through it step by step.</p>
+</div>
+</div>
+<h2 class="wp-block-heading" data-fact-ids="C01">Equipment records numbers while it processes</h2>
+<p>Inside the equipment, semiconductor wafers are processed little by little by adding thin films or removing material. You usually can't see inside a tool from the outside. That is why equipment has many sensors. A sensor is a part that measures things like temperature and pressure as numbers.</p>
+<p>According to an explanation by PDF Solutions (a semiconductor data analytics company), there are sensor signals collected from the tool during wafer processing and arranged in time order. These include pressure, temperature, gas flow, RF power (the electrical power used to create plasma), motion, and timing. This time-ordered record of numbers is called a "trace."</p>
+<p>A trace alone doesn't tell you which tool or which moment it came from. So information such as "which tool," "which chamber," "which recipe (the instructions for how to process)," and "which step" is saved along with it. Together, these two make up a detailed record of "how the process actually went."</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep108-blog-02-trace.png" alt="Concept diagram of a waveform of sensor numbers arranged in time order, with the average over a set interval summarized as an indicator"><figcaption>A schematic showing how indicators are made from sensor records (traces). The waveform is for explanation only and is not measured data.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the figure</b></p>
+<ul>
+<li>The horizontal axis is time, and the vertical axis is the sensor number</li>
+<li>Values such as the average over a set interval are summarized into indicators</li>
+<li>Monitoring is usually done with indicators, not the whole waveform</li>
+</ul>
+</div>
+<h2 class="wp-block-heading" data-fact-ids="C03 C05">FDC notices problems by comparing with a baseline</h2>
+<p>FDC stands for Fault Detection and Classification. It means watching how the equipment behaves, finding problems, and sorting them by type.</p>
+<p>However, having people look at every waveform every time would be a lot of work. So, according to PDF Solutions, "indicators" are usually calculated from a set time interval (window) within each recipe step. An indicator is a waveform summarized into a few numbers. Examples include the average, maximum, minimum, variation (standard deviation), slope, and stability.</p>
+<p>Next, those indicators are compared with past baselines and control limits. A baseline represents "how the tool behaves when it is normal." One approach is to use data collected during runs that produced good-quality products as "good tool condition" data, and then compare data collected later against that baseline.</p>
+<h2 class="wp-block-heading" data-fact-ids="C04">When an indicator crosses a limit, an alarm goes off</h2>
+<p>PDF Solutions gives examples of questions that traditional FDC answers.</p>
+<ul>
+<li>Is the chamber pressure within the expected range?</li>
+<li>Is the RF power stable during the step?</li>
+<li>Does the gas flow ramp up and settle as expected?</li>
+<li>Does the temperature behavior match the qualified conditions?</li>
+</ul>
+<p><strong class="semicon-key">When an indicator crosses a limit, an alarm goes off.</strong> After an alarm, the response may include flagging that wafer, notifying an engineer, or stopping the chamber.</p>
+<h2 class="wp-block-heading" data-fact-ids="C02">What is really dangerous is slow change</h2>
+<p>Problems with yield (the share of good products) or electrical performance don't always start with a sudden breakdown. PDF Solutions explains that in many cases they start with small, slow changes in how the tool behaves. Examples include:</p>
+<ul>
+<li>"Drift," where values gradually shift</li>
+<li>Differences in behavior between chambers of the same type</li>
+<li>Control responses becoming sluggish</li>
+<li>Changes that happen after maintenance</li>
+</ul>
+<p>These shifts can stay invisible for a long time to both alarms and in-process measurements. <strong class="semicon-key">Even so, the shifts add up and later show up in yield and electrical performance.</strong> PDF Solutions writes that tool traces are often the place where these changes can be found earliest.</p>
+<figure class="semicon-figure"><img decoding="async" src="https://semicon-campus.com/wp-content/uploads/2026/10/ep108-blog-03-drift.png" alt="Concept diagram showing indicator points gradually shifting upward after maintenance while still staying inside the upper line"><figcaption>A schematic showing an indicator gradually shifting after maintenance. The point positions are for explanation only and are not measured data.</figcaption></figure>
+<div class="semicon-mobile-summary"><b>Key points of the figure</b></p>
+<ul>
+<li>After maintenance, the points shift upward little by little</li>
+<li>They are still inside the upper line, so no alarm goes off</li>
+<li>But by looking at the pattern, you can notice the shift starting</li>
+</ul>
+</div>
+<p>This figure is a schematic for explanation. After maintenance, the indicator points slowly drift upward. Even so, as long as they stay inside the upper line, no alarm goes off.</p>
+<h2 class="wp-block-heading" data-fact-ids="C06">Case study: A small shift after maintenance was linked to electrical performance</h2>
+<p>PDF Solutions describes a case at one customer. The engineers combined FDC indicators with electrical test results and lined up the correlations (relationships where values move together). They found a strong relationship between the transistor "leakage current" (current that should not flow) and a "reflected power" indicator measured at a specific step of a process called spacer etch.</p>
+<p>When they looked at that indicator over time, it had been drifting upward starting right after a scheduled preventive maintenance (PM). So they drilled down from the indicator trend to the original raw traces and compared sensor behavior before and after maintenance.</p>
+<p>According to the article, this analysis led to measures such as tightening the control specifications for the related sensors, changing the maintenance procedure, adding seasoning (break-in runs), and confirming that FDC signals were stable before returning the chamber to production.</p>
+<h2 class="wp-block-heading" data-fact-ids="C07 C08">Measurements and records complement each other</h2>
+<p>"In-process measurement," which measures things like finished dimensions partway through the process, is based on measurement procedures that people decide. Because of this, PDF Solutions explains, measurement results can stay stable even when process behavior changes. Measurement results only show the parts the recipe is sensitive to, and they don't necessarily reflect every change.</p>
+<p><strong class="semicon-key">That is why FDC, which looks at equipment records, and measurement, which checks the finished result, complement each other.</strong></p>
+<p>Also, SPC (a method of watching numbers by plotting them on control charts) alone can miss important problems. We explain how it works in <a href="https://semicon-campus.com/what-is-spc-semiconductor-process-control/">What is SPC (statistical process control)?</a>. Its effectiveness depends heavily on the quality of the numbers (indicators) that summarize the records.</p>
+<p>PDF Solutions also states that "the quality of the indicators matters more than the complexity of the model." In other words, you need indicators that reflect how the process actually behaves, are calculated over time intervals chosen with an understanding of the process, and can be interpreted by engineers.</p>
+<div class="semicon-cta">
+<h3>FDC from a job perspective</h3>
+<p>If you want to learn about jobs that handle monitoring like FDC, try reading this article.</p>
+<div class="semicon-btnrow"><a class="semicon-btn" href="https://semicon-campus.com/semiconductor-career-map/">See semiconductor manufacturing jobs by process</a></div>
+</div>
+<p>Equipment adjustments and recovery are done under the official procedures of your fab or manufacturer and the judgment of authorized people. This article introduces a way of looking at things and does not give instructions for operating equipment.</p>
+<h2 class="wp-block-heading">Word review</h2>
+<p>Here is a simple recap of the words used in this article. If anything feels difficult, come back to this list and read it again.</p>
+<ul>
+<li><strong>FDC: </strong>A method for finding problems from equipment records and sorting them by type.</li>
+<li><strong>Sensor: </strong>A part that measures things like temperature and pressure as numbers.</li>
+<li><strong>Trace: </strong>A record of sensor numbers arranged in time order.</li>
+<li><strong>Recipe: </strong>Instructions that describe how the tool should process wafers.</li>
+<li><strong>Chamber: </strong>The room inside the tool where wafers are processed.</li>
+<li><strong>Indicator: </strong>A waveform summarized into a few numbers, such as an average.</li>
+<li><strong>Drift: </strong>When numbers slowly shift, little by little.</li>
+<li><strong>Preventive maintenance (PM): </strong>Inspections and parts replacement done at set times, before a failure occurs.</li>
+</ul>
+<h2 class="wp-block-heading">Common misconceptions</h2>
+<h3>Q. If no alarm goes off, is the equipment normal?</h3>
+<p>Not necessarily. Slow changes can stay invisible for a long time to both alarms and in-process measurements. Clues may remain in the records from before an alarm.</p>
+<h3>Q. Does FDC look at every sensor waveform in full?</h3>
+<p>Traditional FDC usually looks at indicators, such as averages calculated from a set interval within a step, rather than the whole waveform. The waveform itself is examined in detail when investigating a cause.</p>
+<h3>Q. If you do measurements, do you still need FDC?</h3>
+<p>They complement each other. Measurement results can stay stable even when the process changes. Equipment records provide clues for noticing those changes.</p>
+<h2 class="wp-block-heading">Summary: FDC finds early signs of problems from equipment records</h2>
+<div class="semicon-lead">
+<p>FDC is a method for finding and classifying problems from the sensor numbers a tool records during processing.<br />By comparing indicators made from the records with a baseline from normal operation, it can notice even slow changes.<br />It complements measurement and provides clues for investigating causes.</p>
+</div>
+<div class="semicon-cta">
+<h3>We also explain semiconductors simply on YouTube</h3>
+<p>For those who want to review with diagrams, we also have short videos explaining semiconductor manufacturing on YouTube.</p>
+<div class="semicon-btnrow"><a rel="noopener" class="semicon-btn secondary" href="https://www.youtube.com/@semicon-campus" target="_blank">Watch diagram videos on YouTube</a></div>
+</div>
+<h2 class="wp-block-heading">Official sources used</h2>
+<ul class="semicon-sources">
+<li data-source-id="S01"><a href="https://www.pdf.com/analysis-ready-fdc-in-the-age-of-ai-and-big-data-semiconductor-manufacturing/">PDF Solutions, "Analysis‑Ready FDC in the Age of AI and Big‑Data Semiconductor Manufacturing"</a></li>
+<li data-source-id="S02"><a href="https://patents.google.com/patent/US7477960B2/en">Tokyo Electron patent US 7,477,960 B2, "Fault detection and classification (FDC) using a run-to-run controller"</a></li>
+<li data-source-id="S03"><a href="https://patents.google.com/patent/US11609812B2/en">PDF Solutions patent US 11,609,812 B2, "Anomalous equipment trace detection and classification"</a></li>
+</ul>
+<section class="semicon-correction-form">
+<h2>Questions and corrections form</h2>
+<p>If you find an error or anything unclear in this article, please let us know using the form below. We will check it and correct the article.</p>
+<div class="semicon-form-shortcode">
+<div class="wpcf7 no-js" id="wpcf7-f2045-o10" lang="ja" dir="ltr" data-wpcf7-id="2045">
+<div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
+<form action="/?rest_route=%2Fwp%2Fv2%2Fposts&#038;per_page=100&#038;page=1&#038;context=view#wpcf7-f2045-o10" method="post" class="wpcf7-form init" aria-label="Contact form" novalidate="novalidate" data-status="init">
+<fieldset class="hidden-fields-container"><input type="hidden" name="_wpcf7" value="2045" /><input type="hidden" name="_wpcf7_version" value="6.1.6" /><input type="hidden" name="_wpcf7_locale" value="ja" /><input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f2045-o10" /><input type="hidden" name="_wpcf7_container_post" value="0" /><input type="hidden" name="_wpcf7_posted_data_hash" value="" />
+</fieldset>
+<p>You do not need to enter your name, phone number, or address. Please do not include fab names or confidential information.
+</p>
+<p><label>Type of report (required) <span class="wpcf7-form-control-wrap" data-name="report-type"><select class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required" aria-required="true" aria-invalid="false" name="report-type"><option value="誤りと思われる点">Possible error</option><option value="分かりにくい箇所">Unclear section</option><option value="追加してほしい説明・質問">Request for more explanation / question</option></select></span></label><br />
+<label>Related heading or text (optional) <span class="wpcf7-form-control-wrap" data-name="report-section"><input size="40" maxlength="200" class="wpcf7-form-control wpcf7-text" aria-invalid="false" value="" type="text" name="report-section" /></span></label><br />
+<label>Details (required) <span class="wpcf7-form-control-wrap" data-name="report-message"><textarea cols="40" rows="10" maxlength="3000" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" aria-required="true" aria-invalid="false" name="report-message"></textarea></span></label><br />
+<label>Email address for a reply (only if you would like a reply; optional) <span class="wpcf7-form-control-wrap" data-name="report-email"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-email wpcf7-text wpcf7-validates-as-email" autocomplete="email" aria-invalid="false" value="" type="email" name="report-email" /></span></label>
+</p>
+<p>Your feedback will be used to review and improve our articles. Please see our <a href="https://semicon-campus.com/privacy-policy/">privacy policy</a>.
+</p>
+<p><input class="wpcf7-form-control wpcf7-submit has-spinner" type="submit" value="Send feedback or correction" />
+</p><div class="wpcf7-response-output" aria-hidden="true"></div>
+</form>
+</div>
+</div>
+</section>
+</div>

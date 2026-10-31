@@ -1,0 +1,103 @@
+
+<!--KEEP:0-->
+
+
+<!--KEEP:1-->
+
+
+<!--KEEP:2-->
+<div class="semicon-article" id="semicon-top">
+
+<div class="semicon-level"><span class="semicon-level-label">Learning level</span> <strong>Beginner</strong><p>This article is for readers who learned in Episode 28 that "games grew the GPU's parallel processing" and want to understand what CUDA changed. You can read it even if you have never written code.</p></div>
+
+<p class="semicon-lead"><strong>CUDA</strong> is a <strong>parallel computing platform and programming model</strong> developed by NVIDIA. It made it easier to use the GPU's computing power not only for drawing graphics but also for scientific computing, data processing, and more. CUDA is not the GPU itself, and it is not a language made only for AI.</p>
+
+<div class="semicon-map"><h3>The short answer</h3><div class="semicon-three"><div class="semicon-card"><b>Before</b><span>GPUs had high computing power, but using them for anything other than images took a lot of specialized tricks.</span></div><div class="semicon-card"><b>What CUDA did</b><span>It provided a common approach and tools to hand the computing part to the GPU and run it split into many tasks.</span></div><div class="semicon-card"><b>After</b><span>Uses spread to research, simulation, data processing, and later AI.</span></div></div></div>
+
+<figure class="semicon-figure"><img src="https://semicon-campus.com/wp-content/uploads/2026/07/cuda-general-purpose-featured.png" alt="Work handed from the CPU and program to many parallel calculations on the GPU, with uses spreading to scientific computing, data analysis, and AI" width="1672" height="941" loading="eager" decoding="async"><figcaption>CUDA does not turn the GPU into a different part. It is a software foundation for using the GPU's parallel computing for a wide range of uses.</figcaption></figure>
+
+
+<h2>What changed with CUDA?</h2>
+
+<p>GPUs developed through the huge amount of calculation needed for 3D graphics. But having high computing power is different from being easy for researchers and developers to use for any calculation they want. To do non-image work on early GPUs, you needed graphics-specific knowledge, such as making a calculation look like a drawing task.</p>
+
+<p>NVIDIA announced CUDA in 2006. The official CUDA Programming Guide describes CUDA as "a general-purpose parallel computing platform and programming model." Developers could now run the overall program on the CPU while handing calculations that are easy to parallelize to the GPU.</p>
+
+<div class="semicon-flow" aria-label="The flow that changed with CUDA"><div>Split the problem</div><div>Send data to the GPU</div><div>Run many tasks in parallel</div><div>Return results to the CPU</div></div>
+
+<p class="semicon-one-line">What CUDA opened up was the doorway from "a GPU that draws images" to "a GPU you can program for computing."</p>
+
+<h2>How do the CPU and GPU work together?</h2>
+
+<p>A CUDA program does not always run entirely on the GPU. The official guide calls the CPU and its memory the <strong>host</strong>, and the GPU and its memory the <strong>device</strong>. The app starts on the CPU, sends the needed data to the GPU, launches the work that runs on the GPU, and receives the results.</p>
+
+<figure class="semicon-figure"><img src="https://semicon-campus.com/wp-content/uploads/2026/07/cuda-host-device-workflow.png" alt="The CUDA flow: the CPU prepares work and data, sends it to GPU memory, runs many parallel tasks, and returns results to the CPU" width="1672" height="941" loading="lazy" decoding="async"><figcaption>The CPU handles the overall flow and data preparation, and the GPU handles large amounts of calculation that are easy to parallelize. CUDA provides the mechanism that connects the two.</figcaption></figure>
+
+<div class="semicon-note"><p><strong>A common misunderstanding</strong></p><p>CUDA does not make the CPU unnecessary. Actual speed is decided by the whole system, including how the calculation is split, how much data moves between the CPU and GPU, and how GPU memory is accessed.</p></div>
+
+<h2>Splitting a large job into a "grid, blocks, and threads"</h2>
+
+<p>In CUDA, a function that runs on the GPU is called a <strong>kernel</strong>. When a kernel is launched, many threads run the same flow of work in parallel. Threads are grouped into blocks, and blocks are arranged into a grid.</p>
+
+<figure class="semicon-figure"><img src="https://semicon-campus.com/wp-content/uploads/2026/07/cuda-grid-block-thread-hierarchy.png" alt="The CUDA hierarchy: a large computing task split from a grid into multiple blocks, with each block divided into many threads" width="1672" height="941" loading="lazy" decoding="async"><figcaption>Splitting a big problem into units that can move forward independently makes it easier to assign many tasks, even on GPUs of different sizes.</figcaption></figure>
+
+<p>This hierarchy is not just for memorizing the names of parts inside the GPU. It is a way to express, in a program, the parallel computing design of "splitting a big job into small jobs that do not depend on each other too much."</p>
+
+<h2>CUDA is not "one language" but a set of tools</h2>
+
+<p>CUDA is not "an AI-only language called CUDA." It is a foundation that includes not only language extensions like CUDA C++, but also a runtime that hands work to the GPU, compilers, math libraries, and debugging and performance analysis tools. The official documentation also explains that it can be used from languages and APIs other than C++.</p>
+
+<figure class="semicon-figure"><img src="https://semicon-campus.com/wp-content/uploads/2026/07/cuda-platform-software-layers.png" alt="A layered structure: CUDA's programming model and runtime, libraries and developer tools, and apps for each field stacked on top of GPU hardware" width="1672" height="941" loading="lazy" decoding="async"><figcaption>With not only hardware but also a programming model, libraries, and developer tools in place, it became easier to bring GPU computing into other fields.</figcaption></figure>
+
+<div class="semicon-compare"><table><thead><tr><th>Name</th><th>Role</th><th>One line to avoid confusion</th></tr></thead><tbody><tr><td>GPU</td><td>Hardware that runs many tasks in parallel</td><td>Not the same thing as CUDA</td></tr><tr><td>CUDA</td><td>A platform and programming model for using NVIDIA GPUs for computing</td><td>Not just for AI</td></tr><tr><td>CUDA Toolkit</td><td>A collection of compilers, libraries, and development and analysis tools</td><td>Just buying a GPU does not automatically make things faster</td></tr><tr><td>Tensor Core</td><td>A compute unit inside the GPU that runs matrix multiply-add operations efficiently</td><td>A different role from CUDA. The topic of the next episode</td></tr></tbody></table></div>
+
+<h2>Why did it lead to AI?</h2>
+
+<p>AI training and inference repeat matrix calculations a huge number of times. Parts of this work are well suited to the GPU's parallel computing. With CUDA and its libraries in place, researchers and framework developers found it easier to use GPUs as a computing foundation.</p>
+
+<p>However, today's AI did not come from CUDA alone. Algorithms, data, research results, GPU hardware, memory, networks, and libraries have built up to form today's AI foundation. People who use PyTorch and similar tools may benefit from CUDA-enabled libraries underneath, even without writing CUDA directly.</p>
+
+<h2>Does CUDA make everything faster?</h2>
+
+<div class="semicon-three"><div class="semicon-card"><b>Work that is hard to split</b><span>Work that often has to wait for earlier results cannot take full advantage of massive parallelism.</span></div><div class="semicon-card"><b>Work with lots of data movement</b><span>When transfer time outweighs calculation time, the benefit of using a GPU shrinks.</span></div><div class="semicon-card"><b>Software support</b><span>You need to implement the work for CUDA or use CUDA-enabled libraries.</span></div></div>
+
+<p>Also, CUDA is NVIDIA's platform. GPUs and accelerators from other makers have their own programming environments. You need to choose based on the use case, existing software, performance, power, and cost.</p>
+
+<h2>The jobs behind CUDA</h2>
+
+<p>Jobs related to CUDA are not limited to developers who write kernels. Many roles are connected, including GPU circuit design, compiler and library development, performance analysis, data center operations, cooling, advanced packaging, HBM, and quality and inspection.</p>
+
+<div class="semicon-cta"><p><strong>Find an entry point to jobs close to you</strong></p><p>If you are unsure whether to start from software, design, manufacturing, equipment, or quality, you can sort out your options with the anonymous <a href="https://semicon-campus.com/semiconductor-career-advisor/">Semiconductor 10-Question Job Navigator (beta)</a>, which does not save your answers. The results do not decide what job suits you. They are a guide for choosing what topic to read next.</p></div>
+
+
+<section class="mp4-section" id="revenue-phase4-learning"><h2>From understanding CUDA to a small hands-on exercise</h2><p>Once you have learned about CUDA, first pick one calculation you want to run, then check the supported GPU, development environment, memory, and OS. Confirm what you can try on your current PC before comparing it with buying a new computer or adding storage. Buying a GPU alone does not automatically make calculations faster. Learning to use generative AI for writing tasks is a separate entry point you can choose, but general generative AI courses are not treated as dedicated CUDA programming education.</p><p>Checklist before comparing: supported GPUs and OS for the CUDA Toolkit and the libraries you use, VRAM, main memory, and storage. Separate what you can try in your current setup from what needs upgrading, then choose your options.</p></section>
+
+<h2>Frequently asked questions about CUDA</h2>
+
+<h3>Is CUDA a programming language?</h3>
+<p>CUDA is not the name of a single language. It is a parallel computing platform and programming model. Besides CUDA C++, it can be used from multiple languages and development environments through libraries and APIs.</p>
+
+<h3>Is CUDA only for AI?</h3>
+<p>No. It is used for a wide range of computing, such as scientific and engineering calculations, simulation, image processing, and data analysis. AI is one important field where CUDA is used.</p>
+
+<h3>Do I need an NVIDIA GPU to use CUDA?</h3>
+<p>To run CUDA code on a GPU, you need a supported NVIDIA GPU and an environment that includes drivers and so on. GPUs from other makers have different development platforms.</p>
+
+<h3>Are Tensor Cores and CUDA Cores the same?</h3>
+<p>No. A Tensor Core is a compute unit that efficiently performs matrix multiply-add operations. CUDA is the foundation for using the computing functions of NVIDIA GPUs, including those units, from software. We explain how Tensor Cores work in the next episode, in terms of their link to matrix calculations.</p>
+
+<h2 id="cuda-summary">Summary</h2>
+
+<div class="semicon-note"><ol><li>CUDA is not a GPU; it is NVIDIA's parallel computing platform</li><li>It made it easier to have the CPU and GPU work together and to split calculations across many threads</li><li>A common programming model, libraries, and tools expanded GPU use into research and AI</li><li>The key to understanding the next step is the Tensor Core, which makes matrix calculations more efficient</li></ol></div>
+
+<div class="semicon-links"><div class="semicon-linkbox"><h3>Go back one step</h3><p><a href="https://semicon-campus.com/what-is-gpu-ai-parallel-processing/">Why GPUs spread from games to AI</a></p></div><div class="semicon-linkbox next"><h3>Read next</h3><p><a href="https://semicon-campus.com/what-is-tensor-core-matrix-acceleration/">Tensor Cores: speeding up matrix calculations on top of CUDA</a></p></div></div>
+
+
+<section class="mp4-section" id="revenue-phase4-career"><h2>Connect what you learned here to your next job or study</h2><p>Organize your experience in measurement and inspection, equipment checks, and quality records by target, task, and what you confirmed. Comparing scope of work, required experience, work location, work schedule and travel, and training programs makes it clearer what knowledge to add next.</p><aside class="semicon-cta mp4-card"><h3>See job descriptions, job postings, and learning for related roles</h3><p>Check which jobs use the technology from this article: inspection and recovery, equipment start-up, customer support, or assembly and process improvement. Move on to the job articles to see how to choose job postings and learning.</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/cpu-memory-storage-difference/" class="semicon-btn mp4-button" data-revenue-phase4-hub="479" data-cta="pc_guide" data-cta-type="pc_guide" data-cta-stage="career" data-cta-id="phase4_596_hub479_end" data-cta-route="phase4_596_hub479_end">Figure out whether a slow PC is due to the CPU, memory, or storage</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/dram-nand-difference/" class="semicon-btn mp4-button" data-revenue-phase4-hub="486" data-cta="memory_guide" data-cta-type="memory_guide" data-cta-stage="career" data-cta-id="phase4_596_hub486_end" data-cta-route="phase4_596_hub486_end">Check the difference between DRAM and NAND, and PC upgrades</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/semiconductor-beginner-roadmap/" class="semicon-btn mp4-button" data-revenue-phase4-hub="391" data-cta="learning_hub" data-cta-type="learning_hub" data-cta-stage="career" data-cta-id="phase4_596_hub391_end" data-cta-route="phase4_596_hub391_end">See the basics, jobs, and how to learn in the Semiconductor Learning Hub</a></div></aside></section>
+
+
+<h2>References</h2>
+<ul><li><a rel="noopener" href="https://docs.nvidia.com/cuda/cuda-programming-guide/01-introduction/programming-model.html" target="_blank">NVIDIA CUDA Programming Guide: Programming Model</a></li><li><a rel="noopener" href="https://docs.nvidia.com/cuda/archive/12.5.0/cuda-c-programming-guide/index.html" target="_blank">NVIDIA CUDA C Programming Guide 12.5: Introduction and history</a></li><li><a rel="noopener" href="https://docs.nvidia.com/cuda/" target="_blank">NVIDIA CUDA Toolkit Documentation</a></li><li><a rel="noopener" href="https://developer.nvidia.com/blog/programming-tensor-cores-cuda-9/" target="_blank">NVIDIA Technical Blog: Programming Tensor Cores in CUDA 9</a></li></ul>
+
+<a class="semicon-backtop" href="#semicon-top">↑ Back to top</a>
+</div>

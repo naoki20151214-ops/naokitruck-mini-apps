@@ -1,0 +1,105 @@
+<article class="semicon-template-v2 sc-lesson">
+<!--KEEP:0-->
+<div class="sc-head"><span class="sc-head-ico"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="56" height="56"><rect width="120" height="120" rx="26" fill="#12634f"/><g transform="translate(10 10)" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M50 14C50 14 26 44 26 60a24 24 0 0048 0C74 44 50 14 50 14z"/><path d="M40 62a10 10 0 0010 10" stroke="#e8a317"/><path d="M78 20l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="#e8a317" stroke="none"/></g></svg></span><span class="sc-head-txt"><span class="sc-head-sub">SEMICON CAMPUS Free Courses</span><b>Cleaning Course</b><span class="sc-head-lv">Level 3 Intro · Lesson 1 Extra</span></span></div>
+<div class="semicon-hook">
+<p>In Lesson 1, we saw that cleaning makes up about one-fifth of all process steps, and we looked at the size of particles that cause defects. In this extra lesson, we look at <strong>where contamination comes from</strong> in the first place, and how fabs <strong>prevent it</strong>.</p>
+<p>The word "cleanroom" is well known, but what "clean" means is defined by numbers.</p>
+<p>Cleaning is the process that removes the contamination the cleanroom could not keep out.</p>
+</div>
+<div class="sc-legend"><mark class="sc-exam">Yellow highlights</mark> = key points that appear on this course's tests</div>
+<h2>What you will learn in this article</h2>
+<ul>
+<li>How to read <strong>cleanroom classes</strong> (ISO 5, ISO 7, and so on)</li>
+<li>How air is made to flow (laminar flow) and the role of filters</li>
+<li>The biggest source of contamination and how it is handled</li>
+<li>Why cleaning is still needed</li>
+</ul>
+<h2>① Putting "clean" into numbers: the idea of a class</h2>
+<p>How clean a cleanroom is depends on "how many particles are allowed in 1 cubic meter of air." The international standard ISO 14644-1 expresses this as a number called the <strong>class</strong>.</p>
+<p>The way the number is set is easy to follow. <mark class="sc-exam">The class number is the base-10 logarithm of the maximum number of particles 0.1 micrometers or larger (per cubic meter)</mark>. For example, <strong>ISO 5</strong> allows up to 10^5, or <strong>100,000</strong>, particles 0.1 micrometers or larger.</p>
+<div class="sc-box sc-ev"><b class="t">Evidence</b></p>
+<p>According to the "Cleanroom" article in the encyclopedia Wikipedia, ISO 5 allows 3,520 particles of 0.5 micrometers or larger per cubic meter, and ISO 7 allows 352,000 particles of the same size.</p>
+</div>
+<p>If the word "logarithm" is hard, read it as "10 to what power." When the class number goes up by 1, the number of allowed particles goes up 10 times.</p>
+<div class="sc-box sc-num"><b class="t">Let's think in numbers</b></p>
+<p>Comparing particles 0.5 micrometers or larger, ISO 5 allows 3,520 and ISO 7 allows 352,000. 352,000 ÷ 3,520 = <strong>100 times</strong>. When the class numbers differ by 2, the number of allowed particles differs by 100 times.</p>
+<p>"Class 100" in the old standard FED-STD-209E means up to 100 particles 0.5 micrometers or larger per cubic foot (about 0.0283 cubic meters). Converted to 1 cubic meter, that is 100 × 35.3 ≈ 3,530, almost the same as ISO 5's 3,520. (This standard was canceled in 2001, but it is still widely used.)</p>
+</div>
+<details class="semicon-quiz">
+<summary>Quick quiz: How many times different is the number of allowed particles between ISO 5 and ISO 7?</summary>
+<p>Answer: 100 times (3,520 vs. 352,000 for particles 0.5 micrometers or larger).</p>
+</details>
+<h2>② What class are semiconductor fabs?</h2>
+<p>According to Wikipedia's "Cleanroom" article, semiconductor fabs often run at <mark class="sc-exam">ISO 7 or ISO 5</mark>, and ISO 1 is very rare. Also, unlike biotech plants, semiconductor cleanrooms <strong>do not need to be sterile</strong>. What matters is contamination from particles and chemicals, not microbes.</p>
+<p>As we saw in Lesson 1, particles that cause defects are about one-quarter to one-half of the line width. Even ISO 5 still allows 3,520 particles 0.5 micrometers or larger per cubic meter. So even if the cleanroom air is clean, cleaning is still needed.</p>
+<figure><svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" role="img" style="width:100%;height:auto;max-width:640px;display:block;margin:0 auto" font-family="sans-serif"><rect x="40" y="20" width="560" height="26" rx="4" fill="#cfe3f7" stroke="#1a5fb4" stroke-width="2"/><text x="320" y="38" text-anchor="middle" font-size="14" fill="#1a5fb4" font-weight="bold">Ceiling: HEPA/ULPA filters (filter particles out of the air)</text><g stroke="#1a5fb4" stroke-width="3" fill="none"><path d="M90 52 V200"/><path d="M90 200 l-6 -9 m6 9 l6 -9"/><path d="M170 52 V200"/><path d="M170 200 l-6 -9 m6 9 l6 -9"/><path d="M250 52 V200"/><path d="M250 200 l-6 -9 m6 9 l6 -9"/><path d="M330 52 V200"/><path d="M330 200 l-6 -9 m6 9 l6 -9"/><path d="M410 52 V200"/><path d="M410 200 l-6 -9 m6 9 l6 -9"/><path d="M490 52 V200"/><path d="M490 200 l-6 -9 m6 9 l6 -9"/><path d="M570 52 V200"/><path d="M570 200 l-6 -9 m6 9 l6 -9"/></g><rect x="120" y="150" width="110" height="80" rx="4" fill="#fff" stroke="#555" stroke-width="2"/><text x="175" y="195" text-anchor="middle" font-size="14" fill="#333">Equipment</text><circle cx="400" cy="170" r="14" fill="#fff" stroke="#555" stroke-width="2"/><rect x="384" y="186" width="32" height="44" rx="6" fill="#fff" stroke="#555" stroke-width="2"/><text x="400" y="248" text-anchor="middle" font-size="13" fill="#333">Person in a cleanroom suit</text><rect x="40" y="236" width="560" height="14" fill="#ddd" stroke="#888" stroke-width="2"/><text x="320" y="272" text-anchor="middle" font-size="14" fill="#555">Floor: air is drawn in through gaps (one-way flow from top to bottom)</text></svg><figcaption>Figure 1: Diagram of airflow in a cleanroom (drawn by our editors to explain the idea; real facilities look different)</figcaption></figure>
+<h2>③ Air flows from top to bottom</h2>
+<p>The core of removing particles is <strong>filters</strong> and <strong>how the air flows</strong>. According to Wikipedia's "Cleanroom" article, the ceiling is lined with very fine filters called HEPA or ULPA. These filters catch particles mixed in the air.</p>
+<p>A typical way to move the air is <mark class="sc-exam">one-way flow (laminar flow)</mark>. Air flows from the ceiling to the floor, all in the same direction. This keeps particles from being stirred up and carries them together into the gaps in the floor. This flow is commonly used over <strong>about 80%</strong> of the ceiling.</p>
+<p>Rooms in semiconductor fabs are kept at <strong>positive pressure</strong>, with air pressure slightly higher than outside. This keeps dirty outside air from coming in even when a door is opened.</p>
+<div class="sc-box sc-why"><b class="t">Why make the air flow "in one direction"?</b></p>
+<p>Because if the air swirls, particles that have settled get stirred up again. If air flows in one direction, particles are carried in order toward the side without filters (the floor).</p>
+</div>
+<div class="sc-box sc-why" style="border-left:4px solid #1a5fb4"><b class="t">See the real thing (external site, with images)</b></p>
+<p>You can see photos of cleanroom interiors and ceilings lined with filters in Wikipedia's "Cleanroom" article (in English).</p>
+<p><a rel="nofollow noopener" href="https://en.wikipedia.org/wiki/Cleanroom" target="_blank">Wikipedia: "Cleanroom"</a></p>
+</div>
+<details class="semicon-quiz">
+<summary>Quick quiz: Why does a cleanroom make air flow from the ceiling to the floor in one direction?</summary>
+<p>Answer: So particles that fall are not stirred up again and are carried into the gaps in the floor.</p>
+</details>
+<h2>④ The biggest source of contamination is "people"</h2>
+<p>According to Wikipedia's "Cleanroom" article, the biggest source of contamination in a cleanroom is said to be <mark class="sc-exam">the people working there</mark>. Particles flake off people's skin and hair. That is why there are rules like these.</p>
+<ul>
+<li>Before entering, pass through an <strong>airlock</strong> (a small room with double doors) or an <strong>air shower</strong> (a booth that blows air to knock off particles)</li>
+<li>Wear a <strong>cleanroom suit</strong> (hood, mask, gloves, boots, and coveralls)</li>
+<li>Do not bring in things that shed particles easily, such as paper, pencils, and natural-fiber cloth (they are banned in many places)</li>
+</ul>
+<p>Also, if the air gets too dry, <strong>static electricity</strong> can build up and damage components. For this reason, <strong>ionizers</strong> (devices that remove static) are used, and workers often wear conductive boots.</p>
+<p>Only the "lithography" area, where light is shone on the wafer to transfer patterns, has <strong>yellow lighting</strong>. This keeps the light-sensitive chemical (photoresist) from being exposed by short-wavelength light (blue or ultraviolet).</p>
+<div class="sc-box sc-num"><b class="t">Let's think in numbers</b></p>
+<p>Let's get a better feel for the number "up to 3,520 particles 0.5 micrometers or larger" in ISO 5 air. In a room with 1 square meter of floor and a 2-meter ceiling, or 2 cubic meters of air, that is 3,520 × 2 = <strong>7,040 particles</strong>. For ISO 7, it is 352,000 × 2 = 704,000. By this math, that many invisible particles are floating around.</p>
+</div>
+<details class="semicon-quiz">
+<summary>Quick quiz: What is the biggest source of contamination in a cleanroom?</summary>
+<p>Answer: The people working there (because particles come off their skin and so on).</p>
+</details>
+<div class="sc-box sc-key"><b class="t">Key points of this extra lesson</b></p>
+<p>How clean a cleanroom is, is expressed as a "class." ISO 5 and ISO 7 differ by 100 times in allowed particles. Semiconductor fabs are often ISO 7 or ISO 5, and air flows one way from the ceiling filters to the floor. People are the biggest source of contamination, so cleanroom suits and air showers are needed. Particles still remain, so cleaning is needed.</p>
+</div>
+<p>Next, we take a closer look, with numbers, at "native oxide," which came up in Lesson 2.</p>
+<h2>Word review</h2>
+<p><strong>Class</strong>: A number that shows how clean a cleanroom is. When the number goes up by 1, the number of allowed particles goes up 10 times.</p>
+<p><strong>HEPA/ULPA</strong>: Very fine filters that catch particles mixed in the air.</p>
+<p><strong>Laminar flow</strong>: A way of moving air in one direction without letting it swirl.</p>
+<p><strong>Positive pressure</strong>: Keeping the air pressure in a room higher than outside so outside air does not come in.</p>
+<p><strong>Air shower</strong>: A booth that blows air to knock off particles stuck to your body.</p>
+<h2>Common misconceptions</h2>
+<h3>Q. If a wafer is in a cleanroom, does it stay free of contamination?</h3>
+<p>No. Even ISO 5 allows up to 3,520 particles 0.5 micrometers or larger per cubic meter. Contamination also comes from chemicals, equipment, and people. That is why cleaning is needed.</p>
+<h3>Q. Is a semiconductor cleanroom a sterile room with no bacteria?</h3>
+<p>No. Semiconductor fabs do not need to be sterile. What matters is contamination from particles and chemicals.</p>
+<h2>Sources</h2>
+<ul class="semicon-sources sc-sources">
+<li><a rel="nofollow noopener" href="https://en.wikipedia.org/wiki/Cleanroom" target="_blank">Wikipedia: "Cleanroom" (overview; class numbers, airflow, and measures for people are based on this article. The numbers come from the article, not from the standard itself)</a></li>
+</ul>
+</article>
+<p><!--KEEP:1--></p>
+<aside class="course-nav-wash3">
+<h2>Other lessons in the Cleaning Level 3 course</h2>
+<p><a href="/wash-3/">Back to the Cleaning Level 3 course list</a></p>
+<ul>
+<li><a href="/semiconductor-why-wafer-cleaning/">Why is semiconductor cleaning needed so many times? The role of the cleaning process</a></li>
+<li><a href="/semiconductor-wafer-contamination-types/">4 types of contamination removed in semiconductor cleaning: particles, organics, metals, and native oxide</a></li>
+<li><a href="/rca-clean-sc1-sc2/">The basics of semiconductor cleaning, "RCA cleaning": what SC-1 and SC-2 contain and why the order matters</a></li>
+<li><a href="/wet-cleaning-problems-dry-cleaning/">Challenges in semiconductor cleaning: the risk of over-cleaning and dry cleaning</a></li>
+<li><a href="/wafer-cleanliness-measurement/">How semiconductor cleaning is evaluated: measuring particles, metals, and organics</a></li>
+<li><a href="/native-oxide-hf-last-hydrogen-termination/">How fast does native oxide come back? The surface after HF and "hydrogen termination" [Cleaning Level 3, Lesson 2 Extra]</a></li>
+<li><a href="/rca-clean-history-sc1-particle-removal/">How SC-1 cleaning (APM) works: removing particles with zeta potential, ammonia, and hydrogen peroxide [Cleaning Level 3, Lesson 3 Extra]</a></li>
+<li><a href="/batch-vs-single-wafer-cleaning-one-bath/">Batch vs. single-wafer cleaning: the evolution from multiple baths to one bath [Cleaning Level 3, Lesson 4 Extra]</a></li>
+<li><a href="/txrf-total-reflection-xray-fluorescence-basics/">How TXRF works: measuring metals on the wafer surface with total reflection [Cleaning Level 3, Lesson 5 Extra]</a></li>
+<li><a href="/ultrapure-water-rinse-drying-watermark/">Semiconductor wafer drying (Marangoni drying and IPA drying) and preventing watermarks: ultrapure water rinsing and drying</a></li>
+<li><a href="/wafer-cleaning-chemical-safety-hydrofluoric-acid/">Safety of chemicals used in cleaning: hydrofluoric acid (HF) is dangerous even when it does not hurt</a></li>
+</ul>
+<p>Want to learn about cleaning equipment makers? See also <a href="/what-is-screen-semiconductor-cleaning-equipment/">What makes SCREEN special? A beginner's guide to semiconductor cleaning equipment and related processes and jobs</a>.</p>
+</aside>

@@ -1,0 +1,98 @@
+<article class="semicon-template-v2 sc-lesson" data-slug="semiconductor-why-wafer-cleaning" data-target="new_post" data-course="洗浄コース3級-1">
+<!--KEEP:0-->
+<div class="sc-head"><span class="sc-head-ico"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="56" height="56"><rect width="120" height="120" rx="26" fill="#12634f"/><g transform="translate(10 10)" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M50 14C50 14 26 44 26 60a24 24 0 0048 0C74 44 50 14 50 14z"/><path d="M40 62a10 10 0 0010 10" stroke="#e8a317"/><path d="M78 20l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="#e8a317" stroke="none"/></g></svg></span><span class="sc-head-txt"><span class="sc-head-sub">SEMICON CAMPUS Free Courses</span><b>Cleaning Course</b><span class="sc-head-lv">Level 3 Intro · Lesson 1</span></span></div>
+<div class="semicon-hook">
+<p>When people think of a semiconductor fab, the steps that shine light on wafers or add films tend to stand out. But in fact, the "washing" step also comes up again and again.</p>
+<p>In this article, we explain step by step why wafers are washed so often, based on numbers from research and public materials.</p>
+</div>
+<div class="sc-legend"><mark class="sc-exam">Yellow highlights</mark> = key points that appear on this course's tests</div>
+<h2>What you will learn in this article</h2>
+<ul>
+<li><strong>How common cleaning is</strong> (about one-fifth of all steps)</li>
+<li><strong>How small a particle can cause a defect</strong> (about one-quarter of the line width)</li>
+<li><strong>How the basic cleaning method came about</strong> (RCA cleaning in 1970)</li>
+</ul>
+<h2 data-fact-ids="W01">(1) Cleaning comes up many times in the process</h2>
+<figure><svg viewBox="0 0 640 150" role="img" aria-label="About 80 of roughly 400 steps are cleaning">
+<text x="0" y="22" font-size="15" font-weight="700" fill="#1b2430">0.18 μm generation CMOS: about 400 steps</text>
+<rect x="0" y="34" width="640" height="38" rx="6" fill="#cfd8e3"/>
+<rect x="0" y="34" width="128" height="38" rx="6" fill="#d6455d"/>
+<text x="64" y="59" font-size="15" font-weight="700" fill="#fff" text-anchor="middle">Cleaning ~80</text>
+<text x="384" y="59" font-size="15" fill="#1b2430" text-anchor="middle">Other ~320 (deposition, lithography, etching, etc.)</text>
+<text x="0" y="110" font-size="15" font-weight="700" fill="#1b2430">Older 64 Mbit DRAM: 60–70 cleaning steps alone</text>
+<g fill="#d6455d"><rect x="0" y="122" width="12" height="22" rx="2"/><rect x="16" y="122" width="12" height="22" rx="2"/><rect x="32" y="122" width="12" height="22" rx="2"/><rect x="48" y="122" width="12" height="22" rx="2"/><rect x="64" y="122" width="12" height="22" rx="2"/><rect x="80" y="122" width="12" height="22" rx="2"/><rect x="96" y="122" width="12" height="22" rx="2"/><rect x="112" y="122" width="12" height="22" rx="2"/></g>
+<text x="136" y="140" font-size="13" fill="#1b2430">(Red bars represent cleaning steps)</text>
+</svg><figcaption>Figure 1: The share of cleaning steps (Source: Northeastern University explainer)</figcaption></figure>
+<p>A Northeastern University explainer notes that in 0.18-micrometer generation CMOS, <mark class="sc-exam">about 80 of roughly 400 steps were cleaning</mark>. Even 64-megabit DRAM had 60 to 70 cleaning steps. In other words, <strong><mark class="sc-exam">cleaning makes up about one in every five steps</mark></strong>.</p>
+<div class="sc-box sc-ev"><b class="t">Evidence</b><p>An explainer from a Northeastern University research center (updated 2013). An article in The Electrochemical Society's magazine also states that at least one-third of all steps for advanced ICs are cleaning.</p></div>
+<div class="sc-box sc-why"><b class="t">Why wash so often?</b><p>Each time a film is added, material is removed, or light is applied, dust and chemical residue are left on the wafer. If the wafer moves on to the next step as is, the contamination gets trapped inside the chip. That is why wafers are <strong>washed frequently between steps</strong>.</p></div>
+<div class="sc-box sc-num"><b class="t">Let's think in numbers</b><p>Share of cleaning = 80 ÷ 400 = 0.2, or <strong>20%</strong> (one in five steps).</p><p>Skipping one cleaning step might look like removing just 1 of 400 steps. But the contamination left behind by that one skip affects every step that follows. <strong>The large number of cleaning steps reflects how many chances there are for contamination to get in.</strong></p></div>
+<details class="semicon-quiz"><summary>Quiz: In 0.18-micrometer generation CMOS, about how many of the roughly 400 steps were cleaning?</summary><p>Answer: About 80 steps.</p></details>
+<h2 data-fact-ids="W02">(2) Even very small contamination can cause defects</h2>
+<figure><svg viewBox="0 0 640 190" role="img" aria-label="Even a particle about one-quarter of the line width can cause a defect">
+<rect x="0" y="100" width="640" height="14" fill="#cfd8e3"/>
+<rect x="60" y="60" width="150" height="40" rx="3" fill="#1f5fbf"/>
+<rect x="260" y="60" width="150" height="40" rx="3" fill="#1f5fbf"/>
+<text x="135" y="86" font-size="14" fill="#fff" text-anchor="middle">Circuit line</text>
+<text x="335" y="86" font-size="14" fill="#fff" text-anchor="middle">Circuit line</text>
+<circle cx="235" cy="80" r="22" fill="#d6455d"/>
+<text x="235" y="45" font-size="14" font-weight="700" fill="#d6455d" text-anchor="middle">Particle</text>
+<text x="235" y="140" font-size="14" fill="#1b2430" text-anchor="middle">Bridges the gap between lines → short circuit (defect)</text>
+<path d="M60 160h150" stroke="#1b2430" stroke-width="2"/><text x="135" y="180" font-size="13" fill="#1b2430" text-anchor="middle">Line width</text>
+<text x="500" y="90" font-size="14" fill="#1b2430">Rule of thumb: particles larger</text>
+<text x="500" y="110" font-size="14" font-weight="700" fill="#d6455d">than ~1/4 line width are fatal</text>
+</svg><figcaption>Figure 2: How a small particle can bridge circuit lines (schematic)</figcaption></figure>
+<p>The same explainer states that "<mark class="sc-exam">particles larger than about one-quarter of the minimum line width</mark> can cause fatal defects."</p>
+<div class="sc-box sc-why"><b class="t">Why can even a small particle cause a defect?</b><p>A circuit is made of thin lines lined up with gaps between them. If a single particle lands there, it can connect two lines and cause a <strong>short circuit</strong>, or block a line and cause an <strong>open circuit</strong>. The finer the circuit, the smaller the particles that can cause defects.</p></div>
+<div class="sc-box sc-num"><b class="t">Let's think in numbers</b><p>For the 0.18-micrometer generation, the minimum line width is about 0.18 micrometers = <strong>180 nanometers</strong> (1 micrometer = 1,000 nanometers).</p><p>Rough size of a defect-causing particle = 180 ÷ 4 = <strong>45 nanometers</strong>. That is about 1/1,500 the thickness of a human hair (about 70 micrometers = 70,000 nanometers).</p><p>For a generation with a 90-nanometer line width, 90 ÷ 4 = 22.5 nanometers. <strong>The finer the circuit, the smaller the particles you need to worry about.</strong></p></div>
+<details class="semicon-quiz"><summary>Quiz: How large does a particle need to be to cause a defect?</summary><p>Answer: Larger than about one-quarter of the minimum line width.</p></details>
+<h2 data-fact-ids="W03">(3) Most defects were thought to be caused by contamination</h2>
+<p>The same explainer cites researchers' estimate that "contamination accounts for 75% of yield loss in integrated circuits." <strong><mark class="sc-exam">Yield</mark></strong> is <mark class="sc-exam">the share of chips made that turned out to be good</mark>.</p>
+<div class="sc-box sc-ev"><b class="t">Evidence and a caution</b><p>From the Northeastern University explainer. However, the page carries a note that "some information is outdated." It is safest to treat the 75% figure as an <strong>older estimate</strong>.</p></div>
+<div class="sc-box sc-why"><b class="t">Why does yield matter?</b><p>Hundreds of chips are made from a single wafer. The more defects contamination causes, the fewer good chips you get from the same materials and time, and the higher the cost per chip. <strong>Cleaning is a step tied directly not only to quality but also to money.</strong></p></div>
+<div class="sc-box sc-num"><b class="t">Let's think in numbers</b><p><mark class="sc-exam">Yield = number of good chips ÷ number of chips made × 100</mark>. For example, if 400 chips are made from one wafer and 320 are good, then 320 ÷ 400 × 100 = <strong>80%</strong>.</p><p>If contamination defects drop and 360 chips are good, then 360 ÷ 400 × 100 = <strong>90%</strong>. That is 40 more good chips (12.5% more) from the same single wafer. (These numbers are examples to show the idea.)</p></div>
+<details class="semicon-quiz"><summary>Quiz: What is the safest way to treat this figure?</summary><p>Answer: Because there is a note saying the information is outdated, treat it as an "older estimate."</p></details>
+<h2 data-fact-ids="W04">(4) The basic cleaning method: RCA cleaning</h2>
+<figure><svg viewBox="0 0 640 120" role="img" aria-label="RCA cleaning: alkaline solution, then acidic solution">
+<rect x="0" y="20" width="190" height="70" rx="10" fill="#e8f0fc" stroke="#1f5fbf" stroke-width="2"/>
+<text x="95" y="48" font-size="15" font-weight="700" fill="#1f5fbf" text-anchor="middle">(1) Alkaline solution</text>
+<text x="95" y="72" font-size="13" fill="#1b2430" text-anchor="middle">Organics, particles, etc.</text>
+<rect x="225" y="20" width="190" height="70" rx="10" fill="#fff4e0" stroke="#e8a317" stroke-width="2"/>
+<text x="320" y="48" font-size="15" font-weight="700" fill="#b87800" text-anchor="middle">(2) Acidic solution</text>
+<text x="320" y="72" font-size="13" fill="#1b2430" text-anchor="middle">Metals, etc.</text>
+<rect x="450" y="20" width="190" height="70" rx="10" fill="#e9f6ee" stroke="#2e9e5b" stroke-width="2"/>
+<text x="545" y="48" font-size="15" font-weight="700" fill="#2e9e5b" text-anchor="middle">(3) Rinse and dry</text>
+<text x="545" y="72" font-size="13" fill="#1b2430" text-anchor="middle">Remove liquid and finish</text>
+<path d="M192 55h30M417 55h30" stroke="#1b2430" stroke-width="3"/>
+</svg><figcaption>Figure 3: The flow of RCA cleaning (illustration; chemical names are covered in Lesson 3 and later)</figcaption></figure>
+<p>In The Electrochemical Society (ECS) magazine, Professor Ruzyllo of Penn State University describes the method that became the basis of cleaning. Werner Kern and Puotinen presented a cleaning method based on hydrogen peroxide solutions in a <strong><mark class="sc-exam">1970</mark></strong> paper. It is <mark class="sc-exam">a two-step method that treats the wafer first with an alkaline solution and then with an acidic solution</mark>. This is "<mark class="sc-exam">RCA cleaning</mark>."</p>
+<div class="sc-box sc-ev"><b class="t">Evidence</b><p>The Electrochemical Society Interface, Spring 2010 issue. This is Professor Ruzyllo's explainer; the original paper is W. Kern and D. A. Puotinen, RCA Review, 31, 187 (1970).</p></div>
+<div class="sc-box sc-why"><b class="t">Why use two kinds of solution?</b><p>Contamination comes in different types, such as particles, organics, and metals, and it is hard to remove all of them with a single solution. The alkaline solution in RCA cleaning was originally meant to remove organic films and metals, but it turned out to be <strong><mark class="sc-exam">very effective at removing particles too</mark></strong>, and it is still the foundation of cleaning today.</p></div>
+<div class="sc-box sc-key"><b class="t">Key points of this lesson</b><p>Cleaning makes up about one-fifth of all steps. Even small particles can cause defects. The basic cleaning method is RCA cleaning from 1970, which uses solutions with different properties in order.</p></div>
+<details class="semicon-quiz"><summary>Quiz: In what order does RCA cleaning use the alkaline and acidic solutions?</summary><p>Answer: First the alkaline solution, then the acidic solution.</p></details>
+<p>In the next article, we take a closer look at the "types of contamination" that cleaning removes.</p>
+<h2>Word review</h2>
+<ul>
+<li><strong>Cleaning: </strong>The step that removes contamination from the wafer surface.</li>
+<li><strong>Particle: </strong>A tiny bit of dust stuck to the wafer surface.</li>
+<li><strong>Yield: </strong>The share of chips made that turned out to be good.</li>
+<li><strong>RCA cleaning: </strong>The basic cleaning method presented in a 1970 paper.</li>
+</ul>
+<h2>Common misconceptions</h2>
+<h3>Q. Is cleaning just an extra task done between steps?</h3>
+<p>No. Cleaning makes up about one-fifth of all steps and is a step that supports quality.</p>
+<h3>Q. Is contamination big enough to see with your eyes?</h3>
+<p>No. Even an invisible particle can cause a defect if it is larger than about one-quarter of the circuit line width.</p>
+<h2>Official sources used</h2>
+<ul class="semicon-sources sc-sources">
+<li data-source-id="S01"><a href="https://cmc.sites.northeastern.edu/an-introduction-to-semiconductor-manufacturing-and-contamination-issues-control">Northeastern University, "An Introduction to Semiconductor Manufacturing and Contamination Issues Control" (noted as updated in 2013)</a></li>
+<li data-source-id="S02"><a href="https://www.electrochem.org/dl/interface/spr/spr10/spr10_p044-046.pdf">The Electrochemical Society Interface, Spring 2010, J. Ruzyllo, "Semiconductor Cleaning Technology: Forty Years in the Making"</a></li>
+</ul>
+</article>
+
+
+<div id="sc-read" style="max-width:720px;margin:28px auto 0"></div>
+<!--KEEP:1-->
+<!--KEEP:2-->
+
+<aside class="course-nav-wash3"><h2>Other lessons in the Cleaning Level 3 course</h2><p><a href="/wash-3/">Back to the Cleaning Level 3 course list</a></p><ul><li><a href="/semiconductor-wafer-contamination-types/">Four types of contamination removed in semiconductor cleaning: particles, organics, metals, and native oxide</a></li><li><a href="/rca-clean-sc1-sc2/">The basics of semiconductor cleaning, "RCA cleaning": what SC-1 and SC-2 contain and why the order matters</a></li><li><a href="/wet-cleaning-problems-dry-cleaning/">Challenges in semiconductor cleaning: the risk of over-cleaning and dry cleaning</a></li><li><a href="/wafer-cleanliness-measurement/">How semiconductor cleaning is evaluated: measuring particles, metals, and organics</a></li><li><a href="/cleanroom-class-contamination-sources/">How to read cleanroom class standards (ISO 14644-1 and US Federal Standard), plus FFUs and ULPA filters [Cleaning Level 3, Lesson 1 Extra]</a></li><li><a href="/native-oxide-hf-last-hydrogen-termination/">How fast does native oxide come back? The surface after HF and "hydrogen termination" [Cleaning Level 3, Lesson 2 Extra]</a></li><li><a href="/rca-clean-history-sc1-particle-removal/">How SC-1 cleaning (APM) works: removing particles with zeta potential, ammonia, and hydrogen peroxide [Cleaning Level 3, Lesson 3 Extra]</a></li><li><a href="/batch-vs-single-wafer-cleaning-one-bath/">Batch vs. single-wafer cleaning: the evolution from multiple baths to one bath [Cleaning Level 3, Lesson 4 Extra]</a></li><li><a href="/txrf-total-reflection-xray-fluorescence-basics/">How TXRF works: measuring metals on the wafer surface with total reflection [Cleaning Level 3, Lesson 5 Extra]</a></li><li><a href="/ultrapure-water-rinse-drying-watermark/">Semiconductor wafer drying (Marangoni drying and IPA drying) and preventing watermarks: ultrapure water rinsing and drying</a></li><li><a href="/wafer-cleaning-chemical-safety-hydrofluoric-acid/">Safety of chemicals used in cleaning: hydrofluoric acid is dangerous even when it doesn't hurt</a></li></ul><p>Want to learn about cleaning equipment makers? See also <a href="/what-is-screen-semiconductor-cleaning-equipment/">What makes SCREEN special? A beginner's guide to semiconductor cleaning equipment and related processes and jobs</a>.</p></aside>

@@ -1,0 +1,93 @@
+
+<!--KEEP:0-->
+
+
+<!--KEEP:1-->
+
+
+<!--KEEP:2-->
+<div class="semicon-article" id="semicon-top">
+
+<div class="semicon-level"><span class="semicon-level-label">Learning level</span> <strong>Beginner</strong><p>In Episode 29, we learned that CUDA is a software platform that makes it easier to use GPUs for general-purpose computing. This time, we look at Tensor Cores, which run matrix calculations efficiently inside that GPU. You can follow along without working through any equations.</p></div>
+
+<p class="semicon-lead"><strong>Tensor Cores</strong> are <strong>dedicated compute units that efficiently run matrix multiply-accumulate operations</strong> inside supported NVIDIA GPUs. They are not the GPU itself, not an all-purpose circuit used only for AI, and not a simple replacement for CUDA Cores. They show their strength when libraries and frameworks route supported calculations and data types to the right path.</p>
+
+<figure class="semicon-figure"><img src="https://semicon-campus.com/wp-content/uploads/2026/07/tensor-core-featured.png" alt="Inside a GPU, many compute units for general operations coexist with dedicated units for matrix multiply-accumulate, producing a result matrix from input matrices" width="1672" height="941" loading="eager" decoding="async"><figcaption>"Tensor Core" is not another name for the whole GPU. It is a dedicated compute unit that coexists with CUDA Cores and others inside the GPU and handles matrix operations that meet certain conditions.</figcaption></figure>
+
+<div class="semicon-map"><h3>First, let's clear up three misunderstandings</h3><div class="semicon-three"><div class="semicon-card"><b>It is not the GPU itself</b><span>It is a type of compute unit built into supported GPUs.</span></div><div class="semicon-card"><b>It is not necessarily AI-only</b><span>It is used heavily in AI, but it can also be used for scientific computing and other work that uses matrix math.</span></div><div class="semicon-card"><b>It does not replace CUDA Cores</b><span>General processing and dedicated matrix processing are split between the units that are best at each.</span></div></div></div>
+
+
+<h2>What do Tensor Cores speed up?</h2>
+
+<p>Their core job is <strong>matrix multiply-accumulate</strong>: multiplying several numbers, adding them up, and adding the result to an existing value. NVIDIA's documentation describes it as multiplying matrices A and B and adding the result to matrix C to get matrix D. In machine learning training and inference, each layer of a neural network repeats this kind of calculation a huge number of times.</p>
+
+<figure class="semicon-figure"><img src="https://semicon-campus.com/wp-content/uploads/2026/07/tensor-core-matrix-multiply-accumulate.png" alt="Multiply-accumulate: values from a row of one matrix and a column of another are multiplied, the products are summed and added to an existing value to make one element of the result matrix" width="1672" height="941" loading="lazy" decoding="async"><figcaption>The result matrix is built by repeating "multiply and add" for each row-column pair. Tensor Cores are designed to run these blocks of matrix multiply-accumulate at high throughput.</figcaption></figure>
+
+<p>However, AI workloads are not made only of matrix multiplication. They also include other operations and data movement, such as data preparation, branching, memory access, and activation functions. Even if Tensor Cores are fast, the whole workload does not necessarily speed up by the same factor.</p>
+
+<p class="semicon-one-line">What Tensor Cores directly speed up is things like matrix multiply-accumulate in supported formats. They are not circuits that make an entire app faster unconditionally.</p>
+
+<h2>What is mixed precision? Balancing speed and accuracy</h2>
+
+<p>How finely a computer represents numbers is called <strong>precision</strong>. In general, lower-precision formats are easier to handle in large quantities at once and reduce memory use and data transfer. On the other hand, making everything low precision makes rounding errors and values falling outside the representable range more likely.</p>
+
+<p><strong>Mixed precision</strong> is the idea of using relatively light formats for inputs and bulk calculations, and wider formats for accumulated results and parts where accuracy matters. In early Tensor Cores, a typical example was multiplying FP16 inputs and accumulating in FP32. The formats available today depend on the GPU generation and software, and some products support FP16, BF16, TF32, INT8, and others. Later generations can also handle FP64.</p>
+
+<figure class="semicon-figure"><img src="https://semicon-campus.com/wp-content/uploads/2026/07/tensor-core-mixed-precision.png" alt="Mixed-precision calculation: multiple relatively low-precision inputs are sent to a dedicated compute unit, and results are accumulated and output in a higher-precision accumulator" width="1672" height="941" loading="lazy" decoding="async"><figcaption>Mixed precision does not mean "making everything coarse." It combines light input formats with formats that accumulate results stably, each according to its role.</figcaption></figure>
+
+<div class="semicon-note"><p><strong>Check data types for each generation</strong></p><p>You cannot say that "with Tensor Cores, every data type runs at the same speed." Supported formats, compute performance, and input size requirements change with the GPU architecture and library version. When choosing products or estimating performance, check the official specs for the target GPU.</p></div>
+
+<h2>How do they share work with CUDA Cores?</h2>
+
+<div class="semicon-compare"><table><thead><tr><th>Item</th><th>Main role</th><th>What beginners should know</th></tr></thead><tbody><tr><td>Tensor Core</td><td>Runs supported matrix multiply-accumulate and similar operations at high throughput</td><td>A dedicated compute unit. It handles only calculations that meet its conditions</td></tr><tr><td>CUDA Core</td><td>Runs more general numerical operations and various other processing</td><td>Still needed even when Tensor Cores are present</td></tr><tr><td>CUDA</td><td>A platform for using the GPU's compute units and memory from software</td><td>Not a compute unit itself</td></tr></tbody></table></div>
+
+<p>GPU work includes parts that fit neatly into matrix multiply-accumulate and parts that do not. Tensor Cores and CUDA Cores are less like competitors and more like partners that split different jobs inside the GPU. It connects well if you think of it this way: on top of <a href="https://semicon-campus.com/what-is-cuda-gpu-computing/">how CUDA opened GPUs to general-purpose computing</a>, explained last time, supported matrix operations can now be sent down a dedicated path.</p>
+
+<h2>Does having the hardware make things faster automatically?</h2>
+
+<p>To use Tensor Cores, the calculation must be expressed in supported operations and data types, and the software must choose that path. Developers use them through libraries such as cuBLAS and cuDNN, deep learning frameworks, or APIs such as WMMA. Supported libraries can route suitable calculations to Tensor Cores.</p>
+
+<figure class="semicon-figure"><img src="https://semicon-campus.com/wp-content/uploads/2026/07/tensor-core-software-hardware-path.png" alt="Flow where AI framework work passes through a library layer, supported matrix operations go to the GPU's Tensor Cores, and other processing goes to CUDA Cores and others" width="1672" height="941" loading="lazy" decoding="async"><figcaption>Frameworks and libraries organize the calculations and send only supported matrix operations to Tensor Cores. The combination of hardware, data type, calculation shape, and software is what matters.</figcaption></figure>
+
+<div class="semicon-three"><div class="semicon-card"><b>Shape of the calculation</b><span>Large enough matrices and dimensions that split efficiently make it easier to keep the units busy.</span></div><div class="semicon-card"><b>Data supply</b><span>If inputs cannot reach the units fast enough, waiting time increases.</span></div><div class="semicon-card"><b>Overall workload structure</b><span>If the parts that do not use Tensor Cores are long, the overall app speedup is smaller.</span></div></div>
+
+<h2>Why HBM and memory bandwidth come next</h2>
+
+<p>The more a compute unit can process at once, the more it needs a constant flow of input data and a way to receive results. In workloads with a lot of data movement relative to computation, Tensor Cores spend more time waiting, and memory can become the performance ceiling.</p>
+
+<p>That is where <a href="https://semicon-campus.com/what-is-hbm-high-bandwidth-memory/">HBM and memory bandwidth</a>, which supply large amounts of data over a wide path close to the GPU, become important. Next time, from the viewpoint that "making compute units faster is not enough," we look at why HBM gets attention in GPUs for AI.</p>
+
+<h2>Jobs related to Tensor Cores</h2>
+
+<p>Tensor Core performance is not decided by circuit design alone. Many jobs are connected, from GPU architecture, numerical libraries, AI frameworks, and compilers to packaging, HBM, boards, cooling, and data center operations.</p>
+
+<div class="semicon-cta"><p><strong>Find semiconductor work that suits you</strong></p><p>If you are unsure where to start among hardware, software, manufacturing, equipment, quality, and more, the anonymous <a href="https://semicon-campus.com/semiconductor-career-advisor/">10-question job navigator</a>, which does not save your answers, can help you sort out your interests. The result does not determine your aptitude. It is a guide for choosing your next learning topic.</p></div>
+
+
+<section class="mp5-section" id="revenue-phase5-learning"><h2>From Tensor Cores to small exercises and PC requirements</h2><p>Once you understand the role of matrix calculations, first check the libraries, numerical precision, and GPU support requirements for your exercises. Having dedicated compute units does not mean every process automatically gets faster. Learning Python to read small public examples and taking a course on general generative AI use serve different purposes. If you are thinking about upgrading your PC, compare the GPU and memory you need, and narrow down what to learn and what to buy starting from what you can try in a free environment.</p><p>Checklist before comparing: library GPU support, required VRAM, memory, and supported OS. Separate what you can try with your current setup from what needs upgrading before you choose candidates.</p></section>
+
+<h2 id="tensor-core-faq">Frequently asked questions about Tensor Cores</h2>
+
+<h3>Are Tensor Cores only for AI?</h3><p>No. They are important because AI uses huge amounts of matrix math, but they can also be used for scientific computing and other work that uses supported matrix calculations.</p>
+
+<h3>If a GPU has Tensor Cores, are CUDA Cores unnecessary?</h3><p>No. Tensor Cores handle supported matrix operations, while CUDA Cores and others handle much of the other processing.</p>
+
+<h3>Is mixed precision a way of making calculations inaccurate?</h3><p>It is not simply lowering precision everywhere. It separates parts that can use light formats from parts that need higher precision, balancing speed and numerical stability. Validation for each use case is still needed.</p>
+
+<h3>With a Tensor Core GPU, does every AI get faster by the same amount?</h3><p>No. The effect depends on supported data types, matrix size and shape, software, memory bandwidth, and the share of processing that does not use Tensor Cores.</p>
+
+<h2 id="tensor-core-summary">Summary</h2>
+
+<div class="semicon-note"><ol><li>Tensor Cores are dedicated compute units for matrix multiply-accumulate inside supported GPUs</li><li>They are not the GPU itself, not an all-purpose AI-only circuit, and not a replacement for CUDA Cores</li><li>Mixed precision combines light input formats with higher-precision accumulation where needed</li><li>They can be used only when libraries and frameworks route supported calculations to the dedicated path</li><li>Performance depends not only on calculation shape but also on the memory bandwidth that delivers data</li></ol></div>
+
+<div class="semicon-links"><div class="semicon-linkbox"><h3>Go back to the basics</h3><p><a href="https://semicon-campus.com/what-is-gpu-ai-parallel-processing/">How GPUs spread from gaming to AI</a></p></div><div class="semicon-linkbox next"><h3>Learn in video order</h3><p><a href="https://semicon-campus.com/semiconductor-beginner-roadmap/">Back to the semiconductor beginner roadmap</a></p></div></div>
+
+
+<section class="mp5-section" id="revenue-phase5-career"><h2>From what you learned to your next study and comparisons</h2><p>Organize checks of public code and exercise conditions in three parts: target, conditions, and source. Checking related basic articles, entry points for learning, and PC requirements by purpose lets you separate what you can try for free from paid options.</p><aside class="semicon-cta mp5-card"><h3>Choose your next step from related articles that fit your goal</h3><p>If you want to know about the work, go to the job articles. If you want to broaden the basics, go to the learning articles. If you want to review your home setup, go to the PC and memory guides. You can also compare how to choose jobs, learning, and equipment in each article.</p><div class="semicon-btnrow"><a href="https://semicon-campus.com/cpu-memory-storage-difference/" class="semicon-btn mp5-button" data-revenue-phase5-hub="479" data-cta="pc_guide" data-cta-type="pc_guide" data-cta-stage="career" data-cta-id="phase5_623_hub479_end" data-cta-route="phase5_623_hub479_end">Pin down a slow PC by CPU, memory, and storage</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/dram-nand-difference/" class="semicon-btn mp5-button" data-revenue-phase5-hub="486" data-cta="memory_guide" data-cta-type="memory_guide" data-cta-stage="career" data-cta-id="phase5_623_hub486_end" data-cta-route="phase5_623_hub486_end">Check the difference between DRAM and NAND, and PC upgrades</a></div><div class="semicon-btnrow"><a href="https://semicon-campus.com/semiconductor-beginner-roadmap/" class="semicon-btn mp5-button" data-revenue-phase5-hub="391" data-cta="learning_hub" data-cta-type="learning_hub" data-cta-stage="career" data-cta-id="phase5_623_hub391_end" data-cta-route="phase5_623_hub391_end">Check basics, jobs, and how to learn in the semiconductor learning hub</a></div></aside></section>
+
+
+<h2>References</h2>
+<ul><li><a rel="noopener" href="https://developer.nvidia.com/blog/tensor-cores-mixed-precision-scientific-computing/" target="_blank">NVIDIA Technical Blog: Tensor Cores and Mixed-Precision Scientific Computing</a></li><li><a rel="noopener" href="https://docs.nvidia.com/deeplearning/performance/mixed-precision-training/index.html" target="_blank">NVIDIA Deep Learning Performance Guide: Mixed Precision</a></li><li><a rel="noopener" href="https://developer.nvidia.com/blog/programming-tensor-cores-cuda-9/" target="_blank">NVIDIA Technical Blog: Programming Tensor Cores in CUDA 9</a></li><li><a rel="noopener" href="https://docs.nvidia.com/deeplearning/performance/dl-performance-matrix-multiplication/index.html" target="_blank">NVIDIA Deep Learning Performance Guide: Matrix Multiplication</a></li><li><a rel="noopener" href="https://docs.nvidia.com/cuda/archive/11.0/cublas/index.html" target="_blank">NVIDIA cuBLAS Library Documentation</a></li></ul>
+
+<a class="semicon-backtop" href="#semicon-top">↑ Back to top</a>
+</div>
